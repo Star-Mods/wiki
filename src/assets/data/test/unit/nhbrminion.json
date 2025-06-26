@@ -1,0 +1,2852 @@
+{
+  "Name": {
+    "enUS": "Minion"
+  },
+  "Description": {
+    "enUS": "Basic worker unit. Can gather resources and warp in Hybrid structures. Can sacrifice itself to become a Spirit.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+  },
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "NHbr",
+  "DefaultAcquireLevel": "Defensive",
+  "Response": "Flee",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 40,
+  "LifeMax": 40,
+  "LifeArmorName": {
+    "enUS": "Hybrid Armor"
+  },
+  "Mover": "Ground",
+  "StationaryTurningRate": 999.8437,
+  "TurningRate": 999.8437,
+  "Radius": 0.375,
+  "SeparationRadius": 0.375,
+  "MinimapRadius": 0.375,
+  "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 1,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Turnable",
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDestroy",
+    "UseLineOfSight",
+    "Worker"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "NHbrMinion",
+  "HotkeyAlias": "NHbrMinion",
+  "SelectAlias": "NHbrMinion",
+  "SubgroupAlias": "NHbrMinion",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "NHbrMinion",
+  "AIEvaluateAlias": "NHbrMinion",
+  "ReviveType": "NHbrMinion",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 70,
+      "Anim": 20,
+      "Turn": 10
+    }
+  },
+  "ReviveInfoBase": {
+    "Charge": {
+      "Link": "NHbrMinion/Revive",
+      "Location": "Unit"
+    },
+    "Cooldown": {
+      "Link": "NHbrMinion/Revive",
+      "Location": "Unit"
+    }
+  },
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "DataCollection": "NHbrMinion",
+  "ShieldArmorName": {
+    "enUS": "Hybrid Protection"
+  },
+  "Acceleration": 2.5,
+  "LateralAcceleration": 46,
+  "DamageDealtXP": 1,
+  "DamageTakenXP": 1,
+  "KillXP": 10,
+  "LifeArmor": 0,
+  "ShieldArmor": 0,
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Move",
+        "id": "Move",
+        "Icon": "btn-command-move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
+        "Hotkey": "M"
+      },
+      {
+        "Info": {
+          "class": "CAbilStop",
+          "Name": "Abil/Name/stop",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "stop",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Stop",
+          "CmdButtonArray": {
+            "Stop": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Stop"
+            },
+            "HoldFire": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Ashm",
+              "Requirements": "Hide"
+            },
+            "Cheer": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cheer"
+            },
+            "Dance": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Dance"
+            }
+          },
+          "id": "stop",
+          "Flags": {
+            "HoldFire": 1
+          }
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "stop,Stop",
+        "id": "Stop",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,HoldPos",
+        "id": "MoveHoldPosition",
+        "Icon": "btn-command-holdposition",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
+        "Hotkey": "H"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "Attack",
+        "Icon": "btn-command-attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Patrol",
+        "id": "MovePatrol",
+        "Icon": "btn-command-patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "class": "CAbilHarvest",
+          "Name": "Abil/Name/NHbrMinionHarvest",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:NHbr,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "NHbrMinionHarvest",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Gather": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "NHbrMinionHarvest@Gather"
+            },
+            "Return": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "NHbrMinionHarvest@Return"
+            }
+          },
+          "AcquireRadius": 10,
+          "AbilSetId": "Harv",
+          "ReservedMarker": {
+            "Link": "Abil/HarvestDefault"
+          },
+          "ResourceAllowed": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "ResourceAcquire": {
+            "Minerals": 1
+          },
+          "ResourceDestroy": {
+            "Minerals": 1,
+            "Vespene": 1
+          },
+          "ResourceAmountMultiplier": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "ResourceTimeMultiplier": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "UninterruptibleArray": {
+            "WaitToReturn": 1
+          },
+          "id": "NHbrMinionHarvest"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionHarvest,Gather",
+        "id": "GatherProt",
+        "Icon": "btn-ability-protoss-gather",
+        "Name": {
+          "enUS": "Gather",
+          "ruRU": "Gather"
+        },
+        "Tooltip": {
+          "enUS": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
+          "ruRU": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser."
+        },
+        "Hotkey": "G"
+      },
+      {
+        "Info": {
+          "class": "CAbilHarvest",
+          "Name": "Abil/Name/NHbrMinionHarvest",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:NHbr,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "NHbrMinionHarvest",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Gather": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "NHbrMinionHarvest@Gather"
+            },
+            "Return": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "NHbrMinionHarvest@Return"
+            }
+          },
+          "AcquireRadius": 10,
+          "AbilSetId": "Harv",
+          "ReservedMarker": {
+            "Link": "Abil/HarvestDefault"
+          },
+          "ResourceAllowed": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "ResourceAcquire": {
+            "Minerals": 1
+          },
+          "ResourceDestroy": {
+            "Minerals": 1,
+            "Vespene": 1
+          },
+          "ResourceAmountMultiplier": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "ResourceTimeMultiplier": {
+            "Minerals": 1,
+            "Vespene": 1,
+            "Terrazine": 1,
+            "Custom": 1
+          },
+          "UninterruptibleArray": {
+            "WaitToReturn": 1
+          },
+          "id": "NHbrMinionHarvest"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionHarvest,Return",
+        "id": "ReturnCargo",
+        "Icon": "btn-command-returncargo",
+        "Name": {
+          "enUS": "Return Cargo",
+          "ruRU": "Return Cargo"
+        },
+        "Tooltip": {
+          "enUS": "Returns the carried resources to the nearest drop-off point.",
+          "ruRU": "Returns the carried resources to the nearest drop-off point."
+        },
+        "Hotkey": "C"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Submenu",
+        "AbilCmd": "255,255",
+        "SubmenuCardId": "PBl1",
+        "id": "NHbrMinionBuild",
+        "Icon": "btn-command-protoss-buildstructure",
+        "Name": {
+          "enUS": "Warp In Structure"
+        },
+        "Tooltip": {
+          "enUS": "A list of basic structures."
+        },
+        "Hotkey": "B"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "Submenu",
+        "AbilCmd": "255,255",
+        "SubmenuCardId": "PBl2",
+        "id": "NHbrMinionBuild@Advanced",
+        "Icon": "btn-command-protoss-buildadvancedstructure",
+        "Name": {
+          "enUS": "Warp In Advanced Structure"
+        },
+        "Tooltip": {
+          "enUS": "A list of advanced structures."
+        },
+        "Hotkey": "V"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/NHbrSpray",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "AbilityorEffectType:Units,Race:NHbr",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "NHbrSpray",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1
+          },
+          "Effect": [
+            "NHbrSpray"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "SprayProtoss",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "Spray",
+              "Requirements": "NHbrSpray@HaveSprayNHbr"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Charge": {
+                "CountMax": 5,
+                "CountStart": 1,
+                "CountUse": 1,
+                "Link": "Spray",
+                "Location": "Player",
+                "TimeStart": 300,
+                "TimeUse": 300
+              }
+            }
+          ],
+          "Range": [
+            1
+          ],
+          "id": "NHbrSpray"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrSpray,Execute",
+        "id": "Spray",
+        "Icon": "btn-command-spray",
+        "Name": {
+          "enUS": "Spray",
+          "ruRU": "Граффити"
+        },
+        "Tooltip": {
+          "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        },
+        "Hotkey": "Y"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuild",
+          "Name": "Abil/Name/NHbrMinionBuild",
+          "TechPlayer": "Owner",
+          "EditorCategories": "Race:NHbr,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "NHbrMinionBuild",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "HaltCmdButton": {
+            "DefaultButtonFace": "Cancel"
+          },
+          "Alert": "BuildComplete",
+          "ErrorAlert": "Error",
+          "FlagArray": {
+            "BestUnit": 1,
+            "Cancelable": 1,
+            "IgnoreUnitBuildTime": 1,
+            "PeonMaintained": 1,
+            "RangeIncludesBuilding": 1,
+            "Interruptible": 1,
+            "PeonDisableCollision": 1,
+            "RequireFacing": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -0.75,
+              "Vespene": -0.75,
+              "Terrazine": -0.75,
+              "Custom": -0.75
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "InfoArray": {
+            "Build1": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInTemple"
+              },
+              "Unit": "NHbrTemple",
+              "Time": 120
+            },
+            "Build2": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInIonicCrystal"
+              },
+              "Unit": "NHbrIonicCrystal",
+              "Time": 30
+            },
+            "Build3": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInHarvester"
+              },
+              "ValidatorArray": [
+                "HasVespene"
+              ],
+              "Unit": "NHbrHarvester",
+              "Time": 45
+            },
+            "Build4": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build5": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInStasisCell",
+                "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+              },
+              "Unit": "NHbrStasisCell",
+              "Time": 60
+            },
+            "Build6": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVespeneConcentrator",
+                "State": "Suppressed",
+                "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+              },
+              "Unit": "NHbrVespeneConcentrator",
+              "Time": 45
+            },
+            "Build7": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidPortal",
+                "State": "Suppressed",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrVoidPortal",
+              "Time": 87
+            },
+            "Build8": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build9": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidRift",
+                "Requirements": "NHbrCommon@RequiresIonicCrystalUse"
+              },
+              "Unit": "NHbrVoidRift",
+              "Time": 67
+            },
+            "Build10": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInCrystallicShrine",
+                "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+              },
+              "Unit": "NHbrCrystallicShrine",
+              "Time": 44
+            },
+            "Build11": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessingCore",
+                "Requirements": "NHbrCommon@RequiresEngineUse"
+              },
+              "Unit": "NHbrProcessingCore",
+              "Time": 44
+            },
+            "Build12": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInEngine",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrEngine",
+              "Time": 80
+            },
+            "Build13": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessor",
+                "Requirements": "NHbrCommon@RequiresEngineUse"
+              },
+              "Unit": "NHbrProcessor",
+              "Time": 83
+            },
+            "Build14": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInNemesisCatacomb",
+                "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+              },
+              "Unit": "NHbrNemesisCatacomb",
+              "Time": 101
+            },
+            "Build15": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build16": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build17": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiGround",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@AntiGround",
+              "Time": 48
+            },
+            "Build18": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiAir",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@AntiAir",
+              "Time": 48
+            },
+            "Build19": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructUniversal",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@Universal",
+              "Time": 10
+            },
+            "Build20": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build21": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build22": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build23": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build24": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build25": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build26": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build27": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build28": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build29": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build30": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            }
+          },
+          "EffectArray": {
+            "Start": "NHbrMinionBuild@Start",
+            "Finish": "NHbrMinionBuild@Finish",
+            "Cancel": "NHbrMinionBuild@Cancel"
+          },
+          "id": "NHbrMinionBuild"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuild",
+          "Name": "Abil/Name/NHbrMinionBuild@Main",
+          "TechPlayer": "Owner",
+          "EditorCategories": "Race:NHbr,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "NHbrMinionBuild",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "HaltCmdButton": {
+            "DefaultButtonFace": "Cancel"
+          },
+          "Alert": "BuildComplete",
+          "ErrorAlert": "Error",
+          "FlagArray": {
+            "BestUnit": 1,
+            "Cancelable": 1,
+            "IgnoreUnitBuildTime": 1,
+            "PeonMaintained": 1,
+            "RangeIncludesBuilding": 1,
+            "Interruptible": 1,
+            "PeonDisableCollision": 1,
+            "RequireFacing": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -0.75,
+              "Vespene": -0.75,
+              "Terrazine": -0.75,
+              "Custom": -0.75
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "InfoArray": {
+            "Build1": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInTemple"
+              },
+              "Unit": "NHbrTemple",
+              "Time": 120
+            },
+            "Build2": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInIonicCrystal"
+              },
+              "Unit": "NHbrIonicCrystal",
+              "Time": 30
+            },
+            "Build3": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInHarvester"
+              },
+              "ValidatorArray": [
+                "HasVespene"
+              ],
+              "Unit": "NHbrHarvester",
+              "Time": 45
+            },
+            "Build4": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build5": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInStasisCell",
+                "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+              },
+              "Unit": "NHbrStasisCell",
+              "Time": 60
+            },
+            "Build6": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVespeneConcentrator",
+                "State": "Suppressed",
+                "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+              },
+              "Unit": "NHbrVespeneConcentrator",
+              "Time": 45
+            },
+            "Build7": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidPortal",
+                "State": "Suppressed",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrVoidPortal",
+              "Time": 87
+            },
+            "Build8": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build9": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidRift",
+                "Requirements": "NHbrCommon@RequiresIonicCrystalUse"
+              },
+              "Unit": "NHbrVoidRift",
+              "Time": 67
+            },
+            "Build10": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInCrystallicShrine",
+                "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+              },
+              "Unit": "NHbrCrystallicShrine",
+              "Time": 44
+            },
+            "Build11": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessingCore",
+                "Requirements": "NHbrCommon@RequiresEngineUse"
+              },
+              "Unit": "NHbrProcessingCore",
+              "Time": 44
+            },
+            "Build12": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInEngine",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrEngine",
+              "Time": 80
+            },
+            "Build13": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessor",
+                "Requirements": "NHbrCommon@RequiresEngineUse"
+              },
+              "Unit": "NHbrProcessor",
+              "Time": 83
+            },
+            "Build14": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInNemesisCatacomb",
+                "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+              },
+              "Unit": "NHbrNemesisCatacomb",
+              "Time": 101
+            },
+            "Build15": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build16": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build17": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiGround",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@AntiGround",
+              "Time": 48
+            },
+            "Build18": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiAir",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@AntiAir",
+              "Time": 48
+            },
+            "Build19": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructUniversal",
+                "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+              },
+              "Unit": "NHbrConstruct@Universal",
+              "Time": 10
+            },
+            "Build20": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build21": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build22": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build23": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build24": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build25": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build26": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build27": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build28": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build29": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build30": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            }
+          },
+          "Range": [
+            8
+          ],
+          "EffectArray": {
+            "Start": "NHbrMinionBuild@Start",
+            "Finish": "NHbrMinionBuild@Finish",
+            "Cancel": "NHbrMinionBuild@Cancel"
+          },
+          "id": "NHbrMinionBuild@Main"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild@Main,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "Passive",
+        "id": "NHbrMinionVoidBonus",
+        "Icon": "btn-ability-hornerhan-salvagebonus",
+        "Name": {
+          "enUS": "Void Bonus"
+        },
+        "Tooltip": {
+          "enUS": "Harvested resource amount of <span style=\"color: ffff8a\">Minion</span> while connected to <span style=\"color: #Network\">Network</span> increased by <span style=\"color: ffff8a\"><b>0</b></span>."
+        }
+      },
+      {
+        "Info": {
+          "SectionArray": {
+            "Abils": {
+              "DurationArray": {
+                "Duration": 4.2
+              },
+              "EffectArray": {
+                "Start": "NHbrMinionBuild@ApplyBehavior",
+                "Finish": "NHbrMinionBuild@RemoveBehavior",
+                "Cancel": "NHbrMinionBuild@RemoveBehavior"
+              }
+            },
+            "Actor": {
+              "DurationArray": {
+                "Duration": 4.2
+              }
+            },
+            "Collide": {
+              "DurationArray": {
+                "Duration": 4.2
+              }
+            },
+            "Facing": {
+              "DurationArray": {
+                "Duration": 4.2
+              }
+            },
+            "Mover": {
+              "DurationArray": {
+                "Duration": 4.2
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Duration": 4.2
+              }
+            }
+          },
+          "Unit": "NHbrSpirit"
+        },
+        "Unit": "NHbrSpirit",
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionMorph@MechanicalReincarnation,Execute",
+        "id": "NHbrMinionMorph@MechanicalReincarnation",
+        "Icon": "btn-hybrid-unit-construct-minion",
+        "Name": {
+          "enUS": "Mechanical Reincarnation"
+        },
+        "Tooltip": {
+          "enUS": "Minion transforms into a <span style=\"color: ffff8a\">Spirit</span>, a small fast flying scout unit with low health."
+        },
+        "Hotkey": "E"
+      }
+    ],
+    "PBl1": [
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInTemple"
+          },
+          "Unit": "NHbrTemple",
+          "Time": 120
+        },
+        "Unit": "NHbrTemple",
+        "Time": 120,
+        "Cost": {
+          "Minerals": 400,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build1",
+        "id": "NHbrMinionBuild@WarpInTemple",
+        "Icon": "btn-hybrid-building-temple",
+        "Name": {
+          "enUS": "Warp In Temple"
+        },
+        "Tooltip": {
+          "enUS": "Primary structure. Can receive gathered resources.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Minions"
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInHarvester"
+          },
+          "ValidatorArray": [
+            "HasVespene"
+          ],
+          "Unit": "NHbrHarvester",
+          "Time": 45
+        },
+        "Unit": "NHbrHarvester",
+        "Time": 45,
+        "Cost": {
+          "Minerals": 75,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build3",
+        "id": "NHbrMinionBuild@WarpInHarvester",
+        "Icon": "btn-building-protoss-assimilator-ihanrii",
+        "Name": {
+          "enUS": "Warp In Harvester"
+        },
+        "Tooltip": {
+          "enUS": "Warped in over a Vespene Geyser to allow harvesting of vespene gas."
+        },
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInIonicCrystal"
+          },
+          "Unit": "NHbrIonicCrystal",
+          "Time": 30
+        },
+        "Unit": "NHbrIonicCrystal",
+        "Time": 30,
+        "Cost": {
+          "Minerals": 125,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 9
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build2",
+        "id": "NHbrMinionBuild@WarpInIonicCrystal",
+        "Icon": "btn-hybrid-building-pylon",
+        "Name": {
+          "enUS": "Warp In Ionic Crystal"
+        },
+        "Tooltip": {
+          "enUS": "Provides supply. Supply allows you to warp in more units. Can teleport nearby Hybrid buildings to the target <span style=\"color: #Network\">Network</span> location.<br/><br/><span style=\"color: #Network\">Network Power Source.</span><br/><br/><span style=\"color: ffff8a\">Moveable structure.</span>"
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiAir",
+            "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+          },
+          "Unit": "NHbrConstruct@AntiAir",
+          "Time": 48
+        },
+        "Unit": "NHbrConstruct@AntiAir",
+        "Time": 48,
+        "Cost": {
+          "Minerals": 225,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build18",
+        "id": "NHbrMinionBuild@WarpInConstructAntiAir",
+        "Icon": "btn-hybrid-unit-construct-sentinel-antiair",
+        "Name": {
+          "enUS": "Warp In Construct (Anti-Air)"
+        },
+        "Tooltip": {
+          "enUS": "Powerful Anti-Air guardian that test the strength of those who seek the Halls of Revelation. Can be transformed to Anti-Ground construct.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "Hotkey": "F"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "CancelSubmenu",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInConstructAntiGround",
+            "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+          },
+          "Unit": "NHbrConstruct@AntiGround",
+          "Time": 48
+        },
+        "Unit": "NHbrConstruct@AntiGround",
+        "Time": 48,
+        "Cost": {
+          "Minerals": 225,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build17",
+        "id": "NHbrMinionBuild@WarpInConstructAntiGround",
+        "Icon": "btn-hybrid-unit-construct-sentinel-antiground",
+        "Name": {
+          "enUS": "Warp In Construct (Anti-Ground)"
+        },
+        "Tooltip": {
+          "enUS": "Powerful Anti-Ground guardian that test the strength of those who seek the Halls of Revelation. Can be transformed to Anti-Air construct.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "Hotkey": "G"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidRift",
+            "Requirements": "NHbrCommon@RequiresIonicCrystalUse"
+          },
+          "Unit": "NHbrVoidRift",
+          "Time": 67
+        },
+        "Unit": "NHbrVoidRift",
+        "Time": 67,
+        "Cost": {
+          "Minerals": 175,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build9",
+        "id": "NHbrMinionBuild@WarpInVoidRift",
+        "Icon": "btn-hybrid-building-voidrift",
+        "Name": {
+          "enUS": "Warp In Void Rift"
+        },
+        "Tooltip": {
+          "enUS": "Warps in Hybrid units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Warriors<br/>- Flayers"
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInStasisCell",
+            "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+          },
+          "Unit": "NHbrStasisCell",
+          "Time": 60
+        },
+        "Unit": "NHbrStasisCell",
+        "Time": 60,
+        "Cost": {
+          "Minerals": 175,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build5",
+        "id": "NHbrMinionBuild@WarpInStasisCell",
+        "Icon": "btn-hybrid-building-stasiscell",
+        "Name": {
+          "enUS": "Warp In Stasis Cell"
+        },
+        "Tooltip": {
+          "enUS": "Improve Void Rifts connected to Stasis Cell in <span style=\"color: #Network\">Network</span>, <span style=\"color: FFFF80\">containes upgrades for Hybrid units</span>. Each Stasis Cell increases <span style=\"color: #Network\">Network</span> amount of its users by <span style=\"color: FFFF80\"><b>0</b></span>.<br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Warbringers<br/>- Sentinels"
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInVespeneConcentrator",
+            "State": "Suppressed",
+            "Requirements": "NHbrCommon@RequiresVoidRiftUse"
+          },
+          "Unit": "NHbrVespeneConcentrator",
+          "Time": 45
+        },
+        "Unit": "NHbrVespeneConcentrator",
+        "Time": 45,
+        "Cost": {
+          "Minerals": 175,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build6",
+        "id": "NHbrMinionBuild@WarpInVespeneConcentrator",
+        "Icon": "btn-hybrid-building-forge",
+        "Name": {
+          "enUS": "Warp In Vespene Concentrator"
+        },
+        "Tooltip": {
+          "enUS": "Contains specific upgrades for Hybrids. Build nearby Harvesters to increase their vespene amount."
+        },
+        "Hotkey": "C"
+      }
+    ],
+    "PBl2": [
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessingCore",
+            "Requirements": "NHbrCommon@RequiresEngineUse"
+          },
+          "Unit": "NHbrProcessingCore",
+          "Time": 44
+        },
+        "Unit": "NHbrProcessingCore",
+        "Time": 44,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build11",
+        "id": "NHbrMinionBuild@WarpInProcessingCore",
+        "Icon": "btn-hybrid-building-artifactcontainmentfieldvoid",
+        "Name": {
+          "enUS": "Warp In Processing Core"
+        },
+        "Tooltip": {
+          "enUS": "Improve Void Rifts connected to Stasis Cell in <span style=\"color: #Network\">Network</span>. <span style=\"color: FFFF80\">Contains upgrades for Hybrid units.</span><br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Reavers<br/>- Dominators"
+        },
+        "Hotkey": "C"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "CancelSubmenu",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInCrystallicShrine",
+            "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+          },
+          "Unit": "NHbrCrystallicShrine",
+          "Time": 44
+        },
+        "Unit": "NHbrCrystallicShrine",
+        "Time": 44,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build10",
+        "id": "NHbrMinionBuild@WarpInCrystallicShrine",
+        "Icon": "btn-hybrid-building-darkshrine",
+        "Name": {
+          "enUS": "Warp In Crystallic Shrine"
+        },
+        "Tooltip": {
+          "enUS": "Contains weapon and armor upgrades for Hybrid units <br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Horrors"
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInEngine",
+            "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+          },
+          "Unit": "NHbrEngine",
+          "Time": 80
+        },
+        "Unit": "NHbrEngine",
+        "Time": 80,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 175,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build12",
+        "id": "NHbrMinionBuild@WarpInEngine",
+        "Icon": "btn-hybrid-building-roboticssupportbay",
+        "Name": {
+          "enUS": "Warp In Engine"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Containes upgrades for Hybrid units</span>.<br/><br/><span style=\"color: FFFF80\">Enables:<br/></span>- Silents<br/>- Dreadnoks"
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInVoidPortal",
+            "State": "Suppressed",
+            "Requirements": "NHbrCommon@RequiresStasisCellHaveUse"
+          },
+          "Unit": "NHbrVoidPortal",
+          "Time": 87
+        },
+        "Unit": "NHbrVoidPortal",
+        "Time": 87,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build7",
+        "id": "NHbrMinionBuild@WarpInVoidPortal",
+        "Icon": "btn-hybrid-structure-shield-generator",
+        "Name": {
+          "enUS": "Warp In Void Portal"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Contains upgrades for Hybrid units.</span><br/><br/><span style=\"color: FFFF80\">Enables:<br/></span>- Screamers<br/>- Pollinators<br/>- Navigators"
+        },
+        "Hotkey": "V"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInProcessor",
+            "Requirements": "NHbrCommon@RequiresEngineUse"
+          },
+          "Unit": "NHbrProcessor",
+          "Time": 83
+        },
+        "Unit": "NHbrProcessor",
+        "Time": 83,
+        "Cost": {
+          "Minerals": 250,
+          "Vespene": 200,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build13",
+        "id": "NHbrMinionBuild@WarpInProcessor",
+        "Icon": "btn-hybrid-building-roboticsfacility",
+        "Name": {
+          "enUS": "Warp In Processor"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Hybrid units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Upgrade Reaver to Advanced Reaver<br/>- Upgrade Dominator to Advanced Dominator"
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NHbrMinionBuild@WarpInNemesisCatacomb",
+            "Requirements": "NHbrCommon@RequiresVoidPortalUse"
+          },
+          "Unit": "NHbrNemesisCatacomb",
+          "Time": 101
+        },
+        "Unit": "NHbrNemesisCatacomb",
+        "Time": 101,
+        "Cost": {
+          "Minerals": 350,
+          "Vespene": 250,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "NHbrMinionBuild,Build14",
+        "id": "NHbrMinionBuild@WarpInNemesisCatacomb",
+        "Icon": "btn-hybrid-building-fleshbender",
+        "Name": {
+          "enUS": "Warp In Nemesis Catacomb"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Hybrid units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Nemesis"
+        },
+        "Hotkey": "N"
+      }
+    ]
+  },
+  "GlossaryCategory": "Unit/Category/NHbrUnits",
+  "TauntDuration": {
+    "Cheer": 5,
+    "Dance": 5
+  },
+  "Mob": "Multiplayer",
+  "AttackTargetPriority": 20,
+  "PlaneArray": [
+    "Ground"
+  ],
+  "Collide": [
+    "Ground",
+    "Locust",
+    "Small",
+    "ForceField"
+  ],
+  "HotkeyCategory": "Unit/Category/NHbrUnits",
+  "KillDisplay": "Always",
+  "RankDisplay": "Always",
+  "ScoreResult": "BuildOrder",
+  "ShieldArmorTip": "Unit/ShieldArmorTooltip/NHbrShields",
+  "ShieldDamageRatio": [
+    0
+  ],
+  "id": "NHbrMinion",
+  "Attributes": [
+    "Light",
+    "Mechanical"
+  ],
+  "ShieldsStart": 40,
+  "ShieldsMax": 40,
+  "Speed": 2.8125,
+  "Sight": 8,
+  "Food": -1,
+  "CostCategory": "Economy",
+  "CostResource": {
+    "Minerals": 50
+  },
+  "AIOverideTargetPriority": 10,
+  "InnerRadius": 0.375,
+  "CargoSize": 1,
+  "ScoreMake": 50,
+  "ScoreKill": 50,
+  "SubgroupPriority": 46,
+  "GlossaryPriority": 1,
+  "Icon": "btn-hybrid-unit-harvester",
+  "Model": "Hybrid_Harvester",
+  "LifeArmorIcon": "btn-upgrade-protoss-groundarmorlevel0",
+  "ShieldArmorIcon": "btn-ability-zeratul-warpprism-shieldboosters",
+  "Weapons": [
+    {
+      "id": "ParticleBeam",
+      "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "Name": {
+        "enUS": "Particle Beam",
+        "ruRU": "Particle Beam"
+      },
+      "Amount": 5,
+      "Kind": "Melee",
+      "TargetFilters": "Ground",
+      "Range": 0.2,
+      "Period": 1.5
+    }
+  ],
+  "Behaviors": [
+    {
+      "id": "NHbrMinionVoidBonus",
+      "Icon": "btn-ability-hornerhan-salvagebonus",
+      "Name": {
+        "enUS": "Void Bonus"
+      },
+      "Tooltip": "-"
+    }
+  ],
+  "Abilities": [
+    {
+      "id": "stop",
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
+    },
+    {
+      "id": "attack",
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
+    },
+    {
+      "id": "move",
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
+    },
+    {
+      "id": "NHbrMinionBuild",
+      "Name": {
+        "enUS": "Build"
+      }
+    },
+    {
+      "id": "NHbrMinionBuild@Main",
+      "Name": {
+        "enUS": "Build (Main)"
+      }
+    },
+    {
+      "id": "NHbrMinionHarvest",
+      "Name": {
+        "enUS": "Gather (Minion)"
+      }
+    },
+    {
+      "id": "NHbrSpray",
+      "Name": {
+        "enUS": "Spray"
+      }
+    },
+    {
+      "id": "NHbrMinionMorph@MechanicalReincarnation",
+      "Name": {
+        "enUS": "Mechanical Reincarnation"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "NHbrEngineResearch@ProtectionArmor",
+    "NHbrMinion",
+    "NHbrEngineUpgrades@GroundArmorsLevel1",
+    "NHbrMinion",
+    "CarryMineralFieldMinerals",
+    "CarryHighYieldMineralFieldMinerals",
+    "NHbrSpray",
+    "NHbrGroundArmors",
+    "NHbrEngineUpgrades@GroundArmorsLevel2",
+    "NHbrEngineUpgrades@GroundArmorsLevel3",
+    "NHbrEngineUpgrades@GroundWeaponsLevel1",
+    "NHbrGroundWeapons",
+    "NHbrEngineUpgrades@WeaponsLevel2",
+    "NHbrEngineUpgrades@WeaponsLevel3",
+    "NHbrTempleTrain",
+    "NHbrCommon@IsMinion",
+    "NHbr",
+    "NHbrSpirit",
+    "NHbrHarvesterRich@CarryHarvestableVespeneGeyserGasNHbr",
+    "NHbrHarvester@CarryHarvestableVespeneGeyserGasNHbr",
+    "NHbrMinionMorph@Model",
+    "NHbrMinionMorph@Sound",
+    "NHbrMinion"
+  ],
+  "$Requirements": [],
+  "$Production": [
+    "NHbrTemple",
+    "NHbrHarvester",
+    "NHbrIonicCrystal",
+    "NHbrConstruct@AntiAir",
+    "NHbrConstruct@AntiGround",
+    "NHbrVoidRift",
+    "NHbrStasisCell",
+    "NHbrVespeneConcentrator",
+    "NHbrProcessingCore",
+    "NHbrCrystallicShrine",
+    "NHbrEngine",
+    "NHbrVoidPortal",
+    "NHbrProcessor",
+    "NHbrNemesisCatacomb"
+  ],
+  "$Research": [],
+  "$Morph": [
+    "NHbrSpirit"
+  ],
+  "$Phase": [],
+  "$Producers": [
+    "NHbrTemple"
+  ],
+  "$Commands": [
+    {
+      "AbilCmd": "move,Move",
+      "id": "Move",
+      "Icon": "btn-command-move",
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
+    },
+    {
+      "AbilCmd": "stop,Stop",
+      "id": "Stop",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
+    },
+    {
+      "AbilCmd": "move,HoldPos",
+      "id": "MoveHoldPosition",
+      "Icon": "btn-command-holdposition",
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "Attack",
+      "Icon": "btn-command-attack",
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
+    },
+    {
+      "AbilCmd": "move,Patrol",
+      "id": "MovePatrol",
+      "Icon": "btn-command-patrol",
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionHarvest,Gather",
+      "id": "GatherProt",
+      "Icon": "btn-ability-protoss-gather",
+      "Name": {
+        "enUS": "Gather",
+        "ruRU": "Gather"
+      },
+      "Tooltip": {
+        "enUS": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
+        "ruRU": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionHarvest,Return",
+      "id": "ReturnCargo",
+      "Icon": "btn-command-returncargo",
+      "Name": {
+        "enUS": "Return Cargo",
+        "ruRU": "Return Cargo"
+      },
+      "Tooltip": {
+        "enUS": "Returns the carried resources to the nearest drop-off point.",
+        "ruRU": "Returns the carried resources to the nearest drop-off point."
+      }
+    },
+    {
+      "AbilCmd": "255,255",
+      "id": "NHbrMinionBuild",
+      "Icon": "btn-command-protoss-buildstructure",
+      "Name": {
+        "enUS": "Warp In Structure"
+      },
+      "Tooltip": {
+        "enUS": "A list of basic structures."
+      }
+    },
+    {
+      "AbilCmd": "255,255",
+      "id": "NHbrMinionBuild@Advanced",
+      "Icon": "btn-command-protoss-buildadvancedstructure",
+      "Name": {
+        "enUS": "Warp In Advanced Structure"
+      },
+      "Tooltip": {
+        "enUS": "A list of advanced structures."
+      }
+    },
+    {
+      "AbilCmd": "NHbrSpray,Execute",
+      "id": "Spray",
+      "Icon": "btn-command-spray",
+      "Name": {
+        "enUS": "Spray",
+        "ruRU": "Граффити"
+      },
+      "Tooltip": {
+        "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild@Main,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionMorph@MechanicalReincarnation,Execute",
+      "id": "NHbrMinionMorph@MechanicalReincarnation",
+      "Icon": "btn-hybrid-unit-construct-minion",
+      "Name": {
+        "enUS": "Mechanical Reincarnation"
+      },
+      "Tooltip": {
+        "enUS": "Minion transforms into a <span style=\"color: ffff8a\">Spirit</span>, a small fast flying scout unit with low health."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build1",
+      "id": "NHbrMinionBuild@WarpInTemple",
+      "Icon": "btn-hybrid-building-temple",
+      "Name": {
+        "enUS": "Warp In Temple"
+      },
+      "Tooltip": {
+        "enUS": "Primary structure. Can receive gathered resources.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Minions"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build3",
+      "id": "NHbrMinionBuild@WarpInHarvester",
+      "Icon": "btn-building-protoss-assimilator-ihanrii",
+      "Name": {
+        "enUS": "Warp In Harvester"
+      },
+      "Tooltip": {
+        "enUS": "Warped in over a Vespene Geyser to allow harvesting of vespene gas."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build2",
+      "id": "NHbrMinionBuild@WarpInIonicCrystal",
+      "Icon": "btn-hybrid-building-pylon",
+      "Name": {
+        "enUS": "Warp In Ionic Crystal"
+      },
+      "Tooltip": {
+        "enUS": "Provides supply. Supply allows you to warp in more units. Can teleport nearby Hybrid buildings to the target <span style=\"color: #Network\">Network</span> location.<br/><br/><span style=\"color: #Network\">Network Power Source.</span><br/><br/><span style=\"color: ffff8a\">Moveable structure.</span>"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build18",
+      "id": "NHbrMinionBuild@WarpInConstructAntiAir",
+      "Icon": "btn-hybrid-unit-construct-sentinel-antiair",
+      "Name": {
+        "enUS": "Warp In Construct (Anti-Air)"
+      },
+      "Tooltip": {
+        "enUS": "Powerful Anti-Air guardian that test the strength of those who seek the Halls of Revelation. Can be transformed to Anti-Ground construct.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build17",
+      "id": "NHbrMinionBuild@WarpInConstructAntiGround",
+      "Icon": "btn-hybrid-unit-construct-sentinel-antiground",
+      "Name": {
+        "enUS": "Warp In Construct (Anti-Ground)"
+      },
+      "Tooltip": {
+        "enUS": "Powerful Anti-Ground guardian that test the strength of those who seek the Halls of Revelation. Can be transformed to Anti-Air construct.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build9",
+      "id": "NHbrMinionBuild@WarpInVoidRift",
+      "Icon": "btn-hybrid-building-voidrift",
+      "Name": {
+        "enUS": "Warp In Void Rift"
+      },
+      "Tooltip": {
+        "enUS": "Warps in Hybrid units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Warriors<br/>- Flayers"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build5",
+      "id": "NHbrMinionBuild@WarpInStasisCell",
+      "Icon": "btn-hybrid-building-stasiscell",
+      "Name": {
+        "enUS": "Warp In Stasis Cell"
+      },
+      "Tooltip": {
+        "enUS": "Improve Void Rifts connected to Stasis Cell in <span style=\"color: #Network\">Network</span>, <span style=\"color: FFFF80\">containes upgrades for Hybrid units</span>. Each Stasis Cell increases <span style=\"color: #Network\">Network</span> amount of its users by <span style=\"color: FFFF80\"><b>0</b></span>.<br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Warbringers<br/>- Sentinels"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build6",
+      "id": "NHbrMinionBuild@WarpInVespeneConcentrator",
+      "Icon": "btn-hybrid-building-forge",
+      "Name": {
+        "enUS": "Warp In Vespene Concentrator"
+      },
+      "Tooltip": {
+        "enUS": "Contains specific upgrades for Hybrids. Build nearby Harvesters to increase their vespene amount."
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build11",
+      "id": "NHbrMinionBuild@WarpInProcessingCore",
+      "Icon": "btn-hybrid-building-artifactcontainmentfieldvoid",
+      "Name": {
+        "enUS": "Warp In Processing Core"
+      },
+      "Tooltip": {
+        "enUS": "Improve Void Rifts connected to Stasis Cell in <span style=\"color: #Network\">Network</span>. <span style=\"color: FFFF80\">Contains upgrades for Hybrid units.</span><br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Reavers<br/>- Dominators"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build10",
+      "id": "NHbrMinionBuild@WarpInCrystallicShrine",
+      "Icon": "btn-hybrid-building-darkshrine",
+      "Name": {
+        "enUS": "Warp In Crystallic Shrine"
+      },
+      "Tooltip": {
+        "enUS": "Contains weapon and armor upgrades for Hybrid units <br/><br/><span style=\"color: ffff8a\">Connected Network Allows:</span><br/>- Horrors"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build12",
+      "id": "NHbrMinionBuild@WarpInEngine",
+      "Icon": "btn-hybrid-building-roboticssupportbay",
+      "Name": {
+        "enUS": "Warp In Engine"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Containes upgrades for Hybrid units</span>.<br/><br/><span style=\"color: FFFF80\">Enables:<br/></span>- Silents<br/>- Dreadnoks"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build7",
+      "id": "NHbrMinionBuild@WarpInVoidPortal",
+      "Icon": "btn-hybrid-structure-shield-generator",
+      "Name": {
+        "enUS": "Warp In Void Portal"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Contains upgrades for Hybrid units.</span><br/><br/><span style=\"color: FFFF80\">Enables:<br/></span>- Screamers<br/>- Pollinators<br/>- Navigators"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build13",
+      "id": "NHbrMinionBuild@WarpInProcessor",
+      "Icon": "btn-hybrid-building-roboticsfacility",
+      "Name": {
+        "enUS": "Warp In Processor"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Hybrid units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Upgrade Reaver to Advanced Reaver<br/>- Upgrade Dominator to Advanced Dominator"
+      }
+    },
+    {
+      "AbilCmd": "NHbrMinionBuild,Build14",
+      "id": "NHbrMinionBuild@WarpInNemesisCatacomb",
+      "Icon": "btn-hybrid-building-fleshbender",
+      "Name": {
+        "enUS": "Warp In Nemesis Catacomb"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Hybrid units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Nemesis"
+      }
+    }
+  ]
+}

@@ -3,6 +3,46 @@
 </ng-template>
 
 <div *ngIf="unit" class="unit-stats">
+
+
+  <div id="viewer" class="viewer-small">
+    <div class="viewer-inner" id="viewer-inner"></div>
+    <div title="Fullscreen Preview" class="fullscreen-button" id="fullscreen" (click)="fullscreen()">⛶</div>
+  </div>
+
+
+  <p><span class="sc-attribute" *ngFor="let attribute of unit.Attributes">{{attribute}}</span></p>
+
+  <div class="unit-short-stats unit-stats">
+    <div *ngIf="unit.LifeMax" class="unit-stat" [title]="scdata.text(unit.LifeArmorName)">
+      <sc-icon [src]="unit.LifeArmorIcon" class="short-icon unit-armor">
+        <span *ngIf="unit.LifeArmor">{{unit.LifeArmor}}</span>
+      </sc-icon>
+      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.LifeStart && unit.LifeStart !== unit.LifeMax">{{unit.LifeStart}}<span class="smaller"> / </span></ng-container>{{unit.LifeMax}}
+        <sub class="smaller" *ngIf="unit.LifeRegenRate">+{{unit.LifeRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+    </div>
+    <div *ngIf="unit.ShieldsMax" class="unit-stat" [title]="scdata.text(unit.ShieldsArmorName)" >
+      <sc-icon [src]="unit.ShieldArmorIcon" class="short-icon unit-shield">
+        <span *ngIf="unit.ShieldArmor">{{unit.ShieldArmor}}</span>
+      </sc-icon>
+      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.ShieldsStart && unit.ShieldsStart !== unit.ShieldsMax">{{unit.ShieldsStart}}<span class="smaller"> / </span></ng-container>{{unit.ShieldsMax}}
+        <sub class="smaller" *ngIf="unit.ShieldRegenRate">+{{unit.ShieldRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+    </div>
+    <div *ngIf="unit.EnergyMax" class="unit-stat ">
+      <span class="resources-energy"></span>
+      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.EnergyStart && unit.EnergyStart !== unit.EnergyMax">{{unit.EnergyStart}}<span class="smaller"> / </span></ng-container>{{unit.EnergyMax}}
+        <sub class="smaller" *ngIf="unit.EnergyRegenRate">+{{unit.EnergyRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+    </div>
+  </div>
+
+
+
   <table>
     <ng-container  *ngFor="let field of fields">
 <!--      <ng-container *ngTemplateOutlet="entityfield; context: {-->
@@ -17,4 +57,6 @@
       </ng-container>
     </ng-container>
   </table>
+
+
 </div>

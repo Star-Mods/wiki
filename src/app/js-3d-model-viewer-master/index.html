@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Javascript 3D Model Viewer</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: white;
+        font-family: Geneva, sans-serif;
+      }
+      p {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: #3CB371;
+      }
+      #viewer {
+        width: 100%; 
+        height: 400px; 
+        margin: auto; 
+        background: #000000;
+        margin-top: 2em;
+      }
+      .button {
+        border-radius: 0.2em;
+        background-color: white;
+        color: #3CB371;
+        border: 3px solid #3CB371;
+        font-weight: bold;
+        padding: 1em;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .page-button {
+        border-radius: 0.2em;
+        color: #3CB371;
+        border: 1px solid #3CB371;
+        font-weight: bold;
+        cursor: pointer;
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+        margin: 1px;
+        background: aliceblue;
+      }
+      .center {
+        text-align: center;
+        margin-top: 2em;
+      }
+      canvas {
+        display: block;
+      }
+      pre {
+        padding: 1em;
+        max-width: 900px;
+        margin: auto;
+        margin-top: 4em;
+        font-size: 1.2em;
+      }
+      .footer {
+        padding-bottom: 2em;
+      }
+      .mr2 {
+        margin-right: 2em;
+      }
+      #viewers{
+        margin: auto;
+        width: 1125px;
+      }
+      .viewer-small{
+        position: relative;
+        width: 200px;
+        height: 250px;
+        display: inline-block;
+        margin: 5px;
+        evented: false;
+        padding: 6px;
+        &:after{
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: url(./sc2_ui_tradeshow_modeselectionbutton_border_hover.png);
+
+          pointer-events: none;
+          background-size: 100% 100%;
+        }
+      }
+      .pages-buttons{
+        display: inline-block;
+      }
+	</style>
+    <link 
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css"
+    />
+  </head>
+
+  <body>
+  <div class="content">
+    <div id="viewers" class="3d-viewer">
+    </div>
+    <button class="button" id="prev-button">
+      Prev
+    </button>
+    <button class="button" id="next-button">
+      Next
+    </button>
+    <div class="pages-buttons" id="pages-buttons">
+
+    </div>
+
+    <div id="viewer" class="3d-viewer">
+    </div>
+
+    <div class="center">
+      <span id="name"></span>
+      <span id="loading"></span>
+    </div>
+
+    <div class="center" id="buttons">
+      <button class="button" id="sample-1-button">
+        Sample 1
+      </button>
+      <button class="button" id="sample-2-button">
+        Sample 2
+      </button>
+      <button class="button" id="sample-3-button">
+        Sample 3
+      </button>
+      <button class="button" id="sample-4-button">
+        Hellion
+      </button>
+      <button class="button" id="sample-5-button">
+        Pariah
+      </button>
+      <!--button class="button" id="sample-5-button">
+        Sample 5 (.usdz)
+      </button-->
+    </div>
+
+    <div class="center">
+      <input class="mr2" id="grid-button" type="checkbox" checked>
+        Grid
+      </input>
+      <button class="button" id="fullscreen-button">
+        Go Full Screen
+      </button>
+    </div>
+
+    <div style="margin: 2em auto; max-width: 900px">
+      <pre><code class="language-javascript">
+var modelPlayer = this.Js3dModelViewer
+var viewerElement = document.getElementById('viewer')
+var opts = {
+  grid: true,
+  background: 'rgb(80, 80, 80)'
+}
+var scene = modelPlayer.prepareScene(viewerElement, opts)
+modelPlayer.loadObject(scene, './assets/sample.obj')
+// or modelPlayer.loadGlb(scene, './assets/avocado.glb')
+
+var fullScreenButton = document.getElementById('fullscreen-button')
+fullScreenButton.addEventListener('click', function () {
+  modelPlayer.goFullScreen(viewerElement)
+})</code></pre>
+    </div>
+
+    <footer class="center footer">
+      <a href="https://github.com/cgwire/js-3d-model-viewer">
+        See sources on Github
+      </a>
+    </footer>
+  </div>
+
+  <script  type="module">
+    import "./dist/js-3d-model-viewer.js"
+    let response = await fetch('./list.json')
+    let list = await response.json(); // Parse the JSON response
+
+    let pages = Math.ceil(list.length/15)
+    var modelPlayer = Js3dModelViewer
+
+    {
+
+      let page = 0;
+      var pagesElement = document.getElementById('pages-buttons')
+      var viewersElement = document.getElementById('viewers')
+      let contexts = []
+      for(let i = 0; i < 15; i++){
+        var element = document.createElement('div')
+        element.classList.add("viewer-small")
+        var scene = modelPlayer.prepareScene(element, {width: 200, height: 250, background: '#3a4d63'})
+        contexts.push({scene,element})
+        viewersElement.appendChild(element)
+      }
+
+
+      for(let i = 0; i < pages; i++){
+        var element = document.createElement('div')
+        element.innerText = i
+        element.classList.add("page-button")
+        element.addEventListener('click',  () => {
+          setPage(i)
+        })
+        pagesElement.appendChild(element)
+      }
+
+      function setPage(oprion){
+        page = oprion
+        for(let i = 0 ; i < 15; i++){
+          let modelIndex = i + page *15
+          modelPlayer.clearScene(contexts[i].scene)
+          modelPlayer.resetCamera(contexts[i].scene)
+          modelPlayer.loadGlb(contexts[i].scene, './output/'+ list[modelIndex] + '.glb', null, function () {
+            loadingElement.innerHTML = ''
+          })
+        }
+      }
+      setPage(0)
+
+      var prevButton = document.getElementById('prev-button')
+      prevButton.addEventListener('click', function () {
+        setPage(--page)
+      })
+      var nextButton = document.getElementById('next-button')
+      nextButton.addEventListener('click', function () {
+        setPage(++page)
+      })
+
+      //
+      // for(let el of list){
+      //   var scene = modelPlayer.prepareScene(viewerElement, {width: 200, height: 200, background: 'transparent'})
+      //   modelPlayer.loadGlb(scene, './assets/'+ el + '.glb', null, function () {
+      //     loadingElement.innerHTML = ''
+      //   })
+      //   viewersElement.appendChild(viewerElement)
+      // }
+    }
+
+    {
+      var nameElement = document.getElementById('name')
+      var loadingElement = document.getElementById('loading')
+      var viewerElement = document.getElementById('viewer')
+      window.scene = modelPlayer.prepareScene(viewerElement, {
+        grid: true,
+        background: 'rgb(80, 80, 80)'
+      })
+      window.camera = scene.camera
+
+      viewerElement.addEventListener('loading', function (event) {
+        if (event.detail.loaded === 0) {
+          nameElement.innerHTML = 'Loading...'
+        }
+        var progress = Math.floor(100 * event.detail.loaded / event.detail.total)
+        loadingElement.innerHTML = progress + '%'
+      })
+
+      // modelPlayer.loadObject(scene, './assets/sample.obj', null, function () {
+      //   nameElement.innerHTML = 'Sample 01'
+      //   loadingElement.innerHTML = ''
+      // })
+
+      var fullScreenButton = document.getElementById('fullscreen-button')
+      fullScreenButton.addEventListener('click', function () {
+        modelPlayer.goFullScreen(viewerElement)
+      })
+
+
+      var buttonsEl = document.getElementById('buttons')
+
+      for(let el of list){
+        let btn = document.createElement("button")
+        btn.innerText = el
+        btn.addEventListener('click',  () => {
+          modelPlayer.clearScene(scene)
+          modelPlayer.resetCamera(scene)
+          modelPlayer.showGrid(scene)
+          nameElement.innerHTML = el
+          modelPlayer.loadGlb(scene, './assets/'+ el + '.glb', null, function () {
+            loadingElement.innerHTML = ''
+          })
+        })
+        buttonsEl.appendChild(btn)
+      }
+
+      var gridCheckbox = document.querySelector('#grid-button');
+      gridCheckbox.onchange = function () {
+        if (gridCheckbox.checked) {
+          modelPlayer.showGrid(scene)
+        } else {
+          modelPlayer.hideGrid(scene)
+        }
+      };
+    }
+    window.modelPlayer = modelPlayer
+  </script>
+
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.js"></script>-->
+<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-javascript.js"></script>-->
+</body>
+</html>

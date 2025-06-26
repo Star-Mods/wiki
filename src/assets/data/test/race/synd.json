@@ -1,0 +1,3520 @@
+{
+  "id": "Synd",
+  "Icon": "lobby-synoid",
+  "Name": {
+    "enUS": "Synoid"
+  },
+  "cache": {
+    "upgrades": {
+      "GruntHealth": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1,
+          "TechTreeCheat": 1
+        },
+        "Name": {
+          "enUS": "Boron Alloy Gear"
+        },
+        "MaxLevel": 1,
+        "Alert": "ResearchComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "GruntHealth",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "InfoTooltipPriority": 2,
+        "id": "GruntHealth",
+        "Icon": "btn-ability-mengsk-trooper-willofthepeople",
+        "Race": "Synd",
+        "ScoreAmount": 200,
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Unit,Servitor,LifeStart",
+            "Value": "45"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Unit,Servitor,LifeMax",
+            "Value": "45"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,ServitorB,Options[Hidden]",
+            "Value": "0"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,ServitorB,Options[Disabled]",
+            "Value": "0"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,GroupIcon.Image[0]",
+            "Value": "Assets\\Textures\\wireframe-terran-servitor-upgrade.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,Wireframe.Image[0]",
+            "Value": "Assets\\Textures\\wireframe-terran-servitor-upgrade.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,UnitIcon",
+            "Value": "Assets\\Textures\\btn-unit-terran-servitor-upgrade.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Unit,Servitor,Description",
+            "Value": "Button/Tooltip/ServitorUpgrade"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Servitor"
+        ]
+      },
+      "CrematorEnableDefend": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Cremator Enable Defend"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "CrematorEnableDefend",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Icon": "btn-ability-zeratul-sentry-reflectionshield",
+        "AffectedUnitArray": [
+          "Cremator"
+        ],
+        "id": "CrematorEnableDefend"
+      },
+      "AtrocityShields": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1,
+          "TechTreeCheat": 1
+        },
+        "Name": {
+          "enUS": "Psionic Shield Matrix"
+        },
+        "MaxLevel": 1,
+        "Alert": "ResearchComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "AtrocityShields",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "InfoTooltipPriority": 2,
+        "id": "AtrocityShields",
+        "Icon": "btn-ability-mengsk-trooper-willofthepeople",
+        "Race": "Synd",
+        "ScoreAmount": 200,
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Unit,Atrocity,ShieldsStart",
+            "Value": "90"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Unit,Atrocity,ShieldsMax",
+            "Value": "90"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Atrocity"
+        ]
+      },
+      "UmpireEnergyEfficiency": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1,
+          "TechTreeCheat": 1
+        },
+        "Name": {
+          "enUS": "Multi-Core Sourcing"
+        },
+        "MaxLevel": 1,
+        "Alert": "ResearchComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "UmpireEnergyEfficiency",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "InfoTooltipPriority": 31,
+        "id": "UmpireEnergyEfficiency",
+        "Icon": "btn-upgrade-terran-hisecautotracking",
+        "Race": "Synd",
+        "ScoreAmount": 200,
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Operation": "Multiply",
+            "Reference": "Behavior,UmpireShieldingCaster2,Modification.VitalRegenArray[Energy]",
+            "Value": "0.750000"
+          },
+          {
+            "Operation": "Multiply",
+            "Reference": "Behavior,UmpireLockdownCaster,Modification.VitalRegenArray[Energy]",
+            "Value": "0.750000"
+          }
+        ],
+        "AffectedUnitArray": [
+          "UmpireCraft"
+        ]
+      },
+      "SynoidRegenBioSteel": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "RegenBioSteel"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "SynoidRegenBioSteel",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Behavior,RegenBioSteel,Modification.VitalRegenArray[Life]",
+            "Value": "1.199200"
+          }
+        ],
+        "id": "SynoidRegenBioSteel"
+      },
+      "SynoidMechanicalWeaponsLevel1": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Mechanical Weapons Level 1"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,AnathemaClusterWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,IronFletcher,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Predator2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,MengskWraithADamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Effect,PiercingCharge,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarhoundStingerU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneImpactDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,PiercingCharge,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,EnthralledSynoid,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,MengskWraithA,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarDrone,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,EnthralledSynoid,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,MengskWraithA,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,WarDrone,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AnathemaHoming,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel1.dds"
+          },
+          {
+            "Reference": "Weapon,AnathemaHoming,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,AnathemaHomingWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperSharpshooterAU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,PhalanxU,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Chopper,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Phalanx,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel1.dds"
+          },
+          {
+            "Reference": "Weapon,Chopper,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Phalanx,Level",
+            "Value": "1"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "SynoidGriffon",
+          "SynoidCapitalShip",
+          "BomberBot",
+          "WarDrone",
+          "Chopper",
+          "RailCannonWalker"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidMechanicalWeaponsLevel1",
+        "$Phase": [
+          "SynoidMechanicalWeaponsLevel2",
+          "SynoidMechanicalWeaponsLevel3"
+        ]
+      },
+      "SynoidMechanicalWeaponsLevel2": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Mechanical Weapons Level 2"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,AnathemaClusterWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,IronFletcher,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Predator2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,MengskWraithADamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Effect,PiercingCharge,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarhoundStingerU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneImpactDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,PiercingCharge,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,EnthralledSynoid,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,MengskWraithA,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarDrone,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,EnthralledSynoid,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,MengskWraithA,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,WarDrone,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AnathemaHoming,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel2.dds"
+          },
+          {
+            "Reference": "Weapon,AnathemaHoming,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,AnathemaHomingWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperSharpshooterAU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperU,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Chopper,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Phalanx,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel2.dds"
+          },
+          {
+            "Reference": "Effect,PhalanxU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Chopper,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Phalanx,Level",
+            "Value": "1"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "SynoidGriffon",
+          "SynoidCapitalShip",
+          "BomberBot",
+          "WarDrone"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidMechanicalWeaponsLevel2",
+        "$Phased": "SynoidMechanicalWeaponsLevel1"
+      },
+      "SynoidMechanicalWeaponsLevel3": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Mechanical Weapons Level 3"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,AnathemaClusterWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,IronFletcher,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Predator2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,MengskWraithADamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,IronFletcherWep,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,SynoidCapitalShip,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Weapon,WarhoundStinger,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Effect,PiercingCharge,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarhoundStingerU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,WarDroneImpactDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,PiercingCharge,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,EnthralledSynoid,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,MengskWraithA,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,WarDrone,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,EnthralledSynoid,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,MengskWraithA,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,WarDrone,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AnathemaHoming,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel3.dds"
+          },
+          {
+            "Reference": "Weapon,AnathemaHoming,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,AnathemaHomingWeaponDamage,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperSharpshooterAU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ChopperU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,PhalanxU,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Chopper,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Phalanx,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleweaponslevel3.dds"
+          },
+          {
+            "Reference": "Weapon,Chopper,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Phalanx,Level",
+            "Value": "1"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "SynoidGriffon",
+          "SynoidCapitalShip",
+          "BomberBot",
+          "WarDrone"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidMechanicalWeaponsLevel3",
+        "$Phased": "SynoidMechanicalWeaponsLevel1"
+      },
+      "SynoidVehicleAndShipArmors1": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Vehicle And Ship Plating Level 1"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TerranVehicleAndShipArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,IronFletcher,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,IronFletcher,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Actor,Buoy,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,IronFletcher,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,BlimpSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,SynoidCapitalShip,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,EnthralledSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,MidasIgniter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds",
+            "Operation": "Set"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,UmpireCraft,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,GriffonSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarMachineSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,ExplosiveStrider,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Reference": "Unit,MediTruck,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Unit,MediTruck,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Meditruck,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Chopper,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipplatinglevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Phalanx,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel1.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "MidasIgniter",
+          "SynoidGriffon",
+          "Buoy",
+          "BlimpSynoid",
+          "UmpireCraft",
+          "SynoidCapitalShip",
+          "WarDrone",
+          "BomberBot",
+          "WidowMine",
+          "Liberator",
+          "Chopper",
+          "RailCannonWalker",
+          "MediTruck"
+        ],
+        "id": "SynoidVehicleAndShipArmors1",
+        "$Phase": [
+          "SynoidVehicleAndShipArmors2",
+          "SynoidVehicleAndShipArmors3"
+        ]
+      },
+      "SynoidVehicleAndShipArmors2": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Vehicle And Ship Plating Level 2"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TerranVehicleAndShipArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,IronFletcher,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,IronFletcher,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Actor,Buoy,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,IronFletcher,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,BlimpSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,SynoidCapitalShip,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,EnthralledSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,MidasIgniter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds",
+            "Operation": "Set"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,UmpireCraft,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,GriffonSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarMachineSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,ExplosiveStrider,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Reference": "Unit,MediTruck,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MediTruck,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Meditruck,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Chopper,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipplatinglevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Phalanx,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel2.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "MidasIgniter",
+          "SynoidGriffon",
+          "Buoy",
+          "BlimpSynoid",
+          "UmpireCraft",
+          "SynoidCapitalShip",
+          "WarDrone",
+          "BomberBot",
+          "WidowMine",
+          "Liberator"
+        ],
+        "id": "SynoidVehicleAndShipArmors2",
+        "$Phased": "SynoidVehicleAndShipArmors1"
+      },
+      "SynoidVehicleAndShipArmors3": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Vehicle And Ship Plating Level 3"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TerranVehicleAndShipArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,IronFletcher,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,IronFletcher,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RancorSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,EnthralledSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MidasIgniter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidGriffon,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Buoy,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BlimpSynoid,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,UmpireCraft,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,SynoidCapitalShip,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,BomberBot,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,WarDrone,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Actor,Buoy,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,IronFletcher,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,BlimpSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,SynoidCapitalShip,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,EnthralledSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Reference": "Actor,MidasIgniter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds",
+            "Operation": "Set"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,UmpireCraft,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,GriffonSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarMachineSynoid,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,ExplosiveStrider,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,WarDrone,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Reference": "Unit,MediTruck,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MediTruck,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Meditruck,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Chopper,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,RailCannonWalker,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Chopper,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-shipplatinglevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Phalanx,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-terran-vehicleplatinglevel3.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "IronFletcher",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "MidasIgniter",
+          "SynoidGriffon",
+          "Buoy",
+          "BlimpSynoid",
+          "UmpireCraft",
+          "SynoidCapitalShip",
+          "WarDrone",
+          "BomberBot",
+          "WidowMine",
+          "Liberator"
+        ],
+        "id": "SynoidVehicleAndShipArmors3",
+        "$Phased": "SynoidVehicleAndShipArmors1"
+      },
+      "LearnAnathemaAshigara": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 0
+        },
+        "Name": {
+          "enUS": "Learn Anathema Ashigara"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "SynoidHailstormMissilePods",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,SynoidCapitalShip,Options[Hidden]",
+            "Value": "0"
+          }
+        ],
+        "AffectedUnitArray": [
+          "SynoidCapitalShip"
+        ],
+        "id": "LearnAnathemaAshigara"
+      },
+      "RicoshotCharges": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1,
+          "TechTreeCheat": 1
+        },
+        "Name": {
+          "enUS": "Ricoshot Charges"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "RicoshotCharges",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Icon": "btn-upgrade-protoss-fenix-adeptchampionbounceattack",
+        "Race": "Synd",
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Abil,Sharpshooter,Cost[0].Charge.CountMax",
+            "Value": "2"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Chopper"
+        ],
+        "id": "RicoshotCharges"
+      },
+      "MagMineCloaked": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Mag Mine Cloaked"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "MagMineCloaked",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Icon": "btn-ability-terran-widowminehidden",
+        "Race": "Synd",
+        "AffectedUnitArray": [
+          "MagMineSynoid"
+        ],
+        "id": "MagMineCloaked"
+      },
+      "HellstormJavelinMissiles": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 0
+        },
+        "Name": {
+          "enUS": "Javelin Missiles"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "HellstormJavelinMissiles",
+        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "EffectArray": [
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,HellstormTurretAirWeapon,Options[Disabled]",
+            "Value": "0"
+          }
+        ],
+        "AffectedUnitArray": [
+          "HellstormTurret"
+        ],
+        "Race": "Synd",
+        "id": "HellstormJavelinMissiles"
+      },
+      "SynoidInfantryWeaponsLevel1": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Weapons Level 1"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,CK27Rifle,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,BloodletterU,AttributeBonus[Armored]",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Prospector,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Bloodletter,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Servitor,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Prospector,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,HellRoundsU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ServitorBU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,InfernalFlameThrower2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,BestatterFlamethrower,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,ServitorB,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,AtrocityMissiles,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Bloodletter,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Servitor,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Prospector,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AtrocityMissiles,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,ServitorB,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Prospector",
+          "Servitor",
+          "Bloodletter",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidInfantryWeaponsLevel1",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1",
+        "$Phase": [
+          "SynoidInfantryWeaponsLevel2",
+          "SynoidInfantryWeaponsLevel3"
+        ]
+      },
+      "SynoidInfantryWeaponsLevel2": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Weapons Level 2"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,CK27Rifle,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,BloodletterU,AttributeBonus[Armored]",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Prospector,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Bloodletter,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Servitor,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Prospector,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,HellRoundsU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ServitorBU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,InfernalFlameThrower2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,BestatterFlamethrower,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,ServitorB,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,AtrocityMissiles,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Bloodletter,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Servitor,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Prospector,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AtrocityMissiles,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,ServitorB,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Prospector",
+          "Servitor",
+          "Bloodletter",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidInfantryWeaponsLevel2",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionweaponslevel2",
+        "$Phased": "SynoidInfantryWeaponsLevel1"
+      },
+      "SynoidInfantryWeaponsLevel3": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Weapons Level 3"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "WeaponTechnologyCount",
+        "ScoreValue": "WeaponTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "SynoidInfantryWeapons",
+        "EditorCategories": "Race:Synoid,UpgradeType:AttackBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,CK27Rifle,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,BloodletterU,AttributeBonus[Armored]",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,Prospector,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Bloodletter,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Servitor,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,Prospector,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,HellRoundsU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ServitorBU,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,InfernalFlameThrower2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,BestatterFlamethrower,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,ServitorB,Level",
+            "Value": "1"
+          },
+          {
+            "Reference": "Weapon,AtrocityMissiles,Level",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Bloodletter,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Servitor,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,Prospector,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,AtrocityMissiles,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,ServitorB,Icon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Prospector",
+          "Servitor",
+          "Bloodletter",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 0,
+        "id": "SynoidInfantryWeaponsLevel3",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionweaponslevel3",
+        "$Phased": "SynoidInfantryWeaponsLevel1"
+      },
+      "SynoidInfantryArmorLevel1": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Armor Level 1"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TechInfantryArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,Servitor,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Servitor,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MULE,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Cremator,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Prospector,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,BloodLetter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Atrocity,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Servitor",
+          "Bloodletter",
+          "Prospector",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 51,
+        "id": "SynoidInfantryArmorLevel1",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1",
+        "$Phase": [
+          "SynoidInfantryArmorLevel2",
+          "SynoidInfantryArmorLevel3"
+        ]
+      },
+      "SynoidInfantryArmorLevel2": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Armor Level 2"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TechInfantryArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,Servitor,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Servitor,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MULE,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Cremator,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Prospector,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,BloodLetter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Atrocity,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Servitor",
+          "Bloodletter",
+          "Prospector",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 51,
+        "id": "SynoidInfantryArmorLevel2",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel2",
+        "$Phased": "SynoidInfantryArmorLevel1"
+      },
+      "SynoidInfantryArmorLevel3": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Synoid Infantry Armor Level 3"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "ArmorTechnologyCount",
+        "ScoreValue": "ArmorTechnologyValue",
+        "WebPriority": 0,
+        "LeaderAlias": "TechInfantryArmors",
+        "EditorCategories": "Race:Synoid,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Race": "Synd",
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,Servitor,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Servitor,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Prospector,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Bloodletter,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Atrocity,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,Cremator,LifeArmor",
+            "Value": "1"
+          },
+          {
+            "Reference": "Unit,MULE,LifeArmorLevel",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Cremator,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Prospector,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Servitor,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,BloodLetter,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3.dds"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Actor,Atrocity,LifeArmorIcon",
+            "Value": "Assets\\Textures\\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3.dds"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Servitor",
+          "Bloodletter",
+          "Prospector",
+          "Atrocity",
+          "Cremator"
+        ],
+        "InfoTooltipPriority": 51,
+        "id": "SynoidInfantryArmorLevel3",
+        "Icon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel3",
+        "$Phased": "SynoidInfantryArmorLevel1"
+      }
+    },
+    "units": {
+      "MycoChoir": {
+        "id": "MycoChoir",
+        "Icon": "btn-building-terran-mycochoir",
+        "Name": {
+          "enUS": "Myco-Synaptic Choir"
+        },
+        "Description": {
+          "enUS": "Primary structure. Can receive gathered resources. Used to deploy <span style=\"color: FFFF80\">Primary Synoid Structures</span>.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Prospectors<br/>- Myco-Processors"
+        },
+        "LifeMax": 1500,
+        "LifeArmor": 1,
+        "Food": 15,
+        "CostResource": {
+          "Minerals": 400
+        },
+        "Production": [
+          "Prospector",
+          "Buoy",
+          "MycoProcessor",
+          "Garrison",
+          "Assembly",
+          "SynoidSyphon",
+          "BioSynthFacility",
+          "MunitionsDepot",
+          "Hangar",
+          "SateliteUplink",
+          "PsiIndoctrinatorSynoid"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synoid Armor",
+          "ruRU": "Protoss Armor"
+        },
+        "priority": 10
+      },
+      "Prospector": {
+        "id": "Prospector",
+        "Icon": "btn-critter-labbot",
+        "Name": {
+          "enUS": "Prospector"
+        },
+        "Description": {
+          "enUS": "Basic worker unit. Deploys Synoid defensive structures and Myco-Synaptic Choirs.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        },
+        "LifeMax": 40,
+        "Food": -1,
+        "CostResource": {
+          "Minerals": 50
+        },
+        "Production": [
+          "MycoChoir",
+          "HellstormTurret",
+          "SatComTower",
+          "SynoidNukePack",
+          "ARESSynoid",
+          "HailfireMortar",
+          "PowerSupply",
+          "PowerMatrixAmplifier",
+          "UmpireCraft"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 20
+      },
+      "HellstormTurret": {
+        "id": "HellstormTurret",
+        "Icon": "btn-unit-terran-hellstormmissileturret",
+        "Name": {
+          "enUS": "Hellstorm Turret"
+        },
+        "Description": {
+          "enUS": "Close range AOE damage defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units, and be upgraded to attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "LifeMax": 250,
+        "CostResource": {
+          "Minerals": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 310
+      },
+      "SatComTower": {
+        "id": "SatComTower",
+        "Icon": "wireframe-terran-dominionhousing01",
+        "Name": {
+          "enUS": "SatCom Tower"
+        },
+        "Description": {
+          "enUS": "Casting Structure. Can deploy spybots, and repair drones to heal mechanical units."
+        },
+        "LifeMax": 250,
+        "CostResource": {
+          "Minerals": 250,
+          "Vespene": 125
+        },
+        "Production": [
+          "WarDrone"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 260
+      },
+      "WarDrone": {
+        "id": "WarDrone",
+        "Icon": "wireframe-xanthos-fighterjet",
+        "Name": {
+          "enUS": "War Drone"
+        },
+        "Description": {
+          "enUS": "Highly mobile flying unit.<br/>Each attack drains energy, the drone regenerates energy near a power source.<br/>after the attack connects, the missile detonates a second time shortly after, dealing the remaining damage.<br/><br/><span style=\"color: 80FFFF\">TIP: Summon it within your base to defend it, or take a Buoys into battle in order to be able to deploy it on the field.</span> <br/><br/><span style=\"color: ffff8a\">Can attack air and ground units.</span>"
+        },
+        "LifeMax": 45,
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 160
+      },
+      "SynoidNukePack": {
+        "id": "SynoidNukePack",
+        "Icon": "btn-unit-terran-nukepack",
+        "Name": {
+          "enUS": "Nuclear Charge"
+        },
+        "Description": {
+          "enUS": "Deploys a nuclear warhead at a target location. Nukes take <b>20</b> seconds to land, but they deal up to <b>300</b> (+<b>200</b> vs. structures) damage to enemies in a large radius."
+        },
+        "LifeMax": 250,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 100,
+          "Vespene": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        }
+      },
+      "ARESSynoid": {
+        "id": "ARESSynoid",
+        "Icon": "btn-unit-terran-ares",
+        "Name": {
+          "enUS": "A.R.E.S."
+        },
+        "Description": {
+          "enUS": "Armored weapons platform. Can be outfitted with various specialized weapons."
+        },
+        "LifeMax": 600,
+        "Food": -8,
+        "CostResource": {
+          "Minerals": 350,
+          "Vespene": 200
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Vehicle Plating",
+          "ruRU": "Terran Vehicle Plating"
+        },
+        "priority": 345
+      },
+      "HailfireMortar": {
+        "id": "HailfireMortar",
+        "Icon": "btn-building-terran-artifact",
+        "Name": {
+          "enUS": "Hailfire Mortar"
+        },
+        "Description": {
+          "enUS": "Long range ordinance cannon.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        },
+        "LifeMax": 600,
+        "CostResource": {
+          "Minerals": 250,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        }
+      },
+      "PowerSupply": {
+        "id": "PowerSupply",
+        "Icon": "wireframe-terran-gatecontrol",
+        "Name": {
+          "enUS": "Power Supply"
+        },
+        "Description": {
+          "enUS": "Provides supply.<br/>Supply allows you to create more units."
+        },
+        "LifeMax": 400,
+        "LifeArmor": 1,
+        "Food": 8,
+        "CostResource": {
+          "Minerals": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 248
+      },
+      "PowerMatrixAmplifier": {
+        "id": "PowerMatrixAmplifier",
+        "Icon": "btn-building-terran-powermatrixamplifier",
+        "Name": {
+          "enUS": "Power Matrix Amplifier"
+        },
+        "Description": {
+          "enUS": "Contains upgrades for air units</span>. <br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Anathemata from Super Hangar"
+        },
+        "LifeMax": 750,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 150
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 333
+      },
+      "UmpireCraft": {
+        "id": "UmpireCraft",
+        "Icon": "btn-unit-terran-sciencevessel",
+        "Name": {
+          "enUS": "Umpire Craft"
+        },
+        "Description": {
+          "enUS": "Aerial support unit. Can deploy Tank Buster mines, and War drones.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "LifeMax": 140,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 125,
+          "Vespene": 150
+        },
+        "Production": [
+          "BomberBot",
+          "WarDrone"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 190
+      },
+      "BomberBot": {
+        "id": "BomberBot",
+        "Icon": "btn-doodad-magmine",
+        "Name": {
+          "enUS": "Tank Buster"
+        },
+        "Description": {
+          "enUS": "Suicide unit. Does damage over a small area on death. Leaves a Disruption Web on detonation, disabling enemy weapons. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        },
+        "LifeMax": 30,
+        "CostResource": {
+          "Minerals": 50,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "ShieldArmorName": "-",
+        "priority": 60
+      },
+      "Buoy": {
+        "id": "Buoy",
+        "Icon": "btn-unit-terran-sabotagedroneblackops",
+        "Name": {
+          "enUS": "Buoy"
+        },
+        "Description": {
+          "enUS": "Mobile flying requisition source."
+        },
+        "LifeMax": 125,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 75,
+          "Vespene": 25
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 129
+      },
+      "MycoProcessor": {
+        "id": "MycoProcessor",
+        "Icon": "btn-building-terran-microprocessor",
+        "Name": {
+          "enUS": "Myco-Processor"
+        },
+        "Description": {
+          "enUS": "Provides supply and Requisition.<br/>Requisition allows you to use Orbital abilities from units and structures.<br/>Can be upgraded to Greater Processor."
+        },
+        "LifeMax": 400,
+        "LifeArmor": 1,
+        "Food": 8,
+        "CostResource": {
+          "Minerals": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [
+          "GreaterProcessor"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 248
+      },
+      "GreaterProcessor": {
+        "id": "GreaterProcessor",
+        "Icon": "btn-building-terran-macroprocessor",
+        "Name": {
+          "enUS": "Greater Processor"
+        },
+        "Description": {
+          "enUS": "Provides extra supply, enables upgraded buildings within its reach. <br/>Requisition Area Source."
+        },
+        "LifeMax": 800,
+        "LifeArmor": 1,
+        "Food": 12,
+        "CostResource": {
+          "Minerals": 150
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Zerg Building Armor",
+          "ruRU": "Zerg Building Armor"
+        },
+        "priority": 244
+      },
+      "Garrison": {
+        "id": "Garrison",
+        "Icon": "wireframe-terran-dominionhousing02",
+        "Name": {
+          "enUS": "Garrison"
+        },
+        "Description": {
+          "enUS": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Servitors<br/>- Bio-Synthetics Facility from Myco-Synaptic Choir"
+        },
+        "LifeMax": 1000,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 150
+        },
+        "Production": [
+          "Servitor",
+          "Bloodletter",
+          "Atrocity",
+          "Cremator"
+        ],
+        "Research": [],
+        "Morph": [
+          "SuperGarrison"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 252
+      },
+      "SuperGarrison": {
+        "id": "SuperGarrison",
+        "Icon": "wireframe-terran-dominionhousing00",
+        "Name": {
+          "enUS": "Super Garrison"
+        },
+        "Description": {
+          "enUS": "Upgraded Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Atrocity<br/>- Cremator"
+        },
+        "LifeMax": 1400,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 200,
+          "Vespene": 75
+        },
+        "Production": [
+          "Servitor",
+          "Bloodletter",
+          "Atrocity",
+          "Cremator"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 252
+      },
+      "Servitor": {
+        "id": "Servitor",
+        "Icon": "btn-unit-terran-servitor",
+        "Name": {
+          "enUS": "Servitor"
+        },
+        "Description": "-",
+        "LifeMax": 35,
+        "Food": -1,
+        "CostResource": {
+          "Minerals": 45
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Infantry Armor",
+          "ruRU": "Terran Infantry Armor"
+        },
+        "priority": 21
+      },
+      "Bloodletter": {
+        "id": "Bloodletter",
+        "Icon": "btn-unit-collection-ghost-eidolon",
+        "Name": {
+          "enUS": "Bloodletter"
+        },
+        "Description": {
+          "enUS": "Support Specialist. Can use Psionic Pulse and cloak.<br/>Weapon causes residential <span style=\"color: FFFF80\">Bleeding</span> damage for an extra <b>0</b> damage.<br/>Regenerates energy with each attack.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units</span>."
+        },
+        "LifeMax": 80,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 150
+        },
+        "Production": [
+          "ZerglingHolo"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Infantry Armor",
+          "ruRU": "Terran Infantry Armor"
+        },
+        "priority": 70
+      },
+      "ZerglingHolo": {
+        "id": "ZerglingHolo",
+        "Icon": "wireframe-zerg-zergling",
+        "Name": {
+          "enUS": "Zergling Projection"
+        },
+        "Description": {
+          "enUS": "Fast melee creature. Lasts 20 seconds.<br/><br/><span style=\"color: 80FFFF\">TIP: This unit has reduced collision radius to allow for slightly more DPS, go nuts.</span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>"
+        },
+        "LifeMax": 5,
+        "ShieldsMax": 90,
+        "ShieldArmor": 1,
+        "CostResource": {
+          "Minerals": 25
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-ability-stetmann-banelingmanashield",
+        "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
+        "LifeArmorName": {
+          "enUS": "Psionic Projection"
+        },
+        "ShieldArmorName": {
+          "enUS": "Psionic Barrier"
+        },
+        "priority": 50
+      },
+      "Atrocity": {
+        "id": "Atrocity",
+        "Icon": "btn-unit-alienmech-blight",
+        "Name": {
+          "enUS": "Atrocity"
+        },
+        "Description": {
+          "enUS": "Heavy-fire support unit. Can be upgraded to have shields.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        },
+        "LifeMax": 110,
+        "LifeArmor": 1,
+        "ShieldArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 125,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel0",
+        "ShieldArmorIcon": "btn-upgrade-stetmann-zerglinghardenedshield",
+        "LifeArmorName": {
+          "enUS": "Terran Vehicle Plating",
+          "ruRU": "Terran Vehicle Plating"
+        },
+        "ShieldArmorName": {
+          "enUS": "Psionic Barrier"
+        },
+        "priority": 100
+      },
+      "Cremator": {
+        "id": "Cremator",
+        "Icon": "btn-unit-terran-troopermengskflamethrower",
+        "Name": {
+          "ruRU": "Хуракан",
+          "enUS": "Cremator"
+        },
+        "Description": {
+          "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        },
+        "LifeMax": 90,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 90,
+          "Vespene": 25
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-mengsk-engineeringbay-dominionarmorlevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Infantry Armor",
+          "ruRU": "Terran Infantry Armor"
+        },
+        "priority": 21
+      },
+      "Assembly": {
+        "id": "Assembly",
+        "Icon": "wireframe-terran-colonisthomesmall01",
+        "Name": {
+          "enUS": "Assembly"
+        },
+        "Description": {
+          "enUS": "Mech-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Iron Fletcher<br/>- Censer<br/>- Munitions Depot from Myco-Synaptic Choir"
+        },
+        "LifeMax": 1250,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 100
+        },
+        "Production": [
+          "IronFletcher",
+          "MediTruck",
+          "MidasIgniter",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "RailCannonWalker"
+        ],
+        "Research": [],
+        "Morph": [
+          "SuperAssembly"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 322
+      },
+      "SuperAssembly": {
+        "id": "SuperAssembly",
+        "Icon": "wireframe-terran-colonisthomesmall00",
+        "Name": {
+          "enUS": "Super Assembly"
+        },
+        "Description": {
+          "enUS": "Upgraded mech-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Enthralled<br/>- Rancor"
+        },
+        "LifeMax": 1400,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 225,
+          "Vespene": 150
+        },
+        "Production": [
+          "IronFletcher",
+          "MediTruck",
+          "MidasIgniter",
+          "RancorSynoid",
+          "EnthralledSynoid",
+          "RailCannonWalker"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 322
+      },
+      "IronFletcher": {
+        "id": "IronFletcher",
+        "Icon": "wireframe-terran-colonistvehicle02",
+        "Name": {
+          "enUS": "Iron Fletcher"
+        },
+        "Description": {
+          "enUS": "Quick assault unit that applies damage stacks with each attack. Each stack adds +2 bonus damage per attack from any unit, with a maximum of 4 stacks per targeted unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
+        },
+        "LifeMax": 110,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 80
+      },
+      "MediTruck": {
+        "id": "MediTruck",
+        "Icon": "wireframe-cradleofdeath-truck",
+        "Name": {
+          "enUS": "Censer"
+        },
+        "Description": {
+          "enUS": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        },
+        "LifeMax": 145,
+        "LifeArmor": 2,
+        "Food": -3,
+        "CostResource": {
+          "Minerals": 200,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 136
+      },
+      "MidasIgniter": {
+        "id": "MidasIgniter",
+        "Icon": "btn-unit-collection-widowmine-junker",
+        "Name": {
+          "enUS": "Midas Igniter"
+        },
+        "Description": {
+          "enUS": "Suicide unit. Explodes on contact and douses both your and the enemy's units in an electromagnetic paste that decreases attack speed by 10%, movement speed by 20%, disables energy regeneration, and decreases max health by 30%.<br/><br/><span style=\"color: FFFF80\">Effect lasts 15 seconds.</span>"
+        },
+        "LifeMax": 125,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 75,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "ShieldArmorName": "-",
+        "priority": 60
+      },
+      "RancorSynoid": {
+        "id": "RancorSynoid",
+        "Icon": "demonic_engine",
+        "Name": {
+          "enUS": "Rancor"
+        },
+        "Description": {
+          "enUS": "Slow firing long range anti-armor support unit. <br/>Can deploy Heal Emitters and throw Saws that deal damage over time.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        },
+        "LifeMax": 180,
+        "LifeArmor": 3,
+        "Food": -3,
+        "CostResource": {
+          "Minerals": 250,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 126
+      },
+      "EnthralledSynoid": {
+        "id": "EnthralledSynoid",
+        "Icon": "btn-unit-zerg-ravasaur",
+        "Name": {
+          "enUS": "Enthralled"
+        },
+        "Description": {
+          "enUS": "Melee anti-shield specialist that deals damage in a semicircle around it.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        },
+        "LifeMax": 150,
+        "LifeArmor": 2,
+        "Food": -3,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 75
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 110
+      },
+      "RailCannonWalker": {
+        "id": "RailCannonWalker",
+        "Icon": "btn-unit-terran-crusader",
+        "Name": {
+          "enUS": "Karolean Walker"
+        },
+        "Description": {
+          "enUS": "Large distance range heavy artillery mech.<br/>Reveals itself while attacking. Tiny Requisition Source.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        },
+        "LifeMax": 500,
+        "LifeArmor": 1,
+        "Food": -5,
+        "CostResource": {
+          "Minerals": 300,
+          "Vespene": 200
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 140
+      },
+      "SynoidSyphon": {
+        "id": "SynoidSyphon",
+        "Icon": "btn-building-terran-refinery",
+        "Name": {
+          "enUS": "Syphon"
+        },
+        "Description": {
+          "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+        },
+        "LifeMax": 500,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 75
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 244
+      },
+      "BioSynthFacility": {
+        "id": "BioSynthFacility",
+        "Icon": "btn-building-terran-biosynth",
+        "Name": {
+          "enUS": "Bio-Synthetics Facility"
+        },
+        "Description": {
+          "enUS": "Contains Upgrades for Synoid units and structures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Atrocity from Super Garrison<br/>- Rancor from Super Assembly<br/>- Enthralled from Super Assembly"
+        },
+        "LifeMax": 1000,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 125,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [
+          "GruntHealth",
+          "CrematorEnableDefend",
+          "AtrocityShields",
+          "UmpireEnergyEfficiency",
+          "SynoidRegenBioSteel"
+        ],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        }
+      },
+      "MunitionsDepot": {
+        "id": "MunitionsDepot",
+        "Icon": "btn-building-terran-nukesilo",
+        "Name": {
+          "enUS": "Munitions Depot"
+        },
+        "Description": {
+          "enUS": "Contains upgrades for Synoid <span style=\"color: FFFF80\">Mechanical </span>and <span style=\"color: FFFF80\">Air </span>units.<br/><br/><span style=\"color: FFFF80\">Enables</span>:<br/>- A.R.E.S. from Prospectors<br/>- Psi-Indoctrinator from Myco-Synaptic Choir<br/>- Anathema from Super Hangar"
+        },
+        "LifeMax": 1250,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [
+          "SynoidMechanicalWeaponsLevel1",
+          "SynoidMechanicalWeaponsLevel2",
+          "SynoidMechanicalWeaponsLevel3",
+          "SynoidVehicleAndShipArmors1",
+          "SynoidVehicleAndShipArmors2",
+          "SynoidVehicleAndShipArmors3",
+          "LearnAnathemaAshigara",
+          "RicoshotCharges",
+          "MagMineCloaked"
+        ],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        }
+      },
+      "Hangar": {
+        "id": "Hangar",
+        "Icon": "btn-building-hornerhan-starport",
+        "Name": {
+          "enUS": "Hangar"
+        },
+        "Description": {
+          "enUS": "Air-unit production facility</span>. <br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Griffins<br/>- Warden Airship"
+        },
+        "LifeMax": 1300,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 150,
+          "Vespene": 100
+        },
+        "Production": [
+          "SynoidGriffon",
+          "BlimpSynoid",
+          "SynoidCapitalShip",
+          "Chopper"
+        ],
+        "Research": [],
+        "Morph": [
+          "SuperHangar"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 329
+      },
+      "SuperHangar": {
+        "id": "SuperHangar",
+        "Icon": "btn-building-terran-medivacplatform",
+        "Name": {
+          "enUS": "Super Hangar"
+        },
+        "Description": {
+          "enUS": "Upgraded air-unit production facility</span>. <br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Warden Airship"
+        },
+        "LifeMax": 1400,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 300,
+          "Vespene": 300
+        },
+        "Production": [
+          "SynoidGriffon",
+          "BlimpSynoid",
+          "SynoidCapitalShip",
+          "Chopper"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 329
+      },
+      "SynoidGriffon": {
+        "id": "SynoidGriffon",
+        "Icon": "btn-unit-terran-griffon",
+        "Name": {
+          "enUS": "Griffon"
+        },
+        "Description": {
+          "enUS": "Defensive air unit, can switch in and out of interceptor mode to shoot down incoming missiles at the cost of energy.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+        },
+        "LifeMax": 125,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 125,
+          "Vespene": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        }
+      },
+      "BlimpSynoid": {
+        "id": "BlimpSynoid",
+        "Icon": "wireframe-terran-blimp",
+        "Name": {
+          "enUS": "Warden Airship"
+        },
+        "Description": {
+          "enUS": "Flying Transport unit, can use defensive matrix and lockdown.<br/><br/><span style=\"color: 80FFFF\">TIP: The Warden Airship takes a bit of time to reach accelerate to its max speed.</span>"
+        },
+        "LifeMax": 175,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 200,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        }
+      },
+      "SynoidCapitalShip": {
+        "id": "SynoidCapitalShip",
+        "Icon": "btn-unit-terran-cerberus",
+        "Name": {
+          "enUS": "Anathema"
+        },
+        "Description": {
+          "enUS": "A powerful warship with cloaking technology and an electric field that can disable enemy units.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        },
+        "LifeMax": 600,
+        "LifeArmor": 3,
+        "Food": -7,
+        "CostResource": {
+          "Minerals": 500,
+          "Vespene": 230
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 200
+      },
+      "Chopper": {
+        "id": "Chopper",
+        "Icon": "btn-unit-terran-chopper",
+        "Name": {
+          "enUS": "Cossack"
+        },
+        "Description": {
+          "enUS": "Tactical-strike aircraft, can deploy Mag Mines."
+        },
+        "LifeMax": 180,
+        "Food": -4,
+        "CostResource": {
+          "Minerals": 200,
+          "Vespene": 150
+        },
+        "Production": [
+          "MagMineSynoid"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-shipplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 210
+      },
+      "MagMineSynoid": {
+        "id": "MagMineSynoid",
+        "Icon": "btn-doodad-magmine",
+        "Name": {
+          "enUS": "Mag Mine"
+        },
+        "Description": {
+          "enUS": "Travels in a straight line and deals area damage to nearby units on impact.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+        },
+        "LifeMax": 100,
+        "CostResource": {
+          "Minerals": 20
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-shipplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Ship Plating",
+          "ruRU": "Terran Ship Plating"
+        },
+        "priority": 150
+      },
+      "SateliteUplink": {
+        "id": "SateliteUplink",
+        "Icon": "wireframe-terran-psidisintegratorpowerlink",
+        "Name": {
+          "enUS": "Satelite Uplink"
+        },
+        "Description": {
+          "enUS": "Contains upgrades for Synoid infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellstorm Turret from Prospectors<br/>- SatCom Tower from Prospectors<br/>- Midas Igniters from Assembly<br/>- Buoys from Hangar"
+        },
+        "LifeMax": 850,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 125
+        },
+        "Production": [],
+        "Research": [
+          "HellstormJavelinMissiles",
+          "SynoidInfantryWeaponsLevel1",
+          "SynoidInfantryWeaponsLevel2",
+          "SynoidInfantryWeaponsLevel3",
+          "SynoidInfantryArmorLevel1",
+          "SynoidInfantryArmorLevel2",
+          "SynoidInfantryArmorLevel3"
+        ],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        },
+        "priority": 256
+      },
+      "PsiIndoctrinatorSynoid": {
+        "id": "PsiIndoctrinatorSynoid",
+        "Icon": "btn-building-terran-psiindoctrinator",
+        "Name": {
+          "enUS": "Psi-Indoctrinator"
+        },
+        "Description": {
+          "enUS": "Contains upgrades for <span style=\"color: FFFF80\">Bloodletters</span>.<br/>Can use <span style=\"color: FFFF80\">Indoctrinate</span> anywhere inside a Requisition Field.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Bloodletters at the Garrisons"
+        },
+        "LifeMax": 950,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 200,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-swann-hellarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Terran Building Plating"
+        }
+      }
+    }
+  },
+  "StartingUnitArray": [
+    {
+      "Unit": "MycoChoir"
+    },
+    {
+      "Unit": "Prospector",
+      "Count": 12
+    }
+  ],
+  "army": [
+    "Prospector",
+    "WarDrone",
+    "ARESSynoid",
+    "UmpireCraft",
+    "BomberBot",
+    "Buoy",
+    "Servitor",
+    "Bloodletter",
+    "ZerglingHolo",
+    "Atrocity",
+    "Cremator",
+    "IronFletcher",
+    "MediTruck",
+    "MidasIgniter",
+    "RancorSynoid",
+    "EnthralledSynoid",
+    "RailCannonWalker",
+    "SynoidGriffon",
+    "BlimpSynoid",
+    "SynoidCapitalShip",
+    "Chopper",
+    "MagMineSynoid"
+  ],
+  "structures": [
+    "MycoChoir",
+    "HellstormTurret",
+    "SatComTower",
+    "SynoidNukePack",
+    "HailfireMortar",
+    "PowerSupply",
+    "PowerMatrixAmplifier",
+    "MycoProcessor",
+    "GreaterProcessor",
+    "Garrison",
+    "SuperGarrison",
+    "Assembly",
+    "SuperAssembly",
+    "SynoidSyphon",
+    "BioSynthFacility",
+    "MunitionsDepot",
+    "Hangar",
+    "SuperHangar",
+    "SateliteUplink",
+    "PsiIndoctrinatorSynoid"
+  ],
+  "upgrades": [
+    "GruntHealth",
+    "CrematorEnableDefend",
+    "AtrocityShields",
+    "UmpireEnergyEfficiency",
+    "SynoidRegenBioSteel",
+    "SynoidMechanicalWeaponsLevel1",
+    "SynoidMechanicalWeaponsLevel2",
+    "SynoidMechanicalWeaponsLevel3",
+    "SynoidVehicleAndShipArmors1",
+    "SynoidVehicleAndShipArmors2",
+    "SynoidVehicleAndShipArmors3",
+    "LearnAnathemaAshigara",
+    "RicoshotCharges",
+    "MagMineCloaked",
+    "HellstormJavelinMissiles",
+    "SynoidInfantryWeaponsLevel1",
+    "SynoidInfantryWeaponsLevel2",
+    "SynoidInfantryWeaponsLevel3",
+    "SynoidInfantryArmorLevel1",
+    "SynoidInfantryArmorLevel2",
+    "SynoidInfantryArmorLevel3"
+  ]
+}

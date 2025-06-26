@@ -40,4 +40,5 @@ export class RaceDataComponent implements OnInit{
 
     return JSON.stringify(code, undefined, 4).replace(/"(\w+)":/g,(a,b) => {return b + ":"})
   }
+
 }

@@ -1,0 +1,713 @@
+{
+  "Name": {
+    "enUS": "BattleStation"
+  },
+  "Description": {
+    "enUS": "A massive production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>-  <b>Condor</b><br/>-  <b>undefined</b><br/>-  <b>undefined</b>"
+  },
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "UPL",
+  "DefaultAcquireLevel": "Offensive",
+  "Response": "Acquire",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 1800,
+  "LifeMax": 1800,
+  "LifeArmorName": {
+    "enUS": "UPL Building Plating"
+  },
+  "Mover": "Ground",
+  "StationaryTurningRate": 720,
+  "TurningRate": 720,
+  "Radius": 1.625,
+  "SeparationRadius": 1.625,
+  "MinimapRadius": 1.625,
+  "EditorCategories": "ObjectType:Structure,ObjectFamily:Melee",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 1,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDefeat",
+    "PreventDestroy",
+    "PenaltyRevealed",
+    "UseLineOfSight",
+    "TownAlert",
+    "NoPortraitTalk",
+    "ArmorDisabledWhileConstructing"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "UPLAirstrip2",
+  "HotkeyAlias": "UPLAirstrip2",
+  "SelectAlias": "UPLAirstrip2",
+  "SubgroupAlias": "UPLAirstrip2",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "Factory",
+  "AIEvaluateAlias": "UPLAirstrip2",
+  "ReviveType": "UPLAirstrip2",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 100
+    }
+  },
+  "ReviveInfoBase": {
+    "Charge": {
+      "Link": "UPLAirstrip2/Revive",
+      "Location": "Unit"
+    },
+    "Cooldown": {
+      "Link": "UPLAirstrip2/Revive",
+      "Location": "Unit"
+    }
+  },
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Mob": "Multiplayer",
+  "FogVisibility": "Snapshot",
+  "PlaneArray": [
+    "Ground"
+  ],
+  "Collide": [
+    "Burrow",
+    "Ground",
+    "Structure",
+    "RoachBurrow",
+    "ForceField",
+    "Small"
+  ],
+  "Attributes": [
+    "Armored",
+    "Mechanical",
+    "Structure"
+  ],
+  "Sight": 9,
+  "AttackTargetPriority": 11,
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Cancel",
+        "id": "CancelBuilding",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "SelectBuilder",
+        "id": "UPLSelectBuilder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
+        "Hotkey": "U"
+      },
+      {
+        "Info": {
+          "class": "CAbilQueue",
+          "Name": "Abil/Name/que5",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "que5",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "QueueCount": 1,
+          "Flags": {
+            "BestUnit": 1,
+            "NotifyAddOn": 1
+          },
+          "CmdButtonArray": {
+            "CancelLast": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "CancelSlot": {
+              "DefaultButtonFace": "CancelSlot"
+            }
+          },
+          "QueueSize": 5,
+          "id": "que5"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "que5,CancelLast",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Info": {},
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "Rally,Rally1",
+        "id": "Rally",
+        "Icon": "btn-ability-terran-setrallypoint",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
+        "Hotkey": "Y"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainCondor"
+          },
+          "Unit": [
+            "Condor"
+          ],
+          "Time": 75
+        },
+        "Unit": [
+          "Condor"
+        ],
+        "Time": 75,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLAirstripTrain,Train3",
+        "id": "UPLTrainCondor",
+        "Icon": "btn-unit-upl-condortransport",
+        "Name": {
+          "enUS": "Build Condor"
+        },
+        "Tooltip": {
+          "enUS": "Reinforced Aerial Transport with great air vision. <br/><br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainBehemoth"
+          },
+          "Unit": [
+            "UPLBehemoth"
+          ],
+          "Time": 90
+        },
+        "Unit": [
+          "UPLBehemoth"
+        ],
+        "Time": 90,
+        "Cost": {
+          "Minerals": 400,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -6
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLAirstripTrain,Train4",
+        "id": "UPLTrainBehemoth",
+        "Icon": "btn-starship",
+        "Name": {
+          "enUS": "Build Behemoth"
+        },
+        "Tooltip": {
+          "enUS": "Slow, Massive anti-ground bombing cruiser, excel at delivering devastating damage to land units below them. Can cause friendly fire.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+        },
+        "Hotkey": "B"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainZ2"
+          },
+          "Unit": [
+            "UPLZ2"
+          ],
+          "Time": 70
+        },
+        "Unit": [
+          "UPLZ2"
+        ],
+        "Time": 70,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -6
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLManufacturingFacilityTrain,Train22",
+        "id": "UPLTrainZ2",
+        "Icon": "btn-unit-upl-z2",
+        "Name": {
+          "enUS": "Build Z2"
+        },
+        "Tooltip": {
+          "enUS": "Powerful mechanical combatant with Jump Jet, Lorna, Nova Psionic Strike and Weapon Enhancement abilities.. Energy user. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+        },
+        "Hotkey": "Z"
+      },
+      {
+        "Upgrade": "StarMecha",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "StarMecha",
+            "Requirements": "UnknownRequirement32"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 70,
+          "Upgrade": "StarMecha"
+        },
+        "Time": 70,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLAirstripResearch,Research7",
+        "id": "StarMecha",
+        "Icon": "btn-starmechaicon",
+        "Name": {
+          "enUS": "Star Mecha"
+        },
+        "Tooltip": {
+          "enUS": "Increase the health of <span style=\"color: ffff8a\">CARR</span>, <span style=\"color: ffff8a\">Z1>and <span style=\"color: ffff8a\">Z2</span> by 20%."
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Upgrade": "StarArmor",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "StarArmor",
+            "Requirements": "UnknownRequirement322"
+          },
+          "Resource": {
+            "Minerals": 300,
+            "Vespene": 300
+          },
+          "Time": 150,
+          "Upgrade": "StarArmor"
+        },
+        "Time": 150,
+        "Cost": {
+          "Minerals": 300,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLAirstripResearch,Research6",
+        "id": "StarArmor",
+        "Icon": "btn-stararmoricon2",
+        "Name": {
+          "enUS": "Star Armor"
+        },
+        "Tooltip": {
+          "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span>, <span style=\"color: ffff8a\">Osprey</span>, <span style=\"color: ffff8a\">Condor</span>and <span style=\"color: ffff8a\">Behemoth</span> by 2."
+        },
+        "Hotkey": "A"
+      }
+    ]
+  },
+  "ScoreResult": "BuildOrder",
+  "SubgroupPriority": 4,
+  "GlossaryCategory": "Unit/Category/0UPLBuildings",
+  "GlossaryPriority": 32,
+  "HotkeyCategory": "Unit/Category/UPLUnits",
+  "id": "UPLAirstrip2",
+  "DeathTime": 0.5,
+  "Facing": 225,
+  "LifeArmor": 1,
+  "CostCategory": "Technology",
+  "CostResource": {
+    "Minerals": 150,
+    "Vespene": 100
+  },
+  "RepairTime": 50,
+  "Footprint": "Footprint5x5Contour2",
+  "DeadFootprint": "Footprint5x5Contour2",
+  "PlacementFootprint": "Footprint5x5DropOff2",
+  "ScoreMake": 300,
+  "ScoreKill": 300,
+  "TechAliasArray": [
+    "Alias_UPLManufacturingFacility"
+  ],
+  "TechTreeProducedUnitArray": [
+    "RaptorJet",
+    "Osprey",
+    "Condor"
+  ],
+  "DataCollection": "UPLManufacturingFacility",
+  "Icon": "battlestation 2",
+  "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
+  "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+  "Weapons": [],
+  "Behaviors": [
+    {
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
+    }
+  ],
+  "Abilities": [
+    {
+      "id": "BuildInProgress",
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
+    },
+    {
+      "id": "que5",
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
+    },
+    {
+      "id": "Rally",
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
+    },
+    {
+      "id": "UPLAirstripTrain",
+      "Name": {
+        "enUS": "Train"
+      }
+    },
+    {
+      "id": "UPLAirstripResearch",
+      "Name": {
+        "enUS": "Research"
+      }
+    },
+    {
+      "id": "UPLManufacturingFacilityTrain",
+      "Name": {
+        "enUS": "Train"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "UPLBuild",
+    "UPLAirstrip2",
+    "Barracks2"
+  ],
+  "$Requirements": [],
+  "$Production": [
+    "Condor",
+    "UPLBehemoth",
+    "UPLZ2"
+  ],
+  "$Research": [
+    "StarMecha",
+    "StarArmor"
+  ],
+  "$Morph": [],
+  "$Phase": [],
+  "$Producers": [
+    "MiningDrone"
+  ],
+  "$Commands": [
+    {
+      "AbilCmd": "BuildInProgress,Cancel",
+      "id": "CancelBuilding",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
+    },
+    {
+      "AbilCmd": "que5,CancelLast",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
+    },
+    {
+      "AbilCmd": "Rally,Rally1",
+      "id": "Rally",
+      "Icon": "btn-ability-terran-setrallypoint",
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
+    },
+    {
+      "AbilCmd": "UPLAirstripTrain,Train3",
+      "id": "UPLTrainCondor",
+      "Icon": "btn-unit-upl-condortransport",
+      "Name": {
+        "enUS": "Build Condor"
+      },
+      "Tooltip": {
+        "enUS": "Reinforced Aerial Transport with great air vision. <br/><br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLAirstripTrain,Train4",
+      "id": "UPLTrainBehemoth",
+      "Icon": "btn-starship",
+      "Name": {
+        "enUS": "Build Behemoth"
+      },
+      "Tooltip": {
+        "enUS": "Slow, Massive anti-ground bombing cruiser, excel at delivering devastating damage to land units below them. Can cause friendly fire.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLManufacturingFacilityTrain,Train22",
+      "id": "UPLTrainZ2",
+      "Icon": "btn-unit-upl-z2",
+      "Name": {
+        "enUS": "Build Z2"
+      },
+      "Tooltip": {
+        "enUS": "Powerful mechanical combatant with Jump Jet, Lorna, Nova Psionic Strike and Weapon Enhancement abilities.. Energy user. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLAirstripResearch,Research7",
+      "id": "StarMecha",
+      "Icon": "btn-starmechaicon",
+      "Name": {
+        "enUS": "Star Mecha"
+      },
+      "Tooltip": {
+        "enUS": "Increase the health of <span style=\"color: ffff8a\">CARR</span>, <span style=\"color: ffff8a\">Z1>and <span style=\"color: ffff8a\">Z2</span> by 20%."
+      }
+    },
+    {
+      "AbilCmd": "UPLAirstripResearch,Research6",
+      "id": "StarArmor",
+      "Icon": "btn-stararmoricon2",
+      "Name": {
+        "enUS": "Star Armor"
+      },
+      "Tooltip": {
+        "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span>, <span style=\"color: ffff8a\">Osprey</span>, <span style=\"color: ffff8a\">Condor</span>and <span style=\"color: ffff8a\">Behemoth</span> by 2."
+      }
+    }
+  ]
+}

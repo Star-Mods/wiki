@@ -1,0 +1,1545 @@
+{
+  "Name": {
+    "enUS": "Science Facility"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for most of Umojan Units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Advanced units at nearby production facilities"
+  },
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "TerU",
+  "DefaultAcquireLevel": "Offensive",
+  "Response": "Acquire",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 850,
+  "LifeMax": 850,
+  "LifeArmorName": {
+    "enUS": "Umojan Building Plating"
+  },
+  "Mover": "Ground",
+  "StationaryTurningRate": 719.4726,
+  "TurningRate": 719.4726,
+  "Radius": 1.25,
+  "SeparationRadius": 1.25,
+  "MinimapRadius": 1.75,
+  "EditorCategories": "ObjectType:Structure,ObjectFamily:Melee",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 1,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDefeat",
+    "PreventDestroy",
+    "PenaltyRevealed",
+    "UseLineOfSight",
+    "TownAlert",
+    "NoPortraitTalk",
+    "ArmorDisabledWhileConstructing"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "UmojanScienceFacilityRed",
+  "HotkeyAlias": "UmojanScienceFacilityRed",
+  "SelectAlias": "UmojanScienceFacilityRed",
+  "SubgroupAlias": "UmojanScienceFacilityRed",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "UmojanScienceFacilityRed",
+  "AIEvaluateAlias": "UmojanScienceFacilityRed",
+  "ReviveType": "UmojanScienceFacilityRed",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 100
+    }
+  },
+  "ReviveInfoBase": {
+    "Charge": {
+      "Link": "UmojanScienceFacilityRed/Revive",
+      "Location": "Unit"
+    },
+    "Cooldown": {
+      "Link": "UmojanScienceFacilityRed/Revive",
+      "Location": "Unit"
+    }
+  },
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Facing": 315,
+  "Mob": "Multiplayer",
+  "FogVisibility": "Snapshot",
+  "PlaneArray": [
+    "Ground"
+  ],
+  "Collide": [
+    "Burrow",
+    "Ground",
+    "Structure",
+    "RoachBurrow",
+    "ForceField",
+    "Locust",
+    "Phased",
+    "Small"
+  ],
+  "Attributes": [
+    "Armored",
+    "Mechanical",
+    "Structure"
+  ],
+  "LifeArmor": 1,
+  "ShieldsStart": 850,
+  "ShieldsMax": 850,
+  "ShieldRegenDelay": 10,
+  "ShieldRegenRate": 2,
+  "ShieldArmorName": {
+    "enUS": "Umojan Plasma Shields"
+  },
+  "Sight": 9,
+  "CostCategory": "Technology",
+  "CostResource": {
+    "Minerals": 100,
+    "Vespene": 25
+  },
+  "RepairTime": 35,
+  "AttackTargetPriority": 11,
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilQueue",
+          "Name": "Abil/Name/que5",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "que5",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "QueueCount": 1,
+          "Flags": {
+            "BestUnit": 1,
+            "NotifyAddOn": 1
+          },
+          "CmdButtonArray": {
+            "CancelLast": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "CancelSlot": {
+              "DefaultButtonFace": "CancelSlot"
+            }
+          },
+          "QueueSize": 5,
+          "id": "que5"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "que5,CancelLast",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Cancel",
+        "id": "CancelBuilding",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
+        "Hotkey": "Esc"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "UmojanPowerLevel4MCS",
+        "Icon": "btn-upgrade-stetmann-hivestetellitebonus",
+        "Name": {
+          "enUS": "Power Overcharge 3"
+        },
+        "Tooltip": {
+          "enUS": "Normal Power Level: Normal operation speed, no shield.<br/>Power Overcharge 1: Operate +<b>5</b>% faster. <b>25</b>% of max HP as max shield.<br/>Power Overcharge 2: Operate +<b>10</b>% faster. <b>50</b>% of max HP as max shield.<br/><span style=\"color: 55FFFF\">Power Overcharge 3: Operate +<b>15</b>% faster. <b>100</b>% of max HP as max shield.</span>"
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "UmojanPowerLevel3MCS",
+        "Icon": "btn-upgrade-stetmann-lairstetellitebonus",
+        "Name": {
+          "enUS": "Power Overcharge 2"
+        },
+        "Tooltip": {
+          "enUS": "Normal Power Level: Normal operation speed, no shield.<br/>Power Overcharge 1: Operate +<b>5</b>% faster. <b>25</b>% of max HP as max shield.<br/><span style=\"color: 55FFFF\">Power Overcharge 2: Operate +<b>10</b>% faster. <b>50</b>% of max HP as max shield.</span><br/>Power Overcharge 3: Operate +<b>15</b>% faster. <b>100</b>% of max HP as max shield."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "UmojanPowerLevel2MCS",
+        "Icon": "btn-upgrade-stetmann-hatcherystetellitebonus",
+        "Name": {
+          "enUS": "Power Overcharge 1"
+        },
+        "Tooltip": {
+          "enUS": "Normal Power Level: Normal operation speed, no shield.<br/><span style=\"color: 55FFFF\">Power Overcharge 1: Operate +<b>5</b>% faster. <b>25</b>% of max HP as max shield.</span><br/>Power Overcharge 2: Operate +<b>10</b>% faster. <b>50</b>% of max HP as max shield.<br/>Power Overcharge 3: Operate +<b>15</b>% faster. <b>100</b>% of max HP as max shield."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "UmojanPowerLevel1MCS",
+        "Icon": "btn-ability-mengsk-thor-bigboycover",
+        "Name": {
+          "enUS": "Normal Power Level"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 55FFFF\">Normal Power Level: Normal operation speed, no shield.</span><br/>Power Overcharge 1: Operate +<b>5</b>% faster. <b>25</b>% of max HP as max shield.<br/>Power Overcharge 2: Operate +<b>10</b>% faster. <b>50</b>% of max HP as max shield.<br/>Power Overcharge 3: Operate +<b>15</b>% faster. <b>100</b>% of max HP as max shield."
+        }
+      },
+      {
+        "Info": {
+          "SectionArray": {
+            "Abils": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            },
+            "Actor": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            }
+          },
+          "Unit": "UmojanScienceFacilityGreen"
+        },
+        "Unit": "UmojanScienceFacilityGreen",
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanScienceGreen,Execute",
+        "id": "UmojanScienceGreen",
+        "Icon": "btn-building-terran-starport",
+        "Name": {
+          "enUS": "Specialize in Starship"
+        },
+        "Tooltip": {
+          "enUS": "Specialize this Science Facility in Starship Researches."
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "SelectBuilder",
+        "id": "SelectBuilder",
+        "Icon": "btn-upgrade-terran-weaponrefit",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
+        "Hotkey": "Q"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "UmojanScienceRed",
+        "Icon": "btn-building-terran-barracks",
+        "Name": {
+          "enUS": "Specialize in Infantry"
+        },
+        "Tooltip": {
+          "enUS": "Specialize this Science Facility in Infantry Researches."
+        },
+        "Hotkey": "I"
+      },
+      {
+        "Info": {
+          "SectionArray": {
+            "Abils": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            },
+            "Actor": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Delay": 5
+              }
+            }
+          },
+          "Unit": "UmojanScienceFacilityBlue"
+        },
+        "Unit": "UmojanScienceFacilityBlue",
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanScienceBlue,Execute",
+        "id": "UmojanScienceBlue",
+        "Icon": "btn-building-terran-factory",
+        "Name": {
+          "enUS": "Specialize in Vehicle"
+        },
+        "Tooltip": {
+          "enUS": "Specialize this Science Facility in Vehicle Researches."
+        },
+        "Hotkey": "V"
+      },
+      {
+        "Upgrade": "UmojanCombatShield",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchCombatShield",
+            "Requirements": "LearnUmojanCombatShield"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 60,
+          "Upgrade": "UmojanCombatShield"
+        },
+        "Time": 60,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceRed,Research3",
+        "id": "UmojanResearchCombatShield",
+        "Icon": "btn-techupgrade-terran-combatshield-color",
+        "Name": {
+          "enUS": "Research Combat Shield"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: ffff8a\">Preatorians</span> gain +5 life and +15 shield."
+        },
+        "Hotkey": "C"
+      },
+      {
+        "Upgrade": "UmojanWeaponPowerAccumulator",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchWeaponPowerAccumulator",
+            "Requirements": "LearnUmojanWeaponPowerAccumulator"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 60,
+          "Upgrade": "UmojanWeaponPowerAccumulator"
+        },
+        "Time": 60,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceRed,Research1",
+        "id": "UmojanResearchWeaponPowerAccumulator",
+        "Icon": "btn-upgrade-raynor-phobosclassweaponssystem",
+        "Name": {
+          "enUS": "Research Weapon Power Accumulator"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Preatorians</span> to attack <b>2</b> more times once every <b>5.0</b> seconds."
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Upgrade": "UmojanPlasmaRecycler",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchPlasmaRecycler",
+            "Requirements": "LearnUmojanPlasmaRecycler"
+          },
+          "Resource": {
+            "Minerals": 75,
+            "Vespene": 75
+          },
+          "Time": 80,
+          "Upgrade": "UmojanPlasmaRecycler"
+        },
+        "Time": 80,
+        "Cost": {
+          "Minerals": 75,
+          "Vespene": 75,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceRed,Research2",
+        "id": "UmojanResearchPlasmaRecycler",
+        "Icon": "btn-upgrade-terran-plasmashot",
+        "Name": {
+          "enUS": "Research Plasma Recycler"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Plasmabats</span> to fire 2 additional Corrosive Blast before reloading. All charges are refueled at the same time."
+        },
+        "Hotkey": "P"
+      },
+      {
+        "Upgrade": "UmojanTransferShieldPower",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchTransferShieldPower",
+            "Requirements": "LearnUmojanDisruptionWeb"
+          },
+          "Resource": {
+            "Minerals": 125,
+            "Vespene": 125
+          },
+          "Time": 45,
+          "Upgrade": "UmojanTransferShieldPower"
+        },
+        "Time": 45,
+        "Cost": {
+          "Minerals": 125,
+          "Vespene": 125,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceRed,Research4",
+        "id": "UmojanResearchTransferShieldPower",
+        "Icon": "btn-ability-protoss-doubleshieldrecharge",
+        "Name": {
+          "enUS": "Research Transfer Shield Power"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Aloe</span> to use Transfer Shield Power. Drain a nearby ally shield to recharge up to <b>0</b> shield points of the target."
+        },
+        "Hotkey": "D"
+      },
+      {
+        "Upgrade": "UmojanShieldsLevel1",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanShieldsLevel1",
+            "Requirements": "LearnUmojanShield1"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 180,
+          "Upgrade": "UmojanShieldsLevel1"
+        },
+        "Time": 180,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research1",
+        "id": "UmojanShieldsLevel1",
+        "Icon": "btn-upgrade-protoss-shieldslevel1",
+        "Name": {
+          "enUS": "Upgrade Shields Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the shields of all Umojan units and structures."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Upgrade": "UmojanShieldsLevel2",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanShieldsLevel2",
+            "Requirements": "LearnUmojanShield2"
+          },
+          "Resource": {
+            "Minerals": 225,
+            "Vespene": 225
+          },
+          "Time": 215,
+          "Upgrade": "UmojanShieldsLevel2"
+        },
+        "Time": 215,
+        "Cost": {
+          "Minerals": 225,
+          "Vespene": 225,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research2",
+        "id": "UmojanShieldsLevel2",
+        "Icon": "btn-upgrade-protoss-shieldslevel2",
+        "Name": {
+          "enUS": "Upgrade Shields Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the shields of all Umojan units and structures."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Upgrade": "UmojanShieldsLevel3",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanShieldsLevel3",
+            "Requirements": "LearnUmojanShield3"
+          },
+          "Resource": {
+            "Minerals": 300,
+            "Vespene": 300
+          },
+          "Time": 250,
+          "Upgrade": "UmojanShieldsLevel3"
+        },
+        "Time": 250,
+        "Cost": {
+          "Minerals": 300,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research3",
+        "id": "UmojanShieldsLevel3",
+        "Icon": "btn-upgrade-protoss-shieldslevel3",
+        "Name": {
+          "enUS": "Upgrade Shields Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the shields of all Umojan units and structures."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Upgrade": "UmojanOverchargeGenerator",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanResearchOverchargeGenerator",
+            "Requirements": "LearnUmojanOverchargeGenerator"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 50
+          },
+          "Time": 100,
+          "Upgrade": "UmojanOverchargeGenerator"
+        },
+        "Time": 100,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research4",
+        "id": "UmojanResearchOverchargeGenerator",
+        "Icon": "btn-upgrade-terran-mobiusreactor",
+        "Name": {
+          "enUS": "Research Overcharge Generator"
+        },
+        "Tooltip": {
+          "enUS": "Equip the <span style=\"color: ffff8a\">Command Hub</span> with external generators, increasing nearby <span style=\"color: 00FFFF\">Power Level</span> plus an additional level for itself."
+        },
+        "Hotkey": "O"
+      },
+      {
+        "Upgrade": "UmojanPlasmaRecycler",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchPlasmaRecycler",
+            "Requirements": "LearnUmojanPlasmaRecycler"
+          },
+          "Resource": {
+            "Minerals": 75,
+            "Vespene": 75
+          },
+          "Time": 80,
+          "Upgrade": "UmojanPlasmaRecycler"
+        },
+        "Time": 80,
+        "Cost": {
+          "Minerals": 75,
+          "Vespene": 75,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceRed,Research2",
+        "id": "UmojanResearchPlasmaRecycler",
+        "Icon": "btn-upgrade-terran-plasmashot",
+        "Name": {
+          "enUS": "Research Plasma Recycler"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Plasmabats</span> to fire 2 additional Corrosive Blast before reloading. All charges are refueled at the same time."
+        },
+        "Hotkey": "P"
+      },
+      {
+        "Upgrade": "UmojanEngineeringSuit",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchEngineeringSuit",
+            "Requirements": "LearnUmojanEngineeringSuit"
+          },
+          "Resource": {
+            "Minerals": 75,
+            "Vespene": 25
+          },
+          "Time": 45,
+          "Upgrade": "UmojanEngineeringSuit"
+        },
+        "Time": 45,
+        "Cost": {
+          "Minerals": 75,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceBlue,Research4",
+        "id": "UmojanResearchEngineeringSuit",
+        "Icon": "ui_tipicon_campaign_space01-repair",
+        "Name": {
+          "enUS": "Research Engineering Suit"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Moirai</span> to build structures like an Engineering Tower.<br/>Enhance <span style=\"color: ffff8a\">Moirai</span> and <span style=\"color: ffff8a\">Engineering Towers</span> to repair rate by 200%."
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Upgrade": "UmojanCorvidReactor",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchRavenEnergyUpgrade",
+            "Requirements": "LearnUmojanCorvidReactor"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 79,
+          "Upgrade": "UmojanCorvidReactor"
+        },
+        "Time": 79,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceGreen,Research4",
+        "id": "UmojanResearchRavenEnergyUpgrade",
+        "Icon": "btn-upgrade-terran-corvidreactor",
+        "Name": {
+          "enUS": "Research Corvid Reactor"
+        },
+        "Tooltip": {
+          "enUS": "Increases the starting energy of <span style=\"color: ffff8a\">Crows</span> by <b>25</b>."
+        },
+        "Hotkey": "A"
+      },
+      {
+        "Upgrade": "UmojanShieldsLevel1",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanShieldsLevel1",
+            "Requirements": "LearnUmojanShield1"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 180,
+          "Upgrade": "UmojanShieldsLevel1"
+        },
+        "Time": 180,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research1",
+        "id": "UmojanShieldsLevel1",
+        "Icon": "btn-upgrade-protoss-shieldslevel1",
+        "Name": {
+          "enUS": "Upgrade Shields Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the shields of all Umojan units and structures."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Upgrade": "UmojanShieldsLevel3",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UmojanShieldsLevel3",
+            "Requirements": "LearnUmojanShield3"
+          },
+          "Resource": {
+            "Minerals": 300,
+            "Vespene": 300
+          },
+          "Time": 250,
+          "Upgrade": "UmojanShieldsLevel3"
+        },
+        "Time": 250,
+        "Cost": {
+          "Minerals": 300,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceAll,Research3",
+        "id": "UmojanShieldsLevel3",
+        "Icon": "btn-upgrade-protoss-shieldslevel3",
+        "Name": {
+          "enUS": "Upgrade Shields Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the shields of all Umojan units and structures."
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Upgrade": "UmojanStrikeMineReserve",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "UmojanResearchStrikeMineReserve",
+            "Requirements": "LearnUmojanStrikeMineReserve"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 80,
+          "Upgrade": "UmojanStrikeMineReserve"
+        },
+        "Time": 80,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmojanResearchScienceBlue,Research2",
+        "id": "UmojanResearchStrikeMineReserve",
+        "Icon": "btn-upgrade-siegetank-spidermines",
+        "Name": {
+          "enUS": "Research Strike Mine Reserve"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Pathfinders</span> to deploy up to <b>5</b> <span style=\"color: ffff8a\">Strike Mines</span>."
+        },
+        "Hotkey": "N"
+      }
+    ]
+  },
+  "Footprint": "Footprint3x3Contour",
+  "PlacementFootprint": "Footprint3x3",
+  "ScoreMake": 125,
+  "ScoreKill": 125,
+  "ScoreResult": "BuildOrder",
+  "SubgroupPriority": 3,
+  "TechAliasArray": [
+    "Alias_Umojan_ScienceFacility"
+  ],
+  "TechTreeUnlockedUnitArray": [
+    "UmojanPlasmabat",
+    "UmojanBattleTank",
+    "UmojanHexareme"
+  ],
+  "id": "UmojanScienceFacilityRed",
+  "GlossaryCategory": "Unit/Category/UmojanUnits",
+  "GlossaryPriority": 39,
+  "HotkeyCategory": "Unit/Category/UmojanUnits",
+  "Icon": "btn-building-terran-sciencefacility",
+  "Model": "ScienceFacility",
+  "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
+  "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+  "Weapons": [],
+  "Behaviors": [
+    {
+      "id": "UmojanPowerUpgradeOtherBuilding",
+      "Name": {
+        "enUS": "Power Upgrade"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanPowerUpgradeHiddenConstructionSpeed",
+      "Name": {
+        "enUS": "Power Upgrade"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanPowerLevel0",
+      "Name": {
+        "enUS": "Umojan - Power Level 0"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanPowerLevel1",
+      "Name": {
+        "enUS": "Umojan - Power Level 1"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanPowerLevel2",
+      "Name": {
+        "enUS": "Umojan - Power Level 2"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanPowerLevel3",
+      "Name": {
+        "enUS": "Umojan - Power Level 3"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UmojanScienceRed",
+      "Icon": "btn-building-terran-sciencefacility",
+      "Name": {
+        "enUS": "Umojan - Science! Red"
+      },
+      "Tooltip": "-"
+    }
+  ],
+  "Abilities": [
+    {
+      "id": "BuildInProgress",
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
+    },
+    {
+      "id": "que5",
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
+    },
+    {
+      "id": "UmojanResearchScienceAll",
+      "Name": {
+        "enUS": "Umojan - Research (Science All)"
+      }
+    },
+    {
+      "id": "UmojanResearchScienceRed",
+      "Name": {
+        "enUS": "Umojan - Research (Science Red)"
+      }
+    },
+    {
+      "id": "UmojanScienceBlue",
+      "Name": {
+        "enUS": "Science! (Blue)"
+      }
+    },
+    {
+      "id": "UmojanScienceGreen",
+      "Name": {
+        "enUS": "Science! (Green)"
+      }
+    },
+    {
+      "id": "UmojanScienceGreen",
+      "Name": {
+        "enUS": "Science! (Green)"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "UmojanScienceFacilityInfantrySpecialisedRedSearchValidator",
+    "UmojanScienceFacilityRed",
+    "UmojanScienceFacilityBlue",
+    "UmojanScienceFacilityGreen",
+    "UmojanScienceRed",
+    "UmojanScienceFacilityRed",
+    "UmojanShieldsLevel2",
+    "UmojanShields",
+    "UmojanShieldsLevel3",
+    "UmojanShieldsLevel1",
+    "UmojanBuild"
+  ],
+  "$Requirements": [],
+  "$Production": [],
+  "$Research": [
+    "UmojanCombatShield",
+    "UmojanWeaponPowerAccumulator",
+    "UmojanPlasmaRecycler",
+    "UmojanTransferShieldPower",
+    "UmojanShieldsLevel1",
+    "UmojanShieldsLevel2",
+    "UmojanShieldsLevel3",
+    "UmojanOverchargeGenerator",
+    "UmojanEngineeringSuit",
+    "UmojanCorvidReactor",
+    "UmojanStrikeMineReserve"
+  ],
+  "$Morph": [],
+  "$Phase": [
+    "UmojanScienceFacilityBlue",
+    "UmojanScienceFacilityGreen",
+    "UmojanScienceFacilityBlue"
+  ],
+  "$Producers": [
+    "UmojanMCS"
+  ],
+  "$Commands": [
+    {
+      "AbilCmd": "que5,CancelLast",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
+    },
+    {
+      "AbilCmd": "BuildInProgress,Cancel",
+      "id": "CancelBuilding",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
+    },
+    {
+      "AbilCmd": "BuildInProgress,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
+    },
+    {
+      "AbilCmd": "UmojanScienceGreen,Execute",
+      "id": "UmojanScienceGreen",
+      "Icon": "btn-building-terran-starport",
+      "Name": {
+        "enUS": "Specialize in Starship"
+      },
+      "Tooltip": {
+        "enUS": "Specialize this Science Facility in Starship Researches."
+      }
+    },
+    {
+      "AbilCmd": "UmojanScienceBlue,Execute",
+      "id": "UmojanScienceBlue",
+      "Icon": "btn-building-terran-factory",
+      "Name": {
+        "enUS": "Specialize in Vehicle"
+      },
+      "Tooltip": {
+        "enUS": "Specialize this Science Facility in Vehicle Researches."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceRed,Research3",
+      "id": "UmojanResearchCombatShield",
+      "Icon": "btn-techupgrade-terran-combatshield-color",
+      "Name": {
+        "enUS": "Research Combat Shield"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: ffff8a\">Preatorians</span> gain +5 life and +15 shield."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceRed,Research1",
+      "id": "UmojanResearchWeaponPowerAccumulator",
+      "Icon": "btn-upgrade-raynor-phobosclassweaponssystem",
+      "Name": {
+        "enUS": "Research Weapon Power Accumulator"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Preatorians</span> to attack <b>2</b> more times once every <b>5.0</b> seconds."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceRed,Research2",
+      "id": "UmojanResearchPlasmaRecycler",
+      "Icon": "btn-upgrade-terran-plasmashot",
+      "Name": {
+        "enUS": "Research Plasma Recycler"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Plasmabats</span> to fire 2 additional Corrosive Blast before reloading. All charges are refueled at the same time."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceRed,Research4",
+      "id": "UmojanResearchTransferShieldPower",
+      "Icon": "btn-ability-protoss-doubleshieldrecharge",
+      "Name": {
+        "enUS": "Research Transfer Shield Power"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Aloe</span> to use Transfer Shield Power. Drain a nearby ally shield to recharge up to <b>0</b> shield points of the target."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research1",
+      "id": "UmojanShieldsLevel1",
+      "Icon": "btn-upgrade-protoss-shieldslevel1",
+      "Name": {
+        "enUS": "Upgrade Shields Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the shields of all Umojan units and structures."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research2",
+      "id": "UmojanShieldsLevel2",
+      "Icon": "btn-upgrade-protoss-shieldslevel2",
+      "Name": {
+        "enUS": "Upgrade Shields Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the shields of all Umojan units and structures."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research3",
+      "id": "UmojanShieldsLevel3",
+      "Icon": "btn-upgrade-protoss-shieldslevel3",
+      "Name": {
+        "enUS": "Upgrade Shields Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the shields of all Umojan units and structures."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research4",
+      "id": "UmojanResearchOverchargeGenerator",
+      "Icon": "btn-upgrade-terran-mobiusreactor",
+      "Name": {
+        "enUS": "Research Overcharge Generator"
+      },
+      "Tooltip": {
+        "enUS": "Equip the <span style=\"color: ffff8a\">Command Hub</span> with external generators, increasing nearby <span style=\"color: 00FFFF\">Power Level</span> plus an additional level for itself."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceRed,Research2",
+      "id": "UmojanResearchPlasmaRecycler",
+      "Icon": "btn-upgrade-terran-plasmashot",
+      "Name": {
+        "enUS": "Research Plasma Recycler"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Plasmabats</span> to fire 2 additional Corrosive Blast before reloading. All charges are refueled at the same time."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceBlue,Research4",
+      "id": "UmojanResearchEngineeringSuit",
+      "Icon": "ui_tipicon_campaign_space01-repair",
+      "Name": {
+        "enUS": "Research Engineering Suit"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Moirai</span> to build structures like an Engineering Tower.<br/>Enhance <span style=\"color: ffff8a\">Moirai</span> and <span style=\"color: ffff8a\">Engineering Towers</span> to repair rate by 200%."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceGreen,Research4",
+      "id": "UmojanResearchRavenEnergyUpgrade",
+      "Icon": "btn-upgrade-terran-corvidreactor",
+      "Name": {
+        "enUS": "Research Corvid Reactor"
+      },
+      "Tooltip": {
+        "enUS": "Increases the starting energy of <span style=\"color: ffff8a\">Crows</span> by <b>25</b>."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research1",
+      "id": "UmojanShieldsLevel1",
+      "Icon": "btn-upgrade-protoss-shieldslevel1",
+      "Name": {
+        "enUS": "Upgrade Shields Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the shields of all Umojan units and structures."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceAll,Research3",
+      "id": "UmojanShieldsLevel3",
+      "Icon": "btn-upgrade-protoss-shieldslevel3",
+      "Name": {
+        "enUS": "Upgrade Shields Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the shields of all Umojan units and structures."
+      }
+    },
+    {
+      "AbilCmd": "UmojanResearchScienceBlue,Research2",
+      "id": "UmojanResearchStrikeMineReserve",
+      "Icon": "btn-upgrade-siegetank-spidermines",
+      "Name": {
+        "enUS": "Research Strike Mine Reserve"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Pathfinders</span> to deploy up to <b>5</b> <span style=\"color: ffff8a\">Strike Mines</span>."
+      }
+    }
+  ]
+}

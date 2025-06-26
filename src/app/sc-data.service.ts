@@ -2,7 +2,6 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {BehaviorSubject, catchError, filter, Observable, of, retry, Subject, throwError} from "rxjs";
 import {ActivatedRoute, NavigationEnd, Router, UrlSegment} from "@angular/router";
 import {Inject, Injectable, InjectionToken, Optional} from '@angular/core';
-import {switchMap} from "rxjs/operators";
 export const ENVIRONMENT = new InjectionToken<{ [key: string]: any }>('environment');
 import {Title} from "@angular/platform-browser";
 import { Meta } from '@angular/platform-browser';
@@ -16,7 +15,9 @@ export class SCDataService {
 
   private readonly environment: any;
 
+  dataRoot: string
   imagesRoot: string
+  modelsRoot: string
   modID: string
   raceID: string
   entityCatalog: string
@@ -32,14 +33,13 @@ export class SCDataService {
   developer: boolean = false
   locales: any = [
     {locale: "enUS", title: "EN"},
-    {locale: "ruRU", title: "RU"},
-    {locale: "koKR", title: "KR"},
-    {locale: "zhCN", title: "CN"},
+    {locale: "ruRU", title: "RU"}
   ]
   locale: any
 
   setLocale(locale){
     this.locale = locale
+    localStorage.setItem("locale", locale.locale)
   }
   filteredWeapons(weapons){
     return weapons?.filter(Boolean).filter(item => item.id) || []
@@ -54,7 +54,7 @@ export class SCDataService {
     if(textValue.constructor === String){
       return textValue
     }
-    return textValue[this.locale.locales] || textValue["enUS"] || Object.values(textValue)[0]
+    return textValue[this.locale.locale] || textValue["enUS"] || Object.values(textValue)[0]
   }
   filteredUpgrades(upgrades){
     return upgrades?.map(u => u && this.raceData?.cache?.upgrades?.[u.id]).filter(Boolean) || []
@@ -66,15 +66,25 @@ export class SCDataService {
               @Optional() @Inject(ENVIRONMENT) environment: any
   ) {
     this.environment = environment !== null ? environment : {};
-    this.locale = this.locales[0]
+    this.dataRoot = this.environment.dataRoot
+    this.imagesRoot = this.environment.imagesRoot
+    this.modelsRoot = this.environment.modelsRoot
 
-    this.http.get(`data/mods.json`).subscribe(data => this.modsData = data)
+
+    this.locale = this.locales[0]
+    let storedLocale = localStorage.getItem("locale")
+    if(storedLocale){
+      this.locale = this.locales.find(l => l.locale ===storedLocale)
+    }
+
+    this.http.get(`${this.dataRoot}mods.json`).subscribe(data => this.modsData = data)
 
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     ).subscribe(e => {
       let [mod,race,catalog,entity] = this.router.url.substring(1).split("/")
 
+      let switchRace = this.raceID !== race
       mod = mod?.toLowerCase()
       race = race?.toLowerCase()
       entity = entity?.toLowerCase()
@@ -84,7 +94,7 @@ export class SCDataService {
         this.modID = mod
         if(mod){
           this.modLoading = true
-          this.http.get(`data/${mod}/index.json`).subscribe((data: SC2Data) => {
+          this.http.get(`${this.dataRoot}${mod}/index.json`).subscribe((data: SC2Data) => {
             this.modData = data
             this.modLoading = false
           },()=>{
@@ -96,48 +106,36 @@ export class SCDataService {
           this.modData = null
         }
       }
-      if(this.raceID !== race){
+      if(switchRace){
         this.raceID = race
         if(race){
-          this.http.get(`data/${this.modID}/race/${race}.json`).subscribe(data => {
+          this.http.get(`${this.dataRoot}${this.modID}/race/${race}.json`).subscribe(data => {
             this.raceData = data
+            this.updateTitle()
           },()=>{
             this.raceData = null
+            this.updateTitle()
           })
         }
         else{
           this.raceData = null
+          this.updateTitle()
         }
       }
-      if(this.entityID !== entity || this.entityCatalog !== catalog) {
+      if( this.entityID !== entity || this.entityCatalog !== catalog) {
         this.entityID = entity
         this.entityCatalog = catalog
 
         if(entity && catalog){
-          this.http.get(`data/${this.modID}/${catalog}/${entity}.json`).subscribe(data => {
+          this.http.get(`${this.dataRoot}${this.modID}/${catalog}/${entity}.json`).subscribe(data => {
 
-            let favIcon: HTMLLinkElement = document.querySelector('#favicon');
 
             switch(catalog){
               case "unit":
                 let unitData = data as SCUnit
                 this.unitData = unitData
                 this.upgradeData = null
-
-                let title = data ? 'ARC Wiki - ' + unitData.Race + ' ' + unitData.Name : 'ARC'
-                let icon =  unitData ? 'http://arc.hometlt.ru' + this.imagesRoot + unitData.Icon + '.png' : 'favioon.png'
-                let url =   `http://arc.hometlt.ru/datas/${this.modID}/${unitData.Race}/${unitData.id}`
-
-                this.title.setTitle(title);
-                // this.meta.updateTag({property: 'og:title', content: title});
-                // this.meta.updateTag({property: 'og:image', content: icon});
-                // this.meta.updateTag({property: 'og:type', content: 'website'});
-                // this.meta.updateTag({property: 'og:url', content: url})
-
-
-
-                favIcon.href = icon;
-
+                this.updateTitle()
                 break;
               case "upgrade":
                 this.unitData = null
@@ -146,36 +144,45 @@ export class SCDataService {
               default:
                 this.unitData = null
                 this.upgradeData = null
-
-                favIcon.href = 'favicon.ico';
             }
 
 
           },()=>{
             this.unitData = null
             this.upgradeData = null
+            this.updateTitle()
           })
         }
         else{
           this.unitData = null
           this.upgradeData = null
-
-          let title = 'ARC'
-          let icon =  'favioon.png'
-          let url =   `http://arc.hometlt.ru/datas/${this.modID}/`
-
-          this.title.setTitle(title);
-          this.meta.updateTag({property: 'og:title', content: title});
-          this.meta.updateTag({property: 'og:image', content: icon});
-          this.meta.updateTag({property: 'og:type', content: 'website'});
-          this.meta.updateTag({property: 'og:url', content: url})
+          this.updateTitle()
         }
       }
     })
 
 
-    this.imagesRoot = this.environment.imagesRoot
+  }
+  updateTitle(){
 
+    let favIcon: HTMLLinkElement = document.querySelector('#favicon');
+    let title = 'All Races Wiki'
+    let icon = 'favicon.ico'
+    if(this.unitData){
+      title = this.text(this.unitData.Name)
+      icon = `${this.imagesRoot}${this.unitData.Icon}` + '.png'
+    }
+    else if(this.raceData){
+      title =this.text(this.raceData.Name)
+      icon = `${this.imagesRoot}${this.raceData.Icon}` + '.png'
+    }
+
+    favIcon.href = icon;
+    this.title.setTitle(title);
+    this.meta.updateTag({property: 'og:title', content: title});
+    this.meta.updateTag({property: 'og:image', content: icon});
+    this.meta.updateTag({property: 'og:type', content: 'website'});
+    this.meta.updateTag({property: 'og:url', content: window.location.href})
   }
   modRoute( mod: any){
     return ['/', mod.id.toLowerCase()]

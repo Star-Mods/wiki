@@ -47,14 +47,14 @@
 <div class="container" *ngIf="scdata.modData">
   <nav>
     <races-list></races-list>
-    <div class="dropdown">
+    <div class="dropdown" title="Change Default Data Language (Incomplete)" >
       <button class="dropbtn">{{scdata.locale.title}}</button>
       <ul class="dropdown-content">
         <li *ngFor="let locale of scdata.locales" (click)="scdata.setLocale(locale)">{{ locale.title }}</li>
       </ul>
     </div>
 
-    <a *ngIf="scdata.modData.discord" target="_blank"  class="btn-discord" [href]="scdata.modData.discord"></a>
+    <a title="Join All Races Discord Server" *ngIf="scdata.modData.discord" target="_blank"  class="btn-discord" [href]="scdata.modData.discord"></a>
   </nav>
   <section>
     <article class="mod-info" *ngIf="!scdata.raceData">
@@ -188,35 +188,6 @@
               <div  class="unit-stats-info" >
                 <!--            <p><a target="_blank" [href]="scdata.unitURL(unit)">{{unit.Name}}</a></p>-->
                 <p class="unit-description" [innerHTML]="scdata.text(unit.Description)  | safe: 'html'"></p>
-                <p><span class="sc-attribute" *ngFor="let attribute of unit.Attributes">{{attribute}}</span></p>
-
-                <div class="unit-short-stats unit-stats">
-                  <div *ngIf="unit.LifeMax" class="unit-stat" [title]="unit.LifeArmorName">
-                    <sc-icon [src]="unit.LifeArmorIcon" class="short-icon unit-armor">
-                      <span *ngIf="unit.LifeArmor">{{unit.LifeArmor}}</span>
-                    </sc-icon>
-                    <span class="unit-stat-value">
-                      <ng-container *ngIf="unit.LifeStart && unit.LifeStart !== unit.LifeMax">{{unit.LifeStart}}<span class="smaller"> / </span></ng-container>{{unit.LifeMax}}
-                      <sub class="smaller" *ngIf="unit.LifeRegenRate">+{{unit.LifeRegenRate| number : '.1-1'}}/s</sub>
-                    </span>
-                  </div>
-                  <div *ngIf="unit.ShieldsMax" class="unit-stat" [title]="unit.ShieldsArmorName" >
-                    <sc-icon [src]="unit.ShieldArmorIcon" class="short-icon unit-shield">
-                      <span *ngIf="unit.ShieldArmor">{{unit.ShieldArmor}}</span>
-                    </sc-icon>
-                    <span class="unit-stat-value">
-                      <ng-container *ngIf="unit.ShieldsStart && unit.ShieldsStart !== unit.ShieldsMax">{{unit.ShieldsStart}}<span class="smaller"> / </span></ng-container>{{unit.ShieldsMax}}
-                      <sub class="smaller" *ngIf="unit.ShieldRegenRate">+{{unit.ShieldRegenRate| number : '.1-1'}}/s</sub>
-                    </span>
-                  </div>
-                  <div *ngIf="unit.EnergyMax" class="unit-stat ">
-                    <span class="resources-energy"></span>
-                    <span class="unit-stat-value">
-                      <ng-container *ngIf="unit.EnergyStart && unit.EnergyStart !== unit.EnergyMax">{{unit.EnergyStart}}<span class="smaller"> / </span></ng-container>{{unit.EnergyMax}}
-                      <sub class="smaller" *ngIf="unit.EnergyRegenRate">+{{unit.EnergyRegenRate| number : '.1-1'}}/s</sub>
-                    </span>
-                  </div>
-                </div>
 
                 <sc-unit-stats [unit]="unit"></sc-unit-stats>
 
@@ -279,6 +250,13 @@
                   <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Morph)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id" [routerLink]="scdata.unitRoute( unit)"></sc-icon>
               </div>
             </div>
+
+
+
+
+
+
+
 
             <!--        <div *ngIf="unit?.Requirements?.length">-->
             <!--          <div>Requirements: </div>-->
