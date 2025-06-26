@@ -24713,7 +24713,7 @@
       }
     }
 
-    const mq = [{path: "", pathMatch: "full", component: HE}, {
+    const mq = [{path: "web-wiki", pathMatch: "full", component: HE}, {
       matcher: n => ({consumed: n, parameters: {}}), component: (() => {
         class n {
           constructor(t) {
