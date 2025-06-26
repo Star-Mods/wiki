@@ -10737,7 +10737,7 @@
           }], this.environment = null !== o ? o : {}, this.dataRoot = this.environment.dataRoot, this.imagesRoot = this.environment.imagesRoot, this.modelsRoot = this.environment.modelsRoot, this.locale = this.locales[0];
           let a = localStorage.getItem("locale");
           a && (this.locale = this.locales.find(l => l.locale === a)), this.http.get(`${this.dataRoot}mods.json`).subscribe(l => this.modsData = l), this.router.events.pipe(Ir(l => l instanceof Fs)).subscribe(l => {
-            let [_, _2, c, u, d, h] = this.router.url.substring(1).split("/"), f = this.raceID !== u;
+            let [c, u, d, h] = this.router.url.substring(1).split("/"), f = this.raceID !== u;
             c = c?.toLowerCase(), u = u?.toLowerCase(), h = h?.toLowerCase(), d = d?.toLowerCase(), this.modID !== c && (this.modID = c, c ? (this.modLoading = !0, this.http.get(`${this.dataRoot}${c}/index.json`).subscribe(p => {
               this.modData = p, this.modLoading = !1
             }, () => {
