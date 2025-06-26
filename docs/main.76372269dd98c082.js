@@ -11416,9 +11416,9 @@
     })();
     const hy = {
       production: !1,
-      dataRoot: "./web-wiki/assets/data/",
-      imagesRoot: "./web-wiki/assets/icons/",
-      modelsRoot: "./web-wiki/assets/models/"
+      dataRoot: "./assets/data/",
+      imagesRoot: "./assets/icons/",
+      modelsRoot: "./assets/models/"
     };
 
     function nV(n, e) {
