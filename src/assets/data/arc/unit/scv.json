@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "SCV",
-    "ruRU": "SCV"
+    "ruRU": "КСМ "
   },
   "Description": {
     "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 45,
   "LifeArmorName": {
     "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
+    "ruRU": "Броня пехоты терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
@@ -123,6 +124,16 @@
     "Small"
   ],
   "Sight": 8,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "Repair",
+    "SCVHarvest",
+    "TerranBuild",
+    "SprayTerran",
+    "WorkerStopIdleAbilityVespene"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -213,11 +224,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -293,11 +304,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -389,11 +400,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -469,11 +480,11 @@
         "id": "AttackWorker",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -565,11 +576,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -720,11 +731,11 @@
         "Icon": "btn-ability-terran-repair",
         "Name": {
           "enUS": "Repair",
-          "ruRU": "Repair"
+          "ruRU": "Ремонтировать "
         },
         "Tooltip": {
           "enUS": "Restores life to mechanical units and structures at the cost of resources.",
-          "ruRU": "Restores life to mechanical units and structures at the cost of resources."
+          "ruRU": "Приказать отремонтировать механическую боевую единицу или строение, затратив некоторое количество ресурсов. "
         },
         "Hotkey": "R"
       },
@@ -825,11 +836,11 @@
         "Icon": "btn-ability-terran-gather",
         "Name": {
           "enUS": "Gather",
-          "ruRU": "Gather"
+          "ruRU": "Добывать "
         },
         "Tooltip": {
           "enUS": "Orders SCV to gather resources from a selected Mineral Field or Vespene Geyser.",
-          "ruRU": "Orders SCV to gather resources from a selected Mineral Field or Vespene Geyser."
+          "ruRU": "Приказывает КСМ добывать ресурсы на месторождении минералов или из веспенового гейзера."
         },
         "Hotkey": "G"
       },
@@ -930,11 +941,11 @@
         "Icon": "btn-command-returncargo",
         "Name": {
           "enUS": "Return Cargo",
-          "ruRU": "Return Cargo"
+          "ruRU": "Выгрузить ресурсы "
         },
         "Tooltip": {
           "enUS": "Returns the carried resources to the nearest drop-off point.",
-          "ruRU": "Returns the carried resources to the nearest drop-off point."
+          "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
         },
         "Hotkey": "C"
       },
@@ -957,11 +968,11 @@
         "Icon": "btn-command-terran-buildstructure",
         "Name": {
           "enUS": "Build Structure",
-          "ruRU": "Build Structure"
+          "ruRU": "Построить здание "
         },
         "Tooltip": {
           "enUS": "A list of basic structures.",
-          "ruRU": "A list of basic structures."
+          "ruRU": "Открывает список основных строений."
         },
         "Hotkey": "B"
       },
@@ -984,11 +995,11 @@
         "Icon": "btn-command-terran-buildadvancedstructure",
         "Name": {
           "enUS": "Build Advanced Structure",
-          "ruRU": "Build Advanced Structure"
+          "ruRU": "Построить дополнительное здание "
         },
         "Tooltip": {
           "enUS": "A list of advanced structures.",
-          "ruRU": "A list of advanced structures."
+          "ruRU": "Открывает список дополнительных строений."
         },
         "Hotkey": "V"
       },
@@ -1344,11 +1355,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -1503,7 +1514,7 @@
         },
         "Tooltip": {
           "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+          "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
         },
         "Hotkey": "Y"
       }
@@ -1540,11 +1551,11 @@
         "Icon": "btn-building-terran-commandcenter",
         "Name": {
           "enUS": "Build Command Center",
-          "ruRU": "Build Command Center"
+          "ruRU": "Построить командный центр "
         },
         "Tooltip": {
           "enUS": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs",
-          "ruRU": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs"
+          "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Может взлетать.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– строительство КСМ "
         },
         "Hotkey": "C"
       },
@@ -1582,11 +1593,11 @@
         "Icon": "btn-building-terran-refinery",
         "Name": {
           "enUS": "Build Refinery",
-          "ruRU": "Build Refinery"
+          "ruRU": "Построить перерабатывающий завод "
         },
         "Tooltip": {
           "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
-          "ruRU": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+          "ruRU": "Позволяет добывать веспен. Строится на веспеновом гейзере. "
         },
         "Hotkey": "R"
       },
@@ -1621,11 +1632,11 @@
         "Icon": "btn-building-terran-supplydepot",
         "Name": {
           "enUS": "Build Supply Depot",
-          "ruRU": "Build Supply Depot"
+          "ruRU": "Построить хранилище "
         },
         "Tooltip": {
           "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
-          "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+          "ruRU": "Служит для хранения припасов.<br/>Увеличивает максимальный размер армии.<br/>Хранилища можно скрывать под землей и поднимать на поверхность."
         },
         "Hotkey": "S"
       },
@@ -1661,11 +1672,11 @@
         "Icon": "btn-building-terran-barracks",
         "Name": {
           "enUS": "Build Barracks",
-          "ruRU": "Build Barracks"
+          "ruRU": "Построить казармы "
         },
         "Tooltip": {
           "enUS": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers",
-          "ruRU": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers"
+          "ruRU": "Тренировочный комплекс пехоты.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение морпехов<br/>– обучение головорезов<br/>– постройка бункеров с помощью КСМ<br/>– переоборудование командных центров в станции наблюдения "
         },
         "Hotkey": "B"
       },
@@ -1701,11 +1712,11 @@
         "Icon": "btn-building-terran-engineeringbay",
         "Name": {
           "enUS": "Build Engineering Bay",
-          "ruRU": "Build Engineering Bay"
+          "ruRU": "Построить инженерный комплекс "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
-          "ruRU": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers"
+          "ruRU": "Позволяет улучшать пехоту и строения. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– постройка ракетных турелей с помощью КСМ<br/>– постройка радарных вышек с помощью КСМ<br/>– переоборудование командного центра в планетарную крепость"
         },
         "Hotkey": "E"
       },
@@ -1741,11 +1752,11 @@
         "Icon": "btn-building-terran-bunker",
         "Name": {
           "enUS": "Build Bunker",
-          "ruRU": "Build Bunker"
+          "ruRU": "Построить бункер "
         },
         "Tooltip": {
           "enUS": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>",
-          "ruRU": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>"
+          "ruRU": "Оборонительное строение.<br/>Помещенная в бункер пехота может вести огонь.<br/><br/><span style=\"color: #ffff8a\">Бонус: +1 к дальности атаки находящихся внутри войск.</span>"
         },
         "Hotkey": "U"
       },
@@ -1781,11 +1792,11 @@
         "Icon": "btn-building-terran-missileturret",
         "Name": {
           "enUS": "Build Missile Turret",
-          "ruRU": "Build Missile Turret"
+          "ruRU": "Построить ракетную турель "
         },
         "Tooltip": {
           "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
         },
         "Hotkey": "T"
       },
@@ -1821,11 +1832,11 @@
         "Icon": "btn-building-terran-sensordome",
         "Name": {
           "enUS": "Build Sensor Tower",
-          "ruRU": "Build Sensor Tower"
+          "ruRU": "Построить радарную вышку "
         },
         "Tooltip": {
           "enUS": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.",
-          "ruRU": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy."
+          "ruRU": "Обнаруживает вражеские войска в большом радиусе. Область обнаружения видна противникам. "
         },
         "Hotkey": "N"
       },
@@ -1847,11 +1858,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -1889,11 +1900,11 @@
         "Icon": "btn-building-terran-ghostacademy",
         "Name": {
           "enUS": "Build Ghost Academy",
-          "ruRU": "Build Ghost Academy"
+          "ruRU": "Построить академию призраков "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks",
-          "ruRU": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks"
+          "ruRU": "Позволяет улучшать призраков. Служит для строительства ядерных ракет.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>- обучение призраков в казармах"
         },
         "Hotkey": "G"
       },
@@ -1929,11 +1940,11 @@
         "Icon": "btn-building-terran-factory",
         "Name": {
           "enUS": "Build Factory",
-          "ruRU": "Build Factory"
+          "ruRU": "Построить завод "
         },
         "Tooltip": {
           "enUS": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines",
-          "ruRU": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines"
+          "ruRU": "Завод по производству бронетехники.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллионов»<br/>– производство мин «Вдова»<br/>– производство «Циклонов»"
         },
         "Hotkey": "F"
       },
@@ -1969,11 +1980,11 @@
         "Icon": "btn-building-terran-armory",
         "Name": {
           "enUS": "Build Armory",
-          "ruRU": "Build Armory"
+          "ruRU": "Построить арсенал "
         },
         "Tooltip": {
           "enUS": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory",
-          "ruRU": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory"
+          "ruRU": "Позволяет улучшать броню и оружие боевых единиц, производимых на заводе и в космопорте. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллитронов» на заводе<br/>– производство «Торов» на заводе"
         },
         "Hotkey": "A"
       },
@@ -2009,11 +2020,11 @@
         "Icon": "btn-building-terran-starport",
         "Name": {
           "enUS": "Build Starport",
-          "ruRU": "Build Starport"
+          "ruRU": "Построить космопорт "
         },
         "Tooltip": {
           "enUS": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs",
-          "ruRU": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs"
+          "ruRU": "Авиационный завод.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Викингов»<br/>– производство медэваков<br/>– производство «Освободителей»"
         },
         "Hotkey": "S"
       },
@@ -2049,11 +2060,11 @@
         "Icon": "btn-building-terran-fusioncore",
         "Name": {
           "enUS": "Build Fusion Core",
-          "ruRU": "Build Fusion Core"
+          "ruRU": "Построить центр синтеза "
         },
         "Tooltip": {
           "enUS": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
-          "ruRU": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport"
+          "ruRU": "Позволяет улучшать медэваки, «Освободители» и крейсеры.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство крейсеров в космопорте"
         },
         "Hotkey": "C"
       },
@@ -2075,11 +2086,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -2094,6 +2105,11 @@
   "GlossaryCategory": "Unit/Category/TerranUnits",
   "HotkeyCategory": "Unit/Category/TerranUnits",
   "GlossaryPriority": 10,
+  "WeaponArray": [
+    {
+      "Link": "FusionCutter"
+    }
+  ],
   "id": "SCV",
   "Icon": "btn-unit-terran-scv",
   "Model": "SCV",
@@ -2101,17 +2117,26 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "FusionCutter",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
-      "Name": {
-        "enUS": "Fusion Cutter",
-        "ruRU": "Fusion Cutter"
-      },
-      "Amount": 5,
-      "Kind": "Melee",
       "TargetFilters": "Ground",
       "Range": 0.2,
-      "Period": 1.5
+      "Period": 1.5,
+      "Options": {
+        "Melee": 1
+      },
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Slowing",
+      "id": "FusionCutter",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Fusion Cutter",
+        "ruRU": "Терморезак "
+      },
+      "Amount": 5,
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -2215,11 +2240,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -2228,11 +2253,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -2241,11 +2266,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -2253,11 +2278,11 @@
       "id": "AttackWorker",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -2266,11 +2291,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -2279,11 +2304,11 @@
       "Icon": "btn-ability-terran-repair",
       "Name": {
         "enUS": "Repair",
-        "ruRU": "Repair"
+        "ruRU": "Ремонтировать "
       },
       "Tooltip": {
         "enUS": "Restores life to mechanical units and structures at the cost of resources.",
-        "ruRU": "Restores life to mechanical units and structures at the cost of resources."
+        "ruRU": "Приказать отремонтировать механическую боевую единицу или строение, затратив некоторое количество ресурсов. "
       }
     },
     {
@@ -2292,11 +2317,11 @@
       "Icon": "btn-ability-terran-gather",
       "Name": {
         "enUS": "Gather",
-        "ruRU": "Gather"
+        "ruRU": "Добывать "
       },
       "Tooltip": {
         "enUS": "Orders SCV to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "ruRU": "Orders SCV to gather resources from a selected Mineral Field or Vespene Geyser."
+        "ruRU": "Приказывает КСМ добывать ресурсы на месторождении минералов или из веспенового гейзера."
       }
     },
     {
@@ -2305,11 +2330,11 @@
       "Icon": "btn-command-returncargo",
       "Name": {
         "enUS": "Return Cargo",
-        "ruRU": "Return Cargo"
+        "ruRU": "Выгрузить ресурсы "
       },
       "Tooltip": {
         "enUS": "Returns the carried resources to the nearest drop-off point.",
-        "ruRU": "Returns the carried resources to the nearest drop-off point."
+        "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
       }
     },
     {
@@ -2318,11 +2343,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -2335,7 +2360,7 @@
       },
       "Tooltip": {
         "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
       }
     },
     {
@@ -2344,11 +2369,11 @@
       "Icon": "btn-building-terran-commandcenter",
       "Name": {
         "enUS": "Build Command Center",
-        "ruRU": "Build Command Center"
+        "ruRU": "Построить командный центр "
       },
       "Tooltip": {
         "enUS": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs",
-        "ruRU": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs"
+        "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Может взлетать.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– строительство КСМ "
       }
     },
     {
@@ -2357,11 +2382,11 @@
       "Icon": "btn-building-terran-refinery",
       "Name": {
         "enUS": "Build Refinery",
-        "ruRU": "Build Refinery"
+        "ruRU": "Построить перерабатывающий завод "
       },
       "Tooltip": {
         "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
-        "ruRU": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+        "ruRU": "Позволяет добывать веспен. Строится на веспеновом гейзере. "
       }
     },
     {
@@ -2370,11 +2395,11 @@
       "Icon": "btn-building-terran-supplydepot",
       "Name": {
         "enUS": "Build Supply Depot",
-        "ruRU": "Build Supply Depot"
+        "ruRU": "Построить хранилище "
       },
       "Tooltip": {
         "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
-        "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+        "ruRU": "Служит для хранения припасов.<br/>Увеличивает максимальный размер армии.<br/>Хранилища можно скрывать под землей и поднимать на поверхность."
       }
     },
     {
@@ -2383,11 +2408,11 @@
       "Icon": "btn-building-terran-barracks",
       "Name": {
         "enUS": "Build Barracks",
-        "ruRU": "Build Barracks"
+        "ruRU": "Построить казармы "
       },
       "Tooltip": {
         "enUS": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers",
-        "ruRU": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers"
+        "ruRU": "Тренировочный комплекс пехоты.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение морпехов<br/>– обучение головорезов<br/>– постройка бункеров с помощью КСМ<br/>– переоборудование командных центров в станции наблюдения "
       }
     },
     {
@@ -2396,11 +2421,11 @@
       "Icon": "btn-building-terran-engineeringbay",
       "Name": {
         "enUS": "Build Engineering Bay",
-        "ruRU": "Build Engineering Bay"
+        "ruRU": "Построить инженерный комплекс "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
-        "ruRU": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers"
+        "ruRU": "Позволяет улучшать пехоту и строения. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– постройка ракетных турелей с помощью КСМ<br/>– постройка радарных вышек с помощью КСМ<br/>– переоборудование командного центра в планетарную крепость"
       }
     },
     {
@@ -2409,11 +2434,11 @@
       "Icon": "btn-building-terran-bunker",
       "Name": {
         "enUS": "Build Bunker",
-        "ruRU": "Build Bunker"
+        "ruRU": "Построить бункер "
       },
       "Tooltip": {
         "enUS": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>",
-        "ruRU": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>"
+        "ruRU": "Оборонительное строение.<br/>Помещенная в бункер пехота может вести огонь.<br/><br/><span style=\"color: #ffff8a\">Бонус: +1 к дальности атаки находящихся внутри войск.</span>"
       }
     },
     {
@@ -2422,11 +2447,11 @@
       "Icon": "btn-building-terran-missileturret",
       "Name": {
         "enUS": "Build Missile Turret",
-        "ruRU": "Build Missile Turret"
+        "ruRU": "Построить ракетную турель "
       },
       "Tooltip": {
         "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-        "ruRU": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
       }
     },
     {
@@ -2435,11 +2460,11 @@
       "Icon": "btn-building-terran-sensordome",
       "Name": {
         "enUS": "Build Sensor Tower",
-        "ruRU": "Build Sensor Tower"
+        "ruRU": "Построить радарную вышку "
       },
       "Tooltip": {
         "enUS": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.",
-        "ruRU": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy."
+        "ruRU": "Обнаруживает вражеские войска в большом радиусе. Область обнаружения видна противникам. "
       }
     },
     {
@@ -2448,11 +2473,11 @@
       "Icon": "btn-building-terran-ghostacademy",
       "Name": {
         "enUS": "Build Ghost Academy",
-        "ruRU": "Build Ghost Academy"
+        "ruRU": "Построить академию призраков "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks",
-        "ruRU": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks"
+        "ruRU": "Позволяет улучшать призраков. Служит для строительства ядерных ракет.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>- обучение призраков в казармах"
       }
     },
     {
@@ -2461,11 +2486,11 @@
       "Icon": "btn-building-terran-factory",
       "Name": {
         "enUS": "Build Factory",
-        "ruRU": "Build Factory"
+        "ruRU": "Построить завод "
       },
       "Tooltip": {
         "enUS": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines",
-        "ruRU": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines"
+        "ruRU": "Завод по производству бронетехники.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллионов»<br/>– производство мин «Вдова»<br/>– производство «Циклонов»"
       }
     },
     {
@@ -2474,11 +2499,11 @@
       "Icon": "btn-building-terran-armory",
       "Name": {
         "enUS": "Build Armory",
-        "ruRU": "Build Armory"
+        "ruRU": "Построить арсенал "
       },
       "Tooltip": {
         "enUS": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory",
-        "ruRU": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory"
+        "ruRU": "Позволяет улучшать броню и оружие боевых единиц, производимых на заводе и в космопорте. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллитронов» на заводе<br/>– производство «Торов» на заводе"
       }
     },
     {
@@ -2487,11 +2512,11 @@
       "Icon": "btn-building-terran-starport",
       "Name": {
         "enUS": "Build Starport",
-        "ruRU": "Build Starport"
+        "ruRU": "Построить космопорт "
       },
       "Tooltip": {
         "enUS": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs",
-        "ruRU": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs"
+        "ruRU": "Авиационный завод.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Викингов»<br/>– производство медэваков<br/>– производство «Освободителей»"
       }
     },
     {
@@ -2500,11 +2525,11 @@
       "Icon": "btn-building-terran-fusioncore",
       "Name": {
         "enUS": "Build Fusion Core",
-        "ruRU": "Build Fusion Core"
+        "ruRU": "Построить центр синтеза "
       },
       "Tooltip": {
         "enUS": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
-        "ruRU": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport"
+        "ruRU": "Позволяет улучшать медэваки, «Освободители» и крейсеры.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство крейсеров в космопорте"
       }
     }
   ]

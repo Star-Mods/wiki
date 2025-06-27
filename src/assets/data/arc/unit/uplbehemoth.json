@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Behemoth"
   },
@@ -122,6 +123,36 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 160,
+  "AbilArray": [
+    "stop",
+    "UPLBehemothattack",
+    "move",
+    "UPLBehemothBomb"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "BehemothBombs"
+    },
+    {
+      "Link": "BehemothDefenseGunFrontRight",
+      "Turret": "BehemothDefenseGunFrontRight"
+    },
+    {
+      "Link": "BehemothDefenseGunFrontLeft",
+      "Turret": "BehemothDefenseGunFrontLeft"
+    },
+    {
+      "Link": "BehemothDefenseGunBackRight",
+      "Turret": "BehemothDefenseGunBackRight"
+    },
+    {
+      "Link": "BehemothDefenseGunBackLeft",
+      "Turret": "BehemothDefenseGunBackLeft"
+    },
+    {
+      "Link": "BehemothDefenseGunDamageDummyWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -212,11 +243,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -292,11 +323,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -388,11 +419,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -469,11 +500,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -565,11 +596,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -670,7 +701,7 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack Ground",
-          "ruRU": "Attack Ground"
+          "ruRU": "Атаковать поверхность"
         },
         "Tooltip": {
           "enUS": "Deals damage to ground units in the target area.",
@@ -701,76 +732,203 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "BehemothBombs",
+      "EditorCategories": "Race:UPL",
       "Icon": "btn-upgrade-terran-nova-bombingrun",
+      "DisplayEffect": "BehemothBombDamage",
+      "TargetFilters": "Ground",
+      "MinScanRange": 2,
+      "DisplayAttackCount": 1,
+      "Period": 1.5,
+      "Effect": "BehemothBombLM",
+      "Range": 2,
+      "AllowedMovement": "Moving",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "Arc": 360,
+      "id": "BehemothBombs",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Bombard"
       },
       "Amount": 45,
       "AttributeBonus": {
         "Massive": 25
-      },
-      "DisplayAttackCount": 1,
-      "TargetFilters": "Ground",
-      "Range": 2,
-      "Period": 1.5
+      }
     },
     {
       "Turret": "BehemothDefenseGunFrontRight",
-      "id": "BehemothDefenseGunFrontRight",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "StarBase Missile Launcher"
-      },
       "TargetFilters": "Air",
       "Range": 4,
-      "Period": 0.8608
+      "RangeSlop": 0,
+      "Period": 0.8608,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "AcquireTargetSorts": {
+        "SortArray": [
+          {
+            "value": "TSRandom"
+          }
+        ]
+      },
+      "id": "BehemothDefenseGunFrontRight",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "StarBase Missile Launcher"
+      }
     },
     {
       "Turret": "BehemothDefenseGunFrontLeft",
-      "id": "BehemothDefenseGunFrontLeft",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "StarBase Missile Launcher"
-      },
       "TargetFilters": "Air",
       "Range": 4,
-      "Period": 0.8608
+      "RangeSlop": 0,
+      "Period": 0.8608,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "AcquireTargetSorts": {
+        "SortArray": [
+          {
+            "value": "TSRandom"
+          }
+        ]
+      },
+      "id": "BehemothDefenseGunFrontLeft",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "StarBase Missile Launcher"
+      }
     },
     {
       "Turret": "BehemothDefenseGunBackRight",
-      "id": "BehemothDefenseGunBackRight",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "StarBase Missile Launcher"
-      },
       "TargetFilters": "Air",
       "Range": 4,
-      "Period": 0.8608
+      "RangeSlop": 0,
+      "Period": 0.8608,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "AcquireTargetSorts": {
+        "SortArray": [
+          {
+            "value": "TSRandom"
+          }
+        ]
+      },
+      "id": "BehemothDefenseGunBackRight",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "StarBase Missile Launcher"
+      }
     },
     {
       "Turret": "BehemothDefenseGunBackLeft",
-      "id": "BehemothDefenseGunBackLeft",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "StarBase Missile Launcher"
-      },
       "TargetFilters": "Air",
       "Range": 4,
-      "Period": 0.8608
+      "RangeSlop": 0,
+      "Period": 0.8608,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "AcquireTargetSorts": {
+        "SortArray": [
+          {
+            "value": "TSRandom"
+          }
+        ]
+      },
+      "id": "BehemothDefenseGunBackLeft",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "StarBase Missile Launcher"
+      }
     },
     {
-      "id": "BehemothDefenseGunDamageDummyWeapon",
+      "EditorCategories": "Race:UPL",
+      "Options": {
+        "Melee": 1,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
+      },
+      "DisplayEffect": "BehemothDefenseGunDamage",
+      "DisplayAttackCount": 4,
       "Icon": "btn-command-attack",
+      "TargetFilters": "Air",
+      "MinScanRange": 11,
+      "Range": 4,
+      "Arc": 360,
+      "Period": 0.8608,
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "id": "BehemothDefenseGunDamageDummyWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "StarBase Missile"
       },
       "Amount": 1,
-      "Kind": "Ranged",
-      "DisplayAttackCount": 4,
-      "TargetFilters": "Air",
-      "Range": 4,
-      "Period": 0.8608
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -834,11 +992,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -847,11 +1005,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -860,11 +1018,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -873,11 +1031,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -886,11 +1044,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -910,7 +1068,7 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack Ground",
-        "ruRU": "Attack Ground"
+        "ruRU": "Атаковать поверхность"
       },
       "Tooltip": {
         "enUS": "Deals damage to ground units in the target area.",

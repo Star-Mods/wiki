@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Interdictor",
     "ruRU": "Интердиктор"
@@ -130,6 +131,20 @@
   "Facing": 315,
   "FogVisibility": "Snapshot",
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "InterdictorBurrow",
+    "InterdictorUnburrow"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "Detector11",
+    "UnderConstruction",
+    "RepulsorInterdictorBurrowCD",
+    "GenetronTurretFreeze"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -194,11 +209,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -220,11 +235,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       },
       {
@@ -299,11 +314,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -380,11 +395,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -494,6 +509,16 @@
     "Minerals": 100
   },
   "RepairTime": 30,
+  "WeaponArray": [
+    {
+      "Link": "NeutralizerBeam",
+      "Turret": "Interdictor"
+    },
+    {
+      "Link": "NeutralizerBeamDummy",
+      "Turret": "InterdictorMovement"
+    }
+  ],
   "SubgroupPriority": 4,
   "GlossaryPriority": 19,
   "TechAliasArray": [
@@ -506,31 +531,50 @@
   "Weapons": [
     {
       "Turret": "Interdictor",
-      "id": "NeutralizerBeam",
+      "EditorCategories": "Race:Genetron",
+      "Options": {
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-genetron-interdictor",
+      "DisplayEffect": "NeutralizerBeamLMImpact",
+      "TargetFilters": "Air",
+      "MinScanRange": 7.5,
+      "Range": 7,
+      "Period": 1.25,
+      "Effect": "NeutralizerBeamLM",
+      "id": "NeutralizerBeam",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Neutralizer Beam",
         "ruRU": "Нейтрализующий луч"
       },
       "Amount": 30,
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 7,
-      "Period": 1.25
+      "Kind": "Ranged"
     },
     {
       "Turret": "InterdictorMovement",
-      "id": "NeutralizerBeamDummy",
+      "EditorCategories": "Race:Genetron",
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-genetron-interdictor",
+      "DisplayEffect": "NeutralizerBeamLMImpact",
+      "TargetFilters": "Air",
+      "MinScanRange": 7.5,
+      "Range": 7,
+      "Period": 1.25,
+      "Effect": "NullifierMissilesDummy",
+      "id": "NeutralizerBeamDummy",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Neutralizer Beam Dummy",
         "ruRU": "Neutralizer Beam Dummy"
       },
       "Amount": 30,
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 7,
-      "Period": 1.25
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -551,7 +595,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -651,11 +695,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -664,11 +708,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -677,11 +721,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {

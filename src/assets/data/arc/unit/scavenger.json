@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Scavenger",
     "ruRU": "Сборщик"
@@ -97,6 +98,14 @@
     "Light"
   ],
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "DroneHarvest",
+    "FormStructures",
+    "SprayZerg"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -187,11 +196,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -267,11 +276,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -363,11 +372,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -459,11 +468,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -540,11 +549,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -946,11 +955,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -1051,11 +1060,11 @@
         "Icon": "btn-ability-zerg-gather",
         "Name": {
           "enUS": "Gather",
-          "ruRU": "Gather"
+          "ruRU": "Добывать "
         },
         "Tooltip": {
           "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-          "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+          "ruRU": "Приказывает рабочему добывать ресурсы на месторождении минералов или из веспенового гейзера."
         },
         "Hotkey": "G"
       },
@@ -1156,11 +1165,11 @@
         "Icon": "btn-command-returncargo",
         "Name": {
           "enUS": "Return Cargo",
-          "ruRU": "Return Cargo"
+          "ruRU": "Выгрузить ресурсы "
         },
         "Tooltip": {
           "enUS": "Returns the carried resources to the nearest drop-off point.",
-          "ruRU": "Returns the carried resources to the nearest drop-off point."
+          "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
         },
         "Hotkey": "C"
       },
@@ -1307,7 +1316,7 @@
         },
         "Tooltip": {
           "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+          "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
         },
         "Hotkey": "Y"
       }
@@ -1571,11 +1580,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -1839,11 +1848,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -1879,6 +1888,11 @@
   "CargoSize": 1,
   "GlossaryPriority": 1,
   "SubgroupPriority": 3,
+  "WeaponArray": [
+    {
+      "Link": "ScavengerClaws"
+    }
+  ],
   "AIOverideTargetPriority": 10,
   "GlossaryAlias": "Scavenger",
   "LateralAcceleration": 46,
@@ -1888,16 +1902,19 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "DisplayEffect": "ScavengerClaws",
+      "Range": 0.1,
+      "Period": 1.5,
       "id": "ScavengerClaws",
+      "parent": "MeleeWeaponXayid",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Claws",
         "ruRU": "Когти"
       },
       "Amount": 5,
       "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.1,
-      "Period": 1.5
+      "TargetFilters": "Ground"
     }
   ],
   "Behaviors": [],
@@ -1982,11 +1999,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1995,11 +2012,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -2008,11 +2025,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -2021,11 +2038,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -2034,11 +2051,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -2060,11 +2077,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -2073,11 +2090,11 @@
       "Icon": "btn-ability-zerg-gather",
       "Name": {
         "enUS": "Gather",
-        "ruRU": "Gather"
+        "ruRU": "Добывать "
       },
       "Tooltip": {
         "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+        "ruRU": "Приказывает рабочему добывать ресурсы на месторождении минералов или из веспенового гейзера."
       }
     },
     {
@@ -2086,11 +2103,11 @@
       "Icon": "btn-command-returncargo",
       "Name": {
         "enUS": "Return Cargo",
-        "ruRU": "Return Cargo"
+        "ruRU": "Выгрузить ресурсы "
       },
       "Tooltip": {
         "enUS": "Returns the carried resources to the nearest drop-off point.",
-        "ruRU": "Returns the carried resources to the nearest drop-off point."
+        "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
       }
     },
     {
@@ -2103,7 +2120,7 @@
       },
       "Tooltip": {
         "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
       }
     },
     {

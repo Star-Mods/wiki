@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Electrostatic Defense Tower"
   },
@@ -112,6 +113,15 @@
   ],
   "Sight": 11,
   "AttackTargetPriority": 19,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "UnderConstruction",
+    "Detector11"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -176,11 +186,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -256,11 +266,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -337,11 +347,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -363,11 +373,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       }
     ]
@@ -383,6 +393,11 @@
     "Minerals": 100
   },
   "RepairTime": 20,
+  "WeaponArray": [
+    {
+      "Link": "UPLElectrostaticDefenseTower"
+    }
+  ],
   "Footprint": "Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2",
   "ScoreMake": 100,
@@ -395,16 +410,25 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "UPLElectrostaticDefenseTower",
+      "EditorCategories": "Race:UPL",
       "Icon": "btn-weapon-upl-edt",
+      "TargetFilters": "",
+      "TeleportResetRange": 0,
+      "Arc": 360,
+      "Cost": {
+        "Cooldown": {
+          "Location": "Unit"
+        }
+      },
+      "Period": 0.45,
+      "id": "UPLElectrostaticDefenseTower",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "10 Million Volt Energy Discharge Assembly"
       },
       "Amount": 8,
       "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 5,
-      "Period": 0.45
+      "Range": 5
     }
   ],
   "Behaviors": [
@@ -421,7 +445,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -478,11 +502,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -491,11 +515,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -504,11 +528,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

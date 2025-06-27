@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Stratus",
     "ruRU": "Стратус"
@@ -108,6 +109,15 @@
   "LifeArmor": 2,
   "Sight": 11,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironConstructionFreeze"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
@@ -192,11 +202,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -262,11 +272,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -306,6 +316,16 @@
   "CostResource": {
     "Minerals": 100
   },
+  "WeaponArray": [
+    {
+      "Link": "StratusWeapon",
+      "Turret": "Stratus"
+    },
+    {
+      "Link": "StratusWeaponDummy",
+      "Turret": "StratusMovement"
+    }
+  ],
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "AttackTargetPriority": 20,
   "GlossaryPriority": 51,
@@ -318,33 +338,54 @@
   "Weapons": [
     {
       "Turret": "Stratus",
-      "id": "StratusWeapon",
+      "EditorCategories": "Race:Keiron",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-keiron-stratus",
+      "DisplayEffect": "StratusWeaponDMG",
+      "DisplayAttackCount": 2,
+      "TargetFilters": "Air",
+      "Range": 8,
+      "Period": 1.3,
+      "Effect": "StratusWeaponCP",
+      "id": "StratusWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Stratus - Weapon",
         "ruRU": "Стратус - Оружие"
       },
       "Amount": 12,
-      "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Air",
-      "Range": 8,
-      "Period": 1.3
+      "Kind": "Ranged"
     },
     {
       "Turret": "StratusMovement",
-      "id": "StratusWeaponDummy",
+      "DisplayEffect": "StratusWeaponDMG",
+      "DisplayAttackCount": 2,
+      "TargetFilters": "Air",
+      "Range": 8,
+      "Period": 1.3,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
+      },
+      "AcquireFilters": "-;Player,Ally,Neutral,Enemy",
+      "AcquireScanFilters": "-;Player,Ally,Neutral,Enemy",
       "Icon": "btn-building-keiron-stratus",
+      "EditorCategories": "Race:Keiron",
+      "id": "StratusWeaponDummy",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Stratus - Weapon Dummy",
         "ruRU": "Stratus - Weapon Dummy"
       },
       "Amount": 12,
-      "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Air",
-      "Range": 8,
-      "Period": 1.3
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -412,11 +453,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -425,11 +466,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     }
   ]

@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Flamespitter"
   },
@@ -97,6 +98,11 @@
     "Biological",
     "Light"
   ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Negative1Armor",
+    "DragonAscended"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -105,6 +111,15 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedFlamespitter",
+    "AscendedFlamespitterFission",
+    "FlamespitterFission",
+    "DragonFissionDisabled"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -195,11 +210,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -275,11 +290,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -371,11 +386,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -467,11 +482,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -548,11 +563,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -1117,6 +1132,14 @@
     "Custom": 20
   },
   "KillXP": 15,
+  "WeaponArray": [
+    {
+      "Link": "FlamespitterAscendedClaws"
+    },
+    {
+      "Link": "FlamespitterAscendedSeekerFlame"
+    }
+  ],
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
@@ -1139,7 +1162,11 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "DisplayEffect": "FlamespitterAscendedClawsDamage",
+      "Effect": "FlamespitterAscendedMeleeSet",
       "id": "FlamespitterAscendedClaws",
+      "parent": "FlamespitterClaws",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Claws"
       },
@@ -1150,7 +1177,13 @@
       "Period": 0.56
     },
     {
+      "DisplayEffect": "FlamespitterAscendedSeekerFlameDamage",
+      "TargetFilters": "",
+      "MinimumRange": 0,
+      "Effect": "FlamespitterAscendedSeekerFlameLaunchMissile1",
       "id": "FlamespitterAscendedSeekerFlame",
+      "parent": "FlamespitterSeekerFlame",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Seeker Flame"
       },
@@ -1159,7 +1192,6 @@
         "Armored": 2
       },
       "Kind": "Ranged",
-      "TargetFilters": "",
       "Range": 5,
       "Period": 0.56
     }
@@ -1262,11 +1294,7 @@
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedFlamespitter",
-    "AscendedFlamespitter"
-  ],
-  "$Phased": "AscendedFlamespitter",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1275,11 +1303,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1288,11 +1316,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1301,11 +1329,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1314,11 +1342,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1327,11 +1355,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {

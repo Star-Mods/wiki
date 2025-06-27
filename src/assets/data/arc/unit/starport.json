@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Starport",
-    "ruRU": "Starport"
+    "ruRU": "Космопорт "
   },
   "Description": {
     "enUS": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs",
-    "ruRU": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs"
+    "ruRU": "Авиационный завод.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Викингов»<br/>– производство медэваков<br/>– производство «Освободителей»"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1300,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -132,6 +133,19 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "StarportTrain",
+    "StarportAddOns",
+    "Rally",
+    "StarportLiftOff"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "ReactorQueue",
+    "TerranStructuresKnockbackBehavior"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -169,11 +183,11 @@
         "Icon": "btn-unit-terran-vikingfighter",
         "Name": {
           "enUS": "Build Viking",
-          "ruRU": "Build Viking"
+          "ruRU": "Построить «Викинг» "
         },
         "Tooltip": {
           "enUS": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-          "ruRU": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+          "ruRU": "Воздушная единица поддержки, вооруженная мощными противовоздушными ракетами. Может переходить в штурмовой режим для ведения боя с наземными войсками.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
         },
         "Hotkey": "V"
       },
@@ -212,11 +226,11 @@
         "Icon": "btn-unit-terran-medivac",
         "Name": {
           "enUS": "Build Medivac",
-          "ruRU": "Build Medivac"
+          "ruRU": "Построить медэвак "
         },
         "Tooltip": {
           "enUS": "Air transport. Heals nearby biological units. Can use Afterburners.",
-          "ruRU": "Air transport. Heals nearby biological units. Can use Afterburners."
+          "ruRU": "Транспортный корабль. Лечит находящиеся рядом органические войска. Может использовать способность «Форсаж»."
         },
         "Hotkey": "D"
       },
@@ -256,11 +270,11 @@
         "Icon": "btn-unit-terran-raven",
         "Name": {
           "enUS": "Build Raven",
-          "ruRU": "Build Raven"
+          "ruRU": "Построить «Ворон» "
         },
         "Tooltip": {
           "enUS": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Воздушная боевая единица поддержки. Может строить автотурели и использовать инвазивную матрицу. Оснащается бронебойными ракетами.<br/><br/><span style=\"color: FFE303\">Детектор</span> "
         },
         "Hotkey": "R"
       },
@@ -300,11 +314,11 @@
         "Icon": "btn-unit-terran-banshee",
         "Name": {
           "enUS": "Build Banshee",
-          "ruRU": "Build Banshee"
+          "ruRU": "Построить «Банши» "
         },
         "Tooltip": {
           "enUS": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Ударный вертолет. После улучшения может использовать маскировку.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "E"
       },
@@ -344,11 +358,11 @@
         "Icon": "btn-unit-terran-battlecruiser",
         "Name": {
           "enUS": "Build Battlecruiser",
-          "ruRU": "Build Battlecruiser"
+          "ruRU": "Построить крейсер "
         },
         "Tooltip": {
           "enUS": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Мощный боевой корабль. Может использовать орудие «Ямато» и способность «Тактический скачок». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "Hotkey": "B"
       },
@@ -372,11 +386,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -412,11 +426,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Build Tech Lab",
-          "ruRU": "Build Tech Lab"
+          "ruRU": "Построить лабораторию "
         },
         "Tooltip": {
           "enUS": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core",
-          "ruRU": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core"
+          "ruRU": "Позволяет разрабатывать улучшения для воздушной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Банши»<br/>– производство «Воронов»<br/>– производство крейсеров (требуется центр синтеза) "
         },
         "Hotkey": "X"
       },
@@ -452,11 +466,11 @@
         "Icon": "btn-building-terran-reactor",
         "Name": {
           "enUS": "Build Reactor",
-          "ruRU": "Build Reactor"
+          "ruRU": "Построить реактор "
         },
         "Tooltip": {
           "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
+          "ruRU": "Позволяет производить две боевые единицы одновременно. "
         },
         "Hotkey": "C"
       },
@@ -500,11 +514,11 @@
         "Icon": "btn-ability-terran-liftoff",
         "Name": {
           "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "ruRU": "Взлететь "
         },
         "Tooltip": {
           "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+          "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
         },
         "Hotkey": "L"
       },
@@ -570,11 +584,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -637,11 +651,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -937,11 +951,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -1007,11 +1021,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -1034,11 +1048,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       },
@@ -1077,11 +1091,11 @@
         "Icon": "btn-unit-terran-liberator",
         "Name": {
           "enUS": "Build Liberator",
-          "ruRU": "Build Liberator"
+          "ruRU": "Построить «Освободитель»"
         },
         "Tooltip": {
           "enUS": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-          "ruRU": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+          "ruRU": "Артиллерийский корабль. Оснащен ракетами «воздух-воздух», наносящими урон по области. Может переходить в защитный режим и атаковать наземные цели.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
         },
         "Hotkey": "N"
       }
@@ -1124,7 +1138,7 @@
       "id": "TerranStructuresKnockbackBehavior",
       "Name": {
         "enUS": "Terran Structures Knockback Behavior",
-        "ruRU": "Terran Structures Knockback Behavior ///Auto - Copied from enUS Locale"
+        "ruRU": "Terran Structures Knockback Behavior "
       },
       "Tooltip": "-"
     }
@@ -1221,11 +1235,11 @@
       "Icon": "btn-unit-terran-vikingfighter",
       "Name": {
         "enUS": "Build Viking",
-        "ruRU": "Build Viking"
+        "ruRU": "Построить «Викинг» "
       },
       "Tooltip": {
         "enUS": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-        "ruRU": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+        "ruRU": "Воздушная единица поддержки, вооруженная мощными противовоздушными ракетами. Может переходить в штурмовой режим для ведения боя с наземными войсками.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
       }
     },
     {
@@ -1234,11 +1248,11 @@
       "Icon": "btn-unit-terran-medivac",
       "Name": {
         "enUS": "Build Medivac",
-        "ruRU": "Build Medivac"
+        "ruRU": "Построить медэвак "
       },
       "Tooltip": {
         "enUS": "Air transport. Heals nearby biological units. Can use Afterburners.",
-        "ruRU": "Air transport. Heals nearby biological units. Can use Afterburners."
+        "ruRU": "Транспортный корабль. Лечит находящиеся рядом органические войска. Может использовать способность «Форсаж»."
       }
     },
     {
@@ -1247,11 +1261,11 @@
       "Icon": "btn-unit-terran-raven",
       "Name": {
         "enUS": "Build Raven",
-        "ruRU": "Build Raven"
+        "ruRU": "Построить «Ворон» "
       },
       "Tooltip": {
         "enUS": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-        "ruRU": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        "ruRU": "Воздушная боевая единица поддержки. Может строить автотурели и использовать инвазивную матрицу. Оснащается бронебойными ракетами.<br/><br/><span style=\"color: FFE303\">Детектор</span> "
       }
     },
     {
@@ -1260,11 +1274,11 @@
       "Icon": "btn-unit-terran-banshee",
       "Name": {
         "enUS": "Build Banshee",
-        "ruRU": "Build Banshee"
+        "ruRU": "Построить «Банши» "
       },
       "Tooltip": {
         "enUS": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Ударный вертолет. После улучшения может использовать маскировку.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -1273,11 +1287,11 @@
       "Icon": "btn-unit-terran-battlecruiser",
       "Name": {
         "enUS": "Build Battlecruiser",
-        "ruRU": "Build Battlecruiser"
+        "ruRU": "Построить крейсер "
       },
       "Tooltip": {
         "enUS": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Мощный боевой корабль. Может использовать орудие «Ямато» и способность «Тактический скачок». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
       }
     },
     {
@@ -1286,11 +1300,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1299,11 +1313,11 @@
       "Icon": "btn-building-terran-techlab",
       "Name": {
         "enUS": "Build Tech Lab",
-        "ruRU": "Build Tech Lab"
+        "ruRU": "Построить лабораторию "
       },
       "Tooltip": {
         "enUS": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core",
-        "ruRU": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core"
+        "ruRU": "Позволяет разрабатывать улучшения для воздушной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Банши»<br/>– производство «Воронов»<br/>– производство крейсеров (требуется центр синтеза) "
       }
     },
     {
@@ -1312,11 +1326,11 @@
       "Icon": "btn-building-terran-reactor",
       "Name": {
         "enUS": "Build Reactor",
-        "ruRU": "Build Reactor"
+        "ruRU": "Построить реактор "
       },
       "Tooltip": {
         "enUS": "Allows 2 units to be created simultaneously.",
-        "ruRU": "Allows 2 units to be created simultaneously."
+        "ruRU": "Позволяет производить две боевые единицы одновременно. "
       }
     },
     {
@@ -1325,11 +1339,11 @@
       "Icon": "btn-ability-terran-liftoff",
       "Name": {
         "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "ruRU": "Взлететь "
       },
       "Tooltip": {
         "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+        "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
       }
     },
     {
@@ -1338,11 +1352,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -1351,11 +1365,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1364,11 +1378,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1377,11 +1391,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -1390,11 +1404,11 @@
       "Icon": "btn-upgrade-terran-weaponrefit",
       "Name": {
         "enUS": "Select Builder",
-        "ruRU": "Select Builder"
+        "ruRU": "Выбрать строителя "
       },
       "Tooltip": {
         "enUS": "Selects the unit constructing this structure.",
-        "ruRU": "Selects the unit constructing this structure."
+        "ruRU": "Выбрать рабочего, который сооружает это строение. "
       }
     },
     {
@@ -1403,11 +1417,11 @@
       "Icon": "btn-unit-terran-liberator",
       "Name": {
         "enUS": "Build Liberator",
-        "ruRU": "Build Liberator"
+        "ruRU": "Построить «Освободитель»"
       },
       "Tooltip": {
         "enUS": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-        "ruRU": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+        "ruRU": "Артиллерийский корабль. Оснащен ракетами «воздух-воздух», наносящими урон по области. Может переходить в защитный режим и атаковать наземные цели.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
       }
     }
   ]

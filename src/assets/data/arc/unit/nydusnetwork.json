@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nydus Network",
-    "ruRU": "Nydus Network"
+    "ruRU": "Сеть нидуса "
   },
   "Description": {
     "enUS": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm",
-    "ruRU": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm"
+    "ruRU": "Дружественные наземные войска могут использовать сеть нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– создание червя нидуса"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 850,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -125,6 +126,18 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "Rally",
+    "BuildInProgress",
+    "NydusCanalTransport",
+    "BuildNydusCanal"
+  ],
+  "BehaviorArray": [
+    "OnCreep",
+    "ZergBuildingNotOnCreep",
+    "ZergBuildingDies6"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -189,11 +202,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -309,11 +322,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads units into the Nydus Network.",
-          "ruRU": "Loads units into the Nydus Network."
+          "ruRU": "Загрузить войска в сеть нидуса. "
         },
         "Hotkey": "L"
       },
@@ -429,11 +442,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -457,11 +470,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically.",
-          "ruRU": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -500,11 +513,11 @@
         "Icon": "btn-building-zerg-nydusworm",
         "Name": {
           "enUS": "Summon Nydus Worm",
-          "ruRU": "Summon Nydus Worm"
+          "ruRU": "Призвать червя нидуса "
         },
         "Tooltip": {
           "enUS": "Summons a Nydus Worm at the target location.<br/>Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-          "ruRU": "Summons a Nydus Worm at the target location.<br/>Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+          "ruRU": "Вызвать в указанном месте червя нидуса.<br/>Дружественные наземные войска могут использовать червя нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку. Червь вырабатывает слизь, обеспечивающую жизнедеятельность расположенных поблизости строений зергов.<br/><br/><span style=\"color: #ffff8a\">Бонус: по слизи зерги передвигаются быстрее.</span> "
         },
         "Hotkey": "N"
       },
@@ -580,11 +593,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -605,10 +618,12 @@
         "id": "NydusWormIncreasedArmorPassive",
         "Icon": "btn-ability-zerg-armoraura",
         "Name": {
-          "enUS": "Subterranean Scales"
+          "enUS": "Subterranean Scales",
+          "ruRU": "Подземная чешуя"
         },
         "Tooltip": {
-          "enUS": "Nydus Worms have <b>3</b> armor when emerging from the ground."
+          "enUS": "Nydus Worms have <b>3</b> armor when emerging from the ground.",
+          "ruRU": "Пока червь Нидуса появляется из земли, его броня укрепляется на <b>3</b>."
         }
       }
     ]
@@ -717,11 +732,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -730,11 +745,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads units into the Nydus Network.",
-        "ruRU": "Loads units into the Nydus Network."
+        "ruRU": "Загрузить войска в сеть нидуса. "
       }
     },
     {
@@ -743,11 +758,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -756,11 +771,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically.",
-        "ruRU": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -769,11 +784,11 @@
       "Icon": "btn-building-zerg-nydusworm",
       "Name": {
         "enUS": "Summon Nydus Worm",
-        "ruRU": "Summon Nydus Worm"
+        "ruRU": "Призвать червя нидуса "
       },
       "Tooltip": {
         "enUS": "Summons a Nydus Worm at the target location.<br/>Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-        "ruRU": "Summons a Nydus Worm at the target location.<br/>Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+        "ruRU": "Вызвать в указанном месте червя нидуса.<br/>Дружественные наземные войска могут использовать червя нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку. Червь вырабатывает слизь, обеспечивающую жизнедеятельность расположенных поблизости строений зергов.<br/><br/><span style=\"color: #ffff8a\">Бонус: по слизи зерги передвигаются быстрее.</span> "
       }
     },
     {
@@ -782,11 +797,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     }
   ]

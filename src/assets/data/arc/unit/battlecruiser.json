@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Battlecruiser",
-    "ruRU": "Battlecruiser"
+    "ruRU": "Крейсер "
   },
   "Description": {
     "enUS": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Мощный боевой корабль. Может использовать орудие «Ямато» и способность «Тактический скачок». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 550,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
@@ -122,6 +123,14 @@
   ],
   "VisionHeight": 4,
   "Sight": 12,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "Yamato",
+    "que1",
+    "Hyperjump"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -212,11 +221,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -292,11 +301,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -388,11 +397,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -484,11 +493,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -565,11 +574,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -734,11 +743,11 @@
         "Icon": "btn-ability-terran-yamatogun-color",
         "Name": {
           "enUS": "Yamato Cannon",
-          "ruRU": "Yamato Cannon"
+          "ruRU": "Орудие «Ямато» "
         },
         "Tooltip": {
           "enUS": "Blasts a target with a devastating plasma cannon, causing 300 damage.",
-          "ruRU": "Blasts a target with a devastating plasma cannon, causing 300 damage."
+          "ruRU": "Поражает цель мощным зарядом плазмы, нанося <b>240</b> ед. урона."
         },
         "Hotkey": "Y"
       },
@@ -905,11 +914,11 @@
         "Icon": "btn-ability-terran-warpjump",
         "Name": {
           "enUS": "Tactical Jump",
-          "ruRU": "Tactical Jump"
+          "ruRU": "Тактический скачок "
         },
         "Tooltip": {
           "enUS": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>",
-          "ruRU": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
+          "ruRU": "После паузы в <b>6</b> переносится в указанную точку. Во время переноса крейсер неуязвим.<br/><br/><span style=\"color: #ffff8a\">Точка может находиться вне зоны обзора.</span>"
         },
         "Hotkey": "T"
       }
@@ -934,6 +943,12 @@
     "Corruptor",
     "VoidRay"
   ],
+  "WeaponArray": [
+    {
+      "Link": "BattlecruiserWeaponSwitch",
+      "Turret": "Battlecruiser"
+    }
+  ],
   "EquipmentArray": [
     {
       "Effect": "ATSLaserBatteryU",
@@ -954,16 +969,60 @@
   "Weapons": [
     {
       "Turret": "Battlecruiser",
-      "id": "BattlecruiserWeaponSwitch",
+      "EditorCategories": "Race:Terran",
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0,
+        "IgnoreThreat": 1,
+        "IgnoreAttackPriority": 1,
+        "NeverMiss": 0
+      },
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
+      "DisplayEffect": "ATSLaserBatteryU",
+      "TargetFilters": "",
+      "AcquireTargetSorts": {
+        "SortArray": [
+          {
+            "value": "TSTrackedByBattlecruiser"
+          },
+          {
+            "value": "TSThreatenBattlecruiser"
+          },
+          {
+            "value": "TSPriorityDesc"
+          },
+          {
+            "value": "TSTransientBattlecruiser"
+          },
+          {
+            "value": "GroundTarget"
+          }
+        ]
+      },
+      "Range": 6,
+      "Arc": 360,
+      "Marker": {
+        "MatchFlags": {
+          "CasterUnit": 1
+        },
+        "Count": 0,
+        "Link": "Effect/BattlecruiserAttackTrackerCP"
+      },
+      "Period": 0.225,
+      "Effect": "BattlecruiserDamageSet",
+      "AllowedMovement": "Moving",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "id": "BattlecruiserWeaponSwitch",
+      "class": "CWeaponLegacy",
       "Name": {
-        "enUS": "BattlecruiserWeaponSwitch"
+        "enUS": "BattlecruiserWeaponSwitch",
+        "ruRU": "BattlecruiserWeaponSwitch"
       },
       "Amount": 8,
-      "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 6,
-      "Period": 0.225
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -1053,11 +1112,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1066,11 +1125,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1079,11 +1138,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1092,11 +1151,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1105,11 +1164,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1118,11 +1177,11 @@
       "Icon": "btn-ability-terran-yamatogun-color",
       "Name": {
         "enUS": "Yamato Cannon",
-        "ruRU": "Yamato Cannon"
+        "ruRU": "Орудие «Ямато» "
       },
       "Tooltip": {
         "enUS": "Blasts a target with a devastating plasma cannon, causing 300 damage.",
-        "ruRU": "Blasts a target with a devastating plasma cannon, causing 300 damage."
+        "ruRU": "Поражает цель мощным зарядом плазмы, нанося <b>240</b> ед. урона."
       }
     },
     {
@@ -1131,11 +1190,11 @@
       "Icon": "btn-ability-terran-warpjump",
       "Name": {
         "enUS": "Tactical Jump",
-        "ruRU": "Tactical Jump"
+        "ruRU": "Тактический скачок "
       },
       "Tooltip": {
         "enUS": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>",
-        "ruRU": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
+        "ruRU": "После паузы в <b>6</b> переносится в указанную точку. Во время переноса крейсер неуязвим.<br/><br/><span style=\"color: #ffff8a\">Точка может находиться вне зоны обзора.</span>"
       }
     }
   ]

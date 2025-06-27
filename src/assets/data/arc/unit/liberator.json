@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Liberator",
-    "ruRU": "Liberator"
+    "ruRU": "«Освободитель»"
   },
   "Description": {
     "enUS": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-    "ruRU": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+    "ruRU": "Артиллерийский корабль. Оснащен ракетами «воздух-воздух», наносящими урон по области. Может переходить в защитный режим и атаковать наземные цели.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 180,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 1499.9414,
@@ -123,6 +124,21 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 50,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "LiberatorMorphtoAG",
+    "LiberatorAGTarget"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "LiberatorMissileLaunchers"
+    },
+    {
+      "Turret": "Liberator"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -213,11 +229,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -293,11 +309,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -389,11 +405,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -470,11 +486,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -566,11 +582,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -699,11 +715,11 @@
         "Icon": "btn-ability-terran-liberator-agmode",
         "Name": {
           "enUS": "Defender Mode",
-          "ruRU": "Defender Mode"
+          "ruRU": "Защитный режим"
         },
         "Tooltip": {
           "enUS": "Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.",
-          "ruRU": "Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move."
+          "ruRU": "Перейти в защитный режим. В этом режиме «Освободители» наносят урон единичным наземным целям, но не могут передвигаться."
         },
         "Hotkey": "E"
       },
@@ -725,11 +741,11 @@
         "Icon": "btn-upgrade-terran-advanceballistics",
         "Name": {
           "enUS": "Advanced Ballistics",
-          "ruRU": "Advanced Ballistics"
+          "ruRU": "Дальнобойные баллистические орудия"
         },
         "Tooltip": {
           "enUS": "Increases the range of Liberators in Defender Mode by <b>2</b>",
-          "ruRU": "Increases the range of Liberators in Defender Mode by 4.",
+          "ruRU": "Увеличивают дальность атаки «Освободителей» в защитном режиме на <b>2</b>.",
           "zhCN": "Increases the range of Liberators in Defender Mode by <b>2</b>",
           "koKR": "Increases the range of Liberators in Defender Mode by <b>2</b>"
         }
@@ -762,18 +778,23 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "LiberatorMissileLaunchers",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
+      "DisplayEffect": "LiberatorMissileDamage",
+      "DisplayAttackCount": 2,
+      "TargetFilters": "Air",
+      "Period": 1.8,
+      "Effect": "LiberatorMissileBurstPersistent",
+      "AllowedMovement": "Slowing",
+      "id": "LiberatorMissileLaunchers",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Lexington Rockets",
-        "ruRU": "Lexington Rockets"
+        "ruRU": "Ракеты «Лексингтон»"
       },
       "Amount": 5,
       "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Air",
-      "Range": 5,
-      "Period": 1.8
+      "Range": 5
     }
   ],
   "Behaviors": [],
@@ -852,11 +873,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -865,11 +886,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -878,11 +899,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -891,11 +912,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -904,11 +925,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -917,11 +938,11 @@
       "Icon": "btn-ability-terran-liberator-agmode",
       "Name": {
         "enUS": "Defender Mode",
-        "ruRU": "Defender Mode"
+        "ruRU": "Защитный режим"
       },
       "Tooltip": {
         "enUS": "Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move.",
-        "ruRU": "Deploys into Defender Mode. In this mode Liberators inflict single target damage to ground units. Liberators in this mode cannot move."
+        "ruRU": "Перейти в защитный режим. В этом режиме «Освободители» наносят урон единичным наземным целям, но не могут передвигаться."
       }
     }
   ]

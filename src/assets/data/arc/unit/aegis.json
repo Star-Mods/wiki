@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Aegis",
     "ruRU": "Эгида"
@@ -99,6 +100,16 @@
   "Sight": 11,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "AegisRelocate",
+    "AegisActivateShield",
+    "AegisDeactivateShield"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -173,11 +184,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -254,11 +265,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -685,11 +696,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -730,6 +741,11 @@
     "Minerals": 400,
     "Vespene": 400
   },
+  "WeaponArray": [
+    {
+      "Link": "BulwarkBlast"
+    }
+  ],
   "SubgroupPriority": 35,
   "GlossaryPriority": 50,
   "TechAliasArray": [
@@ -741,17 +757,22 @@
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
-      "id": "BulwarkBlast",
+      "EditorCategories": "Race:Keiron",
       "Icon": "btn-unit-keiron-aegis",
+      "DisplayEffect": "BulwarkBlastImpact",
+      "TargetFilters": "",
+      "Range": 10,
+      "Arc": 360,
+      "Period": 1,
+      "DamagePoint": 0.375,
+      "id": "BulwarkBlast",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Bulwark Blast",
         "ruRU": "Удар оплота"
       },
       "Amount": 40,
-      "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 10,
-      "Period": 1
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -829,11 +850,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -842,11 +863,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -881,11 +902,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     }
   ]

@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Drone",
-    "ruRU": "Drone"
+    "ruRU": "Рабочий "
   },
   "Description": {
     "enUS": "Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Базовая рабочая единица. Добывает минералы и веспен. Может мутировать в строения.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -117,6 +118,16 @@
     "Small"
   ],
   "Sight": 8,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "ZergBuild",
+    "DroneHarvest",
+    "BurrowDroneDown",
+    "SprayZerg",
+    "WorkerStopIdleAbilityVespene"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -207,11 +218,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -287,11 +298,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -383,11 +394,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -463,11 +474,11 @@
         "id": "AttackWorker",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -559,11 +570,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -664,11 +675,11 @@
         "Icon": "btn-command-returncargo",
         "Name": {
           "enUS": "Return Cargo",
-          "ruRU": "Return Cargo"
+          "ruRU": "Выгрузить ресурсы "
         },
         "Tooltip": {
           "enUS": "Returns the carried resources to the nearest drop-off point.",
-          "ruRU": "Returns the carried resources to the nearest drop-off point."
+          "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
         },
         "Hotkey": "C"
       },
@@ -692,11 +703,11 @@
         "Icon": "btn-ability-zerg-basicmutation",
         "Name": {
           "enUS": "Basic Mutation",
-          "ruRU": "Basic Mutation"
+          "ruRU": "Простые мутации "
         },
         "Tooltip": {
           "enUS": "A list of basic structures.",
-          "ruRU": "A list of basic structures."
+          "ruRU": "Открывает список основных строений."
         },
         "Hotkey": "B"
       },
@@ -720,11 +731,11 @@
         "Icon": "btn-ability-zerg-advancedmutation",
         "Name": {
           "enUS": "Advanced Mutation",
-          "ruRU": "Advanced Mutation"
+          "ruRU": "Сложные мутации "
         },
         "Tooltip": {
           "enUS": "A list of advanced structures.",
-          "ruRU": "A list of advanced structures."
+          "ruRU": "Открывает список дополнительных строений."
         },
         "Hotkey": "V"
       },
@@ -769,11 +780,11 @@
         "Icon": "btn-ability-zerg-burrow-color",
         "Name": {
           "enUS": "Burrow",
-          "ruRU": "Burrow"
+          "ruRU": "Закопаться "
         },
         "Tooltip": {
           "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+          "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
         },
         "Hotkey": "D"
       },
@@ -874,11 +885,11 @@
         "Icon": "btn-ability-zerg-gather",
         "Name": {
           "enUS": "Gather",
-          "ruRU": "Gather"
+          "ruRU": "Добывать "
         },
         "Tooltip": {
           "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-          "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+          "ruRU": "Приказывает рабочему добывать ресурсы на месторождении минералов или из веспенового гейзера."
         },
         "Hotkey": "G"
       },
@@ -1025,7 +1036,7 @@
         },
         "Tooltip": {
           "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+          "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
         },
         "Hotkey": "Y"
       }
@@ -1062,11 +1073,11 @@
         "Icon": "btn-building-zerg-hatchery",
         "Name": {
           "enUS": "Mutate into Hatchery",
-          "ruRU": "Mutate into Hatchery"
+          "ruRU": "Мутировать в инкубатор "
         },
         "Tooltip": {
           "enUS": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a Lair.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-          "ruRU": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a Lair.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+          "ruRU": "Основное строение, служащее для производства войск зергов и хранения собранных ресурсов. Вырабатывает слизь, которая обеспечивает жизнедеятельность расположенных поблизости строений зергов. Может мутировать в логово.<br/><br/><span style=\"color: #ffff8a\">Бонус: зерги быстрее передвигаются по слизи.</span> "
         },
         "Hotkey": "H"
       },
@@ -1104,11 +1115,11 @@
         "Icon": "btn-building-zerg-extractor",
         "Name": {
           "enUS": "Mutate into Extractor",
-          "ruRU": "Mutate into Extractor"
+          "ruRU": "Мутировать в экстрактор "
         },
         "Tooltip": {
           "enUS": "Mutated over a Vespene Geyser to allow harvesting of vespene gas.",
-          "ruRU": "Mutated over a Vespene Geyser to allow harvesting of vespene gas."
+          "ruRU": "Мутирует на веспеновом гейзере. Позволяет добывать веспен. "
         },
         "Hotkey": "E"
       },
@@ -1144,11 +1155,11 @@
         "Icon": "btn-building-zerg-spawningpool",
         "Name": {
           "enUS": "Mutate into Spawning Pool",
-          "ruRU": "Mutate into Spawning Pool"
+          "ruRU": "Мутировать в омут рождения "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones",
-          "ruRU": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones"
+          "ruRU": "Позволяет улучшать зерглингов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– рождение королев в инкубаторе, логове или улье<br/>– мутация личинок в зерглингов<br/>– мутация рабочих в ползучих плеточников<br/>– мутация рабочих в ползучих споровиков "
         },
         "Hotkey": "S"
       },
@@ -1184,11 +1195,11 @@
         "Icon": "btn-building-zerg-evolutionchamber",
         "Name": {
           "enUS": "Mutate into Evolution Chamber",
-          "ruRU": "Mutate into Evolution Chamber"
+          "ruRU": "Мутировать в эволюционную камеру "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Zerg ground units.",
-          "ruRU": "Contains upgrades for Zerg ground units."
+          "ruRU": "Позволяет улучшать наземные войска зергов. "
         },
         "Hotkey": "V"
       },
@@ -1224,11 +1235,11 @@
         "Icon": "btn-building-zerg-banelingnest",
         "Name": {
           "enUS": "Mutate into Baneling Nest",
-          "ruRU": "Mutate into Baneling Nest"
+          "ruRU": "Мутировать в гнездо гиблингов "
         },
         "Tooltip": {
           "enUS": "Contains an upgrade for Banelings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banelings from Zerglings",
-          "ruRU": "Contains an upgrade for Banelings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banelings from Zerglings"
+          "ruRU": "Позволяет улучшать гиблингов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация зерглингов в гиблингов "
         },
         "Hotkey": "B"
       },
@@ -1250,11 +1261,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -1290,11 +1301,11 @@
         "Icon": "btn-building-zerg-roachwarren",
         "Name": {
           "enUS": "Mutate into Roach Warren",
-          "ruRU": "Mutate into Roach Warren"
+          "ruRU": "Мутировать в рассадник тараканов "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches",
-          "ruRU": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches"
+          "ruRU": "Позволяет улучшать тараканов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в тараканов<br/>– мутация тараканов в разорителей"
         },
         "Hotkey": "R"
       },
@@ -1330,11 +1341,11 @@
         "Icon": "btn-building-zerg-spinecrawler",
         "Name": {
           "enUS": "Mutate into Spine Crawler",
-          "ruRU": "Mutate into Spine Crawler"
+          "ruRU": "Мутировать в ползучего плеточника "
         },
         "Tooltip": {
           "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Средство наземной обороны.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "C"
       },
@@ -1370,11 +1381,11 @@
         "Icon": "btn-building-zerg-sporecrawler",
         "Name": {
           "enUS": "Mutate into Spore Crawler",
-          "ruRU": "Mutate into Spore Crawler"
+          "ruRU": "Мутировать в ползучего споровика "
         },
         "Tooltip": {
           "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
         },
         "Hotkey": "A"
       }
@@ -1412,11 +1423,11 @@
         "Icon": "btn-building-zerg-spire",
         "Name": {
           "enUS": "Mutate into Spire",
-          "ruRU": "Mutate into Spire"
+          "ruRU": "Мутировать в шпиль "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Zerg air units. Can mutate into a Greater Spire.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Mutalisks from Larvae<br/>- Corruptors from Larvae",
-          "ruRU": "Contains upgrades for Zerg air units. Can mutate into a Greater Spire.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Mutalisks from Larvae<br/>- Corruptors from Larvae"
+          "ruRU": "Позволяет улучшать воздушные войска зергов. Может мутировать в шпиль величия.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в муталисков<br/>– мутация личинок в губителей "
         },
         "Hotkey": "S"
       },
@@ -1452,11 +1463,11 @@
         "Icon": "btn-building-zerg-ultraliskcavern",
         "Name": {
           "enUS": "Mutate into Ultralisk Cavern",
-          "ruRU": "Mutate into Ultralisk Cavern"
+          "ruRU": "Мутировать в пещеру ультралисков "
         },
         "Tooltip": {
           "enUS": "Contains an upgrade for Ultralisks.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ultralisks from Larvae",
-          "ruRU": "Contains an upgrade for Ultralisks.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ultralisks from Larvae"
+          "ruRU": "Позволяет улучшать ультралисков.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в ультралисков"
         },
         "Hotkey": "U"
       },
@@ -1478,11 +1489,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -1518,11 +1529,11 @@
         "Icon": "btn-building-zerg-nydusnetwork",
         "Name": {
           "enUS": "Mutate into Nydus Network",
-          "ruRU": "Mutate into Nydus Network"
+          "ruRU": "Мутировать в сеть нидуса "
         },
         "Tooltip": {
           "enUS": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm",
-          "ruRU": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm"
+          "ruRU": "Дружественные наземные войска могут использовать сеть нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– создание червя нидуса"
         },
         "Hotkey": "N"
       },
@@ -1558,11 +1569,11 @@
         "Icon": "btn-building-zerg-infestationpit",
         "Name": {
           "enUS": "Mutate into Infestation Pit",
-          "ruRU": "Mutate into Infestation Pit"
+          "ruRU": "Мутировать в яму заразителей "
         },
         "Tooltip": {
           "enUS": "Contains upgrades for Infestors and Swarm Hosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Infestors from Larvae<br/>- Swarm Hosts from Larvae",
-          "ruRU": "Contains upgrades for Infestors and Swarm Hosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Infestors from Larvae<br/>- Swarm Hosts from Larvae"
+          "ruRU": "Позволяет улучшать заразителей.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в заразителей<br/>– мутация личинок в роевиков"
         },
         "Hotkey": "I"
       },
@@ -1598,11 +1609,11 @@
         "Icon": "btn-building-zerg-hydraliskden",
         "Name": {
           "enUS": "Mutate into Hydralisk Den",
-          "ruRU": "Mutate into Hydralisk Den"
+          "ruRU": "Мутировать в пещеру гидралисков "
         },
         "Tooltip": {
           "enUS": "Contains an upgrade for Hydralisks. Can mutate into a Lurker Den.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hydralisks from Larvae",
-          "ruRU": "Contains an upgrade for Hydralisks. Can mutate into a Lurker Den.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hydralisks from Larvae"
+          "ruRU": "Позволяет улучшать гидралисков.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в гидралисков"
         },
         "Hotkey": "H"
       }
@@ -1622,6 +1633,11 @@
   },
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "WeaponArray": [
+    {
+      "Link": "Spines"
+    }
+  ],
   "id": "Drone",
   "Icon": "btn-unit-zerg-drone",
   "Model": "Drone",
@@ -1629,17 +1645,26 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "Spines",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": {
-        "enUS": "Claws",
-        "ruRU": "Claws"
-      },
-      "Amount": 5,
-      "Kind": "Melee",
       "TargetFilters": "Ground",
       "Range": 0.2,
-      "Period": 1.5
+      "Period": 1.5,
+      "Options": {
+        "Melee": 1
+      },
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Slowing",
+      "id": "Spines",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Claws",
+        "ruRU": "Когти "
+      },
+      "Amount": 5,
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -1752,11 +1777,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1765,11 +1790,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1778,11 +1803,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1790,11 +1815,11 @@
       "id": "AttackWorker",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1803,11 +1828,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1816,11 +1841,11 @@
       "Icon": "btn-command-returncargo",
       "Name": {
         "enUS": "Return Cargo",
-        "ruRU": "Return Cargo"
+        "ruRU": "Выгрузить ресурсы "
       },
       "Tooltip": {
         "enUS": "Returns the carried resources to the nearest drop-off point.",
-        "ruRU": "Returns the carried resources to the nearest drop-off point."
+        "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
       }
     },
     {
@@ -1829,11 +1854,11 @@
       "Icon": "btn-ability-zerg-basicmutation",
       "Name": {
         "enUS": "Basic Mutation",
-        "ruRU": "Basic Mutation"
+        "ruRU": "Простые мутации "
       },
       "Tooltip": {
         "enUS": "A list of basic structures.",
-        "ruRU": "A list of basic structures."
+        "ruRU": "Открывает список основных строений."
       }
     },
     {
@@ -1842,11 +1867,11 @@
       "Icon": "btn-ability-zerg-advancedmutation",
       "Name": {
         "enUS": "Advanced Mutation",
-        "ruRU": "Advanced Mutation"
+        "ruRU": "Сложные мутации "
       },
       "Tooltip": {
         "enUS": "A list of advanced structures.",
-        "ruRU": "A list of advanced structures."
+        "ruRU": "Открывает список дополнительных строений."
       }
     },
     {
@@ -1855,11 +1880,11 @@
       "Icon": "btn-ability-zerg-burrow-color",
       "Name": {
         "enUS": "Burrow",
-        "ruRU": "Burrow"
+        "ruRU": "Закопаться "
       },
       "Tooltip": {
         "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
       }
     },
     {
@@ -1868,11 +1893,11 @@
       "Icon": "btn-ability-zerg-gather",
       "Name": {
         "enUS": "Gather",
-        "ruRU": "Gather"
+        "ruRU": "Добывать "
       },
       "Tooltip": {
         "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+        "ruRU": "Приказывает рабочему добывать ресурсы на месторождении минералов или из веспенового гейзера."
       }
     },
     {
@@ -1885,7 +1910,7 @@
       },
       "Tooltip": {
         "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
       }
     },
     {
@@ -1894,11 +1919,11 @@
       "Icon": "btn-building-zerg-hatchery",
       "Name": {
         "enUS": "Mutate into Hatchery",
-        "ruRU": "Mutate into Hatchery"
+        "ruRU": "Мутировать в инкубатор "
       },
       "Tooltip": {
         "enUS": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a Lair.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-        "ruRU": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a Lair.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+        "ruRU": "Основное строение, служащее для производства войск зергов и хранения собранных ресурсов. Вырабатывает слизь, которая обеспечивает жизнедеятельность расположенных поблизости строений зергов. Может мутировать в логово.<br/><br/><span style=\"color: #ffff8a\">Бонус: зерги быстрее передвигаются по слизи.</span> "
       }
     },
     {
@@ -1907,11 +1932,11 @@
       "Icon": "btn-building-zerg-extractor",
       "Name": {
         "enUS": "Mutate into Extractor",
-        "ruRU": "Mutate into Extractor"
+        "ruRU": "Мутировать в экстрактор "
       },
       "Tooltip": {
         "enUS": "Mutated over a Vespene Geyser to allow harvesting of vespene gas.",
-        "ruRU": "Mutated over a Vespene Geyser to allow harvesting of vespene gas."
+        "ruRU": "Мутирует на веспеновом гейзере. Позволяет добывать веспен. "
       }
     },
     {
@@ -1920,11 +1945,11 @@
       "Icon": "btn-building-zerg-spawningpool",
       "Name": {
         "enUS": "Mutate into Spawning Pool",
-        "ruRU": "Mutate into Spawning Pool"
+        "ruRU": "Мутировать в омут рождения "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones",
-        "ruRU": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones"
+        "ruRU": "Позволяет улучшать зерглингов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– рождение королев в инкубаторе, логове или улье<br/>– мутация личинок в зерглингов<br/>– мутация рабочих в ползучих плеточников<br/>– мутация рабочих в ползучих споровиков "
       }
     },
     {
@@ -1933,11 +1958,11 @@
       "Icon": "btn-building-zerg-evolutionchamber",
       "Name": {
         "enUS": "Mutate into Evolution Chamber",
-        "ruRU": "Mutate into Evolution Chamber"
+        "ruRU": "Мутировать в эволюционную камеру "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Zerg ground units.",
-        "ruRU": "Contains upgrades for Zerg ground units."
+        "ruRU": "Позволяет улучшать наземные войска зергов. "
       }
     },
     {
@@ -1946,11 +1971,11 @@
       "Icon": "btn-building-zerg-banelingnest",
       "Name": {
         "enUS": "Mutate into Baneling Nest",
-        "ruRU": "Mutate into Baneling Nest"
+        "ruRU": "Мутировать в гнездо гиблингов "
       },
       "Tooltip": {
         "enUS": "Contains an upgrade for Banelings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banelings from Zerglings",
-        "ruRU": "Contains an upgrade for Banelings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banelings from Zerglings"
+        "ruRU": "Позволяет улучшать гиблингов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация зерглингов в гиблингов "
       }
     },
     {
@@ -1959,11 +1984,11 @@
       "Icon": "btn-building-zerg-roachwarren",
       "Name": {
         "enUS": "Mutate into Roach Warren",
-        "ruRU": "Mutate into Roach Warren"
+        "ruRU": "Мутировать в рассадник тараканов "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches",
-        "ruRU": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches"
+        "ruRU": "Позволяет улучшать тараканов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в тараканов<br/>– мутация тараканов в разорителей"
       }
     },
     {
@@ -1972,11 +1997,11 @@
       "Icon": "btn-building-zerg-spinecrawler",
       "Name": {
         "enUS": "Mutate into Spine Crawler",
-        "ruRU": "Mutate into Spine Crawler"
+        "ruRU": "Мутировать в ползучего плеточника "
       },
       "Tooltip": {
         "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Средство наземной обороны.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -1985,11 +2010,11 @@
       "Icon": "btn-building-zerg-sporecrawler",
       "Name": {
         "enUS": "Mutate into Spore Crawler",
-        "ruRU": "Mutate into Spore Crawler"
+        "ruRU": "Мутировать в ползучего споровика "
       },
       "Tooltip": {
         "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-        "ruRU": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
       }
     },
     {
@@ -1998,11 +2023,11 @@
       "Icon": "btn-building-zerg-spire",
       "Name": {
         "enUS": "Mutate into Spire",
-        "ruRU": "Mutate into Spire"
+        "ruRU": "Мутировать в шпиль "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Zerg air units. Can mutate into a Greater Spire.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Mutalisks from Larvae<br/>- Corruptors from Larvae",
-        "ruRU": "Contains upgrades for Zerg air units. Can mutate into a Greater Spire.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Mutalisks from Larvae<br/>- Corruptors from Larvae"
+        "ruRU": "Позволяет улучшать воздушные войска зергов. Может мутировать в шпиль величия.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в муталисков<br/>– мутация личинок в губителей "
       }
     },
     {
@@ -2011,11 +2036,11 @@
       "Icon": "btn-building-zerg-ultraliskcavern",
       "Name": {
         "enUS": "Mutate into Ultralisk Cavern",
-        "ruRU": "Mutate into Ultralisk Cavern"
+        "ruRU": "Мутировать в пещеру ультралисков "
       },
       "Tooltip": {
         "enUS": "Contains an upgrade for Ultralisks.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ultralisks from Larvae",
-        "ruRU": "Contains an upgrade for Ultralisks.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ultralisks from Larvae"
+        "ruRU": "Позволяет улучшать ультралисков.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в ультралисков"
       }
     },
     {
@@ -2024,11 +2049,11 @@
       "Icon": "btn-building-zerg-nydusnetwork",
       "Name": {
         "enUS": "Mutate into Nydus Network",
-        "ruRU": "Mutate into Nydus Network"
+        "ruRU": "Мутировать в сеть нидуса "
       },
       "Tooltip": {
         "enUS": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm",
-        "ruRU": "Friendly ground units can use the Nydus Network to instantly travel to any other Nydus Network or Nydus Worm owned by the player.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Nydus Worm"
+        "ruRU": "Дружественные наземные войска могут использовать сеть нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– создание червя нидуса"
       }
     },
     {
@@ -2037,11 +2062,11 @@
       "Icon": "btn-building-zerg-infestationpit",
       "Name": {
         "enUS": "Mutate into Infestation Pit",
-        "ruRU": "Mutate into Infestation Pit"
+        "ruRU": "Мутировать в яму заразителей "
       },
       "Tooltip": {
         "enUS": "Contains upgrades for Infestors and Swarm Hosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Infestors from Larvae<br/>- Swarm Hosts from Larvae",
-        "ruRU": "Contains upgrades for Infestors and Swarm Hosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Infestors from Larvae<br/>- Swarm Hosts from Larvae"
+        "ruRU": "Позволяет улучшать заразителей.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в заразителей<br/>– мутация личинок в роевиков"
       }
     },
     {
@@ -2050,11 +2075,11 @@
       "Icon": "btn-building-zerg-hydraliskden",
       "Name": {
         "enUS": "Mutate into Hydralisk Den",
-        "ruRU": "Mutate into Hydralisk Den"
+        "ruRU": "Мутировать в пещеру гидралисков "
       },
       "Tooltip": {
         "enUS": "Contains an upgrade for Hydralisks. Can mutate into a Lurker Den.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hydralisks from Larvae",
-        "ruRU": "Contains an upgrade for Hydralisks. Can mutate into a Lurker Den.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hydralisks from Larvae"
+        "ruRU": "Позволяет улучшать гидралисков.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в гидралисков"
       }
     }
   ]

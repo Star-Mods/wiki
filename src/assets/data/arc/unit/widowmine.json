@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
-    "ruRU": "Widow Mine",
+    "ruRU": "Мина «Вдова» ",
     "enUS": "Widow Mine"
   },
   "Description": {
     "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 7,
@@ -20,7 +21,7 @@
   "LifeMax": 90,
   "LifeArmorName": {
     "enUS": "Terran Vehicle Plating",
-    "ruRU": "Terran Vehicle Plating"
+    "ruRU": "Обшивка наземной техники терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 2292.8906,
@@ -124,6 +125,12 @@
   "Acceleration": 1000,
   "Sight": 7,
   "RepairTime": 20,
+  "AbilArray": [
+    "WidowMineBurrow",
+    "stop",
+    "move",
+    "WidowMineAttack"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -214,11 +221,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -294,11 +301,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -390,11 +397,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -471,11 +478,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -567,11 +574,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -663,11 +670,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -689,11 +696,11 @@
         "Icon": "btn-ability-terran-unstablepayload",
         "Name": {
           "enUS": "Sentinel Missiles",
-          "ruRU": "Sentinel Missiles"
+          "ruRU": "Ракеты «Страж»"
         },
         "Tooltip": {
           "enUS": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>",
-          "ruRU": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>"
+          "ruRU": "Атакует приблизившиеся наземные и воздушные боевые единицы противника, нанося <b>125</b> ед. урона (+<b>35</b> ед. урона по щитам) основной цели и <b>40</b> ед. урона (+<b>25</b> ед. урона по щитам) другим целям рядом с ней. При перезарядке местоположение мины раскрывается.<br/><br/><span style=\"color: #ffff8a\">Время восстановления: <b>40</b> сек.</span>"
         }
       },
       {
@@ -740,11 +747,11 @@
         "Icon": "btn-ability-terran-activatemine",
         "Name": {
           "enUS": "Activate Mine",
-          "ruRU": "Activate Mine"
+          "ruRU": "Активировать мину "
         },
         "Tooltip": {
           "enUS": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
-          "ruRU": "Burrows the Widow Mine and readies its weapon. Cannot move while activated."
+          "ruRU": "Мина «Вдова» закапывается и приходит в боевую готовность. Активированная мина не может передвигаться."
         },
         "Hotkey": "E"
       },
@@ -908,11 +915,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атака "
         },
         "Tooltip": {
           "enUS": "Attacks any nearby enemy unit.",
-          "ruRU": "Attacks any nearby enemy unit."
+          "ruRU": "Атакует любую находящуюся рядом боевую единицу противника. "
         },
         "Hotkey": "C"
       },
@@ -933,10 +940,12 @@
         "id": "DrillClaws",
         "Icon": "btn-upgrade-terran-researchdrillingclaws",
         "Name": {
-          "enUS": "Drilling Claws"
+          "enUS": "Drilling Claws",
+          "ruRU": "Когти для бурения"
         },
         "Tooltip": {
-          "enUS": "This unit burrows faster."
+          "enUS": "This unit burrows faster.",
+          "ruRU": "Эта боевая единица закапывается быстрее."
         }
       },
       {
@@ -956,10 +965,12 @@
         "id": "WidowMineConcealment",
         "Icon": "btn-ability-terran-widowminehidden",
         "Name": {
-          "enUS": "Concealment"
+          "enUS": "Concealment",
+          "ruRU": "Скрытность"
         },
         "Tooltip": {
-          "enUS": "This unit is no longer revealed while reloading."
+          "enUS": "This unit is no longer revealed while reloading.",
+          "ruRU": "Местоположение этой боевой единицы не раскрывается при перезарядке."
         }
       }
     ]
@@ -983,6 +994,9 @@
     "Overseer",
     "Observer"
   ],
+  "BehaviorArray": [
+    "WidowMineDrillingClawsTracker"
+  ],
   "id": "WidowMine",
   "Icon": "btn-unit-terran-widowmine",
   "Model": "WidowMine",
@@ -1003,7 +1017,7 @@
       "id": "WidowMineBurrow",
       "Name": {
         "enUS": "Widow Mine Burrow",
-        "ruRU": "Widow Mine Burrow"
+        "ruRU": "Мина «Вдова» закапывание"
       }
     },
     {
@@ -1024,7 +1038,7 @@
       "id": "WidowMineAttack",
       "Name": {
         "enUS": "Widow Mine Attack",
-        "ruRU": "Widow Mine Attack"
+        "ruRU": "Мина «Вдова» атака"
       }
     }
   ],
@@ -1070,11 +1084,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1083,11 +1097,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1096,11 +1110,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1109,11 +1123,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1122,11 +1136,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1135,11 +1149,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1148,11 +1162,11 @@
       "Icon": "btn-ability-terran-activatemine",
       "Name": {
         "enUS": "Activate Mine",
-        "ruRU": "Activate Mine"
+        "ruRU": "Активировать мину "
       },
       "Tooltip": {
         "enUS": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
-        "ruRU": "Burrows the Widow Mine and readies its weapon. Cannot move while activated."
+        "ruRU": "Мина «Вдова» закапывается и приходит в боевую готовность. Активированная мина не может передвигаться."
       }
     },
     {
@@ -1161,11 +1175,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атака "
       },
       "Tooltip": {
         "enUS": "Attacks any nearby enemy unit.",
-        "ruRU": "Attacks any nearby enemy unit."
+        "ruRU": "Атакует любую находящуюся рядом боевую единицу противника. "
       }
     }
   ]

@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Missile Turret",
-    "ruRU": "Missile Turret"
+    "ruRU": "Ракетная турель "
   },
   "Description": {
     "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-    "ruRU": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 250,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -127,6 +128,16 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "Detector11",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -191,11 +202,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -261,11 +272,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -341,11 +352,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -422,11 +433,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -448,11 +459,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       },
       {
@@ -473,11 +484,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -486,6 +497,12 @@
   "GlossaryPriority": 310,
   "GlossaryCategory": "Unit/Category/TerranUnits",
   "HotkeyCategory": "Unit/Category/TerranUnits",
+  "WeaponArray": [
+    {
+      "Link": "LongboltMissile",
+      "Turret": "MissileTurret"
+    }
+  ],
   "GlossaryStrongArray": [
     "Banshee",
     "Mutalisk",
@@ -504,18 +521,22 @@
   "Weapons": [
     {
       "Turret": "MissileTurret",
-      "id": "LongboltMissile",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "Longbolt Missile",
-        "ruRU": "Longbolt Missile"
-      },
-      "Amount": 12,
-      "Kind": "Ranged",
+      "DisplayEffect": "LongboltMissileU",
       "DisplayAttackCount": 2,
       "TargetFilters": "Air",
       "Range": 7,
-      "Period": 0.8608
+      "Period": 0.8608,
+      "RangeSlop": 0,
+      "id": "LongboltMissile",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Longbolt Missile",
+        "ruRU": "Дальнобойные ракеты "
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -532,7 +553,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -599,11 +620,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -612,11 +633,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -625,11 +646,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -638,11 +659,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

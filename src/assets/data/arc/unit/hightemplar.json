@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "High Templar",
-    "ruRU": "High Templar"
+    "ruRU": "Высший тамплиер "
   },
   "Description": {
     "enUS": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.",
-    "ruRU": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon."
+    "ruRU": "Могущественный воин-псионик. Может использовать способности «Противодействие» и «Псионный шторм» (после соответствующего улучшения). Может переродиться в архонта.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 40,
   "LifeArmorName": {
     "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
@@ -107,7 +108,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Speed": 2.0156,
   "Acceleration": 1000,
@@ -135,6 +136,17 @@
     "Small"
   ],
   "Sight": 10,
+  "AbilArray": [
+    "stop",
+    "move",
+    "PsiStorm",
+    "ArchonWarp",
+    "Warpable",
+    "ProgressRally",
+    "Feedback",
+    "BuildInProgress",
+    "attack"
+  ],
   "TacticalAIThink": "AIThinkHighTemplar",
   "CardLayouts": {
     "Root": [
@@ -226,11 +238,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -306,11 +318,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -402,11 +414,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -498,11 +510,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -579,11 +591,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -675,11 +687,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -703,11 +715,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -736,11 +748,11 @@
         "Icon": "btn-unit-protoss-archon",
         "Name": {
           "enUS": "Archon Merge",
-          "ruRU": "Archon Merge"
+          "ruRU": "Слияние в архонта"
         },
         "Tooltip": {
           "enUS": "Sacrifices 2 Templar to create an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Sacrifices 2 Templar to create an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Принести в жертву двух тамплиеров для создания архонта.<br/><br/><span style=\"color: ffff8a\">Архонт атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "C"
       },
@@ -888,11 +900,11 @@
         "Icon": "btn-ability-protoss-psistorm-color",
         "Name": {
           "enUS": "Psionic Storm",
-          "ruRU": "Psionic Storm"
+          "ruRU": "Псионный шторм "
         },
         "Tooltip": {
           "enUS": "Creates a storm of psionic energy that lasts <b>4</b>, causing up to 80 damage to all units in the target area.",
-          "ruRU": "Creates a storm of psionic energy that lasts <b>4</b>, causing up to 80 damage to all units in the target area."
+          "ruRU": "Создает шторм псионной энергии, в течение <b>4</b> наносящий до 80 ед. урона всем войскам в указанной области."
         },
         "Hotkey": "T"
       },
@@ -1039,11 +1051,11 @@
         "Icon": "btn-ability-protoss-feedback-color",
         "Name": {
           "enUS": "Feedback",
-          "ruRU": "Feedback"
+          "ruRU": "Противодействие "
         },
         "Tooltip": {
           "enUS": "Drains all energy from the target. Deals 1 damage per point of energy.",
-          "ruRU": "Drains all energy from the target. Deals 1 damage per point of energy."
+          "ruRU": "Полностью лишает цель энергии, нанося <b>1</b> ед. урона за каждую единицу энергии."
         },
         "Hotkey": "F"
       }
@@ -1077,6 +1089,11 @@
     "Cheer": 5,
     "Dance": 5
   },
+  "WeaponArray": [
+    {
+      "Link": "HighTemplarWeapon"
+    }
+  ],
   "id": "HighTemplar",
   "Icon": "btn-unit-protoss-hightemplar",
   "Model": "HighTemplar",
@@ -1084,16 +1101,25 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "HighTemplarWeapon",
-      "Icon": "btn-upgrade-protoss-groundweaponslevel0",
       "Name": {
-        "enUS": "Psi Blast"
+        "enUS": "Psi Blast",
+        "ruRU": "Пси-взрыв"
+      },
+      "EditorCategories": "Race:Protoss",
+      "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "DisplayEffect": "HighTemplarWeaponDamage",
+      "TargetFilters": "Ground",
+      "MinScanRange": 6.5,
+      "Range": 6,
+      "Period": 1.754,
+      "Effect": "HighTemplarWeaponLM",
+      "id": "HighTemplarWeapon",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
       },
       "Amount": 4,
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 6,
-      "Period": 1.754
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -1207,11 +1233,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1220,11 +1246,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1233,11 +1259,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1246,11 +1272,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1259,11 +1285,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1272,11 +1298,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1285,11 +1311,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1298,11 +1324,11 @@
       "Icon": "btn-unit-protoss-archon",
       "Name": {
         "enUS": "Archon Merge",
-        "ruRU": "Archon Merge"
+        "ruRU": "Слияние в архонта"
       },
       "Tooltip": {
         "enUS": "Sacrifices 2 Templar to create an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Sacrifices 2 Templar to create an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Принести в жертву двух тамплиеров для создания архонта.<br/><br/><span style=\"color: ffff8a\">Архонт атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -1311,11 +1337,11 @@
       "Icon": "btn-ability-protoss-psistorm-color",
       "Name": {
         "enUS": "Psionic Storm",
-        "ruRU": "Psionic Storm"
+        "ruRU": "Псионный шторм "
       },
       "Tooltip": {
         "enUS": "Creates a storm of psionic energy that lasts <b>4</b>, causing up to 80 damage to all units in the target area.",
-        "ruRU": "Creates a storm of psionic energy that lasts <b>4</b>, causing up to 80 damage to all units in the target area."
+        "ruRU": "Создает шторм псионной энергии, в течение <b>4</b> наносящий до 80 ед. урона всем войскам в указанной области."
       }
     },
     {
@@ -1324,11 +1350,11 @@
       "Icon": "btn-ability-protoss-feedback-color",
       "Name": {
         "enUS": "Feedback",
-        "ruRU": "Feedback"
+        "ruRU": "Противодействие "
       },
       "Tooltip": {
         "enUS": "Drains all energy from the target. Deals 1 damage per point of energy.",
-        "ruRU": "Drains all energy from the target. Deals 1 damage per point of energy."
+        "ruRU": "Полностью лишает цель энергии, нанося <b>1</b> ед. урона за каждую единицу энергии."
       }
     }
   ]

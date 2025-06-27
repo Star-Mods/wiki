@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Colossus",
-    "ruRU": "Colossus"
+    "ruRU": "Колосс "
   },
   "Description": {
     "enUS": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Шагающий боевой робот, наносящий огромный урон по области. Может свободно преодолевать высокие уступы. Уязвим для противовоздушных орудий.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 250,
   "LifeArmorName": {
     "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Colossus",
   "StationaryTurningRate": 720,
@@ -98,7 +99,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Speed": 2.25,
   "Acceleration": 1000,
@@ -125,6 +126,11 @@
   ],
   "VisionHeight": 4,
   "Sight": 10,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -215,11 +221,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -295,11 +301,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -391,11 +397,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -472,11 +478,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -568,11 +574,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -594,11 +600,11 @@
         "Icon": "btn-ability-protoss-cliffwalk-color",
         "Name": {
           "enUS": "Cliff Walk",
-          "ruRU": "Cliff Walk"
+          "ruRU": "Преодоление уступов "
         },
         "Tooltip": {
           "enUS": "The Colossus can walk up and down cliffs.",
-          "ruRU": "The Colossus can walk up and down cliffs."
+          "ruRU": "Колосс может свободно преодолевать высокие уступы. "
         }
       }
     ]
@@ -627,6 +633,12 @@
     "Corruptor",
     "Tempest"
   ],
+  "WeaponArray": [
+    {
+      "Link": "ThermalLances",
+      "Turret": "Colossus"
+    }
+  ],
   "ShieldRegenDelay": 10,
   "RepairTime": 75,
   "TauntDuration": {
@@ -640,21 +652,38 @@
   "Weapons": [
     {
       "Turret": "Colossus",
-      "id": "ThermalLances",
+      "EditorCategories": "Race:Protoss",
       "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "DisplayEffect": "ThermalLancesMU",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByDistanceFromTarget",
+      "Range": 7,
+      "Arc": 90,
+      "Period": 1.5,
+      "DamagePoint": 0.0832,
+      "DisplayAttackCount": 2,
+      "LegacyOptions": {
+        "KeepChanneling": 1
+      },
+      "RangeSlop": 0,
+      "MinScanRange": 7.5,
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0
+      },
+      "id": "ThermalLances",
+      "class": "CWeaponLegacy",
+      "AttackType": "Chaos",
+      "Tip": "Weapon/Tip/PierceWeapon",
       "Name": {
         "enUS": "Thermal Lance",
-        "ruRU": "Thermal Lance"
+        "ruRU": "Термальный луч "
       },
       "Amount": 10,
       "AttributeBonus": {
         "Light": 5
       },
-      "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 1.5
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -726,11 +755,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -739,11 +768,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -752,11 +781,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -765,11 +794,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -778,11 +807,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     }
   ]

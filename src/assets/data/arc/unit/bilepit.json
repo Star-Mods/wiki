@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Bile Pit",
     "ruRU": "Ядовитое гнездо"
@@ -114,6 +115,11 @@
   "LifeArmor": 2,
   "Sight": 11,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "BilePit",
@@ -121,6 +127,23 @@
   "CostResource": {
     "Minerals": 150
   },
+  "BehaviorArray": [
+    "Detector11",
+    "FeedingPoolPowerUser",
+    "BilePitSustain",
+    "BilePitNotInRangeOfFeedingPool"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "BileGlob"
+    },
+    {
+      "Link": "BileGlobAG"
+    },
+    {
+      "Link": "BileGlobEquipment"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -141,11 +164,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       },
       {
@@ -210,11 +233,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -290,11 +313,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -371,11 +394,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       }
@@ -395,35 +418,20 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "BileGlob",
+      "Options": {
+        "Hidden": 1
+      },
       "Icon": "btn-missing-kaeo",
-      "Name": {
-        "enUS": "Bile Glob",
-        "ruRU": "Токсичный шарик"
-      },
-      "Amount": 10,
-      "AttributeBonus": {
-        "Armored": 4
-      },
-      "Kind": "Ranged",
       "TargetFilters": "Air",
+      "MinScanRange": 8,
       "Range": 7,
-      "Period": 0.7
-    },
-    {
-      "id": "BileGlobAG",
-      "Icon": "btn-missing-kaeo",
-      "Name": {
-        "enUS": "Bile Glob",
-        "ruRU": "Токсичный шарик"
-      },
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0.7
-    },
-    {
-      "id": "BileGlobEquipment",
-      "Icon": "btn-building-xayid-bilepit",
+      "Arc": 360,
+      "Period": 0.7,
+      "RandomDelayMax": 0.075,
+      "DisplayEffect": "BileGlobImpact",
+      "id": "BileGlob",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Bile Glob",
         "ruRU": "Токсичный шарик"
@@ -432,10 +440,58 @@
       "AttributeBonus": {
         "Armored": 4
       },
-      "Kind": "Ranged",
-      "TargetFilters": "",
+      "Kind": "Ranged"
+    },
+    {
+      "Options": {
+        "Hidden": 1
+      },
+      "Icon": "btn-missing-kaeo",
+      "MinScanRange": 8,
       "Range": 7,
-      "Period": 0.7
+      "Arc": 360,
+      "Period": 0.7,
+      "Effect": "BileGlobLAG",
+      "RandomDelayMax": 0.075,
+      "id": "BileGlobAG",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Bile Glob",
+        "ruRU": "Токсичный шарик"
+      },
+      "TargetFilters": "Ground"
+    },
+    {
+      "Options": {
+        "Melee": 0,
+        "CanInitiateAttackOrder": 0,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
+      },
+      "Icon": "btn-building-xayid-bilepit",
+      "DisplayEffect": "BileGlobImpact",
+      "TargetFilters": "",
+      "MinScanRange": 8,
+      "Range": 7,
+      "Arc": 360,
+      "Period": 0.7,
+      "Effect": "",
+      "RandomDelayMax": 0.075,
+      "id": "BileGlobEquipment",
+      "parent": "MeleeWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Bile Glob",
+        "ruRU": "Токсичный шарик"
+      },
+      "Amount": 10,
+      "AttributeBonus": {
+        "Armored": 4
+      },
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -444,7 +500,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -527,11 +583,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -540,11 +596,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -553,11 +609,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     }
   ]

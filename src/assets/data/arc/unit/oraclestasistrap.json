@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Stasis Ward",
-    "ruRU": "Stasis Ward"
+    "ruRU": "Стазисная ловушка "
   },
   "Description": {
     "enUS": "Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection.",
-    "ruRU": "Ground unit trap. Cloak renders the Stasis Ward invisible to enemies without detection."
+    "ruRU": "Ловушка для наземных целей. Маскировка делает ее невидимой для противника, ее можно обнаружить только с помощью детекторов. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
@@ -20,7 +21,7 @@
   "LifeMax": 30,
   "LifeArmorName": {
     "enUS": "Synoid Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -107,10 +108,14 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Sight": 7,
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "OracleStasisTrapActivate",
+    "BuildInProgress"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -132,11 +137,11 @@
         "Icon": "btn-ability-protoss-stasistrap",
         "Name": {
           "enUS": "Stasis",
-          "ruRU": "Stasis"
+          "ruRU": "Стазисная ловушка"
         },
         "Tooltip": {
           "enUS": "Traps nearby enemies in stasis for <b>30</b> seconds. Trapped units cannot be attacked or affected by abilities.",
-          "ruRU": "Traps nearby enemies in stasis for <b>30</b> seconds. Trapped units cannot be attacked or affected by abilities."
+          "ruRU": "Помещает ближайших противников в стазис на <b>30</b> сек. Пойманные цели нельзя атаковать или использовать на них способности. "
         }
       },
       {
@@ -201,11 +206,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -227,11 +232,11 @@
         "Icon": "btn-upgrade-vorazun-stasiswardpermanentlycloaked",
         "Name": {
           "enUS": "Permanently Cloaked",
-          "ruRU": "Permanently Cloaked"
+          "ruRU": "Постоянная маскировка "
         },
         "Tooltip": {
           "enUS": "The Stasis Ward is permanently cloaked.",
-          "ruRU": "The Stasis Ward is permanently cloaked."
+          "ruRU": "Стазисная ловушка постоянно замаскирована. "
         }
       }
     ]
@@ -239,6 +244,10 @@
   "InnerRadius": 0.375,
   "KillDisplay": "Never",
   "RankDisplay": "Never",
+  "BehaviorArray": [
+    "OracleStasisTrapCloak",
+    "StasisWardTimedLife"
+  ],
   "Collide": [
     "Ground",
     "Structure",
@@ -272,7 +281,7 @@
       "id": "OracleStasisTrapCloak",
       "Name": {
         "enUS": "Oracle Stasis Ward Cloak",
-        "ruRU": "Oracle Stasis Ward Cloak ///Auto - Copied from enUS Locale"
+        "ruRU": "Oracle Stasis Ward Cloak "
       },
       "Tooltip": "-"
     },
@@ -323,11 +332,11 @@
       "Icon": "btn-ability-protoss-stasistrap",
       "Name": {
         "enUS": "Stasis",
-        "ruRU": "Stasis"
+        "ruRU": "Стазисная ловушка"
       },
       "Tooltip": {
         "enUS": "Traps nearby enemies in stasis for <b>30</b> seconds. Trapped units cannot be attacked or affected by abilities.",
-        "ruRU": "Traps nearby enemies in stasis for <b>30</b> seconds. Trapped units cannot be attacked or affected by abilities."
+        "ruRU": "Помещает ближайших противников в стазис на <b>30</b> сек. Пойманные цели нельзя атаковать или использовать на них способности. "
       }
     },
     {
@@ -336,11 +345,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     }
   ]

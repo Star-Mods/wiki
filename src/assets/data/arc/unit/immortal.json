@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Immortal",
-    "ruRU": "Immortal"
+    "ruRU": "Бессмертный "
   },
   "Description": {
     "enUS": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Штурмовой шагающий робот. Может создавать барьер, поглощающий урон.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 200,
   "LifeArmorName": {
     "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -97,7 +98,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Speed": 2.25,
   "Acceleration": 1000,
@@ -121,6 +122,15 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move"
+  ],
+  "BehaviorArray": [
+    "BarrierDamageResponse",
+    "ImmortalOverload"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -211,11 +221,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -291,11 +301,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -387,11 +397,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -468,11 +478,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -564,11 +574,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -591,11 +601,11 @@
         "Icon": "btn-ability-protoss-invulnerabilityshield",
         "Name": {
           "enUS": "Barrier",
-          "ruRU": "Barrier"
+          "ruRU": "Барьер "
         },
         "Tooltip": {
           "enUS": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
-          "ruRU": "Absorbs up to <b>100</b> damage. Lasts for <b>0</b> seconds."
+          "ruRU": "Поглощает до <b>100</b> ед. урона. Время действия – <b>0</b> сек. Срабатывает не чаще одного раза в <b>45</b> сек."
         },
         "Hotkey": "B"
       }
@@ -624,6 +634,12 @@
     "Vespene": 100
   },
   "LifeArmor": 1,
+  "WeaponArray": [
+    {
+      "Link": "PhaseDisruptors",
+      "Turret": "Immortal"
+    }
+  ],
   "ShieldRegenDelay": 10,
   "RepairTime": 55,
   "TauntDuration": {
@@ -638,20 +654,29 @@
   "Weapons": [
     {
       "Turret": "Immortal",
-      "id": "PhaseDisruptors",
+      "EditorCategories": "Race:Protoss",
       "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "TargetFilters": "Ground",
+      "Period": 1.6,
+      "Range": 6,
+      "MinScanRange": 6.5,
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "NeverMiss": 0
+      },
+      "AllowedMovement": "Slowing",
+      "id": "PhaseDisruptors",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Phase Disruptors",
-        "ruRU": "Phase Disruptors"
+        "ruRU": "Фазовые расщепители "
       },
       "Amount": 20,
       "AttributeBonus": {
         "Armored": 30
       },
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 6,
-      "Period": 1.6
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -659,7 +684,7 @@
       "id": "BarrierDamageResponse",
       "Name": {
         "enUS": "Barrier Damage Response",
-        "ruRU": "Barrier Damage Response ///Auto - Copied from enUS Locale"
+        "ruRU": "Barrier Damage Response "
       },
       "Tooltip": "-"
     },
@@ -667,11 +692,11 @@
       "id": "ImmortalOverload",
       "Name": {
         "enUS": "Barrier",
-        "ruRU": "Barrier"
+        "ruRU": "Барьер "
       },
       "Tooltip": {
         "enUS": "This unit is absorbing damage dealt to it.",
-        "ruRU": "This unit is absorbing damage dealt to it."
+        "ruRU": "Эта боевая единица поглощает наносимый ей урон. "
       }
     }
   ],
@@ -737,11 +762,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -750,11 +775,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -763,11 +788,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -776,11 +801,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -789,11 +814,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -802,11 +827,11 @@
       "Icon": "btn-ability-protoss-invulnerabilityshield",
       "Name": {
         "enUS": "Barrier",
-        "ruRU": "Barrier"
+        "ruRU": "Барьер "
       },
       "Tooltip": {
         "enUS": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
-        "ruRU": "Absorbs up to <b>100</b> damage. Lasts for <b>0</b> seconds."
+        "ruRU": "Поглощает до <b>100</b> ед. урона. Время действия – <b>0</b> сек. Срабатывает не чаще одного раза в <b>45</b> сек."
       }
     }
   ]

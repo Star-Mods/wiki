@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Massalisk",
     "ruRU": "Массалиск"
@@ -101,6 +102,11 @@
     "Structure"
   ],
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "Mobile",
+    "stop",
+    "attack"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -176,11 +182,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -294,11 +300,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -375,11 +381,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       }
@@ -417,6 +423,14 @@
     "Minerals": 300,
     "Vespene": 200
   },
+  "WeaponArray": [
+    {
+      "Link": "MassiveSporeAG"
+    },
+    {
+      "Link": "MassiveSporeAA"
+    }
+  ],
   "InnerRadius": 0.75,
   "CargoSize": 0,
   "GlossaryPriority": 13,
@@ -425,34 +439,48 @@
   "TechAliasArray": [
     "Alias_Massalisk"
   ],
+  "BehaviorArray": [
+    "MassaliskHunkered"
+  ],
   "Icon": "btn-unit-xayid-massalisk",
   "Model": "Massalisk",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "Options": {
+        "Melee": 0
+      },
+      "Range": 3,
+      "Period": 1.4,
+      "DisplayEffect": "MassiveSporeAGImpact",
       "id": "MassiveSporeAG",
+      "parent": "MeleeWeaponXayid",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Massive Spore",
         "ruRU": "Массивная спора"
       },
       "Amount": 40,
       "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 3,
-      "Period": 1.4
+      "TargetFilters": "Ground"
     },
     {
+      "DisplayEffect": "MassiveSporeAAImpact",
+      "TargetFilters": "Air",
+      "MinScanRange": 12,
+      "Range": 10,
+      "Arc": 24.994,
+      "Period": 1.4,
       "id": "MassiveSporeAA",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Massive Spore",
         "ruRU": "Массивная спора"
       },
       "Amount": 24,
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 10,
-      "Period": 1.4
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -521,11 +549,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -547,11 +575,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -560,11 +588,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     }
   ]

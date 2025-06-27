@@ -1,7 +1,8 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Marine",
-    "ruRU": "Marine"
+    "ruRU": "Морпех "
   },
   "Description": {
     "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
@@ -20,7 +21,7 @@
   "LifeMax": 45,
   "LifeArmorName": {
     "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
+    "ruRU": "Броня пехоты терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
@@ -122,6 +123,12 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "Stimpack"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -212,11 +219,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -292,11 +299,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -388,11 +395,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -469,11 +476,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -565,11 +572,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -705,11 +712,11 @@
         "Icon": "btn-ability-terran-stimpack-color",
         "Name": {
           "enUS": "Use Stimpack",
-          "ruRU": "Use Stimpack"
+          "ruRU": "Стимуляторы "
         },
         "Tooltip": {
           "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 10 of the unit's life.",
-          "ruRU": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 10 of the unit's life."
+          "ruRU": "Инъекция мощных стимуляторов, которые на несколько секунд значительно повышают скорость стрельбы и передвижения. Боевая единица при этом теряет 10 ед. здоровья."
         },
         "Hotkey": "T"
       }
@@ -732,6 +739,11 @@
     "Baneling",
     "Colossus"
   ],
+  "WeaponArray": [
+    {
+      "Link": "GuassRifle"
+    }
+  ],
   "TauntDuration": {
     "Cheer": 5,
     "Dance": 5
@@ -743,17 +755,25 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "GuassRifle",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
+      "TargetFilters": "",
+      "Period": 0.8608,
+      "DamagePoint": 0.05,
+      "Backswing": 0.75,
+      "MinScanRange": 5.5,
+      "id": "GuassRifle",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
       "Name": {
         "enUS": "C-14 Gauss Rifle",
-        "ruRU": "C-14 Gauss Rifle"
+        "ruRU": "Винтовка Гаусса С-14 "
       },
       "Amount": 6,
       "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 5,
-      "Period": 0.8608
+      "Range": 5
     }
   ],
   "Behaviors": [],
@@ -830,11 +850,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -843,11 +863,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -856,11 +876,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -869,11 +889,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -882,11 +902,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -895,11 +915,11 @@
       "Icon": "btn-ability-terran-stimpack-color",
       "Name": {
         "enUS": "Use Stimpack",
-        "ruRU": "Use Stimpack"
+        "ruRU": "Стимуляторы "
       },
       "Tooltip": {
         "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 10 of the unit's life.",
-        "ruRU": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 10 of the unit's life."
+        "ruRU": "Инъекция мощных стимуляторов, которые на несколько секунд значительно повышают скорость стрельбы и передвижения. Боевая единица при этом теряет 10 ед. здоровья."
       }
     }
   ]

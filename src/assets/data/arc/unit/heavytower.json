@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Heavy Tower",
     "ruRU": "Орудийная башня"
@@ -121,6 +122,20 @@
     "Minerals": 225
   },
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "UnderConstruction"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "90mmCannons23",
+      "Turret": "HeavyTower"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -185,11 +200,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -265,11 +280,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -346,11 +361,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       }
@@ -387,8 +402,15 @@
   "Weapons": [
     {
       "Turret": "HeavyTower",
-      "id": "90mmCannons23",
+      "EditorCategories": "Race:UED",
       "Icon": "btn-upgrade-terran-hisecautotracking",
+      "TargetFilters": "Ground",
+      "MinScanRange": 7.5,
+      "Range": 7,
+      "Arc": 1.4941,
+      "Period": 1.33,
+      "id": "90mmCannons23",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "125mm Gauss Cannon",
         "ruRU": "125-мм орудие Гаусса"
@@ -397,10 +419,7 @@
       "AttributeBonus": {
         "Armored": 20
       },
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 1.33
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -461,11 +480,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -474,11 +493,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -487,11 +506,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

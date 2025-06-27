@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Spore Crawler",
-    "ruRU": "Spore Crawler"
+    "ruRU": "Ползучий споровик "
   },
   "Description": {
     "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-    "ruRU": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 300,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -128,6 +129,18 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "SporeCrawlerUproot"
+  ],
+  "BehaviorArray": [
+    "Detector11",
+    "OnCreep",
+    "ZergBuildingNotOnCreep",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -192,11 +205,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -272,11 +285,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -353,11 +366,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -401,11 +414,11 @@
         "Icon": "btn-ability-zerg-uproot-color",
         "Name": {
           "enUS": "Uproot",
-          "ruRU": "Uproot"
+          "ruRU": "Выкопаться "
         },
         "Tooltip": {
           "enUS": "Uproots the Spore Crawler. An uprooted Spore Crawler has the ability to move but cannot attack. Moves much faster on creep.",
-          "ruRU": "Uproots the Spore Crawler. An uprooted Spore Crawler has the ability to move but cannot attack. Moves much faster on creep."
+          "ruRU": "Ползучий споровик выкапывается. В выкопанном состоянии ползучий споровик может передвигаться, но не может атаковать. Быстрее передвигается по слизи."
         },
         "Hotkey": "R"
       },
@@ -427,11 +440,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       }
     ]
@@ -445,6 +458,12 @@
   "RankDisplay": "Always",
   "GlossaryCategory": "Unit/Category/ZergUnits",
   "HotkeyCategory": "Unit/Category/ZergUnits",
+  "WeaponArray": [
+    {
+      "Link": "AcidSpew",
+      "Turret": "SporeCrawler"
+    }
+  ],
   "GlossaryStrongArray": [
     "Banshee",
     "Mutalisk",
@@ -463,20 +482,25 @@
   "Weapons": [
     {
       "Turret": "SporeCrawler",
-      "id": "AcidSpew",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-missileattacks-level0",
+      "DisplayEffect": "SporeCrawlerU",
+      "TargetFilters": "Air",
+      "Range": 7,
+      "Period": 0.8608,
+      "RangeSlop": 0,
+      "Effect": "SporeCrawler",
+      "id": "AcidSpew",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Acid Spew",
-        "ruRU": "Acid Spew"
+        "ruRU": "Выброс кислоты "
       },
       "Amount": 20,
       "AttributeBonus": {
         "Biological": 10
       },
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 7,
-      "Period": 0.8608
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -485,7 +509,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -577,11 +601,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -590,11 +614,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -603,11 +627,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -616,11 +640,11 @@
       "Icon": "btn-ability-zerg-uproot-color",
       "Name": {
         "enUS": "Uproot",
-        "ruRU": "Uproot"
+        "ruRU": "Выкопаться "
       },
       "Tooltip": {
         "enUS": "Uproots the Spore Crawler. An uprooted Spore Crawler has the ability to move but cannot attack. Moves much faster on creep.",
-        "ruRU": "Uproots the Spore Crawler. An uprooted Spore Crawler has the ability to move but cannot attack. Moves much faster on creep."
+        "ruRU": "Ползучий споровик выкапывается. В выкопанном состоянии ползучий споровик может передвигаться, но не может атаковать. Быстрее передвигается по слизи."
       }
     }
   ]

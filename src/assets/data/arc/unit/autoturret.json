@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Auto-Turret",
-    "ruRU": "Auto-Turret"
+    "ruRU": "Автотурель "
   },
   "Description": {
     "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Автоматическая турель. Функционирует в течение <b>11</b> сек.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 100,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -115,6 +116,14 @@
     "Small"
   ],
   "Sight": 7,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -189,11 +198,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -270,11 +279,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       }
@@ -286,6 +295,12 @@
     "Structure"
   ],
   "GlossaryCategory": "Unit/Category/TerranUnits",
+  "WeaponArray": [
+    {
+      "Link": "AutoTurret",
+      "Turret": "AutoTurret"
+    }
+  ],
   "KillDisplay": "Never",
   "RankDisplay": "Never",
   "GlossaryPriority": 346,
@@ -312,17 +327,22 @@
   "Weapons": [
     {
       "Turret": "AutoTurret",
-      "id": "AutoTurret",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "12mm Gauss Cannon",
-        "ruRU": "12mm Gauss Cannon"
-      },
-      "Amount": 18,
-      "Kind": "Ranged",
       "TargetFilters": "",
       "Range": 6,
-      "Period": 0.8
+      "Period": 0.8,
+      "id": "AutoTurret",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "Name": {
+        "enUS": "12mm Gauss Cannon",
+        "ruRU": "12-мм пушка Гаусса "
+      },
+      "Amount": 18,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -383,11 +403,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -396,11 +416,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

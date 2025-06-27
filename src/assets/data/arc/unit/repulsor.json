@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Repulsor",
     "ruRU": "Репульсор"
@@ -130,6 +131,18 @@
   "Facing": 45,
   "FogVisibility": "Snapshot",
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "RepulsorBurrow",
+    "RepulsorUnburrow"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "RepulsorInterdictorBurrowCD",
+    "GenetronTurretFreeze"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -204,11 +217,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -285,11 +298,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -355,11 +368,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -469,6 +482,12 @@
     "Minerals": 150
   },
   "RepairTime": 45,
+  "WeaponArray": [
+    {
+      "Link": "SuppressionCannons",
+      "Turret": "RepulsorTurret"
+    }
+  ],
   "SubgroupPriority": 4,
   "GlossaryPriority": 18,
   "TechAliasArray": [
@@ -481,17 +500,22 @@
   "Weapons": [
     {
       "Turret": "RepulsorTurret",
-      "id": "SuppressionCannons",
+      "EditorCategories": "Race:Genetron",
+      "TargetFilters": "Ground",
+      "MinScanRange": 7.5,
+      "Range": 7,
+      "Period": 1.1875,
       "Icon": "btn-building-genetron-repulsor",
+      "DisplayEffect": "RepulsorSuppressionCannonsDamage",
+      "Effect": "RepulsorSuppressionCannons",
+      "id": "SuppressionCannons",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Suppression Cannons",
         "ruRU": "Пушки подавления"
       },
       "Amount": 20,
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 1.1875
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -592,11 +616,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -605,11 +629,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -618,11 +642,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {

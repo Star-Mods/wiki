@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
-    "ruRU": "Swarm Host",
+    "ruRU": "Роевик ",
     "enUS": "Swarm Host"
   },
   "Description": {
     "enUS": "Siege unit that attacks while burrowed by spawning Locust minions.<br/><br/><span style=\"color: #ffff8a\">Locusts can attack ground units.</span>",
-    "ruRU": "Siege unit that attacks while burrowed by spawning Locust minions.<br/><br/><span style=\"color: #ffff8a\">Locusts can attack ground units.</span>"
+    "ruRU": "Осадная боевая единица. Порождает саранчидов, которые атакуют противников.<br/><br/><span style=\"color: #ffff8a\">Саранчиды атакуют только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -119,6 +120,14 @@
     "Vespene": 75
   },
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "MorphToSwarmHostMP",
+    null,
+    null,
+    null,
+    "move",
+    "SpawnLocustsTargeted"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -164,11 +173,11 @@
         "Icon": "btn-ability-zerg-upburrow-color",
         "Name": {
           "enUS": "Unburrow",
-          "ruRU": "Unburrow"
+          "ruRU": "Выкопаться "
         },
         "Tooltip": {
           "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
+          "ruRU": "Приказать боевой единице выкопаться из-под земли. "
         },
         "Hotkey": "R"
       },
@@ -245,11 +254,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -341,11 +350,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -484,11 +493,11 @@
         "Icon": "btn-unit-zerg-locust",
         "Name": {
           "enUS": "Spawn Locust",
-          "ruRU": "Spawn Locust"
+          "ruRU": "Породить саранчида"
         },
         "Tooltip": {
           "enUS": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Порождает 2 саранчидов, которые существуют в течение <b>25</b> сек.<br/><br/><span style=\"color: #ffff8a\">Саранчиды атакуют только наземные цели.</span>"
         },
         "Hotkey": "C"
       },
@@ -510,11 +519,11 @@
         "Icon": "btn-unit-zerg-locustflyerex3",
         "Name": {
           "enUS": "Flying Locusts",
-          "ruRU": "Flying Locusts"
+          "ruRU": "Летающие саранчиды "
         },
         "Tooltip": {
           "enUS": "Locusts spawned by the Swarm Host can fly. Flying Locusts can use Swoop to land and attack.",
-          "ruRU": "Locusts spawned by the Swarm Host can fly. Flying Locusts can use Swoop to land and attack."
+          "ruRU": "Саранчиды, порождаемые роевиком, могут летать. Летающие саранчиды используют способность «Пикирование», чтобы приземлиться и атаковать противника."
         }
       },
       {
@@ -605,11 +614,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -685,11 +694,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -781,11 +790,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -877,11 +886,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       }
@@ -960,11 +969,11 @@
       "Icon": "btn-ability-zerg-upburrow-color",
       "Name": {
         "enUS": "Unburrow",
-        "ruRU": "Unburrow"
+        "ruRU": "Выкопаться "
       },
       "Tooltip": {
         "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
+        "ruRU": "Приказать боевой единице выкопаться из-под земли. "
       }
     },
     {
@@ -973,11 +982,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -986,11 +995,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -999,11 +1008,11 @@
       "Icon": "btn-unit-zerg-locust",
       "Name": {
         "enUS": "Spawn Locust",
-        "ruRU": "Spawn Locust"
+        "ruRU": "Породить саранчида"
       },
       "Tooltip": {
         "enUS": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Порождает 2 саранчидов, которые существуют в течение <b>25</b> сек.<br/><br/><span style=\"color: #ffff8a\">Саранчиды атакуют только наземные цели.</span>"
       }
     },
     {
@@ -1012,11 +1021,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1025,11 +1034,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1038,11 +1047,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1051,11 +1060,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     }
   ]

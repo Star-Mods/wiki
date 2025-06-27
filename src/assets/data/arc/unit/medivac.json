@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Medivac",
-    "ruRU": "Medivac"
+    "ruRU": "Медэвак "
   },
   "Description": {
     "enUS": "Air transport. Heals nearby biological units. Can use Afterburners.",
-    "ruRU": "Air transport. Heals nearby biological units. Can use Afterburners."
+    "ruRU": "Транспортный корабль. Лечит находящиеся рядом органические войска. Может использовать способность «Форсаж»."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 150,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
@@ -125,6 +126,13 @@
   ],
   "VisionHeight": 15,
   "Sight": 11,
+  "AbilArray": [
+    "MedivacHeal",
+    "stop",
+    "move",
+    "MedivacTransport",
+    "MedivacSpeedBoost"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -215,11 +223,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -295,11 +303,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -391,11 +399,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -487,11 +495,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -601,11 +609,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads units into the Medivac's hold.",
-          "ruRU": "Loads units into the Medivac's hold."
+          "ruRU": "Загрузить войска в медэвак. "
         },
         "Hotkey": "L"
       },
@@ -682,11 +690,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -778,11 +786,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -940,11 +948,11 @@
         "Icon": "btn-ability-terran-heal-color",
         "Name": {
           "enUS": "Heal",
-          "ruRU": "Heal"
+          "ruRU": "Лечение "
         },
         "Tooltip": {
           "enUS": "Heals a friendly biological target.<br/><br/><span style=\"color: f078ff\">Heals <b>9</b> life per 1 energy.</span>",
-          "ruRU": "Heals a friendly biological target.<br/><br/><span style=\"color: f078ff\">Heals <b>9</b> life per 1 energy.</span>"
+          "ruRU": "Применяется к союзным органическим войскам.<br/><br/><span style=\"color: f078ff\">Восполняет <b>3</b> ед. здоровья за 1 ед. энергии.</span>"
         },
         "Hotkey": "E"
       },
@@ -1054,11 +1062,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -1192,11 +1200,11 @@
         "Icon": "btn-upgrade-terran-medivacemergencythrusters",
         "Name": {
           "enUS": "Ignite Afterburners",
-          "ruRU": "Ignite Afterburners"
+          "ruRU": "Форсаж "
         },
         "Tooltip": {
           "enUS": "Increases the Medivac's movement speed by 70% for <b>8</b>.",
-          "ruRU": "Increases the Medivac's movement speed by 70% for <b>8</b>."
+          "ruRU": "Повышает скорость передвижения медэвака на <b>8</b> сек."
         },
         "Hotkey": "B"
       },
@@ -1218,7 +1226,7 @@
         "Icon": "btn-upgrade-terran-caduceusreactor",
         "Name": {
           "enUS": "Caduceus Reactor",
-          "ruRU": "Caduceus Reactor"
+          "ruRU": "Реактор «Кадуцей» "
         },
         "Tooltip": {
           "enUS": "Increases the energy regeneration rate of <span style=\"color: ffff8a\">Medivacs</span> by <b>100</b>%."
@@ -1280,7 +1288,7 @@
       "id": "MedivacSpeedBoost",
       "Name": {
         "enUS": "Emergency Thrusters",
-        "ruRU": "Emergency Thrusters"
+        "ruRU": "Экстренное ускорение"
       }
     }
   ],
@@ -1314,11 +1322,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1327,11 +1335,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1340,11 +1348,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1353,11 +1361,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1366,11 +1374,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads units into the Medivac's hold.",
-        "ruRU": "Loads units into the Medivac's hold."
+        "ruRU": "Загрузить войска в медэвак. "
       }
     },
     {
@@ -1379,11 +1387,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1392,11 +1400,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1405,11 +1413,11 @@
       "Icon": "btn-ability-terran-heal-color",
       "Name": {
         "enUS": "Heal",
-        "ruRU": "Heal"
+        "ruRU": "Лечение "
       },
       "Tooltip": {
         "enUS": "Heals a friendly biological target.<br/><br/><span style=\"color: f078ff\">Heals <b>9</b> life per 1 energy.</span>",
-        "ruRU": "Heals a friendly biological target.<br/><br/><span style=\"color: f078ff\">Heals <b>9</b> life per 1 energy.</span>"
+        "ruRU": "Применяется к союзным органическим войскам.<br/><br/><span style=\"color: f078ff\">Восполняет <b>3</b> ед. здоровья за 1 ед. энергии.</span>"
       }
     },
     {
@@ -1418,11 +1426,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -1431,11 +1439,11 @@
       "Icon": "btn-upgrade-terran-medivacemergencythrusters",
       "Name": {
         "enUS": "Ignite Afterburners",
-        "ruRU": "Ignite Afterburners"
+        "ruRU": "Форсаж "
       },
       "Tooltip": {
         "enUS": "Increases the Medivac's movement speed by 70% for <b>8</b>.",
-        "ruRU": "Increases the Medivac's movement speed by 70% for <b>8</b>."
+        "ruRU": "Повышает скорость передвижения медэвака на <b>8</b> сек."
       }
     }
   ]

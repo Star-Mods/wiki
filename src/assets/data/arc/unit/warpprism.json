@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Warp Prism",
-    "ruRU": "Warp Prism"
+    "ruRU": "Призма искривления "
   },
   "Description": {
     "enUS": "Flying transport. Can load and unload units. Can also deploy to create a power field.",
-    "ruRU": "Flying transport. Can load and unload units. Can also deploy to create a power field."
+    "ruRU": "Воздушное транспортное средство. Может загружать в себя войска на расстоянии. В развернутом состоянии создает энергетическое поле. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -98,7 +99,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Speed": 2.9531,
   "Acceleration": 2.625,
@@ -121,6 +122,13 @@
   ],
   "VisionHeight": 4,
   "Sight": 10,
+  "AbilArray": [
+    "stop",
+    "move",
+    "PhasingMode",
+    "WarpPrismTransport",
+    "Warpable"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -211,11 +219,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -291,11 +299,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -387,11 +395,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -483,11 +491,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -564,11 +572,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -660,11 +668,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -776,11 +784,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads units into the Warp Prism's matrix.",
-          "ruRU": "Loads units into the Warp Prism's matrix."
+          "ruRU": "Загружает войска в матрицу призмы искривления с расстояния вплоть до <b>0</b>. "
         },
         "Hotkey": "L"
       },
@@ -892,11 +900,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -935,11 +943,11 @@
         "Icon": "btn-unit-protoss-warpprismstationary",
         "Name": {
           "enUS": "Phasing Mode",
-          "ruRU": "Phasing Mode"
+          "ruRU": "Фазовый режим "
         },
         "Tooltip": {
           "enUS": "Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.",
-          "ruRU": "Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode."
+          "ruRU": "Переводит призму искривления в фазовый режим. В этом режиме призма генерирует энергетическое поле, подобно пилону, но не может передвигаться."
         },
         "Hotkey": "E"
       }
@@ -1053,11 +1061,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1066,11 +1074,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1079,11 +1087,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1092,11 +1100,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1105,11 +1113,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1118,11 +1126,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1131,11 +1139,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads units into the Warp Prism's matrix.",
-        "ruRU": "Loads units into the Warp Prism's matrix."
+        "ruRU": "Загружает войска в матрицу призмы искривления с расстояния вплоть до <b>0</b>. "
       }
     },
     {
@@ -1144,11 +1152,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -1157,11 +1165,11 @@
       "Icon": "btn-unit-protoss-warpprismstationary",
       "Name": {
         "enUS": "Phasing Mode",
-        "ruRU": "Phasing Mode"
+        "ruRU": "Фазовый режим "
       },
       "Tooltip": {
         "enUS": "Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode.",
-        "ruRU": "Transforms the Warp Prism to Phasing Mode and generates a power radius similar to that of a Pylon. The Warp Prism cannot move in this mode."
+        "ruRU": "Переводит призму искривления в фазовый режим. В этом режиме призма генерирует энергетическое поле, подобно пилону, но не может передвигаться."
       }
     }
   ]

@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Phlogiston Guardian"
   },
@@ -99,6 +100,10 @@
     "Armored",
     "Structure"
   ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Detector11"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -116,6 +121,11 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
   "FogVisibility": "Snapshot",
   "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
@@ -185,11 +195,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -255,11 +265,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -335,11 +345,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -416,11 +426,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -442,11 +452,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       },
       {
@@ -479,6 +489,12 @@
   "CostResource": {
     "Minerals": 150
   },
+  "WeaponArray": [
+    {
+      "Link": "PhlogistonGuardianFulmination",
+      "Turret": "SunkenGuardian"
+    }
+  ],
   "Footprint": "Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2",
   "ScoreMake": 150,
@@ -504,17 +520,22 @@
   "Weapons": [
     {
       "Turret": "SunkenGuardian",
-      "id": "PhlogistonGuardianFulmination",
       "Icon": "btn-upgrade-dragon-fireattacks-level0",
+      "DisplayEffect": "PhlogistonGuardianFulminationDamage",
+      "TargetFilters": "Air",
+      "Range": 7,
+      "Period": 0.77,
+      "Effect": "PhlogistonGuardianFulminationCreatePersistent",
+      "MinScanRange": 7,
+      "EditorCategories": "Race:Dragon",
+      "DisplayAttackCount": 3,
+      "id": "PhlogistonGuardianFulmination",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Fulmination"
       },
       "Amount": 7,
-      "Kind": "Ranged",
-      "DisplayAttackCount": 3,
-      "TargetFilters": "Air",
-      "Range": 7,
-      "Period": 0.77
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -530,7 +551,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -589,11 +610,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -602,11 +623,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -615,11 +636,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -628,11 +649,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

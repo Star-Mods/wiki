@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
-    "ruRU": "Viper",
+    "ruRU": "Стрекоза ",
     "enUS": "Viper"
   },
   "Description": {
     "enUS": "Flying caster. Able to manipulate battlefield conditions. Can use Parasitic Bomb, Consume, Blinding Cloud, and Abduct abilities.",
-    "ruRU": "Flying caster. Able to manipulate battlefield conditions. Can use Parasitic Bomb, Consume, Blinding Cloud, and Abduct abilities."
+    "ruRU": "Воздушная боевая единица. Помогает получить тактическое преимущество на поле боя. Может использовать способности «Паразитическая бомба», «Поглощение», «Ослепляющее облако» и «Притягивание». "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 150,
   "LifeArmorName": {
     "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
+    "ruRU": "Панцирь воздушных зергов"
   },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
@@ -129,6 +130,14 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 30,
+  "AbilArray": [
+    "stop",
+    "move",
+    "ViperConsumeStructure",
+    "BlindingCloud",
+    "Yoink",
+    "ParasiticBomb"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -219,11 +228,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -299,11 +308,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -395,11 +404,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -476,11 +485,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -572,11 +581,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -668,11 +677,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -815,11 +824,11 @@
         "Icon": "btn-ability-zerg-consume",
         "Name": {
           "enUS": "Consume",
-          "ruRU": "Consume"
+          "ruRU": "Поглощение "
         },
         "Tooltip": {
           "enUS": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>",
-          "ruRU": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>"
+          "ruRU": "Стрекоза поглощает <b>150</b> ед. прочности указанного строения. При этом она восстанавливает <b>2.5</b> ед. энергии в секунду. Время действия – <b>20</b><br/><br/><span style=\"color: #ffff8a\">Нельзя применить к строениям союзников и противников.</span>"
         },
         "Hotkey": "C"
       },
@@ -960,11 +969,11 @@
         "Icon": "btn-ability-zerg-blindingcloud",
         "Name": {
           "enUS": "Blinding Cloud",
-          "ruRU": "Blinding Cloud"
+          "ruRU": "Ослепляющее облако "
         },
         "Tooltip": {
           "enUS": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
-          "ruRU": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range."
+          "ruRU": "Создает облако, которое уменьшает дальность атаки находящихся в нем наземных войск и строений до дистанции ближнего боя. Время действия – <b>8</b> сек."
         },
         "Hotkey": "B"
       },
@@ -1113,11 +1122,11 @@
         "Icon": "btn-ability-zerg-abduct",
         "Name": {
           "enUS": "Abduct",
-          "ruRU": "Abduct"
+          "ruRU": "Притягивание "
         },
         "Tooltip": {
           "enUS": "Pulls target unit to the location of the viper.",
-          "ruRU": "Pulls target unit to the location of the viper."
+          "ruRU": "Стрекоза притягивает выбранную боевую единицу к себе. "
         },
         "Hotkey": "D"
       },
@@ -1256,11 +1265,11 @@
         "Icon": "btn-ability-zerg-parasiticbomb",
         "Name": {
           "enUS": "Parasitic Bomb",
-          "ruRU": "Parasitic Bomb"
+          "ruRU": "Паразитическая бомба "
         },
         "Tooltip": {
           "enUS": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>",
-          "ruRU": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>"
+          "ruRU": "Создает паразитическое облако, наносящее цели и находящимся поблизости воздушным боевым единицам противника <b>120</b> ед. урона в течение <b>10</b> сек. Если изначальная цель способности погибает, облако зависает в точке ее гибели до окончания своего действия.<br/><br/><span style=\"color: #ffff8a\">Не действует на наземные цели и строения.</span>"
         },
         "Hotkey": "R"
       }
@@ -1312,14 +1321,14 @@
       "id": "ViperConsumeStructure",
       "Name": {
         "enUS": "Viper Consume Structure",
-        "ruRU": "Viper Consume Structure"
+        "ruRU": "Стрекоза - поглотить строение"
       }
     },
     {
       "id": "BlindingCloud",
       "Name": {
         "enUS": "Blinding Cloud",
-        "ruRU": "Blinding Cloud"
+        "ruRU": "Ослепляющее облако"
       }
     },
     {
@@ -1367,11 +1376,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1380,11 +1389,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1393,11 +1402,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1406,11 +1415,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1419,11 +1428,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1432,11 +1441,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1445,11 +1454,11 @@
       "Icon": "btn-ability-zerg-consume",
       "Name": {
         "enUS": "Consume",
-        "ruRU": "Consume"
+        "ruRU": "Поглощение "
       },
       "Tooltip": {
         "enUS": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>",
-        "ruRU": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>"
+        "ruRU": "Стрекоза поглощает <b>150</b> ед. прочности указанного строения. При этом она восстанавливает <b>2.5</b> ед. энергии в секунду. Время действия – <b>20</b><br/><br/><span style=\"color: #ffff8a\">Нельзя применить к строениям союзников и противников.</span>"
       }
     },
     {
@@ -1458,11 +1467,11 @@
       "Icon": "btn-ability-zerg-blindingcloud",
       "Name": {
         "enUS": "Blinding Cloud",
-        "ruRU": "Blinding Cloud"
+        "ruRU": "Ослепляющее облако "
       },
       "Tooltip": {
         "enUS": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
-        "ruRU": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range."
+        "ruRU": "Создает облако, которое уменьшает дальность атаки находящихся в нем наземных войск и строений до дистанции ближнего боя. Время действия – <b>8</b> сек."
       }
     },
     {
@@ -1471,11 +1480,11 @@
       "Icon": "btn-ability-zerg-abduct",
       "Name": {
         "enUS": "Abduct",
-        "ruRU": "Abduct"
+        "ruRU": "Притягивание "
       },
       "Tooltip": {
         "enUS": "Pulls target unit to the location of the viper.",
-        "ruRU": "Pulls target unit to the location of the viper."
+        "ruRU": "Стрекоза притягивает выбранную боевую единицу к себе. "
       }
     },
     {
@@ -1484,11 +1493,11 @@
       "Icon": "btn-ability-zerg-parasiticbomb",
       "Name": {
         "enUS": "Parasitic Bomb",
-        "ruRU": "Parasitic Bomb"
+        "ruRU": "Паразитическая бомба "
       },
       "Tooltip": {
         "enUS": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>",
-        "ruRU": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>"
+        "ruRU": "Создает паразитическое облако, наносящее цели и находящимся поблизости воздушным боевым единицам противника <b>120</b> ед. урона в течение <b>10</b> сек. Если изначальная цель способности погибает, облако зависает в точке ее гибели до окончания своего действия.<br/><br/><span style=\"color: #ffff8a\">Не действует на наземные цели и строения.</span>"
       }
     }
   ]

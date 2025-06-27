@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Mothership",
-    "ruRU": "Mothership"
+    "ruRU": "Материнский корабль"
   },
   "Description": {
     "enUS": "Ultimate Protoss vessel. Can use Strategic Recall, Time Warp, and Cloaking Field abilities.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Ultimate Protoss vessel. Can use Photon Overcharge, Mass Recall, and Time Warp abilities. Cloaks nearby friendly units and structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Вершина кораблестроения протоссов. Может использовать способности «Стратегический скачок» и «Искривление времени». Маскирует находящиеся рядом дружественные войска и строения.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 350,
   "LifeArmorName": {
     "enUS": "Synoid Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
@@ -96,7 +97,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Acceleration": 1.375,
   "Deceleration": 1,
@@ -114,6 +115,14 @@
     "Flying"
   ],
   "Sight": 14,
+  "AbilArray": [
+    "move",
+    "attack",
+    "stop",
+    "TemporalField",
+    "MassRecall",
+    "MothershipCloak"
+  ],
   "Attributes": [
     "Armored",
     "Mechanical",
@@ -127,6 +136,18 @@
   "GlossaryPriority": 190,
   "CostCategory": "Army",
   "TacticalAIThink": "AIThinkMothership",
+  "WeaponArray": [
+    {
+      "Link": "PurifierBeamDummyTargetFire"
+    },
+    {
+      "Link": "MothershipBeam",
+      "Turret": "FreeRotate"
+    },
+    {
+      "Turret": "MothershipRotate"
+    }
+  ],
   "ShieldRegenDelay": 10,
   "GlossaryWeakArray": [
     "VikingFighter",
@@ -223,11 +244,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -303,11 +324,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -399,11 +420,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -495,11 +516,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -576,11 +597,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -720,11 +741,11 @@
         "Icon": "btn-ability-protoss-wormholetransit-color",
         "Name": {
           "enUS": "Mass Recall",
-          "ruRU": "Mass Recall"
+          "ruRU": "Массовая телепортация "
         },
         "Tooltip": {
           "enUS": "Recalls all units owned by the player in the target area to the Caster.",
-          "ruRU": "Recalls all units owned by the player in the target area to the Caster."
+          "ruRU": "Телепортирует к материнскому кораблю все войска игрока, находящиеся в указанной области."
         },
         "Hotkey": "R"
       },
@@ -866,11 +887,11 @@
         "Icon": "btn-ability-protoss-timewarp-red",
         "Name": {
           "enUS": "Time Warp",
-          "ruRU": "Time Warp"
+          "ruRU": "Искривление времени "
         },
         "Tooltip": {
           "enUS": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
-          "ruRU": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%."
+          "ruRU": "После паузы в <b>0</b> сек. сворачивает пространство-время в указанной области на <b>10</b> сек., замедляя попавшие в поле войска и строения противника на <b>40</b>%."
         },
         "Hotkey": "T"
       },
@@ -1003,11 +1024,11 @@
         "Icon": "btn-ability-protoss-cloakfield-color",
         "Name": {
           "enUS": "Cloaking Field",
-          "ruRU": "Cloaking Field"
+          "ruRU": "Маскировочное поле "
         },
         "Tooltip": {
           "enUS": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
-          "ruRU": "Cloaking Field passively cloaks friendly nearby units and structures.<br/><br/><span style=\"color: ffff8a\">Passive ability.</span>"
+          "ruRU": "Маскировочное поле скрывает находящиеся рядом дружественные строения и войска.<br/><br/><span style=\"color: ffff8a\">Пассивная способность</span>"
         },
         "Hotkey": "C"
       }
@@ -1032,30 +1053,67 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "PurifierBeamDummyTargetFire",
-      "Icon": "btn-upgrade-protoss-airweaponslevel0",
-      "Name": {
-        "enUS": "Purifier Beam Dummy Target Fire"
+      "EditorCategories": "Race:Protoss",
+      "Options": {
+        "Hidden": 1,
+        "LinkedCooldown": 0
       },
+      "Icon": "btn-upgrade-protoss-airweaponslevel0",
       "DisplayAttackCount": 4,
       "TargetFilters": "",
+      "AcquireScanFilters": "-;Player,Ally,Neutral",
       "Range": 7,
-      "Period": 1
+      "RangeSlop": 4,
+      "TeleportResetRange": 0,
+      "Arc": 360,
+      "Period": 1,
+      "DamagePoint": 0,
+      "Effect": "TargetFirePriority",
+      "LegacyOptions": {
+        "CanRetargetWhileChanneling": 1
+      },
+      "AllowedMovement": "Moving",
+      "id": "PurifierBeamDummyTargetFire",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Purifier Beam Dummy Target Fire"
+      }
     },
     {
       "Turret": "FreeRotate",
-      "id": "MothershipBeam",
+      "EditorCategories": "Race:Protoss",
       "Icon": "btn-upgrade-protoss-airweaponslevel0",
-      "Name": {
-        "enUS": "Purifier Beam",
-        "ruRU": "Purifier Beam"
-      },
-      "Amount": 6,
-      "Kind": "Ranged",
-      "DisplayAttackCount": 4,
+      "DisplayEffect": "MothershipBeamDamage",
       "TargetFilters": "",
       "Range": 7,
-      "Period": 2.21
+      "Arc": 360,
+      "Period": 2.21,
+      "AllowedMovement": "Moving",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "DisplayCooldown": 1
+      },
+      "DamagePoint": 0,
+      "TeleportResetRange": 0,
+      "AcquireScanFilters": "-;Player,Ally,Neutral",
+      "Effect": "MothershipBeamSetCustom",
+      "LegacyOptions": {
+        "CanRetargetWhileChanneling": 1,
+        "KeepChanneling": 1
+      },
+      "RangeSlop": 4,
+      "DisplayAttackCount": 4,
+      "id": "MothershipBeam",
+      "class": "CWeaponLegacy",
+      "Tip": "Weapon/Tip/PierceWeapon",
+      "AttackType": "Chaos",
+      "Name": {
+        "enUS": "Purifier Beam",
+        "ruRU": "Луч воздаяния "
+      },
+      "Amount": 6,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -1143,11 +1201,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1156,11 +1214,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1169,11 +1227,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1182,11 +1240,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1195,11 +1253,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1208,11 +1266,11 @@
       "Icon": "btn-ability-protoss-wormholetransit-color",
       "Name": {
         "enUS": "Mass Recall",
-        "ruRU": "Mass Recall"
+        "ruRU": "Массовая телепортация "
       },
       "Tooltip": {
         "enUS": "Recalls all units owned by the player in the target area to the Caster.",
-        "ruRU": "Recalls all units owned by the player in the target area to the Caster."
+        "ruRU": "Телепортирует к материнскому кораблю все войска игрока, находящиеся в указанной области."
       }
     },
     {
@@ -1221,11 +1279,11 @@
       "Icon": "btn-ability-protoss-timewarp-red",
       "Name": {
         "enUS": "Time Warp",
-        "ruRU": "Time Warp"
+        "ruRU": "Искривление времени "
       },
       "Tooltip": {
         "enUS": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
-        "ruRU": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%."
+        "ruRU": "После паузы в <b>0</b> сек. сворачивает пространство-время в указанной области на <b>10</b> сек., замедляя попавшие в поле войска и строения противника на <b>40</b>%."
       }
     },
     {
@@ -1234,11 +1292,11 @@
       "Icon": "btn-ability-protoss-cloakfield-color",
       "Name": {
         "enUS": "Cloaking Field",
-        "ruRU": "Cloaking Field"
+        "ruRU": "Маскировочное поле "
       },
       "Tooltip": {
         "enUS": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
-        "ruRU": "Cloaking Field passively cloaks friendly nearby units and structures.<br/><br/><span style=\"color: ffff8a\">Passive ability.</span>"
+        "ruRU": "Маскировочное поле скрывает находящиеся рядом дружественные строения и войска.<br/><br/><span style=\"color: ffff8a\">Пассивная способность</span>"
       }
     }
   ]

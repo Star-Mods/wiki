@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Spawning Pool",
-    "ruRU": "Spawning Pool"
+    "ruRU": "Омут рождения "
   },
   "Description": {
     "enUS": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones",
-    "ruRU": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones"
+    "ruRU": "Позволяет улучшать зерглингов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– рождение королев в инкубаторе, логове или улье<br/>– мутация личинок в зерглингов<br/>– мутация рабочих в ползучих плеточников<br/>– мутация рабочих в ползучих споровиков "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1000,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -123,6 +124,16 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "SpawningPoolResearch"
+  ],
+  "BehaviorArray": [
+    "OnCreep",
+    "ZergBuildingNotOnCreep",
+    "ZergBuildingDies6"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -184,11 +195,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -254,11 +265,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -299,11 +310,11 @@
         "Icon": "btn-upgrade-zerg-metabolicboost",
         "Name": {
           "enUS": "Evolve Metabolic Boost",
-          "ruRU": "Evolve Metabolic Boost"
+          "ruRU": "Развить ускоренный метаболизм "
         },
         "Tooltip": {
           "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>.",
-          "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>."
+          "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">зерглингов</span>."
         },
         "Hotkey": "M"
       },
@@ -344,11 +355,11 @@
         "Icon": "btn-upgrade-zerg-adrenalglands",
         "Name": {
           "enUS": "Evolve Adrenal Glands",
-          "ruRU": "Evolve Adrenal Glands"
+          "ruRU": "Развить адреналиновые железы "
         },
         "Tooltip": {
           "enUS": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%.",
-          "ruRU": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%."
+          "ruRU": "Повышают скорость атаки <span style=\"color: ffff8a\">зерглингов</span> на 40%."
         },
         "Hotkey": "A"
       }
@@ -449,11 +460,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -462,11 +473,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -475,11 +486,11 @@
       "Icon": "btn-upgrade-zerg-metabolicboost",
       "Name": {
         "enUS": "Evolve Metabolic Boost",
-        "ruRU": "Evolve Metabolic Boost"
+        "ruRU": "Развить ускоренный метаболизм "
       },
       "Tooltip": {
         "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>.",
-        "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>."
+        "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">зерглингов</span>."
       }
     },
     {
@@ -488,11 +499,11 @@
       "Icon": "btn-upgrade-zerg-adrenalglands",
       "Name": {
         "enUS": "Evolve Adrenal Glands",
-        "ruRU": "Evolve Adrenal Glands"
+        "ruRU": "Развить адреналиновые железы "
       },
       "Tooltip": {
         "enUS": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%.",
-        "ruRU": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%."
+        "ruRU": "Повышают скорость атаки <span style=\"color: ffff8a\">зерглингов</span> на 40%."
       }
     }
   ]

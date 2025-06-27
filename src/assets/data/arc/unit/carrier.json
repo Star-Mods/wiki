@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Carrier",
-    "ruRU": "Carrier"
+    "ruRU": "Авианосец "
   },
   "Description": {
     "enUS": "Capital ship. Can build and launch Interceptors to make attacks.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Capital ship. Can build and launch Interceptors to make attacks.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Тяжелый осадный корабль. Строит и запускает перехватчики, которые являются его ударной силой.<br/><br/><span style=\"color: ffff8a\">Перехватчики атакуют наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -100,7 +101,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "Speed": 1.875,
   "Acceleration": 1.0625,
@@ -127,6 +128,14 @@
     {
       "Weapon": "InterceptorsDummy"
     }
+  ],
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "CarrierHangar",
+    "HangarQueue5",
+    "Warpable"
   ],
   "CardLayouts": {
     "Root": [
@@ -218,11 +227,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -298,11 +307,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -394,11 +403,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -475,11 +484,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -571,11 +580,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -625,11 +634,11 @@
         "Icon": "btn-unit-protoss-interceptor",
         "Name": {
           "enUS": "Build Interceptor",
-          "ruRU": "Build Interceptor"
+          "ruRU": "Создать перехватчик "
         },
         "Tooltip": {
           "enUS": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Автоматически атакует цели авианосца. Без перехватчиков авианосцы не могут вести бой.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "I"
       },
@@ -693,11 +702,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       }
@@ -721,6 +730,11 @@
     "Corruptor",
     "Tempest"
   ],
+  "WeaponArray": [
+    {
+      "Link": "InterceptorLaunch"
+    }
+  ],
   "ShieldRegenDelay": 10,
   "GlossaryStrongArray": [
     "SiegeTank",
@@ -736,15 +750,26 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "InterceptorLaunch",
+      "EditorCategories": "Race:Protoss",
       "Icon": "btn-unit-protoss-interceptor",
-      "Name": {
-        "enUS": "Interceptor Launch",
-        "ruRU": "Interceptor Launch"
-      },
       "TargetFilters": "",
       "Range": 8,
-      "Period": 0.5
+      "Arc": 360,
+      "Period": 0.5,
+      "AllowedMovement": "Slowing",
+      "Options": {
+        "Hidden": 1
+      },
+      "Effect": "InterceptorLaunchPersistent",
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "DisplayEffect": "Carrier",
+      "id": "InterceptorLaunch",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Interceptor Launch",
+        "ruRU": "Запуск перехватчика "
+      }
     }
   ],
   "Behaviors": [],
@@ -830,11 +855,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -843,11 +868,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -856,11 +881,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -869,11 +894,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -882,11 +907,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -895,11 +920,11 @@
       "Icon": "btn-unit-protoss-interceptor",
       "Name": {
         "enUS": "Build Interceptor",
-        "ruRU": "Build Interceptor"
+        "ruRU": "Создать перехватчик "
       },
       "Tooltip": {
         "enUS": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Builds Interceptors that automatically attack the Carrier's target. Carriers may not attack without Interceptors.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Автоматически атакует цели авианосца. Без перехватчиков авианосцы не могут вести бой.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -908,11 +933,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     }
   ]

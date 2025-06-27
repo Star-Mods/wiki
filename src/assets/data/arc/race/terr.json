@@ -1,7 +1,7 @@
 {
   "id": "Terr",
   "Name": {
-    "ruRU": "Terran",
+    "ruRU": "Терраны",
     "enUS": "Terran"
   },
   "Icon": "terran",
@@ -15,7 +15,7 @@
         },
         "Name": {
           "enUS": "Combat Shield",
-          "ruRU": "Combat Shield"
+          "ruRU": "Боевой щит "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -67,7 +67,7 @@
         },
         "Name": {
           "enUS": "Stimpack",
-          "ruRU": "Stimpack"
+          "ruRU": "Стимуляторы "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -100,7 +100,7 @@
         },
         "Name": {
           "enUS": "Concussive Shells",
-          "ruRU": "Concussive Shells"
+          "ruRU": "Фугасные гранаты "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -131,7 +131,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Weapons Level 1",
-          "ruRU": "Terran Infantry Weapons Level 1"
+          "ruRU": "Вооружение пехоты терранов, уровень 1 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -260,7 +260,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Weapons Level 2",
-          "ruRU": "Terran Infantry Weapons Level 2"
+          "ruRU": "Вооружение пехоты терранов, уровень 2 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -386,7 +386,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Weapons Level 3",
-          "ruRU": "Terran Infantry Weapons Level 3"
+          "ruRU": "Вооружение пехоты терранов, уровень 3 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -513,7 +513,7 @@
         },
         "Name": {
           "enUS": "Neosteel Frame",
-          "ruRU": "Neosteel Frame"
+          "ruRU": "Каркас из неостали "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -576,7 +576,7 @@
         },
         "Name": {
           "enUS": "Hi-Sec Auto Tracking",
-          "ruRU": "Hi-Sec Auto Tracking"
+          "ruRU": "Высокоточное автослежение "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -633,7 +633,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Armor Level 1",
-          "ruRU": "Terran Infantry Armor Level 1"
+          "ruRU": "Броня пехоты терранов, уровень 1 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -796,7 +796,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Armor Level 2",
-          "ruRU": "Terran Infantry Armor Level 2"
+          "ruRU": "Броня пехоты терранов, уровень 2 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -956,7 +956,7 @@
         },
         "Name": {
           "enUS": "Terran Infantry Armor Level 3",
-          "ruRU": "Terran Infantry Armor Level 3"
+          "ruRU": "Броня пехоты терранов, уровень 3 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -1116,7 +1116,7 @@
         },
         "Name": {
           "enUS": "Personal Cloaking",
-          "ruRU": "Personal Cloaking"
+          "ruRU": "Личная маскировка "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -1150,7 +1150,7 @@
         },
         "Name": {
           "enUS": "Infernal Pre-igniter",
-          "ruRU": "Infernal Pre-igniter"
+          "ruRU": "Запал «Адское пламя»"
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -1185,6 +1185,47 @@
         ],
         "id": "HighCapacityBarrels"
       },
+      "CycloneLockOnDamageUpgrade": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Mag-Field Accelerator",
+          "ruRU": "Ускоритель магнитного поля"
+        },
+        "MaxLevel": 1,
+        "Alert": "ResearchComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "CycloneLockOnDamageUpgrade",
+        "EditorCategories": "Race:Terran,UpgradeType:Talents",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Icon": "btn-upgrade-terran-magfieldaccelerator",
+        "Race": "Terr",
+        "ScoreAmount": 200,
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Effect,CycloneAirWeaponDamage,Amount",
+            "Value": "10"
+          },
+          {
+            "Reference": "Effect,CycloneWeaponDamage,Amount",
+            "Value": "10"
+          }
+        ],
+        "AffectedUnitArray": [
+          "Cyclone"
+        ],
+        "id": "CycloneLockOnDamageUpgrade"
+      },
       "SmartServos": {
         "class": "CUpgrade",
         "Flags": {
@@ -1192,7 +1233,8 @@
           "TechTreeCheat": 1
         },
         "Name": {
-          "enUS": "Smart Servos"
+          "enUS": "Smart Servos",
+          "ruRU": "Универсальные приводы"
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -1375,7 +1417,7 @@
         },
         "Name": {
           "enUS": "Drilling Claws",
-          "ruRU": "Drilling Claws"
+          "ruRU": "Когти для бурения "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -1429,7 +1471,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle Weapons Level 1",
-          "ruRU": "Terran Vehicle Weapons Level 1"
+          "ruRU": "Вооружение наземной техники терранов, уровень 1 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -1650,7 +1692,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle Weapons Level 2",
-          "ruRU": "Terran Vehicle Weapons Level 2"
+          "ruRU": "Вооружение наземной техники терранов, уровень 2 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -1868,7 +1910,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle Weapons Level 3",
-          "ruRU": "Terran Vehicle Weapons Level 3"
+          "ruRU": "Вооружение наземной техники терранов, уровень 3 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -2086,7 +2128,7 @@
         },
         "Name": {
           "enUS": "Terran Ship Weapons Level 1",
-          "ruRU": "Terran Ship Weapons Level 1"
+          "ruRU": "Вооружение воздушной техники терранов, уровень 1 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -2225,7 +2267,7 @@
         },
         "Name": {
           "enUS": "Terran Ship Weapons Level 2",
-          "ruRU": "Terran Ship Weapons Level 2"
+          "ruRU": "Вооружение воздушной техники терранов, уровень 2 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -2361,7 +2403,7 @@
         },
         "Name": {
           "enUS": "Terran Ship Weapons Level 3",
-          "ruRU": "Terran Ship Weapons Level 3"
+          "ruRU": "Вооружение воздушной техники терранов, уровень 3 "
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -2497,7 +2539,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle And Ship Plating Level 1",
-          "ruRU": "Terran Vehicle And Ship Plating Level 1"
+          "ruRU": "Обшивка наземной и воздушной техники терранов, 1-й уровень"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -2766,7 +2808,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle And Ship Plating Level 2",
-          "ruRU": "Terran Vehicle And Ship Plating Level 2"
+          "ruRU": "Обшивка наземной и воздушной техники терранов, 2-й уровень"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -3032,7 +3074,7 @@
         },
         "Name": {
           "enUS": "Terran Vehicle And Ship Plating Level 3",
-          "ruRU": "Terran Vehicle And Ship Plating Level 3"
+          "ruRU": "Обшивка наземной и воздушной техники терранов, 3-й уровень"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -3297,7 +3339,8 @@
           "UpgradeCheat": 1
         },
         "Name": {
-          "enUS": "Hyperflight Rotors"
+          "enUS": "Hyperflight Rotors",
+          "ruRU": "Усиленные несущие винты "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -3365,7 +3408,7 @@
         },
         "Name": {
           "enUS": "Cloaking Field",
-          "ruRU": "Cloaking Field"
+          "ruRU": "Маскировочное поле "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -3396,7 +3439,7 @@
         },
         "Name": {
           "enUS": "Weapon Refit",
-          "ruRU": "Weapon Refit"
+          "ruRU": "Системы вооружения "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -3429,7 +3472,7 @@
         },
         "Name": {
           "enUS": "Caduceus Reactor",
-          "ruRU": "Caduceus Reactor"
+          "ruRU": "Реактор «Кадуцей» "
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -3466,7 +3509,8 @@
           "UpgradeCheat": 1
         },
         "Name": {
-          "enUS": "Advanced Ballistics"
+          "enUS": "Advanced Ballistics",
+          "ruRU": "Дальнобойные баллистические орудия"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -3507,11 +3551,11 @@
         "Icon": "btn-building-terran-commandcenter",
         "Name": {
           "enUS": "Command Center",
-          "ruRU": "Command Center"
+          "ruRU": "Командный центр "
         },
         "Description": {
           "enUS": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs",
-          "ruRU": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs"
+          "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Может взлетать.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– строительство КСМ "
         },
         "LifeMax": 1500,
         "LifeArmor": 1,
@@ -3534,7 +3578,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 30
       },
@@ -3543,11 +3587,11 @@
         "Icon": "btn-building-terran-surveillancestation",
         "Name": {
           "enUS": "Orbital Command",
-          "ruRU": "Orbital Command"
+          "ruRU": "Станция наблюдения "
         },
         "Description": {
           "enUS": "Primary structure. Used to train SCVs and receive gathered resources. Can use the Scanner Sweep ability. Can use the abilities Calldown: MULE and Calldown: Extra Supplies.",
-          "ruRU": "Primary structure. Used to train SCVs and receive gathered resources. Can use the Scanner Sweep ability. Can use the abilities Calldown: MULE and Calldown: Extra Supplies."
+          "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Делает возможным спутниковое сканирование, запрос дополнительных припасов и запрос МУЛов. "
         },
         "LifeMax": 1500,
         "LifeArmor": 1,
@@ -3568,7 +3612,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 32
       },
@@ -3577,11 +3621,11 @@
         "Icon": "btn-building-terran-surveillancestation",
         "Name": {
           "enUS": "Orbital Command",
-          "ruRU": "Orbital Command"
+          "ruRU": "Станция наблюдения "
         },
         "Description": {
           "enUS": "Primary structure. Must land to receive resources, produce units, or use abilities.",
-          "ruRU": "Primary structure. Must land to receive resources, produce units, or use abilities."
+          "ruRU": "Основное строение. Станция наблюдения должна приземлиться, чтобы производить войска, принимать на хранение ресурсы и использовать способности."
         },
         "LifeMax": 1500,
         "LifeArmor": 1,
@@ -3600,7 +3644,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
       },
       "SCV": {
@@ -3608,11 +3652,11 @@
         "Icon": "btn-unit-terran-scv",
         "Name": {
           "enUS": "SCV",
-          "ruRU": "SCV"
+          "ruRU": "КСМ "
         },
         "Description": {
           "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 45,
         "Food": -1,
@@ -3641,7 +3685,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 10
       },
@@ -3650,11 +3694,11 @@
         "Icon": "btn-building-terran-refinery",
         "Name": {
           "enUS": "Refinery",
-          "ruRU": "Refinery"
+          "ruRU": "Перерабатывающий завод "
         },
         "Description": {
           "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
-          "ruRU": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+          "ruRU": "Позволяет добывать веспен. Строится на веспеновом гейзере. "
         },
         "LifeMax": 500,
         "LifeArmor": 1,
@@ -3669,7 +3713,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 244
       },
@@ -3678,11 +3722,11 @@
         "Icon": "btn-building-terran-supplydepot",
         "Name": {
           "enUS": "Supply Depot",
-          "ruRU": "Supply Depot"
+          "ruRU": "Хранилище "
         },
         "Description": {
           "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
-          "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+          "ruRU": "Служит для хранения припасов.<br/>Увеличивает максимальный размер армии.<br/>Хранилища можно скрывать под землей и поднимать на поверхность."
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -3700,7 +3744,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 248
       },
@@ -3709,11 +3753,11 @@
         "Icon": "btn-building-terran-supplydepotlowered",
         "Name": {
           "enUS": "Supply Depot",
-          "ruRU": "Supply Depot"
+          "ruRU": "Хранилище "
         },
         "Description": {
           "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
-          "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+          "ruRU": "Служит для хранения припасов.<br/>Увеличивает максимальный размер армии.<br/>Хранилища можно скрывать под землей и поднимать на поверхность."
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -3732,7 +3776,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
       },
       "Barracks": {
@@ -3740,11 +3784,11 @@
         "Icon": "btn-building-terran-barracks",
         "Name": {
           "enUS": "Barracks",
-          "ruRU": "Barracks"
+          "ruRU": "Казармы "
         },
         "Description": {
           "enUS": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers",
-          "ruRU": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers"
+          "ruRU": "Тренировочный комплекс пехоты.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение морпехов<br/>– обучение головорезов<br/>– постройка бункеров с помощью КСМ<br/>– переоборудование командных центров в станции наблюдения "
         },
         "LifeMax": 1000,
         "LifeArmor": 1,
@@ -3762,13 +3806,14 @@
         "Research": [],
         "Morph": [],
         "$Phase": [
-          "BarracksFlying"
+          "BarracksFlying",
+          "BarracksTechLab"
         ],
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 252
       },
@@ -3777,11 +3822,11 @@
         "Icon": "btn-building-terran-barracks",
         "Name": {
           "enUS": "Barracks",
-          "ruRU": "Barracks"
+          "ruRU": "Казармы "
         },
         "Description": {
           "enUS": "Barracks must land to start unit production.",
-          "ruRU": "Barracks must land to start unit production."
+          "ruRU": "Казармы должны приземлиться, чтобы начать обучение войск."
         },
         "LifeMax": 1000,
         "LifeArmor": 1,
@@ -3802,35 +3847,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
-        }
-      },
-      "BarracksReactor": {
-        "id": "BarracksReactor",
-        "Icon": "btn-building-terran-reactor",
-        "Name": {
-          "enUS": "Reactor",
-          "ruRU": "Reactor"
-        },
-        "Description": {
-          "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
-        },
-        "LifeMax": 400,
-        "LifeArmor": 1,
-        "CostResource": {
-          "Minerals": 50,
-          "Vespene": 50
-        },
-        "Production": [],
-        "Research": [],
-        "Morph": [],
-        "$Phase": [],
-        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
-        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
-        "LifeArmorName": {
-          "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
       },
       "BarracksTechLab": {
@@ -3838,11 +3855,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Tech Lab",
-          "ruRU": "Tech Lab"
+          "ruRU": "Лаборатория "
         },
         "Description": {
           "enUS": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
-          "ruRU": "Enables additional units and research options. A Tech Lab can fit onto any production structure."
+          "ruRU": "Открывает доступ к новым видам войск и разработкам. Построенная лаборатория может быть состыкована с любым производственным строением. "
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -3859,11 +3876,12 @@
         ],
         "Morph": [],
         "$Phase": [],
+        "$Phased": "Barracks",
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 337
       },
@@ -3872,7 +3890,7 @@
         "Icon": "btn-unit-terran-marine",
         "Name": {
           "enUS": "Marine",
-          "ruRU": "Marine"
+          "ruRU": "Морпех "
         },
         "Description": {
           "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
@@ -3891,7 +3909,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 21
       },
@@ -3900,11 +3918,11 @@
         "Icon": "btn-unit-terran-marauder",
         "Name": {
           "enUS": "Marauder",
-          "ruRU": "Marauder"
+          "ruRU": "Мародер "
         },
         "Description": {
           "enUS": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Тяжелая штурмовая пехота.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "LifeMax": 125,
         "LifeArmor": 1,
@@ -3921,7 +3939,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 60
       },
@@ -3930,11 +3948,11 @@
         "Icon": "btn-unit-terran-reaper",
         "Name": {
           "enUS": "Reaper",
-          "ruRU": "Reaper"
+          "ruRU": "Головорез "
         },
         "Description": {
           "enUS": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Налетчик. Может преодолевать уступы. Быстро восстанавливает здоровье, находясь вне боя. Может использовать взрывчатку KD8.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "LifeMax": 60,
         "Food": -1,
@@ -3952,7 +3970,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 50
       },
@@ -3961,11 +3979,11 @@
         "Icon": "btn-unit-terran-ghost",
         "Name": {
           "enUS": "Ghost",
-          "ruRU": "Ghost"
+          "ruRU": "Призрак "
         },
         "Description": {
           "enUS": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Снайпер. Может использовать «Точное прицеливание», ЭМИ-патроны и маскировку (после соответствующего улучшения). Указывает цели для ядерных ракет, производимых в академии призраков.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "LifeMax": 100,
         "Food": -3,
@@ -3981,7 +3999,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 70
       },
@@ -3990,11 +4008,11 @@
         "Icon": "btn-building-terran-engineeringbay",
         "Name": {
           "enUS": "Engineering Bay",
-          "ruRU": "Engineering Bay"
+          "ruRU": "Инженерный комплекс "
         },
         "Description": {
           "enUS": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
-          "ruRU": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers"
+          "ruRU": "Позволяет улучшать пехоту и строения. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– постройка ракетных турелей с помощью КСМ<br/>– постройка радарных вышек с помощью КСМ<br/>– переоборудование командного центра в планетарную крепость"
         },
         "LifeMax": 850,
         "LifeArmor": 1,
@@ -4018,7 +4036,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 256
       },
@@ -4027,11 +4045,11 @@
         "Icon": "btn-building-terran-bunker",
         "Name": {
           "enUS": "Bunker",
-          "ruRU": "Bunker"
+          "ruRU": "Бункер "
         },
         "Description": {
           "enUS": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>",
-          "ruRU": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>"
+          "ruRU": "Оборонительное строение.<br/>Помещенная в бункер пехота может вести огонь.<br/><br/><span style=\"color: #ffff8a\">Бонус: +1 к дальности атаки находящихся внутри войск.</span>"
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -4046,7 +4064,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 300
       },
@@ -4055,11 +4073,11 @@
         "Icon": "btn-building-terran-missileturret",
         "Name": {
           "enUS": "Missile Turret",
-          "ruRU": "Missile Turret"
+          "ruRU": "Ракетная турель "
         },
         "Description": {
           "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Средство противовоздушной обороны.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
         },
         "LifeMax": 250,
         "CostResource": {
@@ -4073,7 +4091,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 310
       },
@@ -4082,11 +4100,11 @@
         "Icon": "btn-building-terran-sensordome",
         "Name": {
           "enUS": "Sensor Tower",
-          "ruRU": "Sensor Tower"
+          "ruRU": "Радарная вышка "
         },
         "Description": {
           "enUS": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy.",
-          "ruRU": "Reveals the locations of enemy units at long range. The Sensor Tower's detection area is visible to the enemy."
+          "ruRU": "Обнаруживает вражеские войска в большом радиусе. Область обнаружения видна противникам. "
         },
         "LifeMax": 200,
         "CostResource": {
@@ -4101,7 +4119,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 314
       },
@@ -4110,11 +4128,11 @@
         "Icon": "btn-building-terran-ghostacademy",
         "Name": {
           "enUS": "Ghost Academy",
-          "ruRU": "Ghost Academy"
+          "ruRU": "Академия призраков "
         },
         "Description": {
           "enUS": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks",
-          "ruRU": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks"
+          "ruRU": "Позволяет улучшать призраков. Служит для строительства ядерных ракет.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>- обучение призраков в казармах"
         },
         "LifeMax": 1250,
         "LifeArmor": 1,
@@ -4134,7 +4152,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 318
       },
@@ -4143,11 +4161,11 @@
         "Icon": "btn-building-terran-factory",
         "Name": {
           "enUS": "Factory",
-          "ruRU": "Factory"
+          "ruRU": "Завод "
         },
         "Description": {
           "enUS": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines",
-          "ruRU": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines"
+          "ruRU": "Завод по производству бронетехники.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллионов»<br/>– производство мин «Вдова»<br/>– производство «Циклонов»"
         },
         "LifeMax": 1250,
         "LifeArmor": 1,
@@ -4168,13 +4186,14 @@
         "Research": [],
         "Morph": [],
         "$Phase": [
-          "FactoryFlying"
+          "FactoryFlying",
+          "FactoryTechLab"
         ],
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 322
       },
@@ -4183,11 +4202,11 @@
         "Icon": "btn-building-terran-factory",
         "Name": {
           "enUS": "Factory",
-          "ruRU": "Factory"
+          "ruRU": "Завод "
         },
         "Description": {
           "enUS": "Factory must land to start unit production.",
-          "ruRU": "Factory must land to start unit production."
+          "ruRU": "Завод должен приземлиться, чтобы начать производство. "
         },
         "LifeMax": 1250,
         "LifeArmor": 1,
@@ -4209,35 +4228,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
-        }
-      },
-      "FactoryReactor": {
-        "id": "FactoryReactor",
-        "Icon": "btn-building-terran-reactor",
-        "Name": {
-          "enUS": "Reactor",
-          "ruRU": "Reactor"
-        },
-        "Description": {
-          "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
-        },
-        "LifeMax": 400,
-        "LifeArmor": 1,
-        "CostResource": {
-          "Minerals": 50,
-          "Vespene": 50
-        },
-        "Production": [],
-        "Research": [],
-        "Morph": [],
-        "$Phase": [],
-        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
-        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
-        "LifeArmorName": {
-          "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
       },
       "FactoryTechLab": {
@@ -4245,11 +4236,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Tech Lab",
-          "ruRU": "Tech Lab"
+          "ruRU": "Лаборатория "
         },
         "Description": {
           "enUS": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
-          "ruRU": "Enables additional units and research options. A Tech Lab can fit onto any production structure."
+          "ruRU": "Открывает доступ к новым видам войск и разработкам. Построенная лаборатория может быть состыкована с любым производственным строением. "
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -4260,17 +4251,18 @@
         "Production": [],
         "Research": [
           "HighCapacityBarrels",
-          null,
+          "CycloneLockOnDamageUpgrade",
           "SmartServos",
           "DrillClaws"
         ],
         "Morph": [],
         "$Phase": [],
+        "$Phased": "Factory",
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 337
       },
@@ -4279,11 +4271,11 @@
         "Icon": "btn-unit-terran-hellion",
         "Name": {
           "enUS": "Hellion",
-          "ruRU": "Hellion"
+          "ruRU": "«Геллион»"
         },
         "Description": {
           "enUS": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Мобильная боевая единица. Оборудована огнеметом, поражающим всех врагов на линии огня. Может трансформироваться в шагающую единицу ближнего боя.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 90,
         "Food": -2,
@@ -4300,7 +4292,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 80
       },
@@ -4308,12 +4300,12 @@
         "id": "HellionTank",
         "Icon": "btn-unit-terran-hellionbattlemode",
         "Name": {
-          "ruRU": "Hellbat",
+          "ruRU": "«Геллитрон»",
           "enUS": "Hellbat"
         },
         "Description": {
           "enUS": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Шагающая единица ближнего боя. Наносит урон всем противникам в секторе перед собой на небольшом расстоянии. Может трансформироваться в быструю моторизированную боевую единицу.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 135,
         "Food": -2,
@@ -4331,7 +4323,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 81
       },
@@ -4340,7 +4332,7 @@
         "Icon": "btn-unit-terran-siegetank",
         "Name": {
           "enUS": "Siege Tank",
-          "ruRU": "Siege Tank"
+          "ruRU": "Осадный танк "
         },
         "Description": {
           "enUS": "Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
@@ -4365,7 +4357,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 130
       },
@@ -4374,11 +4366,11 @@
         "Icon": "btn-unit-terran-siegetanksiegemode",
         "Name": {
           "enUS": "Siege Tank",
-          "ruRU": "Siege Tank"
+          "ruRU": "Осадный танк "
         },
         "Description": {
           "enUS": "Heavy tank. Can switch into Tank Mode to provide mobile tank support.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Heavy tank. Can switch into Tank Mode to provide mobile tank support.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Тяжелый танк. Может передвигаться и атаковать в режиме танка.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 175,
         "LifeArmor": 1,
@@ -4399,7 +4391,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 135
       },
@@ -4408,11 +4400,11 @@
         "Icon": "btn-unit-terran-thor",
         "Name": {
           "enUS": "Thor",
-          "ruRU": "Thor"
+          "ruRU": "«Тор»"
         },
         "Description": {
           "enUS": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Тяжелый осадный робот.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -4433,7 +4425,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 140
       },
@@ -4442,11 +4434,11 @@
         "Icon": "btn-unit-terran-thor",
         "Name": {
           "enUS": "Thor",
-          "ruRU": "Thor"
+          "ruRU": "«Тор»"
         },
         "Description": {
           "enUS": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Тяжелый осадный робот.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -4467,7 +4459,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 141
       },
@@ -4476,11 +4468,11 @@
         "Icon": "btn-unit-terran-cyclone",
         "Name": {
           "enUS": "Cyclone",
-          "ruRU": "Cyclone"
+          "ruRU": "«Циклон»"
         },
         "Description": {
           "enUS": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Мобильная штурмовая машина. Может использовать способность «Захват цели», чтобы вести огонь во время движения.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 120,
         "Food": -3,
@@ -4496,7 +4488,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 136
       },
@@ -4504,12 +4496,12 @@
         "id": "WidowMine",
         "Icon": "btn-unit-terran-widowmine",
         "Name": {
-          "ruRU": "Widow Mine",
+          "ruRU": "Мина «Вдова» ",
           "enUS": "Widow Mine"
         },
         "Description": {
           "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 90,
         "Food": -2,
@@ -4527,7 +4519,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         },
         "priority": 129
       },
@@ -4535,12 +4527,12 @@
         "id": "WidowMineBurrowed",
         "Icon": "btn-unit-terran-widowmine",
         "Name": {
-          "ruRU": "Widow Mine",
+          "ruRU": "Мина «Вдова» ",
           "enUS": "Widow Mine"
         },
         "Description": {
           "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 90,
         "Food": -2,
@@ -4559,7 +4551,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Vehicle Plating",
-          "ruRU": "Terran Vehicle Plating"
+          "ruRU": "Обшивка наземной техники терранов "
         }
       },
       "Armory": {
@@ -4567,11 +4559,11 @@
         "Icon": "btn-building-terran-armory",
         "Name": {
           "enUS": "Armory",
-          "ruRU": "Armory"
+          "ruRU": "Арсенал "
         },
         "Description": {
           "enUS": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory",
-          "ruRU": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory"
+          "ruRU": "Позволяет улучшать броню и оружие боевых единиц, производимых на заводе и в космопорте. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллитронов» на заводе<br/>– производство «Торов» на заводе"
         },
         "LifeMax": 750,
         "LifeArmor": 1,
@@ -4601,7 +4593,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 326
       },
@@ -4610,11 +4602,11 @@
         "Icon": "btn-building-terran-starport",
         "Name": {
           "enUS": "Starport",
-          "ruRU": "Starport"
+          "ruRU": "Космопорт "
         },
         "Description": {
           "enUS": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs",
-          "ruRU": "Air-unit production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vikings<br/>- Medivacs"
+          "ruRU": "Авиационный завод.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Викингов»<br/>– производство медэваков<br/>– производство «Освободителей»"
         },
         "LifeMax": 1300,
         "LifeArmor": 1,
@@ -4635,13 +4627,14 @@
         "Research": [],
         "Morph": [],
         "$Phase": [
-          "StarportFlying"
+          "StarportFlying",
+          "StarportTechLab"
         ],
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 329
       },
@@ -4650,11 +4643,11 @@
         "Icon": "btn-building-terran-starport",
         "Name": {
           "enUS": "Starport",
-          "ruRU": "Starport"
+          "ruRU": "Космопорт "
         },
         "Description": {
           "enUS": "Starport must land to start unit production.",
-          "ruRU": "Starport must land to start unit production."
+          "ruRU": "Космопорт должен приземлиться, чтобы начать производство. "
         },
         "LifeMax": 1300,
         "LifeArmor": 1,
@@ -4676,48 +4669,19 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
-      },
-      "StarportReactor": {
-        "id": "StarportReactor",
-        "Icon": "btn-building-terran-reactor",
-        "Name": {
-          "enUS": "Reactor",
-          "ruRU": "Reactor"
-        },
-        "Description": {
-          "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
-        },
-        "LifeMax": 400,
-        "LifeArmor": 1,
-        "CostResource": {
-          "Minerals": 50,
-          "Vespene": 50
-        },
-        "Production": [],
-        "Research": [],
-        "Morph": [],
-        "$Phase": [],
-        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
-        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
-        "LifeArmorName": {
-          "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
-        },
-        "priority": 27
       },
       "StarportTechLab": {
         "id": "StarportTechLab",
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Tech Lab",
-          "ruRU": "Tech Lab"
+          "ruRU": "Лаборатория "
         },
         "Description": {
           "enUS": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
-          "ruRU": "Enables additional units and research options. A Tech Lab can fit onto any production structure."
+          "ruRU": "Открывает доступ к новым видам войск и разработкам. Построенная лаборатория может быть состыкована с любым производственным строением. "
         },
         "LifeMax": 400,
         "LifeArmor": 1,
@@ -4733,11 +4697,12 @@
         ],
         "Morph": [],
         "$Phase": [],
+        "$Phased": "Starport",
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 337
       },
@@ -4746,11 +4711,11 @@
         "Icon": "btn-unit-terran-vikingfighter",
         "Name": {
           "enUS": "Viking",
-          "ruRU": "Viking"
+          "ruRU": "«Викинг»"
         },
         "Description": {
           "enUS": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-          "ruRU": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+          "ruRU": "Воздушная единица поддержки, вооруженная мощными противовоздушными ракетами. Может переходить в штурмовой режим для ведения боя с наземными войсками.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
         },
         "LifeMax": 135,
         "Food": -2,
@@ -4768,7 +4733,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 150
       },
@@ -4777,11 +4742,11 @@
         "Icon": "btn-unit-terran-vikingassault",
         "Name": {
           "enUS": "Viking",
-          "ruRU": "Viking"
+          "ruRU": "«Викинг»"
         },
         "Description": {
           "enUS": "Durable support unit. Can switch into Fighter Mode to attack air units.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Durable support unit. Can switch into Fighter Mode to attack air units.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Единица огневой поддержки. Может переходить в режим истребителя для ведения боя с воздушными войсками.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 135,
         "Food": -2,
@@ -4800,7 +4765,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 155
       },
@@ -4809,11 +4774,11 @@
         "Icon": "btn-unit-terran-medivac",
         "Name": {
           "enUS": "Medivac",
-          "ruRU": "Medivac"
+          "ruRU": "Медэвак "
         },
         "Description": {
           "enUS": "Air transport. Heals nearby biological units. Can use Afterburners.",
-          "ruRU": "Air transport. Heals nearby biological units. Can use Afterburners."
+          "ruRU": "Транспортный корабль. Лечит находящиеся рядом органические войска. Может использовать способность «Форсаж»."
         },
         "LifeMax": 150,
         "LifeArmor": 1,
@@ -4830,7 +4795,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 185
       },
@@ -4839,11 +4804,11 @@
         "Icon": "btn-unit-terran-raven",
         "Name": {
           "enUS": "Raven",
-          "ruRU": "Raven"
+          "ruRU": "«Ворон»"
         },
         "Description": {
           "enUS": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Воздушная боевая единица поддержки. Может строить автотурели и использовать инвазивную матрицу. Оснащается бронебойными ракетами.<br/><br/><span style=\"color: FFE303\">Детектор</span> "
         },
         "LifeMax": 140,
         "LifeArmor": 1,
@@ -4857,12 +4822,14 @@
         ],
         "Research": [],
         "Morph": [],
-        "$Phase": [],
+        "$Phase": [
+          "AutoTurret"
+        ],
         "LifeArmorIcon": "btn-upgrade-terran-shipplatinglevel0",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 190
       },
@@ -4871,11 +4838,11 @@
         "Icon": "btn-building-terran-autoturret",
         "Name": {
           "enUS": "Auto-Turret",
-          "ruRU": "Auto-Turret"
+          "ruRU": "Автотурель "
         },
         "Description": {
           "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Автоматическая турель. Функционирует в течение <b>11</b> сек.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 100,
         "CostResource": {
@@ -4885,11 +4852,12 @@
         "Research": [],
         "Morph": [],
         "$Phase": [],
+        "$Phased": "Raven",
         "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 346
       },
@@ -4898,11 +4866,11 @@
         "Icon": "btn-unit-terran-banshee",
         "Name": {
           "enUS": "Banshee",
-          "ruRU": "Banshee"
+          "ruRU": "«Банши»"
         },
         "Description": {
           "enUS": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Ударный вертолет. После улучшения может использовать маскировку.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "LifeMax": 140,
         "Food": -3,
@@ -4918,7 +4886,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 210
       },
@@ -4927,11 +4895,11 @@
         "Icon": "btn-unit-terran-battlecruiser",
         "Name": {
           "enUS": "Battlecruiser",
-          "ruRU": "Battlecruiser"
+          "ruRU": "Крейсер "
         },
         "Description": {
           "enUS": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Powerful warship. Can use Yamato Cannon and Tactical Jump.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Мощный боевой корабль. Может использовать орудие «Ямато» и способность «Тактический скачок». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "LifeMax": 550,
         "LifeArmor": 3,
@@ -4950,7 +4918,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 210
       },
@@ -4959,11 +4927,11 @@
         "Icon": "btn-ability-terran-liberator-aamode",
         "Name": {
           "enUS": "Liberator",
-          "ruRU": "Liberator"
+          "ruRU": "«Освободитель»"
         },
         "Description": {
           "enUS": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-          "ruRU": "Artillery fighter. Loaded with missiles that deal area damage to enemy air targets. Can switch into Defender Mode to provide siege support.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+          "ruRU": "Артиллерийский корабль. Оснащен ракетами «воздух-воздух», наносящими урон по области. Может переходить в защитный режим и атаковать наземные цели.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
         },
         "LifeMax": 180,
         "Food": -3,
@@ -4979,7 +4947,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Ship Plating",
-          "ruRU": "Terran Ship Plating"
+          "ruRU": "Обшивка воздушной техники терранов "
         },
         "priority": 188
       },
@@ -4988,11 +4956,11 @@
         "Icon": "btn-building-terran-fusioncore",
         "Name": {
           "enUS": "Fusion Core",
-          "ruRU": "Fusion Core"
+          "ruRU": "Центр синтеза "
         },
         "Description": {
           "enUS": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
-          "ruRU": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport"
+          "ruRU": "Позволяет улучшать медэваки, «Освободители» и крейсеры.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство крейсеров в космопорте"
         },
         "LifeMax": 750,
         "LifeArmor": 1,
@@ -5012,7 +4980,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 333
       },
@@ -5021,11 +4989,11 @@
         "Icon": "btn-unit-terran-mule",
         "Name": {
           "enUS": "MULE",
-          "ruRU": "MULE"
+          "ruRU": "МУЛ "
         },
         "Description": {
           "enUS": "Prototype harvesting unit. Gathers minerals more quickly than regular SCVs. MULEs last <b>90</b> before their systems fail.",
-          "ruRU": "Prototype harvesting unit. Gathers minerals more quickly than regular SCVs. MULEs last <b>90</b> before their systems fail."
+          "ruRU": "Автоматический рабочий-прототип. Добывает минералы быстрее, чем КСМ. Из-за конструктивных недоработок время работы МУЛа ограничено и составляет <b>90</b>"
         },
         "LifeMax": 60,
         "CostResource": {
@@ -5039,7 +5007,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Infantry Armor",
-          "ruRU": "Terran Infantry Armor"
+          "ruRU": "Броня пехоты терранов "
         },
         "priority": 20
       },
@@ -5048,11 +5016,11 @@
         "Icon": "btn-building-terran-planetaryfortress",
         "Name": {
           "enUS": "Planetary Fortress",
-          "ruRU": "Planetary Fortress"
+          "ruRU": "Планетарная крепость "
         },
         "Description": {
           "enUS": "Defensive stronghold. <br/>Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Defensive stronghold. <br/>Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Хорошо защищенный штаб. <br/>Служит для хранения добытых ресурсов. <br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
         },
         "LifeMax": 1500,
         "LifeArmor": 2,
@@ -5071,7 +5039,7 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         },
         "priority": 240
       },
@@ -5080,11 +5048,11 @@
         "Icon": "btn-building-terran-commandcenter",
         "Name": {
           "enUS": "Command Center",
-          "ruRU": "Command Center"
+          "ruRU": "Командный центр "
         },
         "Description": {
           "enUS": "Primary structure. Must land to receive resources, produce units, or use abilities.",
-          "ruRU": "Primary structure. Must land to receive resources, produce units, or use abilities."
+          "ruRU": "Основное строение. Командный центр должен приземлиться, чтобы производить войска, принимать на хранение ресурсы и использовать способности."
         },
         "LifeMax": 1500,
         "LifeArmor": 1,
@@ -5103,8 +5071,37 @@
         "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
         "LifeArmorName": {
           "enUS": "Terran Building Plating",
-          "ruRU": "Terran Building Plating"
+          "ruRU": "Обшивка построек терранов "
         }
+      },
+      "Reactor": {
+        "id": "Reactor",
+        "Icon": "btn-building-terran-reactor",
+        "Name": {
+          "enUS": "Reactor",
+          "ruRU": "Реактор "
+        },
+        "Description": {
+          "enUS": "Allows 2 units to be created simultaneously.",
+          "ruRU": "Позволяет производить две боевые единицы одновременно. "
+        },
+        "LifeMax": 400,
+        "LifeArmor": 1,
+        "CostResource": {
+          "Minerals": 50,
+          "Vespene": 50
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Terran Building Plating",
+          "ruRU": "Обшивка построек терранов "
+        },
+        "priority": 341
       }
     }
   },
@@ -5150,7 +5147,6 @@
     "SupplyDepotLowered",
     "Barracks",
     "BarracksFlying",
-    "BarracksReactor",
     "BarracksTechLab",
     "EngineeringBay",
     "Bunker",
@@ -5159,17 +5155,16 @@
     "GhostAcademy",
     "Factory",
     "FactoryFlying",
-    "FactoryReactor",
     "FactoryTechLab",
     "Armory",
     "Starport",
     "StarportFlying",
-    "StarportReactor",
     "StarportTechLab",
     "AutoTurret",
     "FusionCore",
     "PlanetaryFortress",
-    "CommandCenterFlying"
+    "CommandCenterFlying",
+    "Reactor"
   ],
   "upgrades": [
     "ShieldWall",
@@ -5185,6 +5180,7 @@
     "TerranInfantryArmorsLevel3",
     "PersonalCloaking",
     "HighCapacityBarrels",
+    "CycloneLockOnDamageUpgrade",
     "SmartServos",
     "DrillClaws",
     "TerranVehicleWeaponsLevel1",

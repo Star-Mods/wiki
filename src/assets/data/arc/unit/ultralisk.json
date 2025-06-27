@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ultralisk",
-    "ruRU": "Ultralisk"
+    "ruRU": "Ультралиск "
   },
   "Description": {
     "enUS": "Heavy assault beast. Has an area-damage attack.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Heavy assault beast. Has an area-damage attack.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Тяжелобронированный зверь, наносящий урон всем противникам, находящимся перед ним.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -124,6 +125,13 @@
     "Flying6"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "BurrowUltraliskDown",
+    "UltraliskWeaponCooldown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -214,11 +222,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -294,11 +302,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -390,11 +398,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -471,11 +479,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -567,11 +575,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -616,11 +624,11 @@
         "Icon": "btn-ability-zerg-burrow-color",
         "Name": {
           "enUS": "Burrow",
-          "ruRU": "Burrow"
+          "ruRU": "Закопаться "
         },
         "Tooltip": {
           "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+          "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
         },
         "Hotkey": "D"
       },
@@ -642,11 +650,11 @@
         "Icon": "btn-ability-zerg-frenzied-color",
         "Name": {
           "enUS": "Frenzied",
-          "ruRU": "Frenzied"
+          "ruRU": "Бешенство "
         },
         "Tooltip": {
           "enUS": "Immune to snare, stun, and mind control effects.",
-          "ruRU": "Immune to snare, stun, and mind control effects."
+          "ruRU": "Невосприимчивость к парализации, оглушению, подчинению и замедлению."
         }
       },
       {
@@ -667,11 +675,11 @@
         "Icon": "btn-upgrade-zerg-chitinousplating",
         "Name": {
           "enUS": "Evolve Chitinous Plating",
-          "ruRU": "Evolve Chitinous Plating"
+          "ruRU": "Развить хитиновый панцирь "
         },
         "Tooltip": {
           "enUS": "Grants <span style=\"color: ffff8a\">Ultralisks</span> +2 armor.",
-          "ruRU": "Grants <span style=\"color: ffff8a\">Ultralisks</span> +2 armor.",
+          "ruRU": "Усиливает броню <span style=\"color: ffff8a\">ультралисков</span> на <b>2</b>.",
           "zhCN": "Grants <span style=\"color: ffff8a\">Ultralisks</span> +2 armor.",
           "koKR": "Grants <span style=\"color: ffff8a\">Ultralisks</span> +2 armor."
         },
@@ -695,11 +703,11 @@
         "Icon": "btn-upgrade-zerg-anabolicsynthesis",
         "Name": {
           "enUS": "Evolve Anabolic Synthesis",
-          "ruRU": "Evolve Anabolic Synthesis"
+          "ruRU": "Развить анаболический синтез "
         },
         "Tooltip": {
           "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Ultralisks</span>.",
-          "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Ultralisks</span>."
+          "ruRU": "Скорость передвижения <span style=\"color: ffff8a\">ультралисков</span> вне слизи повышается. "
         },
         "Hotkey": "A"
       }
@@ -731,10 +739,19 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "WeaponArray": [
+    {
+      "Link": "KaiserBlades"
+    },
+    {}
+  ],
   "TauntDuration": {
     "Cheer": 5,
     "Dance": 5
   },
+  "BehaviorArray": [
+    "Frenzy"
+  ],
   "id": "Ultralisk",
   "Icon": "btn-unit-zerg-omegalisk",
   "Model": "UltraliskEx1",
@@ -742,17 +759,34 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "KaiserBlades",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "DisplayEffect": "KaiserBladesDamage",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByAngle",
+      "Range": 1,
+      "Period": 0.86,
+      "DamagePoint": 0.3332,
+      "Options": {
+        "Melee": 1
+      },
+      "Effect": "KaiserBladesDamage",
+      "Cost": {
+        "Cooldown": {
+          "Link": "Abil/UltraliskWeaponCooldown",
+          "Location": "Unit",
+          "TimeUse": 0.86
+        }
+      },
+      "RangeSlop": 1.25,
+      "id": "KaiserBlades",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Kaiser Blades",
-        "ruRU": "Kaiser Blades"
+        "ruRU": "Костяные клинки "
       },
       "Amount": 35,
-      "Kind": "Splash",
-      "TargetFilters": "Ground",
-      "Range": 1,
-      "Period": 0.86
+      "Kind": "Splash"
     }
   ],
   "Behaviors": [
@@ -862,11 +896,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -875,11 +909,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -888,11 +922,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -901,11 +935,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -914,11 +948,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -927,11 +961,11 @@
       "Icon": "btn-ability-zerg-burrow-color",
       "Name": {
         "enUS": "Burrow",
-        "ruRU": "Burrow"
+        "ruRU": "Закопаться "
       },
       "Tooltip": {
         "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
       }
     }
   ]

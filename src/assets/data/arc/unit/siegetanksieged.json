@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Siege Tank",
-    "ruRU": "Siege Tank"
+    "ruRU": "Осадный танк "
   },
   "Description": {
     "enUS": "Heavy tank. Can switch into Tank Mode to provide mobile tank support.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Heavy tank. Can switch into Tank Mode to provide mobile tank support.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Тяжелый танк. Может передвигаться и атаковать в режиме танка.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 175,
   "LifeArmorName": {
     "enUS": "Terran Vehicle Plating",
-    "ruRU": "Terran Vehicle Plating"
+    "ruRU": "Обшивка наземной техники терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -121,9 +122,20 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "Unsiege"
+  ],
   "Attributes": [
     "Armored",
     "Mechanical"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "CrucioShockCannon",
+      "Turret": "SiegeTankSieged"
+    }
   ],
   "CardLayouts": {
     "Root": [
@@ -215,11 +227,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -295,11 +307,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -391,11 +403,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -472,11 +484,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -568,11 +580,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -612,11 +624,11 @@
         "Icon": "btn-unit-terran-siegetank",
         "Name": {
           "enUS": "Tank Mode",
-          "ruRU": "Tank Mode"
+          "ruRU": "Режим танка "
         },
         "Tooltip": {
           "enUS": "Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage.",
-          "ruRU": "Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage."
+          "ruRU": "Переводит в режим танка. В этом режиме осадный танк может передвигаться, но наносит меньше урона."
         },
         "Hotkey": "D"
       }
@@ -643,20 +655,28 @@
   "Weapons": [
     {
       "Turret": "SiegeTankSieged",
-      "id": "CrucioShockCannon",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-vehicleweaponslevel0",
+      "TargetFilters": "Ground",
+      "Range": 13,
+      "MinimumRange": 2,
+      "Period": 3,
+      "Options": {
+        "DisplayCooldown": 1
+      },
+      "DisplayEffect": "CrucioShockCannonDummy",
+      "Effect": "SiegeTankSiegedWeapon@InitialSet",
+      "id": "CrucioShockCannon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Crucio Shock Cannon",
-        "ruRU": "Crucio Shock Cannon"
+        "ruRU": "Осадная пушка «Круцио» "
       },
       "Amount": 40,
       "AttributeBonus": {
         "Armored": 30
       },
-      "Kind": "Splash",
-      "TargetFilters": "Ground",
-      "Range": 13,
-      "Period": 3
+      "Kind": "Splash"
     }
   ],
   "Behaviors": [],
@@ -726,11 +746,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -739,11 +759,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -752,11 +772,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -765,11 +785,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -778,11 +798,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -791,11 +811,11 @@
       "Icon": "btn-unit-terran-siegetank",
       "Name": {
         "enUS": "Tank Mode",
-        "ruRU": "Tank Mode"
+        "ruRU": "Режим танка "
       },
       "Tooltip": {
         "enUS": "Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage.",
-        "ruRU": "Reverts to Tank Mode. In this mode Siege Tanks can move, but they do less damage."
+        "ruRU": "Переводит в режим танка. В этом режиме осадный танк может передвигаться, но наносит меньше урона."
       }
     }
   ]

@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Reaper",
-    "ruRU": "Reaper"
+    "ruRU": "Головорез "
   },
   "Description": {
     "enUS": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Налетчик. Может преодолевать уступы. Быстро восстанавливает здоровье, находясь вне боя. Может использовать взрывчатку KD8.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 60,
   "LifeArmorName": {
     "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
+    "ruRU": "Броня пехоты терранов "
   },
   "Mover": "CliffJumper",
   "StationaryTurningRate": 999.8437,
@@ -125,6 +126,15 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "KD8Charge"
+  ],
+  "BehaviorArray": [
+    "ReaperJump"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -215,11 +225,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -295,11 +305,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -391,11 +401,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -472,11 +482,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -568,11 +578,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -595,11 +605,11 @@
         "Icon": "btn-ability-terran-jetpack-color",
         "Name": {
           "enUS": "Jet Pack",
-          "ruRU": "Jet Pack"
+          "ruRU": "Нитроускорители "
         },
         "Tooltip": {
           "enUS": "Reapers can jump up and down cliffs.",
-          "ruRU": "Reapers can jump up and down cliffs."
+          "ruRU": "Головорезы могут запрыгивать на уступы и спрыгивать с них."
         }
       },
       {
@@ -620,11 +630,11 @@
         "Icon": "btn-upgrade-terran-reapercombatdrugs",
         "Name": {
           "enUS": "Combat Drugs",
-          "ruRU": "Combat Drugs"
+          "ruRU": "Экспресс-лечение "
         },
         "Tooltip": {
           "enUS": "Regenerates life quickly while out of combat.",
-          "ruRU": "Regenerates life quickly while out of combat."
+          "ruRU": "Головорезы быстро восстанавливают здоровье, пока находятся вне боя."
         }
       },
       {
@@ -767,11 +777,11 @@
         "Icon": "btn-upgrade-terran-kd8chargeex3",
         "Name": {
           "enUS": "KD8 Charge",
-          "ruRU": "KD8 Charge"
+          "ruRU": "Взрывчатка KD8 "
         },
         "Tooltip": {
           "enUS": "Explodes after a short delay, doing 10 damage and knocking back nearby units.",
-          "ruRU": "Explodes after a short delay, doing 10 damage and knocking back nearby units."
+          "ruRU": "После небольшой паузы взрывается и отбрасывает ближайших противников, нанося им <b>5</b> ед. урона."
         },
         "Hotkey": "D"
       }
@@ -795,6 +805,12 @@
     "Roach",
     "Stalker"
   ],
+  "WeaponArray": [
+    {
+      "Link": "P38ScytheGuassPistol"
+    },
+    {}
+  ],
   "LifeRegenDelay": 10,
   "LifeRegenRate": 2,
   "TacticalAIThink": "AIThinkReaper",
@@ -805,18 +821,27 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "P38ScytheGuassPistol",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
+      "TargetFilters": "Ground",
+      "MinScanRange": 5.5,
+      "Period": 1.1,
+      "DamagePoint": 0,
+      "Backswing": 0.75,
+      "Effect": "P38ScytheGuassPistolBurst",
+      "DisplayAttackCount": 2,
+      "id": "P38ScytheGuassPistol",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
       "Name": {
         "enUS": "P-45 Gauss Pistol",
-        "ruRU": "P-45 Gauss Pistol"
+        "ruRU": "Пистолет Гаусса P-45 "
       },
       "Amount": 4,
       "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 1.1
+      "Range": 5
     }
   ],
   "Behaviors": [
@@ -893,11 +918,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -906,11 +931,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -919,11 +944,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -932,11 +957,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -945,11 +970,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -958,11 +983,11 @@
       "Icon": "btn-ability-terran-jetpack-color",
       "Name": {
         "enUS": "Jet Pack",
-        "ruRU": "Jet Pack"
+        "ruRU": "Нитроускорители "
       },
       "Tooltip": {
         "enUS": "Reapers can jump up and down cliffs.",
-        "ruRU": "Reapers can jump up and down cliffs."
+        "ruRU": "Головорезы могут запрыгивать на уступы и спрыгивать с них."
       }
     },
     {
@@ -971,11 +996,11 @@
       "Icon": "btn-upgrade-terran-kd8chargeex3",
       "Name": {
         "enUS": "KD8 Charge",
-        "ruRU": "KD8 Charge"
+        "ruRU": "Взрывчатка KD8 "
       },
       "Tooltip": {
         "enUS": "Explodes after a short delay, doing 10 damage and knocking back nearby units.",
-        "ruRU": "Explodes after a short delay, doing 10 damage and knocking back nearby units."
+        "ruRU": "После небольшой паузы взрывается и отбрасывает ближайших противников, нанося им <b>5</b> ед. урона."
       }
     }
   ]

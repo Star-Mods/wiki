@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Overlord",
-    "ruRU": "Overlord"
+    "ruRU": "Надзиратель"
   },
   "Description": {
     "enUS": "Provides supply.<br/>Supply allows you to create more units.",
-    "ruRU": "Provides supply.<br/>Supply allows you to create more units."
+    "ruRU": "Обеспечивает поддержку армии.<br/>От количества надзирателей зависит максимальный размер войска зергов. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 200,
   "LifeArmorName": {
     "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
+    "ruRU": "Панцирь воздушных зергов"
   },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
@@ -120,6 +121,16 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 20,
+  "AbilArray": [
+    "stop",
+    "OverlordTransport",
+    "move",
+    "MorphToOverseer",
+    "GenerateCreep"
+  ],
+  "BehaviorArray": [
+    "IsTransportOverlord"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -210,11 +221,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -290,11 +301,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -386,11 +397,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -467,11 +478,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -563,11 +574,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -659,11 +670,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -692,11 +703,11 @@
         "Icon": "btn-unit-zerg-overseer",
         "Name": {
           "enUS": "Morph to Overseer",
-          "ruRU": "Morph to Overseer"
+          "ruRU": "Мутировать во владыку "
         },
         "Tooltip": {
           "enUS": "Advanced aerial observer. Provides the same supply as an Overlord. Can use the Spawn Changeling and Contaminate abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-          "ruRU": "Advanced aerial observer. Provides the same supply as an Overlord. Can use the Spawn Changeling and Contaminate abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+          "ruRU": "Быстрый летающий разведчик. Дает то же количество припасов, что и надзиратель. Может порождать мимикридов и использовать способность «Инфекция».<br/><br/><span style=\"color: FFE303\">Детектор</span>"
         },
         "Hotkey": "V"
       },
@@ -725,11 +736,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -799,11 +810,11 @@
         "Icon": "btn-ability-zerg-generatecreep-color",
         "Name": {
           "enUS": "Generate Creep",
-          "ruRU": "Generate Creep"
+          "ruRU": "Вырабатывать слизь "
         },
         "Tooltip": {
           "enUS": "Makes the Overlord start to generate creep. Creep will only be generated when the Overlord isn't moving. Creep feeds nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-          "ruRU": "Makes the Overlord start to generate creep. Creep will only be generated when the Overlord isn't moving. Creep feeds nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+          "ruRU": "Надзиратель начинает вырабатывать слизь, которая обеспечивает жизнедеятельность строений зергов. Действие возможно, только когда надзиратель неподвижен.<br/><br/><span style=\"color: #ffff8a\">Бонус: по слизи зерги передвигаются быстрее.</span> "
         },
         "Hotkey": "G"
       },
@@ -915,11 +926,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads units into the Overlord's ventral sacs.",
-          "ruRU": "Loads units into the Overlord's ventral sacs."
+          "ruRU": "Загрузить войска в брюшные мешки надзирателя. "
         },
         "Hotkey": "L"
       },
@@ -1031,11 +1042,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -1105,11 +1116,11 @@
         "Icon": "btn-ability-zerg-generatecreepstop-color",
         "Name": {
           "enUS": "Stop Generate Creep",
-          "ruRU": "Stop Generate Creep"
+          "ruRU": "Прервать вырабатывание слизи "
         },
         "Tooltip": {
           "enUS": "Stops generating creep.",
-          "ruRU": "Stops generating creep."
+          "ruRU": "Надзиратель прекращает вырабатывать слизь. "
         },
         "Hotkey": "C"
       }
@@ -1134,7 +1145,7 @@
       "id": "IsTransportOverlord",
       "Name": {
         "enUS": "Is Transport Overlord",
-        "ruRU": "Is Transport Overlord ///Auto - Copied from enUS Locale"
+        "ruRU": "Is Transport Overlord "
       },
       "Tooltip": "-"
     }
@@ -1201,11 +1212,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1214,11 +1225,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1227,11 +1238,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1240,11 +1251,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1253,11 +1264,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1266,11 +1277,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1279,11 +1290,11 @@
       "Icon": "btn-unit-zerg-overseer",
       "Name": {
         "enUS": "Morph to Overseer",
-        "ruRU": "Morph to Overseer"
+        "ruRU": "Мутировать во владыку "
       },
       "Tooltip": {
         "enUS": "Advanced aerial observer. Provides the same supply as an Overlord. Can use the Spawn Changeling and Contaminate abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-        "ruRU": "Advanced aerial observer. Provides the same supply as an Overlord. Can use the Spawn Changeling and Contaminate abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        "ruRU": "Быстрый летающий разведчик. Дает то же количество припасов, что и надзиратель. Может порождать мимикридов и использовать способность «Инфекция».<br/><br/><span style=\"color: FFE303\">Детектор</span>"
       }
     },
     {
@@ -1292,11 +1303,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1305,11 +1316,11 @@
       "Icon": "btn-ability-zerg-generatecreep-color",
       "Name": {
         "enUS": "Generate Creep",
-        "ruRU": "Generate Creep"
+        "ruRU": "Вырабатывать слизь "
       },
       "Tooltip": {
         "enUS": "Makes the Overlord start to generate creep. Creep will only be generated when the Overlord isn't moving. Creep feeds nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-        "ruRU": "Makes the Overlord start to generate creep. Creep will only be generated when the Overlord isn't moving. Creep feeds nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+        "ruRU": "Надзиратель начинает вырабатывать слизь, которая обеспечивает жизнедеятельность строений зергов. Действие возможно, только когда надзиратель неподвижен.<br/><br/><span style=\"color: #ffff8a\">Бонус: по слизи зерги передвигаются быстрее.</span> "
       }
     },
     {
@@ -1318,11 +1329,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads units into the Overlord's ventral sacs.",
-        "ruRU": "Loads units into the Overlord's ventral sacs."
+        "ruRU": "Загрузить войска в брюшные мешки надзирателя. "
       }
     },
     {
@@ -1331,11 +1342,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -1344,11 +1355,11 @@
       "Icon": "btn-ability-zerg-generatecreepstop-color",
       "Name": {
         "enUS": "Stop Generate Creep",
-        "ruRU": "Stop Generate Creep"
+        "ruRU": "Прервать вырабатывание слизи "
       },
       "Tooltip": {
         "enUS": "Stops generating creep.",
-        "ruRU": "Stops generating creep."
+        "ruRU": "Надзиратель прекращает вырабатывать слизь. "
       }
     }
   ]

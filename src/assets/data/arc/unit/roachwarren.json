@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Roach Warren",
-    "ruRU": "Roach Warren"
+    "ruRU": "Рассадник тараканов "
   },
   "Description": {
     "enUS": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches",
-    "ruRU": "Contains upgrades for Roaches.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Roaches from Larvae<br/>- Ravagers from Roaches"
+    "ruRU": "Позволяет улучшать тараканов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в тараканов<br/>– мутация тараканов в разорителей"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 850,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -124,6 +125,16 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "RoachWarrenResearch",
+    "BuildInProgress",
+    "que5"
+  ],
+  "BehaviorArray": [
+    "OnCreep",
+    "ZergBuildingNotOnCreep",
+    "ZergBuildingDies6"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -185,11 +196,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -255,11 +266,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -300,11 +311,11 @@
         "Icon": "btn-upgrade-zerg-glialreconstitution",
         "Name": {
           "enUS": "Evolve Glial Reconstitution",
-          "ruRU": "Evolve Glial Reconstitution"
+          "ruRU": "Развить глиоцитарное восстановление "
         },
         "Tooltip": {
           "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Roaches</span>.",
-          "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Roaches</span>."
+          "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">тараканов</span>."
         },
         "Hotkey": "G"
       },
@@ -345,11 +356,11 @@
         "Icon": "btn-upgrade-zerg-tunnelingclaws",
         "Name": {
           "enUS": "Evolve Tunneling Claws",
-          "ruRU": "Evolve Tunneling Claws"
+          "ruRU": "Развить когти-землерои "
         },
         "Tooltip": {
           "enUS": "Enables <span style=\"color: ffff8a\">Roaches</span> to move while burrowed. Increases the life-regeneration rate of burrowed <span style=\"color: ffff8a\">Roaches</span>.",
-          "ruRU": "Enables <span style=\"color: ffff8a\">Roaches</span> to move while burrowed. Increases the life-regeneration rate of burrowed <span style=\"color: ffff8a\">Roaches</span>."
+          "ruRU": "Позволяют <span style=\"color: ffff8a\">тараканам</span> передвигаться в закопанном состоянии."
         },
         "Hotkey": "T"
       }
@@ -450,11 +461,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -463,11 +474,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -476,11 +487,11 @@
       "Icon": "btn-upgrade-zerg-glialreconstitution",
       "Name": {
         "enUS": "Evolve Glial Reconstitution",
-        "ruRU": "Evolve Glial Reconstitution"
+        "ruRU": "Развить глиоцитарное восстановление "
       },
       "Tooltip": {
         "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Roaches</span>.",
-        "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Roaches</span>."
+        "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">тараканов</span>."
       }
     },
     {
@@ -489,11 +500,11 @@
       "Icon": "btn-upgrade-zerg-tunnelingclaws",
       "Name": {
         "enUS": "Evolve Tunneling Claws",
-        "ruRU": "Evolve Tunneling Claws"
+        "ruRU": "Развить когти-землерои "
       },
       "Tooltip": {
         "enUS": "Enables <span style=\"color: ffff8a\">Roaches</span> to move while burrowed. Increases the life-regeneration rate of burrowed <span style=\"color: ffff8a\">Roaches</span>.",
-        "ruRU": "Enables <span style=\"color: ffff8a\">Roaches</span> to move while burrowed. Increases the life-regeneration rate of burrowed <span style=\"color: ffff8a\">Roaches</span>."
+        "ruRU": "Позволяют <span style=\"color: ffff8a\">тараканам</span> передвигаться в закопанном состоянии."
       }
     }
   ]

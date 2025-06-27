@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Viking",
-    "ruRU": "Viking"
+    "ruRU": "«Викинг»"
   },
   "Description": {
     "enUS": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
-    "ruRU": "Durable support flyer. Loaded with strong anti-capital air missiles. Can switch into Assault Mode to attack ground units.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>"
+    "ruRU": "Воздушная единица поддержки, вооруженная мощными противовоздушными ракетами. Может переходить в штурмовой режим для ведения боя с наземными войсками.<br/><br/><span style=\"color: #ffff8a\">Атакует только воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 135,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
@@ -122,6 +123,12 @@
   ],
   "VisionHeight": 4,
   "Sight": 10,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "AssaultMode"
+  ],
   "Attributes": [
     "Armored",
     "Mechanical"
@@ -140,6 +147,11 @@
     "Marine",
     "Hydralisk",
     "Stalker"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "LanzerTorpedoes"
+    }
   ],
   "CardLayouts": {
     "Root": [
@@ -231,11 +243,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -327,11 +339,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -423,11 +435,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -503,11 +515,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -584,11 +596,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -635,11 +647,11 @@
         "Icon": "btn-unit-terran-vikingassault",
         "Name": {
           "enUS": "Assault Mode",
-          "ruRU": "Assault Mode"
+          "ruRU": "Штурмовой режим "
         },
         "Tooltip": {
           "enUS": "Transforms the Viking to Assault Mode. In this mode Vikings move on the ground and can only attack ground targets.",
-          "ruRU": "Transforms the Viking to Assault Mode. In this mode Vikings move on the ground and can only attack ground targets."
+          "ruRU": "«Викинг» переходит в штурмовой режим. В этом режиме он передвигается по земле и атакует только наземные цели."
         },
         "Hotkey": "D"
       },
@@ -660,10 +672,12 @@
         "id": "ResearchSmartServos",
         "Icon": "btn-upgrade-terran-transformationservos",
         "Name": {
-          "enUS": "Research Smart Servos"
+          "enUS": "Research Smart Servos",
+          "ruRU": "Разработать универсальные приводы"
         },
         "Tooltip": {
-          "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes."
+          "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes.",
+          "ruRU": "Позволяют <span style=\"color: ffff8a\">«Геллионам»</span>, <span style=\"color: ffff8a\">«Геллитронам»</span>, <span style=\"color: ffff8a\">«Викингам»</span> и <span style=\"color: ffff8a\">«Торам»</span> быстро переходить из одного режима в другой."
         },
         "Hotkey": "S"
       }
@@ -679,21 +693,26 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "LanzerTorpedoes",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
+      "DisplayEffect": "LanzerTorpedoesDamage",
+      "DisplayAttackCount": 2,
+      "TargetFilters": "Air",
+      "Range": 9,
+      "Period": 2,
+      "AllowedMovement": "Slowing",
+      "DamagePoint": 0.05,
+      "id": "LanzerTorpedoes",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Lanzer Torpedoes",
-        "ruRU": "Lanzer Torpedoes"
+        "ruRU": "Торпеды «Копье» "
       },
       "Amount": 10,
       "AttributeBonus": {
         "Armored": 4
       },
-      "Kind": "Ranged",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Air",
-      "Range": 9,
-      "Period": 2
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -769,11 +788,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -782,11 +801,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -795,11 +814,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -808,11 +827,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -821,11 +840,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -834,11 +853,11 @@
       "Icon": "btn-unit-terran-vikingassault",
       "Name": {
         "enUS": "Assault Mode",
-        "ruRU": "Assault Mode"
+        "ruRU": "Штурмовой режим "
       },
       "Tooltip": {
         "enUS": "Transforms the Viking to Assault Mode. In this mode Vikings move on the ground and can only attack ground targets.",
-        "ruRU": "Transforms the Viking to Assault Mode. In this mode Vikings move on the ground and can only attack ground targets."
+        "ruRU": "«Викинг» переходит в штурмовой режим. В этом режиме он передвигается по земле и атакует только наземные цели."
       }
     }
   ]

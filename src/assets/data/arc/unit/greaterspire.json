@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Greater Spire",
-    "ruRU": "Greater Spire"
+    "ruRU": "Шпиль величия "
   },
   "Description": {
     "enUS": "Contains upgrades for Zerg air units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Brood Lords from Corruptors",
-    "ruRU": "Contains upgrades for Zerg air units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Brood Lords from Corruptors"
+    "ruRU": "Позволяет улучшать воздушные войска зергов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация губителей в хозяев стаи "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1000,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -127,6 +128,17 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "LairResearch",
+    "que5CancelToSelection",
+    "SpireResearch"
+  ],
+  "BehaviorArray": [
+    "OnCreep",
+    "ZergBuildingNotOnCreep",
+    "ZergBuildingDies6"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -192,11 +204,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -262,11 +274,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -307,11 +319,11 @@
         "Icon": "btn-upgrade-zerg-airattacks-level1",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 1",
-          "ruRU": "Evolve Flyer Attacks Level 1"
+          "ruRU": "Развить атаку воздушных зергов, 1-й уровень"
         },
         "Tooltip": {
           "enUS": "Upgrades the attacks of all Zerg air units.",
-          "ruRU": "Upgrades the attacks of all Zerg air units."
+          "ruRU": "Усиливает атаки воздушных зергов."
         },
         "Hotkey": "A"
       },
@@ -352,11 +364,11 @@
         "Icon": "btn-upgrade-zerg-airattacks-level2",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 2",
-          "ruRU": "Evolve Flyer Attacks Level 2"
+          "ruRU": "Развить атаку воздушных зергов, 2-й уровень"
         },
         "Tooltip": {
           "enUS": "Further upgrades the attacks of all Zerg air units.",
-          "ruRU": "Further upgrades the attacks of all Zerg air units."
+          "ruRU": "Значительно усиливает атаки воздушных зергов."
         },
         "Hotkey": "A"
       },
@@ -397,11 +409,11 @@
         "Icon": "btn-upgrade-zerg-airattacks-level3",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 3",
-          "ruRU": "Evolve Flyer Attacks Level 3"
+          "ruRU": "Развить атаку воздушных зергов, 3-й уровень"
         },
         "Tooltip": {
           "enUS": "Maximizes the attacks of all Zerg air units.",
-          "ruRU": "Maximizes the attacks of all Zerg air units."
+          "ruRU": "Максимально усиливает атаки воздушных зергов."
         },
         "Hotkey": "A"
       },
@@ -442,11 +454,11 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level1",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 1",
-          "ruRU": "Evolve Flyer Carapace Level 1"
+          "ruRU": "Развить панцири воздушных войск, уровень 1 "
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of all Zerg air units.",
-          "ruRU": "Upgrades the armor of all Zerg air units."
+          "ruRU": "Укрепляет панцири воздушных зергов."
         },
         "Hotkey": "C"
       },
@@ -487,11 +499,11 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level2",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 2",
-          "ruRU": "Evolve Flyer Carapace Level 2"
+          "ruRU": "Развить панцири воздушных войск, уровень 2 "
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of all Zerg air units.",
-          "ruRU": "Further upgrades the armor of all Zerg air units."
+          "ruRU": "Значительно укрепляет панцири воздушных зергов."
         },
         "Hotkey": "C"
       },
@@ -532,11 +544,11 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level3",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 3",
-          "ruRU": "Evolve Flyer Carapace Level 3"
+          "ruRU": "Развить панцири воздушных войск, уровень 3 "
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of all Zerg air units.",
-          "ruRU": "Maximizes the armor of all Zerg air units."
+          "ruRU": "Максимально укрепляет панцири воздушных зергов."
         },
         "Hotkey": "C"
       }
@@ -651,11 +663,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -664,11 +676,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -677,11 +689,11 @@
       "Icon": "btn-upgrade-zerg-airattacks-level1",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 1",
-        "ruRU": "Evolve Flyer Attacks Level 1"
+        "ruRU": "Развить атаку воздушных зергов, 1-й уровень"
       },
       "Tooltip": {
         "enUS": "Upgrades the attacks of all Zerg air units.",
-        "ruRU": "Upgrades the attacks of all Zerg air units."
+        "ruRU": "Усиливает атаки воздушных зергов."
       }
     },
     {
@@ -690,11 +702,11 @@
       "Icon": "btn-upgrade-zerg-airattacks-level2",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 2",
-        "ruRU": "Evolve Flyer Attacks Level 2"
+        "ruRU": "Развить атаку воздушных зергов, 2-й уровень"
       },
       "Tooltip": {
         "enUS": "Further upgrades the attacks of all Zerg air units.",
-        "ruRU": "Further upgrades the attacks of all Zerg air units."
+        "ruRU": "Значительно усиливает атаки воздушных зергов."
       }
     },
     {
@@ -703,11 +715,11 @@
       "Icon": "btn-upgrade-zerg-airattacks-level3",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 3",
-        "ruRU": "Evolve Flyer Attacks Level 3"
+        "ruRU": "Развить атаку воздушных зергов, 3-й уровень"
       },
       "Tooltip": {
         "enUS": "Maximizes the attacks of all Zerg air units.",
-        "ruRU": "Maximizes the attacks of all Zerg air units."
+        "ruRU": "Максимально усиливает атаки воздушных зергов."
       }
     },
     {
@@ -716,11 +728,11 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level1",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 1",
-        "ruRU": "Evolve Flyer Carapace Level 1"
+        "ruRU": "Развить панцири воздушных войск, уровень 1 "
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of all Zerg air units.",
-        "ruRU": "Upgrades the armor of all Zerg air units."
+        "ruRU": "Укрепляет панцири воздушных зергов."
       }
     },
     {
@@ -729,11 +741,11 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level2",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 2",
-        "ruRU": "Evolve Flyer Carapace Level 2"
+        "ruRU": "Развить панцири воздушных войск, уровень 2 "
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of all Zerg air units.",
-        "ruRU": "Further upgrades the armor of all Zerg air units."
+        "ruRU": "Значительно укрепляет панцири воздушных зергов."
       }
     },
     {
@@ -742,11 +754,11 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level3",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 3",
-        "ruRU": "Evolve Flyer Carapace Level 3"
+        "ruRU": "Развить панцири воздушных войск, уровень 3 "
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of all Zerg air units.",
-        "ruRU": "Maximizes the armor of all Zerg air units."
+        "ruRU": "Максимально укрепляет панцири воздушных зергов."
       }
     }
   ]

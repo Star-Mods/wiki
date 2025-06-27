@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Warp Gate",
-    "ruRU": "Warp Gate"
+    "ruRU": "Врата искривления "
   },
   "Description": {
     "enUS": "Enables warp in of Protoss ground units.",
-    "ruRU": "Enables warp in of Protoss ground units."
+    "ruRU": "Позволяют вызывать наземные боевые единицы. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 500,
   "LifeArmorName": {
     "enUS": "Synoid Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -106,7 +107,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "AttackTargetPriority": 11,
   "Footprint": "Footprint3x3Contour",
@@ -130,6 +131,15 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "WarpGateTrain",
+    "MorphBackToGateway"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue",
+    "FastEnablerPowerSource"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -177,11 +187,11 @@
         "Icon": "btn-unit-protoss-zealot",
         "Name": {
           "enUS": "Warp In Zealot",
-          "ruRU": "Warp In Zealot"
+          "ruRU": "Вызвать зилота "
         },
         "Tooltip": {
           "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Могучий воин ближнего боя.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "Z"
       },
@@ -230,11 +240,11 @@
         "Icon": "btn-unit-protoss-stalker",
         "Name": {
           "enUS": "Warp In Stalker",
-          "ruRU": "Warp In Stalker"
+          "ruRU": "Вызвать сталкера "
         },
         "Tooltip": {
           "enUS": "Ranged support strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Ranged support strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Воин дальнего боя.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "S"
       },
@@ -283,11 +293,11 @@
         "Icon": "btn-unit-protoss-hightemplar",
         "Name": {
           "enUS": "Warp In High Templar",
-          "ruRU": "Warp In High Templar"
+          "ruRU": "Вызвать высшего тамплиера "
         },
         "Tooltip": {
           "enUS": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.",
-          "ruRU": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon."
+          "ruRU": "Могущественный воин-псионик. Может использовать способности «Противодействие» и «Псионный шторм» (после соответствующего улучшения). Может переродиться в архонта.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "T"
       },
@@ -336,11 +346,11 @@
         "Icon": "btn-unit-protoss-darktemplar",
         "Name": {
           "enUS": "Warp In Dark Templar",
-          "ruRU": "Warp In Dark Templar"
+          "ruRU": "Вызвать темного тамплиера "
         },
         "Tooltip": {
           "enUS": "Deadly warrior-assassin. Cloak renders the unit invisible to enemies without detection. Can transform into an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Deadly warrior-assassin. Cloak renders the unit invisible to enemies without detection. Can transform into an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Смертельно опасный воин-убийца. Маскировка делает его невидимым для противников, не обладающих способностями обнаружения. Может переродиться в архонта.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "D"
       },
@@ -364,11 +374,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -412,11 +422,11 @@
         "Icon": "btn-building-protoss-gateway",
         "Name": {
           "enUS": "Transform to Gateway",
-          "ruRU": "Transform to Gateway"
+          "ruRU": "Преобразовать во врата "
         },
         "Tooltip": {
           "enUS": "Transforms this Warp Gate back to a Gateway.",
-          "ruRU": "Transforms this Warp Gate back to a Gateway."
+          "ruRU": "Преобразовать врата искривления обратно во врата."
         },
         "Hotkey": "M"
       },
@@ -465,11 +475,11 @@
         "Icon": "btn-unit-protoss-sentry",
         "Name": {
           "enUS": "Warp In Sentry",
-          "ruRU": "Warp In Sentry"
+          "ruRU": "Вызвать часового "
         },
         "Tooltip": {
           "enUS": "Energy-manipulator unit. Can use Force Field, Guardian Shield, and Hallucination.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Energy-manipulator unit. Can use Force Field, Guardian Shield, and Hallucination.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Специализируется на манипуляциях с энергией. Может создавать силовые поля и иллюзии, а также использовать способность «Охранный щит». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "E"
       },
@@ -518,11 +528,11 @@
         "Icon": "btn-unit-protoss-adept",
         "Name": {
           "enUS": "Warp In Adept",
-          "ruRU": "Warp In Adept"
+          "ruRU": "Вызвать адепта "
         },
         "Tooltip": {
           "enUS": "Ranged specialist. Can use Psionic Transfer.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Ranged specialist. Can use Psionic Transfer.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Специалист дальнего боя. Может использовать способность «Псионный перенос».<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "H"
       }
@@ -556,7 +566,7 @@
       "Icon": "btn-building-protoss-pylon",
       "Name": {
         "enUS": "Fast Enabler Power Source",
-        "ruRU": "Fast Enabler Power Source ///Auto - Copied from enUS Locale"
+        "ruRU": "Fast Enabler Power Source "
       },
       "Tooltip": "-"
     }
@@ -573,7 +583,7 @@
       "id": "WarpGateTrain",
       "Name": {
         "enUS": "Train (Warp Gate)",
-        "ruRU": "Train (Warp Gate)"
+        "ruRU": "Производство (врата искривления)"
       }
     },
     {
@@ -621,11 +631,11 @@
       "Icon": "btn-unit-protoss-zealot",
       "Name": {
         "enUS": "Warp In Zealot",
-        "ruRU": "Warp In Zealot"
+        "ruRU": "Вызвать зилота "
       },
       "Tooltip": {
         "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Могучий воин ближнего боя.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -634,11 +644,11 @@
       "Icon": "btn-unit-protoss-stalker",
       "Name": {
         "enUS": "Warp In Stalker",
-        "ruRU": "Warp In Stalker"
+        "ruRU": "Вызвать сталкера "
       },
       "Tooltip": {
         "enUS": "Ranged support strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Ranged support strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Воин дальнего боя.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -647,11 +657,11 @@
       "Icon": "btn-unit-protoss-hightemplar",
       "Name": {
         "enUS": "Warp In High Templar",
-        "ruRU": "Warp In High Templar"
+        "ruRU": "Вызвать высшего тамплиера "
       },
       "Tooltip": {
         "enUS": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon.",
-        "ruRU": "Potent psionic master. Can use Feedback and be upgraded to use Psionic Storm. Can transform into an Archon."
+        "ruRU": "Могущественный воин-псионик. Может использовать способности «Противодействие» и «Псионный шторм» (после соответствующего улучшения). Может переродиться в архонта.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -660,11 +670,11 @@
       "Icon": "btn-unit-protoss-darktemplar",
       "Name": {
         "enUS": "Warp In Dark Templar",
-        "ruRU": "Warp In Dark Templar"
+        "ruRU": "Вызвать темного тамплиера "
       },
       "Tooltip": {
         "enUS": "Deadly warrior-assassin. Cloak renders the unit invisible to enemies without detection. Can transform into an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Deadly warrior-assassin. Cloak renders the unit invisible to enemies without detection. Can transform into an Archon.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Смертельно опасный воин-убийца. Маскировка делает его невидимым для противников, не обладающих способностями обнаружения. Может переродиться в архонта.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -673,11 +683,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -686,11 +696,11 @@
       "Icon": "btn-building-protoss-gateway",
       "Name": {
         "enUS": "Transform to Gateway",
-        "ruRU": "Transform to Gateway"
+        "ruRU": "Преобразовать во врата "
       },
       "Tooltip": {
         "enUS": "Transforms this Warp Gate back to a Gateway.",
-        "ruRU": "Transforms this Warp Gate back to a Gateway."
+        "ruRU": "Преобразовать врата искривления обратно во врата."
       }
     },
     {
@@ -699,11 +709,11 @@
       "Icon": "btn-unit-protoss-sentry",
       "Name": {
         "enUS": "Warp In Sentry",
-        "ruRU": "Warp In Sentry"
+        "ruRU": "Вызвать часового "
       },
       "Tooltip": {
         "enUS": "Energy-manipulator unit. Can use Force Field, Guardian Shield, and Hallucination.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Energy-manipulator unit. Can use Force Field, Guardian Shield, and Hallucination.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Специализируется на манипуляциях с энергией. Может создавать силовые поля и иллюзии, а также использовать способность «Охранный щит». <br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -712,11 +722,11 @@
       "Icon": "btn-unit-protoss-adept",
       "Name": {
         "enUS": "Warp In Adept",
-        "ruRU": "Warp In Adept"
+        "ruRU": "Вызвать адепта "
       },
       "Tooltip": {
         "enUS": "Ranged specialist. Can use Psionic Transfer.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Ranged specialist. Can use Psionic Transfer.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Специалист дальнего боя. Может использовать способность «Псионный перенос».<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
       }
     }
   ]

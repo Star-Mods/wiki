@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Bunker",
-    "ruRU": "Bunker"
+    "ruRU": "Бункер "
   },
   "Description": {
     "enUS": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>",
-    "ruRU": "Defensive structure. <br/>Infantry fights from inside. <br/><br/><span style=\"color: #ffff8a\">Bonus: +1 range to units inside.</span>"
+    "ruRU": "Оборонительное строение.<br/>Помещенная в бункер пехота может вести огонь.<br/><br/><span style=\"color: #ffff8a\">Бонус: +1 к дальности атаки находящихся внутри войск.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 400,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -129,6 +130,19 @@
     "Small"
   ],
   "Sight": 10,
+  "AbilArray": [
+    "BuildInProgress",
+    "BunkerTransport",
+    "SalvageEffect",
+    "Rally",
+    "StimpackRedirect",
+    "StimpackMarauderRedirect",
+    "StopRedirect",
+    "AttackRedirect"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "TacticalAIThink": "AIThinkBunker",
   "CardLayouts": {
     "Root": [
@@ -186,11 +200,11 @@
         "id": "AttackRedirect",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -248,11 +262,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -312,11 +326,11 @@
         "Icon": "btn-ability-terran-stimpack-color",
         "Name": {
           "enUS": "Use Stimpack",
-          "ruRU": "Use Stimpack"
+          "ruRU": "Стимуляторы"
         },
         "Tooltip": {
           "enUS": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal.",
-          "ruRU": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal."
+          "ruRU": "Приказать находящимся в бункере морпехам и мародерам использовать стимуляторы. Солдаты получат некоторый урон, но скорость их атаки увеличится. "
         },
         "Hotkey": "T"
       },
@@ -376,11 +390,11 @@
         "Icon": "btn-ability-terran-stimpack-color",
         "Name": {
           "enUS": "Use Stimpack",
-          "ruRU": "Use Stimpack"
+          "ruRU": "Стимуляторы"
         },
         "Tooltip": {
           "enUS": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal.",
-          "ruRU": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal."
+          "ruRU": "Приказать находящимся в бункере морпехам и мародерам использовать стимуляторы. Солдаты получат некоторый урон, но скорость их атаки увеличится. "
         },
         "Hotkey": "T"
       },
@@ -404,11 +418,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Bunker Rally Point",
-          "ruRU": "Set Bunker Rally Point"
+          "ruRU": "Задать точку сбора для бункера "
         },
         "Tooltip": {
           "enUS": "Sends unloaded infantry units to designated point.",
-          "ruRU": "Sends unloaded infantry units to designated point."
+          "ruRU": "Отправляет выгруженные войска в указанную точку."
         },
         "Hotkey": "Y"
       },
@@ -521,11 +535,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads infantry into Bunker.",
-          "ruRU": "Loads infantry into Bunker."
+          "ruRU": "Загрузить пехоту в бункер. "
         },
         "Hotkey": "L"
       },
@@ -638,11 +652,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -778,11 +792,11 @@
         "Icon": "btn-ability-terran-salvage",
         "Name": {
           "enUS": "Salvage",
-          "ruRU": "Salvage"
+          "ruRU": "Демонтировать "
         },
         "Tooltip": {
           "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
-          "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+          "ruRU": "Демонтирует строение, возвращая 75% затраченных на его постройку ресурсов. Демонтаж занимает <b>5</b> Внимание: начатый процесс демонтажа невозможно остановить."
         },
         "Hotkey": "V"
       },
@@ -848,11 +862,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -918,11 +932,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -992,11 +1006,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -1018,11 +1032,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -1138,11 +1152,11 @@
       "id": "AttackRedirect",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -1151,11 +1165,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1164,11 +1178,11 @@
       "Icon": "btn-ability-terran-stimpack-color",
       "Name": {
         "enUS": "Use Stimpack",
-        "ruRU": "Use Stimpack"
+        "ruRU": "Стимуляторы"
       },
       "Tooltip": {
         "enUS": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal.",
-        "ruRU": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal."
+        "ruRU": "Приказать находящимся в бункере морпехам и мародерам использовать стимуляторы. Солдаты получат некоторый урон, но скорость их атаки увеличится. "
       }
     },
     {
@@ -1177,11 +1191,11 @@
       "Icon": "btn-ability-terran-stimpack-color",
       "Name": {
         "enUS": "Use Stimpack",
-        "ruRU": "Use Stimpack"
+        "ruRU": "Стимуляторы"
       },
       "Tooltip": {
         "enUS": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal.",
-        "ruRU": "Orders Marines and Marauders inside of the Bunker to use Stimpacks. They will take damage and have increased attack speed as normal."
+        "ruRU": "Приказать находящимся в бункере морпехам и мародерам использовать стимуляторы. Солдаты получат некоторый урон, но скорость их атаки увеличится. "
       }
     },
     {
@@ -1190,11 +1204,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Bunker Rally Point",
-        "ruRU": "Set Bunker Rally Point"
+        "ruRU": "Задать точку сбора для бункера "
       },
       "Tooltip": {
         "enUS": "Sends unloaded infantry units to designated point.",
-        "ruRU": "Sends unloaded infantry units to designated point."
+        "ruRU": "Отправляет выгруженные войска в указанную точку."
       }
     },
     {
@@ -1203,11 +1217,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads infantry into Bunker.",
-        "ruRU": "Loads infantry into Bunker."
+        "ruRU": "Загрузить пехоту в бункер. "
       }
     },
     {
@@ -1216,11 +1230,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -1229,11 +1243,11 @@
       "Icon": "btn-ability-terran-salvage",
       "Name": {
         "enUS": "Salvage",
-        "ruRU": "Salvage"
+        "ruRU": "Демонтировать "
       },
       "Tooltip": {
         "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
-        "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+        "ruRU": "Демонтирует строение, возвращая 75% затраченных на его постройку ресурсов. Демонтаж занимает <b>5</b> Внимание: начатый процесс демонтажа невозможно остановить."
       }
     },
     {
@@ -1242,11 +1256,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -1255,11 +1269,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -1268,11 +1282,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     }
   ]

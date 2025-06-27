@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Photon Cannon",
-    "ruRU": "Photon Cannon"
+    "ruRU": "Фотонная пушка "
   },
   "Description": {
     "enUS": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-    "ruRU": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "ruRU": "Основное оборонительное строение.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span><br/><br/><span style=\"color: FFE303\">Детектор</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
@@ -20,7 +21,7 @@
   "LifeMax": 150,
   "LifeArmorName": {
     "enUS": "Synoid Armor",
-    "ruRU": "Protoss Armor"
+    "ruRU": "Броня протоссов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -104,7 +105,7 @@
   "ShieldRegenRate": 2,
   "ShieldArmorName": {
     "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов"
+    "ruRU": "Плазменные щиты протоссов "
   },
   "AttackTargetPriority": 20,
   "Footprint": "Footprint2x2Contour",
@@ -130,6 +131,16 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "Detector11",
+    "PowerUserBaseDefenseSmall",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -194,11 +205,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -274,11 +285,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -355,11 +366,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -381,11 +392,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       }
     ]
@@ -396,6 +407,12 @@
   },
   "GlossaryCategory": "Unit/Category/ProtossUnits",
   "HotkeyCategory": "Unit/Category/ProtossUnits",
+  "WeaponArray": [
+    {
+      "Link": "PhotonCannon",
+      "Turret": "PhotonCannon"
+    }
+  ],
   "ShieldRegenDelay": 10,
   "CostCategory": "Technology",
   "GlossaryStrongArray": [
@@ -416,17 +433,25 @@
   "Weapons": [
     {
       "Turret": "PhotonCannon",
-      "id": "PhotonCannon",
+      "EditorCategories": "Race:Protoss",
       "Icon": "btn-building-protoss-photoncannon",
-      "Name": {
-        "enUS": "Photon Cannon",
-        "ruRU": "Photon Cannon"
-      },
-      "Amount": 20,
-      "Kind": "Ranged",
+      "DisplayEffect": "PhotonCannonU",
       "TargetFilters": "",
       "Range": 7,
-      "Period": 1.25
+      "Period": 1.25,
+      "Effect": "PhotonCannonLM",
+      "RangeSlop": 0,
+      "id": "PhotonCannon",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "Name": {
+        "enUS": "Photon Cannon",
+        "ruRU": "Фотонная пушка "
+      },
+      "Amount": 20,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -435,7 +460,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -510,11 +535,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -523,11 +548,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -536,11 +561,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

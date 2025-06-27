@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Roach",
-    "ruRU": "Roach"
+    "ruRU": "Таракан "
   },
   "Description": {
     "enUS": "Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Assault unit. Regenerates life quickly when burrowed. Can morph into a Ravager.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Штурмовая боевая единица. В закопанном состоянии быстро восстанавливает здоровье. Может мутировать в разорителя. <br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -119,6 +120,13 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "BurrowRoachDown",
+    "MorphToRavager"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -209,11 +217,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -289,11 +297,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -385,11 +393,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -466,11 +474,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -562,11 +570,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -588,11 +596,11 @@
         "Icon": "btn-ability-zerg-rapidregeneration-color",
         "Name": {
           "enUS": "Rapid Regeneration",
-          "ruRU": "Rapid Regeneration"
+          "ruRU": "Быстрая регенерация "
         },
         "Tooltip": {
           "enUS": "The Roach regenerates life very quickly while burrowed.",
-          "ruRU": "The Roach regenerates life very quickly while burrowed."
+          "ruRU": "Тараканы быстро восстанавливают здоровье в закопанном состоянии."
         }
       },
       {
@@ -636,11 +644,11 @@
         "Icon": "btn-ability-zerg-burrow-color",
         "Name": {
           "enUS": "Burrow",
-          "ruRU": "Burrow"
+          "ruRU": "Закопаться "
         },
         "Tooltip": {
           "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+          "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
         },
         "Hotkey": "D"
       },
@@ -668,11 +676,11 @@
         "Icon": "btn-unit-zerg-ravager",
         "Name": {
           "enUS": "Morph To Ravager",
-          "ruRU": "Morph To Ravager"
+          "ruRU": "Мутировать в разорителя "
         },
         "Tooltip": {
           "enUS": "Ranged artillery. Can use Corrosive Bile.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Ranged artillery. Can use Corrosive Bile.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Дальнобойная артиллерия. Может использовать способность «Едкая желчь».<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "V"
       },
@@ -717,11 +725,11 @@
         "Icon": "btn-ability-zerg-burrow-color",
         "Name": {
           "enUS": "Burrow",
-          "ruRU": "Burrow"
+          "ruRU": "Закопаться "
         },
         "Tooltip": {
           "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+          "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
         },
         "Hotkey": "D"
       }
@@ -752,6 +760,14 @@
   "LifeArmor": 1,
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "WeaponArray": [
+    {
+      "Link": "RoachMelee"
+    },
+    {
+      "Link": "AcidSaliva"
+    }
+  ],
   "id": "Roach",
   "Icon": "btn-unit-zerg-roach",
   "Model": "Roach",
@@ -759,30 +775,55 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "RoachMelee",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": {
-        "enUS": "Needle Spines (Melee)",
-        "ruRU": "Needle Spines (Melee)"
+      "EditorCategories": "Race:Zerg",
+      "Options": {
+        "Hidden": 1,
+        "Melee": 1,
+        "NeverMiss": 0
       },
-      "Amount": 16,
-      "Kind": "Melee",
+      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "DisplayEffect": "RoachUMelee",
       "TargetFilters": "Ground",
       "Range": 0.5,
-      "Period": 2
-    },
-    {
-      "id": "AcidSaliva",
-      "Icon": "btn-upgrade-zerg-missileattacks-level0",
+      "Marker": {
+        "Link": "Weapon/AcidSaliva"
+      },
+      "Cost": {
+        "Cooldown": {
+          "Link": "Weapon/AcidSaliva"
+        }
+      },
+      "Period": 2,
+      "Effect": "RoachUMelee",
+      "id": "RoachMelee",
+      "class": "CWeaponLegacy",
       "Name": {
-        "enUS": "Acid Saliva",
-        "ruRU": "Acid Saliva"
+        "enUS": "Needle Spines (Melee)",
+        "ruRU": "Костяные иглы (рукопашная атака) "
       },
       "Amount": 16,
-      "Kind": "Ranged",
+      "Kind": "Melee"
+    },
+    {
+      "EditorCategories": "Race:Zerg",
+      "Icon": "btn-upgrade-zerg-missileattacks-level0",
+      "DisplayEffect": "AcidSalivaU",
       "TargetFilters": "Ground",
       "Range": 4,
-      "Period": 2
+      "Period": 2,
+      "MinimumRange": 0.6,
+      "Effect": "AcidSalivaLM",
+      "id": "AcidSaliva",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "Name": {
+        "enUS": "Acid Saliva",
+        "ruRU": "Кислотная слюна "
+      },
+      "Amount": 16,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -876,11 +917,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -889,11 +930,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -902,11 +943,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -915,11 +956,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -928,11 +969,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -941,11 +982,11 @@
       "Icon": "btn-ability-zerg-burrow-color",
       "Name": {
         "enUS": "Burrow",
-        "ruRU": "Burrow"
+        "ruRU": "Закопаться "
       },
       "Tooltip": {
         "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
       }
     },
     {
@@ -954,11 +995,11 @@
       "Icon": "btn-unit-zerg-ravager",
       "Name": {
         "enUS": "Morph To Ravager",
-        "ruRU": "Morph To Ravager"
+        "ruRU": "Мутировать в разорителя "
       },
       "Tooltip": {
         "enUS": "Ranged artillery. Can use Corrosive Bile.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Ranged artillery. Can use Corrosive Bile.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Дальнобойная артиллерия. Может использовать способность «Едкая желчь».<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -967,11 +1008,11 @@
       "Icon": "btn-ability-zerg-burrow-color",
       "Name": {
         "enUS": "Burrow",
-        "ruRU": "Burrow"
+        "ruRU": "Закопаться "
       },
       "Tooltip": {
         "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        "ruRU": "Приказать боевой единице закопаться в землю. Закопавшиеся войска теряют возможность атаковать и передвигаться, но не могут быть обнаружены без детектора. "
       }
     }
   ]

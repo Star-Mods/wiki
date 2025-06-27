@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Factory",
-    "ruRU": "Factory"
+    "ruRU": "Завод "
   },
   "Description": {
     "enUS": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines",
-    "ruRU": "Vehicle-production facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellions<br/>- Widow Mines"
+    "ruRU": "Завод по производству бронетехники.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Геллионов»<br/>– производство мин «Вдова»<br/>– производство «Циклонов»"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1250,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -132,6 +133,19 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "FactoryTrain",
+    "FactoryAddOns",
+    "Rally",
+    "FactoryLiftOff"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "ReactorQueue",
+    "TerranStructuresKnockbackBehavior"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -169,11 +183,11 @@
         "Icon": "btn-unit-terran-hellion",
         "Name": {
           "enUS": "Build Hellion",
-          "ruRU": "Build Hellion"
+          "ruRU": "Построить «Геллион» "
         },
         "Tooltip": {
           "enUS": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Мобильная боевая единица. Оборудована огнеметом, поражающим всех врагов на линии огня. Может трансформироваться в шагающую единицу ближнего боя.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "E"
       },
@@ -213,7 +227,7 @@
         "Icon": "btn-unit-terran-siegetank",
         "Name": {
           "enUS": "Build Siege Tank",
-          "ruRU": "Build Siege Tank"
+          "ruRU": "Построить осадный танк "
         },
         "Tooltip": {
           "enUS": "Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
@@ -257,11 +271,11 @@
         "Icon": "btn-unit-terran-thor",
         "Name": {
           "enUS": "Build Thor",
-          "ruRU": "Build Thor"
+          "ruRU": "Построить «Тор» "
         },
         "Tooltip": {
           "enUS": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Тяжелый осадный робот.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "Hotkey": "T"
       },
@@ -285,11 +299,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -333,11 +347,11 @@
         "Icon": "btn-ability-terran-liftoff",
         "Name": {
           "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "ruRU": "Взлететь "
         },
         "Tooltip": {
           "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+          "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
         },
         "Hotkey": "L"
       },
@@ -403,11 +417,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -443,11 +457,11 @@
         "Icon": "btn-building-terran-reactor",
         "Name": {
           "enUS": "Build Reactor",
-          "ruRU": "Build Reactor"
+          "ruRU": "Построить реактор "
         },
         "Tooltip": {
           "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
+          "ruRU": "Позволяет производить две боевые единицы одновременно. "
         },
         "Hotkey": "C"
       },
@@ -483,11 +497,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Build Tech Lab",
-          "ruRU": "Build Tech Lab"
+          "ruRU": "Построить лабораторию "
         },
         "Tooltip": {
           "enUS": "Vehicle-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Siege Tanks<br/>- Thor with Armory",
-          "ruRU": "Vehicle-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Siege Tanks<br/>- Thor with Armory<br/>- Cyclones"
+          "ruRU": "Позволяет разрабатывать улучшения для наземной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Циклонов»<br/>– производство осадных танков<br/>– производство «Торов» (требуется арсенал)"
         },
         "Hotkey": "X"
       },
@@ -550,11 +564,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -850,11 +864,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -920,11 +934,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -946,11 +960,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       },
@@ -990,11 +1004,11 @@
         "Icon": "btn-unit-terran-cyclone",
         "Name": {
           "enUS": "Build Cyclone",
-          "ruRU": "Build Cyclone"
+          "ruRU": "Построить «Циклон» "
         },
         "Tooltip": {
           "enUS": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Мобильная штурмовая машина. Может использовать способность «Захват цели», чтобы вести огонь во время движения.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "Hotkey": "N"
       },
@@ -1034,11 +1048,11 @@
         "Icon": "btn-unit-terran-hellionbattlemode",
         "Name": {
           "enUS": "Build Hellbat",
-          "ruRU": "Build Hellbat"
+          "ruRU": "Построить «Геллитрон»"
         },
         "Tooltip": {
           "enUS": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Шагающая единица ближнего боя. Наносит урон всем противникам в секторе перед собой на небольшом расстоянии. Может трансформироваться в быструю моторизированную боевую единицу.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "R"
       },
@@ -1077,11 +1091,11 @@
         "Icon": "btn-unit-terran-widowmine",
         "Name": {
           "enUS": "Build Widow Mine",
-          "ruRU": "Build Widow Mine"
+          "ruRU": "Построить мину «Вдова» "
         },
         "Tooltip": {
           "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "Hotkey": "D"
       }
@@ -1124,7 +1138,7 @@
       "id": "TerranStructuresKnockbackBehavior",
       "Name": {
         "enUS": "Terran Structures Knockback Behavior",
-        "ruRU": "Terran Structures Knockback Behavior ///Auto - Copied from enUS Locale"
+        "ruRU": "Terran Structures Knockback Behavior "
       },
       "Tooltip": "-"
     }
@@ -1222,11 +1236,11 @@
       "Icon": "btn-unit-terran-hellion",
       "Name": {
         "enUS": "Build Hellion",
-        "ruRU": "Build Hellion"
+        "ruRU": "Построить «Геллион» "
       },
       "Tooltip": {
         "enUS": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Fast scout. Has a flame attack that damages all enemy units in its line of fire. Can transform into a close range combat unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Мобильная боевая единица. Оборудована огнеметом, поражающим всех врагов на линии огня. Может трансформироваться в шагающую единицу ближнего боя.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -1235,7 +1249,7 @@
       "Icon": "btn-unit-terran-siegetank",
       "Name": {
         "enUS": "Build Siege Tank",
-        "ruRU": "Build Siege Tank"
+        "ruRU": "Построить осадный танк "
       },
       "Tooltip": {
         "enUS": "Heavy tank. Can switch into Siege Mode to provide long-range artillery support.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
@@ -1248,11 +1262,11 @@
       "Icon": "btn-unit-terran-thor",
       "Name": {
         "enUS": "Build Thor",
-        "ruRU": "Build Thor"
+        "ruRU": "Построить «Тор» "
       },
       "Tooltip": {
         "enUS": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Heavy assault mech.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Тяжелый осадный робот.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
       }
     },
     {
@@ -1261,11 +1275,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1274,11 +1288,11 @@
       "Icon": "btn-ability-terran-liftoff",
       "Name": {
         "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "ruRU": "Взлететь "
       },
       "Tooltip": {
         "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+        "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
       }
     },
     {
@@ -1287,11 +1301,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -1300,11 +1314,11 @@
       "Icon": "btn-building-terran-reactor",
       "Name": {
         "enUS": "Build Reactor",
-        "ruRU": "Build Reactor"
+        "ruRU": "Построить реактор "
       },
       "Tooltip": {
         "enUS": "Allows 2 units to be created simultaneously.",
-        "ruRU": "Allows 2 units to be created simultaneously."
+        "ruRU": "Позволяет производить две боевые единицы одновременно. "
       }
     },
     {
@@ -1313,11 +1327,11 @@
       "Icon": "btn-building-terran-techlab",
       "Name": {
         "enUS": "Build Tech Lab",
-        "ruRU": "Build Tech Lab"
+        "ruRU": "Построить лабораторию "
       },
       "Tooltip": {
         "enUS": "Vehicle-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Siege Tanks<br/>- Thor with Armory",
-        "ruRU": "Vehicle-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Siege Tanks<br/>- Thor with Armory<br/>- Cyclones"
+        "ruRU": "Позволяет разрабатывать улучшения для наземной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Циклонов»<br/>– производство осадных танков<br/>– производство «Торов» (требуется арсенал)"
       }
     },
     {
@@ -1326,11 +1340,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1339,11 +1353,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1352,11 +1366,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -1365,11 +1379,11 @@
       "Icon": "btn-unit-terran-cyclone",
       "Name": {
         "enUS": "Build Cyclone",
-        "ruRU": "Build Cyclone"
+        "ruRU": "Построить «Циклон» "
       },
       "Tooltip": {
         "enUS": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Mobile assault vehicle. Can use Lock On to quickly fire while moving.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Мобильная штурмовая машина. Может использовать способность «Захват цели», чтобы вести огонь во время движения.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
       }
     },
     {
@@ -1378,11 +1392,11 @@
       "Icon": "btn-unit-terran-hellionbattlemode",
       "Name": {
         "enUS": "Build Hellbat",
-        "ruRU": "Build Hellbat"
+        "ruRU": "Построить «Геллитрон»"
       },
       "Tooltip": {
         "enUS": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Close range combat unit. Deals damage in a small frontal cone. Can transform into a fast scout unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Шагающая единица ближнего боя. Наносит урон всем противникам в секторе перед собой на небольшом расстоянии. Может трансформироваться в быструю моторизированную боевую единицу.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -1391,11 +1405,11 @@
       "Icon": "btn-unit-terran-widowmine",
       "Name": {
         "enUS": "Build Widow Mine",
-        "ruRU": "Build Widow Mine"
+        "ruRU": "Построить мину «Вдова» "
       },
       "Tooltip": {
         "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
       }
     }
   ]

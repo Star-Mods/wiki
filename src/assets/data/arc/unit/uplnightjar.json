@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nightjar"
   },
@@ -113,6 +114,18 @@
   ],
   "Sight": 6,
   "AttackTargetPriority": 19,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "UPLTurretCargo",
+    "Rally",
+    "UPLSalvage"
+  ],
+  "BehaviorArray": [
+    "UnderConstruction",
+    "UPLTurretCargoEmpty"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -177,11 +190,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -257,11 +270,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -338,11 +351,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -678,11 +691,11 @@
         "Icon": "btn-ability-terran-salvage",
         "Name": {
           "enUS": "Salvage",
-          "ruRU": "Salvage"
+          "ruRU": "Демонтировать "
         },
         "Tooltip": {
           "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
-          "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+          "ruRU": "Демонтирует строение, возвращая 75% затраченных на его постройку ресурсов. Демонтаж занимает <b>5</b> Внимание: начатый процесс демонтажа невозможно остановить."
         },
         "Hotkey": "V"
       }
@@ -700,6 +713,12 @@
     "Vespene": 50
   },
   "RepairTime": 20,
+  "WeaponArray": [
+    {
+      "Link": "UPLNightjarWeapon",
+      "Turret": "UPLNightjarTurret"
+    }
+  ],
   "ScoreMake": 100,
   "ScoreKill": 100,
   "KillDisplay": "Never",
@@ -716,8 +735,24 @@
   "Weapons": [
     {
       "Turret": "UPLNightjarTurret",
-      "id": "UPLNightjarWeapon",
+      "EditorCategories": "Race:UPL",
       "Icon": "btn-upgrades-upl-vehicleweapons-lvl0",
+      "DisplayEffect": "UPLNightjarDamage",
+      "TargetFilters": "",
+      "Range": 9,
+      "Period": 1.05,
+      "Effect": "UPLNightjarDamage",
+      "PreEffectBehavior": {
+        "Flags": {
+          "UseDuration": 1
+        },
+        "Behavior": "UPLNightjarFiring",
+        "Count": 1,
+        "Duration": 0.8
+      },
+      "MinimumRange": 3,
+      "id": "UPLNightjarWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "GAL 8.5mm Dual Barrel Rotating Assembly"
       },
@@ -725,10 +760,7 @@
       "AttributeBonus": {
         "Armored": 10
       },
-      "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 9,
-      "Period": 1.05
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -817,11 +849,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -830,11 +862,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -843,11 +875,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -889,11 +921,11 @@
       "Icon": "btn-ability-terran-salvage",
       "Name": {
         "enUS": "Salvage",
-        "ruRU": "Salvage"
+        "ruRU": "Демонтировать "
       },
       "Tooltip": {
         "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
-        "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+        "ruRU": "Демонтирует строение, возвращая 75% затраченных на его постройку ресурсов. Демонтаж занимает <b>5</b> Внимание: начатый процесс демонтажа невозможно остановить."
       }
     }
   ]

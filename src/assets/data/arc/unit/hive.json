@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Hive",
-    "ruRU": "Hive"
+    "ruRU": "Улей "
   },
   "Description": {
     "enUS": "Further evolved version of the Hatchery that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vipers from Larvae",
-    "ruRU": "Further evolved version of the Hatchery that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Vipers from Larvae"
+    "ruRU": "Последняя ступень развития инкубатора. Дает доступ к новым улучшениям и строениям. Служит для производства войск зергов и приема добытых ресурсов.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– мутация личинок в стрекоз"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 2500,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -135,6 +136,18 @@
     "Small"
   ],
   "Sight": 12,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5CancelToSelection",
+    "LairResearch",
+    "RallyHatchery",
+    "TrainQueen"
+  ],
+  "BehaviorArray": [
+    "makeCreep8x6",
+    "SpawnLarva",
+    "ZergBuildingDies9"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -155,11 +168,11 @@
         "Icon": "btn-unit-zerg-larvaex3",
         "Name": {
           "enUS": "Select Larva",
-          "ruRU": "Select Larva"
+          "ruRU": "Выбрать личинок"
         },
         "Tooltip": {
           "enUS": "Morphs into Zerg units.",
-          "ruRU": "Morphs into Zerg units."
+          "ruRU": "Личинки мутируют в боевые единицы зергов. "
         },
         "Hotkey": "S"
       },
@@ -225,11 +238,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -296,11 +309,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -333,11 +346,11 @@
         "Icon": "btn-ability-zerg-setworkerrallypoint",
         "Name": {
           "enUS": "Set Worker Rally Point",
-          "ruRU": "Set Worker Rally Point"
+          "ruRU": "Задать точку сбора для рабочих "
         },
         "Tooltip": {
           "enUS": "Sends morphed worker units to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically.",
-          "ruRU": "Sends morphed worker units to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically."
+          "ruRU": "Отправляет мутировавших рабочих в указанную точку. Рабочие, отправленные на месторождение минералов или к экстрактору, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "G"
       },
@@ -370,11 +383,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends morphed units to the designated point.",
-          "ruRU": "Sends morphed units to the designated point."
+          "ruRU": "Отправляет мутировавшие войска в указанную точку."
         },
         "Hotkey": "Y"
       },
@@ -415,11 +428,11 @@
         "Icon": "btn-unit-zerg-queen",
         "Name": {
           "enUS": "Birth Queen",
-          "ruRU": "Birth Queen"
+          "ruRU": "Породить королеву "
         },
         "Tooltip": {
           "enUS": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Служит для обороны базы. Может создавать опухоли, порождать личинки и использовать способность «Переливание». Намного быстрее передвигается по слизи.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "Q"
       },
@@ -461,11 +474,11 @@
         "Icon": "btn-upgrade-zerg-pneumatizedcarapace",
         "Name": {
           "enUS": "Evolve Pneumatized Carapace",
-          "ruRU": "Evolve Pneumatized Carapace"
+          "ruRU": "Развить облегченный панцирь "
         },
         "Tooltip": {
           "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Overlords</span> and <span style=\"color: ffff8a\">Overseers</span>.",
-          "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Overlords</span> and <span style=\"color: ffff8a\">Overseers</span>."
+          "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">надзирателей</span> и <span style=\"color: ffff8a\">владык</span>."
         },
         "Hotkey": "P"
       },
@@ -507,11 +520,11 @@
         "Icon": "btn-ability-zerg-burrow-color",
         "Name": {
           "enUS": "Evolve Burrow",
-          "ruRU": "Evolve Burrow"
+          "ruRU": "Развить способность закапываться "
         },
         "Tooltip": {
           "enUS": "Enables all Zerg ground units to use the Burrow ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
-          "ruRU": "Enables all Zerg ground units to use the Burrow ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects."
+          "ruRU": "Позволяет всем наземным войскам зергов использовать способность закапываться. Закопавшиеся боевые единицы теряют способность атаковать и становятся невидимыми для врага, если тот не использует детекторы или обнаруживающие эффекты. "
         },
         "Hotkey": "B"
       }
@@ -638,11 +651,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -651,11 +664,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -664,11 +677,11 @@
       "Icon": "btn-ability-zerg-setworkerrallypoint",
       "Name": {
         "enUS": "Set Worker Rally Point",
-        "ruRU": "Set Worker Rally Point"
+        "ruRU": "Задать точку сбора для рабочих "
       },
       "Tooltip": {
         "enUS": "Sends morphed worker units to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically.",
-        "ruRU": "Sends morphed worker units to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically."
+        "ruRU": "Отправляет мутировавших рабочих в указанную точку. Рабочие, отправленные на месторождение минералов или к экстрактору, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -677,11 +690,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends morphed units to the designated point.",
-        "ruRU": "Sends morphed units to the designated point."
+        "ruRU": "Отправляет мутировавшие войска в указанную точку."
       }
     },
     {
@@ -690,11 +703,11 @@
       "Icon": "btn-unit-zerg-queen",
       "Name": {
         "enUS": "Birth Queen",
-        "ruRU": "Birth Queen"
+        "ruRU": "Породить королеву "
       },
       "Tooltip": {
         "enUS": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Служит для обороны базы. Может создавать опухоли, порождать личинки и использовать способность «Переливание». Намного быстрее передвигается по слизи.<br/><br/><span style=\"color: ffff8a\">Атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -703,11 +716,11 @@
       "Icon": "btn-upgrade-zerg-pneumatizedcarapace",
       "Name": {
         "enUS": "Evolve Pneumatized Carapace",
-        "ruRU": "Evolve Pneumatized Carapace"
+        "ruRU": "Развить облегченный панцирь "
       },
       "Tooltip": {
         "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Overlords</span> and <span style=\"color: ffff8a\">Overseers</span>.",
-        "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Overlords</span> and <span style=\"color: ffff8a\">Overseers</span>."
+        "ruRU": "Повышает скорость передвижения <span style=\"color: ffff8a\">надзирателей</span> и <span style=\"color: ffff8a\">владык</span>."
       }
     },
     {
@@ -716,11 +729,11 @@
       "Icon": "btn-ability-zerg-burrow-color",
       "Name": {
         "enUS": "Evolve Burrow",
-        "ruRU": "Evolve Burrow"
+        "ruRU": "Развить способность закапываться "
       },
       "Tooltip": {
         "enUS": "Enables all Zerg ground units to use the Burrow ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
-        "ruRU": "Enables all Zerg ground units to use the Burrow ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects."
+        "ruRU": "Позволяет всем наземным войскам зергов использовать способность закапываться. Закопавшиеся боевые единицы теряют способность атаковать и становятся невидимыми для врага, если тот не использует детекторы или обнаруживающие эффекты. "
       }
     }
   ]

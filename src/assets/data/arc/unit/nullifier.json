@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nullifier",
     "ruRU": "Обнулитель"
@@ -111,6 +112,15 @@
   "LifeArmor": 1,
   "Sight": 11,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironConstructionFreeze"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
@@ -195,11 +205,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -265,11 +275,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -308,6 +318,16 @@
     "Minerals": 150
   },
   "AttackTargetPriority": 20,
+  "WeaponArray": [
+    {
+      "Link": "NullifierWeapon",
+      "Turret": "Nullifier"
+    },
+    {
+      "Link": "NullifierWeaponDummy",
+      "Turret": "NullifierMovement"
+    }
+  ],
   "ScoreMake": 150,
   "ScoreKill": 150,
   "GlossaryCategory": "Unit/Category/KeironUnits",
@@ -319,28 +339,57 @@
   "Weapons": [
     {
       "Turret": "Nullifier",
-      "id": "NullifierWeapon",
+      "EditorCategories": "Race:Keiron",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-keiron-nullifier",
+      "TargetFilters": "Ground",
+      "Range": 7,
+      "RangeSlop": 2,
+      "Period": 0.77,
+      "DamagePoint": 0,
+      "Effect": "NullifierWeaponCP",
+      "LegacyOptions": {
+        "Uninterruptible": 1
+      },
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "DisplayEffect": "NullifierWeaponDMG",
+      "id": "NullifierWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Nullifier - Weapon",
         "ruRU": "Обнулитель - Оружие"
       },
       "Amount": 13,
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0.77
+      "Kind": "Ranged"
     },
     {
       "Turret": "NullifierMovement",
+      "EditorCategories": "Race:Keiron",
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
+      },
+      "DisplayEffect": "",
+      "TargetFilters": "Ground",
+      "Range": 7,
+      "RangeSlop": 2,
+      "Period": 0.6,
+      "DamagePoint": 0,
+      "Backswing": 0.25,
       "id": "NullifierWeaponDummy",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Nullifier - Weapon Dummy",
         "ruRU": "Nullifier - Weapon Dummy"
-      },
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0.6
+      }
     }
   ],
   "Behaviors": [
@@ -408,11 +457,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -421,11 +470,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     }
   ]

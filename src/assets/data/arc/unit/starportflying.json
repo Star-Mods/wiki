@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Starport",
-    "ruRU": "Starport"
+    "ruRU": "Космопорт "
   },
   "Description": {
     "enUS": "Starport must land to start unit production.",
-    "ruRU": "Starport must land to start unit production."
+    "ruRU": "Космопорт должен приземлиться, чтобы начать производство. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1300,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
@@ -127,6 +128,15 @@
   ],
   "VisionHeight": 15,
   "Sight": 9,
+  "AbilArray": [
+    "StarportAddOns",
+    "StarportLand",
+    "move",
+    "stop"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -182,11 +192,11 @@
         "Icon": "btn-ability-terran-land",
         "Name": {
           "enUS": "Land",
-          "ruRU": "Land"
+          "ruRU": "Приземлиться "
         },
         "Tooltip": {
           "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-          "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
+          "ruRU": "Приказать строению приземлиться в указанном месте. После посадки строение вновь может выполнять свои обычные функции. "
         },
         "Hotkey": "L"
       },
@@ -222,11 +232,11 @@
         "Icon": "btn-building-terran-reactor",
         "Name": {
           "enUS": "Build Reactor",
-          "ruRU": "Build Reactor"
+          "ruRU": "Построить реактор "
         },
         "Tooltip": {
           "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
+          "ruRU": "Позволяет производить две боевые единицы одновременно. "
         },
         "Hotkey": "C"
       },
@@ -262,11 +272,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Build Tech Lab",
-          "ruRU": "Build Tech Lab"
+          "ruRU": "Построить лабораторию "
         },
         "Tooltip": {
           "enUS": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core",
-          "ruRU": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core"
+          "ruRU": "Позволяет разрабатывать улучшения для воздушной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Банши»<br/>– производство «Воронов»<br/>– производство крейсеров (требуется центр синтеза) "
         },
         "Hotkey": "X"
       },
@@ -342,11 +352,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -438,11 +448,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -534,11 +544,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -630,11 +640,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       }
@@ -713,11 +723,11 @@
       "Icon": "btn-ability-terran-land",
       "Name": {
         "enUS": "Land",
-        "ruRU": "Land"
+        "ruRU": "Приземлиться "
       },
       "Tooltip": {
         "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-        "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
+        "ruRU": "Приказать строению приземлиться в указанном месте. После посадки строение вновь может выполнять свои обычные функции. "
       }
     },
     {
@@ -726,11 +736,11 @@
       "Icon": "btn-building-terran-reactor",
       "Name": {
         "enUS": "Build Reactor",
-        "ruRU": "Build Reactor"
+        "ruRU": "Построить реактор "
       },
       "Tooltip": {
         "enUS": "Allows 2 units to be created simultaneously.",
-        "ruRU": "Allows 2 units to be created simultaneously."
+        "ruRU": "Позволяет производить две боевые единицы одновременно. "
       }
     },
     {
@@ -739,11 +749,11 @@
       "Icon": "btn-building-terran-techlab",
       "Name": {
         "enUS": "Build Tech Lab",
-        "ruRU": "Build Tech Lab"
+        "ruRU": "Построить лабораторию "
       },
       "Tooltip": {
         "enUS": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core",
-        "ruRU": "Aircraft-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Banshees<br/>- Ravens<br/>- Battlecruisers with Fusion Core"
+        "ruRU": "Позволяет разрабатывать улучшения для воздушной техники. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство «Банши»<br/>– производство «Воронов»<br/>– производство крейсеров (требуется центр синтеза) "
       }
     },
     {
@@ -752,11 +762,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -765,11 +775,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -778,11 +788,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -791,11 +801,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     }
   ]

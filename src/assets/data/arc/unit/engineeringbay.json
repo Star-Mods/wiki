@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Engineering Bay",
-    "ruRU": "Engineering Bay"
+    "ruRU": "Инженерный комплекс "
   },
   "Description": {
     "enUS": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
-    "ruRU": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers"
+    "ruRU": "Позволяет улучшать пехоту и строения. <br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– постройка ракетных турелей с помощью КСМ<br/>– постройка радарных вышек с помощью КСМ<br/>– переоборудование командного центра в планетарную крепость"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 850,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -128,6 +129,14 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "EngineeringBayResearch"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -166,11 +175,11 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel1",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 1",
-          "ruRU": "Upgrade Infantry Weapons Level 1"
+          "ruRU": "Улучшить вооружение пехоты, уровень 1 "
         },
         "Tooltip": {
           "enUS": "Upgrades the damage dealt by infantry units.",
-          "ruRU": "Upgrades the damage dealt by infantry units."
+          "ruRU": "Увеличивает урон, наносимый пехотой."
         },
         "Hotkey": "E"
       },
@@ -210,11 +219,11 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel2",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 2",
-          "ruRU": "Upgrade Infantry Weapons Level 2"
+          "ruRU": "Улучшить вооружение пехоты, уровень 2 "
         },
         "Tooltip": {
           "enUS": "Further upgrades the damage dealt by infantry units.",
-          "ruRU": "Further upgrades the damage dealt by infantry units."
+          "ruRU": "Значительно увеличивает урон пехоты."
         },
         "Hotkey": "E"
       },
@@ -254,11 +263,11 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel3",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 3",
-          "ruRU": "Upgrade Infantry Weapons Level 3"
+          "ruRU": "Улучшить вооружение пехоты, уровень 3 "
         },
         "Tooltip": {
           "enUS": "Maximizes the damage dealt by infantry units.",
-          "ruRU": "Maximizes the damage dealt by infantry units."
+          "ruRU": "Максимально увеличивает урон пехоты."
         },
         "Hotkey": "E"
       },
@@ -321,11 +330,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -391,11 +400,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -461,11 +470,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -506,11 +515,11 @@
         "Icon": "btn-upgrade-terran-neosteelframe",
         "Name": {
           "enUS": "Research Neosteel Frame",
-          "ruRU": "Research Neosteel Frame"
+          "ruRU": "Разработать каркас из неостали "
         },
         "Tooltip": {
           "enUS": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>.",
-          "ruRU": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>."
+          "ruRU": "Увеличивает вместимость <span style=\"color: ffff8a\">бункеров</span> на 2. Также расширяет грузовые отсеки <span style=\"color: ffff8a\">командных центров</span> и <span style=\"color: ffff8a\">планетарных крепостей</span>."
         },
         "Hotkey": "N"
       },
@@ -551,11 +560,11 @@
         "Icon": "btn-upgrade-terran-hisecautotracking",
         "Name": {
           "enUS": "Research Hi-Sec Auto Tracking",
-          "ruRU": "Research Hi-Sec Auto Tracking"
+          "ruRU": "Разработать систему высокоточного автослежения "
         },
         "Tooltip": {
           "enUS": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>.",
-          "ruRU": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>."
+          "ruRU": "Увеличивает дальность атаки <span style=\"color: ffff8a\">ракетных турелей</span>, <span style=\"color: ffff8a\">автотурелей</span> и <span style=\"color: ffff8a\">планетарных крепостей</span> на 1. "
         },
         "Hotkey": "H"
       },
@@ -595,11 +604,11 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel1",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 1",
-          "ruRU": "Upgrade Infantry Armor Level 1"
+          "ruRU": "Укрепить броню пехоты, уровень 1 "
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of infantry units.",
-          "ruRU": "Upgrades the armor of infantry units."
+          "ruRU": "Укрепляет броню пехоты."
         },
         "Hotkey": "A"
       },
@@ -639,11 +648,11 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel2",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 2",
-          "ruRU": "Upgrade Infantry Armor Level 2"
+          "ruRU": "Укрепить броню пехоты, уровень 2 "
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of infantry units.",
-          "ruRU": "Further upgrades the armor of infantry units."
+          "ruRU": "Значительно укрепляет броню пехоты."
         },
         "Hotkey": "A"
       },
@@ -683,11 +692,11 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel3",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 3",
-          "ruRU": "Upgrade Infantry Armor Level 3"
+          "ruRU": "Укрепить броню пехоты, уровень 3 "
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of infantry units.",
-          "ruRU": "Maximizes the armor of infantry units."
+          "ruRU": "Максимально укрепляет броню пехоты."
         },
         "Hotkey": "A"
       },
@@ -709,11 +718,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -794,11 +803,11 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel1",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 1",
-        "ruRU": "Upgrade Infantry Weapons Level 1"
+        "ruRU": "Улучшить вооружение пехоты, уровень 1 "
       },
       "Tooltip": {
         "enUS": "Upgrades the damage dealt by infantry units.",
-        "ruRU": "Upgrades the damage dealt by infantry units."
+        "ruRU": "Увеличивает урон, наносимый пехотой."
       }
     },
     {
@@ -807,11 +816,11 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel2",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 2",
-        "ruRU": "Upgrade Infantry Weapons Level 2"
+        "ruRU": "Улучшить вооружение пехоты, уровень 2 "
       },
       "Tooltip": {
         "enUS": "Further upgrades the damage dealt by infantry units.",
-        "ruRU": "Further upgrades the damage dealt by infantry units."
+        "ruRU": "Значительно увеличивает урон пехоты."
       }
     },
     {
@@ -820,11 +829,11 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel3",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 3",
-        "ruRU": "Upgrade Infantry Weapons Level 3"
+        "ruRU": "Улучшить вооружение пехоты, уровень 3 "
       },
       "Tooltip": {
         "enUS": "Maximizes the damage dealt by infantry units.",
-        "ruRU": "Maximizes the damage dealt by infantry units."
+        "ruRU": "Максимально увеличивает урон пехоты."
       }
     },
     {
@@ -833,11 +842,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -846,11 +855,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -859,11 +868,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -872,11 +881,11 @@
       "Icon": "btn-upgrade-terran-neosteelframe",
       "Name": {
         "enUS": "Research Neosteel Frame",
-        "ruRU": "Research Neosteel Frame"
+        "ruRU": "Разработать каркас из неостали "
       },
       "Tooltip": {
         "enUS": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>.",
-        "ruRU": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>."
+        "ruRU": "Увеличивает вместимость <span style=\"color: ffff8a\">бункеров</span> на 2. Также расширяет грузовые отсеки <span style=\"color: ffff8a\">командных центров</span> и <span style=\"color: ffff8a\">планетарных крепостей</span>."
       }
     },
     {
@@ -885,11 +894,11 @@
       "Icon": "btn-upgrade-terran-hisecautotracking",
       "Name": {
         "enUS": "Research Hi-Sec Auto Tracking",
-        "ruRU": "Research Hi-Sec Auto Tracking"
+        "ruRU": "Разработать систему высокоточного автослежения "
       },
       "Tooltip": {
         "enUS": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>.",
-        "ruRU": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>."
+        "ruRU": "Увеличивает дальность атаки <span style=\"color: ffff8a\">ракетных турелей</span>, <span style=\"color: ffff8a\">автотурелей</span> и <span style=\"color: ffff8a\">планетарных крепостей</span> на 1. "
       }
     },
     {
@@ -898,11 +907,11 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel1",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 1",
-        "ruRU": "Upgrade Infantry Armor Level 1"
+        "ruRU": "Укрепить броню пехоты, уровень 1 "
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of infantry units.",
-        "ruRU": "Upgrades the armor of infantry units."
+        "ruRU": "Укрепляет броню пехоты."
       }
     },
     {
@@ -911,11 +920,11 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel2",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 2",
-        "ruRU": "Upgrade Infantry Armor Level 2"
+        "ruRU": "Укрепить броню пехоты, уровень 2 "
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of infantry units.",
-        "ruRU": "Further upgrades the armor of infantry units."
+        "ruRU": "Значительно укрепляет броню пехоты."
       }
     },
     {
@@ -924,11 +933,11 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel3",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 3",
-        "ruRU": "Upgrade Infantry Armor Level 3"
+        "ruRU": "Укрепить броню пехоты, уровень 3 "
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of infantry units.",
-        "ruRU": "Maximizes the armor of infantry units."
+        "ruRU": "Максимально укрепляет броню пехоты."
       }
     }
   ]

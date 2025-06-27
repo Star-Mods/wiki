@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Banshee",
-    "ruRU": "Banshee"
+    "ruRU": "«Банши»"
   },
   "Description": {
     "enUS": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Ударный вертолет. После улучшения может использовать маскировку.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 140,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 1499.9414,
@@ -121,6 +122,12 @@
   ],
   "VisionHeight": 4,
   "Sight": 10,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "BansheeCloak"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -211,11 +218,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -291,11 +298,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -387,11 +394,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -468,11 +475,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -564,11 +571,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -650,11 +657,11 @@
         "Icon": "btn-ability-terran-cloak-color",
         "Name": {
           "enUS": "Cloak",
-          "ruRU": "Cloak"
+          "ruRU": "Маскировка "
         },
         "Tooltip": {
           "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
-          "ruRU": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>"
+          "ruRU": "Скрывает боевую единицу, делая ее невидимой для врагов. Замаскированная боевая единица может быть выявлена только с помощью детекторов или обнаруживающих эффектов.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.9</b> ед. энергии в секунду.</span> "
         },
         "Hotkey": "C"
       },
@@ -736,11 +743,11 @@
         "Icon": "btn-ability-terran-decloak-color",
         "Name": {
           "enUS": "Decloak",
-          "ruRU": "Decloak"
+          "ruRU": "Демаскировка "
         },
         "Tooltip": {
           "enUS": "Decloaks the selected unit, making it visible to enemies.",
-          "ruRU": "Decloaks the selected unit, making it visible to enemies."
+          "ruRU": "Сделать выбранную боевую единицу видимой для противника. "
         },
         "Hotkey": "D"
       }
@@ -758,6 +765,11 @@
     "Hydralisk",
     "Phoenix"
   ],
+  "WeaponArray": [
+    {
+      "Link": "BacklashRockets"
+    }
+  ],
   "GlossaryStrongArray": [
     "SiegeTank",
     "Ravager",
@@ -770,18 +782,34 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "BacklashRockets",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
-      "Name": {
-        "enUS": "Backlash Rockets",
-        "ruRU": "Backlash Rockets"
-      },
-      "Amount": 12,
-      "Kind": "Ranged",
+      "DisplayEffect": "BacklashRocketsU",
       "DisplayAttackCount": 2,
       "TargetFilters": "Ground",
+      "MinScanRange": 6,
       "Range": 6,
-      "Period": 1.25
+      "Period": 1.25,
+      "AllowedMovement": "Slowing",
+      "Marker": {
+        "MatchFlags": {
+          "Id": 1
+        }
+      },
+      "LegacyOptions": {
+        "KeepChanneling": 1
+      },
+      "id": "BacklashRockets",
+      "class": "CWeaponLegacy",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "Name": {
+        "enUS": "Backlash Rockets",
+        "ruRU": "Ракеты «Бумеранг» "
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -861,11 +889,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -874,11 +902,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -887,11 +915,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -900,11 +928,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -913,11 +941,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -926,11 +954,11 @@
       "Icon": "btn-ability-terran-cloak-color",
       "Name": {
         "enUS": "Cloak",
-        "ruRU": "Cloak"
+        "ruRU": "Маскировка "
       },
       "Tooltip": {
         "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
-        "ruRU": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>"
+        "ruRU": "Скрывает боевую единицу, делая ее невидимой для врагов. Замаскированная боевая единица может быть выявлена только с помощью детекторов или обнаруживающих эффектов.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.9</b> ед. энергии в секунду.</span> "
       }
     },
     {
@@ -939,11 +967,11 @@
       "Icon": "btn-ability-terran-decloak-color",
       "Name": {
         "enUS": "Decloak",
-        "ruRU": "Decloak"
+        "ruRU": "Демаскировка "
       },
       "Tooltip": {
         "enUS": "Decloaks the selected unit, making it visible to enemies.",
-        "ruRU": "Decloaks the selected unit, making it visible to enemies."
+        "ruRU": "Сделать выбранную боевую единицу видимой для противника. "
       }
     }
   ]

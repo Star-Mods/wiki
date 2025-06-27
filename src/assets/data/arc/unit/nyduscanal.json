@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nydus Worm",
-    "ruRU": "Nydus Worm"
+    "ruRU": "Червь нидуса "
   },
   "Description": {
     "enUS": "Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
-    "ruRU": "Friendly ground units can use a Nydus Worm to instantly travel to any other Nydus Worm or Nydus Network owned by the player. Grows creep used to feed nearby Zerg structures.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+    "ruRU": "Дружественные наземные войска могут использовать червя нидуса для мгновенного перемещения к другой сети или одному из червей нидуса, принадлежащих одному игроку. Червь вырабатывает слизь, обеспечивающую жизнедеятельность расположенных поблизости строений зергов.<br/><br/><span style=\"color: #ffff8a\">Бонус: по слизи зерги передвигаются быстрее.</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 300,
   "LifeArmorName": {
     "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
+    "ruRU": "Панцирь строений зергов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -125,6 +126,17 @@
     "Small"
   ],
   "Sight": 10,
+  "BehaviorArray": [
+    "NydusCreepGrowth",
+    "NydusDetect",
+    "NydusWormArmor"
+  ],
+  "AbilArray": [
+    "Rally",
+    "BuildinProgressNydusCanal",
+    "NydusWormTransport",
+    "stop"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -199,11 +211,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -227,11 +239,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically.",
-          "ruRU": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -348,11 +360,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Загрузить"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads units into the Nydus Worm.",
-          "ruRU": "Loads units into the Nydus Worm."
+          "ruRU": "Загрузить войска в червя нидуса. "
         },
         "Hotkey": "L"
       },
@@ -469,11 +481,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       }
@@ -501,7 +513,7 @@
       "id": "NydusCreepGrowth",
       "Name": {
         "enUS": "Nydus Creep Growth",
-        "ruRU": "Nydus Creep Growth"
+        "ruRU": "Распространение слизи нидуса"
       },
       "Tooltip": "-"
     },
@@ -509,7 +521,7 @@
       "id": "NydusDetect",
       "Name": {
         "enUS": "Nydus Detect",
-        "ruRU": "Nydus Detect ///Auto - Copied from enUS Locale"
+        "ruRU": "Nydus Detect "
       },
       "Tooltip": "-"
     },
@@ -578,11 +590,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -591,11 +603,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically.",
-        "ruRU": "Sends units to the designated point. Workers rallied to resources will begin harvesting automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -604,11 +616,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Загрузить"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads units into the Nydus Worm.",
-        "ruRU": "Loads units into the Nydus Worm."
+        "ruRU": "Загрузить войска в червя нидуса. "
       }
     },
     {
@@ -617,11 +629,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     }
   ]

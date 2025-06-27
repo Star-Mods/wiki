@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Barracks",
-    "ruRU": "Barracks"
+    "ruRU": "Казармы "
   },
   "Description": {
     "enUS": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers",
-    "ruRU": "Infantry-production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marines<br/>- Reapers<br/>- Bunkers from SCVs<br/>- Orbital Commands from Command Centers"
+    "ruRU": "Тренировочный комплекс пехоты.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение морпехов<br/>– обучение головорезов<br/>– постройка бункеров с помощью КСМ<br/>– переоборудование командных центров в станции наблюдения "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1000,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -131,6 +132,19 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "BarracksTrain",
+    "Rally",
+    "BarracksAddOns",
+    "BarracksLiftOff"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "ReactorQueue",
+    "TerranStructuresKnockbackBehavior"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -168,7 +182,7 @@
         "Icon": "btn-unit-terran-marine",
         "Name": {
           "enUS": "Train Marine",
-          "ruRU": "Train Marine"
+          "ruRU": "Обучить морпеха "
         },
         "Tooltip": {
           "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
@@ -212,11 +226,11 @@
         "Icon": "btn-unit-terran-marauder",
         "Name": {
           "enUS": "Train Marauder",
-          "ruRU": "Train Marauder"
+          "ruRU": "Обучить мародера "
         },
         "Tooltip": {
           "enUS": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Тяжелая штурмовая пехота.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "D"
       },
@@ -255,11 +269,11 @@
         "Icon": "btn-unit-terran-reaper",
         "Name": {
           "enUS": "Train Reaper",
-          "ruRU": "Train Reaper"
+          "ruRU": "Обучить головореза "
         },
         "Tooltip": {
           "enUS": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Налетчик. Может преодолевать уступы. Быстро восстанавливает здоровье, находясь вне боя. Может использовать взрывчатку KD8.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "R"
       },
@@ -299,11 +313,11 @@
         "Icon": "btn-unit-terran-ghost",
         "Name": {
           "enUS": "Train Ghost",
-          "ruRU": "Train Ghost"
+          "ruRU": "Обучить призрака "
         },
         "Tooltip": {
           "enUS": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Снайпер. Может использовать «Точное прицеливание», ЭМИ-патроны и маскировку (после соответствующего улучшения). Указывает цели для ядерных ракет, производимых в академии призраков.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
         },
         "Hotkey": "G"
       },
@@ -327,11 +341,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -375,11 +389,11 @@
         "Icon": "btn-ability-terran-liftoff",
         "Name": {
           "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "ruRU": "Взлететь "
         },
         "Tooltip": {
           "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+          "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
         },
         "Hotkey": "L"
       },
@@ -445,11 +459,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -485,11 +499,11 @@
         "Icon": "btn-building-terran-reactor",
         "Name": {
           "enUS": "Build Reactor",
-          "ruRU": "Build Reactor"
+          "ruRU": "Построить реактор "
         },
         "Tooltip": {
           "enUS": "Allows 2 units to be created simultaneously.",
-          "ruRU": "Allows 2 units to be created simultaneously."
+          "ruRU": "Позволяет производить две боевые единицы одновременно. "
         },
         "Hotkey": "C"
       },
@@ -525,11 +539,11 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Build Tech Lab",
-          "ruRU": "Build Tech Lab"
+          "ruRU": "Построить лабораторию "
         },
         "Tooltip": {
           "enUS": "Infantry-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marauders<br/>- Ghosts with Ghost Academy",
-          "ruRU": "Infantry-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marauders<br/>- Ghosts with Ghost Academy"
+          "ruRU": "Позволяет разрабатывать улучшения для пехоты. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение мародеров<br/>– обучение призраков (требуется академия призраков)"
         },
         "Hotkey": "X"
       },
@@ -592,11 +606,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -892,11 +906,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -962,11 +976,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -988,11 +1002,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -1033,7 +1047,7 @@
       "id": "TerranStructuresKnockbackBehavior",
       "Name": {
         "enUS": "Terran Structures Knockback Behavior",
-        "ruRU": "Terran Structures Knockback Behavior ///Auto - Copied from enUS Locale"
+        "ruRU": "Terran Structures Knockback Behavior "
       },
       "Tooltip": "-"
     }
@@ -1128,7 +1142,7 @@
       "Icon": "btn-unit-terran-marine",
       "Name": {
         "enUS": "Train Marine",
-        "ruRU": "Train Marine"
+        "ruRU": "Обучить морпеха "
       },
       "Tooltip": {
         "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
@@ -1141,11 +1155,11 @@
       "Icon": "btn-unit-terran-marauder",
       "Name": {
         "enUS": "Train Marauder",
-        "ruRU": "Train Marauder"
+        "ruRU": "Обучить мародера "
       },
       "Tooltip": {
         "enUS": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Тяжелая штурмовая пехота.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -1154,11 +1168,11 @@
       "Icon": "btn-unit-terran-reaper",
       "Name": {
         "enUS": "Train Reaper",
-        "ruRU": "Train Reaper"
+        "ruRU": "Обучить головореза "
       },
       "Tooltip": {
         "enUS": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Raider. Can jump up and down cliffs. Regenerates life quickly while out of combat. Can use KD8 Charge.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Налетчик. Может преодолевать уступы. Быстро восстанавливает здоровье, находясь вне боя. Может использовать взрывчатку KD8.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -1167,11 +1181,11 @@
       "Icon": "btn-unit-terran-ghost",
       "Name": {
         "enUS": "Train Ghost",
-        "ruRU": "Train Ghost"
+        "ruRU": "Обучить призрака "
       },
       "Tooltip": {
         "enUS": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Sniper. Can use Snipe, EMP Round, and be upgraded to use Cloak. Can call down Tactical Nukes built at the Ghost Academy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Снайпер. Может использовать «Точное прицеливание», ЭМИ-патроны и маскировку (после соответствующего улучшения). Указывает цели для ядерных ракет, производимых в академии призраков.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span> "
       }
     },
     {
@@ -1180,11 +1194,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1193,11 +1207,11 @@
       "Icon": "btn-ability-terran-liftoff",
       "Name": {
         "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "ruRU": "Взлететь "
       },
       "Tooltip": {
         "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+        "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
       }
     },
     {
@@ -1206,11 +1220,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -1219,11 +1233,11 @@
       "Icon": "btn-building-terran-reactor",
       "Name": {
         "enUS": "Build Reactor",
-        "ruRU": "Build Reactor"
+        "ruRU": "Построить реактор "
       },
       "Tooltip": {
         "enUS": "Allows 2 units to be created simultaneously.",
-        "ruRU": "Allows 2 units to be created simultaneously."
+        "ruRU": "Позволяет производить две боевые единицы одновременно. "
       }
     },
     {
@@ -1232,11 +1246,11 @@
       "Icon": "btn-building-terran-techlab",
       "Name": {
         "enUS": "Build Tech Lab",
-        "ruRU": "Build Tech Lab"
+        "ruRU": "Построить лабораторию "
       },
       "Tooltip": {
         "enUS": "Infantry-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marauders<br/>- Ghosts with Ghost Academy",
-        "ruRU": "Infantry-research structure. A Tech Lab can fit onto any production structure.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Marauders<br/>- Ghosts with Ghost Academy"
+        "ruRU": "Позволяет разрабатывать улучшения для пехоты. Построенную лабораторию можно состыковать с любым производственным строением.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– обучение мародеров<br/>– обучение призраков (требуется академия призраков)"
       }
     },
     {
@@ -1245,11 +1259,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1258,11 +1272,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1271,11 +1285,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     }
   ]

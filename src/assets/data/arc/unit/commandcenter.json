@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Command Center",
-    "ruRU": "Command Center"
+    "ruRU": "Командный центр "
   },
   "Description": {
     "enUS": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs",
-    "ruRU": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can upgrade into an Orbital Command or a Planetary Fortress.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- SCVs"
+    "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Может взлетать.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– строительство КСМ "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1500,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -139,6 +140,21 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5CancelToSelection",
+    "CommandCenterTrain",
+    "RallyCommand",
+    "CommandCenterTransport",
+    "CommandCenterLiftOff",
+    "UpgradeToPlanetaryFortress",
+    "UpgradeToOrbital",
+    "InfestedCommandCenterSC2@Morph"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "CommandCenterKnockbackBehavior"
+  ],
   "TacticalAIThink": "AIThinkCommandCenter",
   "CardLayouts": {
     "Root": [
@@ -178,11 +194,11 @@
         "Icon": "btn-unit-terran-scv",
         "Name": {
           "enUS": "Train SCV",
-          "ruRU": "Train SCV"
+          "ruRU": "Построить КСМ "
         },
         "Tooltip": {
           "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "S"
       },
@@ -227,11 +243,11 @@
         "Icon": "btn-building-terran-surveillancestation",
         "Name": {
           "enUS": "Upgrade to Orbital Command",
-          "ruRU": "Upgrade to Orbital Command"
+          "ruRU": "Переоборудовать в станцию наблюдения "
         },
         "Tooltip": {
           "enUS": "Upgrades Command Center to an Orbital Command, unlocking Scanner Sweep, Calldown: MULE, and Calldown: Extra Supplies. Cannot load SCVs.",
-          "ruRU": "Upgrades Command Center to an Orbital Command, unlocking Scanner Sweep, Calldown: MULE, and Calldown: Extra Supplies. Cannot load SCVs."
+          "ruRU": "Трансформирует командный центр в станцию наблюдения, открывая доступ к спутниковому сканированию, запросу дополнительных припасов и МУЛов. Станция наблюдения не может загружать в себя КСМ. "
         },
         "Hotkey": "B"
       },
@@ -276,11 +292,11 @@
         "Icon": "btn-building-terran-planetaryfortress",
         "Name": {
           "enUS": "Upgrade to Planetary Fortress",
-          "ruRU": "Upgrade to Planetary Fortress"
+          "ruRU": "Переоборудовать в планетарную крепость "
         },
         "Tooltip": {
           "enUS": "Upgrades Command Center to a Planetary Fortress, greatly increasing its armor and arming it with a powerful defensive turret. Cannot lift off.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Upgrades Command Center to a Planetary Fortress, greatly increasing its armor and arming it with a powerful defensive turret. Cannot lift off.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Планетарная крепость – тяжелобронированное строение, вооруженное мощной оборонительной турелью. Не может взлетать.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
         },
         "Hotkey": "P"
       },
@@ -304,11 +320,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -422,11 +438,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads nearby SCVs into Command Center.",
-          "ruRU": "Loads nearby SCVs into Command Center."
+          "ruRU": "Загрузить ближайшие КСМ в командный центр. "
         },
         "Hotkey": "O"
       },
@@ -540,11 +556,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -588,11 +604,11 @@
         "Icon": "btn-ability-terran-liftoff",
         "Name": {
           "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "ruRU": "Взлететь "
         },
         "Tooltip": {
           "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+          "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
         },
         "Hotkey": "L"
       },
@@ -658,11 +674,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -729,11 +745,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -778,11 +794,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Cancel"
+          "ruRU": "Отмена "
         },
         "Tooltip": {
           "enUS": "Cancels the upgrade order, returning the structure to its original state.",
-          "ruRU": "Cancels the upgrade order, returning the structure to its original state."
+          "ruRU": "Отменить приказ о мутации, вернув строение в исходное состояние."
         },
         "Hotkey": "Esc"
       },
@@ -827,11 +843,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Cancel"
+          "ruRU": "Отмена "
         },
         "Tooltip": {
           "enUS": "Cancels the upgrade order, returning the structure to its original state.",
-          "ruRU": "Cancels the upgrade order, returning the structure to its original state."
+          "ruRU": "Отменить приказ о мутации, вернув строение в исходное состояние."
         },
         "Hotkey": "Esc"
       },
@@ -897,11 +913,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -924,11 +940,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -964,7 +980,7 @@
       "id": "CommandCenterKnockbackBehavior",
       "Name": {
         "enUS": "Command Center Knockback Behavior",
-        "ruRU": "Command Center Knockback Behavior ///Auto - Copied from enUS Locale"
+        "ruRU": "Command Center Knockback Behavior "
       },
       "Tooltip": "-"
     }
@@ -1080,11 +1096,11 @@
       "Icon": "btn-unit-terran-scv",
       "Name": {
         "enUS": "Train SCV",
-        "ruRU": "Train SCV"
+        "ruRU": "Построить КСМ "
       },
       "Tooltip": {
         "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -1093,11 +1109,11 @@
       "Icon": "btn-building-terran-surveillancestation",
       "Name": {
         "enUS": "Upgrade to Orbital Command",
-        "ruRU": "Upgrade to Orbital Command"
+        "ruRU": "Переоборудовать в станцию наблюдения "
       },
       "Tooltip": {
         "enUS": "Upgrades Command Center to an Orbital Command, unlocking Scanner Sweep, Calldown: MULE, and Calldown: Extra Supplies. Cannot load SCVs.",
-        "ruRU": "Upgrades Command Center to an Orbital Command, unlocking Scanner Sweep, Calldown: MULE, and Calldown: Extra Supplies. Cannot load SCVs."
+        "ruRU": "Трансформирует командный центр в станцию наблюдения, открывая доступ к спутниковому сканированию, запросу дополнительных припасов и МУЛов. Станция наблюдения не может загружать в себя КСМ. "
       }
     },
     {
@@ -1106,11 +1122,11 @@
       "Icon": "btn-building-terran-planetaryfortress",
       "Name": {
         "enUS": "Upgrade to Planetary Fortress",
-        "ruRU": "Upgrade to Planetary Fortress"
+        "ruRU": "Переоборудовать в планетарную крепость "
       },
       "Tooltip": {
         "enUS": "Upgrades Command Center to a Planetary Fortress, greatly increasing its armor and arming it with a powerful defensive turret. Cannot lift off.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Upgrades Command Center to a Planetary Fortress, greatly increasing its armor and arming it with a powerful defensive turret. Cannot lift off.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Планетарная крепость – тяжелобронированное строение, вооруженное мощной оборонительной турелью. Не может взлетать.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
       }
     },
     {
@@ -1119,11 +1135,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1132,11 +1148,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads nearby SCVs into Command Center.",
-        "ruRU": "Loads nearby SCVs into Command Center."
+        "ruRU": "Загрузить ближайшие КСМ в командный центр. "
       }
     },
     {
@@ -1145,11 +1161,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -1158,11 +1174,11 @@
       "Icon": "btn-ability-terran-liftoff",
       "Name": {
         "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "ruRU": "Взлететь "
       },
       "Tooltip": {
         "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+        "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
       }
     },
     {
@@ -1171,11 +1187,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -1184,11 +1200,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1197,11 +1213,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Cancel"
+        "ruRU": "Отмена "
       },
       "Tooltip": {
         "enUS": "Cancels the upgrade order, returning the structure to its original state.",
-        "ruRU": "Cancels the upgrade order, returning the structure to its original state."
+        "ruRU": "Отменить приказ о мутации, вернув строение в исходное состояние."
       }
     },
     {
@@ -1210,11 +1226,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Cancel"
+        "ruRU": "Отмена "
       },
       "Tooltip": {
         "enUS": "Cancels the upgrade order, returning the structure to its original state.",
-        "ruRU": "Cancels the upgrade order, returning the structure to its original state."
+        "ruRU": "Отменить приказ о мутации, вернув строение в исходное состояние."
       }
     },
     {
@@ -1223,11 +1239,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -1236,11 +1252,11 @@
       "Icon": "btn-upgrade-terran-weaponrefit",
       "Name": {
         "enUS": "Select Builder",
-        "ruRU": "Select Builder"
+        "ruRU": "Выбрать строителя "
       },
       "Tooltip": {
         "enUS": "Selects the unit constructing this structure.",
-        "ruRU": "Selects the unit constructing this structure."
+        "ruRU": "Выбрать рабочего, который сооружает это строение. "
       }
     }
   ]

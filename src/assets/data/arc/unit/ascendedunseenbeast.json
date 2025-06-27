@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Unseen Beast"
   },
@@ -98,6 +99,13 @@
     "Light",
     "Psionic"
   ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Detector11",
+    "UnseenBeast",
+    "UnseenBeastRadar",
+    "DragonAscended"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -106,6 +114,19 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedUnseenBeast",
+    "AscendedUnseenBeastFission",
+    "UnseenBeastFission",
+    "DragonFissionDisabled",
+    "UnseenBeastTeleportAssault",
+    "UnseenBeastTeleportAssaultTrigger",
+    "UnseenBeastProwl",
+    "UnseenBeastExploration"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -196,11 +217,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -276,11 +297,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -372,11 +393,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -468,11 +489,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -549,11 +570,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -1427,6 +1448,14 @@
     "Custom": 50
   },
   "KillXP": 15,
+  "WeaponArray": [
+    {
+      "Link": "UnseenBeastExploration"
+    },
+    {
+      "Link": "UnseenBeastSpiritSmash"
+    }
+  ],
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
@@ -1448,17 +1477,49 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "UnseenBeastExploration",
-      "Name": {
-        "enUS": "Unseen Beast - Exploration"
+      "EditorCategories": "Race:Dragon",
+      "Options": {
+        "Disabled": 1,
+        "Hidden": 1,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
       },
       "TargetFilters": "",
+      "AcquirePrioritization": "ByAngle",
+      "MinScanRange": 10,
       "Range": 8,
-      "Period": 1
+      "Period": 1,
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "id": "UnseenBeastExploration",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Unseen Beast - Exploration"
+      }
     },
     {
-      "id": "UnseenBeastSpiritSmash",
+      "EditorCategories": "Race:Dragon",
+      "Options": {
+        "Melee": 1,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "DisplayEffect": "UnseenBeastSpiritSmashDamage",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByAngle",
+      "Range": 0.25,
+      "Period": 0.77,
+      "DamagePoint": 0.1875,
+      "Backswing": 0.25,
+      "Effect": "UnseenBeastSpiritSmashDamage",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "RangeSlop": 2,
+      "ArcSlop": 45,
+      "id": "UnseenBeastSpiritSmash",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Spirit Smash"
       },
@@ -1467,10 +1528,7 @@
         "Light": 18,
         "Structure": 18
       },
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.25,
-      "Period": 0.77
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [
@@ -1486,7 +1544,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -1609,11 +1667,7 @@
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedUnseenBeast",
-    "AscendedUnseenBeast"
-  ],
-  "$Phased": "AscendedUnseenBeast",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1622,11 +1676,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1635,11 +1689,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1648,11 +1702,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1661,11 +1715,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1674,11 +1728,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {

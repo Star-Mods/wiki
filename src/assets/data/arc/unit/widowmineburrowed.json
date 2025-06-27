@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
-    "ruRU": "Widow Mine",
+    "ruRU": "Мина «Вдова» ",
     "enUS": "Widow Mine"
   },
   "Description": {
     "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+    "ruRU": "Роботизированная мина. Закопавшись, обстреливает ракетами находящиеся рядом войска противника. Ракеты наносят урон в небольшой области вокруг основной цели. Становится видимой, пока завершается время восстановления «Ракет \"Страж\"».<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 7,
@@ -20,7 +21,7 @@
   "LifeMax": 90,
   "LifeArmorName": {
     "enUS": "Terran Vehicle Plating",
-    "ruRU": "Terran Vehicle Plating"
+    "ruRU": "Обшивка наземной техники терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 2292.8906,
@@ -127,6 +128,15 @@
       "Weapon": "WidowMineDummy"
     }
   ],
+  "AbilArray": [
+    "WidowMineUnburrow",
+    "WidowMineAttack"
+  ],
+  "BehaviorArray": [
+    "WidowMineArmed",
+    "WidowMineBurrowedCloakingBehavior",
+    "WidowMineDrillingClawsTracker"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -148,11 +158,11 @@
         "Icon": "btn-ability-terran-unstablepayload",
         "Name": {
           "enUS": "Sentinel Missiles",
-          "ruRU": "Sentinel Missiles"
+          "ruRU": "Ракеты «Страж»"
         },
         "Tooltip": {
           "enUS": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>",
-          "ruRU": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>"
+          "ruRU": "Атакует приблизившиеся наземные и воздушные боевые единицы противника, нанося <b>125</b> ед. урона (+<b>35</b> ед. урона по щитам) основной цели и <b>40</b> ед. урона (+<b>25</b> ед. урона по щитам) другим целям рядом с ней. При перезарядке местоположение мины раскрывается.<br/><br/><span style=\"color: #ffff8a\">Время восстановления: <b>40</b> сек.</span>"
         }
       },
       {
@@ -191,11 +201,11 @@
         "Icon": "btn-ability-terran-deactivatemine",
         "Name": {
           "enUS": "Deactivate Mine",
-          "ruRU": "Deactivate Mine"
+          "ruRU": "Деактивировать мину "
         },
         "Tooltip": {
           "enUS": "Unburrows the Widow Mine and deactivates its weapon, allowing it to move.",
-          "ruRU": "Unburrows the Widow Mine and deactivates its weapon, allowing it to move."
+          "ruRU": "Мина выкапывается и выходит из боевого режима, после чего может передвигаться."
         },
         "Hotkey": "D"
       },
@@ -359,11 +369,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атака "
         },
         "Tooltip": {
           "enUS": "Attacks any nearby enemy unit.",
-          "ruRU": "Attacks any nearby enemy unit."
+          "ruRU": "Атакует любую находящуюся рядом боевую единицу противника. "
         },
         "Hotkey": "C"
       },
@@ -440,11 +450,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -536,11 +546,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -561,10 +571,12 @@
         "id": "DrillClaws",
         "Icon": "btn-upgrade-terran-researchdrillingclaws",
         "Name": {
-          "enUS": "Drilling Claws"
+          "enUS": "Drilling Claws",
+          "ruRU": "Когти для бурения"
         },
         "Tooltip": {
-          "enUS": "This unit burrows faster."
+          "enUS": "This unit burrows faster.",
+          "ruRU": "Эта боевая единица закапывается быстрее."
         }
       },
       {
@@ -584,10 +596,12 @@
         "id": "WidowMineConcealment",
         "Icon": "btn-ability-terran-widowminehidden",
         "Name": {
-          "enUS": "Concealment"
+          "enUS": "Concealment",
+          "ruRU": "Скрытность"
         },
         "Tooltip": {
-          "enUS": "This unit is no longer revealed while reloading."
+          "enUS": "This unit is no longer revealed while reloading.",
+          "ruRU": "Местоположение этой боевой единицы не раскрывается при перезарядке."
         }
       }
     ]
@@ -617,7 +631,7 @@
       "id": "WidowMineArmed",
       "Name": {
         "enUS": "Must be Activated",
-        "ruRU": "Must be Activated ///Auto - Copied from enUS Locale"
+        "ruRU": "Заряженная мина «Вдова» "
       },
       "Tooltip": "-"
     },
@@ -642,14 +656,14 @@
       "id": "WidowMineUnburrow",
       "Name": {
         "enUS": "Widow Mine Unburrow",
-        "ruRU": "Widow Mine Unburrow"
+        "ruRU": "Мина «Вдова» выкапывание"
       }
     },
     {
       "id": "WidowMineAttack",
       "Name": {
         "enUS": "Widow Mine Attack",
-        "ruRU": "Widow Mine Attack"
+        "ruRU": "Мина «Вдова» атака"
       }
     }
   ],
@@ -689,11 +703,11 @@
       "Icon": "btn-ability-terran-unstablepayload",
       "Name": {
         "enUS": "Sentinel Missiles",
-        "ruRU": "Sentinel Missiles"
+        "ruRU": "Ракеты «Страж»"
       },
       "Tooltip": {
         "enUS": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>",
-        "ruRU": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>"
+        "ruRU": "Атакует приблизившиеся наземные и воздушные боевые единицы противника, нанося <b>125</b> ед. урона (+<b>35</b> ед. урона по щитам) основной цели и <b>40</b> ед. урона (+<b>25</b> ед. урона по щитам) другим целям рядом с ней. При перезарядке местоположение мины раскрывается.<br/><br/><span style=\"color: #ffff8a\">Время восстановления: <b>40</b> сек.</span>"
       }
     },
     {
@@ -702,11 +716,11 @@
       "Icon": "btn-ability-terran-deactivatemine",
       "Name": {
         "enUS": "Deactivate Mine",
-        "ruRU": "Deactivate Mine"
+        "ruRU": "Деактивировать мину "
       },
       "Tooltip": {
         "enUS": "Unburrows the Widow Mine and deactivates its weapon, allowing it to move.",
-        "ruRU": "Unburrows the Widow Mine and deactivates its weapon, allowing it to move."
+        "ruRU": "Мина выкапывается и выходит из боевого режима, после чего может передвигаться."
       }
     },
     {
@@ -715,11 +729,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атака "
       },
       "Tooltip": {
         "enUS": "Attacks any nearby enemy unit.",
-        "ruRU": "Attacks any nearby enemy unit."
+        "ruRU": "Атакует любую находящуюся рядом боевую единицу противника. "
       }
     },
     {
@@ -728,11 +742,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -741,11 +755,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     }
   ]

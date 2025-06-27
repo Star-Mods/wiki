@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Echo",
     "ruRU": "Эхо"
@@ -103,6 +104,19 @@
   "Sight": 12,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "FuseUnfuse",
+    "SonicImage",
+    "ReverbRB",
+    "EchoFighterMode",
+    "SonicImage",
+    "EchoDiscordMode"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "DiscordZoneRadius"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -177,11 +191,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -840,6 +854,11 @@
     "Minerals": 125,
     "Vespene": 75
   },
+  "WeaponArray": [
+    {
+      "Link": "ReverberatorFlare"
+    }
+  ],
   "EffectArray": {
     "Create": ""
   },
@@ -856,17 +875,26 @@
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
-      "id": "ReverberatorFlare",
+      "EditorCategories": "Race:Keiron",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
+      "Range": 3,
+      "Arc": 9.9975,
+      "Period": 1.12,
+      "DamagePoint": 0.05,
+      "Backswing": 0,
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "TargetFilters": "Air",
+      "id": "ReverberatorFlare",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Reverberator Flare",
         "ruRU": "Ревербераторная Вспышка"
       },
       "Amount": 12,
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 3,
-      "Period": 1.12
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -960,16 +988,15 @@
     "KeironShieldsRevert"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "EchoReverb"
+  ],
   "$Research": [],
   "$Morph": [
     "Echo"
   ],
-  "$Phase": [
-    "EchoDM",
-    "EchoDM"
-  ],
-  "$Phased": "EchoDM",
+  "$Phase": [],
+  "$Phased": "Echo",
   "$Producers": [],
   "$Commands": [
     {
@@ -978,11 +1005,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {

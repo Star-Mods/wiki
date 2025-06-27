@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Orbital Command",
-    "ruRU": "Orbital Command"
+    "ruRU": "Станция наблюдения "
   },
   "Description": {
     "enUS": "Primary structure. Used to train SCVs and receive gathered resources. Can use the Scanner Sweep ability. Can use the abilities Calldown: MULE and Calldown: Extra Supplies.",
-    "ruRU": "Primary structure. Used to train SCVs and receive gathered resources. Can use the Scanner Sweep ability. Can use the abilities Calldown: MULE and Calldown: Extra Supplies."
+    "ruRU": "Основное строение, служащее для строительства КСМ и хранения добытых ресурсов. Делает возможным спутниковое сканирование, запрос дополнительных припасов и запрос МУЛов. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1500,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -142,6 +143,21 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "CalldownMULE",
+    "SupplyDrop",
+    "que5CancelToSelection",
+    "RallyCommand",
+    "CommandCenterTrain",
+    "ScannerSweep",
+    "OrbitalLiftOff",
+    "InfestedOrbitalCommandSCBW@Morph"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "CommandCenterKnockbackBehavior"
+  ],
   "TacticalAIThink": "AIThinkOrbitalCommand",
   "CardLayouts": {
     "Root": [
@@ -181,11 +197,11 @@
         "Icon": "btn-unit-terran-scv",
         "Name": {
           "enUS": "Train SCV",
-          "ruRU": "Train SCV"
+          "ruRU": "Построить КСМ "
         },
         "Tooltip": {
           "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "S"
       },
@@ -229,11 +245,11 @@
         "Icon": "btn-ability-terran-liftoff",
         "Name": {
           "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "ruRU": "Взлететь "
         },
         "Tooltip": {
           "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+          "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
         },
         "Hotkey": "L"
       },
@@ -299,11 +315,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -370,11 +386,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -515,11 +531,11 @@
         "Icon": "btn-ability-terran-scannersweep-color",
         "Name": {
           "enUS": "Scanner Sweep",
-          "ruRU": "Scanner Sweep"
+          "ruRU": "Спутниковое сканирование "
         },
         "Tooltip": {
           "enUS": "Reveals an area of the map, detecting cloaked and burrowed units. Lasts <b>12</b>.",
-          "ruRU": "Reveals an area of the map, detecting cloaked and burrowed units. Lasts <b>12</b>."
+          "ruRU": "Открывает часть карты и обнаруживает замаскированные и закопанные боевые единицы. Время действия: <b>12</b>"
         },
         "Hotkey": "C"
       },
@@ -543,11 +559,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       },
@@ -685,11 +701,11 @@
         "Icon": "btn-unit-terran-mule",
         "Name": {
           "enUS": "Calldown: MULE",
-          "ruRU": "Calldown: MULE"
+          "ruRU": "Запрос: МУЛ "
         },
         "Tooltip": {
           "enUS": "Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <br/><br/>MULEs last <b>90</b> before their systems fail.",
-          "ruRU": "Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <br/><br/>MULEs last <b>90</b> before their systems fail."
+          "ruRU": "Десантирует к месторождению экспериментального шахтерского робота, который добывает минералы быстрее, чем обычный КСМ. <br/><br/>МУЛ функционирует в течение <b>90</b>, после чего происходит системный сбой."
         },
         "Hotkey": "E"
       },
@@ -833,11 +849,11 @@
         "Icon": "btn-ability-terran-calldownextrasupplies-color",
         "Name": {
           "enUS": "Calldown: Extra Supplies",
-          "ruRU": "Calldown: Extra Supplies"
+          "ruRU": "Запрос: дополнительные припасы "
         },
         "Tooltip": {
           "enUS": "Drops additional supplies, permanently increasing the supply output of the target Supply Depot by <b>8</b> and instantly increasing it's health to 500.",
-          "ruRU": "Drops additional supplies, permanently increasing the supply output of the target Supply Depot by <b>8</b>."
+          "ruRU": "Увеличить количество припасов, сберегаемых в выбранном хранилище, на <b>8</b> ед."
         },
         "Hotkey": "X"
       }
@@ -865,7 +881,7 @@
       "id": "CommandCenterKnockbackBehavior",
       "Name": {
         "enUS": "Command Center Knockback Behavior",
-        "ruRU": "Command Center Knockback Behavior ///Auto - Copied from enUS Locale"
+        "ruRU": "Command Center Knockback Behavior "
       },
       "Tooltip": "-"
     }
@@ -975,11 +991,11 @@
       "Icon": "btn-unit-terran-scv",
       "Name": {
         "enUS": "Train SCV",
-        "ruRU": "Train SCV"
+        "ruRU": "Построить КСМ "
       },
       "Tooltip": {
         "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -988,11 +1004,11 @@
       "Icon": "btn-ability-terran-liftoff",
       "Name": {
         "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "ruRU": "Взлететь "
       },
       "Tooltip": {
         "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
+        "ruRU": "Перевести строение в режим воздушного перемещения для последующего размещения в другом месте. В этом режиме невозможно производить войска, проводить исследования, а также использовать специальные возможности. "
       }
     },
     {
@@ -1001,11 +1017,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -1014,11 +1030,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -1027,11 +1043,11 @@
       "Icon": "btn-ability-terran-scannersweep-color",
       "Name": {
         "enUS": "Scanner Sweep",
-        "ruRU": "Scanner Sweep"
+        "ruRU": "Спутниковое сканирование "
       },
       "Tooltip": {
         "enUS": "Reveals an area of the map, detecting cloaked and burrowed units. Lasts <b>12</b>.",
-        "ruRU": "Reveals an area of the map, detecting cloaked and burrowed units. Lasts <b>12</b>."
+        "ruRU": "Открывает часть карты и обнаруживает замаскированные и закопанные боевые единицы. Время действия: <b>12</b>"
       }
     },
     {
@@ -1040,11 +1056,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     },
     {
@@ -1053,11 +1069,11 @@
       "Icon": "btn-unit-terran-mule",
       "Name": {
         "enUS": "Calldown: MULE",
-        "ruRU": "Calldown: MULE"
+        "ruRU": "Запрос: МУЛ "
       },
       "Tooltip": {
         "enUS": "Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <br/><br/>MULEs last <b>90</b> before their systems fail.",
-        "ruRU": "Drops an experimental robotic MULE miner onto the target Mineral Field. MULEs collect minerals more quickly than SCVs.  <br/><br/>MULEs last <b>90</b> before their systems fail."
+        "ruRU": "Десантирует к месторождению экспериментального шахтерского робота, который добывает минералы быстрее, чем обычный КСМ. <br/><br/>МУЛ функционирует в течение <b>90</b>, после чего происходит системный сбой."
       }
     },
     {
@@ -1066,11 +1082,11 @@
       "Icon": "btn-ability-terran-calldownextrasupplies-color",
       "Name": {
         "enUS": "Calldown: Extra Supplies",
-        "ruRU": "Calldown: Extra Supplies"
+        "ruRU": "Запрос: дополнительные припасы "
       },
       "Tooltip": {
         "enUS": "Drops additional supplies, permanently increasing the supply output of the target Supply Depot by <b>8</b> and instantly increasing it's health to 500.",
-        "ruRU": "Drops additional supplies, permanently increasing the supply output of the target Supply Depot by <b>8</b>."
+        "ruRU": "Увеличить количество припасов, сберегаемых в выбранном хранилище, на <b>8</b> ед."
       }
     }
   ]

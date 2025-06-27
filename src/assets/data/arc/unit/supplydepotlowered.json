@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Supply Depot",
-    "ruRU": "Supply Depot"
+    "ruRU": "Хранилище "
   },
   "Description": {
     "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
-    "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+    "ruRU": "Служит для хранения припасов.<br/>Увеличивает максимальный размер армии.<br/>Хранилища можно скрывать под землей и поднимать на поверхность."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 400,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -128,6 +129,13 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "SupplyDepotRaise"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -176,11 +184,11 @@
         "Icon": "btn-building-terran-supplydepot",
         "Name": {
           "enUS": "Raise",
-          "ruRU": "Raise"
+          "ruRU": "Поднять "
         },
         "Tooltip": {
           "enUS": "Raises the structure, preventing ground units from moving across it.",
-          "ruRU": "Raises the structure, preventing ground units from moving across it."
+          "ruRU": "Поднимает строение на поверхность и закрывает проход для наземных войск."
         },
         "Hotkey": "R"
       }
@@ -244,11 +252,11 @@
       "Icon": "btn-building-terran-supplydepot",
       "Name": {
         "enUS": "Raise",
-        "ruRU": "Raise"
+        "ruRU": "Поднять "
       },
       "Tooltip": {
         "enUS": "Raises the structure, preventing ground units from moving across it.",
-        "ruRU": "Raises the structure, preventing ground units from moving across it."
+        "ruRU": "Поднимает строение на поверхность и закрывает проход для наземных войск."
       }
     }
   ]

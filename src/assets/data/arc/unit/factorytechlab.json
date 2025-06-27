@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Tech Lab",
-    "ruRU": "Tech Lab"
+    "ruRU": "Лаборатория "
   },
   "Description": {
     "enUS": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
-    "ruRU": "Enables additional units and research options. A Tech Lab can fit onto any production structure."
+    "ruRU": "Открывает доступ к новым видам войск и разработкам. Построенная лаборатория может быть состыкована с любым производственным строением. "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 400,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -134,6 +135,17 @@
     "Phased"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5Addon",
+    "BarracksTechLabMorph",
+    "TechLabMorph",
+    "StarportTechLabMorph",
+    "FactoryTechLabResearch"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -195,11 +207,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -265,11 +277,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -310,13 +322,58 @@
         "Icon": "btn-upgrade-terran-infernalpreigniter",
         "Name": {
           "enUS": "Research Infernal Pre-Igniter",
-          "ruRU": "Research Infernal Pre-Igniter"
+          "ruRU": "Разработать запал «Адское пламя» "
         },
         "Tooltip": {
           "enUS": "Improves the <span style=\"color: ffff8a\">Hellion's</span> Infernal Flamethrower to deal +<b>5</b> damage vs. light units and the <span style=\"color: ffff8a\">Hellbat's</span> Napalm Spray to deal +<b>12</b> damage vs. light units.",
-          "ruRU": "Improves the <span style=\"color: ffff8a\">Hellion's</span> Infernal Flamethrower to deal +5 damage vs. light units.<br/><br/><span style=\"color: #ffff8a\">Does not affect Hellbat.</span>"
+          "ruRU": "Модификация огнемета <span style=\"color: ffff8a\">«Геллиона»</span>, увеличивающая урон, наносимый легким боевым единицам, на 5 ед. Урон от напалма <span style=\"color: ffff8a\">«Геллитрона»</span>, наносимый легким боевым единицам, увеличивается на 12 ед."
         },
         "Hotkey": "I"
+      },
+      {
+        "Upgrade": "CycloneLockOnDamageUpgrade",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "CycloneResearchLockOnDamageUpgrade",
+            "Requirements": "LearnCycloneLockOnDamageUpgrade"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 140,
+          "Upgrade": "CycloneLockOnDamageUpgrade"
+        },
+        "Time": 140,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "FactoryTechLabResearch,Research10",
+        "id": "CycloneResearchLockOnDamageUpgrade",
+        "Icon": "btn-upgrade-terran-magfieldaccelerator",
+        "Name": {
+          "enUS": "Research Mag-Field Accelerator",
+          "ruRU": "Разработать ускоритель магнитного поля"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: ffff8a\">Cyclone</span> Lock On damage. Deals 600 over <b>20</b> seconds to ground and flying targets.",
+          "ruRU": "Увеличивает урон от «Захвата цели» <span style=\"color: ffff8a\">«Циклонов»</span>. Он наносит 400 ед. урона за <b>20</b> сек. наземным и воздушным целям (+400 ед. урона бронированным целям)."
+        },
+        "Hotkey": "R"
       },
       {
         "Upgrade": "SmartServos",
@@ -354,10 +411,12 @@
         "id": "ResearchSmartServos",
         "Icon": "btn-upgrade-terran-transformationservos",
         "Name": {
-          "enUS": "Research Smart Servos"
+          "enUS": "Research Smart Servos",
+          "ruRU": "Разработать универсальные приводы"
         },
         "Tooltip": {
-          "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes."
+          "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes.",
+          "ruRU": "Позволяют <span style=\"color: ffff8a\">«Геллионам»</span>, <span style=\"color: ffff8a\">«Геллитронам»</span>, <span style=\"color: ffff8a\">«Викингам»</span> и <span style=\"color: ffff8a\">«Торам»</span> быстро переходить из одного режима в другой."
         },
         "Hotkey": "S"
       },
@@ -398,11 +457,11 @@
         "Icon": "btn-upgrade-terran-researchdrillingclaws",
         "Name": {
           "enUS": "Research Drilling Claws",
-          "ruRU": "Research Drilling Claws"
+          "ruRU": "Разработать когти для бурения "
         },
         "Tooltip": {
           "enUS": "Allows <span style=\"color: ffff8a\">Widow Mines</span> to burrow and unburrow two times as fast.",
-          "ruRU": "Allows <span style=\"color: ffff8a\">Widow Mines</span> to burrow and activate three times as fast."
+          "ruRU": "<span style=\"color: ffff8a\">Мины «Вдова»</span> закапываются и активируются втрое быстрее."
         },
         "Hotkey": "C"
       }
@@ -500,7 +559,7 @@
   "$Production": [],
   "$Research": [
     "HighCapacityBarrels",
-    null,
+    "CycloneLockOnDamageUpgrade",
     "SmartServos",
     "DrillClaws"
   ],
@@ -517,11 +576,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -530,11 +589,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -543,11 +602,24 @@
       "Icon": "btn-upgrade-terran-infernalpreigniter",
       "Name": {
         "enUS": "Research Infernal Pre-Igniter",
-        "ruRU": "Research Infernal Pre-Igniter"
+        "ruRU": "Разработать запал «Адское пламя» "
       },
       "Tooltip": {
         "enUS": "Improves the <span style=\"color: ffff8a\">Hellion's</span> Infernal Flamethrower to deal +<b>5</b> damage vs. light units and the <span style=\"color: ffff8a\">Hellbat's</span> Napalm Spray to deal +<b>12</b> damage vs. light units.",
-        "ruRU": "Improves the <span style=\"color: ffff8a\">Hellion's</span> Infernal Flamethrower to deal +5 damage vs. light units.<br/><br/><span style=\"color: #ffff8a\">Does not affect Hellbat.</span>"
+        "ruRU": "Модификация огнемета <span style=\"color: ffff8a\">«Геллиона»</span>, увеличивающая урон, наносимый легким боевым единицам, на 5 ед. Урон от напалма <span style=\"color: ffff8a\">«Геллитрона»</span>, наносимый легким боевым единицам, увеличивается на 12 ед."
+      }
+    },
+    {
+      "AbilCmd": "FactoryTechLabResearch,Research10",
+      "id": "CycloneResearchLockOnDamageUpgrade",
+      "Icon": "btn-upgrade-terran-magfieldaccelerator",
+      "Name": {
+        "enUS": "Research Mag-Field Accelerator",
+        "ruRU": "Разработать ускоритель магнитного поля"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: ffff8a\">Cyclone</span> Lock On damage. Deals 600 over <b>20</b> seconds to ground and flying targets.",
+        "ruRU": "Увеличивает урон от «Захвата цели» <span style=\"color: ffff8a\">«Циклонов»</span>. Он наносит 400 ед. урона за <b>20</b> сек. наземным и воздушным целям (+400 ед. урона бронированным целям)."
       }
     },
     {
@@ -555,10 +627,12 @@
       "id": "ResearchSmartServos",
       "Icon": "btn-upgrade-terran-transformationservos",
       "Name": {
-        "enUS": "Research Smart Servos"
+        "enUS": "Research Smart Servos",
+        "ruRU": "Разработать универсальные приводы"
       },
       "Tooltip": {
-        "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes."
+        "enUS": "Allows <span style=\"color: ffff8a\">Hellions</span>, <span style=\"color: ffff8a\">Hellbats</span>, <span style=\"color: ffff8a\">Vikings</span>, <span style=\"color: ffff8a\">Liberators</span> and <span style=\"color: ffff8a\">Thors</span> to transform quickly between combat modes.",
+        "ruRU": "Позволяют <span style=\"color: ffff8a\">«Геллионам»</span>, <span style=\"color: ffff8a\">«Геллитронам»</span>, <span style=\"color: ffff8a\">«Викингам»</span> и <span style=\"color: ffff8a\">«Торам»</span> быстро переходить из одного режима в другой."
       }
     },
     {
@@ -567,11 +641,11 @@
       "Icon": "btn-upgrade-terran-researchdrillingclaws",
       "Name": {
         "enUS": "Research Drilling Claws",
-        "ruRU": "Research Drilling Claws"
+        "ruRU": "Разработать когти для бурения "
       },
       "Tooltip": {
         "enUS": "Allows <span style=\"color: ffff8a\">Widow Mines</span> to burrow and unburrow two times as fast.",
-        "ruRU": "Allows <span style=\"color: ffff8a\">Widow Mines</span> to burrow and activate three times as fast."
+        "ruRU": "<span style=\"color: ffff8a\">Мины «Вдова»</span> закапываются и активируются втрое быстрее."
       }
     }
   ]

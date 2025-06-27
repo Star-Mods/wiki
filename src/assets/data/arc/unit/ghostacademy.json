@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ghost Academy",
-    "ruRU": "Ghost Academy"
+    "ruRU": "Академия призраков "
   },
   "Description": {
     "enUS": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks",
-    "ruRU": "Contains upgrades for Ghosts. Can build Nukes for Ghosts.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Ghosts at the Barracks"
+    "ruRU": "Позволяет улучшать призраков. Служит для строительства ядерных ракет.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>- обучение призраков в казармах"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1250,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
@@ -132,6 +133,16 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "ArmSiloWithNuke",
+    "GhostAcademyResearch"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown",
+    "ReactorQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -171,11 +182,11 @@
         "Icon": "btn-ability-terran-cloak-color",
         "Name": {
           "enUS": "Research Personal Cloaking",
-          "ruRU": "Research Personal Cloaking"
+          "ruRU": "Разработать способность «Личная маскировка» "
         },
         "Tooltip": {
           "enUS": "Enables <span style=\"color: ffff8a\">Ghosts</span> to use the Cloak ability. Cloak renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-          "ruRU": "Enables <span style=\"color: ffff8a\">Ghosts</span> to use the Cloak ability. Cloak renders a unit invisible to enemies unless it's revealed by detectors or effects."
+          "ruRU": "<span style=\"color: ffff8a\">Призраки</span> получают возможность использовать способность «Маскировка». Замаскированные боевые единицы могут быть выявлены только с помощью детекторов или обнаруживающих эффектов."
         },
         "Hotkey": "C"
       },
@@ -238,11 +249,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -308,11 +319,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -378,11 +389,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -415,11 +426,11 @@
         "Icon": "btn-ability-terran-armnuke",
         "Name": {
           "enUS": "Arm Silo with Nuke",
-          "ruRU": "Arm Silo with Nuke"
+          "ruRU": "Подготовить ядерную ракету "
         },
         "Tooltip": {
           "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <b>20</b> to land, but they deal up to 300 (+200 vs. structures) damage in a large radius.<br/><br/>Use a Ghost to designate the target.",
-          "ruRU": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <b>20</b> to land, but they deal up to 300 (+200 vs. structures) damage in a large radius.<br/><br/>Use a Ghost to designate the target."
+          "ruRU": "Подготовить к запуску тактическую ядерную ракету.<br/><br/>С момента запуска ракеты до взрыва проходит <b>20</b> Ядерный взрыв наносит до 300 ед. урона целям в большом радиусе (+200 ед. урона по строениям).<br/><br/>Для указания цели ядерного удара используйте призраков."
         },
         "Hotkey": "N"
       },
@@ -441,11 +452,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       }
@@ -539,11 +550,11 @@
       "Icon": "btn-ability-terran-cloak-color",
       "Name": {
         "enUS": "Research Personal Cloaking",
-        "ruRU": "Research Personal Cloaking"
+        "ruRU": "Разработать способность «Личная маскировка» "
       },
       "Tooltip": {
         "enUS": "Enables <span style=\"color: ffff8a\">Ghosts</span> to use the Cloak ability. Cloak renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-        "ruRU": "Enables <span style=\"color: ffff8a\">Ghosts</span> to use the Cloak ability. Cloak renders a unit invisible to enemies unless it's revealed by detectors or effects."
+        "ruRU": "<span style=\"color: ffff8a\">Призраки</span> получают возможность использовать способность «Маскировка». Замаскированные боевые единицы могут быть выявлены только с помощью детекторов или обнаруживающих эффектов."
       }
     },
     {
@@ -552,11 +563,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -565,11 +576,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -578,11 +589,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -591,11 +602,11 @@
       "Icon": "btn-ability-terran-armnuke",
       "Name": {
         "enUS": "Arm Silo with Nuke",
-        "ruRU": "Arm Silo with Nuke"
+        "ruRU": "Подготовить ядерную ракету "
       },
       "Tooltip": {
         "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <b>20</b> to land, but they deal up to 300 (+200 vs. structures) damage in a large radius.<br/><br/>Use a Ghost to designate the target.",
-        "ruRU": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <b>20</b> to land, but they deal up to 300 (+200 vs. structures) damage in a large radius.<br/><br/>Use a Ghost to designate the target."
+        "ruRU": "Подготовить к запуску тактическую ядерную ракету.<br/><br/>С момента запуска ракеты до взрыва проходит <b>20</b> Ядерный взрыв наносит до 300 ед. урона целям в большом радиусе (+200 ед. урона по строениям).<br/><br/>Для указания цели ядерного удара используйте призраков."
       }
     }
   ]

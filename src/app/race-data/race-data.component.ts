@@ -103,7 +103,10 @@ export class RaceDataComponent implements OnInit{
     let value  = JSON.stringify(unit[field])
     if(field === "FlagArray"){
       value = JSON.stringify(unit[field].filter(f =>  ![
-        "Movable","Unclickable","Unhighlightable","Untooltipable","KillCredit","ShowResources","ClearRallyOnTargetLost","PlayerRevivable","CameraFollow","PreventDestroy","UseLineOfSight","TownAlert","NoPortraitTalk","TownCamera","ArmorDisabledWhileConstructing"
+        "Movable","Unclickable","Unhighlightable","Untooltipable","KillCredit","ShowResources","ClearRallyOnTargetLost",
+        "PlayerRevivable","CameraFollow","PreventDestroy","UseLineOfSight",
+        "TownAlert","NoPortraitTalk","TownCamera","ArmorDisabledWhileConstructing",
+        "AIThreatGround","AIThreatAir","AISupport"
       ].includes(f)))
     }
     value = value.replace(/"/g,'')

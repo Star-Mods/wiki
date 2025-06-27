@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Suppression Tower",
     "ruRU": "Башня подавления"
@@ -121,6 +122,20 @@
     "Minerals": 200
   },
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "UnderConstruction"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "LaserDefenseCannon",
+      "Turret": "SuppressionTower"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -185,11 +200,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -265,11 +280,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -346,11 +361,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       }
@@ -387,8 +402,26 @@
   "Weapons": [
     {
       "Turret": "SuppressionTower",
-      "id": "LaserDefenseCannon",
+      "EditorCategories": "Race:UED",
       "Icon": "btn-upgrade-terran-hisecautotracking",
+      "DisplayEffect": "ATSLaserBatteryU3",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByAngle",
+      "MinScanRange": 7,
+      "Range": 7,
+      "Arc": 1.4941,
+      "Cost": {
+        "Cooldown": {
+          "Location": "Unit",
+          "TimeUse": 0.225
+        }
+      },
+      "Period": 0.7,
+      "Effect": "ATSLaserBatteryLM3",
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
+      "id": "LaserDefenseCannon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Laser Defense Cannon",
         "ruRU": "Станковая лазерная пушка"
@@ -397,10 +430,7 @@
       "AttributeBonus": {
         "Light": 10
       },
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0.7
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -461,11 +491,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -474,11 +504,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -487,11 +517,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     }
   ]

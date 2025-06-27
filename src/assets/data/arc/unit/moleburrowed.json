@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Mole",
     "ruRU": "Крот"
@@ -123,6 +124,14 @@
   "Speed": 0,
   "Acceleration": 1000,
   "CostCategory": "Army",
+  "AbilArray": [
+    "stop",
+    "attack",
+    "MoleSubterraneanSensors",
+    "MoleDeactivate",
+    "MoleUnbury",
+    "MoleTurnTurret"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -198,11 +207,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -278,11 +287,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -531,11 +540,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Turn",
-          "ruRU": "Развернуться"
+          "ruRU": "Развернуться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to turn toward the target area or unit.",
-          "ruRU": "Orders selected units to turn toward the target area or unit."
+          "ruRU": "Приказать выбранным боевым единицам развернуться к указанной области или боевой единице."
         },
         "Hotkey": "T"
       },
@@ -792,6 +801,10 @@
     "Zergling"
   ],
   "KillDisplay": "Always",
+  "BehaviorArray": [
+    "GenetronPowerSupplyTracker",
+    "TrackGenetronPowerSupplyUnit"
+  ],
   "EquipmentArray": [
     {
       "Effect": "",
@@ -799,6 +812,12 @@
       "Name": "",
       "Tooltip": "",
       "Weapon": "LynxCannonDisabled"
+    }
+  ],
+  "WeaponArray": [
+    {
+      "Link": "",
+      "Turret": "MoleTurretSieged"
     }
   ],
   "Footprint": "",
@@ -885,12 +904,10 @@
   ],
   "$Requirements": [],
   "$Production": [
-    "MoleTurnDummy",
     "GenetronPowerSupplyDummy"
   ],
   "$Research": [],
   "$Morph": [
-    "Mole",
     "MoleRooted"
   ],
   "$Phase": [],
@@ -903,11 +920,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -916,11 +933,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -955,11 +972,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Turn",
-        "ruRU": "Развернуться"
+        "ruRU": "Развернуться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to turn toward the target area or unit.",
-        "ruRU": "Orders selected units to turn toward the target area or unit."
+        "ruRU": "Приказать выбранным боевым единицам развернуться к указанной области или боевой единице."
       }
     },
     {

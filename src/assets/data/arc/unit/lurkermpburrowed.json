@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Lurker",
-    "ruRU": "Lurker"
+    "ruRU": "Скрытень "
   },
   "Description": {
     "enUS": "Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.<br/>Must burrow to attack.</span>",
-    "ruRU": "Anti-ground ambusher. Has a spine attack that damages all enemy units in its line of fire.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.<br/>Must burrow to attack.</span>"
+    "ruRU": "Предназначен для неожиданных атак. Вооружен шипами, поражающими противников на линии огня.<br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.<br/>Может атаковать только в закопанном состоянии.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -121,6 +122,21 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 50,
+  "AbilArray": [
+    "attack",
+    "BurrowLurkerMPUp",
+    "BurrowLurkerMPDown",
+    "move",
+    "stop",
+    "LurkerHoldFire",
+    "LurkerRemoveHoldFire"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "LurkerMP",
+      "Turret": "Lurker"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -195,11 +211,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -276,11 +292,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -315,11 +331,11 @@
         "Icon": "btn-ability-zerg-upburrow-color",
         "Name": {
           "enUS": "Unburrow",
-          "ruRU": "Unburrow"
+          "ruRU": "Выкопаться "
         },
         "Tooltip": {
           "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
+          "ruRU": "Приказать боевой единице выкопаться из-под земли. "
         },
         "Hotkey": "R"
       },
@@ -411,11 +427,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -507,11 +523,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -603,11 +619,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -734,11 +750,11 @@
         "Icon": "btn-ability-terran-holdfire",
         "Name": {
           "enUS": "Hold Fire",
-          "ruRU": "Hold Fire"
+          "ruRU": "Запретить атаку "
         },
         "Tooltip": {
           "enUS": "Orders selected units to ignore enemies that are within range.",
-          "ruRU": "Orders selected units to ignore enemies that are within range."
+          "ruRU": "Приказать выбранным боевым единицам игнорировать находящихся в их досягаемости противников."
         },
         "Hotkey": "F"
       },
@@ -865,11 +881,11 @@
         "Icon": "btn-ability-terran-weaponsfree",
         "Name": {
           "enUS": "Cancel Hold Fire",
-          "ruRU": "Cancel Hold Fire"
+          "ruRU": "Запретить атаку: отмена "
         },
         "Tooltip": {
           "enUS": "Orders selected units to fire at will.",
-          "ruRU": "Orders selected units to fire at will."
+          "ruRU": "Приказывает выбранным войскам атаковать по собственному усмотрению."
         },
         "Hotkey": "G"
       }
@@ -888,20 +904,34 @@
   "Weapons": [
     {
       "Turret": "Lurker",
-      "id": "LurkerMP",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-missileattacks-level0",
+      "DisplayEffect": "LurkerMPDamage",
+      "TargetFilters": "Ground",
+      "Range": 8,
+      "Period": 2,
+      "Marker": {
+        "MatchFlags": {
+          "Id": 1
+        }
+      },
+      "LegacyOptions": {
+        "KeepChanneling": 1
+      },
+      "DamagePoint": 0,
+      "id": "LurkerMP",
+      "class": "CWeaponLegacy",
+      "Tip": "Weapon/Tip/PierceWeapon",
+      "AttackType": "Chaos",
       "Name": {
         "enUS": "Spines",
-        "ruRU": "Spines"
+        "ruRU": "Шипы "
       },
       "Amount": 20,
       "AttributeBonus": {
         "Armored": 10
       },
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 8,
-      "Period": 2
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -917,14 +947,14 @@
       "id": "BurrowLurkerMPUp",
       "Name": {
         "enUS": "Burrow Lurker MPUp",
-        "ruRU": "Burrow Lurker MPUp"
+        "ruRU": "Скрытень - закапывание - сетевая игра - вверх"
       }
     },
     {
       "id": "BurrowLurkerMPDown",
       "Name": {
         "enUS": "Burrow Lurker MPDown",
-        "ruRU": "Burrow Lurker MPDown"
+        "ruRU": "Скрытень - закапывание - сетевая игра - вниз"
       }
     },
     {
@@ -992,11 +1022,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1005,11 +1035,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -1018,11 +1048,11 @@
       "Icon": "btn-ability-zerg-upburrow-color",
       "Name": {
         "enUS": "Unburrow",
-        "ruRU": "Unburrow"
+        "ruRU": "Выкопаться "
       },
       "Tooltip": {
         "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
+        "ruRU": "Приказать боевой единице выкопаться из-под земли. "
       }
     },
     {
@@ -1031,11 +1061,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1044,11 +1074,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1057,11 +1087,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1070,11 +1100,11 @@
       "Icon": "btn-ability-terran-holdfire",
       "Name": {
         "enUS": "Hold Fire",
-        "ruRU": "Hold Fire"
+        "ruRU": "Запретить атаку "
       },
       "Tooltip": {
         "enUS": "Orders selected units to ignore enemies that are within range.",
-        "ruRU": "Orders selected units to ignore enemies that are within range."
+        "ruRU": "Приказать выбранным боевым единицам игнорировать находящихся в их досягаемости противников."
       }
     },
     {
@@ -1083,11 +1113,11 @@
       "Icon": "btn-ability-terran-weaponsfree",
       "Name": {
         "enUS": "Cancel Hold Fire",
-        "ruRU": "Cancel Hold Fire"
+        "ruRU": "Запретить атаку: отмена "
       },
       "Tooltip": {
         "enUS": "Orders selected units to fire at will.",
-        "ruRU": "Orders selected units to fire at will."
+        "ruRU": "Приказывает выбранным войскам атаковать по собственному усмотрению."
       }
     }
   ]

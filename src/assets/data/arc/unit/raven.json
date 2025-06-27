@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Raven",
-    "ruRU": "Raven"
+    "ruRU": "«Ворон»"
   },
   "Description": {
     "enUS": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-    "ruRU": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+    "ruRU": "Воздушная боевая единица поддержки. Может строить автотурели и использовать инвазивную матрицу. Оснащается бронебойными ракетами.<br/><br/><span style=\"color: FFE303\">Детектор</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 140,
   "LifeArmorName": {
     "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
+    "ruRU": "Обшивка воздушной техники терранов "
   },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
@@ -125,6 +126,16 @@
   ],
   "VisionHeight": 15,
   "Sight": 11,
+  "AbilArray": [
+    "stop",
+    "move",
+    "RavenShredderMissile",
+    "RavenScramblerMissile",
+    "BuildAutoTurret"
+  ],
+  "BehaviorArray": [
+    "Detector11"
+  ],
   "TacticalAIThink": "AIThinkRaven",
   "CardLayouts": {
     "Root": [
@@ -216,11 +227,11 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
         },
         "Hotkey": "M"
       },
@@ -296,11 +307,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "S"
       },
@@ -392,11 +403,11 @@
         "Icon": "btn-command-holdposition",
         "Name": {
           "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "ruRU": "Удерживать позицию "
         },
         "Tooltip": {
           "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
         },
         "Hotkey": "H"
       },
@@ -488,11 +499,11 @@
         "Icon": "btn-command-patrol",
         "Name": {
           "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "ruRU": "Патрулировать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
       },
@@ -646,11 +657,11 @@
         "Icon": "btn-building-terran-autoturret",
         "Name": {
           "enUS": "Build Auto-Turret",
-          "ruRU": "Build Auto-Turret"
+          "ruRU": "Построить автотурель "
         },
         "Tooltip": {
           "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "ruRU": "Автоматическая турель. Функционирует в течение <b>11</b> сек.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
         },
         "Hotkey": "T"
       },
@@ -727,11 +738,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Атаковать"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
         },
         "Hotkey": "A"
       },
@@ -823,11 +834,11 @@
         "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения"
+          "ruRU": "Двигаться в режиме наблюдения "
         },
         "Tooltip": {
           "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+          "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
         },
         "Hotkey": "A"
       },
@@ -849,11 +860,11 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "ruRU": "Detector"
+          "ruRU": "Детектор "
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
         }
       },
       {
@@ -994,10 +1005,12 @@
         "id": "RavenShredderMissile",
         "Icon": "btn-ability-terran-shreddermissile-color",
         "Name": {
-          "enUS": "Anti-Armor Missile"
+          "enUS": "Anti-Armor Missile",
+          "ruRU": "Бронебойная ракета"
         },
         "Tooltip": {
-          "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds."
+          "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds.",
+          "ruRU": "Выпускает ракету, которая преследует указанную боевую единицу и при попадании ослабляет броню и броню щитов пораженных целей на <b>3</b> на <b>30</b> сек."
         },
         "Hotkey": "R"
       },
@@ -1146,10 +1159,12 @@
         "id": "RavenScramblerMissile",
         "Icon": "btn-upgrade-terran-interferencematrix",
         "Name": {
-          "enUS": "Interference Matrix"
+          "enUS": "Interference Matrix",
+          "ruRU": "Инвазивная матрица"
         },
         "Tooltip": {
-          "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>"
+          "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>",
+          "ruRU": "Выводит указанную боевую единицу из строя, не позволяя ей атаковать и использовать способности в течение <b>15</b> сек. Замаскированные войска становятся видимыми.<br/><br/><span style=\"color: #ffff8a\">Целью могут быть только механические боевые единицы и псионики.</span>"
         },
         "Hotkey": "C"
       }
@@ -1189,7 +1204,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -1265,11 +1280,11 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
       }
     },
     {
@@ -1278,11 +1293,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -1291,11 +1306,11 @@
       "Icon": "btn-command-holdposition",
       "Name": {
         "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "ruRU": "Удерживать позицию "
       },
       "Tooltip": {
         "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
       }
     },
     {
@@ -1304,11 +1319,11 @@
       "Icon": "btn-command-patrol",
       "Name": {
         "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "ruRU": "Патрулировать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
       }
     },
     {
@@ -1317,11 +1332,11 @@
       "Icon": "btn-building-terran-autoturret",
       "Name": {
         "enUS": "Build Auto-Turret",
-        "ruRU": "Build Auto-Turret"
+        "ruRU": "Построить автотурель "
       },
       "Tooltip": {
         "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "ruRU": "Автоматическая турель. Функционирует в течение <b>11</b> сек.<br/><br/><span style=\"color: #ffff8a\">Атакует наземные и воздушные цели.</span>"
       }
     },
     {
@@ -1330,11 +1345,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Атаковать"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
       }
     },
     {
@@ -1343,11 +1358,11 @@
       "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения"
+        "ruRU": "Двигаться в режиме наблюдения "
       },
       "Tooltip": {
         "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        "ruRU": "Приказать выбранным боевым единицам отправиться в указанную точку или следовать за указанной единицей. Единицы, движущиеся в режиме наблюдения, не будут атаковать противников. "
       }
     },
     {
@@ -1355,10 +1370,12 @@
       "id": "RavenShredderMissile",
       "Icon": "btn-ability-terran-shreddermissile-color",
       "Name": {
-        "enUS": "Anti-Armor Missile"
+        "enUS": "Anti-Armor Missile",
+        "ruRU": "Бронебойная ракета"
       },
       "Tooltip": {
-        "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds."
+        "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds.",
+        "ruRU": "Выпускает ракету, которая преследует указанную боевую единицу и при попадании ослабляет броню и броню щитов пораженных целей на <b>3</b> на <b>30</b> сек."
       }
     },
     {
@@ -1366,10 +1383,12 @@
       "id": "RavenScramblerMissile",
       "Icon": "btn-upgrade-terran-interferencematrix",
       "Name": {
-        "enUS": "Interference Matrix"
+        "enUS": "Interference Matrix",
+        "ruRU": "Инвазивная матрица"
       },
       "Tooltip": {
-        "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>"
+        "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>",
+        "ruRU": "Выводит указанную боевую единицу из строя, не позволяя ей атаковать и использовать способности в течение <b>15</b> сек. Замаскированные войска становятся видимыми.<br/><br/><span style=\"color: #ffff8a\">Целью могут быть только механические боевые единицы и псионики.</span>"
       }
     }
   ]

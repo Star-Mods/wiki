@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Fusion Core",
-    "ruRU": "Fusion Core"
+    "ruRU": "Центр синтеза "
   },
   "Description": {
     "enUS": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
-    "ruRU": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport"
+    "ruRU": "Позволяет улучшать медэваки, «Освободители» и крейсеры.<br/><br/><span style=\"color: ffff8a\">Открывает возможности:</span><br/>– производство крейсеров в космопорте"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
@@ -20,7 +21,7 @@
   "LifeMax": 750,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -129,6 +130,14 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "FusionCoreResearch"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -168,11 +177,11 @@
         "Icon": "btn-ability-terran-yamatogun-color",
         "Name": {
           "enUS": "Research Weapon Refit",
-          "ruRU": "Research Weapon Refit"
+          "ruRU": "Разработать системы вооружения "
         },
         "Tooltip": {
           "enUS": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon.",
-          "ruRU": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon."
+          "ruRU": "<span style=\"color: ffff8a\">Крейсеры</span> получают возможность использовать орудие «Ямато»."
         },
         "Hotkey": "R"
       },
@@ -235,11 +244,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -305,11 +314,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -375,11 +384,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
         "Tooltip": {
           "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
         },
         "Hotkey": "T"
       },
@@ -401,11 +410,11 @@
         "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
-          "ruRU": "Select Builder"
+          "ruRU": "Выбрать строителя "
         },
         "Tooltip": {
           "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
+          "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "Q"
       },
@@ -445,7 +454,7 @@
         "Icon": "btn-upgrade-terran-caduceusreactor",
         "Name": {
           "enUS": "Research Caduceus Reactor",
-          "ruRU": "Research Caduceus Reactor"
+          "ruRU": "Разработать реактор «Кадуцей»"
         },
         "Tooltip": {
           "enUS": "Increases the energy regeneration rate of <span style=\"color: ffff8a\">Medivacs</span> by <b>100</b>%."
@@ -484,11 +493,11 @@
         "Icon": "btn-upgrade-terran-advanceballistics",
         "Name": {
           "enUS": "Research Advanced Ballistics",
-          "ruRU": "Research Advanced Ballistics"
+          "ruRU": "Разработать дальнобойные баллистические орудия"
         },
         "Tooltip": {
           "enUS": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4.",
-          "ruRU": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4."
+          "ruRU": "Увеличивают дальность атаки <span style=\"color: ffff8a\">«Освободителей»</span> в защитном режиме на <b>2</b>."
         },
         "Hotkey": "N"
       }
@@ -569,11 +578,11 @@
       "Icon": "btn-ability-terran-yamatogun-color",
       "Name": {
         "enUS": "Research Weapon Refit",
-        "ruRU": "Research Weapon Refit"
+        "ruRU": "Разработать системы вооружения "
       },
       "Tooltip": {
         "enUS": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon.",
-        "ruRU": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon."
+        "ruRU": "<span style=\"color: ffff8a\">Крейсеры</span> получают возможность использовать орудие «Ямато»."
       }
     },
     {
@@ -582,11 +591,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -595,11 +604,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -608,11 +617,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
       "Tooltip": {
         "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
       }
     },
     {
@@ -621,7 +630,7 @@
       "Icon": "btn-upgrade-terran-caduceusreactor",
       "Name": {
         "enUS": "Research Caduceus Reactor",
-        "ruRU": "Research Caduceus Reactor"
+        "ruRU": "Разработать реактор «Кадуцей»"
       },
       "Tooltip": {
         "enUS": "Increases the energy regeneration rate of <span style=\"color: ffff8a\">Medivacs</span> by <b>100</b>%."
@@ -633,11 +642,11 @@
       "Icon": "btn-upgrade-terran-advanceballistics",
       "Name": {
         "enUS": "Research Advanced Ballistics",
-        "ruRU": "Research Advanced Ballistics"
+        "ruRU": "Разработать дальнобойные баллистические орудия"
       },
       "Tooltip": {
         "enUS": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4.",
-        "ruRU": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4."
+        "ruRU": "Увеличивают дальность атаки <span style=\"color: ffff8a\">«Освободителей»</span> в защитном режиме на <b>2</b>."
       }
     }
   ]

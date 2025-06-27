@@ -1,11 +1,12 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Planetary Fortress",
-    "ruRU": "Planetary Fortress"
+    "ruRU": "Планетарная крепость "
   },
   "Description": {
     "enUS": "Defensive stronghold. <br/>Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "ruRU": "Defensive stronghold. <br/>Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "ruRU": "Хорошо защищенный штаб. <br/>Служит для хранения добытых ресурсов. <br/><br/><span style=\"color: ffff8a\">Атакует только наземные цели.</span> "
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,7 +21,7 @@
   "LifeMax": 1500,
   "LifeArmorName": {
     "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
+    "ruRU": "Обшивка построек терранов "
   },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
@@ -140,6 +141,19 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "RallyCommand",
+    "CommandCenterTrain",
+    "que5PassiveCancelToSelection",
+    "CommandCenterTransport",
+    "InfestedPlanetaryFortressSCBW@Morph"
+  ],
+  "BehaviorArray": [
+    "TerranBuildingBurnDown"
+  ],
   "TacticalAIThink": "AIThinkCommandCenter",
   "CardLayouts": {
     "Root": [
@@ -253,11 +267,11 @@
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "ruRU": "Load"
+          "ruRU": "Загрузить "
         },
         "Tooltip": {
           "enUS": "Loads nearby SCVs into the Planetary Fortress.",
-          "ruRU": "Loads nearby SCVs into the Planetary Fortress."
+          "ruRU": "Загрузить ближайшие КСМ в планетарную крепость. "
         },
         "Hotkey": "O"
       },
@@ -371,11 +385,11 @@
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "ruRU": "Выгрузить всех "
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "ruRU": "Выгружает все войска."
         },
         "Hotkey": "D"
       },
@@ -451,11 +465,11 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Stop"
+          "ruRU": "Отставить "
         },
         "Tooltip": {
           "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
         },
         "Hotkey": "P"
       },
@@ -531,11 +545,11 @@
         "id": "AttackBuildingPFort",
         "Name": {
           "enUS": "Attack",
-          "ruRU": "Attack"
+          "ruRU": "Атаковать "
         },
         "Tooltip": {
           "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
         },
         "Hotkey": "A"
       },
@@ -603,11 +617,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
       },
@@ -673,11 +687,11 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
         "Tooltip": {
           "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
         },
         "Hotkey": "Esc"
       },
@@ -717,11 +731,11 @@
         "Icon": "btn-unit-terran-scv",
         "Name": {
           "enUS": "Train SCV",
-          "ruRU": "Train SCV"
+          "ruRU": "Построить КСМ "
         },
         "Tooltip": {
           "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
         },
         "Hotkey": "S"
       },
@@ -745,11 +759,11 @@
         "Icon": "btn-ability-terran-setrallypoint",
         "Name": {
           "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
+          "ruRU": "Задать точку сбора "
         },
         "Tooltip": {
           "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
       }
@@ -758,6 +772,12 @@
   "GlossaryPriority": 240,
   "GlossaryCategory": "Unit/Category/TerranUnits",
   "HotkeyCategory": "Unit/Category/TerranUnits",
+  "WeaponArray": [
+    {
+      "Link": "TwinIbiksCannon",
+      "Turret": "PlanetaryFortress"
+    }
+  ],
   "GlossaryStrongArray": [
     "Marine",
     "Zergling",
@@ -776,17 +796,24 @@
   "Weapons": [
     {
       "Turret": "PlanetaryFortress",
-      "id": "TwinIbiksCannon",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "Ibiks Cannon",
-        "ruRU": "Ibiks Cannon"
-      },
-      "Amount": 40,
-      "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 6,
-      "Period": 2
+      "Arc": 90,
+      "Period": 2,
+      "Options": {
+        "OnlyFireAtAttackOrderTarget": 0
+      },
+      "id": "TwinIbiksCannon",
+      "class": "CWeaponLegacy",
+      "Effect": "PlanetaryFortressWeapon@MissCheck",
+      "Name": {
+        "enUS": "Ibiks Cannon",
+        "ruRU": "Орудия Ивика "
+      },
+      "Amount": 40,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -894,11 +921,11 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "ruRU": "Load"
+        "ruRU": "Загрузить "
       },
       "Tooltip": {
         "enUS": "Loads nearby SCVs into the Planetary Fortress.",
-        "ruRU": "Loads nearby SCVs into the Planetary Fortress."
+        "ruRU": "Загрузить ближайшие КСМ в планетарную крепость. "
       }
     },
     {
@@ -907,11 +934,11 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "ruRU": "Выгрузить всех "
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "ruRU": "Выгружает все войска."
       }
     },
     {
@@ -920,11 +947,11 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Stop"
+        "ruRU": "Отставить "
       },
       "Tooltip": {
         "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
       }
     },
     {
@@ -932,11 +959,11 @@
       "id": "AttackBuildingPFort",
       "Name": {
         "enUS": "Attack",
-        "ruRU": "Attack"
+        "ruRU": "Атаковать "
       },
       "Tooltip": {
         "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
       }
     },
     {
@@ -945,11 +972,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
       }
     },
     {
@@ -958,11 +985,11 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
       "Tooltip": {
         "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
       }
     },
     {
@@ -971,11 +998,11 @@
       "Icon": "btn-unit-terran-scv",
       "Name": {
         "enUS": "Train SCV",
-        "ruRU": "Train SCV"
+        "ruRU": "Построить КСМ "
       },
       "Tooltip": {
         "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "ruRU": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "ruRU": "Базовая рабочая единица. Добывает ресурсы, строит здания и проводит ремонтные работы.<br/><br/><span style=\"color: #ffff8a\">Атакует только наземные цели.</span>"
       }
     },
     {
@@ -984,11 +1011,11 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
+        "ruRU": "Задать точку сбора "
       },
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
       }
     }
   ]
