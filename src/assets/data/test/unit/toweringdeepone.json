@@ -201,7 +201,11 @@
           "enUS": "Cancel",
           "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -239,7 +243,10 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
             }
           },
           "id": "BuildInProgress"
@@ -262,9 +269,13 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Прервать постройку "
+          "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -340,7 +351,10 @@
           "enUS": "Stop",
           "ruRU": "Отставить "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -379,7 +393,10 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
             }
           },
           "id": "BuildInProgress"
@@ -404,7 +421,11 @@
           "enUS": "Halt",
           "ruRU": "Приостановить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
+        },
+        "Hotkey": "T"
       },
       {
         "Info": {},
@@ -424,8 +445,15 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": "-",
-        "Tooltip": "-"
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
+        "Hotkey": "Y"
       },
       {
         "Info": {
@@ -729,7 +757,11 @@
           "enUS": "Cancel",
           "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -1058,7 +1090,10 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "-"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "DragonTrain",
@@ -1069,17 +1104,21 @@
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
       "id": "Rally",
-      "Name": "-"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "stop",
+        "enUS": "Stop",
         "ruRU": "Stop"
       }
     },
@@ -1130,7 +1169,10 @@
         "enUS": "Cancel",
         "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
@@ -1138,9 +1180,12 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Прервать постройку "
+        "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1150,7 +1195,10 @@
         "enUS": "Stop",
         "ruRU": "Отставить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1160,14 +1208,23 @@
         "enUS": "Halt",
         "ruRU": "Приостановить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": "-",
-      "Tooltip": "-"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneBuild,Halt",
@@ -1177,7 +1234,10 @@
         "enUS": "Cancel",
         "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train1",

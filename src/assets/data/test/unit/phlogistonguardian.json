@@ -197,7 +197,11 @@
           "enUS": "Cancel",
           "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -235,7 +239,10 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
             }
           },
           "id": "BuildInProgress"
@@ -258,9 +265,13 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Прервать постройку "
+          "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -336,7 +347,10 @@
           "enUS": "Stop",
           "ruRU": "Отставить "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -410,8 +424,14 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Name": "-",
-        "Tooltip": "-",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+          "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
+        },
         "Hotkey": "A"
       },
       {
@@ -430,8 +450,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Name": "-",
-        "Tooltip": "-"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Детектор "
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
+        }
       },
       {
         "Cost": {
@@ -536,19 +562,23 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "-"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "stop",
+        "enUS": "Stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack"
+        "ruRU": "Attack",
+        "enUS": "Attack"
       }
     }
   ],
@@ -582,7 +612,10 @@
         "enUS": "Cancel",
         "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
@@ -590,9 +623,12 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Прервать постройку "
+        "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "stop,Stop",
@@ -602,14 +638,23 @@
         "enUS": "Stop",
         "ruRU": "Отставить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Name": "-",
-      "Tooltip": "-"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+        "ruRU": "Приказать атаковать цель, пока она не будет уничтожена или не выйдет из зоны досягаемости. "
+      }
     }
   ]
 }

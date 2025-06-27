@@ -222,7 +222,10 @@
           "enUS": "Move",
           "ruRU": "Двигаться "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -261,7 +264,10 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
             }
           },
           "id": "BuildInProgress"
@@ -284,9 +290,13 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Прервать постройку "
+          "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -324,7 +334,10 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "Halt",
+              "Flags": {
+                "ToSelection": 1
+              }
             }
           },
           "id": "BuildInProgress"
@@ -347,9 +360,13 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel Building",
-          "ruRU": "Прервать постройку "
+          "ruRU": "Отменить "
         },
-        "Tooltip": "-"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -425,7 +442,10 @@
           "enUS": "Stop",
           "ruRU": "Отставить "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -515,10 +535,13 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Move Hold Position",
-          "ruRU": "Двигаться, удерживая позицию "
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -608,10 +631,13 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Move Patrol",
+          "enUS": "Patrol",
           "ruRU": "Патрулировать "
         },
-        "Tooltip": "-",
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -685,8 +711,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": "-",
-        "Tooltip": "-",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       }
     ]
@@ -737,19 +769,23 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "-"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "stop",
+        "enUS": "Stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack"
+        "ruRU": "Attack",
+        "enUS": "Attack"
       }
     },
     {
@@ -761,6 +797,11 @@
   ],
   "$Upgrades": [
     "NotRazorback1",
+    "AscendedRazorback",
+    "Button/Tooltip/AscendedRazorback",
+    "RazorbackNoFootprint",
+    "Button/Tooltip/Razorback",
+    "Razorback",
     "FrontierDeepOneBuild",
     "DragonMeleeAttacksLevel1",
     "DragonMeleeAttacks",
@@ -769,8 +810,6 @@
     "LesserDeepOneNoFootprint",
     "LesserDeepOne",
     "DragonPlateArmorLevel1",
-    "RazorbackNoFootprint",
-    "Button/Tooltip/AscendedRazorback",
     "ToweringDeepOneNoFootprint",
     "ToweringDeepOne",
     "DenizenoftheDeepBuild",
@@ -783,9 +822,6 @@
     "GreaterDeepOneNoFootprint",
     "DenizenoftheDeep",
     "Dragon",
-    "AscendedRazorback",
-    "Button/Tooltip/Razorback",
-    "Razorback",
     "Razorback_Death",
     null
   ],
@@ -807,7 +843,10 @@
         "enUS": "Move",
         "ruRU": "Двигаться "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
@@ -815,9 +854,12 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Прервать постройку "
+        "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
@@ -825,9 +867,12 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel Building",
-        "ruRU": "Прервать постройку "
+        "ruRU": "Отменить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "stop,Stop",
@@ -837,34 +882,49 @@
         "enUS": "Stop",
         "ruRU": "Отставить "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Move Hold Position",
-        "ruRU": "Двигаться, удерживая позицию "
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Move Patrol",
+        "enUS": "Patrol",
         "ruRU": "Патрулировать "
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": "-",
-      "Tooltip": "-"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     }
   ]
 }
