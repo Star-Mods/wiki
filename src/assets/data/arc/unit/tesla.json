@@ -1,6 +1,12 @@
 {
-  "Name": "Tesla",
-  "Description": "Area control specialist. Can construct and launch specialized charges.<br/><br/><span style=\"color: #78F0FF\">Power user.</span>",
+  "Name": {
+    "enUS": "Tesla",
+    "ruRU": "Тесла"
+  },
+  "Description": {
+    "enUS": "Area control specialist. Can construct and launch specialized charges.<br/><br/><span style=\"color: 78F0FF\">Power user.</span>",
+    "ruRU": "Юнит для контроля области. Может создавать и запускать специализированные заряды."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": "Ground Mechanical Plating",
+  "LifeArmorName": {
+    "enUS": "Ground Mechanical Plating",
+    "ruRU": "Броня наземной механики"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 360,
@@ -68,16 +77,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Tesla/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Tesla/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Tesla/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Tesla/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -204,8 +215,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -294,8 +311,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -369,8 +392,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -443,8 +472,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -533,8 +568,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -623,8 +664,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -670,8 +717,14 @@
         "AbilCmd": "ConstructTeslaCharge,Specialize1",
         "id": "TeslaConstructCharge",
         "Icon": "btn-ability-genetron-constructteslacharge",
-        "Tooltip": "Arms the Tesla with a charge which can be launched to provide combat support.",
-        "Name": "Construct Charge",
+        "Name": {
+          "enUS": "Construct Charge",
+          "ruRU": "Сконструировать Заряд"
+        },
+        "Tooltip": {
+          "enUS": "Arms the Tesla with a charge which can be launched to provide combat support.",
+          "ruRU": "тесла получает заряд, который может быть выпущен для обеспечения боевой поддержки."
+        },
         "Hotkey": "C"
       },
       {
@@ -732,8 +785,14 @@
         "AbilCmd": "que1Passive,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -835,7 +894,7 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "LaunchShockCharge",
-              "Requirements": "TeslaAbilitiesReq"
+              "Requirements": "GenetronPowerBalance0150"
             }
           },
           "FollowRange": 5,
@@ -878,8 +937,14 @@
         "AbilCmd": "LaunchShockCharge,Execute",
         "id": "LaunchShockCharge",
         "Icon": "btn-unit-genetron-teslashockcharge",
-        "Tooltip": "Launches the Tesla's charge to the target point with the Shock Charge configuration.<br/><br/>Shock Charges deal <b>18</b> damage in an area every <b>2</b> seconds at the cost of energy. Each unit hit uses <b>3</b> energy and has <b>18</b> energy taken from them.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: #78F0FF\">Uses <b>150</b> power.<c/>",
-        "Name": "Launch Shock Charge",
+        "Name": {
+          "enUS": "Launch Shock Charge",
+          "ruRU": "Запустить шокирующий заряд"
+        },
+        "Tooltip": {
+          "enUS": "Launches the Tesla's charge to the target point with the Shock Charge configuration.<br/><br/>Shock Charges deal <b>18</b> damage in an area every <b>2</b> seconds at the cost of energy. Each unit hit uses <b>3</b> energy and has <b>18</b> energy taken from them.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: 78F0FF\">Uses <b>150</b> power.<c/>",
+          "ruRU": "Запускает a <span style=\"color: FFFF80\">Электрический заряд</span> в выбранную точку."
+        },
         "Hotkey": "E"
       },
       {
@@ -981,7 +1046,7 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "LaunchCloakCharge",
-              "Requirements": "TeslaAbilitiesReq"
+              "Requirements": "GenetronPowerBalance0150"
             }
           },
           "FollowRange": 5,
@@ -1026,8 +1091,14 @@
         "AbilCmd": "LaunchCloakCharge,Execute",
         "id": "LaunchCloakCharge",
         "Icon": "btn-unit-genetron-teslastealthcharge",
-        "Tooltip": "Launches the Tesla's charge to the target point with the Cloak Charge configuration.<br/><br/>Cloak Charges cloak units in an area. Energy is used over time.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: #78F0FF\">Uses <b>150</b> power.<c/>",
-        "Name": "Launch Cloak Charge",
+        "Name": {
+          "enUS": "Launch Cloak Charge",
+          "ruRU": "Запустить маскирующий заряд"
+        },
+        "Tooltip": {
+          "enUS": "Launches the Tesla's charge to the target point with the Cloak Charge configuration.<br/><br/>Cloak Charges cloak units in an area. Energy is used over time.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: 78F0FF\">Uses <b>150</b> power.<c/>",
+          "ruRU": "Запускает <span style=\"color: FFFF80\">Маскирующий заряд</span> в выбранную точку."
+        },
         "Hotkey": "R"
       }
     ]
@@ -1060,44 +1131,68 @@
   "EnergyMax": 200,
   "EnergyRegenRate": 2.8125,
   "Icon": "btn-unit-genetron-tesla",
+  "Model": "Tesla",
   "LifeArmorIcon": "btn-upgrade-genetron-groundmechplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackGenetronPowerSupplyUnit"
-    },
-    {
-      "id": "TeslaAbilitiesReq"
+      "id": "TrackGenetronPowerSupplyUnit",
+      "Name": {
+        "enUS": "Track Genetron Power Supply Unit"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "que1Passive",
-      "Name": "Queue (1) Passive"
+      "Name": {
+        "enUS": "Queue (1) Passive",
+        "ruRU": "Queue (1) Passive"
+      }
     },
     {
       "id": "ConstructTeslaCharge",
-      "Name": "Construct Tesla Charge"
+      "Name": {
+        "enUS": "Construct Tesla Charge",
+        "ruRU": "Construct Tesla Charge"
+      }
     },
     {
       "id": "LaunchShockCharge",
-      "Name": "Launch Shock Charge"
+      "Name": {
+        "enUS": "Launch Shock Charge",
+        "ruRU": "Launch Shock Charge"
+      }
     },
     {
       "id": "LaunchCloakCharge",
-      "Name": "Launch Cloak Charge"
+      "Name": {
+        "enUS": "Launch Cloak Charge",
+        "ruRU": "Launch Cloak Charge"
+      }
     }
   ],
   "$Upgrades": [
@@ -1112,14 +1207,15 @@
     "CountUnitTeslaQueuedOrBetterAtUnit",
     "Fabricator",
     "Fabricator",
-    "CountUnitTeslaInProgressOnlyAtUnit",
     "GenetronGroundPlatingRevert",
-    "InternalProducers"
+    "InternalProducers",
+    "CountUnitTeslaInProgressOnlyAtUnit"
   ],
   "$Requirements": [],
   "$Production": [
     "ShockCharge",
-    "CloakCharge"
+    "CloakCharge",
+    "GenetronPowerSupplyDummy"
   ],
   "$Research": [],
   "$Morph": [],
@@ -1132,71 +1228,131 @@
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "ConstructTeslaCharge,Specialize1",
       "id": "TeslaConstructCharge",
       "Icon": "btn-ability-genetron-constructteslacharge",
-      "Tooltip": "Arms the Tesla with a charge which can be launched to provide combat support.",
-      "Name": "Construct Charge"
+      "Name": {
+        "enUS": "Construct Charge",
+        "ruRU": "Сконструировать Заряд"
+      },
+      "Tooltip": {
+        "enUS": "Arms the Tesla with a charge which can be launched to provide combat support.",
+        "ruRU": "тесла получает заряд, который может быть выпущен для обеспечения боевой поддержки."
+      }
     },
     {
       "AbilCmd": "que1Passive,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "LaunchShockCharge,Execute",
       "id": "LaunchShockCharge",
       "Icon": "btn-unit-genetron-teslashockcharge",
-      "Tooltip": "Launches the Tesla's charge to the target point with the Shock Charge configuration.<br/><br/>Shock Charges deal <b>18</b> damage in an area every <b>2</b> seconds at the cost of energy. Each unit hit uses <b>3</b> energy and has <b>18</b> energy taken from them.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: #78F0FF\">Uses <b>150</b> power.<c/>",
-      "Name": "Launch Shock Charge"
+      "Name": {
+        "enUS": "Launch Shock Charge",
+        "ruRU": "Запустить шокирующий заряд"
+      },
+      "Tooltip": {
+        "enUS": "Launches the Tesla's charge to the target point with the Shock Charge configuration.<br/><br/>Shock Charges deal <b>18</b> damage in an area every <b>2</b> seconds at the cost of energy. Each unit hit uses <b>3</b> energy and has <b>18</b> energy taken from them.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: 78F0FF\">Uses <b>150</b> power.<c/>",
+        "ruRU": "Запускает a <span style=\"color: FFFF80\">Электрический заряд</span> в выбранную точку."
+      }
     },
     {
       "AbilCmd": "LaunchCloakCharge,Execute",
       "id": "LaunchCloakCharge",
       "Icon": "btn-unit-genetron-teslastealthcharge",
-      "Tooltip": "Launches the Tesla's charge to the target point with the Cloak Charge configuration.<br/><br/>Cloak Charges cloak units in an area. Energy is used over time.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: #78F0FF\">Uses <b>150</b> power.<c/>",
-      "Name": "Launch Cloak Charge"
+      "Name": {
+        "enUS": "Launch Cloak Charge",
+        "ruRU": "Запустить маскирующий заряд"
+      },
+      "Tooltip": {
+        "enUS": "Launches the Tesla's charge to the target point with the Cloak Charge configuration.<br/><br/>Cloak Charges cloak units in an area. Energy is used over time.<br/><br/>The charge is destroyed when its energy is exhausted.<br/><br/><span style=\"color: 78F0FF\">Uses <b>150</b> power.<c/>",
+        "ruRU": "Запускает <span style=\"color: FFFF80\">Маскирующий заряд</span> в выбранную точку."
+      }
     }
   ]
 }

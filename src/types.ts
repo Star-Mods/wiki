@@ -14,6 +14,7 @@ interface SCInstance<T>{
 interface SCUnit extends SCInstance<SCUnit>{
   [key: string]: any,
   Description: string,
+  Model: string,
   LifeArmorIcon: SCIcon,
   ShieldArmorIcon: SCIcon,
   Name: string,
@@ -188,6 +189,7 @@ interface SC2DataRace {
   "Name": string
 }
 interface SC2Data {
+  "id": string,
   "discord": string,
   "races": SC2DataRace[]
 }

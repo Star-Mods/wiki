@@ -1,6 +1,12 @@
 {
-  "Name": "Swarm Host",
-  "Description": "Siege unit that attacks while burrowed by spawning Locust minions.<br/><br/><c val=\"#ColorAttackInfo\">Locusts can attack ground units.</span>",
+  "Name": {
+    "ruRU": "Swarm Host",
+    "enUS": "Swarm Host"
+  },
+  "Description": {
+    "enUS": "Siege unit that attacks while burrowed by spawning Locust minions.<br/><br/><span style=\"color: #ffff8a\">Locusts can attack ground units.</span>",
+    "ruRU": "Siege unit that attacks while burrowed by spawning Locust minions.<br/><br/><span style=\"color: #ffff8a\">Locusts can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 160,
   "LifeMax": 160,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Burrowed",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -69,16 +78,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SwarmHostBurrowedMP/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SwarmHostBurrowedMP/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SwarmHostBurrowedMP/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SwarmHostBurrowedMP/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -151,8 +162,14 @@
         "AbilCmd": "MorphToSwarmHostMP,Execute",
         "id": "SwarmHostBurrowUp",
         "Icon": "btn-ability-zerg-upburrow-color",
-        "Tooltip": "Returns the unit to the surface.",
-        "Name": "Unburrow",
+        "Name": {
+          "enUS": "Unburrow",
+          "ruRU": "Unburrow"
+        },
+        "Tooltip": {
+          "enUS": "Returns the unit to the surface.",
+          "ruRU": "Returns the unit to the surface."
+        },
         "Hotkey": "R"
       },
       {
@@ -226,8 +243,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -316,8 +339,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -453,8 +482,14 @@
         "AbilCmd": "SpawnLocustsTargeted,Execute",
         "id": "VoidSwarmHostSpawnLocust",
         "Icon": "btn-unit-zerg-locust",
-        "Tooltip": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Spawn Locust",
+        "Name": {
+          "enUS": "Spawn Locust",
+          "ruRU": "Spawn Locust"
+        },
+        "Tooltip": {
+          "enUS": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -473,8 +508,14 @@
         "Type": "Passive",
         "id": "FlyingLocusts",
         "Icon": "btn-unit-zerg-locustflyerex3",
-        "Tooltip": "Locusts spawned by the Swarm Host can fly. Flying Locusts can use Swoop to land and attack.",
-        "Name": "Flying Locusts"
+        "Name": {
+          "enUS": "Flying Locusts",
+          "ruRU": "Flying Locusts"
+        },
+        "Tooltip": {
+          "enUS": "Locusts spawned by the Swarm Host can fly. Flying Locusts can use Swoop to land and attack.",
+          "ruRU": "Locusts spawned by the Swarm Host can fly. Flying Locusts can use Swoop to land and attack."
+        }
       },
       {
         "Info": {
@@ -562,8 +603,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -636,8 +683,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -726,8 +779,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -816,8 +875,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       }
     ]
@@ -832,6 +897,7 @@
   "TacticalAIThink": "AIThinkSwarmHostMP",
   "id": "SwarmHostBurrowedMP",
   "Icon": "btn-unit-zerg-swarmhost",
+  "Model": "SwarmHost",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -839,26 +905,35 @@
   "Abilities": [
     {
       "id": "MorphToSwarmHostMP",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "SpawnLocustsTargeted",
-      "Name": "Spawn Locusts Targeted"
+      "Name": {
+        "enUS": "Spawn Locusts Targeted",
+        "ruRU": "Spawn Locusts Targeted"
+      }
     }
   ],
   "$Upgrades": [
-    "MorphToSwarmHostBurrowedMP",
-    "SwarmHostBurrowedMP",
     "IsSwarmHostBurrowedMP",
+    "SwarmHostBurrowedMP",
+    "Burrow",
+    "MorphToSwarmHostBurrowedMP",
     "SwarmHostMP",
     "ZergGroundArmorsLevel1",
     "ZergGroundArmorsLevel2",
     "ZergGroundArmorsLevel3",
-    "Burrow",
     "IsSwarmHostBurrowed",
     "EggMonsterHarpyRange",
     "SwarmHostMPBurrowedSplat",
@@ -867,6 +942,7 @@
   ],
   "$Requirements": [],
   "$Production": [
+    "LocustMP",
     "LocustMP"
   ],
   "$Research": [],
@@ -882,57 +958,105 @@
       "AbilCmd": "MorphToSwarmHostMP,Execute",
       "id": "SwarmHostBurrowUp",
       "Icon": "btn-ability-zerg-upburrow-color",
-      "Tooltip": "Returns the unit to the surface.",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      },
+      "Tooltip": {
+        "enUS": "Returns the unit to the surface.",
+        "ruRU": "Returns the unit to the surface."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "SpawnLocustsTargeted,Execute",
       "id": "VoidSwarmHostSpawnLocust",
       "Icon": "btn-unit-zerg-locust",
-      "Tooltip": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Spawn Locust"
+      "Name": {
+        "enUS": "Spawn Locust",
+        "ruRU": "Spawn Locust"
+      },
+      "Tooltip": {
+        "enUS": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Spawns 2 Locusts. Locusts have a <b>25</b> second timed life.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     }
   ]
 }

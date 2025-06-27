@@ -1,6 +1,12 @@
 {
-  "Name": "Grub",
-  "Description": "Can mutate into various Xayid units.",
+  "Name": {
+    "enUS": "Grub",
+    "ruRU": "Личинка"
+  },
+  "Description": {
+    "enUS": "Can mutate into various Xayid units.",
+    "ruRU": "Может мутировать в различные боевые единицы зейтов."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 50,
   "LifeMax": 50,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Grub/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Grub/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Grub/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Grub/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -122,8 +133,14 @@
         "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train1",
         "id": "Reviler",
         "Icon": "btn-unit-xayid-reviler",
-        "Tooltip": "Ranged attacker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-        "Name": "Mutate into Reviler",
+        "Name": {
+          "enUS": "Mutate into Reviler",
+          "ruRU": "Мутировать в Ревилера"
+        },
+        "Tooltip": {
+          "enUS": "Ranged attacker.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+          "ruRU": "Единица дальнего боя.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные единицы.</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -137,12 +154,12 @@
           "Unit": [
             "Ferrion"
           ],
-          "Time": 35
+          "Time": 25
         },
         "Unit": [
           "Ferrion"
         ],
-        "Time": 35,
+        "Time": 25,
         "Cost": {
           "Minerals": 125,
           "Vespene": 75,
@@ -159,8 +176,14 @@
         "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train2",
         "id": "Ferrion",
         "Icon": "btn-unit-xayid-ferrion",
-        "Tooltip": "Transport and detector flyer.<br/><br/><span style=\"color: #FFFF00\">Detector</span>",
-        "Name": "Mutate into Ferrion",
+        "Name": {
+          "enUS": "Mutate into Ferrion",
+          "ruRU": "Мутировать в Ферриона"
+        },
+        "Tooltip": {
+          "enUS": "Transport and detector flyer.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Летающий транспортник и детектор.<br/><br/><span style=\"color: FFFF00\">Детектор</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -196,8 +219,14 @@
         "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train7",
         "id": "Prowler",
         "Icon": "btn-unit-xayid-prowler",
-        "Tooltip": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
-        "Name": "Mutate into Prowler",
+        "Name": {
+          "enUS": "Mutate into Prowler",
+          "ruRU": "Мутировать в Бродягу"
+        },
+        "Tooltip": {
+          "enUS": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
+          "ruRU": "Быстрый специалист. Может использовать ядовитые мины и ослепляющий взрыв."
+        },
         "Hotkey": "W"
       },
       {
@@ -233,8 +262,14 @@
         "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train4",
         "id": "Spitter",
         "Icon": "btn-unit-xayid-spitter",
-        "Tooltip": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Mutate into Spitter",
+        "Name": {
+          "enUS": "Mutate into Spitter",
+          "ruRU": "Мутировать в Спиттера"
+        },
+        "Tooltip": {
+          "enUS": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+          "ruRU": "Зверь дальнего боя, который плюется кислотой во врагов, нанося урон по области. Может наносить удары по определенным точкам на земле.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -271,8 +306,14 @@
         "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train5",
         "id": "Massalisk",
         "Icon": "btn-unit-xayid-massalisk",
-        "Tooltip": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Mutate into Massalisk",
+        "Name": {
+          "enUS": "Mutate into Massalisk",
+          "ruRU": "Мутировать в Массалиска"
+        },
+        "Tooltip": {
+          "enUS": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+          "ruRU": "Большой, бронированный зверь с низким радиусом атаки и уроном по области. Может использовать неподвижность.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "A"
       },
       {
@@ -332,8 +373,14 @@
         "AbilCmd": "que1,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -371,22 +418,34 @@
     "Massalisk"
   ],
   "Icon": "btn-unit-xayidling-grub",
+  "Model": "Feederling",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "LarvaWander"
+      "id": "LarvaWander",
+      "Name": {
+        "enUS": "Larva Wander",
+        "ruRU": "Larva Wander"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "que1",
-      "Name": "Queue (1)"
+      "Name": {
+        "ruRU": "Queue (1)",
+        "enUS": "Queue (1)"
+      }
     },
     {
       "id": "BiomassHatcheryLarvaMutateXayidUnits",
-      "Name": "Mutate Xayid Units"
+      "Name": {
+        "enUS": "Mutate Xayid Units",
+        "ruRU": "Mutate Xayid Units"
+      }
     }
   ],
   "$Upgrades": [
@@ -405,10 +464,6 @@
   ],
   "$Research": [],
   "$Morph": [
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
     "XayidCocoon"
   ],
   "$Phase": [],
@@ -418,43 +473,79 @@
       "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train1",
       "id": "Reviler",
       "Icon": "btn-unit-xayid-reviler",
-      "Tooltip": "Ranged attacker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-      "Name": "Mutate into Reviler"
+      "Name": {
+        "enUS": "Mutate into Reviler",
+        "ruRU": "Мутировать в Ревилера"
+      },
+      "Tooltip": {
+        "enUS": "Ranged attacker.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+        "ruRU": "Единица дальнего боя.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные единицы.</span>"
+      }
     },
     {
       "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train2",
       "id": "Ferrion",
       "Icon": "btn-unit-xayid-ferrion",
-      "Tooltip": "Transport and detector flyer.<br/><br/><span style=\"color: #FFFF00\">Detector</span>",
-      "Name": "Mutate into Ferrion"
+      "Name": {
+        "enUS": "Mutate into Ferrion",
+        "ruRU": "Мутировать в Ферриона"
+      },
+      "Tooltip": {
+        "enUS": "Transport and detector flyer.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Летающий транспортник и детектор.<br/><br/><span style=\"color: FFFF00\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train7",
       "id": "Prowler",
       "Icon": "btn-unit-xayid-prowler",
-      "Tooltip": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
-      "Name": "Mutate into Prowler"
+      "Name": {
+        "enUS": "Mutate into Prowler",
+        "ruRU": "Мутировать в Бродягу"
+      },
+      "Tooltip": {
+        "enUS": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
+        "ruRU": "Быстрый специалист. Может использовать ядовитые мины и ослепляющий взрыв."
+      }
     },
     {
       "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train4",
       "id": "Spitter",
       "Icon": "btn-unit-xayid-spitter",
-      "Tooltip": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Mutate into Spitter"
+      "Name": {
+        "enUS": "Mutate into Spitter",
+        "ruRU": "Мутировать в Спиттера"
+      },
+      "Tooltip": {
+        "enUS": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+        "ruRU": "Зверь дальнего боя, который плюется кислотой во врагов, нанося урон по области. Может наносить удары по определенным точкам на земле.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "BiomassHatcheryLarvaMutateXayidUnits,Train5",
       "id": "Massalisk",
       "Icon": "btn-unit-xayid-massalisk",
-      "Tooltip": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Mutate into Massalisk"
+      "Name": {
+        "enUS": "Mutate into Massalisk",
+        "ruRU": "Мутировать в Массалиска"
+      },
+      "Tooltip": {
+        "enUS": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+        "ruRU": "Большой, бронированный зверь с низким радиусом атаки и уроном по области. Может использовать неподвижность.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "que1,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     }
   ]
 }

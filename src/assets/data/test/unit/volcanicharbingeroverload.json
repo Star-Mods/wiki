@@ -1,9 +1,10 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Overload"
   },
   "Description": {
-    "enUS": "Overloads the next attack to deal increased damage to the target and all units behind it.<br/><span style=\"color: #ffff8a\">Overload 1: <b>50</b>% increased damage and small area,<br/>Overload 2:<b>150</b>% increased damage and medium area,<br/>Overload 3: <b>300</b>% increased damage and large area.</span><br/><span style=\"color: FF0000\">Cannot charge while attacking.</span>"
+    "enUS": "Overloads the next attack to hit an additional time for each charge.<br/><span style=\"color: #ffff8a\">Maximum of 3 charges.</span><br/><span style=\"color: FF0000\">Cannot charge while attacking.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -66,16 +67,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "VolcanicHarbingerOverload/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "VolcanicHarbingerOverload/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "VolcanicHarbingerOverload/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "VolcanicHarbingerOverload/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -90,24 +93,36 @@
   "Attributes": [
     "Biological"
   ],
+  "BehaviorArray": [
+    "DragonLineage"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
   "id": "VolcanicHarbingerOverload",
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 10
+    "Minerals": 5
   },
   "Icon": "btn-ability-kerrigan-crushinggrip",
   "CardLayouts": {},
   "Weapons": [],
-  "Behaviors": [],
+  "Behaviors": [
+    {
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
+    }
+  ],
   "Abilities": [],
   "$Upgrades": [
+    "CountUnitVolcanicHarbingerOverloadCompleteOnlyAtUnit",
+    "VolcanicHarbingerOverload",
     "CountUnitVolcanicHarbingerOverloadQueuedOrBetterAtUnit",
     "VolcanicHarbingerOverload",
-    "VolcanicHarbingerOverload",
-    "CountUnitVolcanicHarbingerOverloadCompleteOnlyAtUnit",
+    "VolcanicHarbingerPlasmaCatalyst",
     "VolcanicHarbingerOverloadUnit"
   ],
   "$Requirements": [],

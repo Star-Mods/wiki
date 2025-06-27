@@ -1,6 +1,12 @@
 {
-  "Name": "Filtering Plant",
-  "Description": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
+  "Name": {
+    "enUS": "Filtering Plant",
+    "ruRU": "Фильтровальная установка"
+  },
+  "Description": {
+    "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FilteringPlant/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FilteringPlant/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FilteringPlant/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FilteringPlant/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -180,8 +191,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -212,25 +229,40 @@
   "SubgroupPriority": 1,
   "GlossaryPriority": 2,
   "Icon": "btn-building-genetron-filteringplant",
+  "Model": "FilteringPlant",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGas",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas",
+        "ruRU": "Harvestable Vespene Geyser Gas"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -253,8 +285,14 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

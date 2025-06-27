@@ -1,6 +1,12 @@
 {
-  "Name": "Engineering Bay",
-  "Description": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
+  "Name": {
+    "enUS": "Engineering Bay",
+    "ruRU": "Engineering Bay"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers",
+    "ruRU": "Contains upgrades for Terran infantry and structures. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Missile Turrets from SCVs<br/>- Sensor Towers from SCVs<br/>- Planetary Fortresses from Command Centers"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EngineeringBay/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EngineeringBay/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EngineeringBay/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EngineeringBay/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -153,8 +164,14 @@
         "AbilCmd": "EngineeringBayResearch,Research3",
         "id": "TerranInfantryWeaponsLevel1",
         "Icon": "btn-upgrade-terran-infantryweaponslevel1",
-        "Tooltip": "Upgrades the damage dealt by infantry units.",
-        "Name": "Upgrade Infantry Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Infantry Weapons Level 1",
+          "ruRU": "Upgrade Infantry Weapons Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage dealt by infantry units.",
+          "ruRU": "Upgrades the damage dealt by infantry units."
+        },
         "Hotkey": "E"
       },
       {
@@ -191,8 +208,14 @@
         "AbilCmd": "EngineeringBayResearch,Research4",
         "id": "TerranInfantryWeaponsLevel2",
         "Icon": "btn-upgrade-terran-infantryweaponslevel2",
-        "Tooltip": "Further upgrades the damage dealt by infantry units.",
-        "Name": "Upgrade Infantry Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Infantry Weapons Level 2",
+          "ruRU": "Upgrade Infantry Weapons Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage dealt by infantry units.",
+          "ruRU": "Further upgrades the damage dealt by infantry units."
+        },
         "Hotkey": "E"
       },
       {
@@ -229,8 +252,14 @@
         "AbilCmd": "EngineeringBayResearch,Research5",
         "id": "TerranInfantryWeaponsLevel3",
         "Icon": "btn-upgrade-terran-infantryweaponslevel3",
-        "Tooltip": "Maximizes the damage dealt by infantry units.",
-        "Name": "Upgrade Infantry Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Infantry Weapons Level 3",
+          "ruRU": "Upgrade Infantry Weapons Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage dealt by infantry units.",
+          "ruRU": "Maximizes the damage dealt by infantry units."
+        },
         "Hotkey": "E"
       },
       {
@@ -290,8 +319,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -354,8 +389,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -418,8 +459,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -457,8 +504,14 @@
         "AbilCmd": "EngineeringBayResearch,Research6",
         "id": "ResearchNeosteelFrame",
         "Icon": "btn-upgrade-terran-neosteelframe",
-        "Tooltip": "Increases the cargo space of <span style=\"color: #ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: #ffff8a\">Command Centers</span> and <span style=\"color: #ffff8a\">Planetary Fortresses</span>.",
-        "Name": "Research Neosteel Frame",
+        "Name": {
+          "enUS": "Research Neosteel Frame",
+          "ruRU": "Research Neosteel Frame"
+        },
+        "Tooltip": {
+          "enUS": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>.",
+          "ruRU": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>."
+        },
         "Hotkey": "N"
       },
       {
@@ -496,8 +549,14 @@
         "AbilCmd": "EngineeringBayResearch,Research1",
         "id": "ResearchHiSecAutoTracking",
         "Icon": "btn-upgrade-terran-hisecautotracking",
-        "Tooltip": "Adds +1 range to <span style=\"color: #ffff8a\">Auto-Turrets</span>, <span style=\"color: #ffff8a\">Missile Turrets</span>, <span style=\"color: #ffff8a\">Planetary Fortresses</span>, and <span style=\"color: #ffff8a\">Point Defense Drones</span>.",
-        "Name": "Research Hi-Sec Auto Tracking",
+        "Name": {
+          "enUS": "Research Hi-Sec Auto Tracking",
+          "ruRU": "Research Hi-Sec Auto Tracking"
+        },
+        "Tooltip": {
+          "enUS": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>.",
+          "ruRU": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>."
+        },
         "Hotkey": "H"
       },
       {
@@ -534,8 +593,14 @@
         "AbilCmd": "EngineeringBayResearch,Research7",
         "id": "TerranInfantryArmorLevel1",
         "Icon": "btn-upgrade-terran-infantryarmorlevel1",
-        "Tooltip": "Upgrades the armor of infantry units.",
-        "Name": "Upgrade Infantry Armor Level 1",
+        "Name": {
+          "enUS": "Upgrade Infantry Armor Level 1",
+          "ruRU": "Upgrade Infantry Armor Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of infantry units.",
+          "ruRU": "Upgrades the armor of infantry units."
+        },
         "Hotkey": "A"
       },
       {
@@ -572,8 +637,14 @@
         "AbilCmd": "EngineeringBayResearch,Research8",
         "id": "TerranInfantryArmorLevel2",
         "Icon": "btn-upgrade-terran-infantryarmorlevel2",
-        "Tooltip": "Further upgrades the armor of infantry units.",
-        "Name": "Upgrade Infantry Armor Level 2",
+        "Name": {
+          "enUS": "Upgrade Infantry Armor Level 2",
+          "ruRU": "Upgrade Infantry Armor Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of infantry units.",
+          "ruRU": "Further upgrades the armor of infantry units."
+        },
         "Hotkey": "A"
       },
       {
@@ -610,8 +681,14 @@
         "AbilCmd": "EngineeringBayResearch,Research9",
         "id": "TerranInfantryArmorLevel3",
         "Icon": "btn-upgrade-terran-infantryarmorlevel3",
-        "Tooltip": "Maximizes the armor of infantry units.",
-        "Name": "Upgrade Infantry Armor Level 3",
+        "Name": {
+          "enUS": "Upgrade Infantry Armor Level 3",
+          "ruRU": "Upgrade Infantry Armor Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of infantry units.",
+          "ruRU": "Maximizes the armor of infantry units."
+        },
         "Hotkey": "A"
       },
       {
@@ -630,8 +707,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilder",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -640,36 +723,52 @@
   "HotkeyCategory": "Unit/Category/TerranUnits",
   "id": "EngineeringBay",
   "Icon": "btn-building-terran-engineeringbay",
+  "Model": "EngineeringBayEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "EngineeringBayResearch",
-      "Name": "Research (Engineering Bay)"
+      "Name": {
+        "enUS": "Research (Engineering Bay)",
+        "ruRU": "Research (Engineering Bay)"
+      }
     }
   ],
   "$Upgrades": [
-    "CountUnitEngineeringBayCompleteOnlyTechTreeCheat",
-    "EngineeringBay",
     "TerranBuildingArmor",
+    "EngineeringBay",
+    "CountUnitEngineeringBayCompleteOnlyTechTreeCheat",
     "TerranBuild",
     "IsEngineeringBay",
     "EngineeringBay",
-    "EngineeringBaySplat"
+    "EngineeringBaySplat",
+    "CasterIsEngineeringBay"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -693,78 +792,144 @@
       "AbilCmd": "EngineeringBayResearch,Research3",
       "id": "TerranInfantryWeaponsLevel1",
       "Icon": "btn-upgrade-terran-infantryweaponslevel1",
-      "Tooltip": "Upgrades the damage dealt by infantry units.",
-      "Name": "Upgrade Infantry Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Infantry Weapons Level 1",
+        "ruRU": "Upgrade Infantry Weapons Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage dealt by infantry units.",
+        "ruRU": "Upgrades the damage dealt by infantry units."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research4",
       "id": "TerranInfantryWeaponsLevel2",
       "Icon": "btn-upgrade-terran-infantryweaponslevel2",
-      "Tooltip": "Further upgrades the damage dealt by infantry units.",
-      "Name": "Upgrade Infantry Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Infantry Weapons Level 2",
+        "ruRU": "Upgrade Infantry Weapons Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage dealt by infantry units.",
+        "ruRU": "Further upgrades the damage dealt by infantry units."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research5",
       "id": "TerranInfantryWeaponsLevel3",
       "Icon": "btn-upgrade-terran-infantryweaponslevel3",
-      "Tooltip": "Maximizes the damage dealt by infantry units.",
-      "Name": "Upgrade Infantry Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Infantry Weapons Level 3",
+        "ruRU": "Upgrade Infantry Weapons Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage dealt by infantry units.",
+        "ruRU": "Maximizes the damage dealt by infantry units."
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research6",
       "id": "ResearchNeosteelFrame",
       "Icon": "btn-upgrade-terran-neosteelframe",
-      "Tooltip": "Increases the cargo space of <span style=\"color: #ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: #ffff8a\">Command Centers</span> and <span style=\"color: #ffff8a\">Planetary Fortresses</span>.",
-      "Name": "Research Neosteel Frame"
+      "Name": {
+        "enUS": "Research Neosteel Frame",
+        "ruRU": "Research Neosteel Frame"
+      },
+      "Tooltip": {
+        "enUS": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>.",
+        "ruRU": "Increases the cargo space of <span style=\"color: ffff8a\">Bunkers</span> by 2. Also provides extra cargo space for <span style=\"color: ffff8a\">Command Centers</span> and <span style=\"color: ffff8a\">Planetary Fortresses</span>."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research1",
       "id": "ResearchHiSecAutoTracking",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Tooltip": "Adds +1 range to <span style=\"color: #ffff8a\">Auto-Turrets</span>, <span style=\"color: #ffff8a\">Missile Turrets</span>, <span style=\"color: #ffff8a\">Planetary Fortresses</span>, and <span style=\"color: #ffff8a\">Point Defense Drones</span>.",
-      "Name": "Research Hi-Sec Auto Tracking"
+      "Name": {
+        "enUS": "Research Hi-Sec Auto Tracking",
+        "ruRU": "Research Hi-Sec Auto Tracking"
+      },
+      "Tooltip": {
+        "enUS": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>.",
+        "ruRU": "Adds +1 range to <span style=\"color: ffff8a\">Auto-Turrets</span>, <span style=\"color: ffff8a\">Missile Turrets</span>, <span style=\"color: ffff8a\">Planetary Fortresses</span>, and <span style=\"color: ffff8a\">Point Defense Drones</span>."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research7",
       "id": "TerranInfantryArmorLevel1",
       "Icon": "btn-upgrade-terran-infantryarmorlevel1",
-      "Tooltip": "Upgrades the armor of infantry units.",
-      "Name": "Upgrade Infantry Armor Level 1"
+      "Name": {
+        "enUS": "Upgrade Infantry Armor Level 1",
+        "ruRU": "Upgrade Infantry Armor Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of infantry units.",
+        "ruRU": "Upgrades the armor of infantry units."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research8",
       "id": "TerranInfantryArmorLevel2",
       "Icon": "btn-upgrade-terran-infantryarmorlevel2",
-      "Tooltip": "Further upgrades the armor of infantry units.",
-      "Name": "Upgrade Infantry Armor Level 2"
+      "Name": {
+        "enUS": "Upgrade Infantry Armor Level 2",
+        "ruRU": "Upgrade Infantry Armor Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of infantry units.",
+        "ruRU": "Further upgrades the armor of infantry units."
+      }
     },
     {
       "AbilCmd": "EngineeringBayResearch,Research9",
       "id": "TerranInfantryArmorLevel3",
       "Icon": "btn-upgrade-terran-infantryarmorlevel3",
-      "Tooltip": "Maximizes the armor of infantry units.",
-      "Name": "Upgrade Infantry Armor Level 3"
+      "Name": {
+        "enUS": "Upgrade Infantry Armor Level 3",
+        "ruRU": "Upgrade Infantry Armor Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of infantry units.",
+        "ruRU": "Maximizes the armor of infantry units."
+      }
     }
   ]
 }

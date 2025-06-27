@@ -1,6 +1,12 @@
 {
-  "Name": "Tech Lab",
-  "Description": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
+  "Name": {
+    "enUS": "Tech Lab",
+    "ruRU": "Tech Lab"
+  },
+  "Description": {
+    "enUS": "Enables additional units and research options. A Tech Lab can fit onto any production structure.",
+    "ruRU": "Enables additional units and research options. A Tech Lab can fit onto any production structure."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 400,
   "LifeMax": 400,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "TechLab/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "TechLab/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "TechLab/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "TechLab/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -182,8 +193,14 @@
         "AbilCmd": "que5Addon,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -246,8 +263,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -285,8 +308,14 @@
         "AbilCmd": "BarracksTechLabResearch,Research2",
         "id": "ResearchShieldWall",
         "Icon": "btn-techupgrade-terran-combatshield-color",
-        "Tooltip": "<span style=\"color: #ffff8a\">Marines</span> gain +10 life.",
-        "Name": "Research Combat Shield",
+        "Name": {
+          "enUS": "Research Combat Shield",
+          "ruRU": "Research Combat Shield"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: ffff8a\">Marines</span> gain +10 life.",
+          "ruRU": "<span style=\"color: ffff8a\">Marines</span> gain +10 life."
+        },
         "Hotkey": "C"
       },
       {
@@ -324,8 +353,14 @@
         "AbilCmd": "BarracksTechLabResearch,Research1",
         "id": "Stimpack",
         "Icon": "btn-ability-terran-stimpack-color",
-        "Tooltip": "Enables <span style=\"color: #ffff8a\">Marines</span> and <span style=\"color: #ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time.",
-        "Name": "Research Stimpack",
+        "Name": {
+          "enUS": "Research Stimpack",
+          "ruRU": "Research Stimpack"
+        },
+        "Tooltip": {
+          "enUS": "Enables <span style=\"color: ffff8a\">Marines</span> and <span style=\"color: ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time.",
+          "ruRU": "Enables <span style=\"color: ffff8a\">Marines</span> and <span style=\"color: ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time."
+        },
         "Hotkey": "T"
       },
       {
@@ -363,8 +398,14 @@
         "AbilCmd": "BarracksTechLabResearch,Research3",
         "id": "ResearchPunisherGrenades",
         "Icon": "btn-ability-terran-punishergrenade-color",
-        "Tooltip": "Upgrades the <span style=\"color: #ffff8a\">Marauder</span> weapons to slow down opponents.",
-        "Name": "Research Concussive Shells",
+        "Name": {
+          "enUS": "Research Concussive Shells",
+          "ruRU": "Research Concussive Shells"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the <span style=\"color: ffff8a\">Marauder</span> weapons to slow down opponents.",
+          "ruRU": "Upgrades the <span style=\"color: ffff8a\">Marauder</span> weapons to slow down opponents."
+        },
         "Hotkey": "G"
       }
     ]
@@ -390,43 +431,66 @@
   "HotkeyCategory": "Unit/Category/TerranUnits",
   "id": "BarracksTechLab",
   "Icon": "btn-building-terran-techlab",
+  "Model": "TechLabEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5Addon",
-      "Name": "Queue"
+      "Name": {
+        "ruRU": "Queue",
+        "enUS": "Queue"
+      }
     },
     {
       "id": "TechLabMorph",
-      "Name": "Tech Lab Morph (Detached)"
+      "Name": {
+        "enUS": "Tech Lab Morph (Detached)",
+        "ruRU": "Tech Lab Morph (Detached)"
+      }
     },
     {
       "id": "FactoryTechLabMorph",
-      "Name": "Tech Lab Morph (Factory)"
+      "Name": {
+        "enUS": "Tech Lab Morph (Factory)",
+        "ruRU": "Tech Lab Morph (Factory)"
+      }
     },
     {
       "id": "StarportTechLabMorph",
-      "Name": "Tech Lab Morph (Starport)"
+      "Name": {
+        "enUS": "Tech Lab Morph (Starport)",
+        "ruRU": "Tech Lab Morph (Starport)"
+      }
     },
     {
       "id": "BarracksTechLabResearch",
-      "Name": "Tech Lab Research (Barracks)"
+      "Name": {
+        "enUS": "Tech Lab Research (Barracks)",
+        "ruRU": "Tech Lab Research (Barracks)"
+      }
     }
   ],
   "$Upgrades": [
     "CountUnitBarracksTechLabCompleteOnlyAtUnit2589852481TechTreeCheat",
-    "BarracksTechLab",
     "BarracksTechLabMorph",
     "BarracksAddOns",
     "TerranBuildingArmor",
@@ -453,36 +517,66 @@
       "AbilCmd": "que5Addon,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "BarracksTechLabResearch,Research2",
       "id": "ResearchShieldWall",
       "Icon": "btn-techupgrade-terran-combatshield-color",
-      "Tooltip": "<span style=\"color: #ffff8a\">Marines</span> gain +10 life.",
-      "Name": "Research Combat Shield"
+      "Name": {
+        "enUS": "Research Combat Shield",
+        "ruRU": "Research Combat Shield"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: ffff8a\">Marines</span> gain +10 life.",
+        "ruRU": "<span style=\"color: ffff8a\">Marines</span> gain +10 life."
+      }
     },
     {
       "AbilCmd": "BarracksTechLabResearch,Research1",
       "id": "Stimpack",
       "Icon": "btn-ability-terran-stimpack-color",
-      "Tooltip": "Enables <span style=\"color: #ffff8a\">Marines</span> and <span style=\"color: #ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time.",
-      "Name": "Research Stimpack"
+      "Name": {
+        "enUS": "Research Stimpack",
+        "ruRU": "Research Stimpack"
+      },
+      "Tooltip": {
+        "enUS": "Enables <span style=\"color: ffff8a\">Marines</span> and <span style=\"color: ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time.",
+        "ruRU": "Enables <span style=\"color: ffff8a\">Marines</span> and <span style=\"color: ffff8a\">Marauders</span> to use the Stimpack ability. Stimpacks cause damage to a unit, but they increase its attack and movement speeds for a short time."
+      }
     },
     {
       "AbilCmd": "BarracksTechLabResearch,Research3",
       "id": "ResearchPunisherGrenades",
       "Icon": "btn-ability-terran-punishergrenade-color",
-      "Tooltip": "Upgrades the <span style=\"color: #ffff8a\">Marauder</span> weapons to slow down opponents.",
-      "Name": "Research Concussive Shells"
+      "Name": {
+        "enUS": "Research Concussive Shells",
+        "ruRU": "Research Concussive Shells"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the <span style=\"color: ffff8a\">Marauder</span> weapons to slow down opponents.",
+        "ruRU": "Upgrades the <span style=\"color: ffff8a\">Marauder</span> weapons to slow down opponents."
+      }
     }
   ]
 }

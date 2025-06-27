@@ -1,0 +1,1495 @@
+{
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Construction Yard Offense Team"
+  },
+  "Description": "-",
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "CABAL",
+  "DefaultAcquireLevel": "Offensive",
+  "Response": "Acquire",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 1200,
+  "LifeMax": 1200,
+  "LifeArmorName": "-",
+  "Mover": "Ground",
+  "StationaryTurningRate": 720,
+  "TurningRate": 720,
+  "Radius": 3,
+  "SeparationRadius": 2.5,
+  "MinimapRadius": 2.5,
+  "EditorCategories": "ObjectType:Structure,ObjectFamily:CNC",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 0.7,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDestroy",
+    "UseLineOfSight",
+    "PreventDefeat",
+    "PenaltyRevealed",
+    "TownAlert",
+    "NoPortraitTalk",
+    "ArmorDisabledWhileConstructing",
+    "PreventReveal",
+    "TownCamera"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "CABALOffenseConstructionYard",
+  "HotkeyAlias": "CABALOffenseConstructionYard",
+  "SelectAlias": "CABALOffenseConstructionYard",
+  "SubgroupAlias": "CABALOffenseConstructionYard",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "PlanetaryFortress",
+  "AIEvaluateAlias": "CABALOffenseConstructionYard",
+  "ReviveType": "CABALOffenseConstructionYard",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 100
+    }
+  },
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CABALOffenseConstructionYard/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CABALOffenseConstructionYard/Revive",
+        "Location": "Unit"
+      }
+    }
+  ],
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Mob": "Multiplayer",
+  "DamageDealtXP": 1,
+  "DamageTakenXP": 1,
+  "ScoreResult": "BuildOrder",
+  "GlossaryAlias": [
+    {
+      "value": ""
+    }
+  ],
+  "Sight": 11,
+  "AttackTargetPriority": 20,
+  "ScoreMakeCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "ScoreKillCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "Facing": 45,
+  "FogVisibility": "Snapshot",
+  "PlaneArray": [
+    "Ground"
+  ],
+  "Collide": [
+    "Burrow",
+    "Ground",
+    "Structure",
+    "RoachBurrow",
+    "ForceField",
+    "Locust",
+    "Small"
+  ],
+  "Attributes": [
+    "Armored",
+    "Mechanical",
+    "Structure",
+    "Heroic"
+  ],
+  "LifeArmor": 1,
+  "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5PassiveCancelToSelection",
+    "CABALCrawlerTrain",
+    "CABALBarracksTrain",
+    "CABALWarFactoryTrain",
+    "CABALAirTowerTrain",
+    "stop",
+    "attack",
+    "CABALOffenseCrawlerPack"
+  ],
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Cancel",
+        "id": "CancelBuilding",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "class": "CAbilQueue",
+          "Name": "Abil/Name/que5PassiveCancelToSelection",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "que5PassiveCancelToSelection",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "QueueCount": 1,
+          "Flags": {
+            "BestUnit": 1,
+            "NotifyAddOn": 1,
+            "Passive": 1
+          },
+          "CmdButtonArray": {
+            "CancelLast": {
+              "DefaultButtonFace": "Cancel",
+              "Flags": {
+                "ToSelection": 1
+              }
+            },
+            "CancelSlot": {
+              "DefaultButtonFace": "CancelSlot"
+            }
+          },
+          "AbilSetId": "QueueCancelToSelection",
+          "QueueSize": 5,
+          "id": "que5PassiveCancelToSelection"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "Slave"
+          },
+          "Unit": [
+            "CABALSlave"
+          ],
+          "Time": 17
+        },
+        "Unit": [
+          "CABALSlave"
+        ],
+        "Time": 17,
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALCrawlerTrain,Train1",
+        "id": "Slave",
+        "Name": {
+          "enUS": "Make slave"
+        },
+        "Tooltip": {
+          "enUS": "Basic work unit. Used to gather resources, construct human structures, and repair. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "class": "CAbilQueue",
+          "Name": "Abil/Name/que5PassiveCancelToSelection",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "que5PassiveCancelToSelection",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "QueueCount": 1,
+          "Flags": {
+            "BestUnit": 1,
+            "NotifyAddOn": 1,
+            "Passive": 1
+          },
+          "CmdButtonArray": {
+            "CancelLast": {
+              "DefaultButtonFace": "Cancel",
+              "Flags": {
+                "ToSelection": 1
+              }
+            },
+            "CancelSlot": {
+              "DefaultButtonFace": "CancelSlot"
+            }
+          },
+          "AbilSetId": "QueueCancelToSelection",
+          "QueueSize": 5,
+          "id": "que5PassiveCancelToSelection"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Cancel",
+        "id": "CancelBuilding",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "SectionArray": {
+            "Actor": {
+              "DurationArray": {
+                "Duration": 3.5417
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Duration": 3.5417
+              }
+            }
+          },
+          "Unit": "CABALOffenseCrawler",
+          "RandomDelayMax": 0.5
+        },
+        "Unit": "CABALOffenseCrawler",
+        "Cost": {
+          "Minerals": 400,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 14
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALOffenseCrawlerPack,Execute",
+        "id": "CABALOffenseCrawlerPack",
+        "Name": {
+          "enUS": "Collapse"
+        },
+        "Tooltip": {
+          "enUS": "Return to MCV mode."
+        },
+        "Hotkey": "D"
+      }
+    ],
+    "INF": [
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALBike",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALBike"
+          ],
+          "Time": 20
+        },
+        "Unit": [
+          "CABALBike"
+        ],
+        "Time": 20,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train1",
+        "id": "CABALBike",
+        "Name": {
+          "enUS": "Build a Combat Motorcycle"
+        },
+        "Tooltip": {
+          "enUS": "Reconnaissance unit, good at fighting heavily armored units. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air.</span>"
+        },
+        "Hotkey": "Q"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALRaider",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALRaider"
+          ],
+          "Time": 20
+        },
+        "Unit": [
+          "CABALRaider"
+        ],
+        "Time": 20,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train12",
+        "id": "CABALRaider",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALAvenger",
+            "Requirements": "CABALMonitoringStation"
+          },
+          "Unit": [
+            "CABALAvengerTank"
+          ],
+          "Time": 35
+        },
+        "Unit": [
+          "CABALAvengerTank"
+        ],
+        "Time": 35,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train3",
+        "id": "CABALAvenger",
+        "Name": {
+          "enUS": "Build Avenger Tank"
+        },
+        "Tooltip": {
+          "enUS": "An anti-ground battle tank, good at fighting armored units. Can deploy flame mines. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+        },
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALSpider"
+          },
+          "Unit": [
+            "CABALSpider"
+          ],
+          "Time": 30
+        },
+        "Unit": [
+          "CABALSpider"
+        ],
+        "Time": 30,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1.5
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train11",
+        "id": "CABALSpider",
+        "Name": {
+          "enUS": "Build Spider Tank"
+        },
+        "Tooltip": {
+          "enUS": "A small assault unit that provides buffs when loaded into the Widow<br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+        },
+        "Hotkey": "B"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALScorpion"
+          },
+          "Unit": [
+            "CABALShrine"
+          ],
+          "Time": 30
+        },
+        "Unit": [
+          "CABALShrine"
+        ],
+        "Time": 30,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train6",
+        "id": "CABALScorpion",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALMantis",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALMantis"
+          ],
+          "Time": 20
+        },
+        "Unit": [
+          "CABALMantis"
+        ],
+        "Time": 20,
+        "Cost": {
+          "Minerals": 125,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train14",
+        "id": "CABALMantis",
+        "Name": {
+          "enUS": "Build Mantis"
+        },
+        "Tooltip": {
+          "enUS": "Causes area-of-effect damage to the air. After upgrading, equip the rocket rack to increase the damage to the ground. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units. </span> <br/><span style=\"color: FFE303\">Detector</span>"
+        }
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALFlameTank",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALFlameTank"
+          ],
+          "Time": 20
+        },
+        "Unit": [
+          "CABALFlameTank"
+        ],
+        "Time": 20,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 75,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train13",
+        "id": "CABALFlameTank",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALStealthTank",
+            "Requirements": "CABALShrine"
+          },
+          "Unit": [
+            "CABALStealthTank"
+          ],
+          "Time": 30
+        },
+        "Unit": [
+          "CABALStealthTank"
+        ],
+        "Time": 30,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train5",
+        "id": "CABALStealthTank",
+        "Name": {
+          "enUS": "Build a Stealth Tank"
+        },
+        "Tooltip": {
+          "enUS": "Assault unit, uncloaked when attacking. <br/><br/><span style=\"color: FFFF8A\">Can be used against ground and air. </span>"
+        }
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALSpecter",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALSpecter"
+          ],
+          "Time": 20
+        },
+        "Unit": [
+          "CABALSpecter"
+        ],
+        "Time": 20,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 175,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train16",
+        "id": "CABALSpecter",
+        "Name": "-",
+        "Tooltip": {
+          "enUS": "Medium artillery, invisible. Unlocked when attacking.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units. </span>"
+        }
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALWidow",
+            "Requirements": "CABALWeaponsLaboratory"
+          },
+          "Unit": [
+            "CABALWidow"
+          ],
+          "Time": 50
+        },
+        "Unit": [
+          "CABALWidow"
+        ],
+        "Time": 50,
+        "Cost": {
+          "Minerals": 250,
+          "Vespene": 175,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train7",
+        "id": "CABALWidow",
+        "Name": {
+          "enUS": "Build Widow"
+        },
+        "Tooltip": {
+          "enUS": "Heavy vehicle, when loading a spider tank, the power of the main gun is increased<br/><br/><span style=\"color: #ffff8a\">It can target both ground and air. </span>"
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALHolySpirit",
+            "Requirements": "CABALGrandTemple"
+          },
+          "Unit": [
+            "CABALHolySpirit"
+          ],
+          "Time": 50
+        },
+        "Unit": [
+          "CABALHolySpirit"
+        ],
+        "Time": 50,
+        "Cost": {
+          "Minerals": 300,
+          "Vespene": 200,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALWarFactoryTrain,Train10",
+        "id": "CABALHolySpirit",
+        "Name": {
+          "enUS": "Build the Holy Spirit"
+        },
+        "Tooltip": {
+          "enUS": "A slow but powerful massive mecha that can cause a lot of damage. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+        },
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALDominator",
+            "Requirements": "CABALShrine"
+          },
+          "Unit": [
+            "CABALDominator"
+          ],
+          "Time": 50
+        },
+        "Unit": [
+          "CABALDominator"
+        ],
+        "Time": 50,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -3
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALBarracksTrain,Train7",
+        "id": "CABALDominator",
+        "Name": {
+          "enUS": "Train Dominator"
+        },
+        "Tooltip": {
+          "enUS": "Universal infantry. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+        },
+        "Hotkey": "Z"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALDropShip",
+            "Requirements": "CABALControlNode"
+          },
+          "Unit": [
+            "CABALDropShip"
+          ],
+          "Time": 30
+        },
+        "Unit": [
+          "CABALDropShip"
+        ],
+        "Time": 30,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALAirTowerTrain,Train4",
+        "id": "CABALDropShip",
+        "Name": "-",
+        "Tooltip": {
+          "enUS": "Dropship"
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "CancelSubmenu",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
+      }
+    ]
+  },
+  "Footprint": "Footprint5x5Contour",
+  "PlacementFootprint": "Footprint5x5DropOff",
+  "GlossaryCategory": "Unit/Category/CABALUnits",
+  "HotkeyCategory": "Unit/Category/CABALUnits",
+  "SubgroupPriority": 3,
+  "id": "CABALOffenseConstructionYard",
+  "BehaviorArray": [
+    "CNCTabEconomy",
+    "CNCTabInfantry",
+    "CNCConstructionRadius",
+    "FireSuppressionSystem",
+    "CNCConstructionRadius"
+  ],
+  "RepairTime": 48,
+  "TacticalAIThink": "AIThinkCommandCenter",
+  "Food": 14,
+  "TechTreeProducedUnitArray": [
+    "CABALDevout",
+    "CABALEnlightened",
+    "CABALAscended",
+    "CABALBlackHand",
+    "CABALHijacker",
+    "CABALReaper",
+    "CABALSalvator",
+    "CABALDominator",
+    "CABALEngineer",
+    "CABALCenturion"
+  ],
+  "CostResource": {
+    "Minerals": 400,
+    "Vespene": 300
+  },
+  "WeaponArray": [
+    {
+      "Link": "CABALOffenseCrawlerLaser",
+      "Turret": "SiegeTankSieged"
+    },
+    {
+      "Link": "CABALArtillery",
+      "Turret": "SiegeTankSieged"
+    }
+  ],
+  "ScoreMake": 1500,
+  "ScoreKill": 1500,
+  "GlossaryPriority": 242,
+  "Weapons": [
+    {
+      "Turret": "SiegeTankSieged",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "CABALOffenseCrawlerLaserDamage",
+      "DisplayAttackCount": 1,
+      "TargetFilters": "",
+      "Range": 7,
+      "Arc": 360,
+      "Period": 4,
+      "Effect": "CABALOffenseCrawlerLaserCP",
+      "LegacyOptions": {
+        "FaceTargetWhileInCooldown": 0
+      },
+      "AllowedMovement": "Moving",
+      "id": "CABALOffenseCrawlerLaser",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Offense Group Laser"
+      },
+      "Amount": 35,
+      "Kind": "Ranged"
+    },
+    {
+      "Turret": "SiegeTankSieged",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "NodArtilleryDamage",
+      "TargetFilters": "Ground",
+      "Range": 12,
+      "Period": 7,
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "Effect": "NodArtilleryWeaponLaunch",
+      "AllowedMovement": "Moving",
+      "id": "CABALArtillery",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Nod Artillery"
+      },
+      "Amount": 20,
+      "AttributeBonus": {
+        "Structure": 50
+      },
+      "Kind": "Ranged"
+    }
+  ],
+  "Behaviors": [
+    {
+      "id": "CNCTabEconomy",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "id": "CNCTabInfantry",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "id": "CNCConstructionRadius",
+      "Icon": "btn-building-protoss-pylon",
+      "Name": {
+        "enUS": "CNC construction range"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "CNCConstructionRadius",
+      "Icon": "btn-building-protoss-pylon",
+      "Name": {
+        "enUS": "CNC construction range"
+      },
+      "Tooltip": "-"
+    }
+  ],
+  "Abilities": [
+    {
+      "id": "BuildInProgress",
+      "Name": "-"
+    },
+    {
+      "id": "que5PassiveCancelToSelection",
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
+      }
+    },
+    {
+      "id": "CABALCrawlerTrain",
+      "Name": "-"
+    },
+    {
+      "id": "CABALBarracksTrain",
+      "Name": "-"
+    },
+    {
+      "id": "CABALWarFactoryTrain",
+      "Name": "-"
+    },
+    {
+      "id": "CABALAirTowerTrain",
+      "Name": {
+        "enUS": "Training (CABALAirTowerTrain)"
+      }
+    },
+    {
+      "id": "stop",
+      "Name": {
+        "enUS": "stop",
+        "ruRU": "Stop"
+      }
+    },
+    {
+      "id": "attack",
+      "Name": {
+        "ruRU": "Attack"
+      }
+    },
+    {
+      "id": "CABALOffenseCrawlerPack",
+      "Name": {
+        "enUS": "Nod Offense MCV pack"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "CABALOffenseCrawlerDeploy",
+    "CABALOffenseConstructionYard",
+    "UpgradeToCABALOffenseCrawlerDeployed",
+    "CABALOffenseConstructionYard",
+    "CABALOffenseCrawlerUnpack",
+    "CABALOffenseCrawlerPack",
+    "IsCABALOffenseCrawlerDeployed",
+    "UN_CABALOffenseCrawlerDeployed",
+    "UQ_CABALOffenseCrawlerDeployed",
+    null
+  ],
+  "$Requirements": [],
+  "$Production": [
+    "CABALSlave",
+    "CABALBike",
+    "CABALRaider",
+    "CABALAvengerTank",
+    "CABALSpider",
+    "CABALShrine",
+    "CABALMantis",
+    "CABALFlameTank",
+    "CABALStealthTank",
+    "CABALSpecter",
+    "CABALWidow",
+    "CABALHolySpirit",
+    "CABALDominator",
+    "CABALDropShip"
+  ],
+  "$Research": [],
+  "$Morph": [
+    "CABALOffenseCrawler"
+  ],
+  "$Phase": [],
+  "$Phased": "CABALOffenseCrawler",
+  "$Producers": [],
+  "$Commands": [
+    {
+      "AbilCmd": "BuildInProgress,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "BuildInProgress,Cancel",
+      "id": "CancelBuilding",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALCrawlerTrain,Train1",
+      "id": "Slave",
+      "Name": {
+        "enUS": "Make slave"
+      },
+      "Tooltip": {
+        "enUS": "Basic work unit. Used to gather resources, construct human structures, and repair. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+      }
+    },
+    {
+      "AbilCmd": "RallyCommand,Rally1",
+      "id": "Rally",
+      "Icon": "btn-ability-terran-setrallypoint",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "BuildInProgress,Cancel",
+      "id": "CancelBuilding",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALOffenseCrawlerPack,Execute",
+      "id": "CABALOffenseCrawlerPack",
+      "Name": {
+        "enUS": "Collapse"
+      },
+      "Tooltip": {
+        "enUS": "Return to MCV mode."
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train1",
+      "id": "CABALBike",
+      "Name": {
+        "enUS": "Build a Combat Motorcycle"
+      },
+      "Tooltip": {
+        "enUS": "Reconnaissance unit, good at fighting heavily armored units. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air.</span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train12",
+      "id": "CABALRaider",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train3",
+      "id": "CABALAvenger",
+      "Name": {
+        "enUS": "Build Avenger Tank"
+      },
+      "Tooltip": {
+        "enUS": "An anti-ground battle tank, good at fighting armored units. Can deploy flame mines. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train11",
+      "id": "CABALSpider",
+      "Name": {
+        "enUS": "Build Spider Tank"
+      },
+      "Tooltip": {
+        "enUS": "A small assault unit that provides buffs when loaded into the Widow<br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train6",
+      "id": "CABALScorpion",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train14",
+      "id": "CABALMantis",
+      "Name": {
+        "enUS": "Build Mantis"
+      },
+      "Tooltip": {
+        "enUS": "Causes area-of-effect damage to the air. After upgrading, equip the rocket rack to increase the damage to the ground. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units. </span> <br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train13",
+      "id": "CABALFlameTank",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train5",
+      "id": "CABALStealthTank",
+      "Name": {
+        "enUS": "Build a Stealth Tank"
+      },
+      "Tooltip": {
+        "enUS": "Assault unit, uncloaked when attacking. <br/><br/><span style=\"color: FFFF8A\">Can be used against ground and air. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train16",
+      "id": "CABALSpecter",
+      "Name": "-",
+      "Tooltip": {
+        "enUS": "Medium artillery, invisible. Unlocked when attacking.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train7",
+      "id": "CABALWidow",
+      "Name": {
+        "enUS": "Build Widow"
+      },
+      "Tooltip": {
+        "enUS": "Heavy vehicle, when loading a spider tank, the power of the main gun is increased<br/><br/><span style=\"color: #ffff8a\">It can target both ground and air. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALWarFactoryTrain,Train10",
+      "id": "CABALHolySpirit",
+      "Name": {
+        "enUS": "Build the Holy Spirit"
+      },
+      "Tooltip": {
+        "enUS": "A slow but powerful massive mecha that can cause a lot of damage. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALBarracksTrain,Train7",
+      "id": "CABALDominator",
+      "Name": {
+        "enUS": "Train Dominator"
+      },
+      "Tooltip": {
+        "enUS": "Universal infantry. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+      }
+    },
+    {
+      "AbilCmd": "CABALAirTowerTrain,Train4",
+      "id": "CABALDropShip",
+      "Name": "-",
+      "Tooltip": {
+        "enUS": "Dropship"
+      }
+    }
+  ]
+}

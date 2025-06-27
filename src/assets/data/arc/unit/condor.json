@@ -1,17 +1,22 @@
 {
-  "Name": "Condor",
+  "Name": {
+    "enUS": "Condor"
+  },
+  "Description": "-",
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 4,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 350,
   "LifeMax": 350,
-  "LifeArmorName": "UPL Ship Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Ship Plating"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 249.961,
   "TurningRate": 249.961,
@@ -65,16 +70,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Condor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Condor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Condor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Condor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -95,12 +102,12 @@
     "Mechanical",
     "Massive"
   ],
-  "LifeArmor": 2,
-  "Speed": 2.25,
+  "LifeArmor": 4,
+  "Speed": 2.5,
   "Acceleration": 1.8125,
-  "Sight": 13.5,
-  "VisionHeight": 4,
-  "Food": -4,
+  "Sight": 16,
+  "VisionHeight": 6,
+  "Food": -2,
   "CostCategory": "Army",
   "CostResource": {
     "Minerals": 200,
@@ -199,8 +206,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -273,8 +286,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -363,8 +382,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -453,8 +478,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -497,7 +528,7 @@
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -2
         },
         "Row": 2,
         "Column": 1,
@@ -505,8 +536,12 @@
         "AbilCmd": "CondorFly,Execute",
         "id": "CondorLift",
         "Icon": "btn-ability-terran-liftoff",
-        "Tooltip": "Condor takes off.  Condor cannot load or unload while airborne.",
-        "Name": "Lift Off",
+        "Name": {
+          "enUS": "Lift Off"
+        },
+        "Tooltip": {
+          "enUS": "Condor takes off.  Condor cannot load or unload while airborne."
+        },
         "Hotkey": "F"
       },
       {
@@ -580,8 +615,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -670,8 +711,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -754,15 +801,15 @@
           },
           "ErrorAlert": "Error",
           "AbilSetId": "ULdM",
-          "MaxCargoCount": 12,
+          "MaxCargoCount": 16,
           "MaxCargoSize": 8,
-          "TotalCargoSpace": 12,
+          "TotalCargoSpace": 16,
           "UnloadPeriod": 0.125,
           "LoadValidatorArray": [
-            "TargetIsTransportable",
-            "TargetNotRooted",
-            "TargetNotStunnedCombine",
-            "TargetNotStasis",
+            "UPLTargetIsTransportable",
+            "UPLTargetNotRooted",
+            "UPLTargetNotStunnedCombine",
+            "UPLTargetNotStasis",
             "HasNoCargo",
             "CondorLanded"
           ],
@@ -787,8 +834,12 @@
         "AbilCmd": "CondorTransport,Load",
         "id": "CondorLoad",
         "Icon": "btn-ability-terran-load",
-        "Tooltip": "Loads units into the Condors hold.",
-        "Name": "Load Forces",
+        "Name": {
+          "enUS": "Load Forces"
+        },
+        "Tooltip": {
+          "enUS": "Loads units into the Condors hold."
+        },
         "Hotkey": "L"
       },
       {
@@ -830,7 +881,7 @@
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -2
         },
         "Row": 2,
         "Column": 0,
@@ -838,8 +889,12 @@
         "AbilCmd": "CondorLand,Execute",
         "id": "CondorLand",
         "Icon": "btn-ability-terran-land",
-        "Tooltip": "Condor lands.  Requires unobstructed area.  Condor can only load or unload while landed.",
-        "Name": "Land",
+        "Name": {
+          "enUS": "Land"
+        },
+        "Tooltip": {
+          "enUS": "Land Condor in a unobstructed area, allow Condor to load or unload units, repair itself and decrease the amount of damage taken by 25% while landed."
+        },
         "Hotkey": "E"
       },
       {
@@ -922,15 +977,15 @@
           },
           "ErrorAlert": "Error",
           "AbilSetId": "ULdM",
-          "MaxCargoCount": 12,
+          "MaxCargoCount": 16,
           "MaxCargoSize": 8,
-          "TotalCargoSpace": 12,
+          "TotalCargoSpace": 16,
           "UnloadPeriod": 0.125,
           "LoadValidatorArray": [
-            "TargetIsTransportable",
-            "TargetNotRooted",
-            "TargetNotStunnedCombine",
-            "TargetNotStasis",
+            "UPLTargetIsTransportable",
+            "UPLTargetNotRooted",
+            "UPLTargetNotStunnedCombine",
+            "UPLTargetNotStasis",
             "HasNoCargo",
             "CondorLanded"
           ],
@@ -955,28 +1010,13 @@
         "AbilCmd": "CondorTransport,UnloadAll",
         "id": "CondorUnloadAll",
         "Icon": "btn-ability-terran-unloadall",
-        "Tooltip": "Unloads all units from the Condor's hold.",
-        "Name": "Deploy Forces",
-        "Hotkey": "D"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Deploy Forces"
         },
-        "Row": 1,
-        "Column": 0,
-        "Type": "Passive",
-        "id": "CondorEnhancedCargo",
-        "Icon": "btn-ability-upl-enlargecargobay",
-        "Tooltip": "Increases <span style=\"color: #FFFF8A\">Condors </span>cargo capacity by 6",
-        "Name": "Expanded Cargo Hold"
+        "Tooltip": {
+          "enUS": "Unloads all units from the Condor's hold."
+        },
+        "Hotkey": "D"
       },
       {
         "Cost": {
@@ -992,10 +1032,38 @@
         "Row": 1,
         "Column": 1,
         "Type": "Passive",
+        "id": "CondorCloak",
+        "Icon": "btn-ability-upl-metamateria-suit",
+        "Name": {
+          "enUS": "Metamateria Coating"
+        },
+        "Tooltip": {
+          "enUS": "Temporarily activates the <span style=\"color: FFFF80\"><b>Raptor Jet</b></span> armor material coating, preventing enemy units from seeing or attacking the unit. A cloaked unit will only be revealed by detectors or effects.<br/><br/>Attacking or using abilities during the effect clears it.<br/><br/><span style=\"color: FFFF80\">Effect last for <b>10</b> seconds</span>"
+        },
+        "Hotkey": "C"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
         "id": "CondorFrancineFuelInjection",
         "Icon": "btn-ability-upl-advancedenergyprocessing",
-        "Tooltip": "Increases the movement speed of <c val=\"#ColorAttackInfo\"><b>Condor</b>s</span>.",
-        "Name": "Francine Fuel Injection"
+        "Name": {
+          "enUS": "Francine Fuel Injection"
+        },
+        "Tooltip": {
+          "enUS": "Increases the movement speed of <span style=\"color: #ffff8a\"><b>Condor</b>s</span>."
+        }
       },
       {
         "Cost": {
@@ -1011,11 +1079,14 @@
         "Row": 1,
         "Column": 2,
         "Type": "Passive",
-        "id": "CondorCloak",
-        "Icon": "btn-ability-upl-metamateria-suit",
-        "Tooltip": "Temporarily activates the <span style=\"color: #FFFF80\"><b>Raptor Jet</b></span> armor material coating, preventing enemy units from seeing or attacking the unit. A cloaked unit will only be revealed by detectors or effects.<br/><br/>Attacking or using abilities during the effect clears it.<br/><br/><span style=\"color: #FFFF80\">Effect last for <b>10</b> seconds</span>",
-        "Name": "Metamateria Coating",
-        "Hotkey": "C"
+        "id": "LotCUPLStarArmorPassive",
+        "Icon": "btn-stararmoricon2",
+        "Name": {
+          "enUS": "Starship Armored Shell"
+        },
+        "Tooltip": {
+          "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span>, <span style=\"color: ffff8a\">Condor</span>and <span style=\"color: ffff8a\">Behemoth</span> by 2."
+        }
       }
     ]
   },
@@ -1030,7 +1101,7 @@
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 16,
   "GlossaryCategory": "Unit/Category/0UPLUnits",
-  "GlossaryPriority": 53,
+  "GlossaryPriority": 200,
   "HotkeyCategory": "Unit/Category/UPLUnits",
   "Height": 4,
   "TechAliasArray": [
@@ -1044,50 +1115,94 @@
   "ScoreLost": 250,
   "id": "Condor",
   "Icon": "btn-unit-upl-condortransport",
+  "Model": "Condor",
   "LifeArmorIcon": "btn-upgrades-upl-vehicleplating-lvl0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "CondorFlying"
+      "id": "CondorFlying",
+      "Name": {
+        "enUS": "Flying"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "CSVTransportHealer",
+      "Name": {
+        "enUS": "Medical Bay"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "Detector10",
+      "Icon": "btn-status-detector",
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "CondorTransport",
-      "Name": "Condor Transport"
+      "Name": {
+        "enUS": "Condor Transport"
+      }
     },
     {
       "id": "CondorLand",
-      "Name": "Condor Land"
+      "Name": {
+        "enUS": "Condor Land"
+      }
     },
     {
       "id": "CondorLandCinematic",
-      "Name": "Condor Land Cinematic"
+      "Name": {
+        "enUS": "Condor Land Cinematic"
+      }
     },
     {
       "id": "CondorLandCinematicInstantMorph",
-      "Name": "Condor Land Cinematic Instant Morph"
+      "Name": {
+        "enUS": "Condor Land Cinematic Instant Morph"
+      }
     }
   ],
   "$Upgrades": [
-    "FrancineFuelInjection",
+    "StarArmor",
     "Condor",
     "CondorLanded",
     "CondorFly",
-    "CondorEnhancedCargo",
+    "Button/Tooltip/CondorFrancineFuelInjection",
+    "FrancineFuelInjection",
+    "CSVPersonnelCarrier",
+    "Button/Tooltip/RaptorCloak2",
     "UPLVehiclePlatingLevel1",
     "Condor",
     "UPLVehicleArmor",
@@ -1097,9 +1212,15 @@
     "UPLVehicleWeapons",
     "UPLVehicleWeaponsLevel2",
     "UPLVehicleWeaponsLevel3",
+    "Button/Tooltip/UPLAirstrip",
     "UPLAirstripTrain",
+    "Button/Tooltip/RaptorCloakAbilUpgrade",
+    "Button/Tooltip/FrancineFuelInjection",
     "AllowUnitCondor",
+    "CondorEnhancedCargo",
     "UPLAirstrip",
+    "Button/Tooltip/UPLBattleStation",
+    "UPLBattleStation",
     "IsCondorAlias",
     "CondorLandedMorphModel",
     "CondorMorphModel",
@@ -1128,6 +1249,7 @@
   ],
   "$Phased": "Condor",
   "$Producers": [
+    "UPLBattleStation",
     "UPLAirstrip"
   ],
   "$Commands": [
@@ -1135,71 +1257,123 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "CondorFly,Execute",
       "id": "CondorLift",
       "Icon": "btn-ability-terran-liftoff",
-      "Tooltip": "Condor takes off.  Condor cannot load or unload while airborne.",
-      "Name": "Lift Off"
+      "Name": {
+        "enUS": "Lift Off"
+      },
+      "Tooltip": {
+        "enUS": "Condor takes off.  Condor cannot load or unload while airborne."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "CondorTransport,Load",
       "id": "CondorLoad",
       "Icon": "btn-ability-terran-load",
-      "Tooltip": "Loads units into the Condors hold.",
-      "Name": "Load Forces"
+      "Name": {
+        "enUS": "Load Forces"
+      },
+      "Tooltip": {
+        "enUS": "Loads units into the Condors hold."
+      }
     },
     {
       "AbilCmd": "CondorLand,Execute",
       "id": "CondorLand",
       "Icon": "btn-ability-terran-land",
-      "Tooltip": "Condor lands.  Requires unobstructed area.  Condor can only load or unload while landed.",
-      "Name": "Land"
+      "Name": {
+        "enUS": "Land"
+      },
+      "Tooltip": {
+        "enUS": "Land Condor in a unobstructed area, allow Condor to load or unload units, repair itself and decrease the amount of damage taken by 25% while landed."
+      }
     },
     {
       "AbilCmd": "CondorTransport,UnloadAll",
       "id": "CondorUnloadAll",
       "Icon": "btn-ability-terran-unloadall",
-      "Tooltip": "Unloads all units from the Condor's hold.",
-      "Name": "Deploy Forces"
+      "Name": {
+        "enUS": "Deploy Forces"
+      },
+      "Tooltip": {
+        "enUS": "Unloads all units from the Condor's hold."
+      }
     }
   ]
 }

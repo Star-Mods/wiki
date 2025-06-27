@@ -1,6 +1,10 @@
 {
-  "Name": "Ascended Grim Glider",
-  "Description": "Massive flying unit. Can rise units slain nearby as temporary shades.<br/><br/><span style=\"color: #FFE303\">Detector</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
+  "Name": {
+    "enUS": "Ascended Grim Glider"
+  },
+  "Description": {
+    "enUS": "Massive flying unit. Can drain energy, shields, and life from targets. Can destroy enemy projectiles. Can be upgraded to raise units slain nearby as temporary shades.<br/><br/><span style=\"color: FFE303\">Detector</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,12 +14,14 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 360,
-  "LifeMax": 360,
-  "LifeArmorName": "Dragon Scale Armor",
+  "LifeStart": 280,
+  "LifeMax": 280,
+  "LifeArmorName": {
+    "enUS": "Dragon Scale Armor"
+  },
   "Mover": "Fly",
-  "StationaryTurningRate": 180,
-  "TurningRate": 180,
+  "StationaryTurningRate": 67.5,
+  "TurningRate": 67.5,
   "Radius": 1.25,
   "SeparationRadius": 1.25,
   "MinimapRadius": 1.25,
@@ -59,21 +65,21 @@
     "TurnAngle": 90,
     "TurningRate": 90,
     "ChanceArray": {
-      "Idle": 33,
-      "Anim": 33,
-      "Turn": 33
+      "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GrimGlider/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GrimGlider/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GrimGlider/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GrimGlider/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -89,8 +95,7 @@
     "Biological",
     "Light",
     "Psionic",
-    "Massive",
-    "Heroic"
+    "Massive"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -188,8 +193,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -262,8 +273,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -352,8 +369,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -442,8 +465,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -517,8 +546,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -527,22 +562,26 @@
         },
         "Unit": "AscendedGrimGlider",
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 300,
+          "Minerals": 300,
+          "Vespene": 400,
           "Terazine": 0,
-          "Custom": 1640,
+          "Custom": 140,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -8
         },
         "Row": 1,
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "AscendedGrimGlider,Execute",
         "id": "AscendedGrimGlider",
-        "Tooltip": "<span style=\"color: #00FF00\">+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -560,8 +599,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedGrimGlider",
-        "Tooltip": "<span style=\"color: #00FF00\">+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -675,7 +718,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 2296
+                "Custom": 280
               }
             }
           ],
@@ -685,7 +728,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 2296,
+          "Custom": 280,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -697,8 +740,12 @@
         "AbilCmd": "AscendedGrimGliderFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -812,7 +859,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 984
+                "Custom": 140
               }
             }
           ],
@@ -822,7 +869,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 984,
+          "Custom": 140,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -834,8 +881,12 @@
         "AbilCmd": "GrimGliderFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -968,99 +1019,13 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
-      },
-      {
-        "Info": {
-          "class": "CAbilMove",
-          "Name": "Abil/Name/move",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Move",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            },
-            {
-              "DisplayType": "Move",
-              "Color": "255,35,125,255",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "move",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Move": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Move"
-            },
-            "Patrol": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "MovePatrol"
-            },
-            "HoldPos": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "MoveHoldPosition"
-            },
-            "AcquireMove": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "AcquireMove"
-            },
-            "Turn": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Turn"
-            }
-          },
-          "FleeRange": 5,
-          "FleeTime": 5,
-          "FollowRangeSlop": 1,
-          "FollowAcquireRange": 6,
-          "MinPatrolDistance": 1,
-          "id": "move"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "move,AcquireMove",
-        "id": "AcquireMove",
-        "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
-        "Hotkey": "A"
       },
       {
         "Cost": {
@@ -1078,8 +1043,12 @@
         "Type": "Passive",
         "id": "GrimGliderPermanentlyCloaked",
         "Icon": "wireframe-critter-zerusalientreehover",
-        "Tooltip": "The Grim Glider is permanently cloaked.",
-        "Name": "Permanently Cloaked"
+        "Name": {
+          "enUS": "Permanently Cloaked"
+        },
+        "Tooltip": {
+          "enUS": "The Grim Glider is permanently cloaked."
+        }
       },
       {
         "Cost": {
@@ -1097,8 +1066,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       },
       {
         "Cost": {
@@ -1116,13 +1091,17 @@
         "Type": "Passive",
         "id": "GrimGliderWraithNight",
         "Icon": "btn-upgrade-zerg-enduringcorruption",
-        "Tooltip": "Friendly Shades in range of Grim Gliders with Wraith Night do not decay.",
-        "Name": "Wraith Night"
+        "Name": {
+          "enUS": "Wraith Night"
+        },
+        "Tooltip": {
+          "enUS": "Friendly Shades within <b>10</b> range do not decay."
+        }
       },
       {
         "Info": {
-          "class": "CAbilBehavior",
-          "Name": "Abil/Name/GrimGliderMortalitysEclipse",
+          "class": "CAbilAugment",
+          "Name": "Abil/Name/GrimGliderEmaciate",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -1130,14 +1109,14 @@
             {
               "DisplayType": "Confirm",
               "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
               "LineTexture": "Assets\\Textures\\WayPointLine.dds"
             }
           ],
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "GrimGliderMortalitysEclipse",
+          "DataCollection": "GrimGliderEmaciate",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -1145,41 +1124,32 @@
             }
           },
           "CmdButtonArray": {
-            "On": {
+            "Execute": {
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "GrimGliderMortalitysEclipseActivate"
-            },
-            "Off": {
-              "DefaultButtonFace": "GrimGliderMortalitysEclipseDeactivate"
+              "DefaultButtonFace": "GrimGliderEmaciate"
             }
           },
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
+          "Alignment": "Negative",
+          "Effect": [
+            "GrimGliderEmaciate",
+            ""
+          ],
+          "AutoCastFilters": "Visible;Player,Ally",
           "Flags": {
-            "BestUnit": 1,
-            "Toggle": 1,
-            "Transient": 1
+            "AutoCast": 1,
+            "AutoCastOn": 1
           },
-          "Cost": [
-            {
-              "Vital": {
-                "Energy": 25
-              }
-            }
-          ],
-          "BehaviorArray": [
-            "GrimGlider"
-          ],
-          "id": "GrimGliderMortalitysEclipse"
+          "AbilCmd": "attack,Execute",
+          "id": "GrimGliderEmaciate"
         },
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 25,
+          "Energy": 0,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1187,16 +1157,177 @@
         "Row": 2,
         "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "GrimGliderMortalitysEclipse,On",
-        "id": "GrimGliderMortalitysEclipseActivate",
-        "Icon": "btn-tips-fallenheroes",
-        "Tooltip": "Activates Mortality's Eclipse, raising all combat units that die within <b>10</b> range of a Grim Glider as uncontrollable Shades that last for <b>8</b> seconds.<br/><br/><span style=\"color: #f078ff\">Drains <b>25.0</b> energy per second.</span>",
-        "Name": "Mortality's Eclipse",
+        "AbilCmd": "GrimGliderEmaciate,Execute",
+        "id": "GrimGliderEmaciate",
+        "Icon": "ui_tipicon_campaign_hyb02-lifedrain",
+        "Name": {
+          "enUS": "Emaciate"
+        },
+        "Tooltip": {
+          "enUS": "Drains energy and vitality from a target without alerting enemies. Enemy and neutral targets lose <b>36</b> energy and <b>14</b> vitality per second while having their movement speed slowed by <b>50</b>%. Player or allied targets lose the same amount of energy but only lose <b>4</b> vitality per second. The Grim Glider gains <b>25</b>% of these amounts as energy, except for the vitality drained from neutral targets.<br/><br/><span style=\"color: #ffff8a\">Prioritizes enemies that are not currently Emaciated, then with high energy and vitality.</span>"
+        },
         "Hotkey": "Q"
       },
       {
         "Info": {
-          "class": "CAbilBehavior",
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/GrimGliderNullify",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "GrimGliderNullify",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "AllowMovement": 1,
+            "AutoCast": 1,
+            "AutoCastOn": 1,
+            "NoDeceleration": 1,
+            "Transient": 1,
+            "UninterruptibleTurn": 1
+          },
+          "Effect": [
+            "GrimGliderNullifyApplyBehavior"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "GrimGliderNullify",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "GrimGliderNullify"
+            }
+          },
+          "Cost": [
+            {
+              "Vital": {
+                "Energy": 10
+              },
+              "Cooldown": {
+                "TimeUse": 1.4
+              }
+            }
+          ],
+          "TargetFilters": [
+            "Missile,Visible;Self,Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"
+          ],
+          "TargetSorts": {
+            "SortArray": [
+              "TSDistance"
+            ],
+            "RequestCount": 1,
+            "RequestPercentage": 1
+          },
+          "Range": [
+            4
+          ],
+          "Arc": 360,
+          "AutoCastRange": 4,
+          "id": "GrimGliderNullify"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 10,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "GrimGliderNullify,Execute",
+        "id": "GrimGliderNullify",
+        "Icon": "btn-ability-protoss-beambounce",
+        "Name": {
+          "enUS": "Nullify"
+        },
+        "Tooltip": {
+          "enUS": "Destroys a nearby enemy projectile."
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
           "Name": "Abil/Name/GrimGliderMortalitysEclipse",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
@@ -1205,7 +1336,7 @@
             {
               "DisplayType": "Confirm",
               "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
               "LineTexture": "Assets\\Textures\\WayPointLine.dds"
             }
           ],
@@ -1219,33 +1350,90 @@
               "value": ""
             }
           },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "GrimGliderMortalitysEclipseApplyBehaviorCaster"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "GrimGliderMortalitysEclipse",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
           "CmdButtonArray": {
-            "On": {
+            "Execute": {
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "GrimGliderMortalitysEclipseActivate"
-            },
-            "Off": {
-              "DefaultButtonFace": "GrimGliderMortalitysEclipseDeactivate"
+              "DefaultButtonFace": "GrimGliderMortalitysEclipse",
+              "Requirements": "GrimGliderMortalitysEclipse"
             }
-          },
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "Flags": {
-            "BestUnit": 1,
-            "Toggle": 1,
-            "Transient": 1
           },
           "Cost": [
             {
               "Vital": {
-                "Energy": 25
+                "Energy": 150
               }
             }
-          ],
-          "BehaviorArray": [
-            "GrimGlider"
           ],
           "id": "GrimGliderMortalitysEclipse"
         },
@@ -1254,20 +1442,24 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 25,
+          "Energy": 150,
           "Life": 0,
           "Shields": 0,
           "Food": 0
         },
         "Row": 2,
-        "Column": 1,
+        "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "GrimGliderMortalitysEclipse,Off",
-        "id": "GrimGliderMortalitysEclipseDeactivate",
-        "Icon": "btn-command-cancel",
-        "Tooltip": "Deactivates Mortality's Eclipse to conserve energy.",
-        "Name": "Mortality's Eclipse",
-        "Hotkey": "W"
+        "AbilCmd": "GrimGliderMortalitysEclipse,Execute",
+        "id": "GrimGliderMortalitysEclipse",
+        "Icon": "btn-ability-protoss-amoncloud",
+        "Name": {
+          "enUS": "Mortality's Eclipse"
+        },
+        "Tooltip": {
+          "enUS": "For the next <b>7</b> seconds raises all combat units that die within <b>10</b> range as uncontrollable Shades that fight on the Grim Glider's behalf with <b>-50</b>% attack speed. Shades decay over <b>3.5</b> seconds unless protected by Mortality's Eclipse or Wraith Night."
+        },
+        "Hotkey": "E"
       }
     ]
   },
@@ -1278,91 +1470,175 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
-  "Speed": 3,
+  "TechAliasArray": [
+    "GrimGlider"
+  ],
+  "Speed": 4,
   "Sight": 11,
   "Height": 3,
-  "Food": -4,
+  "Food": -8,
   "CostResource": {
-    "Minerals": 100,
-    "Vespene": 300,
-    "Custom": 1640
+    "Minerals": 300,
+    "Vespene": 400,
+    "Custom": 140
   },
   "KillXP": 15,
   "ScoreMake": 100,
   "ScoreKill": 100,
-  "SubgroupPriority": 17,
+  "SubgroupPriority": 93,
   "GlossaryPriority": 0,
   "AIOverideTargetPriority": 21,
   "EnergyStart": 50,
   "EnergyMax": 200,
-  "EnergyRegenRate": 1.6875,
+  "EnergyRegenRate": 1.125,
   "GlossaryWeakArray": [
     "Raven",
     "Overseer",
     "Observer"
   ],
   "Icon": "btn-critter-sporeray",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "Model": "ZerusAlienTreeHover",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
-  "Weapons": [],
+  "Weapons": [
+    {
+      "id": "GrimGliderEmaciate",
+      "Name": {
+        "enUS": "Grim Glider - Emaciate"
+      },
+      "TargetFilters": "",
+      "Range": 7,
+      "Period": 0.0625
+    }
+  ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "Detector11",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     },
     {
-      "id": "Negative1Armor"
+      "id": "Negative1Armor",
+      "Name": {
+        "enUS": "-1 Armor"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "GrimGliderEmaciateCaster",
+      "Name": {
+        "enUS": "Grim Glider - Emaciate (Caster)"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "GrimGliderNullify",
+      "Name": {
+        "enUS": "Grim Glider - Nullify"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "DragonAscended",
       "Icon": "btn-ability-zerg-dehakaspawn",
-      "Tooltip": "This Dragon is more powerful. If it dies in combat it will provide its owner with a small amount of Rage.",
-      "Name": "Ascended"
+      "Name": {
+        "enUS": "Ascended"
+      },
+      "Tooltip": {
+        "enUS": "This Dragon is more powerful."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
-      "id": "GrimGliderMortalitysEclipse",
-      "Name": "Grim Glider - Mortality's Eclipse"
+      "id": "attack",
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedGrimGlider",
-      "Name": "Ascended Grim Glider"
+      "Name": {
+        "enUS": "Ascended Grim Glider"
+      }
     },
     {
       "id": "AscendedGrimGliderFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "GrimGliderFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
+    },
+    {
+      "id": "GrimGliderEmaciate",
+      "Name": {
+        "enUS": "Grim Glider - Emaciate"
+      }
+    },
+    {
+      "id": "GrimGliderNullify",
+      "Name": {
+        "enUS": "Grim Glider - Nullify"
+      }
+    },
+    {
+      "id": "GrimGliderMortalitysEclipse",
+      "Name": {
+        "enUS": "Grim Glider - Mortality's Eclipse"
+      }
     }
   ],
   "$Upgrades": [
-    "GrimGliderWraithNight",
+    "Button/Tooltip/GrimGlider",
+    "Button/Tooltip/AscendedGrimGlider",
     "AscendedGrimGlider",
+    "GrimGliderMortalitysEclipse",
     "DragonScaleArmorLevel1",
     "GrimGlider",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
-    "DragonScaleArmorLevel3"
+    "DragonScaleArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1379,84 +1655,142 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedGrimGlider,Execute",
       "id": "AscendedGrimGlider",
-      "Tooltip": "<span style=\"color: #00FF00\">+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+      }
     },
     {
       "AbilCmd": "AscendedGrimGliderFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "GrimGliderFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
-      "AbilCmd": "move,AcquireMove",
-      "id": "AcquireMove",
-      "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "AbilCmd": "GrimGliderEmaciate,Execute",
+      "id": "GrimGliderEmaciate",
+      "Icon": "ui_tipicon_campaign_hyb02-lifedrain",
+      "Name": {
+        "enUS": "Emaciate"
+      },
+      "Tooltip": {
+        "enUS": "Drains energy and vitality from a target without alerting enemies. Enemy and neutral targets lose <b>36</b> energy and <b>14</b> vitality per second while having their movement speed slowed by <b>50</b>%. Player or allied targets lose the same amount of energy but only lose <b>4</b> vitality per second. The Grim Glider gains <b>25</b>% of these amounts as energy, except for the vitality drained from neutral targets.<br/><br/><span style=\"color: #ffff8a\">Prioritizes enemies that are not currently Emaciated, then with high energy and vitality.</span>"
+      }
     },
     {
-      "AbilCmd": "GrimGliderMortalitysEclipse,On",
-      "id": "GrimGliderMortalitysEclipseActivate",
-      "Icon": "btn-tips-fallenheroes",
-      "Tooltip": "Activates Mortality's Eclipse, raising all combat units that die within <b>10</b> range of a Grim Glider as uncontrollable Shades that last for <b>8</b> seconds.<br/><br/><span style=\"color: #f078ff\">Drains <b>25.0</b> energy per second.</span>",
-      "Name": "Mortality's Eclipse"
+      "AbilCmd": "GrimGliderNullify,Execute",
+      "id": "GrimGliderNullify",
+      "Icon": "btn-ability-protoss-beambounce",
+      "Name": {
+        "enUS": "Nullify"
+      },
+      "Tooltip": {
+        "enUS": "Destroys a nearby enemy projectile."
+      }
     },
     {
-      "AbilCmd": "GrimGliderMortalitysEclipse,Off",
-      "id": "GrimGliderMortalitysEclipseDeactivate",
-      "Icon": "btn-command-cancel",
-      "Tooltip": "Deactivates Mortality's Eclipse to conserve energy.",
-      "Name": "Mortality's Eclipse"
+      "AbilCmd": "GrimGliderMortalitysEclipse,Execute",
+      "id": "GrimGliderMortalitysEclipse",
+      "Icon": "btn-ability-protoss-amoncloud",
+      "Name": {
+        "enUS": "Mortality's Eclipse"
+      },
+      "Tooltip": {
+        "enUS": "For the next <b>7</b> seconds raises all combat units that die within <b>10</b> range as uncontrollable Shades that fight on the Grim Glider's behalf with <b>-50</b>% attack speed. Shades decay over <b>3.5</b> seconds unless protected by Mortality's Eclipse or Wraith Night."
+      }
     }
   ]
 }

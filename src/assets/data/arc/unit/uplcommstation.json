@@ -1,18 +1,24 @@
 {
-  "Name": "Comm Station",
-  "Description": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
+  "Name": {
+    "enUS": "Comm Station"
+  },
+  "Description": {
+    "enUS": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 300,
-  "LifeMax": 300,
-  "LifeArmorName": "UPL Building Plating",
+  "LifeStart": 450,
+  "LifeMax": 450,
+  "LifeArmorName": {
+    "enUS": "UPL Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UPLCommStation/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UPLCommStation/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UPLCommStation/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UPLCommStation/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -165,28 +173,15 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
         },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "UPLSelectBuilder",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
-        "Hotkey": "U"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
+        "Hotkey": "Esc"
       },
       {
         "Cost": {
@@ -204,8 +199,12 @@
         "Type": "Passive",
         "id": "UPLCommStationPassive",
         "Icon": "btn-ability-upl-commbuff",
-        "Tooltip": "Land Link communications facilitate faster unit response.  Increases movement speed of all friendly units in area of effect.",
-        "Name": "Comm Station Dispatching"
+        "Name": {
+          "enUS": "Comm Station Dispatching"
+        },
+        "Tooltip": {
+          "enUS": "Land Link communications facilitate faster unit response.  Increases movement speed of all friendly units in area of effect."
+        }
       },
       {
         "Cost": {
@@ -223,8 +222,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       },
       {
         "Info": {
@@ -360,14 +365,18 @@
         "AbilCmd": "UPLCommStationActiveBuff,Execute",
         "id": "UPLCommStationCommandLink",
         "Icon": "btn-ability-upl-commandlink",
-        "Tooltip": "Provides bonuses to UPL structures & mech units for 25 seconds<br/> <br/>Increases move, attack and production speed by <span style=\"color: #80FFFF\">25%</span><br/>Additionally Turrets gain <span style=\"color: #80FFFF\">+2</span> range.",
-        "Name": "Command Link",
+        "Name": {
+          "enUS": "Command Link"
+        },
+        "Tooltip": {
+          "enUS": "Provides bonuses to UPL structures & mech units for 18 seconds<br/> <br/>Increases move, attack and production speed by <span style=\"color: 80FFFF\">25%</span><br/>Additionally Turrets gain <span style=\"color: 80FFFF\">+2</span> range."
+        },
         "Hotkey": "C"
       }
     ]
   },
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 3,
+  "SubgroupPriority": 0,
   "GlossaryCategory": "Unit/Category/0UPLBuildings",
   "GlossaryPriority": 12,
   "HotkeyCategory": "Unit/Category/UPLUnits",
@@ -375,14 +384,13 @@
   "Facing": 315,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 125,
-    "Vespene": 100
+    "Minerals": 100
   },
   "RepairTime": 18,
   "Footprint": "Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2",
-  "ScoreMake": 225,
-  "ScoreKill": 225,
+  "ScoreMake": 100,
+  "ScoreKill": 100,
   "TechAliasArray": [
     "Alias_UPLCommStation"
   ],
@@ -393,31 +401,52 @@
   "EnergyMax": 150,
   "EnergyRegenRate": 0.5625,
   "Icon": "btn-building-upl-uplcommstation",
+  "Model": "UPLCommStation",
   "LifeArmorIcon": "btn-upgrade-upl-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UPLCommStationPassive"
+      "id": "UPLCommStationPassive",
+      "Name": {
+        "enUS": "UPLCommStationPassive"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "Detector12",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "UPLCommStationActiveBuff",
-      "Name": "UPLComm Station Command Link"
+      "Name": {
+        "enUS": "UPLComm Station Command Link"
+      }
     }
   ],
   "$Upgrades": [
@@ -440,15 +469,25 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "UPLCommStationActiveBuff,Execute",
       "id": "UPLCommStationCommandLink",
       "Icon": "btn-ability-upl-commandlink",
-      "Tooltip": "Provides bonuses to UPL structures & mech units for 25 seconds<br/> <br/>Increases move, attack and production speed by <span style=\"color: #80FFFF\">25%</span><br/>Additionally Turrets gain <span style=\"color: #80FFFF\">+2</span> range.",
-      "Name": "Command Link"
+      "Name": {
+        "enUS": "Command Link"
+      },
+      "Tooltip": {
+        "enUS": "Provides bonuses to UPL structures & mech units for 18 seconds<br/> <br/>Increases move, attack and production speed by <span style=\"color: 80FFFF\">25%</span><br/>Additionally Turrets gain <span style=\"color: 80FFFF\">+2</span> range."
+      }
     }
   ]
 }

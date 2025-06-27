@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Frontier Deep One"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FrontierDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FrontierDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FrontierDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FrontierDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,13 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "FrontierDeepOneInvigorate",
+    "FrontierDeepOneBuild"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +194,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +234,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +256,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -315,8 +316,12 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "Razorback"
+                "DefaultButtonFace": "Razorback",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "Razorback",
               "Time": 21
             },
@@ -325,8 +330,12 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "AugmentationPitFrontier"
+                "DefaultButtonFace": "AugmentationPitFrontier",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitFrontier",
               "Time": 56
             },
@@ -337,6 +346,9 @@
                 },
                 "DefaultButtonFace": "SunkenGuardian"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "SunkenGuardian",
               "Time": 28
             },
@@ -345,10 +357,14 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "PhlogistonGuardian"
+                "DefaultButtonFace": "PhlogistonGuardian",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "PhlogistonGuardian",
-              "Time": 35
+              "Time": 21
             },
             "Build5": {
               "Button": {
@@ -562,13 +578,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -576,8 +588,12 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "Razorback"
+            "DefaultButtonFace": "Razorback",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "Razorback",
           "Time": 21
         },
@@ -603,7 +619,7 @@
           "enUS": "Propagate Razorback"
         },
         "Tooltip": {
-          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>+<b>100.0</b>% Supply</span>"
+          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
         },
         "Hotkey": "Z"
       },
@@ -613,8 +629,12 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "AugmentationPitFrontier"
+            "DefaultButtonFace": "AugmentationPitFrontier",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitFrontier",
           "Time": 56
         },
@@ -651,6 +671,9 @@
             },
             "DefaultButtonFace": "SunkenGuardian"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "SunkenGuardian",
           "Time": 28
         },
@@ -846,10 +869,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -872,13 +892,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -886,13 +902,17 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "PhlogistonGuardian"
+            "DefaultButtonFace": "PhlogistonGuardian",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "PhlogistonGuardian",
-          "Time": 35
+          "Time": 21
         },
         "Unit": "PhlogistonGuardian",
-        "Time": 35,
+        "Time": 21,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -939,7 +959,7 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -949,10 +969,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "FrontierDeepOneInvigorate",
@@ -970,13 +987,12 @@
   "$Upgrades": [
     "PlodderBuild",
     "FrontierDeepOne",
-    "CountUnitFrontierDeepOneCompleteOnly",
     "DragonPlateArmorLevel1",
     "FrontierDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "CountUnitFrontierDeepOneCompleteOnly"
   ],
   "$Requirements": [],
   "$Production": [
@@ -999,25 +1015,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Halt",
@@ -1025,12 +1035,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build1",
@@ -1040,7 +1047,7 @@
         "enUS": "Propagate Razorback"
       },
       "Tooltip": {
-        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>+<b>100.0</b>% Supply</span>"
+        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
       }
     },
     {
@@ -1081,12 +1088,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build4",

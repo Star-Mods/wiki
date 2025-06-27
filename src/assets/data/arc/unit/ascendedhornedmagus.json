@@ -1,6 +1,10 @@
 {
-  "Name": "Ascended Horned Magus",
-  "Description": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Shroud.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+60 Life<br/>+100% Energy Regeneration</span>",
+  "Name": {
+    "enUS": "Ascended Horned Magus"
+  },
+  "Description": {
+    "enUS": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Frenzy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,12 +14,14 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 150,
-  "LifeMax": 150,
-  "LifeArmorName": "Dragon Scale Armor",
+  "LifeStart": 140,
+  "LifeMax": 140,
+  "LifeArmorName": {
+    "enUS": "Dragon Scale Armor"
+  },
   "Mover": "Ground",
-  "StationaryTurningRate": 720,
-  "TurningRate": 720,
+  "StationaryTurningRate": 495,
+  "TurningRate": 495,
   "Radius": 0.625,
   "SeparationRadius": 0.625,
   "MinimapRadius": 0.625,
@@ -62,16 +68,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "HornedMagus/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "HornedMagus/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "HornedMagus/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "HornedMagus/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -86,8 +94,7 @@
   "Attributes": [
     "Biological",
     "Light",
-    "Psionic",
-    "Heroic"
+    "Psionic"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -185,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -259,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -349,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -439,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -514,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -527,7 +564,7 @@
           "Minerals": 50,
           "Vespene": 125,
           "Terazine": 0,
-          "Custom": 700,
+          "Custom": 35,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -538,8 +575,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "AscendedHornedMagus,Execute",
         "id": "AscendedHornedMagus",
-        "Tooltip": "<span style=\"color: #00FF00\">+60 Life<br/>+100% Energy Regeneration</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -557,8 +598,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedHornedMagus",
-        "Tooltip": "<span style=\"color: #00FF00\">+60 Life<br/>+100% Energy Regeneration</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -672,7 +717,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 980
+                "Custom": 70
               }
             }
           ],
@@ -682,7 +727,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 980,
+          "Custom": 70,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -694,8 +739,12 @@
         "AbilCmd": "AscendedHornedMagusFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -809,7 +858,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 420
+                "Custom": 35
               }
             }
           ],
@@ -819,7 +868,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 420,
+          "Custom": 35,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -831,8 +880,12 @@
         "AbilCmd": "HornedMagusFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -965,8 +1018,12 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -1033,8 +1090,12 @@
         "AbilCmd": "HornedMagusInvigorate,On",
         "id": "HornedMagusActivateInvigorate",
         "Icon": "btn-ability-kerrigan-vespeneefficiency",
-        "Tooltip": "Heals up to <b>4</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-        "Name": "Activate Invigorate",
+        "Name": {
+          "enUS": "Activate Invigorate"
+        },
+        "Tooltip": {
+          "enUS": "Heals up to <b>4</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -1078,7 +1139,7 @@
             "BestUnit": 1
           },
           "Effect": [
-            "HornedMagusFireShieldApplyBehavior1"
+            "HornedMagusFireShieldSwitch"
           ],
           "EffectRange": [
             "0,1000"
@@ -1156,7 +1217,7 @@
             "Visible;Missile,Stasis,Dead,Hidden,Invulnerable"
           ],
           "Range": [
-            7
+            9
           ],
           "CastIntroTime": [
             0.25
@@ -1181,15 +1242,19 @@
         "Type": "AbilCmd",
         "AbilCmd": "HornedMagusFireShield,Execute",
         "id": "HornedMagusFireShield",
-        "Icon": "btn-ability-terran-electricfield",
-        "Tooltip": "Increases the target unit's armor by <b>3</b> and causes nearby units on the same plane that do not also have Fire Shield to suffer <b>5</b> damage per second. Lasts <b>14</b> seconds.",
-        "Name": "Fire Shield",
+        "Icon": "btn-ability-stetmann-garytravelingdamageorb",
+        "Name": {
+          "enUS": "Fire Shield"
+        },
+        "Tooltip": {
+          "enUS": "Increases the target unit's armor by <b>3</b> and causes nearby units on the same plane that do not also have Fire Shield to suffer <b>5</b> damage per second. Lasts <b>14</b> seconds."
+        },
         "Hotkey": "Q"
       },
       {
         "Info": {
           "class": "CAbilEffectTarget",
-          "Name": "Abil/Name/HornedMagusShroud",
+          "Name": "Abil/Name/HornedMagusFrenzy",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -1204,7 +1269,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "HornedMagusShroud",
+          "DataCollection": "HornedMagusFrenzy",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -1227,12 +1292,12 @@
             "BestUnit": 1
           },
           "Effect": [
-            "HornedMagusShroudSearchArea"
+            "HornedMagusFrenzySearchArea"
           ],
           "EffectRange": [
             "0,1000"
           ],
-          "AINotifyEffect": "HornedMagusShroud",
+          "AINotifyEffect": "HornedMagusFrenzy",
           "RefundArray": {
             "Approach": 1,
             "Prep": 1,
@@ -1284,20 +1349,20 @@
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "HornedMagusShroud",
-              "Requirements": "HornedMagusShroud"
+              "DefaultButtonFace": "HornedMagusFrenzy",
+              "Requirements": "HornedMagusFrenzy"
             }
           },
           "FollowRange": 5,
           "Cost": [
             {
               "Vital": {
-                "Energy": 100
+                "Energy": 75
               }
             }
           ],
           "Range": [
-            9
+            7
           ],
           "CastIntroTime": [
             0.25
@@ -1306,16 +1371,16 @@
             0.5
           ],
           "CursorEffect": [
-            "HornedMagusShroudSearchArea"
+            "HornedMagusFrenzySearchArea"
           ],
-          "id": "HornedMagusShroud"
+          "id": "HornedMagusFrenzy"
         },
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 100,
+          "Energy": 75,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1323,11 +1388,15 @@
         "Row": 2,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "HornedMagusShroud,Execute",
-        "id": "HornedMagusShroud",
-        "Icon": "btn-ability-protoss-energize",
-        "Tooltip": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>28</b> seconds unless they attack or receive damage.",
-        "Name": "Shroud",
+        "AbilCmd": "HornedMagusFrenzy,Execute",
+        "id": "HornedMagusFrenzy",
+        "Icon": "btn-ability-zerg-dehaka-superroar",
+        "Name": {
+          "enUS": "Frenzy"
+        },
+        "Tooltip": {
+          "enUS": "Causes Biological units in the target area to go mad for <b>4</b> seconds rendering them uncontrollable. Increases attack and movement speed by 50% but reduces armor by 2."
+        },
         "Hotkey": "W"
       },
       {
@@ -1394,8 +1463,12 @@
         "AbilCmd": "HornedMagusInvigorate,Off",
         "id": "HornedMagusDeactivateInvigorate",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Stops healing nearby friendly biological units and structures to conserve energy.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-        "Name": "Deactivate Invigorate",
+        "Name": {
+          "enUS": "Deactivate Invigorate"
+        },
+        "Tooltip": {
+          "enUS": "Stops healing nearby friendly biological units and structures to conserve energy.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -1414,8 +1487,12 @@
         "Type": "Passive",
         "id": "DragonRetarget",
         "Icon": "ui_tipicon_campaign_exp02-focusfire",
-        "Tooltip": "Ranged attack projectiles retarget if the original target dies.",
-        "Name": "Retarget"
+        "Name": {
+          "enUS": "Retarget"
+        },
+        "Tooltip": {
+          "enUS": "Ranged attack projectiles retarget if the original target dies."
+        }
       }
     ]
   },
@@ -1427,6 +1504,9 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "HornedMagus"
+  ],
   "EnergyStart": 50,
   "EnergyMax": 200,
   "EnergyRegenRate": 1.125,
@@ -1436,13 +1516,13 @@
   "CostResource": {
     "Minerals": 50,
     "Vespene": 125,
-    "Custom": 700
+    "Custom": 35
   },
   "KillXP": 20,
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
-  "SubgroupPriority": 19,
+  "SubgroupPriority": 91,
   "GlossaryPriority": 0,
   "GlossaryStrongArray": [
     "Marine",
@@ -1454,103 +1534,158 @@
     "Roach",
     "Stalker"
   ],
+  "LifeRegenRate": 2.1445,
+  "InnerRadius": 0.5,
   "Icon": "btn-critter-tastelope",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "Model": "Tastelope",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "HornedMagusHeadbutt",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": "Headbutt",
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "Name": {
+        "enUS": "Headbutt"
+      },
       "Amount": 10,
       "Kind": "Melee",
       "TargetFilters": "Ground",
-      "Range": 0.25,
+      "Range": 0.5,
       "Period": 1.47
     },
     {
       "id": "HornedMagusMysticBolt",
-      "Icon": "fireball_1",
-      "Name": "Mystic Bolt",
+      "Icon": "btn-upgrade-dragon-fireattacks-level0",
+      "Name": {
+        "enUS": "Mystic Bolt"
+      },
       "Amount": 7,
       "AttributeBonus": {
         "Light": 7
       },
       "Kind": "Ranged",
       "TargetFilters": "",
-      "Range": 7,
+      "Range": 6,
       "Period": 1.47
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "Negative1Armor"
+      "id": "Negative1Armor",
+      "Name": {
+        "enUS": "-1 Armor"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "DragonAscended",
       "Icon": "btn-ability-zerg-dehakaspawn",
-      "Tooltip": "This Dragon is more powerful. If it dies in combat it will provide its owner with a small amount of Rage.",
-      "Name": "Ascended"
+      "Name": {
+        "enUS": "Ascended"
+      },
+      "Tooltip": {
+        "enUS": "This Dragon is more powerful."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedHornedMagus",
-      "Name": "Ascended Horned Magus"
+      "Name": {
+        "enUS": "Ascended Horned Magus"
+      }
     },
     {
       "id": "AscendedHornedMagusFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "HornedMagusFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
-    },
-    {
-      "id": "HornedMagusInvigorate",
-      "Name": "Horned Magus - Invigorate"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "HornedMagusFireShield",
-      "Name": "Horned Magus - Fire Shield"
+      "Name": {
+        "enUS": "Horned Magus - Fire Shield"
+      }
     },
     {
-      "id": "HornedMagusShroud",
-      "Name": "Horned Magus - Shroud"
+      "id": "HornedMagusFrenzy",
+      "Name": {
+        "enUS": "Horned Magus - Frenzy"
+      }
+    },
+    {
+      "id": "HornedMagusInvigorate",
+      "Name": {
+        "enUS": "Horned Magus - Invigorate"
+      }
     }
   ],
   "$Upgrades": [
+    "Button/Tooltip/HornedMagus",
+    "Button/Tooltip/AscendedHornedMagus",
     "AscendedHornedMagus",
-    "HornedMagusArcaneEssence",
+    "HornedMagusFrenzy",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonScaleArmorLevel1",
     "HornedMagus",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
-    "DragonScaleArmorLevel3"
+    "DragonScaleArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
-  "$Morph": [],
+  "$Morph": [
+    "SpiderMineSCBW"
+  ],
   "$Phase": [
     "AscendedHornedMagus",
     "AscendedHornedMagus"
@@ -1562,91 +1697,153 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedHornedMagus,Execute",
       "id": "AscendedHornedMagus",
-      "Tooltip": "<span style=\"color: #00FF00\">+60 Life<br/>+100% Energy Regeneration</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+      }
     },
     {
       "AbilCmd": "AscendedHornedMagusFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "HornedMagusFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "HornedMagusInvigorate,On",
       "id": "HornedMagusActivateInvigorate",
       "Icon": "btn-ability-kerrigan-vespeneefficiency",
-      "Tooltip": "Heals up to <b>4</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-      "Name": "Activate Invigorate"
+      "Name": {
+        "enUS": "Activate Invigorate"
+      },
+      "Tooltip": {
+        "enUS": "Heals up to <b>4</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+      }
     },
     {
       "AbilCmd": "HornedMagusFireShield,Execute",
       "id": "HornedMagusFireShield",
-      "Icon": "btn-ability-terran-electricfield",
-      "Tooltip": "Increases the target unit's armor by <b>3</b> and causes nearby units on the same plane that do not also have Fire Shield to suffer <b>5</b> damage per second. Lasts <b>14</b> seconds.",
-      "Name": "Fire Shield"
+      "Icon": "btn-ability-stetmann-garytravelingdamageorb",
+      "Name": {
+        "enUS": "Fire Shield"
+      },
+      "Tooltip": {
+        "enUS": "Increases the target unit's armor by <b>3</b> and causes nearby units on the same plane that do not also have Fire Shield to suffer <b>5</b> damage per second. Lasts <b>14</b> seconds."
+      }
     },
     {
-      "AbilCmd": "HornedMagusShroud,Execute",
-      "id": "HornedMagusShroud",
-      "Icon": "btn-ability-protoss-energize",
-      "Tooltip": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>28</b> seconds unless they attack or receive damage.",
-      "Name": "Shroud"
+      "AbilCmd": "HornedMagusFrenzy,Execute",
+      "id": "HornedMagusFrenzy",
+      "Icon": "btn-ability-zerg-dehaka-superroar",
+      "Name": {
+        "enUS": "Frenzy"
+      },
+      "Tooltip": {
+        "enUS": "Causes Biological units in the target area to go mad for <b>4</b> seconds rendering them uncontrollable. Increases attack and movement speed by 50% but reduces armor by 2."
+      }
     },
     {
       "AbilCmd": "HornedMagusInvigorate,Off",
       "id": "HornedMagusDeactivateInvigorate",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Stops healing nearby friendly biological units and structures to conserve energy.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-      "Name": "Deactivate Invigorate"
+      "Name": {
+        "enUS": "Deactivate Invigorate"
+      },
+      "Tooltip": {
+        "enUS": "Stops healing nearby friendly biological units and structures to conserve energy.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+      }
     }
   ]
 }

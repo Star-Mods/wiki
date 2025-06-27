@@ -1,6 +1,12 @@
 {
-  "Name": "Analysis Terminal",
-  "Description": "Contains weapon upgrades for Genetron light ground units, and armor upgrades for all Genetron ground units, and upgrades for the Spitfire.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Blitzers at the Manufacturer<br/>- Moles at the Fabricator<br/>- Repulsors from ACRs<br/>- Interdictors from ACRs",
+  "Name": {
+    "enUS": "Analysis Terminal",
+    "ruRU": "Терминал анализа"
+  },
+  "Description": {
+    "enUS": "Contains weapon upgrades for Genetron light ground units, and armor upgrades for all Genetron ground units, and a speed upgrade for the Spitfire.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Blitzers at the Manufacturer<br/>- Moles at the Fabricator<br/>- Repulsors from ACRs<br/>- Interdictors from ACRs",
+    "ruRU": "Содержит улучшения оружия для легких наземных единиц Генетронов и улучшения брони для всех наземных едениц Генетронов<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Репульсоры из АСР<br/>- Интердикторы из АСР"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AnalysisTerminal/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AnalysisTerminal/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AnalysisTerminal/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AnalysisTerminal/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -177,8 +188,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -241,8 +258,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -280,8 +303,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research4",
         "id": "UpgradeLightWeapons",
         "Icon": "btn-upgrade-genetron-lightmechweapons-level1",
-        "Tooltip": "Upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-        "Name": "Upgrade Light Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Light Weapons Level 1",
+          "ruRU": "Улучшить лёгкое вооружение до 1 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+          "ruRU": "Улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+        },
         "Hotkey": "E"
       },
       {
@@ -319,8 +348,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research5",
         "id": "UpgradeLightWeaponsLevel2",
         "Icon": "btn-upgrade-genetron-lightmechweapons-level2",
-        "Tooltip": "Further upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-        "Name": "Upgrade Light Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Light Weapons Level 2",
+          "ruRU": "Улучшить лёгкое вооружение до 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+          "ruRU": "Значительно улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+        },
         "Hotkey": "E"
       },
       {
@@ -358,8 +393,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research6",
         "id": "UpgradeLightWeaponsLevel3",
         "Icon": "btn-upgrade-genetron-lightmechweapons-level3",
-        "Tooltip": "Maximizes the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-        "Name": "Upgrade Light Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Light Weapons Level 3",
+          "ruRU": "Улучшить лёгкое вооружение до 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+          "ruRU": "Максимально улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+        },
         "Hotkey": "E"
       },
       {
@@ -397,8 +438,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research1",
         "id": "UpgradeGroundPlating",
         "Icon": "btn-upgrade-genetron-groundmechplating-level1",
-        "Tooltip": "Upgrades the armor of all Genetron ground units.",
-        "Name": "Upgrade Ground Plating Level 1",
+        "Name": {
+          "enUS": "Upgrade Ground Plating Level 1",
+          "ruRU": "Улучшить покрытие наземной техники до 1 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of all Genetron ground units.",
+          "ruRU": "Улучшает броню всех наземных единиц Генетронов."
+        },
         "Hotkey": "A"
       },
       {
@@ -436,8 +483,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research2",
         "id": "UpgradeGroundPlatingLevel2",
         "Icon": "btn-upgrade-genetron-groundmechplating-level2",
-        "Tooltip": "Further upgrades the armor of all Genetron ground units.",
-        "Name": "Upgrade Ground Plating Level 2",
+        "Name": {
+          "enUS": "Upgrade Ground Plating Level 2",
+          "ruRU": "Улучшить покрытие наземной техники до 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of all Genetron ground units.",
+          "ruRU": "Значительно улучшает броню всех наземных единиц Генетронов."
+        },
         "Hotkey": "A"
       },
       {
@@ -475,8 +528,14 @@
         "AbilCmd": "AnalysisTerminalResearch,Research3",
         "id": "UpgradeGroundPlatingLevel3",
         "Icon": "btn-upgrade-genetron-groundmechplating-level3",
-        "Tooltip": "Maximizes the armor of all Genetron ground units.",
-        "Name": "Upgrade Ground Plating Level 3",
+        "Name": {
+          "enUS": "Upgrade Ground Plating Level 3",
+          "ruRU": "Улучшить покрытие наземной техники до 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of all Genetron ground units.",
+          "ruRU": "Максимально улучшает броню всех наземных единиц Генетронов."
+        },
         "Hotkey": "A"
       },
       {
@@ -514,48 +573,15 @@
         "AbilCmd": "AnalysisTerminalResearch,Research7",
         "id": "ResearchSpitfireCalibratedEngines",
         "Icon": "btn-upgrade-genetron-calibratedengines",
-        "Tooltip": "Increases the movement speed of <span style=\"color: #FFFF80\">Spitfires</span>.",
-        "Name": "Research Calibrated Engines",
+        "Name": {
+          "enUS": "Research Calibrated Engines",
+          "ruRU": "Изучить откалиброванные двигатели"
+        },
+        "Tooltip": {
+          "enUS": "Increases the movement speed of <span style=\"color: FFFF80\">Spitfires</span>.",
+          "ruRU": "Увеличивает скорость <span style=\"color: FFFF80\">Спитфаеров</span> на 60%."
+        },
         "Hotkey": "C"
-      },
-      {
-        "Upgrade": "SpitfireMadcapRounds",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1
-            },
-            "DefaultButtonFace": "ResearchSpitfireMadcapRounds",
-            "Requirements": "LearnSpitfireMadcapRounds"
-          },
-          "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
-          },
-          "Time": 80,
-          "Upgrade": "SpitfireMadcapRounds"
-        },
-        "Time": 80,
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "AnalysisTerminalResearch,Research8",
-        "id": "ResearchSpitfireMadcapRounds",
-        "Icon": "btn-tips-terran-penetrator",
-        "Tooltip": "Increases <span style=\"color: #FFFF80\">Spitfire</span> weapon range and attack speed.",
-        "Name": "Research Madcap Rounds",
-        "Hotkey": "D"
       }
     ]
   },
@@ -572,6 +598,7 @@
     "Mole"
   ],
   "Icon": "btn-building-genetron-analysisterminal",
+  "Model": "AnalysisTerminal",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -579,22 +606,37 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "AnalysisTerminalResearch",
-      "Name": "Analysis Terminal - Research"
+      "Name": {
+        "enUS": "Analysis Terminal - Research",
+        "ruRU": "Analysis Terminal - Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -614,8 +656,7 @@
     "GenetronGroundPlatingLevel1",
     "GenetronGroundPlatingLevel2",
     "GenetronGroundPlatingLevel3",
-    "CalibratedEngines",
-    "SpitfireMadcapRounds"
+    "CalibratedEngines"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -627,71 +668,118 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research4",
       "id": "UpgradeLightWeapons",
       "Icon": "btn-upgrade-genetron-lightmechweapons-level1",
-      "Tooltip": "Upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-      "Name": "Upgrade Light Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Light Weapons Level 1",
+        "ruRU": "Улучшить лёгкое вооружение до 1 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+        "ruRU": "Улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research5",
       "id": "UpgradeLightWeaponsLevel2",
       "Icon": "btn-upgrade-genetron-lightmechweapons-level2",
-      "Tooltip": "Further upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-      "Name": "Upgrade Light Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Light Weapons Level 2",
+        "ruRU": "Улучшить лёгкое вооружение до 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+        "ruRU": "Значительно улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research6",
       "id": "UpgradeLightWeaponsLevel3",
       "Icon": "btn-upgrade-genetron-lightmechweapons-level3",
-      "Tooltip": "Maximizes the damage of units produced from the <span style=\"color: #FFFF80\">Manufacturer</span>.",
-      "Name": "Upgrade Light Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Light Weapons Level 3",
+        "ruRU": "Улучшить лёгкое вооружение до 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage of units produced from the <span style=\"color: FFFF80\">Manufacturer</span>.",
+        "ruRU": "Максимально улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Мануфактурах</span>."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research1",
       "id": "UpgradeGroundPlating",
       "Icon": "btn-upgrade-genetron-groundmechplating-level1",
-      "Tooltip": "Upgrades the armor of all Genetron ground units.",
-      "Name": "Upgrade Ground Plating Level 1"
+      "Name": {
+        "enUS": "Upgrade Ground Plating Level 1",
+        "ruRU": "Улучшить покрытие наземной техники до 1 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of all Genetron ground units.",
+        "ruRU": "Улучшает броню всех наземных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research2",
       "id": "UpgradeGroundPlatingLevel2",
       "Icon": "btn-upgrade-genetron-groundmechplating-level2",
-      "Tooltip": "Further upgrades the armor of all Genetron ground units.",
-      "Name": "Upgrade Ground Plating Level 2"
+      "Name": {
+        "enUS": "Upgrade Ground Plating Level 2",
+        "ruRU": "Улучшить покрытие наземной техники до 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of all Genetron ground units.",
+        "ruRU": "Значительно улучшает броню всех наземных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research3",
       "id": "UpgradeGroundPlatingLevel3",
       "Icon": "btn-upgrade-genetron-groundmechplating-level3",
-      "Tooltip": "Maximizes the armor of all Genetron ground units.",
-      "Name": "Upgrade Ground Plating Level 3"
+      "Name": {
+        "enUS": "Upgrade Ground Plating Level 3",
+        "ruRU": "Улучшить покрытие наземной техники до 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of all Genetron ground units.",
+        "ruRU": "Максимально улучшает броню всех наземных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "AnalysisTerminalResearch,Research7",
       "id": "ResearchSpitfireCalibratedEngines",
       "Icon": "btn-upgrade-genetron-calibratedengines",
-      "Tooltip": "Increases the movement speed of <span style=\"color: #FFFF80\">Spitfires</span>.",
-      "Name": "Research Calibrated Engines"
-    },
-    {
-      "AbilCmd": "AnalysisTerminalResearch,Research8",
-      "id": "ResearchSpitfireMadcapRounds",
-      "Icon": "btn-tips-terran-penetrator",
-      "Tooltip": "Increases <span style=\"color: #FFFF80\">Spitfire</span> weapon range and attack speed.",
-      "Name": "Research Madcap Rounds"
+      "Name": {
+        "enUS": "Research Calibrated Engines",
+        "ruRU": "Изучить откалиброванные двигатели"
+      },
+      "Tooltip": {
+        "enUS": "Increases the movement speed of <span style=\"color: FFFF80\">Spitfires</span>.",
+        "ruRU": "Увеличивает скорость <span style=\"color: FFFF80\">Спитфаеров</span> на 60%."
+      }
     }
   ]
 }

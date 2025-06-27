@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Skyrazer"
   },
@@ -70,16 +71,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Skyrazer/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Skyrazer/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Skyrazer/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Skyrazer/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -93,8 +96,11 @@
   ],
   "Attributes": [
     "Biological",
-    "Armored",
-    "Heroic"
+    "Armored"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "DragonAscended"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -104,6 +110,15 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedSkyrazer",
+    "AscendedSkyrazerFission",
+    "SkyrazerFission",
+    "DragonFissionDisabled"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -194,12 +209,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -239,8 +251,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -255,10 +266,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -278,12 +286,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -373,13 +378,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -469,13 +471,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -549,14 +548,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -1073,7 +1066,7 @@
           "enUS": "Ember Core"
         },
         "Tooltip": {
-          "enUS": "Increases the Skyrazer's range by its current cliff level."
+          "enUS": "Allows <span style=\"color: ffff8a\">Skyrazors</span> to use <span style=\"color: ffff8a\">Superior Blast</span> against targets on higher cliff levels or while affected by <span style=\"color: ffff8a\">Crushing Gravity</span>."
         }
       }
     ]
@@ -1086,6 +1079,9 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "Skyrazer"
+  ],
   "Speed": 2.5,
   "Sight": 11,
   "Food": -3,
@@ -1100,6 +1096,20 @@
   "ScoreKill": 100,
   "SubgroupPriority": 62,
   "GlossaryPriority": 0,
+  "WeaponArray": [
+    {
+      "Link": "SkyrazerSavageClaws"
+    },
+    {
+      "Link": "SkyrazerAscendedSuperiorBlastEmbercore"
+    },
+    {
+      "Link": "SkyrazerAscendedSuperiorBlast"
+    },
+    {
+      "Link": "SkyrazerAscendedInferiorBlast"
+    }
+  ],
   "GlossaryStrongArray": [
     "Banshee",
     "Mutalisk",
@@ -1114,11 +1124,39 @@
   "InnerRadius": 0.5,
   "Icon": "btn-unit-zerg-tyrannozor",
   "Model": "Terrorzor",
-  "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dehaka-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "SkyrazerAscendedSuperiorBlast",
+      "Name": {
+        "enUS": "Savage Claws"
+      },
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "DisplayEffect": "SkyrazerSavageClawsDamage",
+      "DisplayName": "Weapon/Name/SkyrazerSavageClaws",
+      "AcquirePrioritization": "ByAngle",
+      "MinScanRange": 5,
+      "Range": 0.25,
+      "MinimumRange": 0,
+      "Effect": "SkyrazerSavageClawsDamage",
+      "id": "SkyrazerSavageClaws",
+      "parent": "SkyrazerInferiorBlast",
+      "class": "CWeaponLegacy",
+      "Amount": 14,
+      "Kind": "Melee",
+      "TargetFilters": "Ground",
+      "Period": 0.91
+    },
+    {
+      "Options": {
+        "Disabled": 1,
+        "Hidden": 1
+      },
+      "TargetFilters": "Ground",
+      "MinimumRange": 0.5,
+      "id": "SkyrazerAscendedSuperiorBlastEmbercore",
+      "parent": "SkyrazerAscendedSuperiorBlast",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Superior Blast"
       },
@@ -1128,24 +1166,33 @@
       },
       "Kind": "Ranged",
       "DisplayAttackCount": 3,
+      "Range": 7,
+      "Period": 0.91
+    },
+    {
+      "DisplayAttackCount": 3,
+      "Effect": "SkyrazerAscendedSuperiorBlastCreatePersistent",
+      "id": "SkyrazerAscendedSuperiorBlast",
+      "parent": "SkyrazerSuperiorBlast",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Superior Blast"
+      },
+      "Amount": 8,
+      "AttributeBonus": {
+        "Armored": 3
+      },
+      "Kind": "Ranged",
       "TargetFilters": "Air",
       "Range": 7,
       "Period": 0.91
     },
     {
-      "id": "SkyrazerSavageClaws",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": {
-        "enUS": "Savage Claws"
-      },
-      "Amount": 14,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.25,
-      "Period": 0.91
-    },
-    {
+      "DisplayAttackCount": 2,
+      "Effect": "SkyrazerAscendedAttackCreatePersistent",
       "id": "SkyrazerAscendedInferiorBlast",
+      "parent": "SkyrazerInferiorBlast",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Inferior Blast"
       },
@@ -1154,7 +1201,6 @@
         "Armored": 3
       },
       "Kind": "Ranged",
-      "DisplayAttackCount": 2,
       "TargetFilters": "Ground",
       "Range": 6,
       "Period": 0.91
@@ -1162,30 +1208,9 @@
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
-      },
-      "Tooltip": "-"
-    },
-    {
-      "id": "SkyrazerAscended1",
-      "Name": {
-        "enUS": "Skyrazer"
-      },
-      "Tooltip": "-"
-    },
-    {
-      "id": "SkyrazerAscended2",
-      "Name": {
-        "enUS": "Skyrazer"
-      },
-      "Tooltip": "-"
-    },
-    {
-      "id": "SkyrazerAscended3",
-      "Name": {
-        "enUS": "Skyrazer"
       },
       "Tooltip": "-"
     },
@@ -1204,22 +1229,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1251,21 +1275,27 @@
     "Button/Tooltip/Skyrazer",
     "Button/Tooltip/AscendedSkyrazer",
     "AscendedSkyrazer",
+    "SkyrazerEmberCore",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonPlateArmorLevel1",
     "Skyrazer",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3"
+    "DragonPlateArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedSkyrazer",
-    "AscendedSkyrazer"
-  ],
-  "$Phased": "AscendedSkyrazer",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1274,12 +1304,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1287,51 +1314,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedSkyrazer,Execute",

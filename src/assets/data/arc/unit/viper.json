@@ -1,6 +1,12 @@
 {
-  "Name": "Viper",
-  "Description": "Flying caster. Able to manipulate battlefield conditions. Can use Parasitic Bomb, Consume, Blinding Cloud, and Abduct abilities.",
+  "Name": {
+    "ruRU": "Viper",
+    "enUS": "Viper"
+  },
+  "Description": {
+    "enUS": "Flying caster. Able to manipulate battlefield conditions. Can use Parasitic Bomb, Consume, Blinding Cloud, and Abduct abilities.",
+    "ruRU": "Flying caster. Able to manipulate battlefield conditions. Can use Parasitic Bomb, Consume, Blinding Cloud, and Abduct abilities."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 150,
   "LifeMax": 150,
-  "LifeArmorName": "Zerg Flyer Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Flyer Carapace",
+    "ruRU": "Zerg Flyer Carapace"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Viper/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Viper/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Viper/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Viper/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -206,8 +217,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -280,8 +297,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -370,8 +393,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -445,8 +474,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -535,8 +570,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -625,8 +666,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -766,8 +813,14 @@
         "AbilCmd": "ViperConsumeStructure,Execute",
         "id": "ViperConsume",
         "Icon": "btn-ability-zerg-consume",
-        "Tooltip": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><c val=\"#ColorAttackInfo\">Cannot target allied or enemy structures.</span>",
-        "Name": "Consume",
+        "Name": {
+          "enUS": "Consume",
+          "ruRU": "Consume"
+        },
+        "Tooltip": {
+          "enUS": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>",
+          "ruRU": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -905,8 +958,14 @@
         "AbilCmd": "BlindingCloud,Execute",
         "id": "BlindingCloud",
         "Icon": "btn-ability-zerg-blindingcloud",
-        "Tooltip": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
-        "Name": "Blinding Cloud",
+        "Name": {
+          "enUS": "Blinding Cloud",
+          "ruRU": "Blinding Cloud"
+        },
+        "Tooltip": {
+          "enUS": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
+          "ruRU": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range."
+        },
         "Hotkey": "B"
       },
       {
@@ -1021,7 +1080,7 @@
             }
           ],
           "TargetFilters": [
-            "-;Self,Neutral,Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"
+            "-;Self,Neutral,Structure,Heroic,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable"
           ],
           "Range": [
             9
@@ -1052,8 +1111,14 @@
         "AbilCmd": "Yoink,Execute",
         "id": "FaceEmbrace",
         "Icon": "btn-ability-zerg-abduct",
-        "Tooltip": "Pulls target unit to the location of the viper.",
-        "Name": "Abduct",
+        "Name": {
+          "enUS": "Abduct",
+          "ruRU": "Abduct"
+        },
+        "Tooltip": {
+          "enUS": "Pulls target unit to the location of the viper.",
+          "ruRU": "Pulls target unit to the location of the viper."
+        },
         "Hotkey": "D"
       },
       {
@@ -1189,8 +1254,14 @@
         "AbilCmd": "ParasiticBomb,Execute",
         "id": "ParasiticBomb",
         "Icon": "btn-ability-zerg-parasiticbomb",
-        "Tooltip": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><c val=\"#ColorAttackInfo\">Cannot target ground units or structures.</span>",
-        "Name": "Parasitic Bomb",
+        "Name": {
+          "enUS": "Parasitic Bomb",
+          "ruRU": "Parasitic Bomb"
+        },
+        "Tooltip": {
+          "enUS": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>",
+          "ruRU": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>"
+        },
         "Hotkey": "R"
       }
     ]
@@ -1217,6 +1288,7 @@
   "RankDisplay": "Always",
   "id": "Viper",
   "Icon": "btn-unit-zerg-viper",
+  "Model": "SnakeCaster",
   "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1224,27 +1296,45 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "ViperConsumeStructure",
-      "Name": "Viper Consume Structure"
+      "Name": {
+        "enUS": "Viper Consume Structure",
+        "ruRU": "Viper Consume Structure"
+      }
     },
     {
       "id": "BlindingCloud",
-      "Name": "Blinding Cloud"
+      "Name": {
+        "enUS": "Blinding Cloud",
+        "ruRU": "Blinding Cloud"
+      }
     },
     {
       "id": "Yoink",
-      "Name": "Abduct"
+      "Name": {
+        "enUS": "Abduct",
+        "ruRU": "Abduct"
+      }
     },
     {
       "id": "ParasiticBomb",
-      "Name": "Parasitic Bomb"
+      "Name": {
+        "enUS": "Parasitic Bomb",
+        "ruRU": "Parasitic Bomb"
+      }
     }
   ],
   "$Upgrades": [
@@ -1263,7 +1353,9 @@
     "ParasiticBombRelayDummy"
   ],
   "$Research": [],
-  "$Morph": [],
+  "$Morph": [
+    "SpiderMineSCBW"
+  ],
   "$Phase": [],
   "$Producers": [
     "Larva"
@@ -1273,71 +1365,131 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "ViperConsumeStructure,Execute",
       "id": "ViperConsume",
       "Icon": "btn-ability-zerg-consume",
-      "Tooltip": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><c val=\"#ColorAttackInfo\">Cannot target allied or enemy structures.</span>",
-      "Name": "Consume"
+      "Name": {
+        "enUS": "Consume",
+        "ruRU": "Consume"
+      },
+      "Tooltip": {
+        "enUS": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>",
+        "ruRU": "Latches onto the target structure, dealing <b>150</b> damage and restoring <b>2.5</b> energy to the Viper every second.<br/><br/><span style=\"color: #ffff8a\">Cannot target allied or enemy structures.</span>"
+      }
     },
     {
       "AbilCmd": "BlindingCloud,Execute",
       "id": "BlindingCloud",
       "Icon": "btn-ability-zerg-blindingcloud",
-      "Tooltip": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
-      "Name": "Blinding Cloud"
+      "Name": {
+        "enUS": "Blinding Cloud",
+        "ruRU": "Blinding Cloud"
+      },
+      "Tooltip": {
+        "enUS": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range.",
+        "ruRU": "Creates a cloud for <b>8</b> seconds that reduces attack range of ground units and structures underneath to melee range."
+      }
     },
     {
       "AbilCmd": "Yoink,Execute",
       "id": "FaceEmbrace",
       "Icon": "btn-ability-zerg-abduct",
-      "Tooltip": "Pulls target unit to the location of the viper.",
-      "Name": "Abduct"
+      "Name": {
+        "enUS": "Abduct",
+        "ruRU": "Abduct"
+      },
+      "Tooltip": {
+        "enUS": "Pulls target unit to the location of the viper.",
+        "ruRU": "Pulls target unit to the location of the viper."
+      }
     },
     {
       "AbilCmd": "ParasiticBomb,Execute",
       "id": "ParasiticBomb",
       "Icon": "btn-ability-zerg-parasiticbomb",
-      "Tooltip": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><c val=\"#ColorAttackInfo\">Cannot target ground units or structures.</span>",
-      "Name": "Parasitic Bomb"
+      "Name": {
+        "enUS": "Parasitic Bomb",
+        "ruRU": "Parasitic Bomb"
+      },
+      "Tooltip": {
+        "enUS": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>",
+        "ruRU": "Creates a parasitic cloud that deals 90 damage over <b>10</b> to the target and enemy air units nearby. If the target dies, the cloud remains in the air where the enemy died until it expires.<br/><br/><span style=\"color: #ffff8a\">Cannot target ground units or structures.</span>"
+      }
     }
   ]
 }

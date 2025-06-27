@@ -1,6 +1,10 @@
 {
-  "Name": "Denizen of the Deep",
-  "Description": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters",
+  "Name": {
+    "enUS": "Denizen of the Deep"
+  },
+  "Description": {
+    "enUS": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/>Generates <b>14</b> rage per minute.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 2000,
   "LifeMax": 2000,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 180,
   "TurningRate": 180,
@@ -67,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DenizenoftheDeep/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DenizenoftheDeep/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DenizenoftheDeep/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DenizenoftheDeep/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -111,6 +119,7 @@
   "CostCategory": "Economy",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -176,8 +185,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -240,8 +255,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -314,8 +335,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -336,8 +363,14 @@
         "AbilCmd": "DenizenoftheDeepRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -358,8 +391,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -419,6 +458,9 @@
                 },
                 "DefaultButtonFace": "Razorback"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "Razorback",
               "Time": 21
             },
@@ -427,13 +469,14 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "Coagulater"
+                "DefaultButtonFace": "Coagulator"
               },
               "ValidatorArray": [
+                "HasVision",
                 "HasVespene"
               ],
-              "Unit": "Coagulater",
-              "Time": 15
+              "Unit": "Coagulator",
+              "Time": 14
             },
             "Build3": {
               "Button": {
@@ -658,8 +701,14 @@
         "AbilCmd": "DenizenoftheDeepBuild,Halt",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -696,8 +745,12 @@
         "AbilCmd": "DenizenoftheDeepTrain,Train1",
         "id": "Plodder",
         "Icon": "btn-critter-crabeetle",
-        "Tooltip": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
-        "Name": "Spawn Plodder",
+        "Name": {
+          "enUS": "Spawn Plodder"
+        },
+        "Tooltip": {
+          "enUS": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+        },
         "Hotkey": "Q"
       },
       {
@@ -708,6 +761,9 @@
             },
             "DefaultButtonFace": "Razorback"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "Razorback",
           "Time": 21
         },
@@ -729,8 +785,12 @@
         "AbilCmd": "DenizenoftheDeepBuild,Build1",
         "id": "Razorback",
         "Icon": "btn-unit-zerg-quillgore",
-        "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-        "Name": "Propogate Razorback",
+        "Name": {
+          "enUS": "Propagate Razorback"
+        },
+        "Tooltip": {
+          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
+        },
         "Hotkey": "Z"
       },
       {
@@ -739,16 +799,17 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "Coagulater"
+            "DefaultButtonFace": "Coagulator"
           },
           "ValidatorArray": [
+            "HasVision",
             "HasVespene"
           ],
-          "Unit": "Coagulater",
-          "Time": 15
+          "Unit": "Coagulator",
+          "Time": 14
         },
-        "Unit": "Coagulater",
-        "Time": 15,
+        "Unit": "Coagulator",
+        "Time": 14,
         "Cost": {
           "Minerals": 75,
           "Vespene": 0,
@@ -763,262 +824,21 @@
         "Column": 1,
         "Type": "AbilCmd",
         "AbilCmd": "DenizenoftheDeepBuild,Build2",
-        "id": "Coagulater",
+        "id": "Coagulator",
         "Icon": "btn-building-zerg-lurkerden",
-        "Tooltip": "Propogated over a Vespene Geyser to allow harvesting of vespene gas.",
-        "Name": "Propogate Coagulater",
+        "Name": {
+          "enUS": "Propagate Coagulator"
+        },
+        "Tooltip": {
+          "enUS": "Propogated over a Vespene Geyser to allow harvesting of vespene gas."
+        },
         "Hotkey": "X"
-      },
-      {
-        "Info": {
-          "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/DenizenoftheDeepCrystalize",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "DenizenoftheDeepCrystalize",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "RangeSlop": 1,
-          "ArcSlop": 11.25,
-          "AutoCastAcquireLevel": "Offensive",
-          "AutoCastFilters": "Self;-",
-          "Flags": {
-            "AbortOnAllianceChange": 1,
-            "CancelResetAutoCast": 1,
-            "ChannelingMinimum": 1,
-            "RangeUseCasterRadius": 1,
-            "ReApproachable": 1,
-            "RequireTargetVision": 1,
-            "WaitToSpend": 1,
-            "UpdateChargesOnLevelChange": 1,
-            "AutoCast": 1
-          },
-          "Effect": [
-            "DenizenoftheDeepCrystalize"
-          ],
-          "EffectRange": [
-            "0,1000"
-          ],
-          "AINotifyEffect": "DenizenoftheDeepCrystalize",
-          "RefundArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1
-          },
-          "RefundFraction": {
-            "Resource": {
-              "Minerals": -1,
-              "Vespene": -1,
-              "Terrazine": -1,
-              "Custom": -1
-            },
-            "Charge": -1,
-            "Cooldown": -1
-          },
-          "UseMarkerArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "PauseableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "PreemptableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "ValidatedArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "DefaultError": "MustTargetUnit",
-          "AcquirePriority": 3,
-          "SetLastTarget": "Unknown",
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "CmdButtonArray": {
-            "Execute": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "DenizenoftheDeepCrystalize",
-              "Requirements": "HasDragonCommander"
-            }
-          },
-          "id": "DenizenoftheDeepCrystalize"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "DenizenoftheDeepCrystalize,Execute",
-        "id": "DenizenoftheDeepCrystalize",
-        "Icon": "btn-doodad-minerals",
-        "Tooltip": "Converts 80 vespene gas into 192 minerals each minute.",
-        "Name": "Crystalize",
-        "Hotkey": "C"
-      },
-      {
-        "Info": {
-          "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/DenizenoftheDeepLiquify",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "DenizenoftheDeepLiquify",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "RangeSlop": 1,
-          "ArcSlop": 11.25,
-          "AutoCastAcquireLevel": "Offensive",
-          "AutoCastFilters": "Self;-",
-          "Flags": {
-            "AbortOnAllianceChange": 1,
-            "CancelResetAutoCast": 1,
-            "ChannelingMinimum": 1,
-            "RangeUseCasterRadius": 1,
-            "ReApproachable": 1,
-            "RequireTargetVision": 1,
-            "WaitToSpend": 1,
-            "UpdateChargesOnLevelChange": 1,
-            "AutoCast": 1
-          },
-          "Effect": [
-            "DenizenoftheDeepLiquify"
-          ],
-          "EffectRange": [
-            "0,1000"
-          ],
-          "AINotifyEffect": "DenizenoftheDeepLiquify",
-          "RefundArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1
-          },
-          "RefundFraction": {
-            "Resource": {
-              "Minerals": -1,
-              "Vespene": -1,
-              "Terrazine": -1,
-              "Custom": -1
-            },
-            "Charge": -1,
-            "Cooldown": -1
-          },
-          "UseMarkerArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "PauseableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "PreemptableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "ValidatedArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "DefaultError": "MustTargetUnit",
-          "AcquirePriority": 3,
-          "SetLastTarget": "Unknown",
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "CmdButtonArray": {
-            "Execute": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "DenizenoftheDeepLiquify",
-              "Requirements": "HasDragonCommander"
-            }
-          },
-          "id": "DenizenoftheDeepLiquify"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "DenizenoftheDeepLiquify,Execute",
-        "id": "DenizenoftheDeepLiquify",
-        "Icon": "btn-doodad-vespenegeyser",
-        "Tooltip": "Converts 192 minerals into 80 vespene gas each minute.",
-        "Name": "Liquify",
-        "Hotkey": "L"
       }
     ]
   },
+  "TechAliasArray": [
+    "Alias_DenizenoftheDeep"
+  ],
   "Facing": 90,
   "ResourceDropOff": {
     "Minerals": 1,
@@ -1031,89 +851,112 @@
   "CostResource": {
     "Minerals": 400
   },
-  "Footprint": "Footprint5x5Contour",
+  "Footprint": "",
   "PlacementFootprint": "Footprint5x5DropOff",
   "ScoreMake": 400,
   "ScoreKill": 400,
-  "SubgroupPriority": 2,
+  "SubgroupPriority": 35,
   "GlossaryPriority": 10,
   "TechTreeProducedUnitArray": [
     "Plodder",
     "Razorback"
   ],
   "EffectArray": {
-    "Birth": "DenizenoftheDeepBirthSet",
-    "Create": "DenizenoftheDeepCreateSet"
+    "Create": "DenizenoftheDeepCreateSet",
+    "Birth": "DenizenoftheDeepBirthSet"
   },
   "Icon": "btn-building-zerg-primalhive",
+  "Model": "PrimalTownHall",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "DenizenoftheDeepRage",
+      "Name": {
+        "enUS": "Denizen of the Deep - Rage"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "DeepOne5x5",
+      "Name": {
+        "enUS": "Deep One (5x5)"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "DragonTrain",
-      "Name": "Dragon - Train"
+      "Name": {
+        "enUS": "Dragon - Train"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "DenizenoftheDeepRally",
-      "Name": "Denizen of the Deep - Rally"
+      "Name": {
+        "enUS": "Denizen of the Deep - Rally"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "DenizenoftheDeepBuild",
-      "Name": "Denizen of the Deep - Build"
+      "Name": {
+        "enUS": "Denizen of the Deep - Build"
+      }
     },
     {
       "id": "DenizenoftheDeepTrain",
-      "Name": "Denizen of the Deep - Train"
-    },
-    {
-      "id": "DenizenoftheDeep",
-      "Name": "Denizen of the Deep"
-    },
-    {
-      "id": "DenizenoftheDeepCrystalize",
-      "Name": "Denizen of the Deep - Crystalize"
-    },
-    {
-      "id": "DenizenoftheDeepLiquify",
-      "Name": "Denizen of the Deep - Liquify"
+      "Name": {
+        "enUS": "Denizen of the Deep - Train"
+      }
     }
   ],
   "$Upgrades": [
     "Dragon",
     "DenizenoftheDeep",
-    "PlodderBuild",
     "NotDenizenoftheDeep1",
-    "DenizenoftheDeepNoFootprint",
+    "PlodderBuild",
     "DragonPlateArmorLevel1",
     "DenizenoftheDeep",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [
     "Plodder",
     "Razorback",
-    "Coagulater"
+    "Coagulator",
+    "DeepOne5x5"
   ],
   "$Research": [],
   "$Morph": [],
@@ -1127,78 +970,112 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "DenizenoftheDeepRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "DenizenoftheDeepBuild,Halt",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "DenizenoftheDeepTrain,Train1",
       "id": "Plodder",
       "Icon": "btn-critter-crabeetle",
-      "Tooltip": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
-      "Name": "Spawn Plodder"
+      "Name": {
+        "enUS": "Spawn Plodder"
+      },
+      "Tooltip": {
+        "enUS": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+      }
     },
     {
       "AbilCmd": "DenizenoftheDeepBuild,Build1",
       "id": "Razorback",
       "Icon": "btn-unit-zerg-quillgore",
-      "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-      "Name": "Propogate Razorback"
+      "Name": {
+        "enUS": "Propagate Razorback"
+      },
+      "Tooltip": {
+        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
+      }
     },
     {
       "AbilCmd": "DenizenoftheDeepBuild,Build2",
-      "id": "Coagulater",
+      "id": "Coagulator",
       "Icon": "btn-building-zerg-lurkerden",
-      "Tooltip": "Propogated over a Vespene Geyser to allow harvesting of vespene gas.",
-      "Name": "Propogate Coagulater"
-    },
-    {
-      "AbilCmd": "DenizenoftheDeepCrystalize,Execute",
-      "id": "DenizenoftheDeepCrystalize",
-      "Icon": "btn-doodad-minerals",
-      "Tooltip": "Converts 80 vespene gas into 192 minerals each minute.",
-      "Name": "Crystalize"
-    },
-    {
-      "AbilCmd": "DenizenoftheDeepLiquify,Execute",
-      "id": "DenizenoftheDeepLiquify",
-      "Icon": "btn-doodad-vespenegeyser",
-      "Tooltip": "Converts 192 minerals into 80 vespene gas each minute.",
-      "Name": "Liquify"
+      "Name": {
+        "enUS": "Propagate Coagulator"
+      },
+      "Tooltip": {
+        "enUS": "Propogated over a Vespene Geyser to allow harvesting of vespene gas."
+      }
     }
   ]
 }

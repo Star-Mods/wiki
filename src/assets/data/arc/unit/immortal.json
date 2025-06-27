@@ -1,6 +1,12 @@
 {
-  "Name": "Immortal",
-  "Description": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Immortal",
+    "ruRU": "Immortal"
+  },
+  "Description": {
+    "enUS": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": "Protoss Armor",
+  "LifeArmorName": {
+    "enUS": "Protoss Armor",
+    "ruRU": "Protoss Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -62,16 +71,18 @@
       "Anim": 5
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Immortal/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Immortal/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Immortal/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Immortal/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -84,7 +95,10 @@
   "ShieldsStart": 100,
   "ShieldsMax": 100,
   "ShieldRegenRate": 2,
-  "ShieldArmorName": "Protoss Plasma Shields",
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
   "Speed": 2.25,
   "Acceleration": 1000,
   "Food": -4,
@@ -195,8 +209,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -269,8 +289,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -359,8 +385,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +466,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -524,8 +562,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -545,8 +589,14 @@
         "AbilCmd": "ImmortalOverload,Execute",
         "id": "ImmortalOverload",
         "Icon": "btn-ability-protoss-invulnerabilityshield",
-        "Tooltip": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
-        "Name": "Barrier",
+        "Name": {
+          "enUS": "Barrier",
+          "ruRU": "Barrier"
+        },
+        "Tooltip": {
+          "enUS": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
+          "ruRU": "Absorbs up to <b>100</b> damage. Lasts for <b>0</b> seconds."
+        },
         "Hotkey": "B"
       }
     ]
@@ -570,7 +620,7 @@
   ],
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 275,
+    "Minerals": 250,
     "Vespene": 100
   },
   "LifeArmor": 1,
@@ -582,6 +632,7 @@
   "TacticalAIThink": "AIThinkImmortal",
   "id": "Immortal",
   "Icon": "btn-unit-protoss-immortal",
+  "Model": "Immortal_EX2",
   "LifeArmorIcon": "btn-upgrade-protoss-groundarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -589,7 +640,10 @@
       "Turret": "Immortal",
       "id": "PhaseDisruptors",
       "Icon": "btn-upgrade-protoss-groundweaponslevel0",
-      "Name": "Phase Disruptors",
+      "Name": {
+        "enUS": "Phase Disruptors",
+        "ruRU": "Phase Disruptors"
+      },
       "Amount": 20,
       "AttributeBonus": {
         "Armored": 30
@@ -597,31 +651,51 @@
       "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 6,
-      "Period": 1.45
+      "Period": 1.6
     }
   ],
   "Behaviors": [
     {
-      "id": "BarrierDamageResponse"
+      "id": "BarrierDamageResponse",
+      "Name": {
+        "enUS": "Barrier Damage Response",
+        "ruRU": "Barrier Damage Response ///Auto - Copied from enUS Locale"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "ImmortalOverload",
-      "Tooltip": "This unit is absorbing damage dealt to it.",
-      "Name": "Barrier"
+      "Name": {
+        "enUS": "Barrier",
+        "ruRU": "Barrier"
+      },
+      "Tooltip": {
+        "enUS": "This unit is absorbing damage dealt to it.",
+        "ruRU": "This unit is absorbing damage dealt to it."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     }
   ],
   "$Upgrades": [
@@ -642,6 +716,8 @@
     "ProtossShields",
     "ProtossShieldsLevel2",
     "ProtossShieldsLevel3",
+    "TalDarimVanguard",
+    "TalDarimAutomationFacility",
     "IsImmortal",
     "IsNotImmortal",
     "AllowUnitImmortal"
@@ -659,43 +735,79 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "ImmortalOverload,Execute",
       "id": "ImmortalOverload",
       "Icon": "btn-ability-protoss-invulnerabilityshield",
-      "Tooltip": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
-      "Name": "Barrier"
+      "Name": {
+        "enUS": "Barrier",
+        "ruRU": "Barrier"
+      },
+      "Tooltip": {
+        "enUS": "Absorbs up to <b>100</b> damage. Lasts for <b>3</b> seconds. This effect can only occur once every <b>45</b> seconds.",
+        "ruRU": "Absorbs up to <b>100</b> damage. Lasts for <b>0</b> seconds."
+      }
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "Name": "Transport Shuttle",
-  "Description": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
+  "Name": {
+    "enUS": "Transport Shuttle",
+    "ruRU": "Транспортный шаттл"
+  },
+  "Description": {
+    "enUS": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
+    "ruRU": "Крупный транспортный корабль, способный переносить большие отряды пехоты и техники."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 180,
   "LifeMax": 180,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "TransportShuttle/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "TransportShuttle/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "TransportShuttle/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "TransportShuttle/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -200,8 +211,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -274,8 +291,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -365,8 +388,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -456,8 +485,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -496,24 +531,28 @@
               "Flags": {
                 "ShowInGlossary": 1,
                 "Hidden": 1
-              }
+              },
+              "PreemptLevel": 4
             },
             "UnloadAll": {
               "Flags": {
                 "Hidden": 1,
                 "ToSelection": 1
-              }
+              },
+              "PreemptLevel": 1
             },
             "UnloadAt": {
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "TransportShuttleUnloadAll"
+              "DefaultButtonFace": "TransportShuttleUnloadAll",
+              "PreemptLevel": 2
             },
             "UnloadUnit": {
               "Flags": {
                 "Hidden": 1
-              }
+              },
+              "PreemptLevel": 3
             }
           },
           "Alignment": "Positive",
@@ -543,11 +582,13 @@
           "MaxCargoCount": 8,
           "MaxCargoSize": 8,
           "TotalCargoSpace": 8,
-          "UnloadCargoEffect": "SiegeTankUnloadDelayAB",
+          "UnloadCargoEffect": "UEDRemoveMarkerTransportShuttleStructure",
           "UnloadPeriod": 0.6,
           "LoadValidatorArray": [
             "NotWidowMineTarget"
           ],
+          "LoadCargoEffect": "UEDSetTransportShuttlMarker",
+          "LoadTransportBehavior": "UEDBehaviorMarkerOrderOutStandard",
           "id": "MedivacTransport2"
         },
         "Cost": {
@@ -566,8 +607,14 @@
         "AbilCmd": "MedivacTransport2,Load",
         "id": "TransportShuttleLoad",
         "Icon": "btn-ability-terran-load",
-        "Tooltip": "Loads units into the Shuttle's hold.",
-        "Name": "Load",
+        "Name": {
+          "enUS": "Load",
+          "ruRU": "Загрузить"
+        },
+        "Tooltip": {
+          "enUS": "Loads units into the Shuttle's hold.",
+          "ruRU": "Загрузить боевые единицы в грузовой отсек шаттла."
+        },
         "Hotkey": "L"
       },
       {
@@ -641,8 +688,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -732,8 +785,14 @@
         "AbilCmd": "moveUED,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -772,24 +831,28 @@
               "Flags": {
                 "ShowInGlossary": 1,
                 "Hidden": 1
-              }
+              },
+              "PreemptLevel": 4
             },
             "UnloadAll": {
               "Flags": {
                 "Hidden": 1,
                 "ToSelection": 1
-              }
+              },
+              "PreemptLevel": 1
             },
             "UnloadAt": {
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "TransportShuttleUnloadAll"
+              "DefaultButtonFace": "TransportShuttleUnloadAll",
+              "PreemptLevel": 2
             },
             "UnloadUnit": {
               "Flags": {
                 "Hidden": 1
-              }
+              },
+              "PreemptLevel": 3
             }
           },
           "Alignment": "Positive",
@@ -819,11 +882,13 @@
           "MaxCargoCount": 8,
           "MaxCargoSize": 8,
           "TotalCargoSpace": 8,
-          "UnloadCargoEffect": "SiegeTankUnloadDelayAB",
+          "UnloadCargoEffect": "UEDRemoveMarkerTransportShuttleStructure",
           "UnloadPeriod": 0.6,
           "LoadValidatorArray": [
             "NotWidowMineTarget"
           ],
+          "LoadCargoEffect": "UEDSetTransportShuttlMarker",
+          "LoadTransportBehavior": "UEDBehaviorMarkerOrderOutStandard",
           "id": "MedivacTransport2"
         },
         "Cost": {
@@ -842,26 +907,129 @@
         "AbilCmd": "MedivacTransport2,UnloadAt",
         "id": "TransportShuttleUnloadAll",
         "Icon": "btn-ability-terran-unloadall",
-        "Tooltip": "Unloads all units.",
-        "Name": "Unload All",
-        "Hotkey": "D"
+        "Name": {
+          "enUS": "Unload All",
+          "ruRU": "Выгрузить всех"
+        },
+        "Tooltip": {
+          "enUS": "Unloads all units.",
+          "ruRU": "Выгрузить боевые еденицы из грузового отсека Шаттла."
+        },
+        "Hotkey": "F"
       },
       {
         "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/UEDTransportShuttleOrderOutStructure",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UEDTransportShuttleOrderOutStructure",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 0,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1,
+            "NoDeceleration": 1,
+            "RangeUsePathing": 1
+          },
+          "Effect": [
+            "UEDEffektPeriodTransportShuttleOrderOutStructure"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "UEDTransportShuttleOrderOutStructure",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
             },
-            "DefaultButtonFace": "DropArsenal"
+            "Charge": -1,
+            "Cooldown": -1
           },
-          "Cooldown": {
-            "TimeStart": 1
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
           },
-          "Unit": "ArsenalHelpDrop",
-          "Time": 3
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "UEDDropArsenal",
+              "Requirements": "UEDTransportShuttlHiddenButtonOrderOut"
+            }
+          },
+          "FollowRange": 5,
+          "Placeholder": "ArsenalHelpDrop",
+          "Range": [
+            1
+          ],
+          "Arc": 360,
+          "PlaceUnit": "ArsenalHelpDrop",
+          "id": "UEDTransportShuttleOrderOutStructure"
         },
-        "Unit": "ArsenalHelpDrop",
-        "Time": 3,
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
@@ -873,157 +1041,18 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 3,
+        "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "DropArsenal,Build2",
-        "id": "DropArsenal",
+        "AbilCmd": "UEDTransportShuttleOrderOutStructure,Execute",
+        "id": "UEDDropArsenal",
         "Icon": "btn-building-supplydepotbronze",
-        "Tooltip": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
-        "Name": "Drop Arsenal",
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "DropHeavyTower"
-          },
-          "Cooldown": {
-            "TimeStart": 1
-          },
-          "Unit": "ArsenalHelpDrop",
-          "Time": 1
+        "Name": {
+          "enUS": "Drop Arsenal Copy"
         },
-        "Unit": "ArsenalHelpDrop",
-        "Time": 1,
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Tooltip": {
+          "enUS": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
+          "ruRU": "Расширяет Возможности логистики.<br/>Возможности логистики увеличивают предел одновременно развёрнутых боевых единиц.<br/>Может быть улучшен до различных оборонительных сооружений."
         },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropHeavyTower,Build2",
-        "id": "DropHeavyTower",
-        "Icon": "btn-building-guardianturretbronze",
-        "Tooltip": "Anti-ground defensive structure, effective against armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Drop Heavy Tower",
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "DropInfusionTower"
-          },
-          "Cooldown": {
-            "TimeStart": 1
-          },
-          "Unit": "ArsenalHelpDrop",
-          "Time": 1
-        },
-        "Unit": "ArsenalHelpDrop",
-        "Time": 1,
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropInfusionTower,Build2",
-        "id": "DropInfusionTower",
-        "Icon": "btn-structure-ued-hivemindemulator",
-        "Tooltip": "Support structure. Regenerates health for all nearby allied units.",
-        "Name": "Drop Infusion Tower",
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "DropMissileTower"
-          },
-          "Cooldown": {
-            "TimeStart": 1
-          },
-          "Unit": "ArsenalHelpDrop",
-          "Time": 1
-        },
-        "Unit": "ArsenalHelpDrop",
-        "Time": 1,
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropMissleTower,Build2",
-        "id": "DropMissileTower",
-        "Icon": "btn-building-missileturretbronze",
-        "Tooltip": "Anti-air defensive structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Drop Missile Tower",
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "DropSuppressionTower"
-          },
-          "Cooldown": {
-            "TimeStart": 1
-          },
-          "Unit": "ArsenalHelpDrop",
-          "Time": 1
-        },
-        "Unit": "ArsenalHelpDrop",
-        "Time": 1,
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropSuppressionTower,Build2",
-        "id": "DropSuppressionTower",
-        "Icon": "btn-building-laserturretbronze",
-        "Tooltip": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Drop Suppression Tower",
         "Hotkey": "D"
       }
     ]
@@ -1043,6 +1072,7 @@
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "TransportShuttle",
   "Icon": "btn-ued-dropship",
+  "Model": "UED_Dropship_V2",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1050,52 +1080,51 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "MedivacTransport2",
-      "Name": "Load-Unload (Shuttle)"
+      "Name": {
+        "enUS": "Load-Unload (Shuttle)",
+        "ruRU": "Load-Unload (Shuttle)"
+      }
     },
     {
-      "id": "DropArsenal",
-      "Name": "Drop Arsenal"
+      "id": "UEDTransportShuttleOrderOut",
+      "Name": {
+        "enUS": "Приказ на высадку"
+      }
     },
     {
-      "id": "DropHeavyTower",
-      "Name": "Drop Heavy Tower"
-    },
-    {
-      "id": "DropInfusionTower",
-      "Name": "Drop Infusion Tower"
-    },
-    {
-      "id": "DropMissleTower",
-      "Name": "Drop Missle Tower"
-    },
-    {
-      "id": "DropSuppressionTower",
-      "Name": "Drop Suppression Tower"
+      "id": "UEDTransportShuttleOrderOutStructure",
+      "Name": {
+        "enUS": "Приказ на высадку здания"
+      }
     }
   ],
   "$Upgrades": [
-    "UEDVehicalsLevel2",
     "TransportShuttle",
-    "UEDVehicalsLevel3",
-    "Medivac2",
+    "TransportShuttle",
     "UEDArmorLevel1",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain",
     null
   ],
   "$Requirements": [],
-  "$Production": [
-    "ArsenalHelpDrop"
-  ],
+  "$Production": [],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -1107,92 +1136,117 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "MedivacTransport2,Load",
       "id": "TransportShuttleLoad",
       "Icon": "btn-ability-terran-load",
-      "Tooltip": "Loads units into the Shuttle's hold.",
-      "Name": "Load"
+      "Name": {
+        "enUS": "Load",
+        "ruRU": "Загрузить"
+      },
+      "Tooltip": {
+        "enUS": "Loads units into the Shuttle's hold.",
+        "ruRU": "Загрузить боевые единицы в грузовой отсек шаттла."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "MedivacTransport2,UnloadAt",
       "id": "TransportShuttleUnloadAll",
       "Icon": "btn-ability-terran-unloadall",
-      "Tooltip": "Unloads all units.",
-      "Name": "Unload All"
+      "Name": {
+        "enUS": "Unload All",
+        "ruRU": "Выгрузить всех"
+      },
+      "Tooltip": {
+        "enUS": "Unloads all units.",
+        "ruRU": "Выгрузить боевые еденицы из грузового отсека Шаттла."
+      }
     },
     {
-      "AbilCmd": "DropArsenal,Build2",
-      "id": "DropArsenal",
+      "AbilCmd": "UEDTransportShuttleOrderOutStructure,Execute",
+      "id": "UEDDropArsenal",
       "Icon": "btn-building-supplydepotbronze",
-      "Tooltip": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
-      "Name": "Drop Arsenal"
-    },
-    {
-      "AbilCmd": "DropHeavyTower,Build2",
-      "id": "DropHeavyTower",
-      "Icon": "btn-building-guardianturretbronze",
-      "Tooltip": "Anti-ground defensive structure, effective against armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Drop Heavy Tower"
-    },
-    {
-      "AbilCmd": "DropInfusionTower,Build2",
-      "id": "DropInfusionTower",
-      "Icon": "btn-structure-ued-hivemindemulator",
-      "Tooltip": "Support structure. Regenerates health for all nearby allied units.",
-      "Name": "Drop Infusion Tower"
-    },
-    {
-      "AbilCmd": "DropMissleTower,Build2",
-      "id": "DropMissileTower",
-      "Icon": "btn-building-missileturretbronze",
-      "Tooltip": "Anti-air defensive structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Drop Missile Tower"
-    },
-    {
-      "AbilCmd": "DropSuppressionTower,Build2",
-      "id": "DropSuppressionTower",
-      "Icon": "btn-building-laserturretbronze",
-      "Tooltip": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Drop Suppression Tower"
+      "Name": {
+        "enUS": "Drop Arsenal Copy"
+      },
+      "Tooltip": {
+        "enUS": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
+        "ruRU": "Расширяет Возможности логистики.<br/>Возможности логистики увеличивают предел одновременно развёрнутых боевых единиц.<br/>Может быть улучшен до различных оборонительных сооружений."
+      }
     }
   ]
 }

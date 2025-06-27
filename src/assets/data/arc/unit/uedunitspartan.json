@@ -1,6 +1,12 @@
 {
-  "Name": "Spartan AAC",
-  "Description": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground and air targets.</span>",
+  "Name": {
+    "enUS": "Spartan AAC",
+    "ruRU": "ПВС «Спартанец»"
+  },
+  "Description": {
+    "enUS": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: FFFF8A\">Can attack ground and air targets.</span>",
+    "ruRU": "Универсальный боевой робот, эффективен против воздушных целей.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 160,
   "LifeMax": 160,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UEDUnitSpartan/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UEDUnitSpartan/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UEDUnitSpartan/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UEDUnitSpartan/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -201,8 +212,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -275,8 +292,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -366,8 +389,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -441,8 +470,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -532,8 +567,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -551,9 +592,15 @@
         "Column": 0,
         "Type": "Passive",
         "id": "UEDButtonGoliathPassive",
-        "Icon": "btn-techupgrade-terran-multilocktargetingsystem",
-        "Tooltip": "Increases the range of attack on air targets by 3.",
-        "Name": "Long-range missiles"
+        "Icon": "uedspartanaaclongrangelauncher",
+        "Name": {
+          "enUS": "Long-range missiles",
+          "ruRU": "Дальнобойные ракеты"
+        },
+        "Tooltip": {
+          "enUS": "Increases the range of attack on air targets by 3.",
+          "ruRU": "Увеличивает дальность атаки по воздушным целям на 3."
+        }
       }
     ]
   },
@@ -581,28 +628,18 @@
   ],
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "UEDUnitSpartan",
-  "Icon": "btn-unit-uedspartan",
+  "Icon": "btnuedspartanaac",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "Turret": "UEDTurretSpartan",
-      "id": "UEDSpartanGunGround",
-      "Icon": "weapon-tank-icon-upgrade-0",
-      "Amount": 6,
-      "AttributeBonus": {
-        "Armored": 2
-      },
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 6,
-      "Period": 0.575
-    },
-    {
-      "Turret": "UEDTurretSpartan",
       "id": "UEDSpartanGunAir",
       "Icon": "weapon-tank-icon-upgrade-0",
-      "Amount": 15,
+      "Name": {
+        "ruRU": "Ракеты «Галло»"
+      },
+      "Amount": 13,
       "AttributeBonus": {
         "Armored": 3
       },
@@ -611,33 +648,58 @@
       "TargetFilters": "Air",
       "Range": 7,
       "Period": 2.25
+    },
+    {
+      "Turret": "UEDTurretSpartan",
+      "id": "UEDSpartanGunGround",
+      "Icon": "weapon-tank-icon-upgrade-0",
+      "Name": {
+        "ruRU": "Пулемет универсальный Н11"
+      },
+      "Amount": 6,
+      "AttributeBonus": {
+        "Armored": 2
+      },
+      "Kind": "Melee",
+      "TargetFilters": "Ground",
+      "Range": 5,
+      "Period": 0.616
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     }
   ],
   "$Upgrades": [
-    "UEDVehicalsLevel1",
+    "UEDUnitSpartan",
     "UEDUnitSpartan",
     "UEDUpgradeGoliath",
-    "UEDVehicalsLevel2",
-    "UEDVehicalsLevel3",
-    "UEDUnitSpartan",
     "UEDArmorLevel1",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "UEDVehicalsLevel1",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain"
   ],
   "$Requirements": [],
@@ -653,36 +715,66 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     }
   ]
 }

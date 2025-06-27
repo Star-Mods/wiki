@@ -1,9 +1,10 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Hand of Power"
   },
   "Description": {
-    "enUS": "Caster unit. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "enUS": "Caster unit that can push enemies back with its attacks. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -14,8 +15,8 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 165,
-  "LifeMax": 165,
+  "LifeStart": 135,
+  "LifeMax": 135,
   "LifeArmorName": {
     "enUS": "Dragon Plate Armor"
   },
@@ -68,16 +69,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "HandofPower/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "HandofPower/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "HandofPower/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "HandofPower/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -94,6 +97,9 @@
     "Armored",
     "Psionic"
   ],
+  "BehaviorArray": [
+    "DragonLineage"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -102,6 +108,19 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedHandofPower",
+    "AscendedHandofPowerFission",
+    "HandofPowerFission",
+    "DragonFissionDisabled",
+    "HandofPowerCrushingGravity",
+    "HandofPowerShroud",
+    "HandofPowerPortalEntrance",
+    "HandofPowerPortalExit"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -192,12 +211,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -237,8 +253,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -253,10 +268,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -276,12 +288,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -371,13 +380,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -467,13 +473,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -547,14 +550,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -563,14 +560,14 @@
         },
         "Unit": "AscendedHandofPower",
         "Cost": {
-          "Minerals": 50,
-          "Vespene": 150,
+          "Minerals": 125,
+          "Vespene": 250,
           "Terazine": 0,
-          "Custom": 40,
+          "Custom": 75,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -3
+          "Food": -4
         },
         "Row": 1,
         "Column": 4,
@@ -581,7 +578,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
         },
         "Hotkey": "X"
       },
@@ -604,7 +601,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
         },
         "Hotkey": "X"
       },
@@ -719,7 +716,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 80
+                "Custom": 150
               }
             }
           ],
@@ -729,7 +726,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 80,
+          "Custom": 150,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -860,7 +857,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 40
+                "Custom": 75
               }
             }
           ],
@@ -870,7 +867,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 40,
+          "Custom": 75,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -1131,7 +1128,7 @@
           },
           "FollowRange": 5,
           "Range": [
-            9
+            8
           ],
           "CastOutroTime": [
             0.5
@@ -1142,7 +1139,7 @@
           "Cost": [
             {
               "Vital": {
-                "Energy": 75
+                "Energy": 100
               }
             }
           ],
@@ -1156,7 +1153,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 75,
+          "Energy": 100,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1280,7 +1277,7 @@
           "Cost": [
             {
               "Vital": {
-                "Energy": 50
+                "Energy": 75
               }
             }
           ],
@@ -1303,7 +1300,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 50,
+          "Energy": 75,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1318,7 +1315,7 @@
           "enUS": "Shroud"
         },
         "Tooltip": {
-          "enUS": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>35</b> seconds unless they attack or receive damage."
+          "enUS": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>21</b> seconds unless they attack or receive damage."
         },
         "Hotkey": "W"
       },
@@ -1426,7 +1423,7 @@
           },
           "FollowRange": 5,
           "Range": [
-            15
+            10
           ],
           "CastOutroTime": [
             0.5
@@ -1437,7 +1434,7 @@
           "Cost": [
             {
               "Vital": {
-                "Energy": 100
+                "Energy": 125
               }
             }
           ],
@@ -1451,7 +1448,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 100,
+          "Energy": 125,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1466,7 +1463,7 @@
           "enUS": "Portal Entrance"
         },
         "Tooltip": {
-          "enUS": "Creates a portal entrance at the target location which teleports ground units that enter it to the next created portal exit. Lasts <b>28</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune."
+          "enUS": "Creates a portal entrance at the target location which teleports ground units that enter it to the next created portal exit. Lasts <b>18</b> seconds."
         },
         "Hotkey": "E"
       },
@@ -1619,14 +1616,8 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Name": {
-          "enUS": "Detector",
-          "ruRU": "Detector"
-        },
-        "Tooltip": {
-          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
-          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
-        }
+        "Name": "-",
+        "Tooltip": "-"
       }
     ]
   },
@@ -1638,15 +1629,18 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "HandofPower"
+  ],
   "EnergyStart": 50,
   "EnergyMax": 200,
   "EnergyRegenRate": 0.5625,
   "Speed": 2.5,
   "Sight": 11,
-  "Food": -3,
+  "Food": -4,
   "CostResource": {
-    "Minerals": 50,
-    "Vespene": 150
+    "Minerals": 125,
+    "Vespene": 250
   },
   "KillXP": 15,
   "CargoSize": 4,
@@ -1666,14 +1660,31 @@
   ],
   "LifeArmor": 1,
   "InnerRadius": 0.5,
+  "WeaponArray": [
+    {
+      "Link": "HandofPowerPsionicImpulse"
+    }
+  ],
   "Icon": "btn-unit-zerg-impaler",
   "Model": "LurkerEx1A",
-  "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dehaka-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "EditorCategories": "Race:Dragon",
+      "Icon": "btn-upgrade-dragon-fireattacks-level0",
+      "DisplayEffect": "HandofPowerPsionicImpulseDamage",
+      "TargetFilters": "",
+      "MinScanRange": 9,
+      "Range": 7,
+      "Arc": 22.5,
+      "ArcSlop": 22.5,
+      "Period": 0.21,
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "Effect": "HandofPowerPsionicImpulseSet",
       "id": "HandofPowerPsionicImpulse",
-      "Icon": "fireball_1",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Psionic Impulse"
       },
@@ -1681,15 +1692,12 @@
       "AttributeBonus": {
         "Psionic": 3
       },
-      "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 8,
-      "Period": 0.21
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1700,22 +1708,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1768,11 +1775,11 @@
     }
   ],
   "$Upgrades": [
-    "HandofPowerPortal",
     "AscendedHandofPower",
-    "Button/Tooltip/AscendedHandofPower",
-    "Button/Tooltip/HandofPower",
     "HandofPower",
+    "Button/Tooltip/AscendedHandofPower",
+    "HandofPowerPortal",
+    "Button/Tooltip/HandofPower",
     "GreaterDeepOneTrain",
     "DragonFireAttacksLevel1",
     "DragonFireAttacks",
@@ -1783,7 +1790,8 @@
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "HandofPower_Death"
+    "HandofPower_Death",
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -1792,9 +1800,7 @@
     "HandofPowerPortalExitUnit"
   ],
   "$Research": [],
-  "$Morph": [
-    "AscendedHandofPower"
-  ],
+  "$Morph": [],
   "$Phase": [],
   "$Producers": [
     "GenesisPitGreater",
@@ -1808,12 +1814,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1821,51 +1824,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedHandofPower,Execute",
@@ -1874,7 +1862,7 @@
         "enUS": "Ascend"
       },
       "Tooltip": {
-        "enUS": "<span style=\"color: 00FF00\">+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+        "enUS": "<span style=\"color: 00FF00\">+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
       }
     },
     {
@@ -1929,7 +1917,7 @@
         "enUS": "Shroud"
       },
       "Tooltip": {
-        "enUS": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>35</b> seconds unless they attack or receive damage."
+        "enUS": "Temporarily cloaks and increases the movement speed of friendly units in the target area by <b>50</b>% for <b>21</b> seconds unless they attack or receive damage."
       }
     },
     {
@@ -1940,7 +1928,7 @@
         "enUS": "Portal Entrance"
       },
       "Tooltip": {
-        "enUS": "Creates a portal entrance at the target location which teleports ground units that enter it to the next created portal exit. Lasts <b>28</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune."
+        "enUS": "Creates a portal entrance at the target location which teleports ground units that enter it to the next created portal exit. Lasts <b>18</b> seconds."
       }
     },
     {

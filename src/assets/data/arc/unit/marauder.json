@@ -1,6 +1,12 @@
 {
-  "Name": "Marauder",
-  "Description": "Heavy assault infantry.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Marauder",
+    "ruRU": "Marauder"
+  },
+  "Description": {
+    "enUS": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Heavy assault infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 125,
   "LifeMax": 125,
-  "LifeArmorName": "Terran Infantry Armor",
+  "LifeArmorName": {
+    "enUS": "Terran Infantry Armor",
+    "ruRU": "Terran Infantry Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -64,16 +73,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Marauder/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Marauder/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Marauder/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Marauder/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -200,8 +211,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -274,8 +291,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -364,8 +387,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -454,8 +483,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -529,8 +564,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -550,8 +591,14 @@
         "AbilCmd": "255",
         "id": "ConcussiveGrenade",
         "Icon": "btn-ability-terran-punishergrenade-color",
-        "Tooltip": "Units hit by the Marauder are temporarily slowed.<br/><br/><c val=\"#ColorAttackInfo\">Massive units are immune.</span>",
-        "Name": "Concussive Shells"
+        "Name": {
+          "enUS": "Concussive Shells",
+          "ruRU": "Concussive Shells"
+        },
+        "Tooltip": {
+          "enUS": "Units hit by the Marauder are temporarily slowed.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune.</span>",
+          "ruRU": "Units hit by the Marauder are temporarily slowed.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune.</span>"
+        }
       },
       {
         "Info": {
@@ -692,8 +739,14 @@
         "AbilCmd": "StimpackMarauder,Execute",
         "id": "StimMarauder",
         "Icon": "btn-ability-terran-stimpack-color",
-        "Tooltip": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life.",
-        "Name": "Use Stimpack",
+        "Name": {
+          "enUS": "Use Stimpack",
+          "ruRU": "Use Stimpack"
+        },
+        "Tooltip": {
+          "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life.",
+          "ruRU": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life."
+        },
         "Hotkey": "T"
       }
     ]
@@ -722,13 +775,17 @@
   },
   "id": "Marauder",
   "Icon": "btn-unit-terran-marauder",
+  "Model": "Marauder",
   "LifeArmorIcon": "btn-upgrade-terran-infantryarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "PunisherGrenades",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
-      "Name": "Punisher Grenades",
+      "Name": {
+        "enUS": "Punisher Grenades",
+        "ruRU": "Punisher Grenades"
+      },
       "Amount": 10,
       "AttributeBonus": {
         "Armored": 10
@@ -743,39 +800,50 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "StimpackMarauder",
-      "Name": "StimpackMara"
+      "Name": {
+        "enUS": "StimpackMara",
+        "ruRU": "StimpackMara"
+      }
     }
   ],
   "$Upgrades": [
     "Stimpack",
     "Marauder",
     "PunisherGrenades",
-    "Flamespitter",
-    "AscendedFlamespitter",
-    "ChangelingFlamespitter",
-    "TerranInfantryWeapons",
-    "TerranInfantryArmors",
-    "BarracksTrain",
-    "Barracks",
     "TerranInfantryWeaponsLevel1",
+    "TerranInfantryWeapons",
     "TerranInfantryWeaponsLevel2",
     "TerranInfantryWeaponsLevel3",
     "TerranInfantryArmorsLevel1",
     "Marauder",
+    "TerranInfantryArmors",
     "TerranInfantryArmorsLevel2",
     "TerranInfantryArmorsLevel3",
+    "BarracksTrain",
+    "Barracks",
+    "SuperGarrison",
+    "Garrison",
     "IsMarauder"
   ],
   "$Requirements": [],
@@ -791,50 +859,92 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "255",
       "id": "ConcussiveGrenade",
       "Icon": "btn-ability-terran-punishergrenade-color",
-      "Tooltip": "Units hit by the Marauder are temporarily slowed.<br/><br/><c val=\"#ColorAttackInfo\">Massive units are immune.</span>",
-      "Name": "Concussive Shells"
+      "Name": {
+        "enUS": "Concussive Shells",
+        "ruRU": "Concussive Shells"
+      },
+      "Tooltip": {
+        "enUS": "Units hit by the Marauder are temporarily slowed.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune.</span>",
+        "ruRU": "Units hit by the Marauder are temporarily slowed.<br/><br/><span style=\"color: #ffff8a\">Massive units are immune.</span>"
+      }
     },
     {
       "AbilCmd": "StimpackMarauder,Execute",
       "id": "StimMarauder",
       "Icon": "btn-ability-terran-stimpack-color",
-      "Tooltip": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life.",
-      "Name": "Use Stimpack"
+      "Name": {
+        "enUS": "Use Stimpack",
+        "ruRU": "Use Stimpack"
+      },
+      "Tooltip": {
+        "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life.",
+        "ruRU": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for 20 of the unit's life."
+      }
     }
   ]
 }

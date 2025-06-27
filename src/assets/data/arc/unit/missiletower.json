@@ -1,6 +1,12 @@
 {
-  "Name": "Missile Tower",
-  "Description": "Anti-air defensive structure.<br/><br/><span style=\"color: #FFE303\">Detector<br/><c val=\"#ColorAttackInfo\">Can attack air units.</span>",
+  "Name": {
+    "enUS": "Missile Tower",
+    "ruRU": "Ракетная башня"
+  },
+  "Description": {
+    "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: FFE303\">Detector<br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
+    "ruRU": "Строение противовоздушной обороны, эффективная против групповых целей.<br/><br/><span style=\"color: FFE303\">Детектор<br/><span style=\"color: #ffff8a\">Может атаковать воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 350,
   "LifeMax": 350,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MissileTower/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MissileTower/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MissileTower/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MissileTower/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -128,8 +139,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       },
       {
         "Info": {
@@ -191,8 +208,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -265,8 +288,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -340,8 +369,14 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Tooltip": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Attack"
+        },
+        "Tooltip": {
+          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        },
         "Hotkey": "A"
       }
     ]
@@ -378,10 +413,13 @@
       "Turret": "MissileTower",
       "id": "HALOMissiles2",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": "HALO Missiles",
-      "Amount": 8,
+      "Name": {
+        "enUS": "HALO Missiles",
+        "ruRU": "Ракеты «ГИДРА»"
+      },
+      "Amount": 10,
       "Kind": "Ranged",
-      "DisplayAttackCount": 4,
+      "DisplayAttackCount": 2,
       "TargetFilters": "Air",
       "Range": 7,
       "Period": 2
@@ -391,31 +429,52 @@
     {
       "id": "Detector11",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     },
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
     "UpgradeToMissileTower",
     "MissileTower",
     "CountUnitMissileTowerCompleteOnlyTechTreeCheat",
+    "UEDHightDurability",
     "Arsenal2",
     "MissileTower",
     "MissileTurretSplat2",
@@ -435,22 +494,40 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Tooltip": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Attack"
+      },
+      "Tooltip": {
+        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+      }
     }
   ]
 }

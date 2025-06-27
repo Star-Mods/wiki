@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Coagulator"
   },
@@ -70,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Coagulator/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Coagulator/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Coagulator/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Coagulator/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -95,6 +98,10 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "HarvestableVespeneGeyserGasZerg"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -113,7 +120,12 @@
   "LifeArmor": 1,
   "CostCategory": "Economy",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "AugmentationPit"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -181,13 +193,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -225,10 +233,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -250,17 +255,16 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
+  "TechAliasArray": [
+    "Coagulator"
+  ],
   "Facing": 315,
   "Sight": 9,
   "CostResource": {
@@ -295,24 +299,12 @@
         "enUS": "Dragon Lineage"
       },
       "Tooltip": "-"
-    },
-    {
-      "id": "HarvestableVespeneGeyserGasZerg",
-      "Icon": "icon-gas",
-      "Name": {
-        "enUS": "Harvestable Vespene Geyser Gas Zerg",
-        "ruRU": "Harvestable Vespene Geyser Gas Zerg"
-      },
-      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "AugmentationPit",
@@ -322,14 +314,13 @@
     }
   ],
   "$Upgrades": [
-    "DenizenoftheDeepBuild",
-    "Coagulator",
     "DragonPlateArmorLevel1",
+    "Coagulator",
+    "DenizenoftheDeepBuild",
     "Coagulator",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -337,8 +328,7 @@
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "DenizenoftheDeep",
-    "DenizenoftheDeepNoFootprint"
+    "DenizenoftheDeep"
   ],
   "$Commands": [
     {
@@ -347,25 +337,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     }
   ]
 }

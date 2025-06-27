@@ -1,6 +1,12 @@
 {
-  "Name": "Starship Maintenance Plant",
-  "Description": "Starship support structure. Provides equipment authorizations for basic vessels.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Crimson Eyes<br/>- Strikefighters<br/>- Valkyries<br/>- Transport Shuttles<br/>- Support Shuttles",
+  "Name": {
+    "enUS": "Starship Maintenance Plant",
+    "ruRU": "Завод обслуживания звездолётов"
+  },
+  "Description": {
+    "enUS": "Starship support structure. Provides equipment authorizations for basic vessels.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Crimson Eyes<br/>- Strikefighters<br/>- Valkyries<br/>- Transport Shuttles<br/>- Support Shuttles",
+    "ruRU": "Вспомогательное сооружение, обслуживающее звездолёты. Позволяет запрашивать авторизацию для базовых кораблей.<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- Рубиновое око<br/>- Штурмовики<br/>- Вальикирии<br/>- Транспортные шаттлы<br/>- Шаттлы поддержки"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1100,
   "LifeMax": 1100,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "StarshipMaintenancePlant/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "StarshipMaintenancePlant/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "StarshipMaintenancePlant/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "StarshipMaintenancePlant/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -171,8 +182,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -235,26 +252,32 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
-        "Upgrade": "UpgradeSpeedCrimsonEye",
+        "Upgrade": "UEDUpgradeStrikeFighterSpeed",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "EngineSurchargeProtocols",
-            "Requirements": "CrimsonEyeStarWind"
+            "DefaultButtonFace": "ButtonStrikeFighterSpeedUpgrade",
+            "Requirements": "LearnSpeedStrikeFigter"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
           "Time": 100,
-          "Upgrade": "UpgradeSpeedCrimsonEye"
+          "Upgrade": "UEDUpgradeStrikeFighterSpeed"
         },
         "Time": 100,
         "Cost": {
@@ -270,34 +293,40 @@
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "ArmoryResearch22,Research2",
-        "id": "EngineSurchargeProtocols",
-        "Icon": "btn-upgrade-terran-jotunboosters",
-        "Tooltip": "Increases the movement speed of the <span style=\"color: #FFFF80\">Crimson Eye</span> by 20%.",
-        "Name": "Authorize Protocols: Reinforced engine",
-        "Hotkey": "E"
+        "AbilCmd": "ArmoryResearch22,Research5",
+        "id": "ButtonStrikeFighterSpeedUpgrade",
+        "Icon": "btn-upgrade-terran-nova-specialordance",
+        "Name": {
+          "enUS": "Authorization Request: Plasma fuel",
+          "ruRU": "Запрос авторизации: Плазменное топливо"
+        },
+        "Tooltip": {
+          "enUS": "A small injection of prepared plasma greatly increases the speed of the <span style=\"color: FFFF80\"> Strikefighter </span> by 4 seconds.",
+          "ruRU": "Небольшой впрыск подготовленной плазмы сильно увеличивает скорость <span style=\"color: FFFF80\"> Штурмовика </span> на 4 сек."
+        },
+        "Hotkey": "W"
       },
       {
-        "Upgrade": "UpgradeSpeedStrikeFighter",
+        "Upgrade": "UEDUpgradeStrikeFighter",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "ButtonUpgadeStrikeFighterSpeed",
-            "Requirements": "LearnSpeedStrikeFigter"
+            "DefaultButtonFace": "ButtonUEDUpgadeStrikeFighter",
+            "Requirements": "LearnUpgradeStrikeFigter"
           },
           "Resource": {
-            "Minerals": 125,
-            "Vespene": 125
+            "Minerals": 150,
+            "Vespene": 150
           },
           "Time": 100,
-          "Upgrade": "UpgradeSpeedStrikeFighter"
+          "Upgrade": "UEDUpgradeStrikeFighter"
         },
         "Time": 100,
         "Cost": {
-          "Minerals": 125,
-          "Vespene": 125,
+          "Minerals": 150,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -309,16 +338,39 @@
         "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "ArmoryResearch22,Research1",
-        "id": "ButtonUpgadeStrikeFighterSpeed",
-        "Icon": "btn-upgrade-terran-nova-specialordance",
-        "Tooltip": "A small injection of prepared plasma greatly increases the speed of the <span style=\"color: #FFFF80\"> Strikefighter </span> by 4 seconds.",
-        "Name": "Authorization Request: Plasma Fuel",
-        "Hotkey": "W"
+        "id": "ButtonUEDUpgadeStrikeFighter",
+        "Icon": "btn-ability-stetmann-corruptormissilebarrage",
+        "Name": {
+          "enUS": "Authorization Request: Aerial Combat",
+          "ruRU": "Запрос авторизации: Воздушный бой "
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: FFFF80\"> Strikefighter </span> to change modes (air, ground).",
+          "ruRU": "Позволяет <span style=\"color: FFFF80\"> Штурмовику </span> менять режимы боя (воздушный, наземный)."
+        },
+        "Hotkey": "R"
       },
       {
+        "Upgrade": "UpgradeBeataniumGenerator",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UpgradeCrimsonEyeEnergy",
+            "Requirements": "CrimsonEyeStarWind"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 100,
+          "Upgrade": "UpgradeBeataniumGenerator"
+        },
+        "Time": 100,
         "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -326,13 +378,21 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 2,
-        "Column": 0,
-        "Type": "Passive",
-        "id": "UEDButtonAmmunitionDepot",
-        "Icon": "btn-ability-mengsk-siegetank-flyingtankarmament",
-        "Tooltip": "Allows you to store ammunition for a Strikefighters and issue it as needed.",
-        "Name": "Ammunition depot"
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "ArmoryResearch22,Research2",
+        "id": "UpgradeCrimsonEyeEnergy",
+        "Icon": "uedcrimsoneyebeataniumgenerator",
+        "Name": {
+          "enUS": "Authorization request: Beatanium Generator",
+          "ruRU": "Запрос авторизации: Беатаниевый генератор "
+        },
+        "Tooltip": {
+          "enUS": "Increases the energy recovery rate of the <span style=\"color: FFFF80\"> Crimson Eye</span> by 100%.",
+          "ruRU": "Увеличивает скорость восстановления энергии <span style=\"color: FFFF80\">Рубиновому оку</span> на 50%."
+        },
+        "Hotkey": "N"
       }
     ]
   },
@@ -356,83 +416,139 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDConstructionVisionDebuff"
+      "id": "UEDConstructionVisionDebuff",
+      "Name": {
+        "enUS": "UED Construction - Vision Debuff"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "ArmoryResearch22",
-      "Name": "Research (Armory)"
+      "Name": {
+        "enUS": "Research (Armory)",
+        "ruRU": "Research (Armory)"
+      }
     },
     {
       "id": "TacticsAcademyResearch",
-      "Name": "Research (Tactics Academy)"
+      "Name": {
+        "enUS": "Research (Tactics Academy)",
+        "ruRU": "Research (Tactics Academy)"
+      }
     },
     {
       "id": "MilitaryResearchStationResearch",
-      "Name": "Research (MilitaryResearchStation)"
+      "Name": {
+        "enUS": "Research (MilitaryResearchStation)",
+        "ruRU": "Research (MilitaryResearchStation)"
+      }
     }
   ],
   "$Upgrades": [
-    "ValidateUEDAirStructure",
-    "StarshipMaintenancePlant",
     "CountUnitStarshipMaintenancePlantCompleteOnly971994468TechTreeCheat",
+    "StarshipMaintenancePlant",
     "BeaconBuild",
     "UEDCalldownStructure",
     "UEDPlacementDummy",
     "StarshipMaintenancePlant",
     "StarshipMaintenancePlantSplat",
+    "ValidateUEDAirStructure",
     "CountUnitArmoryCompleteOnly22",
     "CountUnitArmoryCompleteOnlyTechTreeCheat22"
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [
-    "UpgradeSpeedCrimsonEye",
-    "UpgradeSpeedStrikeFighter"
+    "UEDUpgradeStrikeFighterSpeed",
+    "UEDUpgradeStrikeFighter",
+    "UpgradeBeataniumGenerator"
   ],
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
-      "AbilCmd": "ArmoryResearch22,Research2",
-      "id": "EngineSurchargeProtocols",
-      "Icon": "btn-upgrade-terran-jotunboosters",
-      "Tooltip": "Increases the movement speed of the <span style=\"color: #FFFF80\">Crimson Eye</span> by 20%.",
-      "Name": "Authorize Protocols: Reinforced engine"
+      "AbilCmd": "ArmoryResearch22,Research5",
+      "id": "ButtonStrikeFighterSpeedUpgrade",
+      "Icon": "btn-upgrade-terran-nova-specialordance",
+      "Name": {
+        "enUS": "Authorization Request: Plasma fuel",
+        "ruRU": "Запрос авторизации: Плазменное топливо"
+      },
+      "Tooltip": {
+        "enUS": "A small injection of prepared plasma greatly increases the speed of the <span style=\"color: FFFF80\"> Strikefighter </span> by 4 seconds.",
+        "ruRU": "Небольшой впрыск подготовленной плазмы сильно увеличивает скорость <span style=\"color: FFFF80\"> Штурмовика </span> на 4 сек."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch22,Research1",
-      "id": "ButtonUpgadeStrikeFighterSpeed",
-      "Icon": "btn-upgrade-terran-nova-specialordance",
-      "Tooltip": "A small injection of prepared plasma greatly increases the speed of the <span style=\"color: #FFFF80\"> Strikefighter </span> by 4 seconds.",
-      "Name": "Authorization Request: Plasma Fuel"
+      "id": "ButtonUEDUpgadeStrikeFighter",
+      "Icon": "btn-ability-stetmann-corruptormissilebarrage",
+      "Name": {
+        "enUS": "Authorization Request: Aerial Combat",
+        "ruRU": "Запрос авторизации: Воздушный бой "
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: FFFF80\"> Strikefighter </span> to change modes (air, ground).",
+        "ruRU": "Позволяет <span style=\"color: FFFF80\"> Штурмовику </span> менять режимы боя (воздушный, наземный)."
+      }
+    },
+    {
+      "AbilCmd": "ArmoryResearch22,Research2",
+      "id": "UpgradeCrimsonEyeEnergy",
+      "Icon": "uedcrimsoneyebeataniumgenerator",
+      "Name": {
+        "enUS": "Authorization request: Beatanium Generator",
+        "ruRU": "Запрос авторизации: Беатаниевый генератор "
+      },
+      "Tooltip": {
+        "enUS": "Increases the energy recovery rate of the <span style=\"color: FFFF80\"> Crimson Eye</span> by 100%.",
+        "ruRU": "Увеличивает скорость восстановления энергии <span style=\"color: FFFF80\">Рубиновому оку</span> на 50%."
+      }
     }
   ]
 }

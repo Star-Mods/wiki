@@ -1,0 +1,109 @@
+{
+  "id": "ZOCOM",
+  "Name": {
+    "enUS": "ZOCOM"
+  },
+  "Icon": "faction-kw-zocom",
+  "cache": {
+    "upgrades": {},
+    "units": {
+      "ZOCOMDefenseCrawlerUnpack": {
+        "id": "ZOCOMDefenseCrawlerUnpack",
+        "Icon": "##id##icon",
+        "Name": {
+          "enUS": "GDI Defense Team Construction Factory"
+        },
+        "Description": {
+          "enUS": "Strong defensive fortress. <br/>Used to receive collected resources. <br/><br/><span style=\"color: ffff8a\">Can target the ground. </span>"
+        },
+        "LifeMax": 1500,
+        "LifeArmor": 3,
+        "Food": 14,
+        "CostResource": {
+          "Minerals": 400,
+          "Vespene": 400
+        },
+        "Production": [
+          "ZOCOMDozer"
+        ],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [
+          "ZOCOMDefenseCrawler"
+        ],
+        "LifeArmorIcon": "fxnod_enhancedshieldsupgrade",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": "-",
+        "priority": 240
+      },
+      "ZOCOMDefenseCrawler": {
+        "id": "ZOCOMDefenseCrawler",
+        "Icon": "##id##icon",
+        "Name": {
+          "enUS": "Defense MCV"
+        },
+        "Description": {
+          "enUS": "GDI Defense Team Construction Factory. Can be deployed as a GDI base. <br/><br/><span style=\"color: FFFF8A\">No weapons. </span>"
+        },
+        "LifeMax": 1500,
+        "LifeArmor": 3,
+        "Food": 14,
+        "CostResource": {
+          "Minerals": 400,
+          "Vespene": 400
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [
+          "ZOCOMDefenseCrawlerUnpack"
+        ],
+        "$Phase": [],
+        "$Phased": "ZOCOMDefenseCrawlerUnpack",
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": "-",
+        "priority": 130
+      },
+      "ZOCOMDozer": {
+        "id": "ZOCOMDozer",
+        "Icon": "##id##icon",
+        "Name": {
+          "enUS": "Dozer"
+        },
+        "Description": {
+          "enUS": "Basic work unit. Used to gather resources, construct human structures, and repair. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+        },
+        "LifeMax": 45,
+        "Food": -1,
+        "CostResource": {
+          "Minerals": 50
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-infantryarmorlevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": "-",
+        "priority": 10
+      }
+    }
+  },
+  "StartingUnitArray": [
+    {
+      "Unit": "ZOCOMDefenseCrawlerUnpack"
+    },
+    {
+      "Unit": "ZOCOMDozer",
+      "Count": 12
+    }
+  ],
+  "army": [
+    "ZOCOMDefenseCrawler",
+    "ZOCOMDozer"
+  ],
+  "structures": [
+    "ZOCOMDefenseCrawlerUnpack"
+  ],
+  "upgrades": []
+}

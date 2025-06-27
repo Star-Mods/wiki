@@ -1,6 +1,12 @@
 {
-  "Name": "Chemical Firm",
-  "Description": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Aquilas at the Manufacturer<br/>- Teslas at the Fabricator",
+  "Name": {
+    "enUS": "Chemical Firm",
+    "ruRU": "Химический Завод"
+  },
+  "Description": {
+    "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Aquilas at the Manufacturer<br/>- Teslas at the Fabricator",
+    "ruRU": "Технологическое сооружение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Акиллы в Монуфактуре<br/>- Тесты в Фабрикаторе<br/>- Виртусы в Фабрикаторе<br/>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ChemicalFirm/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ChemicalFirm/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ChemicalFirm/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ChemicalFirm/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -177,8 +188,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -241,8 +258,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -261,6 +284,7 @@
     "Tesla"
   ],
   "Icon": "btn-building-genetron-chemicalfirm",
+  "Model": "ChemicalFirm",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -268,14 +292,23 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -298,15 +331,27 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

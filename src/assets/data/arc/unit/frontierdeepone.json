@@ -1,6 +1,10 @@
 {
-  "Name": "Frontier Deep One",
-  "Description": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians",
+  "Name": {
+    "enUS": "Frontier Deep One"
+  },
+  "Description": {
+    "enUS": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +14,11 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 750,
-  "LifeMax": 750,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeStart": 900,
+  "LifeMax": 900,
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FrontierDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FrontierDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FrontierDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FrontierDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -297,8 +318,12 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "Razorback"
+                "DefaultButtonFace": "Razorback",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "Razorback",
               "Time": 21
             },
@@ -307,10 +332,14 @@
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "AugmentationPitFrontier"
+                "DefaultButtonFace": "AugmentationPitFrontier",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitFrontier",
-              "Time": 50
+              "Time": 56
             },
             "Build3": {
               "Button": {
@@ -319,18 +348,25 @@
                 },
                 "DefaultButtonFace": "SunkenGuardian"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "SunkenGuardian",
-              "Time": 30
+              "Time": 28
             },
             "Build4": {
               "Button": {
                 "Flags": {
                   "AllowMinimap": 0
                 },
-                "DefaultButtonFace": "PhlogistonGuardian"
+                "DefaultButtonFace": "PhlogistonGuardian",
+                "Requirements": "LearnTerranVehicleAndShipArmor1"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "PhlogistonGuardian",
-              "Time": 30
+              "Time": 21
             },
             "Build5": {
               "Button": {
@@ -542,8 +578,14 @@
         "AbilCmd": "FrontierDeepOneBuild,Halt",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -552,8 +594,12 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "Razorback"
+            "DefaultButtonFace": "Razorback",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "Razorback",
           "Time": 21
         },
@@ -575,8 +621,12 @@
         "AbilCmd": "FrontierDeepOneBuild,Build1",
         "id": "Razorback",
         "Icon": "btn-unit-zerg-quillgore",
-        "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-        "Name": "Propogate Razorback",
+        "Name": {
+          "enUS": "Propagate Razorback"
+        },
+        "Tooltip": {
+          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
+        },
         "Hotkey": "Z"
       },
       {
@@ -585,13 +635,17 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "AugmentationPitFrontier"
+            "DefaultButtonFace": "AugmentationPitFrontier",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitFrontier",
-          "Time": 50
+          "Time": 56
         },
         "Unit": "AugmentationPitFrontier",
-        "Time": 50,
+        "Time": 56,
         "Cost": {
           "Minerals": 100,
           "Vespene": 0,
@@ -607,8 +661,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneBuild,Build2",
         "id": "AugmentationPitFrontier",
-        "Tooltip": "Contains attack, armor and other miscellaneous upgrades for Dragon units.",
-        "Name": "Propogate Augmentation Pit",
+        "Name": {
+          "enUS": "Propagate Augmentation Pit"
+        },
+        "Tooltip": {
+          "enUS": "Contains attack, armor and other miscellaneous upgrades for Dragon units."
+        },
         "Hotkey": "X"
       },
       {
@@ -619,11 +677,14 @@
             },
             "DefaultButtonFace": "SunkenGuardian"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "SunkenGuardian",
-          "Time": 30
+          "Time": 28
         },
         "Unit": "SunkenGuardian",
-        "Time": 30,
+        "Time": 28,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -640,8 +701,12 @@
         "AbilCmd": "FrontierDeepOneBuild,Build3",
         "id": "SunkenGuardian",
         "Icon": "btn-building-zerg-impalercolony",
-        "Tooltip": "Anti-ground defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Propogate Sunken Guardian",
+        "Name": {
+          "enUS": "Propagate Sunken Guardian"
+        },
+        "Tooltip": {
+          "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -766,8 +831,12 @@
         "AbilCmd": "FrontierDeepOneInvigorate,Execute",
         "id": "FrontierDeepOneActivateInvigorate",
         "Icon": "btn-ability-kerrigan-vespeneefficiency",
-        "Tooltip": "Heals up to <b>8</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-        "Name": "Invigorate",
+        "Name": {
+          "enUS": "Invigorate"
+        },
+        "Tooltip": {
+          "enUS": "Heals up to <b>8</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+        },
         "Hotkey": "Q"
       },
       {
@@ -830,8 +899,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -840,13 +915,17 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "PhlogistonGuardian"
+            "DefaultButtonFace": "PhlogistonGuardian",
+            "Requirements": "LearnTerranVehicleAndShipArmor1"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "PhlogistonGuardian",
-          "Time": 30
+          "Time": 21
         },
         "Unit": "PhlogistonGuardian",
-        "Time": 30,
+        "Time": 21,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -863,8 +942,12 @@
         "AbilCmd": "FrontierDeepOneBuild,Build4",
         "id": "PhlogistonGuardian",
         "Icon": "talent-zagara-level13-bilelauncherresearchbundle",
-        "Tooltip": "Anti-air defensive structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Propogate Phlogiston Guardian",
+        "Name": {
+          "enUS": "Propagate Phlogiston Guardian"
+        },
+        "Tooltip": {
+          "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+        },
         "Hotkey": "V"
       }
     ]
@@ -881,40 +964,51 @@
   "ScoreMake": 100,
   "ScoreKill": 100,
   "GlossaryPriority": 15,
-  "SubgroupPriority": 2,
+  "SubgroupPriority": 31,
   "Icon": "btn-unit-zerg-nyduscreeptower",
+  "Model": "NydusWormCreeper",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "FrontierDeepOneInvigorate",
-      "Name": "Frontier Deep One - Invigorate"
+      "Name": {
+        "enUS": "Frontier Deep One - Invigorate"
+      }
     },
     {
       "id": "FrontierDeepOneBuild",
-      "Name": "Frontier Deep One - Build"
+      "Name": {
+        "enUS": "Frontier Deep One - Build"
+      }
     }
   ],
   "$Upgrades": [
     "PlodderBuild",
     "FrontierDeepOne",
-    "CountUnitFrontierDeepOneCompleteOnly",
     "DragonPlateArmorLevel1",
     "FrontierDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "CountUnitFrontierDeepOneCompleteOnly"
   ],
   "$Requirements": [],
   "$Production": [
@@ -935,63 +1029,107 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Halt",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build1",
       "id": "Razorback",
       "Icon": "btn-unit-zerg-quillgore",
-      "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-      "Name": "Propogate Razorback"
+      "Name": {
+        "enUS": "Propagate Razorback"
+      },
+      "Tooltip": {
+        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build2",
       "id": "AugmentationPitFrontier",
-      "Tooltip": "Contains attack, armor and other miscellaneous upgrades for Dragon units.",
-      "Name": "Propogate Augmentation Pit"
+      "Name": {
+        "enUS": "Propagate Augmentation Pit"
+      },
+      "Tooltip": {
+        "enUS": "Contains attack, armor and other miscellaneous upgrades for Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build3",
       "id": "SunkenGuardian",
       "Icon": "btn-building-zerg-impalercolony",
-      "Tooltip": "Anti-ground defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Propogate Sunken Guardian"
+      "Name": {
+        "enUS": "Propagate Sunken Guardian"
+      },
+      "Tooltip": {
+        "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneInvigorate,Execute",
       "id": "FrontierDeepOneActivateInvigorate",
       "Icon": "btn-ability-kerrigan-vespeneefficiency",
-      "Tooltip": "Heals up to <b>8</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: #f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>",
-      "Name": "Invigorate"
+      "Name": {
+        "enUS": "Invigorate"
+      },
+      "Tooltip": {
+        "enUS": "Heals up to <b>8</b> nearby friendly biological units and structures each second.<br/><br/><span style=\"color: f078ff\">Heals <b>3</b> life for <b>1</b> energy each second per target.</span>"
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneBuild,Build4",
       "id": "PhlogistonGuardian",
       "Icon": "talent-zagara-level13-bilelauncherresearchbundle",
-      "Tooltip": "Anti-air defensive structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Propogate Phlogiston Guardian"
+      "Name": {
+        "enUS": "Propagate Phlogiston Guardian"
+      },
+      "Tooltip": {
+        "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+      }
     }
   ]
 }

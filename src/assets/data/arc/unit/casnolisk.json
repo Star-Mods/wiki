@@ -1,6 +1,12 @@
 {
-  "Name": "Casnolisk",
-  "Description": "Armored spell caster. Can use Stagnating Bile and Explosive Glob.",
+  "Name": {
+    "enUS": "Casnolisk",
+    "ruRU": "Каснолиск"
+  },
+  "Description": {
+    "enUS": "Spell caster. Can use Stagnating Bile and Explosive Glob.",
+    "ruRU": "Бронированный кастер. Может использовать настой желчи и взрывной шар."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 110,
-  "LifeMax": 110,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeStart": 100,
+  "LifeMax": 100,
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -68,16 +77,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Casnolisk/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Casnolisk/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Casnolisk/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Casnolisk/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -89,7 +100,6 @@
   "Acceleration": 1000,
   "Attributes": [
     "Biological",
-    "Armored",
     "Psionic"
   ],
   "AttackTargetPriority": 20,
@@ -181,8 +191,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -255,8 +271,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -345,8 +367,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -435,8 +463,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -510,8 +544,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -600,8 +640,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -712,7 +758,7 @@
                 "Energy": 50
               },
               "Cooldown": {
-                "TimeUse": 2.5
+                "TimeUse": 1.4
               }
             }
           ],
@@ -740,8 +786,14 @@
         "AbilCmd": "StagnatingBile,Execute",
         "id": "StagnatingBile",
         "Icon": "btn-ability-xayid-stagnatingbile",
-        "Tooltip": "Launches a missile at the target location, stunning units in an area for <b>7</b> seconds.",
-        "Name": "Stagnating Bile",
+        "Name": {
+          "enUS": "Stagnating Bile",
+          "ruRU": "Настой желчи"
+        },
+        "Tooltip": {
+          "enUS": "Launches a missile at the target location, stunning units in an area for <b>6</b> seconds.",
+          "ruRU": "Выбрасывает желчь в выбранную точку, оглушая юнитов в зоне поражения на <b>6</b> секунд."
+        },
         "Hotkey": "T"
       },
       {
@@ -866,7 +918,7 @@
             0.25
           ],
           "CursorEffect": [
-            "ExplosiveGlobImpactSearch"
+            "ExplosiveGlobExplodeSearch"
           ],
           "id": "ExplosiveGlob"
         },
@@ -886,8 +938,14 @@
         "AbilCmd": "ExplosiveGlob,Execute",
         "id": "ExplosiveGlob",
         "Icon": "btn-ability-xayid-explosiveglob",
-        "Tooltip": "Rolls a projectile across the terrain. Deals <b>60</b> damage and knocks back enemy ground units in an area on contact with an enemy ground unit.",
-        "Name": "Explosive Glob",
+        "Name": {
+          "enUS": "Explosive Glob",
+          "ruRU": "Взрывной шар"
+        },
+        "Tooltip": {
+          "enUS": "Rolls a projectile across the ground which explodes upon contact with an unpathable area or an enemy unit. The explosion deals <b>60</b> damage to and knocks back nearby units. Units immune to the knock-back take an additional <b>40</b> damage if struck directly.",
+          "ruRU": "Бросает шар, содержащий взрывоопасные кислоты. Наносит 60 урона по области, а также отбрасывает пораженных врагов."
+        },
         "Hotkey": "E"
       }
     ]
@@ -930,6 +988,7 @@
   "KillDisplay": "Always",
   "GlossaryAlias": "Casnolisk",
   "Icon": "btn-unit-xayid-casnolisk",
+  "Model": "BlightBringer",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -937,23 +996,38 @@
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "CoveringSpray",
-      "Name": "Covering Spray"
+      "Name": {
+        "enUS": "Covering Spray",
+        "ruRU": "Covering Spray"
+      }
     },
     {
       "id": "ExplosiveGlob",
-      "Name": "Explosive Glob"
+      "Name": {
+        "enUS": "Explosive Glob",
+        "ruRU": "Explosive Glob"
+      }
     },
     {
       "id": "StagnatingBile",
-      "Name": "Stagnating Bile"
+      "Name": {
+        "enUS": "Stagnating Bile",
+        "ruRU": "Stagnating Bile"
+      }
     }
   ],
   "$Upgrades": [
@@ -981,57 +1055,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "StagnatingBile,Execute",
       "id": "StagnatingBile",
       "Icon": "btn-ability-xayid-stagnatingbile",
-      "Tooltip": "Launches a missile at the target location, stunning units in an area for <b>7</b> seconds.",
-      "Name": "Stagnating Bile"
+      "Name": {
+        "enUS": "Stagnating Bile",
+        "ruRU": "Настой желчи"
+      },
+      "Tooltip": {
+        "enUS": "Launches a missile at the target location, stunning units in an area for <b>6</b> seconds.",
+        "ruRU": "Выбрасывает желчь в выбранную точку, оглушая юнитов в зоне поражения на <b>6</b> секунд."
+      }
     },
     {
       "AbilCmd": "ExplosiveGlob,Execute",
       "id": "ExplosiveGlob",
       "Icon": "btn-ability-xayid-explosiveglob",
-      "Tooltip": "Rolls a projectile across the terrain. Deals <b>60</b> damage and knocks back enemy ground units in an area on contact with an enemy ground unit.",
-      "Name": "Explosive Glob"
+      "Name": {
+        "enUS": "Explosive Glob",
+        "ruRU": "Взрывной шар"
+      },
+      "Tooltip": {
+        "enUS": "Rolls a projectile across the ground which explodes upon contact with an unpathable area or an enemy unit. The explosion deals <b>60</b> damage to and knocks back nearby units. Units immune to the knock-back take an additional <b>40</b> damage if struck directly.",
+        "ruRU": "Бросает шар, содержащий взрывоопасные кислоты. Наносит 60 урона по области, а также отбрасывает пораженных врагов."
+      }
     }
   ]
 }

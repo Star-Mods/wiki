@@ -1,6 +1,12 @@
 {
-  "Name": "Strike Trooper",
-  "Description": "Highly-trained Directorate infantry.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Strike Trooper",
+    "ruRU": "Ударный пехотинец"
+  },
+  "Description": {
+    "enUS": "Highly-trained Directorate infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Отлично подготовленная пехота Директората.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 65,
-  "LifeMax": 65,
-  "LifeArmorName": "CMC-400A Powered Armor",
+  "LifeStart": 70,
+  "LifeMax": 70,
+  "LifeArmorName": {
+    "enUS": "CMC-400A Powered Armor",
+    "ruRU": "Силовая броня МКЦ-400А"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -64,16 +73,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "StrikeTrooper/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "StrikeTrooper/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "StrikeTrooper/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "StrikeTrooper/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -199,8 +210,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -273,8 +290,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -364,8 +387,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -439,8 +468,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -530,16 +565,22 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       }
     ]
   },
   "InnerRadius": 0.375,
   "CargoSize": 1,
-  "ScoreMake": 50,
-  "ScoreKill": 50,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 77,
   "GlossaryCategory": "Unit/Category/UEDUnits",
@@ -561,13 +602,17 @@
   },
   "id": "StrikeTrooper",
   "Icon": "btn-ued_striketrooper",
+  "Model": "UPL_Trooper",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "StrikeTrooperRifle",
       "Icon": "weapon-trooper-icon-upgrade-0",
-      "Name": "C-141 AC Assault Rifle",
+      "Name": {
+        "enUS": "C-141 AC Assault Rifle",
+        "ruRU": "Штурмовая винтовка C-141 AC"
+      },
       "Amount": 7,
       "Kind": "Ranged",
       "TargetFilters": "",
@@ -577,16 +622,22 @@
     {
       "id": "HighPoweredShot",
       "Icon": "weapon-trooper-icon-upgrade-0",
-      "Name": "High-Powered Shot",
-      "Amount": 11,
+      "Name": {
+        "enUS": "High-Powered Shot",
+        "ruRU": "Выстрел повышенной мощности"
+      },
+      "Amount": 10,
       "Kind": "Ranged",
       "TargetFilters": "",
       "Range": 7,
-      "Period": 1.67
+      "Period": 1.4
     },
     {
       "id": "DrakkarStrikeTrooperRifle",
       "Icon": "weapon-trooper-icon-upgrade-0",
+      "Name": {
+        "ruRU": "Штурмовая винтовка C-141 AC Драккар"
+      },
       "Amount": 7,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
@@ -598,34 +649,56 @@
     {
       "id": "UnitDeathPrevention",
       "Icon": "btn-ability-kerrigan_revive",
-      "Tooltip": "This unit does not die immediately, within 5 seconds it can be resurrected."
+      "Name": {
+        "enUS": "Unit Death Prevention",
+        "ruRU": "Аура лазаруса"
+      },
+      "Tooltip": {
+        "enUS": "This unit does not die immediately, within 5 seconds it can be resurrected.",
+        "ruRU": "Боевая еденица сразу не умирает, в течении 5 сек ее можно воскресить."
+      }
     },
     {
-      "id": "AlgoritmRedaktorStrikeTrooper"
+      "id": "AlgoritmRedaktorStrikeTrooper",
+      "Name": {
+        "ruRU": "Ударный пехотинец"
+      },
+      "Tooltip": {
+        "ruRU": "Отключает усиленный выстрел."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     }
   ],
   "$Upgrades": [
     "UEDWeaponsLevel1",
     "StrikeTrooper",
+    "ValidateStrikeTrooperUED",
     "AllowUnitStrikeTrooper",
     "SpareRifleBatteries",
     "UEDWeaponsLevel2",
     "UEDWeaponsLevel3",
-    "ValidateStrikeTrooperUED",
     "UEDArmorLightLevel1",
     "StrikeTrooper",
     "UEDArmorLightLevel2",
@@ -647,36 +720,66 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     }
   ]
 }

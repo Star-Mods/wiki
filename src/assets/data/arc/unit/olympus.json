@@ -1,6 +1,12 @@
 {
-  "Name": "Olympus",
-  "Description": "Weapon of mass destruction. Uses power to energize a global strike weapon that deals damage in a large area.",
+  "Name": {
+    "enUS": "Olympus",
+    "ruRU": "Олимп"
+  },
+  "Description": {
+    "enUS": "Weapon of mass destruction. Uses power to energize a global strike weapon that deals damage in a large area.",
+    "ruRU": "Оружие массового уничтожения. Испоьзует энергию для зарядки оружия глобального, способного нанести удар по любой точке на карте , ноносящее урон в большой области."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Olympus/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Olympus/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Olympus/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Olympus/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -180,8 +191,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -319,8 +336,14 @@
         "AbilCmd": "OlympusDischarge,Execute",
         "id": "OlympusDischarge",
         "Icon": "btn-upgrade-stetmann-ultraliskburrowchargestun",
-        "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"EnergyLTOlympusDischarge\"><b>1200</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Fires the weapon, dealing <b>50</b> damage in a large area after <b>11</b> seconds. Units hit by the weapon additionally take <b>100</b> damage over <b>10</b> seconds.",
-        "Name": "Discharge",
+        "Name": {
+          "enUS": "Discharge",
+          "ruRU": "Разряд"
+        },
+        "Tooltip": {
+          "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"EnergyLTOlympusDischarge\"><b>1200</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Fires the weapon, dealing <b>50</b> damage in a large area after <b>11</b> seconds. Units hit by the weapon additionally take <b>100</b> damage over <b>10</b> seconds.",
+          "ruRU": "Активирует оружие, наносящее <b>50</b> урона в большой области после <b>11</b> секунд. Еденицы, попавшие под удар также получают <b>100</b> урона в течении <b>10</b> секунд."
+        },
         "Hotkey": "D"
       }
     ]
@@ -336,40 +359,74 @@
   "GlossaryPriority": 24,
   "KillDisplay": "Always",
   "Icon": "btn-building-genetron-olympus",
+  "Model": "Olympus",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackAndMirrorGenetronPowerSupply"
+      "id": "TrackAndMirrorGenetronPowerSupply",
+      "Name": {
+        "enUS": "Track And Mirror Genetron Power Supply"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "OlympusExplode"
+      "id": "OlympusExplode",
+      "Name": {
+        "enUS": "Explode"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "OlympusAbilitiesReq"
+      "id": "OlympusAbilitiesReq",
+      "Name": {
+        "enUS": "OlympusAbilitiesReq"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "OlympusDischarge",
-      "Name": "Olympus - Discharge"
+      "Name": {
+        "enUS": "Olympus - Discharge",
+        "ruRU": "Olympus - Discharge"
+      }
     }
   ],
   "$Upgrades": [
@@ -379,7 +436,9 @@
     "IsNotOlympus"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "GenetronPowerSupplyDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -391,22 +450,40 @@
       "AbilCmd": "OlympusChargeUp,Off",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "OlympusDischarge,Execute",
       "id": "OlympusDischarge",
       "Icon": "btn-upgrade-stetmann-ultraliskburrowchargestun",
-      "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"EnergyLTOlympusDischarge\"><b>1200</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Fires the weapon, dealing <b>50</b> damage in a large area after <b>11</b> seconds. Units hit by the weapon additionally take <b>100</b> damage over <b>10</b> seconds.",
-      "Name": "Discharge"
+      "Name": {
+        "enUS": "Discharge",
+        "ruRU": "Разряд"
+      },
+      "Tooltip": {
+        "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"EnergyLTOlympusDischarge\"><b>1200</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Fires the weapon, dealing <b>50</b> damage in a large area after <b>11</b> seconds. Units hit by the weapon additionally take <b>100</b> damage over <b>10</b> seconds.",
+        "ruRU": "Активирует оружие, наносящее <b>50</b> урона в большой области после <b>11</b> секунд. Еденицы, попавшие под удар также получают <b>100</b> урона в течении <b>10</b> секунд."
+      }
     }
   ]
 }

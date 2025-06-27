@@ -1,6 +1,10 @@
 {
-  "Name": "Ascended Skyrazer",
-  "Description": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Attack Projectile</span>",
+  "Name": {
+    "enUS": "Ascended Skyrazer"
+  },
+  "Description": {
+    "enUS": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,12 +14,14 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 180,
-  "LifeMax": 180,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeStart": 200,
+  "LifeMax": 200,
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
-  "StationaryTurningRate": 720,
-  "TurningRate": 720,
+  "StationaryTurningRate": 450,
+  "TurningRate": 450,
   "Radius": 0.875,
   "SeparationRadius": 0.875,
   "MinimapRadius": 0.875,
@@ -64,16 +70,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Skyrazer/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Skyrazer/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Skyrazer/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Skyrazer/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -87,8 +95,7 @@
   ],
   "Attributes": [
     "Biological",
-    "Armored",
-    "Heroic"
+    "Armored"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -186,8 +193,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -260,8 +273,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -350,8 +369,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -440,8 +465,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -515,8 +546,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -528,7 +565,7 @@
           "Minerals": 150,
           "Vespene": 100,
           "Terazine": 0,
-          "Custom": 780,
+          "Custom": 50,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -539,8 +576,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "AscendedSkyrazer,Execute",
         "id": "AscendedSkyrazer",
-        "Tooltip": "<span style=\"color: #00FF00\">+30 Life<br/>+1 Attack Projectile</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -558,8 +599,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedSkyrazer",
-        "Tooltip": "<span style=\"color: #00FF00\">+30 Life<br/>+1 Attack Projectile</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -673,7 +718,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 1372
+                "Custom": 100
               }
             }
           ],
@@ -683,7 +728,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 1372,
+          "Custom": 100,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -695,8 +740,12 @@
         "AbilCmd": "AscendedSkyrazerFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -810,7 +859,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 468
+                "Custom": 50
               }
             }
           ],
@@ -820,7 +869,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 468,
+          "Custom": 50,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -832,8 +881,12 @@
         "AbilCmd": "SkyrazerFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -966,8 +1019,12 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -986,8 +1043,12 @@
         "Type": "Passive",
         "id": "DragonRetarget",
         "Icon": "ui_tipicon_campaign_exp02-focusfire",
-        "Tooltip": "Ranged attack projectiles retarget if the original target dies.",
-        "Name": "Retarget"
+        "Name": {
+          "enUS": "Retarget"
+        },
+        "Tooltip": {
+          "enUS": "Ranged attack projectiles retarget if the original target dies."
+        }
       },
       {
         "Cost": {
@@ -1005,8 +1066,12 @@
         "Type": "Passive",
         "id": "SkyrazerEmberCore",
         "Icon": "ui_tipicon_evolution_baneling-lava",
-        "Tooltip": "Increases the Skyrazer's range by its current cliff level.",
-        "Name": "Ember Core"
+        "Name": {
+          "enUS": "Ember Core"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Skyrazors</span> to use <span style=\"color: ffff8a\">Superior Blast</span> against targets on higher cliff levels or while affected by <span style=\"color: ffff8a\">Crushing Gravity</span>."
+        }
       }
     ]
   },
@@ -1018,19 +1083,22 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "Skyrazer"
+  ],
   "Speed": 2.5,
   "Sight": 11,
   "Food": -3,
   "CostResource": {
     "Minerals": 150,
     "Vespene": 100,
-    "Custom": 780
+    "Custom": 50
   },
   "KillXP": 15,
   "CargoSize": 4,
   "ScoreMake": 100,
   "ScoreKill": 100,
-  "SubgroupPriority": 12,
+  "SubgroupPriority": 62,
   "GlossaryPriority": 0,
   "GlossaryStrongArray": [
     "Banshee",
@@ -1043,13 +1111,44 @@
     "Immortal"
   ],
   "LifeArmor": 1,
+  "InnerRadius": 0.5,
   "Icon": "btn-unit-zerg-tyrannozor",
-  "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
+  "Model": "Terrorzor",
+  "LifeArmorIcon": "btn-upgrade-dehaka-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "id": "SkyrazerSavageClaws",
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "Name": {
+        "enUS": "Savage Claws"
+      },
+      "Amount": 14,
+      "Kind": "Melee",
+      "TargetFilters": "Ground",
+      "Range": 0.25,
+      "Period": 0.91
+    },
+    {
+      "id": "SkyrazerAscendedSuperiorBlastEmbercore",
+      "Name": {
+        "enUS": "Superior Blast"
+      },
+      "Amount": 8,
+      "AttributeBonus": {
+        "Armored": 3
+      },
+      "Kind": "Ranged",
+      "DisplayAttackCount": 3,
+      "TargetFilters": "Ground",
+      "Range": 7,
+      "Period": 0.91
+    },
+    {
       "id": "SkyrazerAscendedSuperiorBlast",
-      "Name": "Superior Blast",
+      "Name": {
+        "enUS": "Superior Blast"
+      },
       "Amount": 8,
       "AttributeBonus": {
         "Armored": 3
@@ -1061,18 +1160,10 @@
       "Period": 0.91
     },
     {
-      "id": "SkyrazerSavageClaws",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": "Savage Claws",
-      "Amount": 14,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.25,
-      "Period": 0.91
-    },
-    {
       "id": "SkyrazerAscendedInferiorBlast",
-      "Name": "Inferior Blast",
+      "Name": {
+        "enUS": "Inferior Blast"
+      },
       "Amount": 8,
       "AttributeBonus": {
         "Armored": 3
@@ -1086,61 +1177,89 @@
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
-    },
-    {
-      "id": "SkyrazerAscended1"
-    },
-    {
-      "id": "SkyrazerAscended2"
-    },
-    {
-      "id": "SkyrazerAscended3"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "DragonAscended",
       "Icon": "btn-ability-zerg-dehakaspawn",
-      "Tooltip": "This Dragon is more powerful. If it dies in combat it will provide its owner with a small amount of Rage.",
-      "Name": "Ascended"
+      "Name": {
+        "enUS": "Ascended"
+      },
+      "Tooltip": {
+        "enUS": "This Dragon is more powerful."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedSkyrazer",
-      "Name": "Ascended Skyrazer"
+      "Name": {
+        "enUS": "Ascended Skyrazer"
+      }
     },
     {
       "id": "AscendedSkyrazerFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "SkyrazerFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     }
   ],
   "$Upgrades": [
+    "Button/Tooltip/Skyrazer",
+    "Button/Tooltip/AscendedSkyrazer",
     "AscendedSkyrazer",
+    "SkyrazerEmberCore",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonPlateArmorLevel1",
     "Skyrazer",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3"
+    "DragonPlateArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1157,63 +1276,109 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedSkyrazer,Execute",
       "id": "AscendedSkyrazer",
-      "Tooltip": "<span style=\"color: #00FF00\">+30 Life<br/>+1 Attack Projectile</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+      }
     },
     {
       "AbilCmd": "AscendedSkyrazerFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "SkyrazerFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     }
   ]
 }

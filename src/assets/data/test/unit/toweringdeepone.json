@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Towering Deep One"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ToweringDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ToweringDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ToweringDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ToweringDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,18 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "DragonTrain",
+    "que5PassiveCancelToSelection",
+    "Rally",
+    "stop",
+    "ToweringDeepOneBuild",
+    "ToweringDeepOneTrain",
+    "ToweringDeepOne"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +199,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +239,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +261,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -297,8 +303,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -313,10 +318,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -336,12 +338,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -380,10 +379,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -406,13 +402,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -432,15 +424,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -499,6 +484,9 @@
                 },
                 "DefaultButtonFace": "GenesisPitTowering"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "GenesisPitTowering",
               "Time": 21
             },
@@ -509,6 +497,9 @@
                 },
                 "DefaultButtonFace": "AugmentationPitTowering"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitTowering",
               "Time": 56
             },
@@ -736,13 +727,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -824,7 +811,7 @@
           "enUS": "Spawn Aurora Conduit"
         },
         "Tooltip": {
-          "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed<br/>Nether Shock deals damage</span>"
+          "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed</span>"
         },
         "Hotkey": "W"
       },
@@ -933,14 +920,14 @@
         ],
         "Time": 84,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 300,
+          "Minerals": 300,
+          "Vespene": 400,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -8
         },
         "Row": 0,
         "Column": 4,
@@ -964,6 +951,9 @@
             },
             "DefaultButtonFace": "GenesisPitTowering"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "GenesisPitTowering",
           "Time": 21
         },
@@ -1000,6 +990,9 @@
             },
             "DefaultButtonFace": "AugmentationPitTowering"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitTowering",
           "Time": 56
         },
@@ -1030,6 +1023,9 @@
       }
     ]
   },
+  "TechAliasArray": [
+    "ToweringDeepOne"
+  ],
   "Sight": 9,
   "CostResource": {
     "Minerals": 150,
@@ -1052,7 +1048,7 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1062,10 +1058,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "DragonTrain",
@@ -1076,21 +1069,17 @@
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -1114,27 +1103,17 @@
     }
   ],
   "$Upgrades": [
-    "PlodderBuild",
-    "ToweringDeepOne",
-    "GenesisPitTowering",
-    "ToweringDeepOneNoFootprint",
     "DragonPlateArmorLevel1",
+    "ToweringDeepOne",
+    "ToweringDeepOneNoFootprint",
     "ToweringDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "PlodderBuild"
   ],
   "$Requirements": [],
-  "$Production": [
-    "Fleshrender",
-    "AuroraConduit",
-    "Arkwyrm",
-    "VolcanicHarbinger",
-    "GrimGlider",
-    "GenesisPitTowering",
-    "AugmentationPitTowering"
-  ],
+  "$Production": [],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -1149,25 +1128,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1175,12 +1148,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1188,25 +1158,16 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ToweringDeepOneBuild,Halt",
@@ -1214,12 +1175,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train1",
@@ -1240,7 +1198,7 @@
         "enUS": "Spawn Aurora Conduit"
       },
       "Tooltip": {
-        "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed<br/>Nether Shock deals damage</span>"
+        "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed</span>"
       }
     },
     {

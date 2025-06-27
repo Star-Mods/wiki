@@ -1,9 +1,10 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Hunter"
   },
   "Description": {
-    "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+    "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -14,14 +15,14 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 160,
-  "LifeMax": 160,
+  "LifeStart": 180,
+  "LifeMax": 180,
   "LifeArmorName": {
     "enUS": "Dragon Plate Armor"
   },
-  "Mover": "CliffJumper",
-  "StationaryTurningRate": 720,
-  "TurningRate": 720,
+  "Mover": "Ground",
+  "StationaryTurningRate": 630,
+  "TurningRate": 630,
   "Radius": 0.625,
   "SeparationRadius": 0.625,
   "MinimapRadius": 0.625,
@@ -70,16 +71,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DragonHunter/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DragonHunter/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DragonHunter/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DragonHunter/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -93,8 +96,11 @@
   ],
   "Attributes": [
     "Biological",
-    "Armored",
-    "Heroic"
+    "Armored"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "DragonAscended"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -104,6 +110,17 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedHunter",
+    "AscendedHunterFission",
+    "HunterFission",
+    "DragonFissionDisabled",
+    "HunterActivateRegenesis",
+    "HunterDeactivateRegenesis"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -194,12 +211,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -239,8 +253,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -255,10 +268,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -278,12 +288,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -373,13 +380,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -469,13 +473,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -549,14 +550,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -583,7 +578,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
         },
         "Hotkey": "X"
       },
@@ -606,7 +601,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
         },
         "Hotkey": "X"
       },
@@ -1073,7 +1068,7 @@
           "enUS": "Tongue Lash"
         },
         "Tooltip": {
-          "enUS": "Ranged attacks pull enemies towards the Hunter."
+          "enUS": "Ranged attacks pull the target towards the Hunter with increased effect against light units."
         }
       },
       {
@@ -1096,8 +1091,280 @@
           "enUS": "Feast"
         },
         "Tooltip": {
-          "enUS": "Each attack against biological targets provides the Hunter <b>4</b> life with Claws and <b>8</b> life with Tongue Lash."
+          "enUS": "Each attack against biological or shielded targets provides the Hunter <b>2</b> life with Claws and <b>4</b> life with Tongue Lash."
         }
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/HunterActivateRegenesis",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "HunterActivateRegenesis",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1
+          },
+          "Effect": [
+            "HunterRegenesisApplyBehavior"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "HunterActivateRegenesis",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "DragonHunterActivateRegenesis",
+              "Requirements": "DragonHunterActivateRegenesis"
+            }
+          },
+          "AbilSetId": "BrwD",
+          "CastIntroTime": [
+            1.4
+          ],
+          "UninterruptibleArray": {
+            "Cast": 1,
+            "Finish": 1
+          },
+          "FinishTime": [
+            1
+          ],
+          "id": "HunterActivateRegenesis"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "HunterActivateRegenesis,Execute",
+        "id": "DragonHunterActivateRegenesis",
+        "Icon": "btn-ability-zerg-dehaka-tyrannozor-tyrantprotection",
+        "Name": {
+          "enUS": "Activate Regenesis"
+        },
+        "Tooltip": {
+          "enUS": "Regenerates <b>1.4</b> life per second but prevents attacks and movement."
+        },
+        "Hotkey": "Q"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/HunterDeactivateRegenesis",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "HunterDeactivateRegenesis",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1
+          },
+          "Effect": [
+            "HunterRegenesisRemoveBehavior"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "HunterDeactivateRegenesis",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "DragonHunterDeactivateRegenesis",
+              "Requirements": "DragonHunterDeactivateRegenesis"
+            }
+          },
+          "AbilSetId": "BrwU",
+          "FinishTime": [
+            2.8
+          ],
+          "UninterruptibleArray": {
+            "Finish": 1
+          },
+          "id": "HunterDeactivateRegenesis"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "HunterDeactivateRegenesis,Execute",
+        "id": "DragonHunterDeactivateRegenesis",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Deactivate Regenesis"
+        },
+        "Tooltip": {
+          "enUS": "Deactivates Regenesis allowing attacks and movement."
+        },
+        "Hotkey": "W"
       }
     ]
   },
@@ -1109,8 +1376,11 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
-  "LifeArmor": 2,
-  "Speed": 4,
+  "TechAliasArray": [
+    "DragonHunter"
+  ],
+  "LifeArmor": 1,
+  "Speed": 3.5,
   "Sight": 11,
   "Food": -2,
   "CostResource": {
@@ -1119,6 +1389,14 @@
     "Custom": 30
   },
   "KillXP": 15,
+  "WeaponArray": [
+    {
+      "Link": "DragonHunterClaws"
+    },
+    {
+      "Link": "DragonHunterTongueLash"
+    }
+  ],
   "InnerRadius": 0.375,
   "CargoSize": 2,
   "ScoreMake": 100,
@@ -1137,46 +1415,57 @@
   ],
   "Icon": "btn-unit-zerg-ravasaur",
   "Model": "PrimalZergRanged_00",
-  "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dehaka-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "DragonHunterClaws",
       "Name": {
         "enUS": "Claws"
       },
+      "Options": {
+        "Melee": 1
+      },
+      "DisplayEffect": "DragonHunterMeleeDamage",
+      "DisplayAttackCount": 2,
+      "DisplayName": "Weapon/Name/DragonHunterClaws",
+      "AcquirePrioritization": "ByAngle",
+      "Range": 0.25,
+      "Effect": "DragonHunterMeleeCreatePersistent",
+      "MinimumRange": 0,
+      "Period": 1.05,
+      "id": "DragonHunterClaws",
+      "parent": "DragonHunterTongueLash",
+      "class": "CWeaponLegacy",
       "Amount": 8,
       "Kind": "Melee",
-      "DisplayAttackCount": 2,
-      "TargetFilters": "Ground",
-      "Range": 0.25,
-      "Period": 1.05
+      "TargetFilters": "Ground"
     },
     {
+      "EditorCategories": "Race:Dragon",
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "DisplayEffect": "HunterTongueLashDamage",
+      "TargetFilters": "Ground",
+      "Period": 2.1,
+      "Effect": "HunterTongueLashLaunchMissile",
+      "Options": {
+        "LinkedCooldown": 0
+      },
+      "MinimumRange": 0.5,
+      "Range": 3,
       "id": "DragonHunterTongueLash",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Tongue Lash"
       },
       "Amount": 15,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 2.1
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
-      },
-      "Tooltip": "-"
-    },
-    {
-      "id": "DragonHunter",
-      "Name": {
-        "enUS": "DragonHunter"
       },
       "Tooltip": "-"
     },
@@ -1195,22 +1484,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1236,27 +1524,41 @@
       "Name": {
         "enUS": "Fission"
       }
+    },
+    {
+      "id": "HunterActivateRegenesis",
+      "Name": {
+        "enUS": "Hunter - Activate Regenesis"
+      }
+    },
+    {
+      "id": "HunterDeactivateRegenesis",
+      "Name": {
+        "enUS": "Hunter - Deactivate Regenesis"
+      }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/DragonHunter",
     "Button/Tooltip/AscendedHunter",
     "AscendedHunter",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "HunterWickedBarbs",
     "DragonPlateArmorLevel1",
     "DragonHunter",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3"
+    "DragonPlateArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedDragonHunter",
-    "AscendedDragonHunter"
-  ],
-  "$Phased": "AscendedDragonHunter",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1265,12 +1567,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1278,51 +1577,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedHunter,Execute",
@@ -1331,7 +1615,7 @@
         "enUS": "Ascend"
       },
       "Tooltip": {
-        "enUS": "<span style=\"color: 00FF00\">+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+        "enUS": "<span style=\"color: 00FF00\">+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
       }
     },
     {
@@ -1365,6 +1649,28 @@
       },
       "Tooltip": {
         "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
+    },
+    {
+      "AbilCmd": "HunterActivateRegenesis,Execute",
+      "id": "DragonHunterActivateRegenesis",
+      "Icon": "btn-ability-zerg-dehaka-tyrannozor-tyrantprotection",
+      "Name": {
+        "enUS": "Activate Regenesis"
+      },
+      "Tooltip": {
+        "enUS": "Regenerates <b>1.4</b> life per second but prevents attacks and movement."
+      }
+    },
+    {
+      "AbilCmd": "HunterDeactivateRegenesis,Execute",
+      "id": "DragonHunterDeactivateRegenesis",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Deactivate Regenesis"
+      },
+      "Tooltip": {
+        "enUS": "Deactivates Regenesis allowing attacks and movement."
       }
     }
   ]

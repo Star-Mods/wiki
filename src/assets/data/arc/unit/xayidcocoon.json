@@ -1,6 +1,12 @@
 {
-  "Name": "Xayid Cocoon",
-  "Description": "Xayid units morph in the safety of these cocoons.",
+  "Name": {
+    "enUS": "Xayid Cocoon",
+    "ruRU": "Кокон Зейтов"
+  },
+  "Description": {
+    "enUS": "Xayid units morph in the safety of these cocoons.",
+    "ruRU": "Внутри этих коконов единицы Зейтов мутируют."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "XayidCocoon/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "XayidCocoon/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "XayidCocoon/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "XayidCocoon/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -118,8 +129,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -179,8 +196,14 @@
         "AbilCmd": "que1,CancelLast",
         "id": "CancelCocoon",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels the build order, killing the larva in the process.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Cancel"
+        },
+        "Tooltip": {
+          "enUS": "Cancels the build order, killing the larva in the process.",
+          "ruRU": "Cancels the build order, killing the larva in the process."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -188,6 +211,7 @@
   "SubgroupPriority": 1,
   "id": "XayidCocoon",
   "Icon": "btn-unit-zerg-egg",
+  "Model": "EvolutionEgg",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -195,11 +219,17 @@
   "Abilities": [
     {
       "id": "que1",
-      "Name": "Queue (1)"
+      "Name": {
+        "ruRU": "Queue (1)",
+        "enUS": "Queue (1)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -221,15 +251,27 @@
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "que1,CancelLast",
       "id": "CancelCocoon",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the build order, killing the larva in the process.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Cancel"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the build order, killing the larva in the process.",
+        "ruRU": "Cancels the build order, killing the larva in the process."
+      }
     }
   ]
 }

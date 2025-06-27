@@ -1,6 +1,10 @@
 {
-  "Name": "Lesser Deep One",
-  "Description": "Spawns lesser Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters",
+  "Name": {
+    "enUS": "Lesser Deep One"
+  },
+  "Description": {
+    "enUS": "Spawns lesser Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 180,
   "TurningRate": 180,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "LesserDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "LesserDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "LesserDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "LesserDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -312,8 +333,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -376,8 +403,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -398,8 +431,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -459,8 +498,11 @@
                 },
                 "DefaultButtonFace": "GenesisPitLesser"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "GenesisPitLesser",
-              "Time": 30
+              "Time": 21
             },
             "Build2": {
               "Button": {
@@ -469,8 +511,11 @@
                 },
                 "DefaultButtonFace": "AugmentationPitLesser"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitLesser",
-              "Time": 50
+              "Time": 63
             },
             "Build3": {
               "Button": {
@@ -694,8 +739,14 @@
         "AbilCmd": "LesserDeepOneBuild,Halt",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -709,13 +760,13 @@
           "Unit": [
             "Flamespitter"
           ],
-          "Time": 35,
+          "Time": 28,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "Flamespitter"
         ],
-        "Time": 35,
+        "Time": 28,
         "Cost": {
           "Minerals": 100,
           "Vespene": 0,
@@ -732,8 +783,12 @@
         "AbilCmd": "LesserDeepOneTrain,Train1",
         "id": "Flamespitter",
         "Icon": "btn-unit-zerg-primalzergling",
-        "Tooltip": "Fragile ranged unit. Projectiles may retarget.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Damage<br/>Can Attack air units</span>",
-        "Name": "Spawn Flamespitter",
+        "Name": {
+          "enUS": "Spawn Flamespitter"
+        },
+        "Tooltip": {
+          "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
+        },
         "Hotkey": "Q"
       },
       {
@@ -747,16 +802,16 @@
           "Unit": [
             "DragonHunter"
           ],
-          "Time": 45,
+          "Time": 49,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "DragonHunter"
         ],
-        "Time": 45,
+        "Time": 49,
         "Cost": {
-          "Minerals": 75,
-          "Vespene": 75,
+          "Minerals": 100,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -770,8 +825,12 @@
         "AbilCmd": "LesserDeepOneTrain,Train2",
         "id": "DragonHunter",
         "Icon": "btn-unit-zerg-ravasaur",
-        "Tooltip": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Armor<br/>+0.7 Speed</span>",
-        "Name": "Spawn Hunter",
+        "Name": {
+          "enUS": "Spawn Hunter"
+        },
+        "Tooltip": {
+          "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
+        },
         "Hotkey": "W"
       },
       {
@@ -786,13 +845,13 @@
           "Unit": [
             "HornedMagus"
           ],
-          "Time": 40,
+          "Time": 42,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "HornedMagus"
         ],
-        "Time": 40,
+        "Time": 42,
         "Cost": {
           "Minerals": 50,
           "Vespene": 125,
@@ -809,8 +868,12 @@
         "AbilCmd": "LesserDeepOneTrain,Train3",
         "id": "HornedMagus",
         "Icon": "btn-critter-tastelope",
-        "Tooltip": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Shroud.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+60 Life<br/>+100% Energy Regeneration</span>",
-        "Name": "Spawn Horned Magus",
+        "Name": {
+          "enUS": "Spawn Horned Magus"
+        },
+        "Tooltip": {
+          "enUS": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Frenzy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -820,17 +883,17 @@
               "AllowMinimap": 0
             },
             "DefaultButtonFace": "UnseenBeast",
-            "Requirements": "UnseenBeast"
+            "Requirements": "AugmentationPit"
           },
           "Unit": [
             "UnseenBeast"
           ],
-          "Time": 55
+          "Time": 56
         },
         "Unit": [
           "UnseenBeast"
         ],
-        "Time": 55,
+        "Time": 56,
         "Cost": {
           "Minerals": 100,
           "Vespene": 150,
@@ -846,9 +909,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "LesserDeepOneTrain,Train4",
         "id": "UnseenBeast",
-        "Icon": "wireframe-critter-matriarchsnowbeast",
-        "Tooltip": "Mobile melee assassin. Cloak renders the unit invisible to enemies without detection.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Armor<br/>Teleport Assault</span>",
-        "Name": "Spawn Unseen Beast",
+        "Icon": "wireframe-critter-snowbeast",
+        "Name": {
+          "enUS": "Spawn Unseen Beast"
+        },
+        "Tooltip": {
+          "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>Teleport Assault</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -859,11 +926,14 @@
             },
             "DefaultButtonFace": "GenesisPitLesser"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "GenesisPitLesser",
-          "Time": 30
+          "Time": 21
         },
         "Unit": "GenesisPitLesser",
-        "Time": 30,
+        "Time": 21,
         "Cost": {
           "Minerals": 75,
           "Vespene": 25,
@@ -879,8 +949,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "LesserDeepOneBuild,Build1",
         "id": "GenesisPitLesser",
-        "Tooltip": "Spawns lesser Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters",
-        "Name": "Propogate Genesis Pit",
+        "Name": {
+          "enUS": "Propagate Genesis Pit"
+        },
+        "Tooltip": {
+          "enUS": "Spawns lesser Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters"
+        },
         "Hotkey": "Z"
       },
       {
@@ -891,11 +965,14 @@
             },
             "DefaultButtonFace": "AugmentationPitLesser"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitLesser",
-          "Time": 50
+          "Time": 63
         },
         "Unit": "AugmentationPitLesser",
-        "Time": 50,
+        "Time": 63,
         "Cost": {
           "Minerals": 25,
           "Vespene": 75,
@@ -911,12 +988,19 @@
         "Type": "AbilCmd",
         "AbilCmd": "LesserDeepOneBuild,Build2",
         "id": "AugmentationPitLesser",
-        "Tooltip": "Contains upgrades for Dragon units spawned by Lesser Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Horned Magus",
-        "Name": "Propogate Augmentation Pit",
+        "Name": {
+          "enUS": "Propagate Augmentation Pit"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Dragon units spawned by Lesser Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Horned Magus<br/>- Unseen Beasts"
+        },
         "Hotkey": "X"
       }
     ]
   },
+  "TechAliasArray": [
+    "LesserDeepOne"
+  ],
   "Sight": 9,
   "CostResource": {
     "Minerals": 150
@@ -925,66 +1009,89 @@
   "PlacementFootprint": "Footprint3x3",
   "ScoreMake": 150,
   "ScoreKill": 150,
-  "SubgroupPriority": 3,
+  "SubgroupPriority": 34,
   "GlossaryPriority": 21,
   "TechTreeProducedUnitArray": [
     "Plodder",
     "Razorback"
   ],
   "Icon": "btn-building-zerg-nydusworm",
+  "Model": "NydusCanalEx1",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "DragonTrain",
-      "Name": "Dragon - Train"
+      "Name": {
+        "enUS": "Dragon - Train"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "LesserDeepOneBuild",
-      "Name": "Lesser Deep One - Build"
+      "Name": {
+        "enUS": "Lesser Deep One - Build"
+      }
     },
     {
       "id": "LesserDeepOneTrain",
-      "Name": "Lesser Deep One - Train"
+      "Name": {
+        "enUS": "Lesser Deep One - Train"
+      }
     },
     {
       "id": "LesserDeepOne",
-      "Name": "Lesser Deep One"
+      "Name": {
+        "enUS": "Lesser Deep One"
+      }
     }
   ],
   "$Upgrades": [
-    "PlodderBuild",
-    "LesserDeepOne",
-    "GenesisPitLesser",
-    "LesserDeepOneNoFootprint",
     "DragonPlateArmorLevel1",
+    "LesserDeepOne",
+    "LesserDeepOneNoFootprint",
     "LesserDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "PlodderBuild"
   ],
   "$Requirements": [],
   "$Production": [
@@ -1007,83 +1114,143 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "LesserDeepOneBuild,Halt",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "LesserDeepOneTrain,Train1",
       "id": "Flamespitter",
       "Icon": "btn-unit-zerg-primalzergling",
-      "Tooltip": "Fragile ranged unit. Projectiles may retarget.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Damage<br/>Can Attack air units</span>",
-      "Name": "Spawn Flamespitter"
+      "Name": {
+        "enUS": "Spawn Flamespitter"
+      },
+      "Tooltip": {
+        "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
+      }
     },
     {
       "AbilCmd": "LesserDeepOneTrain,Train2",
       "id": "DragonHunter",
       "Icon": "btn-unit-zerg-ravasaur",
-      "Tooltip": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Armor<br/>+0.7 Speed</span>",
-      "Name": "Spawn Hunter"
+      "Name": {
+        "enUS": "Spawn Hunter"
+      },
+      "Tooltip": {
+        "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
+      }
     },
     {
       "AbilCmd": "LesserDeepOneTrain,Train3",
       "id": "HornedMagus",
       "Icon": "btn-critter-tastelope",
-      "Tooltip": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Shroud.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+60 Life<br/>+100% Energy Regeneration</span>",
-      "Name": "Spawn Horned Magus"
+      "Name": {
+        "enUS": "Spawn Horned Magus"
+      },
+      "Tooltip": {
+        "enUS": "Ranged caster unit. Projectiles may retarget. Can use Fire Shield and Invigorate. Can be upgraded to use Frenzy.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>2.1</b> Life Regeneration</span>"
+      }
     },
     {
       "AbilCmd": "LesserDeepOneTrain,Train4",
       "id": "UnseenBeast",
-      "Icon": "wireframe-critter-matriarchsnowbeast",
-      "Tooltip": "Mobile melee assassin. Cloak renders the unit invisible to enemies without detection.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Armor<br/>Teleport Assault</span>",
-      "Name": "Spawn Unseen Beast"
+      "Icon": "wireframe-critter-snowbeast",
+      "Name": {
+        "enUS": "Spawn Unseen Beast"
+      },
+      "Tooltip": {
+        "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>Teleport Assault</span>"
+      }
     },
     {
       "AbilCmd": "LesserDeepOneBuild,Build1",
       "id": "GenesisPitLesser",
-      "Tooltip": "Spawns lesser Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters",
-      "Name": "Propogate Genesis Pit"
+      "Name": {
+        "enUS": "Propagate Genesis Pit"
+      },
+      "Tooltip": {
+        "enUS": "Spawns lesser Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters"
+      }
     },
     {
       "AbilCmd": "LesserDeepOneBuild,Build2",
       "id": "AugmentationPitLesser",
-      "Tooltip": "Contains upgrades for Dragon units spawned by Lesser Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Horned Magus",
-      "Name": "Propogate Augmentation Pit"
+      "Name": {
+        "enUS": "Propagate Augmentation Pit"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Dragon units spawned by Lesser Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Horned Magus<br/>- Unseen Beasts"
+      }
     }
   ]
 }

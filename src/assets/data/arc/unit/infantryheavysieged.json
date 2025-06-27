@@ -1,22 +1,28 @@
 {
-  "Name": "Heavy Gunner",
-  "Description": "Heavy Assault<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
+  "Name": {
+    "enUS": "Heavy Gunner"
+  },
+  "Description": {
+    "enUS": "Heavy Assault infantry specialized to deal with armored units. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 75,
-  "LifeMax": 75,
-  "LifeArmorName": "UPL Infantry Armor",
+  "LifeStart": 150,
+  "LifeMax": 150,
+  "LifeArmorName": {
+    "enUS": "UPL Infantry Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
-  "Radius": 0.375,
+  "Radius": 0.4375,
   "SeparationRadius": 0.4,
   "MinimapRadius": 0.5,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
@@ -64,16 +70,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "InfantryHeavy/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "InfantryHeavy/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "InfantryHeavy/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "InfantryHeavy/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -92,8 +100,8 @@
   ],
   "Speed": 0,
   "Attributes": [
-    "Light",
-    "Biological"
+    "Biological",
+    "Armored"
   ],
   "Acceleration": 1000,
   "LateralAcceleration": 69.125,
@@ -107,96 +115,6 @@
   "KillXP": 15,
   "CardLayouts": {
     "Root": [
-      {
-        "Info": {
-          "class": "CAbilMove",
-          "Name": "Abil/Name/move",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Move",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            },
-            {
-              "DisplayType": "Move",
-              "Color": "255,35,125,255",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "move",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Move": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Move"
-            },
-            "Patrol": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "MovePatrol"
-            },
-            "HoldPos": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "MoveHoldPosition"
-            },
-            "AcquireMove": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "AcquireMove"
-            },
-            "Turn": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Turn"
-            }
-          },
-          "FleeRange": 5,
-          "FleeTime": 5,
-          "FollowRangeSlop": 1,
-          "FollowAcquireRange": 6,
-          "MinPatrolDistance": 1,
-          "id": "move"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "move,Move",
-        "id": "Move",
-        "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
-        "Hotkey": "M"
-      },
       {
         "Info": {
           "class": "CAbilStop",
@@ -267,8 +185,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -357,8 +281,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -447,8 +377,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -522,8 +458,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -540,10 +482,15 @@
         "Row": 2,
         "Column": 2,
         "Type": "Passive",
+        "AbilCmd": "",
         "id": "InfantryMedkit",
         "Icon": "btn-ability-upl-medkit",
-        "Tooltip": "This unit will use a Medkit when they have less than 25% of their life, which will heal <span style=\"color: #FFFF80\"><b>45</b></span> life over <span style=\"color: #FFFF80\"><b>8</b></span>. Once activated it will be on cooldown for <b>180</b>.",
-        "Name": "Personal Medkit"
+        "Name": {
+          "enUS": "Personal Medkit"
+        },
+        "Tooltip": {
+          "enUS": "This unit will use a Medkit when they have less than 40% of their life, which will heal <span style=\"color: FFFF80\"><b>45</b></span> life over <span style=\"color: FFFF80\"><b>8</b></span>. Once activated it will be on cooldown for <b>180</b>."
+        }
       },
       {
         "Cost": {
@@ -561,8 +508,12 @@
         "Type": "Passive",
         "id": "InfantryMedkit",
         "Icon": "btn-ability-upl-medkit",
-        "Tooltip": "This unit will use a Medkit when they have less than 25% of their life, which will heal <span style=\"color: #FFFF80\"><b>45</b></span> life over <span style=\"color: #FFFF80\"><b>8</b></span>. Once activated it will be on cooldown for <b>180</b>.",
-        "Name": "Personal Medkit"
+        "Name": {
+          "enUS": "Personal Medkit"
+        },
+        "Tooltip": {
+          "enUS": "This unit will use a Medkit when they have less than 40% of their life, which will heal <span style=\"color: FFFF80\"><b>45</b></span> life over <span style=\"color: FFFF80\"><b>8</b></span>. Once activated it will be on cooldown for <b>180</b>."
+        }
       },
       {
         "Info": {
@@ -603,29 +554,13 @@
         "AbilCmd": "MorphToInfantryHeavy,Execute",
         "id": "UPLHeavyGunnerUnsiege",
         "Icon": "btn-unit-upl-infantryheavy",
-        "Tooltip": "Mobile Mode",
-        "Name": "Unsiege",
-        "Hotkey": "D"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Unsiege"
         },
-        "Row": 1,
-        "Column": 0,
-        "Type": "Passive",
-        "id": "UPLHeavyGunnerSieged",
-        "Icon": "btn-unit-heavygunner-sieged",
-        "Tooltip": "Sieged Heavy Gunner Has Increased Attack Rate and Range",
-        "Name": "Sieged",
-        "Hotkey": "E"
+        "Tooltip": {
+          "enUS": "Switch back to mobile mode."
+        },
+        "Hotkey": "D"
       }
     ]
   },
@@ -634,7 +569,7 @@
   "ScoreMake": 75,
   "ScoreKill": 75,
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 12,
+  "SubgroupPriority": 15,
   "GlossaryCategory": "Unit/Category/0UPLUnits",
   "HotkeyCategory": "Unit/Category/UPLUnits",
   "TauntDuration": {
@@ -645,24 +580,21 @@
   "CostResource": {
     "Minerals": 75
   },
-  "GlossaryPriority": 22,
+  "GlossaryPriority": 26,
   "AlliedPushPriority": 5,
+  "LifeArmor": 0,
   "Height": -0.05,
-  "LifeDamageGain": {
-    "Spell": 0.5,
-    "Melee": 0.5,
-    "Ranged": 0.5,
-    "Splash": 0.5,
-    "NoProc": 0.5
-  },
   "Icon": "btn-unit-heavygunner-sieged",
+  "Model": "InfantryHeavy",
   "LifeArmorIcon": "btn-upgrades-upl-infantryarmor-lvl0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "InfantryHeavy",
       "Icon": "btn-upgrades-upl-infantryweapons-lvl0",
-      "Name": "McCallister M44 Heavy Machine Gun",
+      "Name": {
+        "enUS": "McCallister M44 Heavy Machine Gun"
+      },
       "Amount": 9,
       "AttributeBonus": {
         "Armored": 6
@@ -676,32 +608,56 @@
   "Behaviors": [
     {
       "id": "InfantryMedkit",
-      "Icon": "btn-ability-upl-medkit"
+      "Icon": "btn-ability-upl-medkit",
+      "Name": {
+        "enUS": "Medkit"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "InfantryMedkit@Handler",
-      "Icon": "btn-ability-upl-medkit"
+      "Icon": "btn-ability-upl-medkit",
+      "Name": {
+        "enUS": "Handler"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "InfantrySieged",
-      "Icon": "btn-unit-heavygunner-sieged"
+      "Icon": "btn-unit-heavygunner-sieged",
+      "Name": "-",
+      "Tooltip": {
+        "enUS": "In siege mode, Heavy Gunner has 200% health, 160% attack speed and +1 range at the cost of disabling movement."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
-      "id": "MorphToInfantryHeavy"
+      "id": "MorphToInfantryHeavy",
+      "Name": "-"
     }
   ],
   "$Upgrades": [
+    "SpaceSandbag",
     "MorphToInfantryHeavySieged",
+    "InfantryRifleRangeUpgrade",
+    "UPLInfantryArmorLevel1",
+    "UPLInfantryArmorLevel2",
+    "UPLInfantryArmorLevel3",
     "InfantrySandBags1Model",
     "InfantrySandBags2Model",
     "InfantrySandBags3Model",
@@ -721,46 +677,67 @@
   "$Producers": [],
   "$Commands": [
     {
-      "AbilCmd": "move,Move",
-      "id": "Move",
-      "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
-    },
-    {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "MorphToInfantryHeavy,Execute",
       "id": "UPLHeavyGunnerUnsiege",
       "Icon": "btn-unit-upl-infantryheavy",
-      "Tooltip": "Mobile Mode",
-      "Name": "Unsiege"
+      "Name": {
+        "enUS": "Unsiege"
+      },
+      "Tooltip": {
+        "enUS": "Switch back to mobile mode."
+      }
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "Name": "Disruptor",
-  "Description": "Robotic disruption unit. Can use Purification Nova to deal heavy area damage.",
+  "Name": {
+    "enUS": "Disruptor",
+    "ruRU": "Disruptor"
+  },
+  "Description": {
+    "enUS": "Robotic disruption unit. Can use Purification Nova to deal heavy area damage.",
+    "ruRU": "Robotic disruption unit. Can use Purification Nova to deal heavy area damage."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": "Protoss Armor",
+  "LifeArmorName": {
+    "enUS": "Protoss Armor",
+    "ruRU": "Protoss Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -64,16 +73,18 @@
       "Turn": 10
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Disruptor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Disruptor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Disruptor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Disruptor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -94,19 +105,24 @@
   ],
   "Attributes": [
     "Armored",
-    "Mechanical"
+    "Mechanical",
+    "Robotic",
+    "Hover"
   ],
   "LifeArmor": 1,
   "ShieldsStart": 100,
   "ShieldsMax": 100,
   "ShieldRegenDelay": 10,
   "ShieldRegenRate": 2,
-  "ShieldArmorName": "Protoss Plasma Shields",
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
   "Speed": 2.25,
   "Acceleration": 1000,
   "LateralAcceleration": 46.0625,
   "Sight": 9,
-  "Food": -4,
+  "Food": -3,
   "CostCategory": "Army",
   "CostResource": {
     "Minerals": 150,
@@ -204,8 +220,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -278,8 +300,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -368,8 +396,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -443,8 +477,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -533,8 +573,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -623,8 +669,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -645,8 +697,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -787,8 +845,14 @@
         "AbilCmd": "PurificationNovaTargeted,Execute",
         "id": "PurificationNovaTargeted",
         "Icon": "btn-ability-protoss-purificationnova",
-        "Tooltip": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>145</b> splash damage and an additional <b>55</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.",
-        "Name": "Purification Nova",
+        "Name": {
+          "enUS": "Purification Nova",
+          "ruRU": "Purification Nova"
+        },
+        "Tooltip": {
+          "enUS": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>100</b> splash damage and an additional <b>100</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.",
+          "ruRU": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>100</b> splash damage and an additional <b>100</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active."
+        },
         "Hotkey": "V"
       }
     ]
@@ -817,6 +881,7 @@
   "RankDisplay": "Always",
   "id": "Disruptor",
   "Icon": "btn-unit-protoss-disruptor",
+  "Model": "Disruptor",
   "LifeArmorIcon": "btn-upgrade-protoss-groundarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -824,25 +889,38 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "Warpable",
-      "Name": "Warpable"
+      "Name": {
+        "enUS": "Warpable",
+        "ruRU": "Warpable"
+      }
     },
     {
       "id": "PurificationNovaTargeted",
-      "Name": "Purification Nova"
+      "Name": {
+        "enUS": "Purification Nova",
+        "ruRU": "Purification Nova"
+      }
     }
   ],
   "$Upgrades": [
     "IsNotDisruptor",
     "Disruptor",
     "IsDisruptor",
+    "Button/Tooltip/PurificationNova",
     "PurificationNovaMorphBack",
     "HallucinationCreateDisruptor",
     "Disruptor",
@@ -855,6 +933,8 @@
     "ProtossShieldsLevel1",
     "ProtossShieldsLevel2",
     "ProtossShieldsLevel3",
+    "TalDarimAutomationBay",
+    "TalDarimAutomationFacility",
     null,
     null
   ],
@@ -871,57 +951,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "PurificationNovaTargeted,Execute",
       "id": "PurificationNovaTargeted",
       "Icon": "btn-ability-protoss-purificationnova",
-      "Tooltip": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>145</b> splash damage and an additional <b>55</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.",
-      "Name": "Purification Nova"
+      "Name": {
+        "enUS": "Purification Nova",
+        "ruRU": "Purification Nova"
+      },
+      "Tooltip": {
+        "enUS": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>100</b> splash damage and an additional <b>100</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active.",
+        "ruRU": "Shoots out a ball of energy that lasts <b>3</b> seconds and emits a powerful nova dealing <b>100</b> splash damage and an additional <b>100</b> shield damage to nearby ground units and structures. The Disruptor is immobile while this is active."
+      }
     }
   ]
 }

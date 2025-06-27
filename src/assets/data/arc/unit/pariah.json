@@ -1,6 +1,12 @@
 {
-  "Name": "Pariah",
-  "Description": "Light melee warrior. Can use Projection.<br/><br/><span style=\"color: #FFFF80\">Can target ground units.</span>",
+  "Name": {
+    "enUS": "Pariah",
+    "ruRU": "Пария"
+  },
+  "Description": {
+    "enUS": "Light melee warrior. Can use Projection.<br/><br/><span style=\"color: FFFF80\">Can target ground units.</span>",
+    "ruRU": "Лёгкий воин ближнего боя. Может использовать Проекцию.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 45,
-  "LifeMax": 45,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeStart": 50,
+  "LifeMax": 50,
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 1080,
   "TurningRate": 1080,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Pariah/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Pariah/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Pariah/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Pariah/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,6 +99,7 @@
     "ForceField"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 1000,
   "Sight": 9,
   "CostCategory": "Army",
@@ -180,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -254,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -344,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -509,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -644,8 +686,14 @@
         "AbilCmd": "Projection,Execute",
         "id": "Projection",
         "Icon": "btn-ability-protoss-psionictransfer",
-        "Tooltip": "Allows the caster to move through other units at increased speed. Cannot attack while phased.",
-        "Name": "Projection",
+        "Name": {
+          "enUS": "Projection",
+          "ruRU": "Проекция"
+        },
+        "Tooltip": {
+          "enUS": "Allows the caster to move through other units at increased speed. Cannot attack while phased.",
+          "ruRU": "Позволяет кастеру перемещаться между другими единицами с увеличенной скоростью. Не может атаковать в этой фазе."
+        },
         "Hotkey": "C"
       },
       {
@@ -666,8 +714,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -794,8 +848,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       }
     ]
@@ -812,13 +872,15 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Pariah",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Pariah",
   "Attributes": [
     "Light",
     "Biological"
   ],
-  "LifeArmor": 1,
   "ShieldsStart": 25,
   "ShieldsMax": 25,
   "Speed": 2.25,
@@ -833,13 +895,17 @@
   "GlossaryPriority": 12,
   "SubgroupPriority": 29,
   "Icon": "btn-unit-keiron-pariah",
+  "Model": "Pariah",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "Psythe",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Psythe",
+      "Name": {
+        "enUS": "Psythe",
+        "ruRU": "Псайт"
+      },
       "Amount": 8,
       "Kind": "Melee",
       "TargetFilters": "Ground",
@@ -849,41 +915,69 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
       "id": "Projection",
-      "Name": "Projection"
+      "Name": {
+        "enUS": "Projection",
+        "ruRU": "Projection"
+      }
     },
     {
       "id": "ProjectionStart",
-      "Name": "Projection Start"
+      "Name": {
+        "enUS": "Projection Start",
+        "ruRU": "Projection Start"
+      }
     }
   ],
   "$Upgrades": [
@@ -928,57 +1022,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "Projection,Execute",
       "id": "Projection",
       "Icon": "btn-ability-protoss-psionictransfer",
-      "Tooltip": "Allows the caster to move through other units at increased speed. Cannot attack while phased.",
-      "Name": "Projection"
+      "Name": {
+        "enUS": "Projection",
+        "ruRU": "Проекция"
+      },
+      "Tooltip": {
+        "enUS": "Allows the caster to move through other units at increased speed. Cannot attack while phased.",
+        "ruRU": "Позволяет кастеру перемещаться между другими единицами с увеличенной скоростью. Не может атаковать в этой фазе."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     }
   ]
 }

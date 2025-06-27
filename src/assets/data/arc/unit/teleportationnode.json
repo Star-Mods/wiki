@@ -1,6 +1,12 @@
 {
-  "Name": "Teleportation Node",
-  "Description": "Universal production structure for the Directorate army, capable of deploying any combat units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Garmrs<br/>- Strike Troopers<br/>",
+  "Name": {
+    "enUS": "Teleportation Node",
+    "ruRU": "Узел телепортации"
+  },
+  "Description": {
+    "enUS": "Universal production structure for the Directorate army, capable of deploying any combat units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Garmrs<br/>- Strike Troopers<br/>",
+    "ruRU": "Универсальный центр развёртывания армии Директората. Позволяет запрашивать любые боевые единицы.<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- Гармров<br/>- Ударных пехотинцев<br/>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "TeleportationNode/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "TeleportationNode/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "TeleportationNode/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "TeleportationNode/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -132,8 +143,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -193,8 +210,14 @@
         "AbilCmd": "que52,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -257,8 +280,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -312,15 +341,15 @@
           "Cost": [
             {
               "Resource": {
-                "Minerals": 50,
-                "Vespene": 50
+                "Minerals": 25,
+                "Vespene": 25
               }
             }
           ],
           "OffCost": {
             "Resource": {
-              "Minerals": -38,
-              "Vespene": -38
+              "Minerals": -19,
+              "Vespene": -19
             }
           },
           "BehaviorArray": [
@@ -329,8 +358,8 @@
           "id": "UEDMorphTeleportationNode"
         },
         "Cost": {
-          "Minerals": 50,
-          "Vespene": 50,
+          "Minerals": 25,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -344,8 +373,14 @@
         "AbilCmd": "UEDMorphTeleportationNode,Off",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -364,9 +399,15 @@
         "Type": "Submenu",
         "SubmenuCardId": "0002",
         "id": "RequestInfantry",
-        "Icon": "btn-ued_striketrooper",
-        "Tooltip": "",
-        "Name": "Request Infantry",
+        "Icon": "requestinfantry",
+        "Name": {
+          "enUS": "Request Infantry",
+          "ruRU": "Запросить пехоту"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
         "Hotkey": "S"
       },
       {
@@ -385,9 +426,15 @@
         "Type": "Submenu",
         "SubmenuCardId": "0003",
         "id": "RequestVehicles",
-        "Icon": "btn-unit-ued-militarizedtransport",
-        "Tooltip": "",
-        "Name": "Request Vehicles",
+        "Icon": "requestvehicle",
+        "Name": {
+          "enUS": "Request Vehicles",
+          "ruRU": "Запросить технику"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
         "Hotkey": "W"
       },
       {
@@ -406,9 +453,15 @@
         "Type": "Submenu",
         "SubmenuCardId": "0004",
         "id": "RequestStarships",
-        "Icon": "btn-ued-pacifier",
-        "Tooltip": "",
-        "Name": "Request Starships",
+        "Icon": "requeststarship",
+        "Name": {
+          "enUS": "Request Starships",
+          "ruRU": "Запросить звездолёты"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
         "Hotkey": "R"
       },
       {
@@ -462,15 +515,15 @@
           "Cost": [
             {
               "Resource": {
-                "Minerals": 50,
-                "Vespene": 50
+                "Minerals": 25,
+                "Vespene": 25
               }
             }
           ],
           "OffCost": {
             "Resource": {
-              "Minerals": -38,
-              "Vespene": -38
+              "Minerals": -19,
+              "Vespene": -19
             }
           },
           "BehaviorArray": [
@@ -479,8 +532,8 @@
           "id": "UEDMorphTeleportationNode"
         },
         "Cost": {
-          "Minerals": 50,
-          "Vespene": 50,
+          "Minerals": 25,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -494,8 +547,14 @@
         "AbilCmd": "UEDMorphTeleportationNode,On",
         "id": "UEDButtonAcelerationMorphNode",
         "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
-        "Tooltip": "Improve the teleportation node, which will speed up the call of troops by 25%. It will also increase the strength of the structure by 100 units + 1 armor points.",
-        "Name": "Fast teleportation",
+        "Name": {
+          "enUS": "Fast teleportation",
+          "ruRU": "Быстрая телепортация"
+        },
+        "Tooltip": {
+          "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+          "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+        },
         "Hotkey": "X"
       }
     ],
@@ -533,8 +592,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train1",
         "id": "BuildStrikeTrooper",
         "Icon": "btn-ued_striketrooper",
-        "Tooltip": "Highly-trained Directorate infantry.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "Request Strike Trooper",
+        "Name": {
+          "enUS": "Request Strike Trooper",
+          "ruRU": "Запросить Ударного пехотинца"
+        },
+        "Tooltip": {
+          "enUS": "Highly-trained Directorate infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+          "ruRU": "Отлично подготовленная пехота Директората.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "S"
       },
       {
@@ -553,8 +618,14 @@
         "Type": "Submenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -591,8 +662,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train14",
         "id": "PoliticalAdvisor",
         "Icon": "btn-unit-terran-dom-femaleghost",
-        "Tooltip": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: #FFE303\">",
-        "Name": "Request Political Advisor",
+        "Name": {
+          "enUS": "Request Political Advisor",
+          "ruRU": "Запросить Политического советника"
+        },
+        "Tooltip": {
+          "enUS": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">",
+          "ruRU": "Мастер идеологической войны. Может вдохновлять боевые единицы поблизости, увеличивая их скорость атаки и перемещения. Может бростать ударные и световые гранаты.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные и воздушные цели."
+        },
         "Hotkey": "F"
       },
       {
@@ -629,8 +706,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train12",
         "id": "Lazarus",
         "Icon": "btn-unit-ued-spectre",
-        "Tooltip": "Combat medic. Capable of reanimating deceased Directorate infantry UED.<br/><br/><span style=\"color: #ffff8a\">Can attack ground  and air units.</span>",
-        "Name": "Request Lazarus",
+        "Name": {
+          "enUS": "Request Lazarus",
+          "ruRU": "Запросить Лазаруса"
+        },
+        "Tooltip": {
+          "enUS": "Combat medic. Capable of reanimating deceased Directorate infantry UED.<br/><br/><span style=\"color: ffff8a\">Can attack ground  and air units.</span>",
+          "ruRU": "Боевой медик, способный возрождать погибших пехотинцев ОЗД.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "Z"
       },
       {
@@ -666,8 +749,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train16",
         "id": "Garmr",
         "Icon": "btn-ued-dog",
-        "Tooltip": "Genetically engineered monstrosity. Effective against lightly-armored targets, and it can tunnel through the ground to cross vast distances quickly.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Request Garmr",
+        "Name": {
+          "enUS": "Request Garmr",
+          "ruRU": "Запросить Гармра"
+        },
+        "Tooltip": {
+          "enUS": "Genetically engineered monstrosity. Effective against lightly-armored targets, and it can tunnel through the ground to cross vast distances quickly.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Чудовищный продукт генной инженерии. Эффективным против легкобронированных целей. Может быстро пересекать большие дистанции за счет подкопов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "A"
       },
       {
@@ -704,9 +793,162 @@
         "AbilCmd": "TeleportationNodeTrain,Train13",
         "id": "Taranis",
         "Icon": "btn-unit-terran-troopermengskrocket",
-        "Tooltip": "Heavily-armed infantry, effective against clustered targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Request Taranis",
+        "Name": {
+          "enUS": "Request Taranis",
+          "ruRU": "Запросить Тараниса"
+        },
+        "Tooltip": {
+          "enUS": "Heavily-armed infantry, effective against clustered targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Тяжёловооруженный пехотинец, эффективный против скоплений бронированных целей.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "D"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "Submenu",
+        "SubmenuCardId": "0003",
+        "id": "RequestVehicles",
+        "Icon": "requestvehicle",
+        "Name": {
+          "enUS": "Request Vehicles",
+          "ruRU": "Запросить технику"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "Submenu",
+        "SubmenuCardId": "0004",
+        "id": "RequestStarships",
+        "Icon": "requeststarship",
+        "Name": {
+          "enUS": "Request Starships",
+          "ruRU": "Запросить звездолёты"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/UEDMorphTeleportationNode",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UEDMorphTeleportationNode",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "UEDButtonAcelerationMorphNode",
+              "State": "Restricted",
+              "Requirements": "UEDTrebovanieAcelerationMorhp"
+            },
+            "Off": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "BestUnit": 1,
+            "Toggle": 1
+          },
+          "Cost": [
+            {
+              "Resource": {
+                "Minerals": 25,
+                "Vespene": 25
+              }
+            }
+          ],
+          "OffCost": {
+            "Resource": {
+              "Minerals": -19,
+              "Vespene": -19
+            }
+          },
+          "BehaviorArray": [
+            "UEDAlgoritmMorphAcelerationTrain"
+          ],
+          "id": "UEDMorphTeleportationNode"
+        },
+        "Cost": {
+          "Minerals": 25,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UEDMorphTeleportationNode,On",
+        "id": "UEDButtonAcelerationMorphNode",
+        "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+        "Name": {
+          "enUS": "Fast teleportation",
+          "ruRU": "Быстрая телепортация"
+        },
+        "Tooltip": {
+          "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+          "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+        },
+        "Hotkey": "X"
       }
     ],
     "0003": [
@@ -722,12 +964,12 @@
           "Unit": [
             "UEDUnitSpartan"
           ],
-          "Time": 40
+          "Time": 30
         },
         "Unit": [
           "UEDUnitSpartan"
         ],
-        "Time": 40,
+        "Time": 30,
         "Cost": {
           "Minerals": 125,
           "Vespene": 75,
@@ -743,9 +985,15 @@
         "Type": "AbilCmd",
         "AbilCmd": "TeleportationNodeTrain,Train19",
         "id": "UEDButtonSpartan",
-        "Icon": "btn-unit-uedspartan",
-        "Tooltip": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground and air targets.</span>",
-        "Name": "Request Spartan AAC",
+        "Icon": "uedspartanaac",
+        "Name": {
+          "enUS": "Request Spartan AAC",
+          "ruRU": "Запросить ПВС «Спартанец»"
+        },
+        "Tooltip": {
+          "enUS": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: FFFF8A\">Can attack ground and air targets.</span>",
+          "ruRU": "Универсальный боевой робот, эффективен против воздушных целей.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "W"
       },
       {
@@ -764,8 +1012,14 @@
         "Type": "Submenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -802,9 +1056,15 @@
         "AbilCmd": "TeleportationNodeTrain,Train10",
         "id": "DrakkarAPC",
         "Icon": "btn-unit-ued-militarizedtransport",
-        "Tooltip": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground targets.</span>",
-        "Name": "Request Drakkar APC",
-        "Hotkey": "R"
+        "Name": {
+          "enUS": "Request Drakkar APC",
+          "ruRU": "Запросить БМП «Драккар»"
+        },
+        "Tooltip": {
+          "enUS": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: FFFF8A\">Can attack ground targets.</span>",
+          "ruRU": "Бронетранспортёр пехоты, изнутри можно атаковать только наземные цели и с максимальной дистанции 5. При уничтожении «Драккара» солдаты внутри не погибают и безопасно покидают машину.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+        },
+        "Hotkey": "G"
       },
       {
         "Info": {
@@ -826,7 +1086,7 @@
         "Time": 50,
         "Cost": {
           "Minerals": 150,
-          "Vespene": 125,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -840,8 +1100,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train8",
         "id": "DesolatorMissileTank",
         "Icon": "btn-ued-desolator",
-        "Tooltip": "Artillery vehicle. Supports the offensive with devastating missile salvos.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Request Typhoon LMT",
+        "Name": {
+          "enUS": "Request Typhoon LMT",
+          "ruRU": "Запросить ЛРТ «Тайфун»"
+        },
+        "Tooltip": {
+          "enUS": "Artillery vehicle. Supports the offensive with devastating missile salvos.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Артиллерийский танк, поддерживающий наступление мощными ракетными залпами.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "D"
       },
       {
@@ -856,21 +1122,21 @@
           "Unit": [
             "PeenemundeMRLS"
           ],
-          "Time": 55
+          "Time": 56
         },
         "Unit": [
           "PeenemundeMRLS"
         ],
-        "Time": 55,
+        "Time": 56,
         "Cost": {
           "Minerals": 225,
-          "Vespene": 150,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -6
         },
         "Row": 1,
         "Column": 1,
@@ -878,8 +1144,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train11",
         "id": "PeenemundeMRLS",
         "Icon": "btn-ued-peenemudre",
-        "Tooltip": "Long-range artillery. Launches missiles that deal devastating damage in the target area.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Request Peenemunde MRLS",
+        "Name": {
+          "enUS": "Request Peenemunde MRLS",
+          "ruRU": "Запросить МРУ «Пенемюнде»"
+        },
+        "Tooltip": {
+          "enUS": "Long-range artillery. Launches missiles that deal devastating damage in the target area.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Дальнобойная артиллерия. Выпускает наводящиеся на точку ракеты, наносящие огромный урон в области попадания.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -916,9 +1188,15 @@
         "AbilCmd": "TeleportationNodeTrain,Train5",
         "id": "MainBattleTank",
         "Icon": "btn-unit-object188bronze",
-        "Tooltip": "Versatile main battle tank, effective against armored targets.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground units.</span>",
-        "Name": "Request Napoleon MBT",
-        "Hotkey": "S"
+        "Name": {
+          "enUS": "Request Napoleon MBT",
+          "ruRU": "Запросить ОБТ «Наполеон»"
+        },
+        "Tooltip": {
+          "enUS": "Versatile main battle tank, effective against armored targets.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+          "ruRU": "Основной боевой танк, эффективный против бронированных целей.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+        },
+        "Hotkey": "F"
       },
       {
         "Info": {
@@ -954,8 +1232,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train17",
         "id": "Huracan",
         "Icon": "btn-unit-terran-flametank",
-        "Tooltip": "Autonomous combat drone. It is extremely effective when storming fortifications.<br/><br/><span style=\"color: #ffff8a\">Can attack ground targets.</span>",
-        "Name": "Request Huracan",
+        "Name": {
+          "enUS": "Request Huracan",
+          "ruRU": "Запросить Хуракана"
+        },
+        "Tooltip": {
+          "enUS": "Autonomous combat drone. It is extremely effective when storming fortifications.<br/><br/><span style=\"color: ffff8a\">Can attack ground targets.</span>",
+          "ruRU": "Автономный боевой дрон. Крайне эффективен при штурме укреплений.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -992,9 +1276,162 @@
         "AbilCmd": "TeleportationNodeTrain,Train7",
         "id": "AssaultTank",
         "Icon": "btn-unit-predatortankbronze",
-        "Tooltip": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground units.</span>",
-        "Name": "Request Citadel AAT",
+        "Name": {
+          "enUS": "Request Citadel AAT",
+          "ruRU": "Запросить ТШТ «Цитадель»"
+        },
+        "Tooltip": {
+          "enUS": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+          "ruRU": "Мощный танк, оснащенный тяжелой композитной броней, мощной основной пушкой и магнитно-волновым ускорителем для ускоренной атаки.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные подразделения.</span>"
+        },
         "Hotkey": "A"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Submenu",
+        "SubmenuCardId": "0002",
+        "id": "RequestInfantry",
+        "Icon": "requestinfantry",
+        "Name": {
+          "enUS": "Request Infantry",
+          "ruRU": "Запросить пехоту"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "Submenu",
+        "SubmenuCardId": "0004",
+        "id": "RequestStarships",
+        "Icon": "requeststarship",
+        "Name": {
+          "enUS": "Request Starships",
+          "ruRU": "Запросить звездолёты"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/UEDMorphTeleportationNode",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UEDMorphTeleportationNode",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "UEDButtonAcelerationMorphNode",
+              "State": "Restricted",
+              "Requirements": "UEDTrebovanieAcelerationMorhp"
+            },
+            "Off": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "BestUnit": 1,
+            "Toggle": 1
+          },
+          "Cost": [
+            {
+              "Resource": {
+                "Minerals": 25,
+                "Vespene": 25
+              }
+            }
+          ],
+          "OffCost": {
+            "Resource": {
+              "Minerals": -19,
+              "Vespene": -19
+            }
+          },
+          "BehaviorArray": [
+            "UEDAlgoritmMorphAcelerationTrain"
+          ],
+          "id": "UEDMorphTeleportationNode"
+        },
+        "Cost": {
+          "Minerals": 25,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UEDMorphTeleportationNode,On",
+        "id": "UEDButtonAcelerationMorphNode",
+        "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+        "Name": {
+          "enUS": "Fast teleportation",
+          "ruRU": "Быстрая телепортация"
+        },
+        "Tooltip": {
+          "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+          "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+        },
+        "Hotkey": "X"
       }
     ],
     "0004": [
@@ -1032,8 +1469,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train6",
         "id": "CrimsonEye",
         "Icon": "btn-ued-crimsoneye",
-        "Tooltip": "Low-altitude scouting drone.<br/><br/><span style=\"color: #FFE303\">There is a detection function</span>",
-        "Name": "Request Crimson Eye",
+        "Name": {
+          "enUS": "Request Crimson Eye",
+          "ruRU": "Запросить Рубиновое око"
+        },
+        "Tooltip": {
+          "enUS": "Low-altitude scouting drone.<br/><br/><span style=\"color: FFE303\">There is a detection function</span>",
+          "ruRU": "Низколетящий дрон-разведчик.<br/><br/><span style=\"color: FFE303\">Есть функция детекции</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -1070,8 +1513,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train9",
         "id": "TransportShuttle",
         "Icon": "btn-ued-dropship",
-        "Tooltip": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
-        "Name": "Request Transport Shuttle",
+        "Name": {
+          "enUS": "Request Transport Shuttle",
+          "ruRU": "Запросить Транспортный шаттл"
+        },
+        "Tooltip": {
+          "enUS": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
+          "ruRU": "Крупный транспортный корабль, способный переносить большие отряды пехоты и техники."
+        },
         "Hotkey": "A"
       },
       {
@@ -1090,8 +1539,14 @@
         "Type": "Submenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1128,8 +1583,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train3",
         "id": "BuildValkyrie",
         "Icon": "btn-unit-ued-valkyrie",
-        "Tooltip": "Dedicated AA corvette, capable of eliminating entire squadrons with a single salvo.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span>",
-        "Name": "Request Valkyrie",
+        "Name": {
+          "enUS": "Request Valkyrie",
+          "ruRU": "Запросить Валькирию"
+        },
+        "Tooltip": {
+          "enUS": "Dedicated AA corvette, capable of eliminating entire squadrons with a single salvo.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
+          "ruRU": "Специализированный корвет ПКО, способный уничтожать целые эскадрильи единственным залпом.<br/><br/><span style=\"color: #ffff8a\">Может атаковать воздушные цели.</span>"
+        },
         "Hotkey": "V"
       },
       {
@@ -1166,9 +1627,15 @@
         "AbilCmd": "TeleportationNodeTrain,Train15",
         "id": "SupporttShuttle",
         "Icon": "btn-ued-supportshuttle",
-        "Tooltip": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Request Support Shuttle",
-        "Hotkey": "S"
+        "Name": {
+          "enUS": "Request Support Shuttle",
+          "ruRU": "Вызвать Шаттл поддержки"
+        },
+        "Tooltip": {
+          "enUS": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Корабль боевой поддержки. Может развёртывать Маскировочных дронов, применять Поле подавления псионики и задействовать Направленный гравитационный щит.<br/><br/><span style=\"color: FFE303\">Детектор"
+        },
+        "Hotkey": "D"
       },
       {
         "Info": {
@@ -1182,15 +1649,15 @@
           "Unit": [
             "Strikefighter"
           ],
-          "Time": 50
+          "Time": 40
         },
         "Unit": [
           "Strikefighter"
         ],
-        "Time": 50,
+        "Time": 40,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 100,
+          "Minerals": 125,
+          "Vespene": 75,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -1204,8 +1671,14 @@
         "AbilCmd": "TeleportationNodeTrain,Train2",
         "id": "BuildStrikefighter",
         "Icon": "btn-ued-pacifier",
-        "Tooltip": "Armored multirole fighter.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "Request Strikefighter",
+        "Name": {
+          "enUS": "Request Strikefighter",
+          "ruRU": "Запросить Штурмовик"
+        },
+        "Tooltip": {
+          "enUS": "Armored multirole fighter.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+          "ruRU": "Многоцелевой тяжёлый истребитель.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "F"
       },
       {
@@ -1242,9 +1715,162 @@
         "AbilCmd": "TeleportationNodeTrain,Train4",
         "id": "Honorguard",
         "Icon": "btn-ued-shieldwall",
-        "Tooltip": "Versatile screening ship.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "Request Honorguard",
+        "Name": {
+          "enUS": "Request Honorguard",
+          "ruRU": "Запросить Почётного стража"
+        },
+        "Tooltip": {
+          "enUS": "Versatile screening ship.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+          "ruRU": "Универсальный корабль охранения.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "R"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Submenu",
+        "SubmenuCardId": "0002",
+        "id": "RequestInfantry",
+        "Icon": "requestinfantry",
+        "Name": {
+          "enUS": "Request Infantry",
+          "ruRU": "Запросить пехоту"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "Submenu",
+        "SubmenuCardId": "0003",
+        "id": "RequestVehicles",
+        "Icon": "requestvehicle",
+        "Name": {
+          "enUS": "Request Vehicles",
+          "ruRU": "Запросить технику"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": ""
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/UEDMorphTeleportationNode",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UEDMorphTeleportationNode",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "UEDButtonAcelerationMorphNode",
+              "State": "Restricted",
+              "Requirements": "UEDTrebovanieAcelerationMorhp"
+            },
+            "Off": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "BestUnit": 1,
+            "Toggle": 1
+          },
+          "Cost": [
+            {
+              "Resource": {
+                "Minerals": 25,
+                "Vespene": 25
+              }
+            }
+          ],
+          "OffCost": {
+            "Resource": {
+              "Minerals": -19,
+              "Vespene": -19
+            }
+          },
+          "BehaviorArray": [
+            "UEDAlgoritmMorphAcelerationTrain"
+          ],
+          "id": "UEDMorphTeleportationNode"
+        },
+        "Cost": {
+          "Minerals": 25,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UEDMorphTeleportationNode,On",
+        "id": "UEDButtonAcelerationMorphNode",
+        "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+        "Name": {
+          "enUS": "Fast teleportation",
+          "ruRU": "Быстрая телепортация"
+        },
+        "Tooltip": {
+          "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+          "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+        },
+        "Hotkey": "X"
       }
     ]
   },
@@ -1263,32 +1889,59 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDConstructionVisionDebuff"
+      "id": "UEDConstructionVisionDebuff",
+      "Name": {
+        "enUS": "UED Construction - Vision Debuff"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "UEDAlgoritmHaveTrain",
-      "Icon": "btn-ability-zeratul-darkarchon-maelstrom"
+      "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+      "Name": {
+        "enUS": "Availability of production",
+        "ruRU": "Наличие производства"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "Процесс призыва войск недоступен."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que52",
-      "Name": "UED Warp Queue"
+      "Name": {
+        "enUS": "UED Warp Queue",
+        "ruRU": "UED Warp Queue"
+      }
     },
     {
       "id": "TeleportationNodeTrain",
-      "Name": "Train"
+      "Name": {
+        "enUS": "Train",
+        "ruRU": "Train"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
-      "id": "UEDMorphTeleportationNode"
+      "id": "UEDMorphTeleportationNode",
+      "Name": {
+        "ruRU": "Ускоренное произвоство"
+      }
     }
   ],
   "$Upgrades": [
@@ -1327,170 +1980,346 @@
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "que52,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "UEDMorphTeleportationNode,Off",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "UEDMorphTeleportationNode,On",
       "id": "UEDButtonAcelerationMorphNode",
       "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
-      "Tooltip": "Improve the teleportation node, which will speed up the call of troops by 25%. It will also increase the strength of the structure by 100 units + 1 armor points.",
-      "Name": "Fast teleportation"
+      "Name": {
+        "enUS": "Fast teleportation",
+        "ruRU": "Быстрая телепортация"
+      },
+      "Tooltip": {
+        "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+        "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train1",
       "id": "BuildStrikeTrooper",
       "Icon": "btn-ued_striketrooper",
-      "Tooltip": "Highly-trained Directorate infantry.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "Request Strike Trooper"
+      "Name": {
+        "enUS": "Request Strike Trooper",
+        "ruRU": "Запросить Ударного пехотинца"
+      },
+      "Tooltip": {
+        "enUS": "Highly-trained Directorate infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+        "ruRU": "Отлично подготовленная пехота Директората.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train14",
       "id": "PoliticalAdvisor",
       "Icon": "btn-unit-terran-dom-femaleghost",
-      "Tooltip": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: #FFE303\">",
-      "Name": "Request Political Advisor"
+      "Name": {
+        "enUS": "Request Political Advisor",
+        "ruRU": "Запросить Политического советника"
+      },
+      "Tooltip": {
+        "enUS": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">",
+        "ruRU": "Мастер идеологической войны. Может вдохновлять боевые единицы поблизости, увеличивая их скорость атаки и перемещения. Может бростать ударные и световые гранаты.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные и воздушные цели."
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train12",
       "id": "Lazarus",
       "Icon": "btn-unit-ued-spectre",
-      "Tooltip": "Combat medic. Capable of reanimating deceased Directorate infantry UED.<br/><br/><span style=\"color: #ffff8a\">Can attack ground  and air units.</span>",
-      "Name": "Request Lazarus"
+      "Name": {
+        "enUS": "Request Lazarus",
+        "ruRU": "Запросить Лазаруса"
+      },
+      "Tooltip": {
+        "enUS": "Combat medic. Capable of reanimating deceased Directorate infantry UED.<br/><br/><span style=\"color: ffff8a\">Can attack ground  and air units.</span>",
+        "ruRU": "Боевой медик, способный возрождать погибших пехотинцев ОЗД.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train16",
       "id": "Garmr",
       "Icon": "btn-ued-dog",
-      "Tooltip": "Genetically engineered monstrosity. Effective against lightly-armored targets, and it can tunnel through the ground to cross vast distances quickly.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Request Garmr"
+      "Name": {
+        "enUS": "Request Garmr",
+        "ruRU": "Запросить Гармра"
+      },
+      "Tooltip": {
+        "enUS": "Genetically engineered monstrosity. Effective against lightly-armored targets, and it can tunnel through the ground to cross vast distances quickly.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Чудовищный продукт генной инженерии. Эффективным против легкобронированных целей. Может быстро пересекать большие дистанции за счет подкопов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train13",
       "id": "Taranis",
       "Icon": "btn-unit-terran-troopermengskrocket",
-      "Tooltip": "Heavily-armed infantry, effective against clustered targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Request Taranis"
+      "Name": {
+        "enUS": "Request Taranis",
+        "ruRU": "Запросить Тараниса"
+      },
+      "Tooltip": {
+        "enUS": "Heavily-armed infantry, effective against clustered targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Тяжёловооруженный пехотинец, эффективный против скоплений бронированных целей.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+      }
+    },
+    {
+      "AbilCmd": "UEDMorphTeleportationNode,On",
+      "id": "UEDButtonAcelerationMorphNode",
+      "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+      "Name": {
+        "enUS": "Fast teleportation",
+        "ruRU": "Быстрая телепортация"
+      },
+      "Tooltip": {
+        "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+        "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train19",
       "id": "UEDButtonSpartan",
-      "Icon": "btn-unit-uedspartan",
-      "Tooltip": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground and air targets.</span>",
-      "Name": "Request Spartan AAC"
+      "Icon": "uedspartanaac",
+      "Name": {
+        "enUS": "Request Spartan AAC",
+        "ruRU": "Запросить ПВС «Спартанец»"
+      },
+      "Tooltip": {
+        "enUS": "Universal combat robot, effective against aerial targets.<br/><br/><span style=\"color: FFFF8A\">Can attack ground and air targets.</span>",
+        "ruRU": "Универсальный боевой робот, эффективен против воздушных целей.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные и воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train10",
       "id": "DrakkarAPC",
       "Icon": "btn-unit-ued-militarizedtransport",
-      "Tooltip": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground targets.</span>",
-      "Name": "Request Drakkar APC"
+      "Name": {
+        "enUS": "Request Drakkar APC",
+        "ruRU": "Запросить БМП «Драккар»"
+      },
+      "Tooltip": {
+        "enUS": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: FFFF8A\">Can attack ground targets.</span>",
+        "ruRU": "Бронетранспортёр пехоты, изнутри можно атаковать только наземные цели и с максимальной дистанции 5. При уничтожении «Драккара» солдаты внутри не погибают и безопасно покидают машину.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train8",
       "id": "DesolatorMissileTank",
       "Icon": "btn-ued-desolator",
-      "Tooltip": "Artillery vehicle. Supports the offensive with devastating missile salvos.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Request Typhoon LMT"
+      "Name": {
+        "enUS": "Request Typhoon LMT",
+        "ruRU": "Запросить ЛРТ «Тайфун»"
+      },
+      "Tooltip": {
+        "enUS": "Artillery vehicle. Supports the offensive with devastating missile salvos.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Артиллерийский танк, поддерживающий наступление мощными ракетными залпами.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train11",
       "id": "PeenemundeMRLS",
       "Icon": "btn-ued-peenemudre",
-      "Tooltip": "Long-range artillery. Launches missiles that deal devastating damage in the target area.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Request Peenemunde MRLS"
+      "Name": {
+        "enUS": "Request Peenemunde MRLS",
+        "ruRU": "Запросить МРУ «Пенемюнде»"
+      },
+      "Tooltip": {
+        "enUS": "Long-range artillery. Launches missiles that deal devastating damage in the target area.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Дальнобойная артиллерия. Выпускает наводящиеся на точку ракеты, наносящие огромный урон в области попадания.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train5",
       "id": "MainBattleTank",
       "Icon": "btn-unit-object188bronze",
-      "Tooltip": "Versatile main battle tank, effective against armored targets.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground units.</span>",
-      "Name": "Request Napoleon MBT"
+      "Name": {
+        "enUS": "Request Napoleon MBT",
+        "ruRU": "Запросить ОБТ «Наполеон»"
+      },
+      "Tooltip": {
+        "enUS": "Versatile main battle tank, effective against armored targets.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+        "ruRU": "Основной боевой танк, эффективный против бронированных целей.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train17",
       "id": "Huracan",
       "Icon": "btn-unit-terran-flametank",
-      "Tooltip": "Autonomous combat drone. It is extremely effective when storming fortifications.<br/><br/><span style=\"color: #ffff8a\">Can attack ground targets.</span>",
-      "Name": "Request Huracan"
+      "Name": {
+        "enUS": "Request Huracan",
+        "ruRU": "Запросить Хуракана"
+      },
+      "Tooltip": {
+        "enUS": "Autonomous combat drone. It is extremely effective when storming fortifications.<br/><br/><span style=\"color: ffff8a\">Can attack ground targets.</span>",
+        "ruRU": "Автономный боевой дрон. Крайне эффективен при штурме укреплений.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train7",
       "id": "AssaultTank",
       "Icon": "btn-unit-predatortankbronze",
-      "Tooltip": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground units.</span>",
-      "Name": "Request Citadel AAT"
+      "Name": {
+        "enUS": "Request Citadel AAT",
+        "ruRU": "Запросить ТШТ «Цитадель»"
+      },
+      "Tooltip": {
+        "enUS": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+        "ruRU": "Мощный танк, оснащенный тяжелой композитной броней, мощной основной пушкой и магнитно-волновым ускорителем для ускоренной атаки.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные подразделения.</span>"
+      }
+    },
+    {
+      "AbilCmd": "UEDMorphTeleportationNode,On",
+      "id": "UEDButtonAcelerationMorphNode",
+      "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+      "Name": {
+        "enUS": "Fast teleportation",
+        "ruRU": "Быстрая телепортация"
+      },
+      "Tooltip": {
+        "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+        "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train6",
       "id": "CrimsonEye",
       "Icon": "btn-ued-crimsoneye",
-      "Tooltip": "Low-altitude scouting drone.<br/><br/><span style=\"color: #FFE303\">There is a detection function</span>",
-      "Name": "Request Crimson Eye"
+      "Name": {
+        "enUS": "Request Crimson Eye",
+        "ruRU": "Запросить Рубиновое око"
+      },
+      "Tooltip": {
+        "enUS": "Low-altitude scouting drone.<br/><br/><span style=\"color: FFE303\">There is a detection function</span>",
+        "ruRU": "Низколетящий дрон-разведчик.<br/><br/><span style=\"color: FFE303\">Есть функция детекции</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train9",
       "id": "TransportShuttle",
       "Icon": "btn-ued-dropship",
-      "Tooltip": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
-      "Name": "Request Transport Shuttle"
+      "Name": {
+        "enUS": "Request Transport Shuttle",
+        "ruRU": "Запросить Транспортный шаттл"
+      },
+      "Tooltip": {
+        "enUS": "Large transport ship, capable of transporting big squads of infantry & armored vehicles.",
+        "ruRU": "Крупный транспортный корабль, способный переносить большие отряды пехоты и техники."
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train3",
       "id": "BuildValkyrie",
       "Icon": "btn-unit-ued-valkyrie",
-      "Tooltip": "Dedicated AA corvette, capable of eliminating entire squadrons with a single salvo.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span>",
-      "Name": "Request Valkyrie"
+      "Name": {
+        "enUS": "Request Valkyrie",
+        "ruRU": "Запросить Валькирию"
+      },
+      "Tooltip": {
+        "enUS": "Dedicated AA corvette, capable of eliminating entire squadrons with a single salvo.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
+        "ruRU": "Специализированный корвет ПКО, способный уничтожать целые эскадрильи единственным залпом.<br/><br/><span style=\"color: #ffff8a\">Может атаковать воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train15",
       "id": "SupporttShuttle",
       "Icon": "btn-ued-supportshuttle",
-      "Tooltip": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Request Support Shuttle"
+      "Name": {
+        "enUS": "Request Support Shuttle",
+        "ruRU": "Вызвать Шаттл поддержки"
+      },
+      "Tooltip": {
+        "enUS": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Корабль боевой поддержки. Может развёртывать Маскировочных дронов, применять Поле подавления псионики и задействовать Направленный гравитационный щит.<br/><br/><span style=\"color: FFE303\">Детектор"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train2",
       "id": "BuildStrikefighter",
       "Icon": "btn-ued-pacifier",
-      "Tooltip": "Armored multirole fighter.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "Request Strikefighter"
+      "Name": {
+        "enUS": "Request Strikefighter",
+        "ruRU": "Запросить Штурмовик"
+      },
+      "Tooltip": {
+        "enUS": "Armored multirole fighter.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+        "ruRU": "Многоцелевой тяжёлый истребитель.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "TeleportationNodeTrain,Train4",
       "id": "Honorguard",
       "Icon": "btn-ued-shieldwall",
-      "Tooltip": "Versatile screening ship.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "Request Honorguard"
+      "Name": {
+        "enUS": "Request Honorguard",
+        "ruRU": "Запросить Почётного стража"
+      },
+      "Tooltip": {
+        "enUS": "Versatile screening ship.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+        "ruRU": "Универсальный корабль охранения.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+      }
+    },
+    {
+      "AbilCmd": "UEDMorphTeleportationNode,On",
+      "id": "UEDButtonAcelerationMorphNode",
+      "Icon": "btn-ability-zeratul-darkarchon-maelstrom",
+      "Name": {
+        "enUS": "Fast teleportation",
+        "ruRU": "Быстрая телепортация"
+      },
+      "Tooltip": {
+        "enUS": "Improve the teleportation node, which will speed up the call of troops by 40%. It will also increase the strength of the structure by 100 units + 1 armor points.",
+        "ruRU": "Улучшить узел телепортации что позволит ускорить призыв войск на 25%. Так же увеличит прочность строения на 100 ед. + 1 ед. к броне."
+      }
     }
   ]
 }

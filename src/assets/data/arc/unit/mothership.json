@@ -1,6 +1,12 @@
 {
-  "Name": "Mothership",
-  "Description": "Ultimate Protoss vessel. Can use Strategic Recall, Time Warp, and Cloaking Field abilities.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Mothership",
+    "ruRU": "Mothership"
+  },
+  "Description": {
+    "enUS": "Ultimate Protoss vessel. Can use Strategic Recall, Time Warp, and Cloaking Field abilities.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Ultimate Protoss vessel. Can use Photon Overcharge, Mass Recall, and Time Warp abilities. Cloaks nearby friendly units and structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,14 +16,17 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 250,
-  "LifeMax": 250,
-  "LifeArmorName": "Protoss Armor",
+  "LifeStart": 350,
+  "LifeMax": 350,
+  "LifeArmorName": {
+    "enUS": "Synoid Armor",
+    "ruRU": "Protoss Armor"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
-  "Radius": 1.25,
-  "SeparationRadius": 1.25,
+  "Radius": 1.375,
+  "SeparationRadius": 1.375,
   "MinimapRadius": 1.375,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
@@ -61,16 +70,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Mothership/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Mothership/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Mothership/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Mothership/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -83,7 +94,10 @@
   "Mob": "Multiplayer",
   "LifeArmor": 2,
   "ShieldRegenRate": 2,
-  "ShieldArmorName": "Protoss Plasma Shields",
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
   "Acceleration": 1.375,
   "Deceleration": 1,
   "Height": 3.75,
@@ -207,8 +221,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -281,8 +301,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -371,8 +397,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -461,8 +493,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -536,8 +574,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -674,8 +718,14 @@
         "AbilCmd": "MassRecall,Execute",
         "id": "MassRecall",
         "Icon": "btn-ability-protoss-wormholetransit-color",
-        "Tooltip": "Recalls all units owned by the player in the target area to the Caster.",
-        "Name": "Mass Recall",
+        "Name": {
+          "enUS": "Mass Recall",
+          "ruRU": "Mass Recall"
+        },
+        "Tooltip": {
+          "enUS": "Recalls all units owned by the player in the target area to the Caster.",
+          "ruRU": "Recalls all units owned by the player in the target area to the Caster."
+        },
         "Hotkey": "R"
       },
       {
@@ -814,8 +864,14 @@
         "AbilCmd": "TemporalField,Execute",
         "id": "TemporalField",
         "Icon": "btn-ability-protoss-timewarp-red",
-        "Tooltip": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
-        "Name": "Time Warp",
+        "Name": {
+          "enUS": "Time Warp",
+          "ruRU": "Time Warp"
+        },
+        "Tooltip": {
+          "enUS": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
+          "ruRU": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%."
+        },
         "Hotkey": "T"
       },
       {
@@ -945,37 +1001,58 @@
         "AbilCmd": "MothershipCloak,Execute",
         "id": "CloakingField",
         "Icon": "btn-ability-protoss-cloakfield-color",
-        "Tooltip": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
-        "Name": "Cloaking Field",
+        "Name": {
+          "enUS": "Cloaking Field",
+          "ruRU": "Cloaking Field"
+        },
+        "Tooltip": {
+          "enUS": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
+          "ruRU": "Cloaking Field passively cloaks friendly nearby units and structures.<br/><br/><span style=\"color: ffff8a\">Passive ability.</span>"
+        },
         "Hotkey": "C"
       }
     ]
   },
+  "ShieldsStart": 350,
+  "ShieldsMax": 350,
+  "CostResource": {
+    "Minerals": 400,
+    "Vespene": 400
+  },
+  "Food": -8,
   "Speed": 2.0156,
   "VisionHeight": 15,
   "LateralAcceleration": 2.0625,
-  "ShieldsStart": 250,
-  "ShieldsMax": 250,
-  "CostResource": {
-    "Minerals": 300,
-    "Vespene": 300
-  },
   "ScoreMake": 600,
   "ScoreKill": 600,
-  "Food": -6,
   "id": "Mothership",
   "Icon": "btn-unit-protoss-mothership",
+  "Model": "Mothership",
   "LifeArmorIcon": "btn-upgrade-protoss-airarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "id": "PurifierBeamDummyTargetFire",
+      "Icon": "btn-upgrade-protoss-airweaponslevel0",
+      "Name": {
+        "enUS": "Purifier Beam Dummy Target Fire"
+      },
+      "DisplayAttackCount": 4,
+      "TargetFilters": "",
+      "Range": 7,
+      "Period": 1
+    },
+    {
       "Turret": "FreeRotate",
       "id": "MothershipBeam",
       "Icon": "btn-upgrade-protoss-airweaponslevel0",
-      "Name": "Purifier Beam",
+      "Name": {
+        "enUS": "Purifier Beam",
+        "ruRU": "Purifier Beam"
+      },
       "Amount": 6,
       "Kind": "Ranged",
-      "DisplayAttackCount": 6,
+      "DisplayAttackCount": 4,
       "TargetFilters": "",
       "Range": 7,
       "Period": 2.21
@@ -985,32 +1062,49 @@
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "TemporalField",
-      "Name": "Time Warp"
+      "Name": {
+        "enUS": "Time Warp",
+        "ruRU": "Time Warp"
+      }
     },
     {
       "id": "MassRecall",
-      "Name": "Mass Recall"
+      "Name": {
+        "enUS": "Mass Recall",
+        "ruRU": "Mass Recall"
+      }
     },
     {
-      "id": "MothershipCloak"
+      "id": "MothershipCloak",
+      "Name": "-"
     }
   ],
   "$Upgrades": [
     "ProtossAirWeaponsLevel1",
     "Mothership",
     "NotMothership",
+    "ZHBRTemple",
     "ProtossAirWeapons",
     "FleetBeacon",
     "ProtossAirWeaponsLevel2",
@@ -1024,6 +1118,9 @@
     "ProtossShields",
     "ProtossShieldsLevel2",
     "ProtossShieldsLevel3",
+    "TalDarimFleetLodestar",
+    "ActuationCenter",
+    "MycoChoir",
     "CountUnitMothershipQueuedOrBetter",
     "NexusTrainMothership",
     "Nexus",
@@ -1044,57 +1141,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "MassRecall,Execute",
       "id": "MassRecall",
       "Icon": "btn-ability-protoss-wormholetransit-color",
-      "Tooltip": "Recalls all units owned by the player in the target area to the Caster.",
-      "Name": "Mass Recall"
+      "Name": {
+        "enUS": "Mass Recall",
+        "ruRU": "Mass Recall"
+      },
+      "Tooltip": {
+        "enUS": "Recalls all units owned by the player in the target area to the Caster.",
+        "ruRU": "Recalls all units owned by the player in the target area to the Caster."
+      }
     },
     {
       "AbilCmd": "TemporalField,Execute",
       "id": "TemporalField",
       "Icon": "btn-ability-protoss-timewarp-red",
-      "Tooltip": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
-      "Name": "Time Warp"
+      "Name": {
+        "enUS": "Time Warp",
+        "ruRU": "Time Warp"
+      },
+      "Tooltip": {
+        "enUS": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%.",
+        "ruRU": "Warps spacetime within the target area for <b>10</b> seconds. Enemy ground units that enter the field have their movement speed reduced by <b>40</b>%."
+      }
     },
     {
       "AbilCmd": "MothershipCloak,Execute",
       "id": "CloakingField",
       "Icon": "btn-ability-protoss-cloakfield-color",
-      "Tooltip": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
-      "Name": "Cloaking Field"
+      "Name": {
+        "enUS": "Cloaking Field",
+        "ruRU": "Cloaking Field"
+      },
+      "Tooltip": {
+        "enUS": "Creates a cloaking field around the Mothership for <b>28</b> seconds, preventing enemy units from seeing and attacking nearby units and structures. A cloaked unit will only be revealed by detectors or effects.",
+        "ruRU": "Cloaking Field passively cloaks friendly nearby units and structures.<br/><br/><span style=\"color: ffff8a\">Passive ability.</span>"
+      }
     }
   ]
 }

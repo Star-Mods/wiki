@@ -1,6 +1,12 @@
 {
-  "Name": "Cataract",
-  "Description": "Ranged anti-air support unit.<br/><br/><span style=\"color: #FFFF80\">Can target ground and air units.</span>",
+  "Name": {
+    "enUS": "Cataract",
+    "ruRU": "Субъектор"
+  },
+  "Description": {
+    "enUS": "Ranged anti-air support unit.<br/><br/><span style=\"color: FFFF80\">Can target ground and air units.</span>",
+    "ruRU": "Противовоздушный юнит поддержки с высокой дальностью атаки.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Cataract/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Cataract/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Cataract/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Cataract/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,6 +99,7 @@
     "ForceField"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 1000,
   "Sight": 10,
   "CostCategory": "Army",
@@ -180,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -254,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -344,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -509,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -531,8 +573,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -659,8 +707,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       }
     ]
@@ -677,7 +731,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Cataract",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Cataract",
   "Attributes": [
     "Armored",
@@ -701,13 +758,17 @@
   "GlossaryPriority": 16,
   "SubgroupPriority": 4,
   "Icon": "btn-unit-keiron-cataract",
+  "Model": "Cataract",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "ForceBlast",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Force Blaster",
+      "Name": {
+        "enUS": "Force Blaster",
+        "ruRU": "Силовой бластер"
+      },
       "Amount": 11,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
@@ -717,7 +778,10 @@
     {
       "id": "EnthrallerQuills",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Enthraller Quills",
+      "Name": {
+        "enUS": "Enthraller Quills",
+        "ruRU": "Порабощающие Иглы"
+      },
       "Amount": 9,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -728,33 +792,55 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     }
   ],
   "$Upgrades": [
@@ -796,50 +882,92 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     }
   ]
 }

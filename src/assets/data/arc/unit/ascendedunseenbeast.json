@@ -1,6 +1,10 @@
 {
-  "Name": "Ascended Unseen Beast",
-  "Description": "Mobile melee assassin. Cloak renders the unit invisible to enemies without detection.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Armor<br/>Teleport Assault</span>",
+  "Name": {
+    "enUS": "Ascended Unseen Beast"
+  },
+  "Description": {
+    "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>Teleport Assault</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,15 +14,17 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 105,
-  "LifeMax": 105,
-  "LifeArmorName": "Dragon Scale Armor",
+  "LifeStart": 140,
+  "LifeMax": 140,
+  "LifeArmorName": {
+    "enUS": "Dragon Scale Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
-  "Radius": 0.75,
-  "SeparationRadius": 0.75,
-  "MinimapRadius": 0.75,
+  "Radius": 0.625,
+  "SeparationRadius": 0.625,
+  "MinimapRadius": 0.625,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
@@ -64,16 +70,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UnseenBeast/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UnseenBeast/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UnseenBeast/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UnseenBeast/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,8 +96,7 @@
   "Attributes": [
     "Biological",
     "Light",
-    "Psionic",
-    "Heroic"
+    "Psionic"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -187,8 +194,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -261,8 +274,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -351,8 +370,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -441,8 +466,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -516,8 +547,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -529,7 +566,7 @@
           "Minerals": 100,
           "Vespene": 150,
           "Terazine": 0,
-          "Custom": 920,
+          "Custom": 50,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -540,8 +577,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "AscendedUnseenBeast,Execute",
         "id": "AscendedUnseenBeast",
-        "Tooltip": "<span style=\"color: #00FF00\">+15 Life<br/>+1 Armor<br/>Teleport Assault</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>Teleport Assault</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -559,8 +600,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedUnseenBeast",
-        "Tooltip": "<span style=\"color: #00FF00\">+15 Life<br/>+1 Armor<br/>Teleport Assault</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>Teleport Assault</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -674,7 +719,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 1288
+                "Custom": 100
               }
             }
           ],
@@ -684,7 +729,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 1288,
+          "Custom": 100,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -696,8 +741,12 @@
         "AbilCmd": "AscendedUnseenBeastFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -811,7 +860,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 552
+                "Custom": 50
               }
             }
           ],
@@ -821,7 +870,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 552,
+          "Custom": 50,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -833,8 +882,12 @@
         "AbilCmd": "UnseenBeastFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -967,8 +1020,12 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -1008,7 +1065,7 @@
           "Alignment": "Negative",
           "Effect": [
             "UnseenBeastTeleportAssault",
-            "UnseenBeastTeleportAssaultCreatePersistent"
+            "UnseenBeastTeleportAssaultIssueOrder"
           ],
           "AutoCastFilters": "Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable",
           "Flags": {
@@ -1018,7 +1075,9 @@
           "AbilCmd": "attack,Execute",
           "Cost": {
             "Cooldown": {
-              "TimeUse": 1
+              "Link": "Charge",
+              "Location": "Unit",
+              "TimeUse": 2.8
             }
           },
           "AutoCastValidatorArray": [
@@ -1042,8 +1101,12 @@
         "AbilCmd": "UnseenBeastTeleportAssault,Execute",
         "id": "UnseenBeastTeleportAssault",
         "Icon": "btn-ability-protoss-blink-zeratul",
-        "Tooltip": "Teleports to the opposite side of a target unit to attack it.",
-        "Name": "Teleport Assault",
+        "Name": {
+          "enUS": "Teleport Assault"
+        },
+        "Tooltip": {
+          "enUS": "Teleports to the opposite side of a target unit to attack it."
+        },
         "Hotkey": "Q"
       },
       {
@@ -1061,11 +1124,120 @@
         "Column": 0,
         "Type": "Passive",
         "id": "UnseenBeastKeenSenses",
-        "Icon": "btn-ability-zerg-viper-ocularparasite",
-        "Tooltip": "Exposes enemy locations within <b>13</b> range of Unseen Beasts.",
-        "Name": "Keen Senses"
+        "Icon": "btn-ability-dehaka-detector",
+        "Name": {
+          "enUS": "Keen Senses"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units. Exposes enemy locations within <b>13</b> range of Unseen Beasts."
+        }
       },
       {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/UnseenBeastProwl",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UnseenBeastProwl",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "AutoCast": 1,
+            "AutoCastOn": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "UnseenBeastProwl"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "UnseenBeastProwl",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "UnseenBeastProwl",
+              "Requirements": "UnseenBeastProwl"
+            }
+          },
+          "id": "UnseenBeastProwl"
+        },
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
@@ -1076,13 +1248,161 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 1,
+        "Row": 2,
         "Column": 1,
-        "Type": "Passive",
-        "id": "UnseenBeastStealthyHunter",
+        "Type": "AbilCmd",
+        "AbilCmd": "UnseenBeastProwl,Execute",
+        "id": "UnseenBeastProwl",
         "Icon": "wireframe-critter-snowbeast",
-        "Tooltip": "Unseen Beasts cloak when they detect nearby enemies reducing their movement speed by <b>60</b>% but decloak in the presence of detectors or when they receive damage.",
-        "Name": "Stealthy Hunter"
+        "Name": {
+          "enUS": "Prowl"
+        },
+        "Tooltip": {
+          "enUS": "Unseen Beasts cloak when they detect nearby enemies reducing their movement speed by <b>50</b>% but decloak in the presence of detectors or when they receive damage."
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/UnseenBeastExploration",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UnseenBeastExploration",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "UnseenBeastActivateExploration"
+            },
+            "Off": {
+              "DefaultButtonFace": "UnseenBeastDeactivateExploration"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "Toggle": 1,
+            "Transient": 1
+          },
+          "BehaviorArray": [
+            "UnseenBeastExploration"
+          ],
+          "id": "UnseenBeastExploration"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UnseenBeastExploration,On",
+        "id": "UnseenBeastActivateExploration",
+        "Icon": "btn-ability-zerg-creepmove",
+        "Name": {
+          "enUS": "Activate Exploration"
+        },
+        "Tooltip": {
+          "enUS": "Activate Exploration disabling attacks."
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/UnseenBeastExploration",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Dragon,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UnseenBeastExploration",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "UnseenBeastActivateExploration"
+            },
+            "Off": {
+              "DefaultButtonFace": "UnseenBeastDeactivateExploration"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "Toggle": 1,
+            "Transient": 1
+          },
+          "BehaviorArray": [
+            "UnseenBeastExploration"
+          ],
+          "id": "UnseenBeastExploration"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UnseenBeastExploration,Off",
+        "id": "UnseenBeastDeactivateExploration",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Deactivate Exploration"
+        },
+        "Tooltip": {
+          "enUS": "Deactivate Exploration enabling attacks."
+        },
+        "Hotkey": "R"
       }
     ]
   },
@@ -1094,21 +1414,23 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
-  "LifeArmor": 2,
-  "Speed": 5,
+  "TechAliasArray": [
+    "UnseenBeast"
+  ],
+  "LifeArmor": 1,
+  "Speed": 4,
   "Sight": 13.625,
   "Food": -3,
   "CostResource": {
     "Minerals": 100,
     "Vespene": 150,
-    "Custom": 920
+    "Custom": 50
   },
   "KillXP": 15,
-  "InnerRadius": 0.5,
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
-  "SubgroupPriority": 10,
+  "SubgroupPriority": 54,
   "GlossaryPriority": 0,
   "GlossaryStrongArray": [
     "SCV",
@@ -1120,40 +1442,26 @@
     "SporeCrawler",
     "PhotonCannon"
   ],
-  "Icon": "wireframe-critter-matriarchsnowbeast",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "InnerRadius": 0.5,
+  "Icon": "wireframe-critter-snowbeast",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "UnseenBeastSpiritSmashWeapon",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": "Spirit Smash",
-      "Amount": 18,
-      "AttributeBonus": {
-        "Light": 18,
-        "Structure": 18
+      "id": "UnseenBeastExploration",
+      "Name": {
+        "enUS": "Unseen Beast - Exploration"
       },
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.25,
-      "Period": 0.77
+      "TargetFilters": "",
+      "Range": 8,
+      "Period": 1
     },
     {
-      "id": "UnseenBeastSpiritSmashDummy",
-      "Name": "Spirit Smash",
-      "Amount": 18,
-      "AttributeBonus": {
-        "Light": 18,
-        "Structure": 18
+      "id": "UnseenBeastSpiritSmash",
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "Name": {
+        "enUS": "Spirit Smash"
       },
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 0
-    },
-    {
-      "id": "UnseenBeastSpiritSmashDisplay",
-      "Name": "Spirit Smash",
       "Amount": 18,
       "AttributeBonus": {
         "Light": 18,
@@ -1167,62 +1475,135 @@
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UnseenBeast"
+      "id": "Detector11",
+      "Icon": "btn-status-detector",
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     },
     {
-      "id": "UnseenBeastRadar"
+      "id": "UnseenBeast",
+      "Name": {
+        "enUS": "Unseen Beast"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "UnseenBeastRadar",
+      "Name": {
+        "enUS": "Unseen Beast (Radar)"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "DragonAscended",
       "Icon": "btn-ability-zerg-dehakaspawn",
-      "Tooltip": "This Dragon is more powerful. If it dies in combat it will provide its owner with a small amount of Rage.",
-      "Name": "Ascended"
+      "Name": {
+        "enUS": "Ascended"
+      },
+      "Tooltip": {
+        "enUS": "This Dragon is more powerful."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedUnseenBeast",
-      "Name": "Ascended Unseen Beast"
+      "Name": {
+        "enUS": "Ascended Unseen Beast"
+      }
     },
     {
       "id": "AscendedUnseenBeastFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "UnseenBeastFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "UnseenBeastTeleportAssault",
-      "Name": "Unseen Beast - Teleport Assault"
+      "Name": {
+        "enUS": "Unseen Beast - Teleport Assault"
+      }
+    },
+    {
+      "id": "UnseenBeastTeleportAssaultTrigger",
+      "Name": {
+        "enUS": "Unseen Beast - Teleport Assault (Trigger)"
+      }
+    },
+    {
+      "id": "UnseenBeastProwl",
+      "Name": {
+        "enUS": "Unseen Beast - Prowl"
+      }
+    },
+    {
+      "id": "UnseenBeastExploration",
+      "Name": {
+        "enUS": "Unseen Beast - Exploration"
+      }
     }
   ],
   "$Upgrades": [
+    "Button/Tooltip/UnseenBeast",
+    "UnseenBeastProwl",
+    "Button/Tooltip/AscendedUnseenBeast",
     "AscendedUnseenBeast",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
     "DragonScaleArmorLevel1",
     "UnseenBeast",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
-    "DragonScaleArmorLevel3"
+    "DragonScaleArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1239,70 +1620,153 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedUnseenBeast,Execute",
       "id": "AscendedUnseenBeast",
-      "Tooltip": "<span style=\"color: #00FF00\">+15 Life<br/>+1 Armor<br/>Teleport Assault</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>35</b> Life<br/>Teleport Assault</span>"
+      }
     },
     {
       "AbilCmd": "AscendedUnseenBeastFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "UnseenBeastFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "UnseenBeastTeleportAssault,Execute",
       "id": "UnseenBeastTeleportAssault",
       "Icon": "btn-ability-protoss-blink-zeratul",
-      "Tooltip": "Teleports to the opposite side of a target unit to attack it.",
-      "Name": "Teleport Assault"
+      "Name": {
+        "enUS": "Teleport Assault"
+      },
+      "Tooltip": {
+        "enUS": "Teleports to the opposite side of a target unit to attack it."
+      }
+    },
+    {
+      "AbilCmd": "UnseenBeastProwl,Execute",
+      "id": "UnseenBeastProwl",
+      "Icon": "wireframe-critter-snowbeast",
+      "Name": {
+        "enUS": "Prowl"
+      },
+      "Tooltip": {
+        "enUS": "Unseen Beasts cloak when they detect nearby enemies reducing their movement speed by <b>50</b>% but decloak in the presence of detectors or when they receive damage."
+      }
+    },
+    {
+      "AbilCmd": "UnseenBeastExploration,On",
+      "id": "UnseenBeastActivateExploration",
+      "Icon": "btn-ability-zerg-creepmove",
+      "Name": {
+        "enUS": "Activate Exploration"
+      },
+      "Tooltip": {
+        "enUS": "Activate Exploration disabling attacks."
+      }
+    },
+    {
+      "AbilCmd": "UnseenBeastExploration,Off",
+      "id": "UnseenBeastDeactivateExploration",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Deactivate Exploration"
+      },
+      "Tooltip": {
+        "enUS": "Deactivate Exploration enabling attacks."
+      }
     }
   ]
 }

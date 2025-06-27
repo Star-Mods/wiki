@@ -1,9 +1,10 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Flamespitter"
   },
   "Description": {
-    "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+    "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -70,16 +71,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Flamespitter/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Flamespitter/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Flamespitter/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Flamespitter/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -93,8 +96,12 @@
   ],
   "Attributes": [
     "Biological",
-    "Light",
-    "Heroic"
+    "Light"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Negative1Armor",
+    "DragonAscended"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -104,6 +111,15 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedFlamespitter",
+    "AscendedFlamespitterFission",
+    "FlamespitterFission",
+    "DragonFissionDisabled"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -194,12 +210,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -239,8 +252,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -255,10 +267,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -278,12 +287,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -373,13 +379,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -469,13 +472,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -549,14 +549,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -583,7 +577,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
         },
         "Hotkey": "X"
       },
@@ -606,7 +600,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
         },
         "Hotkey": "X"
       },
@@ -1109,6 +1103,9 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "Flamespitter"
+  ],
   "Speed": 3,
   "Sight": 9,
   "Food": -2,
@@ -1117,6 +1114,14 @@
     "Custom": 20
   },
   "KillXP": 15,
+  "WeaponArray": [
+    {
+      "Link": "FlamespitterAscendedClaws"
+    },
+    {
+      "Link": "FlamespitterAscendedSeekerFlame"
+    }
+  ],
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
@@ -1135,38 +1140,47 @@
   "InnerRadius": 0.5,
   "Icon": "btn-unit-zerg-primalzergling",
   "Model": "PrimalZergMelee_00",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "DisplayEffect": "FlamespitterAscendedClawsDamage",
+      "Effect": "FlamespitterAscendedMeleeSet",
       "id": "FlamespitterAscendedClaws",
+      "parent": "FlamespitterClaws",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Claws"
       },
-      "Amount": 7,
+      "Amount": 9,
       "Kind": "Melee",
       "TargetFilters": "Ground",
       "Range": 0.25,
       "Period": 0.56
     },
     {
+      "DisplayEffect": "FlamespitterAscendedSeekerFlameDamage",
+      "TargetFilters": "",
+      "MinimumRange": 0,
+      "Effect": "FlamespitterAscendedSeekerFlameLaunchMissile1",
       "id": "FlamespitterAscendedSeekerFlame",
+      "parent": "FlamespitterSeekerFlame",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Seeker Flame"
       },
-      "Amount": 8,
+      "Amount": 7,
       "AttributeBonus": {
         "Armored": 2
       },
       "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 6,
+      "Range": 5,
       "Period": 0.56
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1194,22 +1208,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1241,22 +1254,28 @@
     "Button/Tooltip/Flamespitter",
     "Button/Tooltip/AscendedFlamespitter",
     "AscendedFlamespitter",
+    "FlamespitterFervidReconstitution",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonScaleArmorLevel1",
     "Flamespitter",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
     "DragonScaleArmorLevel3",
-    "ChangelingFlamespitter"
+    "ChangelingFlamespitter",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedFlamespitter",
-    "AscendedFlamespitter"
-  ],
-  "$Phased": "AscendedFlamespitter",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1265,12 +1284,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1278,51 +1294,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedFlamespitter,Execute",
@@ -1331,7 +1332,7 @@
         "enUS": "Ascend"
       },
       "Tooltip": {
-        "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+        "enUS": "<span style=\"color: 00FF00\">+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
       }
     },
     {

@@ -11,6 +11,10 @@
         <ng-container  *ngFor="let field of weaponFields">
           <ng-container *ngTemplateOutlet="weaponfield; context:{title:  field.title, value:  field.field  ? weapon[field.field] : field.get && field.get(weapon)}"></ng-container>
         </ng-container>
+
+<!--        <ng-container  *ngFor="let field of getAdditionalFields(weapon)">-->
+<!--          <ng-container *ngTemplateOutlet="weaponfield; context: { title:  field,  value: getField(weapon,field)}"></ng-container>-->
+<!--        </ng-container>-->
       </div>
     </div>
   </div>

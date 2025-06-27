@@ -1,6 +1,12 @@
 {
-  "Name": "Supply Depot",
-  "Description": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
+  "Name": {
+    "enUS": "Supply Depot",
+    "ruRU": "Supply Depot"
+  },
+  "Description": {
+    "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them.",
+    "ruRU": "Provides supply.<br/>Supply allows you to create more units.<br/>Supply Depots can be lowered to allow units to walk over them."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 400,
   "LifeMax": 400,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SupplyDepot/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SupplyDepot/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SupplyDepot/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SupplyDepot/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -183,8 +194,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -247,8 +264,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -300,8 +323,14 @@
         "AbilCmd": "SupplyDepotLower,Execute",
         "id": "Lower",
         "Icon": "btn-building-terran-supplydepotlowered",
-        "Tooltip": "Lowers the structure, allowing ground units to move across it.",
-        "Name": "Lower",
+        "Name": {
+          "enUS": "Lower",
+          "ruRU": "Lower"
+        },
+        "Tooltip": {
+          "enUS": "Lowers the structure, allowing ground units to move across it.",
+          "ruRU": "Lowers the structure, allowing ground units to move across it."
+        },
         "Hotkey": "R"
       },
       {
@@ -320,8 +349,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilder",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -330,22 +365,34 @@
   "HotkeyCategory": "Unit/Category/TerranUnits",
   "id": "SupplyDepot",
   "Icon": "btn-building-terran-supplydepot",
+  "Model": "SupplyDepotEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "SupplyDepotLower",
-      "Name": "Lower"
+      "Name": {
+        "enUS": "Lower",
+        "ruRU": "Lower"
+      }
     }
   ],
   "$Upgrades": [
@@ -359,7 +406,9 @@
     "SupplyDepot",
     "SupplyDropModel",
     "SupplyDepotLowered",
-    "SupplyDepotSplat"
+    "SupplyDepotSplat",
+    "IsSupplyDepot",
+    "CasterIsSupplyDepot"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -376,22 +425,40 @@
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "SupplyDepotLower,Execute",
       "id": "Lower",
       "Icon": "btn-building-terran-supplydepotlowered",
-      "Tooltip": "Lowers the structure, allowing ground units to move across it.",
-      "Name": "Lower"
+      "Name": {
+        "enUS": "Lower",
+        "ruRU": "Lower"
+      },
+      "Tooltip": {
+        "enUS": "Lowers the structure, allowing ground units to move across it.",
+        "ruRU": "Lowers the structure, allowing ground units to move across it."
+      }
     }
   ]
 }

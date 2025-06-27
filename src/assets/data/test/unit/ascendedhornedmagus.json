@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Horned Magus"
   },
@@ -68,16 +69,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "HornedMagus/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "HornedMagus/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "HornedMagus/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "HornedMagus/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -92,8 +95,12 @@
   "Attributes": [
     "Biological",
     "Light",
-    "Psionic",
-    "Heroic"
+    "Psionic"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Negative1Armor",
+    "DragonAscended"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -103,6 +110,18 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedHornedMagus",
+    "AscendedHornedMagusFission",
+    "HornedMagusFission",
+    "DragonFissionDisabled",
+    "HornedMagusFireShield",
+    "HornedMagusFrenzy",
+    "HornedMagusInvigorate"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,12 +212,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -238,8 +254,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -254,10 +269,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -277,12 +289,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -372,13 +381,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -468,13 +474,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -548,14 +551,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -1142,7 +1139,7 @@
             "BestUnit": 1
           },
           "Effect": [
-            "HornedMagusFireShieldApplyBehavior1"
+            "HornedMagusFireShieldSwitch"
           ],
           "EffectRange": [
             "0,1000"
@@ -1220,7 +1217,7 @@
             "Visible;Missile,Stasis,Dead,Hidden,Invulnerable"
           ],
           "Range": [
-            8
+            9
           ],
           "CastIntroTime": [
             0.25
@@ -1353,19 +1350,19 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "HornedMagusFrenzy",
-              "Requirements": "HandofPowerFrenzy"
+              "Requirements": "HornedMagusFrenzy"
             }
           },
           "FollowRange": 5,
           "Cost": [
             {
               "Vital": {
-                "Energy": 100
+                "Energy": 75
               }
             }
           ],
           "Range": [
-            9
+            7
           ],
           "CastIntroTime": [
             0.25
@@ -1383,7 +1380,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 100,
+          "Energy": 75,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1398,7 +1395,7 @@
           "enUS": "Frenzy"
         },
         "Tooltip": {
-          "enUS": "Biological units in the target area to go mad for <b>14</b> seconds rendering them immune to Spell damage. Increases attack and movement speed by 50% but reduces armor by 2 and prevents control."
+          "enUS": "Causes Biological units in the target area to go mad for <b>4</b> seconds rendering them uncontrollable. Increases attack and movement speed by 50% but reduces armor by 2."
         },
         "Hotkey": "W"
       },
@@ -1507,6 +1504,9 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "HornedMagus"
+  ],
   "EnergyStart": 50,
   "EnergyMax": 200,
   "EnergyRegenRate": 1.125,
@@ -1519,6 +1519,14 @@
     "Custom": 35
   },
   "KillXP": 20,
+  "WeaponArray": [
+    {
+      "Link": "HornedMagusHeadbutt"
+    },
+    {
+      "Link": "HornedMagusMysticBolt"
+    }
+  ],
   "CargoSize": 2,
   "ScoreMake": 100,
   "ScoreKill": 100,
@@ -1538,24 +1546,43 @@
   "InnerRadius": 0.5,
   "Icon": "btn-critter-tastelope",
   "Model": "Tastelope",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "HornedMagusHeadbutt",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
       "Name": {
         "enUS": "Headbutt"
       },
+      "Options": {
+        "Melee": 1
+      },
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "DisplayEffect": "HornedMagusHeadbuttDamage",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByAngle",
+      "Range": 0.5,
+      "Effect": "HornedMagusHeadbuttDamage",
+      "MinScanRange": 5,
+      "DisplayName": "Weapon/Name/HornedMagusHeadbutt",
+      "id": "HornedMagusHeadbutt",
+      "parent": "HornedMagusMysticBolt",
+      "class": "CWeaponLegacy",
       "Amount": 10,
       "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.25,
       "Period": 1.47
     },
     {
+      "Icon": "btn-upgrade-dragon-fireattacks-level0",
+      "DisplayEffect": "HornedMagusMysticBoltDamage",
+      "TargetFilters": "",
+      "Range": 6,
+      "Period": 1.47,
+      "DamagePoint": 0.125,
+      "Effect": "HornedMagusMysticBoltLaunchMissile1",
+      "MinScanRange": 8,
+      "EditorCategories": "Race:Dragon",
       "id": "HornedMagusMysticBolt",
-      "Icon": "fireball_1",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Mystic Bolt"
       },
@@ -1563,15 +1590,12 @@
       "AttributeBonus": {
         "Light": 7
       },
-      "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 7,
-      "Period": 1.47
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1599,22 +1623,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1664,21 +1687,27 @@
     "Button/Tooltip/HornedMagus",
     "Button/Tooltip/AscendedHornedMagus",
     "AscendedHornedMagus",
+    "HornedMagusFrenzy",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonScaleArmorLevel1",
     "HornedMagus",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
-    "DragonScaleArmorLevel3"
+    "DragonScaleArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedHornedMagus",
-    "AscendedHornedMagus"
-  ],
-  "$Phased": "AscendedHornedMagus",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1687,12 +1716,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1700,51 +1726,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedHornedMagus,Execute",
@@ -1819,7 +1830,7 @@
         "enUS": "Frenzy"
       },
       "Tooltip": {
-        "enUS": "Biological units in the target area to go mad for <b>14</b> seconds rendering them immune to Spell damage. Increases attack and movement speed by 50% but reduces armor by 2 and prevents control."
+        "enUS": "Causes Biological units in the target area to go mad for <b>4</b> seconds rendering them uncontrollable. Increases attack and movement speed by 50% but reduces armor by 2."
       }
     },
     {

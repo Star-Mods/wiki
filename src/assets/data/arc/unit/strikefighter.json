@@ -1,6 +1,12 @@
 {
-  "Name": "Strikefighter",
-  "Description": "Armored multirole fighter.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Strikefighter",
+    "ruRU": "Штурмовик"
+  },
+  "Description": {
+    "enUS": "Armored multirole fighter.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Многоцелевой тяжёлый истребитель.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 155,
-  "LifeMax": 155,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeStart": 125,
+  "LifeMax": 125,
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 1499.9414,
   "TurningRate": 699.961,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Strikefighter/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Strikefighter/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Strikefighter/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Strikefighter/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,10 +99,9 @@
     "Flying"
   ],
   "Attributes": [
-    "Armored",
+    "Light",
     "Mechanical"
   ],
-  "LifeArmor": 1,
   "Speed": 2.75,
   "Acceleration": 3.5,
   "Sight": 10,
@@ -100,8 +110,8 @@
   "Food": -2,
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 150,
-    "Vespene": 100
+    "Minerals": 125,
+    "Vespene": 75
   },
   "RepairTime": 60,
   "AttackTargetPriority": 20,
@@ -197,8 +207,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -271,8 +287,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -362,8 +384,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -437,8 +465,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -528,8 +562,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -644,6 +684,18 @@
           "CastOutroTime": [
             1.7
           ],
+          "Cost": [
+            {
+              "Charge": {
+                "Link": "Abil/AbilityStrikeFighterAirMod"
+              },
+              "Cooldown": {
+                "Link": "Abil/AbilityStrikeFighterAirMod",
+                "Location": "Unit",
+                "TimeUse": 7
+              }
+            }
+          ],
           "id": "AbilityStrikeFighterGroundMod"
         },
         "Cost": {
@@ -662,8 +714,14 @@
         "AbilCmd": "AbilityStrikeFighterGroundMod,Execute",
         "id": "ButtonStrikeFighterGroundAttack",
         "Icon": "btn-ability-protoss-voidrayprismaticalignment",
-        "Tooltip": "Take on board weapons against ground targets.",
-        "Name": "Anti-ground mode",
+        "Name": {
+          "enUS": "Anti-ground mode",
+          "ruRU": "Противоназемный режим"
+        },
+        "Tooltip": {
+          "enUS": "Can attack only ground targets.",
+          "ruRU": "Может атаковать только наземные цели."
+        },
         "Hotkey": "E"
       },
       {
@@ -777,6 +835,14 @@
           "CastOutroTime": [
             1.7
           ],
+          "Cost": [
+            {
+              "Cooldown": {
+                "Location": "Unit",
+                "TimeUse": 7
+              }
+            }
+          ],
           "id": "AbilityStrikeFighterAirMod"
         },
         "Cost": {
@@ -795,8 +861,14 @@
         "AbilCmd": "AbilityStrikeFighterAirMod,Execute",
         "id": "ButtonStrikeFighterAirAttack",
         "Icon": "btn-ability-stetmann-corruptormissilebarrage",
-        "Tooltip": "Take on board weapons against aerial targets.",
-        "Name": "Anti-aircraft mode",
+        "Name": {
+          "enUS": "Anti-aircraft mode",
+          "ruRU": "Противовоздушный режим"
+        },
+        "Tooltip": {
+          "enUS": "Can attack only aerial targets.",
+          "ruRU": "Может атаковать только воздушные цели."
+        },
         "Hotkey": "R"
       },
       {
@@ -927,8 +999,14 @@
         "AbilCmd": "UEDStrikeFighterSpeed,Execute",
         "id": "ButtonStrikeFighterSpeed",
         "Icon": "btn-upgrade-terran-nova-specialordance",
-        "Tooltip": "The speed of movement increases significantly within 4 seconds.",
-        "Name": "Plasma fuel",
+        "Name": {
+          "enUS": "Plasma fuel",
+          "ruRU": "Плазменное топливо"
+        },
+        "Tooltip": {
+          "enUS": "The speed of movement increases significantly within 4 seconds.",
+          "ruRU": "Сильно увеличивается скорость перемещения на 4 сек."
+        },
         "Hotkey": "W"
       }
     ]
@@ -959,70 +1037,101 @@
     {
       "id": "BacklashRockets2",
       "Icon": "weapon-tank-icon-upgrade-0",
-      "Name": "Type-128T Plasma Cannon",
-      "Amount": 7,
+      "Name": {
+        "enUS": "Type-128T Plasma Cannon",
+        "ruRU": "Плазменная пушка «Тип-128Т»"
+      },
+      "Amount": 6,
       "Kind": "Ranged",
-      "DisplayAttackCount": 4,
+      "DisplayAttackCount": 3,
       "TargetFilters": "Ground",
       "Range": 6,
-      "Period": 1.45
+      "Period": 1.12
     },
     {
       "id": "LanzerTorpedoes2",
       "Icon": "weapon-tank-icon-upgrade-0",
-      "Name": "Seeker Missiles",
-      "Amount": 9,
+      "Name": {
+        "enUS": "Seeker Missiles",
+        "ruRU": "Самонаводящиеся ракеты"
+      },
+      "Amount": 8,
       "AttributeBonus": {
-        "Armored": 5
+        "Massive": 2
       },
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
       "TargetFilters": "Air",
-      "Range": 7,
+      "Range": 10,
       "Period": 1.7
     }
   ],
   "Behaviors": [
     {
-      "id": "AlgoritmStrikeFighterGroundAttack",
-      "Icon": "btn-upgrade-terran-nova-specialordance"
+      "id": "AlgoritmStrikeFighterStartUnit",
+      "Icon": "btn-upgrade-terran-nova-specialordance",
+      "Name": {
+        "ruRU": "Появление юнита"
+      },
+      "Tooltip": {
+        "ruRU": ""
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     },
     {
-      "id": "UEDStrikeFighterSpeed"
+      "id": "UEDStrikeFighterSpeed",
+      "Name": {
+        "ruRU": "Скорость"
+      }
     },
     {
-      "id": "AbilityStrikeFighterGroundMod"
+      "id": "AbilityStrikeFighterGroundMod",
+      "Name": {
+        "ruRU": "Режим наземного боя"
+      }
     },
     {
-      "id": "AbilityStrikeFighterAirMod"
+      "id": "AbilityStrikeFighterAirMod",
+      "Name": {
+        "ruRU": "Режим воздушного боя"
+      }
     }
   ],
   "$Upgrades": [
     "UEDArmorLevel1",
     "Strikefighter",
-    "UpgradeSpeedStrikeFighter",
+    "UEDUpgradeStrikeFighterSpeed",
+    "UEDUpgradeStrikeFighter",
+    "Strikefighter",
+    "UEDArmorLevel2",
+    "UEDArmorLevel3",
     "AllowUnitStrikefighter",
     "AtmosphericOperationsLoadout",
     "UEDVehicalsLevel1",
     "UEDVehicalsLevel2",
     "UEDVehicalsLevel3",
-    "Strikefighter",
-    "UEDArmorLevel2",
-    "UEDArmorLevel3",
     "TeleportationNodeTrain",
     null
   ],
@@ -1039,57 +1148,105 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "AbilityStrikeFighterGroundMod,Execute",
       "id": "ButtonStrikeFighterGroundAttack",
       "Icon": "btn-ability-protoss-voidrayprismaticalignment",
-      "Tooltip": "Take on board weapons against ground targets.",
-      "Name": "Anti-ground mode"
+      "Name": {
+        "enUS": "Anti-ground mode",
+        "ruRU": "Противоназемный режим"
+      },
+      "Tooltip": {
+        "enUS": "Can attack only ground targets.",
+        "ruRU": "Может атаковать только наземные цели."
+      }
     },
     {
       "AbilCmd": "AbilityStrikeFighterAirMod,Execute",
       "id": "ButtonStrikeFighterAirAttack",
       "Icon": "btn-ability-stetmann-corruptormissilebarrage",
-      "Tooltip": "Take on board weapons against aerial targets.",
-      "Name": "Anti-aircraft mode"
+      "Name": {
+        "enUS": "Anti-aircraft mode",
+        "ruRU": "Противовоздушный режим"
+      },
+      "Tooltip": {
+        "enUS": "Can attack only aerial targets.",
+        "ruRU": "Может атаковать только воздушные цели."
+      }
     },
     {
       "AbilCmd": "UEDStrikeFighterSpeed,Execute",
       "id": "ButtonStrikeFighterSpeed",
       "Icon": "btn-upgrade-terran-nova-specialordance",
-      "Tooltip": "The speed of movement increases significantly within 4 seconds.",
-      "Name": "Plasma fuel"
+      "Name": {
+        "enUS": "Plasma fuel",
+        "ruRU": "Плазменное топливо"
+      },
+      "Tooltip": {
+        "enUS": "The speed of movement increases significantly within 4 seconds.",
+        "ruRU": "Сильно увеличивается скорость перемещения на 4 сек."
+      }
     }
   ]
 }

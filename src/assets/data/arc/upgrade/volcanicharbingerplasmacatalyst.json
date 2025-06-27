@@ -1,13 +1,13 @@
 {
   "id": "VolcanicHarbingerPlasmaCatalyst",
-  "Icon": "btn-ability-kerrigan-chainreaction",
+  "Icon": "btn-ability-spearofadun-shieldovercharge",
   "Name": "Upgrade/Name/VolcanicHarbingerPlasmaCatalyst",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1
   },
   "MaxLevel": 1,
-  "Alert": "UpgradeComplete",
+  "Alert": "ResearchComplete",
   "ScoreCount": "MiscTechnologyCount",
   "ScoreValue": "MiscTechnologyValue",
   "WebPriority": 1,
@@ -19,16 +19,33 @@
       "value": ""
     }
   },
+  "InfoTooltipPriority": 0,
+  "Race": "Dragon",
+  "ScoreAmount": 400,
   "EffectArray": [
     {
-      "Operation": "Subtract",
+      "Operation": "Set",
       "Reference": "Abil,VolcanicHarbingerOverload,InfoArray[Ammo1].Time",
-      "Value": "2.000000"
+      "Value": "4.125000"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Unit,VolcanicHarbingerOverload,Description",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Button,VolcanicHarbingerOverload,AlertTooltip",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Button,VolcanicHarbingerOverload,Tooltip",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
     }
   ],
   "AffectedUnitArray": [
-    "VolcanicHarbinger"
-  ],
-  "ScoreAmount": 680,
-  "Race": "Dragon"
+    "VolcanicHarbinger",
+    "AscendedVolcanicHarbinger"
+  ]
 }

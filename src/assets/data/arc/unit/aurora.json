@@ -1,6 +1,12 @@
 {
-  "Name": "Aurora",
-  "Description": "Tactical-strike aircraft. Can use Emanator.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Aurora",
+    "ruRU": "Аврора"
+  },
+  "Description": {
+    "enUS": "Tactical-strike aircraft. Can use Emanator.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Самолёт для тактических ударов. Может использовать Эманатор.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,13 +18,16 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 1350,
   "TurningRate": 1350,
-  "Radius": 0.6875,
-  "SeparationRadius": 0.6875,
-  "MinimapRadius": 0.6875,
+  "Radius": 0.75,
+  "SeparationRadius": 0.75,
+  "MinimapRadius": 0.75,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Aurora/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Aurora/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Aurora/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Aurora/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -87,6 +98,7 @@
     "Flying"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 2.5,
   "Sight": 10,
   "CostCategory": "Army",
@@ -179,8 +191,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -253,8 +271,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -343,8 +367,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -433,8 +463,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -508,8 +544,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -648,8 +690,14 @@
         "AbilCmd": "Emanator,Execute",
         "id": "PlaceEmanator",
         "Icon": "btn-unit-keiron-emanator",
-        "Tooltip": "Grants vision in an area. It is vulnerable to attack, but becomes permanently cloaked <b>7</b> seconds after placement.",
-        "Name": "Place Emanator",
+        "Name": {
+          "enUS": "Place Emanator",
+          "ruRU": "Разместить Эманатор"
+        },
+        "Tooltip": {
+          "enUS": "Grants vision in an area. It is vulnerable to attack, but becomes permanently cloaked <b>7</b> seconds after placement.",
+          "ruRU": "Эманаторы дают обзор области. Они уязвимы для атак, но могут навсегда стать невидимыми спустя <b>7</b> секунд после размещения.<br/><br/><span style=\"color: FFE303\">Детектор</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -670,8 +718,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -798,8 +852,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       }
     ]
@@ -816,7 +876,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Aurora",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Aurora",
   "Height": 3.75,
   "VisionHeight": 4,
@@ -826,7 +889,7 @@
   "Food": -3,
   "CostResource": {
     "Minerals": 150,
-    "Vespene": 125
+    "Vespene": 100
   },
   "EffectArray": {
     "Create": "CelestialOutletAurApeDelay"
@@ -839,14 +902,18 @@
   "GlossaryPriority": 33,
   "SubgroupPriority": 21,
   "Icon": "btn-unit-keiron-aurora",
+  "Model": "Aurora",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "HalationPlasma",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Halation Plasma",
-      "Amount": 25,
+      "Name": {
+        "enUS": "Halation Plasma",
+        "ruRU": "Хэлэйшн Плазма"
+      },
+      "Amount": 28,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 6,
@@ -855,37 +922,62 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "Emanator",
-      "Name": "Emanator"
+      "Name": {
+        "enUS": "Emanator",
+        "ruRU": "Emanator"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     }
   ],
   "$Upgrades": [
@@ -928,57 +1020,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "Emanator,Execute",
       "id": "PlaceEmanator",
       "Icon": "btn-unit-keiron-emanator",
-      "Tooltip": "Grants vision in an area. It is vulnerable to attack, but becomes permanently cloaked <b>7</b> seconds after placement.",
-      "Name": "Place Emanator"
+      "Name": {
+        "enUS": "Place Emanator",
+        "ruRU": "Разместить Эманатор"
+      },
+      "Tooltip": {
+        "enUS": "Grants vision in an area. It is vulnerable to attack, but becomes permanently cloaked <b>7</b> seconds after placement.",
+        "ruRU": "Эманаторы дают обзор области. Они уязвимы для атак, но могут навсегда стать невидимыми спустя <b>7</b> секунд после размещения.<br/><br/><span style=\"color: FFE303\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     }
   ]
 }

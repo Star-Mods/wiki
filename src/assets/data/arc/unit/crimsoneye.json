@@ -1,6 +1,12 @@
 {
-  "Name": "Crimson Eye",
-  "Description": "Low-altitude scouting drone.<br/><br/><span style=\"color: #FFE303\">There is a detection function</span>",
+  "Name": {
+    "enUS": "Crimson Eye",
+    "ruRU": "Рубиновое око"
+  },
+  "Description": {
+    "enUS": "Low-altitude scouting drone.<br/><br/><span style=\"color: FFE303\">There is a detection function</span>",
+    "ruRU": "Низколетящий дрон-разведчик.<br/><br/><span style=\"color: FFE303\">Есть функция детекции</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 90,
-  "LifeMax": 90,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeStart": 110,
+  "LifeMax": 110,
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "CrimsonEye/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "CrimsonEye/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CrimsonEye/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CrimsonEye/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -92,8 +103,11 @@
     "Light",
     "Mechanical"
   ],
-  "ShieldArmorName": "Protoss Plasma Shields",
-  "Speed": 2.668,
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
+  "Speed": 3.375,
   "Acceleration": 2.125,
   "Sight": 10,
   "Height": 3.75,
@@ -198,8 +212,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -272,8 +292,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -363,8 +389,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -454,8 +486,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -529,8 +567,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -620,8 +664,14 @@
         "AbilCmd": "moveUED,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -734,7 +784,7 @@
           "FollowRange": 5,
           "Alignment": "Positive",
           "TargetFilters": [
-            "Mechanical,Visible;Self,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"
+            "Visible;Self,Enemy,Structure,Missile,Dead,Hidden,Invulnerable"
           ],
           "TargetSorts": {
             "SortArray": [
@@ -755,7 +805,9 @@
           "AutoCastRange": 6,
           "AutoCastValidatorArray": [
             "healCasterMinEnergy",
-            "NotWarpingIn"
+            "NotWarpingIn",
+            "ValidateForCrimsonEyeAvtoRepear",
+            "ValidateNoDie"
           ],
           "AcquireAttackers": 1,
           "id": "CrimsonEyeRepair"
@@ -776,8 +828,14 @@
         "AbilCmd": "CrimsonEyeRepair,Execute",
         "id": "CrimsonEyeRepair",
         "Icon": "ui_tipicon_campaign_space01-repair",
-        "Tooltip": "Restores a friendly mechanical unit.<br/><br/><span style=\"color: #f078ff\">Regenerates <b>9.0</b> health units per second. Spends at the same time <b>2.4</b> units of energy.</span>",
-        "Name": "Repair",
+        "Name": {
+          "enUS": "Repair",
+          "ruRU": "Ремонт"
+        },
+        "Tooltip": {
+          "enUS": "Restores a friendly unit.<br/><br/><span style=\"color: f078ff\">Regenerates <b>0</b> health units per second. Spends at the same time <b>0</b> units of energy.</span><br/>",
+          "ruRU": "Восстанавливает дружественную механическую единицу.<br/><br/><span style=\"color: f078ff\">Регенерирует <b>0</b> ед. здоровья в сек. Расходует при этом <b>0</b> ед. энергии.</span><br/>"
+        },
         "Hotkey": "R"
       },
       {
@@ -856,8 +914,14 @@
         "AbilCmd": "RadarCrimsonEyeUED,Off",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -991,8 +1055,14 @@
         "AbilCmd": "AbilitiDetection,Execute",
         "id": "ButtonDetectorCrimsonYea",
         "Icon": "btn-upgrade-protoss-fenix-arbiterchampiondetectionresearch",
-        "Tooltip": "It evades the viewing range and allows you to see camouflaged and buried troops in it, but reduces the speed of movement.",
-        "Name": "Detection mode",
+        "Name": {
+          "enUS": "Detection mode",
+          "ruRU": "Режим обнаружения"
+        },
+        "Tooltip": {
+          "enUS": "It evades the viewing range and allows you to see camouflaged and buried troops in it.",
+          "ruRU": "Увиличивает дальность обзора и позволяет видеть в нем замаскированные и закопанные войска."
+        },
         "Hotkey": "E"
       },
       {
@@ -1071,30 +1141,15 @@
         "AbilCmd": "RadarCrimsonEyeUED,On",
         "id": "ButtonRadarCrimsonYea",
         "Icon": "btn-status-radar",
-        "Tooltip": "Allows you to track the movement of enemies within a radius of 21, at the same time, all other abilities and movement are unavailable. Does not open the terrain.<br/><br/><span style=\"color: #f078ff\">Consumes <b>0.3</b> ед. энергии в секунду.</span>",
-        "Name": "Radar mode",
-        "Hotkey": "G"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Radar mode",
+          "ruRU": "Режим радара"
         },
-        "Row": 2,
-        "Column": 3,
-        "Type": "Passive",
-        "AbilCmd": "EngineSurchargeProtocols,Execute",
-        "id": "EngineSurcharge",
-        "Icon": "btn-upgrade-terran-jotunboosters",
-        "Tooltip": "Increases the movement speed.",
-        "Name": "Reinforced engine",
-        "Hotkey": "E"
+        "Tooltip": {
+          "enUS": "Allows you to track the movement of enemies within a radius of 21, at the same time movement are unavailable. Does not open the terrain.<br/><br/><span style=\"color: f078ff\">Consumes <b>0.3</b> ед. энергии в секунду.</span>",
+          "ruRU": "Позволяет отслеживать перемещения врагов в радиусе 21, при этом движение недоступно. Не открывает местность.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.3</b> ед. энергии в секунду.</span>"
+        },
+        "Hotkey": "G"
       },
       {
         "Cost": {
@@ -1112,8 +1167,14 @@
         "Type": "Passive",
         "id": "UEDButtonCrimsonEyePenemunde",
         "Icon": "btn-ability-mengsk-battlecruiser-decksights",
-        "Tooltip": "It helps to direct missiles to <c val=\"#ColorAttackInfo\">Peenemunde MRLS </span> in a radius of 11 around itself at a huge distance.",
-        "Name": "Ballistic missile guidance"
+        "Name": {
+          "enUS": "Ballistic missile guidance",
+          "ruRU": "Наведение баллистической ракеты"
+        },
+        "Tooltip": {
+          "enUS": "It helps to direct missiles to <span style=\"color: #ffff8a\">Peenemunde MRLS </span> in a radius of 13 around itself at a huge distance.",
+          "ruRU": "Помогает наводить ракеты <span style=\"color: #ffff8a\">МРУ \"Пенемюнде\" </span> в радиусе 13 вокруг себя на огромном расстоянии."
+        }
       }
     ]
   },
@@ -1139,6 +1200,7 @@
   "EnergyRegenRate": 0.5625,
   "id": "CrimsonEye",
   "Icon": "btn-ued-crimsoneye",
+  "Model": "UED_Beattle",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1146,35 +1208,51 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "CrimsonEyeRepair",
-      "Name": "Repair"
+      "Name": {
+        "enUS": "Repair",
+        "ruRU": "Repair"
+      }
     },
     {
-      "id": "AbilitiDetection"
+      "id": "AbilitiDetection",
+      "Name": {
+        "ruRU": "Detection"
+      }
     },
     {
       "id": "RadarCrimsonEyeUED",
-      "Name": "Радар"
+      "Name": {
+        "enUS": "Радар"
+      }
     }
   ],
   "$Upgrades": [
-    "UpgradeSpeedCrimsonEye",
+    "UpgradeBeataniumGenerator",
     "CrimsonEye",
-    "AllowUnitCrimsonEye",
-    "DroneRepairModule",
-    "UEDVehicalsLevel2",
-    "UEDVehicalsLevel3",
+    "Button/Tooltip/CrimsonEyeRepair",
+    "Button/Tooltip/ButtonRadarCrimsonYea",
     "UEDArmorLevel1",
     "CrimsonEye",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "AllowUnitCrimsonEye",
+    "DroneRepairModule",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain",
     "CrimsonEyeMorphtoCrimsonEyeSiege",
     null,
@@ -1194,78 +1272,131 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "CrimsonEyeRepair,Execute",
       "id": "CrimsonEyeRepair",
       "Icon": "ui_tipicon_campaign_space01-repair",
-      "Tooltip": "Restores a friendly mechanical unit.<br/><br/><span style=\"color: #f078ff\">Regenerates <b>9.0</b> health units per second. Spends at the same time <b>2.4</b> units of energy.</span>",
-      "Name": "Repair"
+      "Name": {
+        "enUS": "Repair",
+        "ruRU": "Ремонт"
+      },
+      "Tooltip": {
+        "enUS": "Restores a friendly unit.<br/><br/><span style=\"color: f078ff\">Regenerates <b>0</b> health units per second. Spends at the same time <b>0</b> units of energy.</span><br/>",
+        "ruRU": "Восстанавливает дружественную механическую единицу.<br/><br/><span style=\"color: f078ff\">Регенерирует <b>0</b> ед. здоровья в сек. Расходует при этом <b>0</b> ед. энергии.</span><br/>"
+      }
     },
     {
       "AbilCmd": "RadarCrimsonEyeUED,Off",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "AbilitiDetection,Execute",
       "id": "ButtonDetectorCrimsonYea",
       "Icon": "btn-upgrade-protoss-fenix-arbiterchampiondetectionresearch",
-      "Tooltip": "It evades the viewing range and allows you to see camouflaged and buried troops in it, but reduces the speed of movement.",
-      "Name": "Detection mode"
+      "Name": {
+        "enUS": "Detection mode",
+        "ruRU": "Режим обнаружения"
+      },
+      "Tooltip": {
+        "enUS": "It evades the viewing range and allows you to see camouflaged and buried troops in it.",
+        "ruRU": "Увиличивает дальность обзора и позволяет видеть в нем замаскированные и закопанные войска."
+      }
     },
     {
       "AbilCmd": "RadarCrimsonEyeUED,On",
       "id": "ButtonRadarCrimsonYea",
       "Icon": "btn-status-radar",
-      "Tooltip": "Allows you to track the movement of enemies within a radius of 21, at the same time, all other abilities and movement are unavailable. Does not open the terrain.<br/><br/><span style=\"color: #f078ff\">Consumes <b>0.3</b> ед. энергии в секунду.</span>",
-      "Name": "Radar mode"
-    },
-    {
-      "AbilCmd": "EngineSurchargeProtocols,Execute",
-      "id": "EngineSurcharge",
-      "Icon": "btn-upgrade-terran-jotunboosters",
-      "Tooltip": "Increases the movement speed.",
-      "Name": "Reinforced engine"
+      "Name": {
+        "enUS": "Radar mode",
+        "ruRU": "Режим радара"
+      },
+      "Tooltip": {
+        "enUS": "Allows you to track the movement of enemies within a radius of 21, at the same time movement are unavailable. Does not open the terrain.<br/><br/><span style=\"color: f078ff\">Consumes <b>0.3</b> ед. энергии в секунду.</span>",
+        "ruRU": "Позволяет отслеживать перемещения врагов в радиусе 21, при этом движение недоступно. Не открывает местность.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.3</b> ед. энергии в секунду.</span>"
+      }
     }
   ]
 }

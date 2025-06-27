@@ -1,6 +1,12 @@
 {
-  "Name": "Widow Mine",
-  "Description": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
+  "Name": {
+    "ruRU": "Widow Mine",
+    "enUS": "Widow Mine"
+  },
+  "Description": {
+    "enUS": "Robotic mine. Can launch self at nearby enemy units when burrowed, dealing damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Robotic mine. Launches missiles at nearby enemy units while burrowed. Attacks deal splash damage in a small area around the target. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 7,
   "DeathRevealDuration": 3,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 90,
   "LifeMax": 90,
-  "LifeArmorName": "Terran Vehicle Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Vehicle Plating",
+    "ruRU": "Terran Vehicle Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 2292.8906,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "WidowMine/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "WidowMine/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "WidowMine/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "WidowMine/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -98,7 +109,8 @@
   ],
   "Attributes": [
     "Light",
-    "Mechanical"
+    "Mechanical",
+    "Robotic"
   ],
   "CostCategory": "Army",
   "CostResource": {
@@ -200,8 +212,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -274,8 +292,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -364,8 +388,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -439,8 +469,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -529,8 +565,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -619,8 +661,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -639,8 +687,14 @@
         "Type": "Passive",
         "id": "WidowMineBioSplash",
         "Icon": "btn-ability-terran-unstablepayload",
-        "Tooltip": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><c val=\"#ColorAttackInfo\">Cooldown: <b>40</b> seconds.</span>",
-        "Name": "Sentinel Missiles"
+        "Name": {
+          "enUS": "Sentinel Missiles",
+          "ruRU": "Sentinel Missiles"
+        },
+        "Tooltip": {
+          "enUS": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>",
+          "ruRU": "Attacks by launching missiles at enemy ground and air units that get too close. Missiles deal <b>125</b> (+35 vs. shields) damage to their primary target, and <b>40</b> (+<b>40</b> vs. shields) splash damage to units nearby.<br/><br/><span style=\"color: #ffff8a\">Cooldown: <b>40</b> seconds.</span>"
+        }
       },
       {
         "Info": {
@@ -684,8 +738,14 @@
         "AbilCmd": "WidowMineBurrow,Execute",
         "id": "WidowMineBurrow",
         "Icon": "btn-ability-terran-activatemine",
-        "Tooltip": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
-        "Name": "Activate Mine",
+        "Name": {
+          "enUS": "Activate Mine",
+          "ruRU": "Activate Mine"
+        },
+        "Tooltip": {
+          "enUS": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
+          "ruRU": "Burrows the Widow Mine and readies its weapon. Cannot move while activated."
+        },
         "Hotkey": "E"
       },
       {
@@ -815,7 +875,8 @@
             "NotHallucinationOrNotDetected",
             "noMarkers",
             "NotLarvaEgg",
-            "IsNotNeuralParasited"
+            "IsNotNeuralParasited",
+            "NotEggSCBW"
           ],
           "PrepTime": [
             1.5
@@ -826,7 +887,8 @@
           "CancelEffect": {
             "Prep": "WidowMineTargetTintRemoveBehavior"
           },
-          "id": "WidowMineAttack"
+          "id": "WidowMineAttack",
+          "TechAliasArray": "_Disruptable"
         },
         "Cost": {
           "Minerals": 0,
@@ -844,8 +906,14 @@
         "AbilCmd": "WidowMineAttack,Execute",
         "id": "WidowMineAttack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Attacks any nearby enemy unit.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Attack"
+        },
+        "Tooltip": {
+          "enUS": "Attacks any nearby enemy unit.",
+          "ruRU": "Attacks any nearby enemy unit."
+        },
         "Hotkey": "C"
       },
       {
@@ -864,8 +932,12 @@
         "Type": "Passive",
         "id": "DrillClaws",
         "Icon": "btn-upgrade-terran-researchdrillingclaws",
-        "Tooltip": "This unit burrows faster.",
-        "Name": "Drilling Claws"
+        "Name": {
+          "enUS": "Drilling Claws"
+        },
+        "Tooltip": {
+          "enUS": "This unit burrows faster."
+        }
       },
       {
         "Cost": {
@@ -883,8 +955,12 @@
         "Type": "Passive",
         "id": "WidowMineConcealment",
         "Icon": "btn-ability-terran-widowminehidden",
-        "Tooltip": "This unit is no longer revealed while reloading.",
-        "Name": "Concealment"
+        "Name": {
+          "enUS": "Concealment"
+        },
+        "Tooltip": {
+          "enUS": "This unit is no longer revealed while reloading."
+        }
       }
     ]
   },
@@ -909,30 +985,47 @@
   ],
   "id": "WidowMine",
   "Icon": "btn-unit-terran-widowmine",
+  "Model": "WidowMine",
   "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "WidowMineDrillingClawsTracker"
+      "id": "WidowMineDrillingClawsTracker",
+      "Name": {
+        "enUS": "Widow Mine Drilling Claws Tracker"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "WidowMineBurrow",
-      "Name": "Widow Mine Burrow"
+      "Name": {
+        "enUS": "Widow Mine Burrow",
+        "ruRU": "Widow Mine Burrow"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "WidowMineAttack",
-      "Name": "Widow Mine Attack"
+      "Name": {
+        "enUS": "Widow Mine Attack",
+        "ruRU": "Widow Mine Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -946,14 +1039,19 @@
     "TerranVehicleWeaponsLevel3",
     "TerranVehicleAndShipArmorsLevel1",
     "WidowMine",
+    "FactoryTrain",
+    "Factory",
     "TerranVehicleAndShipArmors",
     "TerranVehicleAndShipArmorsLevel2",
     "TerranVehicleAndShipArmorsLevel3",
-    "FactoryTrain",
-    "Factory",
+    "SynoidVehicleAndShipArmors1",
+    "SynoidVehicleAndShipArmors",
+    "SynoidVehicleAndShipArmors2",
+    "SynoidVehicleAndShipArmors3",
     "WidowMineBurrowedSplat",
     "WidowMineAttackRange",
-    "WidowMine_Unburrow"
+    "WidowMine_Unburrow",
+    "WalkerBeacon"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -970,57 +1068,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "WidowMineBurrow,Execute",
       "id": "WidowMineBurrow",
       "Icon": "btn-ability-terran-activatemine",
-      "Tooltip": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
-      "Name": "Activate Mine"
+      "Name": {
+        "enUS": "Activate Mine",
+        "ruRU": "Activate Mine"
+      },
+      "Tooltip": {
+        "enUS": "Burrows the Widow Mine and readies its weapon. Cannot move while activated.",
+        "ruRU": "Burrows the Widow Mine and readies its weapon. Cannot move while activated."
+      }
     },
     {
       "AbilCmd": "WidowMineAttack,Execute",
       "id": "WidowMineAttack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Attacks any nearby enemy unit.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Attack"
+      },
+      "Tooltip": {
+        "enUS": "Attacks any nearby enemy unit.",
+        "ruRU": "Attacks any nearby enemy unit."
+      }
     }
   ]
 }

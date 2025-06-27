@@ -1,21 +1,27 @@
 {
-  "Name": "Nightjar",
-  "Description": "Anti-Armor / Anti-Air Cannon<br/><br/><c val=\"#ColorAttackInfo\">Can Attack Ground and Air units.</span>",
+  "Name": {
+    "enUS": "Nightjar"
+  },
+  "Description": {
+    "enUS": "Anti-Armor / Anti-Air Cannon<br/><br/><span style=\"color: #ffff8a\">Can Attack Ground and Air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 400,
-  "LifeMax": 400,
-  "LifeArmorName": "UPL Building Plating",
+  "LifeStart": 700,
+  "LifeMax": 700,
+  "LifeArmorName": {
+    "enUS": "UPL Building Plating"
+  },
   "Mover": "Ground",
-  "StationaryTurningRate": 720,
-  "TurningRate": 720,
+  "StationaryTurningRate": 998.9648,
+  "TurningRate": 998.9648,
   "Radius": 0.75,
   "SeparationRadius": 0.75,
   "MinimapRadius": 0.75,
@@ -67,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UPLNightjar/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UPLNightjar/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UPLNightjar/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UPLNightjar/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -167,28 +175,15 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
         },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "UPLSelectBuilder",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
-        "Hotkey": "U"
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -260,8 +255,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -335,8 +336,14 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Tooltip": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Attack"
+        },
+        "Tooltip": {
+          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+        },
         "Hotkey": "A"
       },
       {
@@ -409,8 +416,7 @@
             "AllowPassengerSmartCmd": 1,
             "AllowSmartCmd": 1,
             "ShowCargoSize": 1,
-            "ShowStatus": 1,
-            "CargoDeath": 1
+            "ShowStatus": 1
           },
           "TargetSorts": {
             "SortArray": [
@@ -429,10 +435,10 @@
           "UnloadTransportEffect": "UPLTurretCargoTransportUnloadDummy",
           "LoadValidatorArray": [
             "RequiresUPL",
-            "TargetIsTransportable",
-            "TargetNotRooted",
-            "TargetNotStunnedCombine",
-            "TargetNotStasis"
+            "UPLTargetIsTransportable",
+            "UPLTargetNotRooted",
+            "UPLTargetNotStunnedCombine",
+            "UPLTargetNotStasis"
           ],
           "id": "UPLTurretCargo"
         },
@@ -452,8 +458,12 @@
         "AbilCmd": "UPLTurretCargo,Load",
         "id": "UPLTurretCargoLoad",
         "Icon": "btn-ability-terran-load",
-        "Tooltip": "Infantry unit pilots the structure.  Structure can attack while it has an active pilot.  If the structure is destroyed, the pilot is killed.",
-        "Name": "Enter Structure",
+        "Name": {
+          "enUS": "Enter Structure"
+        },
+        "Tooltip": {
+          "enUS": "Infantry unit pilots the structure.  Structure can attack while it has an active pilot.  If the structure is destroyed, the pilot is killed."
+        },
         "Hotkey": "L"
       },
       {
@@ -526,8 +536,7 @@
             "AllowPassengerSmartCmd": 1,
             "AllowSmartCmd": 1,
             "ShowCargoSize": 1,
-            "ShowStatus": 1,
-            "CargoDeath": 1
+            "ShowStatus": 1
           },
           "TargetSorts": {
             "SortArray": [
@@ -546,10 +555,10 @@
           "UnloadTransportEffect": "UPLTurretCargoTransportUnloadDummy",
           "LoadValidatorArray": [
             "RequiresUPL",
-            "TargetIsTransportable",
-            "TargetNotRooted",
-            "TargetNotStunnedCombine",
-            "TargetNotStasis"
+            "UPLTargetIsTransportable",
+            "UPLTargetNotRooted",
+            "UPLTargetNotStunnedCombine",
+            "UPLTargetNotStasis"
           ],
           "id": "UPLTurretCargo"
         },
@@ -569,8 +578,12 @@
         "AbilCmd": "UPLTurretCargo,UnloadAll",
         "id": "UPLTurretCargoUnload",
         "Icon": "btn-ability-terran-unloadall",
-        "Tooltip": "Infantry unit leaves the structure.  The structure deactivates without a pilot and cannot attack.",
-        "Name": "Exit Structure",
+        "Name": {
+          "enUS": "Exit Structure"
+        },
+        "Tooltip": {
+          "enUS": "Infantry unit leaves the structure.  The structure deactivates without a pilot and cannot attack."
+        },
         "Hotkey": "D"
       },
       {
@@ -591,14 +604,92 @@
         "AbilCmd": "Rally,Rally1",
         "id": "SetRallyPointTransport",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends unloaded units to designated point.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point"
+        },
+        "Tooltip": {
+          "enUS": "Sends unloaded units to designated point."
+        },
         "Hotkey": "Y"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/Salvage",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UPL,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UPLSalvage",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Salvage"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "BestUnit": 1,
+            "Transient": 1
+          },
+          "BehaviorArray": [
+            "SalvageShared"
+          ],
+          "ValidatorArray": [
+            "HasNoCargo"
+          ],
+          "id": "UPLSalvage"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLSalvage,On",
+        "id": "Salvage",
+        "Icon": "btn-ability-terran-salvage",
+        "Name": {
+          "enUS": "Salvage",
+          "ruRU": "Salvage"
+        },
+        "Tooltip": {
+          "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
+          "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+        },
+        "Hotkey": "V"
       }
     ]
   },
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 3,
+  "SubgroupPriority": 0,
   "GlossaryCategory": "Unit/Category/0UPLBuildings",
   "GlossaryPriority": 250,
   "HotkeyCategory": "Unit/Category/UPLUnits",
@@ -619,6 +710,7 @@
   "DeadFootprint": "Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2",
   "Icon": "btn-building-upl-uplnightjar",
+  "Model": "UPLNightjar",
   "LifeArmorIcon": "genericbuildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -626,45 +718,77 @@
       "Turret": "UPLNightjarTurret",
       "id": "UPLNightjarWeapon",
       "Icon": "btn-upgrades-upl-vehicleweapons-lvl0",
-      "Name": "GAL 8.5mm Dual Barrel Rotating Assembly",
+      "Name": {
+        "enUS": "GAL 8.5mm Dual Barrel Rotating Assembly"
+      },
       "Amount": 26,
       "AttributeBonus": {
         "Armored": 10
       },
       "Kind": "Ranged",
       "TargetFilters": "",
-      "Range": 7,
-      "Period": 1.2
+      "Range": 9,
+      "Period": 1.05
     }
   ],
   "Behaviors": [
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UPLTurretCargoEmpty"
+      "id": "UPLTurretCargoEmpty",
+      "Name": {
+        "enUS": "UPLTurretCargoEmpty"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "UPLTurretCargo",
-      "Name": "UPLTurretCargo"
+      "Name": {
+        "enUS": "UPLTurretCargo"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
+    },
+    {
+      "id": "UPLSalvage",
+      "Name": {
+        "enUS": "UPLSalvage",
+        "ruRU": "Salvage"
+      }
     }
   ],
   "$Upgrades": [
@@ -691,43 +815,86 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Tooltip": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Attack"
+      },
+      "Tooltip": {
+        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
+        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
+      }
     },
     {
       "AbilCmd": "UPLTurretCargo,Load",
       "id": "UPLTurretCargoLoad",
       "Icon": "btn-ability-terran-load",
-      "Tooltip": "Infantry unit pilots the structure.  Structure can attack while it has an active pilot.  If the structure is destroyed, the pilot is killed.",
-      "Name": "Enter Structure"
+      "Name": {
+        "enUS": "Enter Structure"
+      },
+      "Tooltip": {
+        "enUS": "Infantry unit pilots the structure.  Structure can attack while it has an active pilot.  If the structure is destroyed, the pilot is killed."
+      }
     },
     {
       "AbilCmd": "UPLTurretCargo,UnloadAll",
       "id": "UPLTurretCargoUnload",
       "Icon": "btn-ability-terran-unloadall",
-      "Tooltip": "Infantry unit leaves the structure.  The structure deactivates without a pilot and cannot attack.",
-      "Name": "Exit Structure"
+      "Name": {
+        "enUS": "Exit Structure"
+      },
+      "Tooltip": {
+        "enUS": "Infantry unit leaves the structure.  The structure deactivates without a pilot and cannot attack."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "SetRallyPointTransport",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends unloaded units to designated point.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point"
+      },
+      "Tooltip": {
+        "enUS": "Sends unloaded units to designated point."
+      }
+    },
+    {
+      "AbilCmd": "UPLSalvage,On",
+      "id": "Salvage",
+      "Icon": "btn-ability-terran-salvage",
+      "Name": {
+        "enUS": "Salvage",
+        "ruRU": "Salvage"
+      },
+      "Tooltip": {
+        "enUS": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled.",
+        "ruRU": "Salvages the structure, removing it and returning 75% of its mineral and gas value. Salvage takes <b>5</b> to finish. Warning: once Salvage is triggered, it cannot be canceled."
+      }
     }
   ]
 }

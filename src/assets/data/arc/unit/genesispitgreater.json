@@ -1,6 +1,10 @@
 {
-  "Name": "Genesis Pit",
-  "Description": "Spawns greater Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers",
+  "Name": {
+    "enUS": "Genesis Pit"
+  },
+  "Description": {
+    "enUS": "Spawns greater Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GenesisPitGreater/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GenesisPitGreater/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GenesisPitGreater/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GenesisPitGreater/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -260,8 +281,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -275,13 +302,13 @@
           "Unit": [
             "Berserker"
           ],
-          "Time": 50,
+          "Time": 49,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "Berserker"
         ],
-        "Time": 50,
+        "Time": 49,
         "Cost": {
           "Minerals": 250,
           "Vespene": 100,
@@ -298,8 +325,12 @@
         "AbilCmd": "GreaterDeepOneTrain,Train1",
         "id": "Berserker",
         "Icon": "btn-unit-zerg-primalultralisk",
-        "Tooltip": "Durable melee unit.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
-        "Name": "Spawn Berserker",
+        "Name": {
+          "enUS": "Spawn Berserker"
+        },
+        "Tooltip": {
+          "enUS": "Durable melee unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+        },
         "Hotkey": "Q"
       },
       {
@@ -313,13 +344,13 @@
           "Unit": [
             "Skyrazer"
           ],
-          "Time": 45,
+          "Time": 42,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "Skyrazer"
         ],
-        "Time": 45,
+        "Time": 42,
         "Cost": {
           "Minerals": 150,
           "Vespene": 100,
@@ -336,8 +367,12 @@
         "AbilCmd": "GreaterDeepOneTrain,Train2",
         "id": "Skyrazer",
         "Icon": "btn-unit-zerg-tyrannozor",
-        "Tooltip": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Attack Projectile</span>",
-        "Name": "Spawn Skyrazer",
+        "Name": {
+          "enUS": "Spawn Skyrazer"
+        },
+        "Tooltip": {
+          "enUS": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+        },
         "Hotkey": "W"
       },
       {
@@ -352,22 +387,22 @@
           "Unit": [
             "HandofPower"
           ],
-          "Time": 55,
+          "Time": 56,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "HandofPower"
         ],
-        "Time": 55,
+        "Time": 56,
         "Cost": {
-          "Minerals": 50,
-          "Vespene": 150,
+          "Minerals": 125,
+          "Vespene": 250,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -3
+          "Food": -4
         },
         "Row": 0,
         "Column": 2,
@@ -375,8 +410,12 @@
         "AbilCmd": "GreaterDeepOneTrain,Train3",
         "id": "HandofPower",
         "Icon": "btn-unit-zerg-impaler",
-        "Tooltip": "Caster unit. Can use Crushing Gravity and Portal. Can be upgraded to use Frenzy.<br/><br/><span style=\"color: #FFE303\">Detector</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+100% Energy Regeneration</span>",
-        "Name": "Spawn Hand of Power",
+        "Name": {
+          "enUS": "Spawn Hand of Power"
+        },
+        "Tooltip": {
+          "enUS": "Caster unit that can push enemies back with its attacks. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -386,18 +425,18 @@
               "AllowMinimap": 0
             },
             "DefaultButtonFace": "BrimstoneDemolisher",
-            "Requirements": "BrimstoneDemolisher"
+            "Requirements": "AugmentationPit"
           },
           "Unit": [
             "BrimstoneDemolisher"
           ],
-          "Time": 75,
+          "Time": 84,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "BrimstoneDemolisher"
         ],
-        "Time": 75,
+        "Time": 84,
         "Cost": {
           "Minerals": 400,
           "Vespene": 300,
@@ -414,8 +453,12 @@
         "AbilCmd": "GreaterDeepOneTrain,Train4",
         "id": "BrimstoneDemolisher",
         "Icon": "btn-unit-zerg-brakk",
-        "Tooltip": "Powerful massive unit. Deals heavy melee and ranged splash damage.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+100% Energy Regeneration<br/>Adaptive Armor</span>",
-        "Name": "Spawn Brimstone Demolisher",
+        "Name": {
+          "enUS": "Spawn Brimstone Demolisher"
+        },
+        "Tooltip": {
+          "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
+        },
         "Hotkey": "R"
       }
     ]
@@ -431,52 +474,71 @@
   "ScoreMake": 150,
   "ScoreKill": 150,
   "GlossaryPriority": 40,
-  "SubgroupPriority": 4,
+  "SubgroupPriority": 33,
   "Icon": "wireframe-zerg-broodlingnest",
+  "Model": "PrimalBaseDefense",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineage"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "GenesisPit",
-      "Name": "Genesis Pit"
+      "Name": {
+        "enUS": "Genesis Pit"
+      }
     },
     {
       "id": "GenesisPitTrain",
-      "Name": "Genesis Pit - Train"
+      "Name": {
+        "enUS": "Genesis Pit - Train"
+      }
     },
     {
       "id": "GreaterDeepOneTrain",
-      "Name": "Greater Deep One - Train"
+      "Name": {
+        "enUS": "Greater Deep One - Train"
+      }
     }
   ],
   "$Upgrades": [
-    "NotGenesisPit1",
-    "GenesisPitGreater",
     "GreaterDeepOneBuild",
+    "GenesisPitGreater",
+    "NotGenesisPit1",
     "DragonPlateArmorLevel1",
     "GenesisPitGreater",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [
@@ -497,50 +559,84 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "GreaterDeepOneTrain,Train1",
       "id": "Berserker",
       "Icon": "btn-unit-zerg-primalultralisk",
-      "Tooltip": "Durable melee unit.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
-      "Name": "Spawn Berserker"
+      "Name": {
+        "enUS": "Spawn Berserker"
+      },
+      "Tooltip": {
+        "enUS": "Durable melee unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+      }
     },
     {
       "AbilCmd": "GreaterDeepOneTrain,Train2",
       "id": "Skyrazer",
       "Icon": "btn-unit-zerg-tyrannozor",
-      "Tooltip": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Attack Projectile</span>",
-      "Name": "Spawn Skyrazer"
+      "Name": {
+        "enUS": "Spawn Skyrazer"
+      },
+      "Tooltip": {
+        "enUS": "Ranged unit. Projectiles may retarget. Powerful anti-air attack.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>50</b> Life<br/>+1 Attack Projectile</span>"
+      }
     },
     {
       "AbilCmd": "GreaterDeepOneTrain,Train3",
       "id": "HandofPower",
       "Icon": "btn-unit-zerg-impaler",
-      "Tooltip": "Caster unit. Can use Crushing Gravity and Portal. Can be upgraded to use Frenzy.<br/><br/><span style=\"color: #FFE303\">Detector</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+100% Energy Regeneration</span>",
-      "Name": "Spawn Hand of Power"
+      "Name": {
+        "enUS": "Spawn Hand of Power"
+      },
+      "Tooltip": {
+        "enUS": "Caster unit that can push enemies back with its attacks. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+      }
     },
     {
       "AbilCmd": "GreaterDeepOneTrain,Train4",
       "id": "BrimstoneDemolisher",
       "Icon": "btn-unit-zerg-brakk",
-      "Tooltip": "Powerful massive unit. Deals heavy melee and ranged splash damage.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+100% Energy Regeneration<br/>Adaptive Armor</span>",
-      "Name": "Spawn Brimstone Demolisher"
+      "Name": {
+        "enUS": "Spawn Brimstone Demolisher"
+      },
+      "Tooltip": {
+        "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
+      }
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "Name": "Arsenal",
-  "Description": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
+  "Name": {
+    "enUS": "Arsenal",
+    "ruRU": "Цейхгауз"
+  },
+  "Description": {
+    "enUS": "Provides Logistics Capacity.<br/>Logistics allow you to deploy additional units.<br/>Can be transformed into a variety of defense towers.",
+    "ruRU": "Расширяет Возможности логистики.<br/>Возможности логистики увеличивают предел одновременно развёрнутых боевых единиц.<br/>Может быть улучшен до различных оборонительных сооружений."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 400,
   "LifeMax": 400,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Arsenal/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Arsenal/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Arsenal/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Arsenal/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -175,8 +186,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -218,8 +235,14 @@
         "AbilCmd": "UpgradeToInfusionTower,Cancel",
         "id": "CancelUEDMorph",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отмена"
+        },
+        "Tooltip": {
+          "enUS": "Cancels the mutation order, returning the structure to its original state.",
+          "ruRU": "Отменить запрос улучшения."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -261,8 +284,14 @@
         "AbilCmd": "UpgradeToSuppressionTower,Cancel",
         "id": "CancelUEDMorph",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отмена"
+        },
+        "Tooltip": {
+          "enUS": "Cancels the mutation order, returning the structure to its original state.",
+          "ruRU": "Отменить запрос улучшения."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -304,8 +333,14 @@
         "AbilCmd": "UpgradeToMissileTower,Cancel",
         "id": "CancelUEDMorph",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отмена"
+        },
+        "Tooltip": {
+          "enUS": "Cancels the mutation order, returning the structure to its original state.",
+          "ruRU": "Отменить запрос улучшения."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -333,7 +368,7 @@
         "Unit": "HeavyTower",
         "Cost": {
           "Minerals": 225,
-          "Vespene": 25,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -347,8 +382,14 @@
         "AbilCmd": "UpgradeToHeavyTower,Cancel",
         "id": "CancelUEDMorph",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отмена"
+        },
+        "Tooltip": {
+          "enUS": "Cancels the mutation order, returning the structure to its original state.",
+          "ruRU": "Отменить запрос улучшения."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -390,8 +431,14 @@
         "AbilCmd": "UpgradeToMissileTower,Execute",
         "id": "MissileTower",
         "Icon": "btn-building-missileturretbronze",
-        "Tooltip": "Anti-air defensive structure.<br/><br/><span style=\"color: #FFE303\">Detector<br/><c val=\"#ColorAttackInfo\">Can attack air units.</span>",
-        "Name": "Upgrade to Missile Tower",
+        "Name": {
+          "enUS": "Upgrade to Missile Tower",
+          "ruRU": "Улучшить до Ракетной башни"
+        },
+        "Tooltip": {
+          "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: FFE303\">Detector<br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
+          "ruRU": "Строение противовоздушной обороны, эффективная против групповых целей.<br/><br/><span style=\"color: FFE303\">Детектор<br/><span style=\"color: #ffff8a\">Может атаковать воздушные цели.</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -433,8 +480,14 @@
         "AbilCmd": "UpgradeToSuppressionTower,Execute",
         "id": "MissileSuppressionTower",
         "Icon": "btn-building-laserturretbronze",
-        "Tooltip": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Upgrade to Suppression Tower",
+        "Name": {
+          "enUS": "Upgrade to Suppression Tower",
+          "ruRU": "Улучшить до Башни подавления"
+        },
+        "Tooltip": {
+          "enUS": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Оборонительное сооружение, эффективное против легкобронированных наземных целей.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "S"
       },
       {
@@ -462,7 +515,7 @@
         "Unit": "HeavyTower",
         "Cost": {
           "Minerals": 225,
-          "Vespene": 25,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -476,8 +529,14 @@
         "AbilCmd": "UpgradeToHeavyTower,Execute",
         "id": "HeavyTower",
         "Icon": "btn-building-guardianturretbronze",
-        "Tooltip": "Anti-ground defensive structure, effective against armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Upgrade to Heavy Tower",
+        "Name": {
+          "enUS": "Upgrade to Heavy Tower",
+          "ruRU": "Улучшить до Орудийной башни"
+        },
+        "Tooltip": {
+          "enUS": "Anti-ground defensive structure, effective against armored targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Оборонительное сооружение, эффективное против тяжелобронированных наземных целей.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -519,8 +578,14 @@
         "AbilCmd": "UpgradeToInfusionTower,Execute",
         "id": "InfusionTower",
         "Icon": "btn-structure-ued-hivemindemulator",
-        "Tooltip": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: #FFE303\">There is a detection function.</span>",
-        "Name": "Upgrade to Infusion Tower",
+        "Name": {
+          "enUS": "Upgrade to Infusion Tower",
+          "ruRU": "Улучшить до Башни восстановления"
+        },
+        "Tooltip": {
+          "enUS": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: FFE303\">There is a detection function.</span>",
+          "ruRU": "Строение поддержки. Восстанавливает здоровье всех находящихся поблизости союзников.<br/><br/><span style=\"color: FFE303\">Есть функция детекции.</span>"
+        },
         "Hotkey": "F"
       }
     ]
@@ -539,39 +604,60 @@
   "CargoSize": 8,
   "id": "Arsenal",
   "Icon": "btn-building-supplydepotbronze",
+  "Model": "NCSupplyDepot",
   "LifeArmorIcon": "btn-upgrade-stetmann-mechagroundplating-level1",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDConstructionVisionDebuff"
+      "id": "UEDConstructionVisionDebuff",
+      "Name": {
+        "enUS": "UED Construction - Vision Debuff"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "UpgradeToInfusionTower",
-      "Name": "Morph Building (Arsenal-> Infusion Tower)"
+      "Name": {
+        "enUS": "Morph Building (Arsenal-> Infusion Tower)",
+        "ruRU": "Morph Building (Arsenal-> Infusion Tower)"
+      }
     },
     {
       "id": "UpgradeToMissileTower",
-      "Name": "Morph Building (Arsenal-> MissileTower)"
+      "Name": {
+        "enUS": "Morph Building (Arsenal-> MissileTower)",
+        "ruRU": "Morph Building (Arsenal-> MissileTower)"
+      }
     },
     {
       "id": "UpgradeToSuppressionTower",
-      "Name": "Morph Building (Arsenal-> SuppressionTower)"
+      "Name": {
+        "enUS": "Morph Building (Arsenal-> SuppressionTower)",
+        "ruRU": "Morph Building (Arsenal-> SuppressionTower)"
+      }
     },
     {
       "id": "UpgradeToHeavyTower",
-      "Name": "Morph Building (Arsenal-> HeavyTower)"
+      "Name": {
+        "enUS": "Morph Building (Arsenal-> HeavyTower)",
+        "ruRU": "Morph Building (Arsenal-> HeavyTower)"
+      }
     }
   ],
   "$Upgrades": [
     "BeaconBuild",
     "Arsenal",
+    "UEDPlacementCheckSuplyStructure",
     "CountUnitArsenalCompleteOnly774868845TechTreeCheat",
     "UEDCalldownStructure",
     "Arsenal",
@@ -598,72 +684,125 @@
   ],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "UpgradeToInfusionTower,Cancel",
       "id": "CancelUEDMorph",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отмена"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the mutation order, returning the structure to its original state.",
+        "ruRU": "Отменить запрос улучшения."
+      }
     },
     {
       "AbilCmd": "UpgradeToSuppressionTower,Cancel",
       "id": "CancelUEDMorph",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отмена"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the mutation order, returning the structure to its original state.",
+        "ruRU": "Отменить запрос улучшения."
+      }
     },
     {
       "AbilCmd": "UpgradeToMissileTower,Cancel",
       "id": "CancelUEDMorph",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отмена"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the mutation order, returning the structure to its original state.",
+        "ruRU": "Отменить запрос улучшения."
+      }
     },
     {
       "AbilCmd": "UpgradeToHeavyTower,Cancel",
       "id": "CancelUEDMorph",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the mutation order, returning the structure to its original state.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отмена"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the mutation order, returning the structure to its original state.",
+        "ruRU": "Отменить запрос улучшения."
+      }
     },
     {
       "AbilCmd": "UpgradeToMissileTower,Execute",
       "id": "MissileTower",
       "Icon": "btn-building-missileturretbronze",
-      "Tooltip": "Anti-air defensive structure.<br/><br/><span style=\"color: #FFE303\">Detector<br/><c val=\"#ColorAttackInfo\">Can attack air units.</span>",
-      "Name": "Upgrade to Missile Tower"
+      "Name": {
+        "enUS": "Upgrade to Missile Tower",
+        "ruRU": "Улучшить до Ракетной башни"
+      },
+      "Tooltip": {
+        "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: FFE303\">Detector<br/><span style=\"color: #ffff8a\">Can attack air units.</span>",
+        "ruRU": "Строение противовоздушной обороны, эффективная против групповых целей.<br/><br/><span style=\"color: FFE303\">Детектор<br/><span style=\"color: #ffff8a\">Может атаковать воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "UpgradeToSuppressionTower,Execute",
       "id": "MissileSuppressionTower",
       "Icon": "btn-building-laserturretbronze",
-      "Tooltip": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Upgrade to Suppression Tower"
+      "Name": {
+        "enUS": "Upgrade to Suppression Tower",
+        "ruRU": "Улучшить до Башни подавления"
+      },
+      "Tooltip": {
+        "enUS": "Anti-ground defensive structure, effective against lightly-armored targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Оборонительное сооружение, эффективное против легкобронированных наземных целей.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "UpgradeToHeavyTower,Execute",
       "id": "HeavyTower",
       "Icon": "btn-building-guardianturretbronze",
-      "Tooltip": "Anti-ground defensive structure, effective against armored targets.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Upgrade to Heavy Tower"
+      "Name": {
+        "enUS": "Upgrade to Heavy Tower",
+        "ruRU": "Улучшить до Орудийной башни"
+      },
+      "Tooltip": {
+        "enUS": "Anti-ground defensive structure, effective against armored targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Оборонительное сооружение, эффективное против тяжелобронированных наземных целей.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "UpgradeToInfusionTower,Execute",
       "id": "InfusionTower",
       "Icon": "btn-structure-ued-hivemindemulator",
-      "Tooltip": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: #FFE303\">There is a detection function.</span>",
-      "Name": "Upgrade to Infusion Tower"
+      "Name": {
+        "enUS": "Upgrade to Infusion Tower",
+        "ruRU": "Улучшить до Башни восстановления"
+      },
+      "Tooltip": {
+        "enUS": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: FFE303\">There is a detection function.</span>",
+        "ruRU": "Строение поддержки. Восстанавливает здоровье всех находящихся поблизости союзников.<br/><br/><span style=\"color: FFE303\">Есть функция детекции.</span>"
+      }
     }
   ]
 }

@@ -21,8 +21,6 @@ export class UnitStatsComponent implements AfterContentInit {
 
   constructor(public scdata: SCDataService ) {}
 
-
-
   scene: any
   viewerElement: any
   ngAfterContentInit(): void {
@@ -30,7 +28,7 @@ export class UnitStatsComponent implements AfterContentInit {
       var nameElement = document.getElementById('name')
       var loadingElement = document.getElementById('loading')
       this.viewerElement = document.getElementById('viewer-inner')
-      this.scene = modelPlayer.prepareScene(this.viewerElement, {width: 200, height: 250, background: '#3a4d63'})
+      this.scene = modelPlayer.prepareScene(this.viewerElement, {width: 400, height: 250, background: '#3a4d63'})
     },50)
   }
 
@@ -56,8 +54,6 @@ export class UnitStatsComponent implements AfterContentInit {
     // fullScreenButton.addEventListener('click', function () {
     //   modelPlayer.goFullScreen(viewerElement)
     // })
-
-
     modelPlayer.clearScene(this.scene)
     modelPlayer.resetCamera(this.scene)
     // modelPlayer.showGrid(this.scene)
@@ -72,32 +68,5 @@ export class UnitStatsComponent implements AfterContentInit {
     else{
       document.getElementById("viewer").style.display =  "none"
     }
-
   }
-  fields = [
-    // {title: "ObjectFamily", get: (entity: any) => entity.EditorCategories?.ObjectFamily},
-    // {title: "ObjectType", get: (entity: any) => entity.EditorCategories?.ObjectType},
-    // {title: "Race", field: "Race"},
-    // {title: "LifeMax", field: "LifeMax"},
-    // {title: "LifeRegenRate", field: "LifeRegenRate"},
-    {title: "Radius", field: "Radius"},
-    {title: "LifeRegenDelay", field: "LifeRegenDelay"},
-
-    // {title: "ShieldsMax", field: "ShieldsMax"},
-    // {title: "ShieldRegenRate", field: "ShieldRegenRate"},
-    {title: "ShieldRegenDelay", field: "ShieldRegenDelay"},
-    // {title: "EnergyStart", field: "EnergyStart"},
-    // {title: "EnergyMax", field: "EnergyMax"},
-    // {title: "EnergyRegenRate", field: "EnergyRegenRate"},
-    {title: "Speed", field: "Speed"},
-    {title: "Acceleration", field: "Acceleration"},
-    {title: "SpeedMultiplierCreep", field: "SpeedMultiplierCreep"},
-    {title: "CargoSize", field: "CargoSize"},
-    {title: "Sight", field: "Sight"},
-    {title: "Plane", get: (entity: any) => entity.PlaneArray.join(",")},
-    // {title: "Footprint", field: "Footprint"},
-    {title: "Footprint", field: "PlacementFootprint"},
-    // {title: "Attributes", get: (entity: any)=> entity.Attributes?.join(' - ')},
-  ]
-
 }

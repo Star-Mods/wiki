@@ -1,6 +1,12 @@
 {
-  "Name": "Munitions Factory",
-  "Description": "Vehicle support structure. Provides equipment authorizations for basic vehicles.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Crimson Eyes<br/>- Napoleon MBT<br/>- Typhoon LMT",
+  "Name": {
+    "enUS": "Munitions Factory",
+    "ruRU": "Фабрика боеприпасов"
+  },
+  "Description": {
+    "enUS": "Vehicle support structure. Provides equipment authorizations for basic vehicles.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Crimson Eyes<br/>- Napoleon MBT<br/>- Typhoon LMT",
+    "ruRU": "Вспомогательное сооружение, обслуживающее технику ОЗД.<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- Рубиновое око<br/>- ОБТ «Наполеон» <br/>- ЛРТ «Тайфун»"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1100,
   "LifeMax": 1100,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MunitionsFactory/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MunitionsFactory/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MunitionsFactory/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MunitionsFactory/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -171,8 +182,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -235,8 +252,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -273,8 +296,14 @@
         "AbilCmd": "ArmoryResearch2,Research4",
         "id": "AuthorizeSalvoFiringPatterns",
         "Icon": "btn-ability-hornerhan-viking-missileupgrade",
-        "Tooltip": "New firing protocols for <span style=\"color: #FFFF80\">Typhoon LMT</span> allow to increase area damage to enemy units increased to 100%.",
-        "Name": "Authorization Request: Salvo Firing Patterns",
+        "Name": {
+          "enUS": "Authorization Request: Salvo Firing Patterns",
+          "ruRU": "Запрос авторизации: Протокол залпового огня"
+        },
+        "Tooltip": {
+          "enUS": "New firing protocols for <span style=\"color: FFFF80\">Typhoon LMT</span> allow to increase area damage to enemy units increased to 60%.",
+          "ruRU": "Новые протоколы ведения огня для <span style=\"color: FFFF80\">ЛРТ «Тайфун»</span> позволяют увеличить урон по площади по вражеским целям до 100%."
+        },
         "Hotkey": "S"
       },
       {
@@ -310,10 +339,58 @@
         "Type": "AbilCmd",
         "AbilCmd": "ArmoryResearch2,Research1",
         "id": "ButtonAuthorizeChargeNapoleon",
-        "Icon": "btn-ability-protoss-voidstasis",
-        "Tooltip": "Allows <span style=\"color: #ffff8a\">Napoleon</span> accumulate special projectiles until he attacks. Each is spent when fired, but increases the attack range by 1 and the attack speed by 0.5. Maximum 6 shells.",
-        "Name": "Authorization Request: Speed projectile",
+        "Icon": "uedspeedprojectile",
+        "Name": {
+          "enUS": "Authorization Request: Speed projectile",
+          "ruRU": "Запрос авторизации: Скоростной снаряд"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Napoleon</span> accumulate special projectiles until he attacks. Each projectile is spent when fired, but increases the attack range by 1 and the attack speed by 25%. Can store 6 projectiles at maximum.",
+          "ruRU": "Позволяет <span style=\"color: ffff8a\">Наполеону</span> накапливать специальные снаряды пока он не атакует. Каждый тратится при выстреле но увеличивает дальность атаки на 1 и скорость атаки на 0.5. Максимум 6 снарядов."
+        },
         "Hotkey": "E"
+      },
+      {
+        "Upgrade": "UEDMagneticStablizer",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UEDAuthorizeMagneticStablizer",
+            "Requirements": "UEDCountMagneticStablizerUpgrade"
+          },
+          "Resource": {
+            "Minerals": 200,
+            "Vespene": 200
+          },
+          "Time": 84,
+          "Upgrade": "UEDMagneticStablizer"
+        },
+        "Time": 84,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 200,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "MilitaryResearchStationResearch,Research9",
+        "id": "UEDAuthorizeMagneticStablizer",
+        "Icon": "magneticstablizer2",
+        "Name": {
+          "enUS": "Authorize Magnetic Stablizer"
+        },
+        "Tooltip": {
+          "enUS": "The magnetic force of a black hole increases the movement speed of <span style=\"color: FFFF80\">Napoleon MBT</span> by 10% and stabilizes the turret to enable attack while moving."
+        },
+        "Hotkey": "D"
       },
       {
         "Upgrade": "UEDUpgradeGoliath",
@@ -329,10 +406,10 @@
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 115,
+          "Time": 84,
           "Upgrade": "UEDUpgradeGoliath"
         },
-        "Time": 115,
+        "Time": 84,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -344,14 +421,64 @@
           "Food": 0
         },
         "Row": 0,
-        "Column": 2,
+        "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "ArmoryResearch2,Research5",
         "id": "UEDButtonUpgraideGoliath",
-        "Icon": "btn-techupgrade-terran-multilocktargetingsystem",
-        "Tooltip": "Increases the range of Hallo Rockets weapons  the <span style=\"color: #FFFF80\">Spartan AAC</span> by 3.",
-        "Name": "Authorization Request: Long-range missiles",
+        "Icon": "uedspartanaaclongrangelauncher",
+        "Name": {
+          "enUS": "Authorization Request: Long-range missiles",
+          "ruRU": "Запрос авторизации: Дальнобойные ракеты"
+        },
+        "Tooltip": {
+          "enUS": "Increases the range of Hallo Rockets weapons  the <span style=\"color: FFFF80\">Spartan AAC</span> by 3.",
+          "ruRU": "Увеличивает дальность стрельбы Ракет «Галло» <span style=\"color: FFFF80\">ПВС «Спартанец»</span> на 3."
+        },
         "Hotkey": "R"
+      },
+      {
+        "Upgrade": "UpgradeBeataniumGenerator",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UpgradeCrimsonEyeEnergy",
+            "Requirements": "CrimsonEyeStarWind"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 100,
+          "Upgrade": "UpgradeBeataniumGenerator"
+        },
+        "Time": 100,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "MilitaryResearchStationResearch,Research2",
+        "id": "UpgradeCrimsonEyeEnergy",
+        "Icon": "uedcrimsoneyebeataniumgenerator",
+        "Name": {
+          "enUS": "Authorization request: Beatanium Generator",
+          "ruRU": "Запрос авторизации: Беатаниевый генератор "
+        },
+        "Tooltip": {
+          "enUS": "Increases the energy recovery rate of the <span style=\"color: FFFF80\"> Crimson Eye</span> by 100%.",
+          "ruRU": "Увеличивает скорость восстановления энергии <span style=\"color: FFFF80\">Рубиновому оку</span> на 50%."
+        },
+        "Hotkey": "N"
       }
     ]
   },
@@ -370,30 +497,47 @@
   "Facing": 315,
   "id": "MunitionsFactory",
   "Icon": "btn-ued-munitions-factory",
+  "Model": "UED_Armory",
   "LifeArmorIcon": "btn-upgrade-stetmann-mechagroundplating-level1",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDConstructionVisionDebuff"
+      "id": "UEDConstructionVisionDebuff",
+      "Name": {
+        "enUS": "UED Construction - Vision Debuff"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "ArmoryResearch2",
-      "Name": "Research (Armory)"
+      "Name": {
+        "enUS": "Research (Armory)",
+        "ruRU": "Research (Armory)"
+      }
     },
     {
       "id": "MilitaryResearchStationResearch",
-      "Name": "Research (MilitaryResearchStation)"
+      "Name": {
+        "enUS": "Research (MilitaryResearchStation)",
+        "ruRU": "Research (MilitaryResearchStation)"
+      }
     }
   ],
   "$Upgrades": [
@@ -412,49 +556,104 @@
   "$Research": [
     "SalvoFiringPattern",
     "UEDSpeedProjectile",
-    "UEDUpgradeGoliath"
+    "UEDMagneticStablizer",
+    "UEDUpgradeGoliath",
+    "UpgradeBeataniumGenerator"
   ],
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch2,Research4",
       "id": "AuthorizeSalvoFiringPatterns",
       "Icon": "btn-ability-hornerhan-viking-missileupgrade",
-      "Tooltip": "New firing protocols for <span style=\"color: #FFFF80\">Typhoon LMT</span> allow to increase area damage to enemy units increased to 100%.",
-      "Name": "Authorization Request: Salvo Firing Patterns"
+      "Name": {
+        "enUS": "Authorization Request: Salvo Firing Patterns",
+        "ruRU": "Запрос авторизации: Протокол залпового огня"
+      },
+      "Tooltip": {
+        "enUS": "New firing protocols for <span style=\"color: FFFF80\">Typhoon LMT</span> allow to increase area damage to enemy units increased to 60%.",
+        "ruRU": "Новые протоколы ведения огня для <span style=\"color: FFFF80\">ЛРТ «Тайфун»</span> позволяют увеличить урон по площади по вражеским целям до 100%."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch2,Research1",
       "id": "ButtonAuthorizeChargeNapoleon",
-      "Icon": "btn-ability-protoss-voidstasis",
-      "Tooltip": "Allows <span style=\"color: #ffff8a\">Napoleon</span> accumulate special projectiles until he attacks. Each is spent when fired, but increases the attack range by 1 and the attack speed by 0.5. Maximum 6 shells.",
-      "Name": "Authorization Request: Speed projectile"
+      "Icon": "uedspeedprojectile",
+      "Name": {
+        "enUS": "Authorization Request: Speed projectile",
+        "ruRU": "Запрос авторизации: Скоростной снаряд"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Napoleon</span> accumulate special projectiles until he attacks. Each projectile is spent when fired, but increases the attack range by 1 and the attack speed by 25%. Can store 6 projectiles at maximum.",
+        "ruRU": "Позволяет <span style=\"color: ffff8a\">Наполеону</span> накапливать специальные снаряды пока он не атакует. Каждый тратится при выстреле но увеличивает дальность атаки на 1 и скорость атаки на 0.5. Максимум 6 снарядов."
+      }
+    },
+    {
+      "AbilCmd": "MilitaryResearchStationResearch,Research9",
+      "id": "UEDAuthorizeMagneticStablizer",
+      "Icon": "magneticstablizer2",
+      "Name": {
+        "enUS": "Authorize Magnetic Stablizer"
+      },
+      "Tooltip": {
+        "enUS": "The magnetic force of a black hole increases the movement speed of <span style=\"color: FFFF80\">Napoleon MBT</span> by 10% and stabilizes the turret to enable attack while moving."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch2,Research5",
       "id": "UEDButtonUpgraideGoliath",
-      "Icon": "btn-techupgrade-terran-multilocktargetingsystem",
-      "Tooltip": "Increases the range of Hallo Rockets weapons  the <span style=\"color: #FFFF80\">Spartan AAC</span> by 3.",
-      "Name": "Authorization Request: Long-range missiles"
+      "Icon": "uedspartanaaclongrangelauncher",
+      "Name": {
+        "enUS": "Authorization Request: Long-range missiles",
+        "ruRU": "Запрос авторизации: Дальнобойные ракеты"
+      },
+      "Tooltip": {
+        "enUS": "Increases the range of Hallo Rockets weapons  the <span style=\"color: FFFF80\">Spartan AAC</span> by 3.",
+        "ruRU": "Увеличивает дальность стрельбы Ракет «Галло» <span style=\"color: FFFF80\">ПВС «Спартанец»</span> на 3."
+      }
+    },
+    {
+      "AbilCmd": "MilitaryResearchStationResearch,Research2",
+      "id": "UpgradeCrimsonEyeEnergy",
+      "Icon": "uedcrimsoneyebeataniumgenerator",
+      "Name": {
+        "enUS": "Authorization request: Beatanium Generator",
+        "ruRU": "Запрос авторизации: Беатаниевый генератор "
+      },
+      "Tooltip": {
+        "enUS": "Increases the energy recovery rate of the <span style=\"color: FFFF80\"> Crimson Eye</span> by 100%.",
+        "ruRU": "Увеличивает скорость восстановления энергии <span style=\"color: FFFF80\">Рубиновому оку</span> на 50%."
+      }
     }
   ]
 }

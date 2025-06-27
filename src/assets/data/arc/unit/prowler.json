@@ -1,6 +1,12 @@
 {
-  "Name": "Prowler",
-  "Description": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
+  "Name": {
+    "enUS": "Prowler",
+    "ruRU": "Бродяга"
+  },
+  "Description": {
+    "enUS": "Quick specialist unit. Can use Acid Nest and Blinding Burst.",
+    "ruRU": "Быстрый специалист. Может использовать ядовитые мины и ослепляющий взрыв."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,13 +18,16 @@
   "ResourceType": "Unknown",
   "LifeStart": 125,
   "LifeMax": 125,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
   "Radius": 0.6875,
   "SeparationRadius": 0.6875,
-  "MinimapRadius": 0.75,
+  "MinimapRadius": 0.6875,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Prowler/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Prowler/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Prowler/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Prowler/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -176,8 +187,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -250,8 +267,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -340,8 +363,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -430,8 +459,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -505,8 +540,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -595,8 +636,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -732,8 +779,14 @@
         "AbilCmd": "BlindingBurst,Execute",
         "id": "BlindingBurst",
         "Icon": "btn-upgrade-zagara-bilebombardment",
-        "Tooltip": "Blinds, dazes and silences enemy ground units in an area. Reveals cloaked and burrowed units. The effect lasts <b>4</b> seconds. Will be casted upon death if available.",
-        "Name": "Blinding Burst",
+        "Name": {
+          "enUS": "Blinding Burst",
+          "ruRU": "Ослепляющий взрыв"
+        },
+        "Tooltip": {
+          "enUS": "Blinds, dazes and silences enemy ground units in an area. Reveals cloaked and burrowed units. The effect lasts <b>4</b> seconds. Will be casted upon death if available.",
+          "ruRU": "Ослепляет всех врагов на средней дистанции, отключает их зрение, атаки и способности. Длится <b>4</b> секунд. Будет использовано после смерти еденицы, если доступно."
+        },
         "Hotkey": "R"
       },
       {
@@ -751,10 +804,10 @@
             "TimeUse": 20
           },
           "Unit": "AcidNest",
-          "Time": 10
+          "Time": 7
         },
         "Unit": "AcidNest",
-        "Time": 10,
+        "Time": 7,
         "Cost": {
           "Minerals": 10,
           "Vespene": 5,
@@ -771,8 +824,14 @@
         "AbilCmd": "PlaceAcidNest,Build1",
         "id": "PlaceAcidNest",
         "Icon": "btn-ability-xayid-prowlerexplosive",
-        "Tooltip": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
-        "Name": "Place Acid Nest",
+        "Name": {
+          "enUS": "Place Acid Nest",
+          "ruRU": "Разместить ядовитую мину"
+        },
+        "Tooltip": {
+          "enUS": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
+          "ruRU": "<span style=\"color: FFFF80\">Ядовитая мина</span> взрывается нанося 50 единиц урона вражеским наземным единицам, которые коснулись её. Наносит 35 единиц урона врагам вокруг себя."
+        },
         "Hotkey": "C"
       },
       {
@@ -791,8 +850,14 @@
         "Type": "Passive",
         "id": "ResidualAcid",
         "Icon": "btn-upgrade-xayid-residualacid",
-        "Tooltip": "<span style=\"color: #FFFF80\">Acid Nests</span> leave behind a puddle of acid upon death, dealing <b>10</b> damage per second, and slowing enemy movement speed by 30% in an area. Lasts <b>20</b> seconds.",
-        "Name": "Residual Acid"
+        "Name": {
+          "enUS": "Residual Acid",
+          "ruRU": "Остаточная кислота"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Acid Nests</span> leave behind a puddle of acid upon death, dealing <b>16</b> damage per second, and slowing enemy movement speed by 30% in an area. Lasts <b>13</b> seconds.",
+          "ruRU": "<span style=\"color: FFFF80\">Ядовитые мины</span> оставляют после себя лужу кислоты, наносящую <b>16</b> урона в секунду, замедляя противников в области на 30%. Длится <b>13</b> секунд."
+        }
       }
     ]
   },
@@ -831,30 +896,48 @@
   "KillDisplay": "Always",
   "GlossaryAlias": "Prowler",
   "Icon": "btn-unit-xayid-prowler",
+  "Model": "Prowler",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "ProwlerFate"
+      "id": "ProwlerFate",
+      "Name": {
+        "enUS": "Prowler Fate",
+        "ruRU": "Prowler Fate"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "BlindingBurst",
-      "Name": "Blinding Burst"
+      "Name": {
+        "enUS": "Blinding Burst",
+        "ruRU": "Blinding Burst"
+      }
     },
     {
       "id": "PlaceAcidNest",
-      "Name": "Place Acid Nest"
+      "Name": {
+        "enUS": "Place Acid Nest",
+        "ruRU": "Place Acid Nest"
+      }
     }
   ],
   "$Upgrades": [
@@ -884,57 +967,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "BlindingBurst,Execute",
       "id": "BlindingBurst",
       "Icon": "btn-upgrade-zagara-bilebombardment",
-      "Tooltip": "Blinds, dazes and silences enemy ground units in an area. Reveals cloaked and burrowed units. The effect lasts <b>4</b> seconds. Will be casted upon death if available.",
-      "Name": "Blinding Burst"
+      "Name": {
+        "enUS": "Blinding Burst",
+        "ruRU": "Ослепляющий взрыв"
+      },
+      "Tooltip": {
+        "enUS": "Blinds, dazes and silences enemy ground units in an area. Reveals cloaked and burrowed units. The effect lasts <b>4</b> seconds. Will be casted upon death if available.",
+        "ruRU": "Ослепляет всех врагов на средней дистанции, отключает их зрение, атаки и способности. Длится <b>4</b> секунд. Будет использовано после смерти еденицы, если доступно."
+      }
     },
     {
       "AbilCmd": "PlaceAcidNest,Build1",
       "id": "PlaceAcidNest",
       "Icon": "btn-ability-xayid-prowlerexplosive",
-      "Tooltip": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
-      "Name": "Place Acid Nest"
+      "Name": {
+        "enUS": "Place Acid Nest",
+        "ruRU": "Разместить ядовитую мину"
+      },
+      "Tooltip": {
+        "enUS": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
+        "ruRU": "<span style=\"color: FFFF80\">Ядовитая мина</span> взрывается нанося 50 единиц урона вражеским наземным единицам, которые коснулись её. Наносит 35 единиц урона врагам вокруг себя."
+      }
     }
   ]
 }

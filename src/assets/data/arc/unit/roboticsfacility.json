@@ -1,6 +1,12 @@
 {
-  "Name": "Robotics Facility",
-  "Description": "Warps in Protoss robotic units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Observers<br/>- Warp Prisms<br/>- Immortals",
+  "Name": {
+    "enUS": "Robotics Facility",
+    "ruRU": "Robotics Facility"
+  },
+  "Description": {
+    "enUS": "Warps in Protoss robotic units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Observers<br/>- Warp Prisms<br/>- Immortals",
+    "ruRU": "Warps in Protoss robotic units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Observers<br/>- Warp Prisms<br/>- Immortals"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 450,
   "LifeMax": 450,
-  "LifeArmorName": "Protoss Armor",
+  "LifeArmorName": {
+    "enUS": "Synoid Armor",
+    "ruRU": "Protoss Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "RoboticsFacility/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "RoboticsFacility/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "RoboticsFacility/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "RoboticsFacility/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -90,7 +101,10 @@
   "ShieldsStart": 450,
   "ShieldsMax": 450,
   "ShieldRegenRate": 2,
-  "ShieldArmorName": "Protoss Plasma Shields",
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
   "AttackTargetPriority": 11,
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
@@ -171,8 +185,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -235,8 +255,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -273,8 +299,14 @@
         "AbilCmd": "RoboticsFacilityTrain,Train3",
         "id": "Colossus",
         "Icon": "btn-unit-protoss-colossus",
-        "Tooltip": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Warp In Colossus",
+        "Name": {
+          "enUS": "Warp In Colossus",
+          "ruRU": "Warp In Colossus"
+        },
+        "Tooltip": {
+          "enUS": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -311,8 +343,14 @@
         "AbilCmd": "RoboticsFacilityTrain,Train2",
         "id": "Observer",
         "Icon": "btn-unit-protoss-observer",
-        "Tooltip": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Warp In Observer",
+        "Name": {
+          "enUS": "Warp In Observer",
+          "ruRU": "Warp In Observer"
+        },
+        "Tooltip": {
+          "enUS": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        },
         "Hotkey": "B"
       },
       {
@@ -333,8 +371,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -371,8 +415,14 @@
         "AbilCmd": "RoboticsFacilityTrain,Train1",
         "id": "WarpPrism",
         "Icon": "btn-unit-protoss-warpprism",
-        "Tooltip": "Flying transport. Can load and unload units. Can also deploy to create a power field.",
-        "Name": "Warp In Warp Prism",
+        "Name": {
+          "enUS": "Warp In Warp Prism",
+          "ruRU": "Warp In Warp Prism"
+        },
+        "Tooltip": {
+          "enUS": "Flying transport. Can load and unload units. Can also deploy to create a power field.",
+          "ruRU": "Flying transport. Can load and unload units. Can also deploy to create a power field."
+        },
         "Hotkey": "A"
       },
       {
@@ -393,7 +443,7 @@
         ],
         "Time": 55,
         "Cost": {
-          "Minerals": 275,
+          "Minerals": 250,
           "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
@@ -408,8 +458,14 @@
         "AbilCmd": "RoboticsFacilityTrain,Train4",
         "id": "Immortal",
         "Icon": "btn-unit-protoss-immortal",
-        "Tooltip": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Warp In Immortal",
+        "Name": {
+          "enUS": "Warp In Immortal",
+          "ruRU": "Warp In Immortal"
+        },
+        "Tooltip": {
+          "enUS": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        },
         "Hotkey": "I"
       }
     ]
@@ -434,31 +490,49 @@
   "ShieldRegenDelay": 10,
   "id": "RoboticsFacility",
   "Icon": "btn-building-protoss-roboticsfacility",
+  "Model": "RoboticsFacilityEx1",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon"
+      "Icon": "btn-building-protoss-pylon",
+      "Name": {
+        "enUS": "Power User (Queue)",
+        "ruRU": "Power User (Queue)"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "RoboticsFacilityTrain",
-      "Name": "Train (Robotics Facility)"
+      "Name": {
+        "enUS": "Train (Robotics Facility)",
+        "ruRU": "Train (Robotics Facility)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -471,7 +545,8 @@
     "CountUnitRoboticsFacilityCompleteOnlyTechTreeCheat",
     "ProtossBuild",
     "IsRoboticsFacility",
-    "RoboticsFacilitySplat"
+    "RoboticsFacilitySplat",
+    "CasterIsRoboticsFacility"
   ],
   "$Requirements": [],
   "$Production": [
@@ -491,50 +566,92 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "RoboticsFacilityTrain,Train3",
       "id": "Colossus",
       "Icon": "btn-unit-protoss-colossus",
-      "Tooltip": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Warp In Colossus"
+      "Name": {
+        "enUS": "Warp In Colossus",
+        "ruRU": "Warp In Colossus"
+      },
+      "Tooltip": {
+        "enUS": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Battle strider with a powerful area attack. Can step up and down cliffs. Can be targeted by anti-air weapons.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+      }
     },
     {
       "AbilCmd": "RoboticsFacilityTrain,Train2",
       "id": "Observer",
       "Icon": "btn-unit-protoss-observer",
-      "Tooltip": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Warp In Observer"
+      "Name": {
+        "enUS": "Warp In Observer",
+        "ruRU": "Warp In Observer"
+      },
+      "Tooltip": {
+        "enUS": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "RoboticsFacilityTrain,Train1",
       "id": "WarpPrism",
       "Icon": "btn-unit-protoss-warpprism",
-      "Tooltip": "Flying transport. Can load and unload units. Can also deploy to create a power field.",
-      "Name": "Warp In Warp Prism"
+      "Name": {
+        "enUS": "Warp In Warp Prism",
+        "ruRU": "Warp In Warp Prism"
+      },
+      "Tooltip": {
+        "enUS": "Flying transport. Can load and unload units. Can also deploy to create a power field.",
+        "ruRU": "Flying transport. Can load and unload units. Can also deploy to create a power field."
+      }
     },
     {
       "AbilCmd": "RoboticsFacilityTrain,Train4",
       "id": "Immortal",
       "Icon": "btn-unit-protoss-immortal",
-      "Tooltip": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Warp In Immortal"
+      "Name": {
+        "enUS": "Warp In Immortal",
+        "ruRU": "Warp In Immortal"
+      },
+      "Tooltip": {
+        "enUS": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Assault strider. Can use Barrier to absorb damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+      }
     }
   ]
 }

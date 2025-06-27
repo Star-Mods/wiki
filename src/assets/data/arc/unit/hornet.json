@@ -1,6 +1,12 @@
 {
-  "Name": "Hornet",
-  "Description": "Fast anti-ground fighter that excels against armored targets.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Hornet",
+    "ruRU": "Шершень"
+  },
+  "Description": {
+    "enUS": "Fast anti-ground fighter that excels against armored targets.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Быстрый противоназемный самолётик, эффективен против бронированных целей.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 140,
   "LifeMax": 140,
-  "LifeArmorName": "Mechanical Aircraft Plating",
+  "LifeArmorName": {
+    "enUS": "Mechanical Aircraft Plating",
+    "ruRU": "Броня механической авиации"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -61,16 +70,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Hornet/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Hornet/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Hornet/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Hornet/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -196,8 +207,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -286,8 +303,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -361,8 +384,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -435,8 +464,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -525,8 +560,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -545,8 +586,14 @@
         "Type": "Passive",
         "id": "BoreDrills",
         "Icon": "btn-ability-genetron-boredrill",
-        "Tooltip": "<span style=\"color: #FFFF80\">Hornets</span> reduce the armor of their targets by 1 for each <span style=\"color: #FFFF80\">Hornet</span> attacking it. Stacks up to 5 times. The effect lasts for <b>8</b> seconds unless refreshed.",
-        "Name": "Bore Drills",
+        "Name": {
+          "enUS": "Bore Drills",
+          "ruRU": "Свёрла"
+        },
+        "Tooltip": {
+          "enUS": "Attacks reduce the armor of their targets by 1 for each attacker with Bore Drills. Stacks up to 5 times, but is capped at base armor. The effect lasts for <b>14</b> seconds unless refreshed.",
+          "ruRU": "<span style=\"color: FFFF80\">Шершень</span> снижает броню своей цели на 1 при каждой атаке. Складывается до 5 раз. Эффект длится <b>14</b> секунд если не обновить."
+        },
         "Hotkey": "R"
       }
     ]
@@ -575,6 +622,7 @@
   ],
   "RepairTime": 35,
   "Icon": "btn-unit-genetron-hornet",
+  "Model": "Hornet",
   "LifeArmorIcon": "btn-upgrade-genetron-aircraftplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -582,28 +630,39 @@
       "Turret": "HornetTurret",
       "id": "StingerDrills",
       "Icon": "btn-upgrade-genetron-rocketweapons-level0",
-      "Name": "Stinger Drills",
+      "Name": {
+        "enUS": "Stinger Drills",
+        "ruRU": "Свёрла Стингера"
+      },
       "Amount": 6,
       "Kind": "Ranged",
-      "DisplayAttackCount": 2,
       "TargetFilters": "Ground",
       "Range": 5,
-      "Period": 0.9
+      "Period": 0.5
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -621,10 +680,10 @@
     "CountUnitHornetQueuedOrBetterAtUnit",
     "AssemblyArray",
     "AssemblyArray",
-    "CountUnitHornetInProgressOnlyAtUnit",
     "GenetronAircraftPlatingRevert",
     "GenetronAircraftWeaponsRevert",
-    "BoreDrills"
+    "BoreDrills",
+    "CountUnitHornetInProgressOnlyAtUnit"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -639,36 +698,66 @@
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     }
   ]
 }

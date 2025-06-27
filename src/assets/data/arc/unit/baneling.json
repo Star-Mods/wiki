@@ -1,6 +1,12 @@
 {
-  "Name": "Baneling",
-  "Description": "Suicide unit. Does damage over a small area on death. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Baneling",
+    "ruRU": "Baneling"
+  },
+  "Description": {
+    "enUS": "Suicide unit. Does damage over a small area on death. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Suicide unit. Does damage over a small area on death. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 30,
   "LifeMax": 30,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Baneling/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Baneling/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Baneling/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Baneling/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -198,8 +209,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -272,8 +289,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -362,8 +385,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -437,8 +466,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -527,8 +562,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -668,8 +709,14 @@
         "AbilCmd": "SapStructure,Execute",
         "id": "SapStructure",
         "Icon": "btn-ability-zerg-attackstructure-color",
-        "Tooltip": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><c val=\"#ColorAttackInfo\">Can target enemy structures.</span>",
-        "Name": "Attack Structure",
+        "Name": {
+          "enUS": "Attack Structure",
+          "ruRU": "Attack Structure"
+        },
+        "Tooltip": {
+          "enUS": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><span style=\"color: #ffff8a\">Can target enemy structures.</span>",
+          "ruRU": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><span style=\"color: #ffff8a\">Can target enemy structures.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -790,8 +837,14 @@
         "AbilCmd": "Explode,Execute",
         "id": "Explode",
         "Icon": "btn-ability-zerg-explode-color",
-        "Tooltip": "The Baneling detonates where it is standing, damaging nearby enemy units and structures.",
-        "Name": "Explode",
+        "Name": {
+          "enUS": "Explode",
+          "ruRU": "Explode"
+        },
+        "Tooltip": {
+          "enUS": "The Baneling detonates where it is standing, damaging nearby enemy units and structures.",
+          "ruRU": "The Baneling detonates where it is standing, damaging nearby enemy units and structures."
+        },
         "Hotkey": "X"
       },
       {
@@ -833,8 +886,14 @@
         "AbilCmd": "BurrowBanelingDown,Execute",
         "id": "BurrowDown",
         "Icon": "btn-ability-zerg-burrow-color",
-        "Tooltip": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "Name": "Burrow",
+        "Name": {
+          "enUS": "Burrow",
+          "ruRU": "Burrow"
+        },
+        "Tooltip": {
+          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        },
         "Hotkey": "D"
       }
     ]
@@ -871,13 +930,17 @@
   ],
   "id": "Baneling",
   "Icon": "btn-unit-zerg-baneling",
+  "Model": "BanelingEx1",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "VolatileBurst",
       "Icon": "btn-ability-zerg-explode",
-      "Name": "Volatile Burst",
+      "Name": {
+        "enUS": "Volatile Burst",
+        "ruRU": "Volatile Burst"
+      },
       "TargetFilters": "Ground",
       "Range": 0.25,
       "Period": 0.833
@@ -885,7 +948,10 @@
     {
       "id": "VolatileBurstBuilding",
       "Icon": "btn-ability-zerg-explode",
-      "Name": "Volatile Burst",
+      "Name": {
+        "enUS": "Volatile Burst",
+        "ruRU": "Volatile Burst"
+      },
       "TargetFilters": "Ground",
       "Range": 0.25,
       "Period": 0.833
@@ -893,55 +959,78 @@
   ],
   "Behaviors": [
     {
-      "id": "BanelingExplode"
+      "id": "BanelingExplode",
+      "Name": {
+        "enUS": "Explode",
+        "ruRU": "Explode"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "BurrowBanelingDown",
-      "Name": "Burrow (Baneling)"
+      "Name": {
+        "enUS": "Burrow (Baneling)",
+        "ruRU": "Burrow (Baneling)"
+      }
     },
     {
       "id": "SapStructure",
-      "Name": "Sap Structure"
+      "Name": {
+        "enUS": "Sap Structure",
+        "ruRU": "Sap Structure"
+      }
     },
     {
       "id": "Explode",
-      "Name": "Explode"
+      "Name": {
+        "enUS": "Explode",
+        "ruRU": "Explode"
+      }
     }
   ],
   "$Upgrades": [
-    "MorphToBaneling",
+    "BurrowBanelingUp",
     "Baneling",
     "BanelingBurrowed",
-    "BurrowBanelingUp",
+    "MorphZerglingToBaneling",
+    "ThreatensCyclone",
+    "NotBaneling",
+    "CentrificalHooks",
+    "BanelingNest",
+    "MorphToBaneling",
+    "Burrow",
     "ZergMeleeWeaponsLevel1",
     "ZergMeleeWeapons",
     "ZergMeleeWeaponsLevel2",
     "ZergMeleeWeaponsLevel3",
     "ZergGroundArmorsLevel1",
-    "ThreatensCyclone",
     "Baneling",
-    "CentrificalHooks",
     "ZergGroundArmors",
     "ZergGroundArmorsLevel2",
     "ZergGroundArmorsLevel3",
-    "Burrow",
-    "BanelingNest",
-    "MorphZerglingToBaneling",
-    "NotBaneling",
     "DigesterBaneling",
     "BanelingBurrowedSplat",
     "ThreatensBaneling",
@@ -965,57 +1054,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "SapStructure,Execute",
       "id": "SapStructure",
       "Icon": "btn-ability-zerg-attackstructure-color",
-      "Tooltip": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><c val=\"#ColorAttackInfo\">Can target enemy structures.</span>",
-      "Name": "Attack Structure"
+      "Name": {
+        "enUS": "Attack Structure",
+        "ruRU": "Attack Structure"
+      },
+      "Tooltip": {
+        "enUS": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><span style=\"color: #ffff8a\">Can target enemy structures.</span>",
+        "ruRU": "The Baneling detonates against a structure for <b>80</b> damage. Right click a target structure to have the Baneling automatically use this ability.<br/><br/><span style=\"color: #ffff8a\">Can target enemy structures.</span>"
+      }
     },
     {
       "AbilCmd": "Explode,Execute",
       "id": "Explode",
       "Icon": "btn-ability-zerg-explode-color",
-      "Tooltip": "The Baneling detonates where it is standing, damaging nearby enemy units and structures.",
-      "Name": "Explode"
+      "Name": {
+        "enUS": "Explode",
+        "ruRU": "Explode"
+      },
+      "Tooltip": {
+        "enUS": "The Baneling detonates where it is standing, damaging nearby enemy units and structures.",
+        "ruRU": "The Baneling detonates where it is standing, damaging nearby enemy units and structures."
+      }
     },
     {
       "AbilCmd": "BurrowBanelingDown,Execute",
       "id": "BurrowDown",
       "Icon": "btn-ability-zerg-burrow-color",
-      "Tooltip": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-      "Name": "Burrow"
+      "Name": {
+        "enUS": "Burrow",
+        "ruRU": "Burrow"
+      },
+      "Tooltip": {
+        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+      }
     }
   ]
 }

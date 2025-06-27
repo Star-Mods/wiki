@@ -1,6 +1,12 @@
 {
-  "Name": "Citadel AAT",
-  "Description": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Citadel AAT",
+    "ruRU": "ТШТ «Цитадель»"
+  },
+  "Description": {
+    "enUS": "Advanced armored unit, equipped with heavy composite armor, powerful primary cannon and a magnetic wave accelerator for an accelerated attack.<br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+    "ruRU": "Мощный танк, оснащенный тяжелой композитной броней, мощной основной пушкой и магнитно-волновым ускорителем для ускоренной атаки.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные подразделения.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 425,
   "LifeMax": 425,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 360,
@@ -66,16 +75,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "CitadelAAT/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "CitadelAAT/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CitadelAAT/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CitadelAAT/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -204,8 +215,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -278,8 +295,14 @@
         "AbilCmd": "stop2,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -369,8 +392,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -444,8 +473,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -535,8 +570,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -685,17 +726,23 @@
         "Type": "AbilCmd",
         "AbilCmd": "UEDCitadelAbility,Execute",
         "id": "UEDButtonCitadelAbility",
-        "Icon": "btn-ability-protoss-shieldrecharge",
-        "Tooltip": "The device temporarily creates strong magnetic fields that immobilizes the tank, but allows you to fire faster with a longer range and the effect of buckshot behind standing targets.",
-        "Name": "Magnetic wave acceleration",
+        "Icon": "uedmagneticwaveaccelerator",
+        "Name": {
+          "enUS": "Magnetic wave acceleration",
+          "ruRU": "Магнитно-волновой ускоритель"
+        },
+        "Tooltip": {
+          "enUS": "The device temporarily creates strong magnetic fields that immobilizes the tank, but allows you to fire 200% faster with 3 additional range and the effect of buckshot behind standing targets. The buckshot deal 6 splash damage and ignore armor values.",
+          "ruRU": "Устройство временно создает сильные магнитные поля что обездвиживает танк, но позволяет вести огонь быстрее с большей дальностью и эффектом картечи позади стоящих целей."
+        },
         "Hotkey": "D"
       }
     ]
   },
   "InnerRadius": 1,
   "CargoSize": 8,
-  "ScoreMake": 275,
-  "ScoreKill": 275,
+  "ScoreMake": 500,
+  "ScoreKill": 500,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 90,
   "TechAliasArray": [
@@ -716,6 +763,7 @@
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "CitadelAAT",
   "Icon": "btn-unit-predatortankbronze",
+  "Model": "PredatorTank",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -723,48 +771,66 @@
       "Turret": "CitadelAAT",
       "id": "CitadelCannon",
       "Icon": "weapon-tank-icon-upgrade-0",
-      "Name": "M25 armor - piercing cannon",
+      "Name": {
+        "enUS": "M25 armor - piercing cannon",
+        "ruRU": "Пушка бронебойная М25"
+      },
       "Amount": 60,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 7,
-      "Period": 2.45
+      "Period": 2.1
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "stop2",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "Yamato3",
-      "Name": "Song of the Dead"
+      "Name": {
+        "enUS": "Song of the Dead",
+        "ruRU": "Song of the Dead"
+      }
     },
     {
-      "id": "UEDCitadelAbility"
+      "id": "UEDCitadelAbility",
+      "Name": {
+        "ruRU": "Магнитно-волновой ускоритель"
+      }
     }
   ],
   "$Upgrades": [
-    "AllowUnitCitadelAAT",
+    "UEDArmorLevel1",
     "CitadelAAT",
     "FieldReloadingProtocols",
     "UpgradeAbilityCitadelUED",
-    "UEDVehicalsLevel1",
-    "UEDVehicalsLevel2",
-    "UEDVehicalsLevel3",
-    "UEDArmorLevel1",
     "CitadelAAT",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "AllowUnitCitadelAAT",
+    "UEDVehicalsLevel1",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain",
     null
   ],
@@ -781,43 +847,79 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop2,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "UEDCitadelAbility,Execute",
       "id": "UEDButtonCitadelAbility",
-      "Icon": "btn-ability-protoss-shieldrecharge",
-      "Tooltip": "The device temporarily creates strong magnetic fields that immobilizes the tank, but allows you to fire faster with a longer range and the effect of buckshot behind standing targets.",
-      "Name": "Magnetic wave acceleration"
+      "Icon": "uedmagneticwaveaccelerator",
+      "Name": {
+        "enUS": "Magnetic wave acceleration",
+        "ruRU": "Магнитно-волновой ускоритель"
+      },
+      "Tooltip": {
+        "enUS": "The device temporarily creates strong magnetic fields that immobilizes the tank, but allows you to fire 200% faster with 3 additional range and the effect of buckshot behind standing targets. The buckshot deal 6 splash damage and ignore armor values.",
+        "ruRU": "Устройство временно создает сильные магнитные поля что обездвиживает танк, но позволяет вести огонь быстрее с большей дальностью и эффектом картечи позади стоящих целей."
+      }
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "Name": "Massalisk",
-  "Description": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Massalisk",
+    "ruRU": "Массалиск"
+  },
+  "Description": {
+    "enUS": "Large, low ranged durable beast with splash damage. Can use Hunker.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Большой, бронированный зверь с низким радиусом атаки и уроном по области. Может использовать неподвижность.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 360,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Massalisk/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Massalisk/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Massalisk/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Massalisk/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -175,8 +186,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -249,8 +266,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -339,8 +362,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -429,8 +458,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -504,8 +539,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -537,8 +578,14 @@
         "AbilCmd": "Hunker,Execute",
         "id": "HunkeredForm",
         "Icon": "btn-ability-xayid-massaliskhunker",
-        "Tooltip": "Hunkers the <span style=\"color: #FFFF80\">Massalisk</span>. While hunkered, the <span style=\"color: #FFFF80\">Massalisk</span> is immobile, takes decreased damage, and has a long range anti-air splash weapon</span>.",
-        "Name": "Hunkered Form",
+        "Name": {
+          "enUS": "Hunkered Form",
+          "ruRU": "Неподвижная форма"
+        },
+        "Tooltip": {
+          "enUS": "Hunkers the <span style=\"color: FFFF80\">Massalisk</span>. While hunkered, the <span style=\"color: FFFF80\">Massalisk</span> is immobile, takes decreased damage, and has a long range anti-air splash weapon</span>.",
+          "ruRU": "Переводит <span style=\"color: FFFF80\">Массалиска</span> в его неподвидную форму. В этой форме <span style=\"color: FFFF80\">Массалиск</span> неподвижен, имеет повышенную защиту и использует дальнобойные противовоздушные брызги</span>."
+        },
         "Hotkey": "E"
       }
     ]
@@ -580,12 +627,16 @@
     "Alias_Massalisk"
   ],
   "Icon": "btn-unit-xayid-massalisk",
+  "Model": "Massalisk",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "MassiveSporeAG",
-      "Name": "Massive Spore",
+      "Name": {
+        "enUS": "Massive Spore",
+        "ruRU": "Массивная спора"
+      },
       "Amount": 40,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
@@ -597,19 +648,31 @@
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "Hunker",
-      "Name": "Hunker"
+      "Name": {
+        "enUS": "Hunker",
+        "ruRU": "Hunker"
+      }
     }
   ],
   "$Upgrades": [
@@ -649,43 +712,79 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "Hunker,Execute",
       "id": "HunkeredForm",
       "Icon": "btn-ability-xayid-massaliskhunker",
-      "Tooltip": "Hunkers the <span style=\"color: #FFFF80\">Massalisk</span>. While hunkered, the <span style=\"color: #FFFF80\">Massalisk</span> is immobile, takes decreased damage, and has a long range anti-air splash weapon</span>.",
-      "Name": "Hunkered Form"
+      "Name": {
+        "enUS": "Hunkered Form",
+        "ruRU": "Неподвижная форма"
+      },
+      "Tooltip": {
+        "enUS": "Hunkers the <span style=\"color: FFFF80\">Massalisk</span>. While hunkered, the <span style=\"color: FFFF80\">Massalisk</span> is immobile, takes decreased damage, and has a long range anti-air splash weapon</span>.",
+        "ruRU": "Переводит <span style=\"color: FFFF80\">Массалиска</span> в его неподвидную форму. В этой форме <span style=\"color: FFFF80\">Массалиск</span> неподвижен, имеет повышенную защиту и использует дальнобойные противовоздушные брызги</span>."
+      }
     }
   ]
 }

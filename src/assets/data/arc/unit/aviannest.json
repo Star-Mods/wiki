@@ -1,6 +1,12 @@
 {
-  "Name": "Avian Nest",
-  "Description": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
+  "Name": {
+    "enUS": "Avian Nest",
+    "ruRU": "Гнездо Авианов"
+  },
+  "Description": {
+    "enUS": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
+    "ruRU": "Порождает мошек, Которые мутируют в воздушных ксаидов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Рапторы<br/>- Нападающие"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AvianNest/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AvianNest/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AvianNest/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AvianNest/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -172,8 +183,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -192,8 +209,14 @@
         "Type": "SelectLarva",
         "id": "SelectWasp",
         "Icon": "btn-unit-zerg-locustflyerex3",
-        "Tooltip": "Can mutate into various Xayid flyers.",
-        "Name": "Select Wasp",
+        "Name": {
+          "enUS": "Select Wasp",
+          "ruRU": "Выбрать мошек"
+        },
+        "Tooltip": {
+          "enUS": "Can mutate into various Xayid flyers.",
+          "ruRU": "Может мутировать в различных летающих Зейтов."
+        },
         "Hotkey": "S"
       },
       {
@@ -214,8 +237,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       }
     ]
@@ -233,22 +262,34 @@
   "SubgroupPriority": 37,
   "GlossaryPriority": 24,
   "Icon": "btn-building-xayid-aviannest",
+  "Model": "AvianNest",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "AvianNestSpawnWasp"
+      "id": "AvianNestSpawnWasp",
+      "Name": {
+        "enUS": "Spawn Wasp",
+        "ruRU": "Spawn Wasp"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -273,15 +314,27 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     }
   ]
 }

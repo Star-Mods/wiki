@@ -1,17 +1,22 @@
 {
-  "Name": "Z-1",
+  "Name": {
+    "enUS": "Z-1"
+  },
+  "Description": "-",
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 150,
   "LifeMax": 150,
-  "LifeArmorName": "UPL Vehicle Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Vehicle Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -63,16 +68,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Z1/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Z1/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Z1/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Z1/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -101,7 +108,7 @@
   "Food": -3,
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 200,
+    "Minerals": 175,
     "Vespene": 125
   },
   "RepairTime": 25,
@@ -197,8 +204,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -271,8 +284,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -361,8 +380,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -451,8 +476,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -526,8 +557,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -666,8 +703,12 @@
         "AbilCmd": "Z1Freeze,Execute",
         "id": "Z1LiquidNitrogen",
         "Icon": "btn-ability-upl-liquidnitrogencanister",
-        "Tooltip": "Throws a can of liquid that Freezes enemies in a radius",
-        "Name": "Liquid Nitrogen Thrower",
+        "Name": {
+          "enUS": "Liquid Nitrogen Thrower"
+        },
+        "Tooltip": {
+          "enUS": "Slow down all non-friendly ground units in an area of radius 3, slow down 10% of their attack speed and 75% of their movement speed, last 7 seconds."
+        },
         "Hotkey": "Q"
       },
       {
@@ -800,8 +841,12 @@
         "AbilCmd": "Z1Shield,Execute",
         "id": "Z1ShieldDefence",
         "Icon": "btn-ability-upl-shielddefense",
-        "Tooltip": "Temporarily gives <span style=\"color: #80FFFF\">+8 Armor</span>, but inhibits mobility",
-        "Name": "Activate Full Size Smart Metal Shield",
+        "Name": {
+          "enUS": "Activate Full Size Smart Metal Shield"
+        },
+        "Tooltip": {
+          "enUS": "Temporarily gain <span style=\"color: 80FFFF\">+8 Armor</span> for 5 seconds."
+        },
         "Hotkey": "W"
       },
       {
@@ -944,8 +989,12 @@
         "AbilCmd": "Z1BadgerBomb,Execute",
         "id": "Z1BadgerBomb",
         "Icon": "btn-ability-upl-badgerbomb",
-        "Tooltip": "Roll incendiary explosive toward enemies.  Explosives then detonate and burn all enemies in the area where it exploded, and any enemies that later run through the fire.",
-        "Name": "Badger Bomb",
+        "Name": {
+          "enUS": "Badger Bomb"
+        },
+        "Tooltip": {
+          "enUS": "Launch a bomb which travel through a linear path and decreases movement speed gradually. The bomb explodes when it stop completely  at 7 travel distance. The explosion applies burning status to all non-friendly ground units in a radius of 2 for 4 seconds, and leaves burning flame in the area for 4 seconds. <br/> The burning status cause 20 damage each seconds, and the area burning apply this status continuously."
+        },
         "Hotkey": "E"
       },
       {
@@ -1069,8 +1118,12 @@
         "AbilCmd": "Z1ShieldCancel,Execute",
         "id": "Z1ShieldDefenseCancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancel the Shield Defense",
-        "Name": "Deactivate Full Size Smart Metal Shield",
+        "Name": {
+          "enUS": "Deactivate Full Size Smart Metal Shield"
+        },
+        "Tooltip": {
+          "enUS": "Cancel the Shield Defense"
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1089,33 +1142,64 @@
         "Type": "Passive",
         "id": "Z1EnergyUpgrade",
         "Icon": "btn-upgrade-nova-equipment-jetpack",
-        "Tooltip": "Improved Z1 Energy Capacitors. Increases the starting and maximum energy of <span style=\"color: #ffff8a\">Z1</span> by <span style=\"color: #80FFFF\">25</span>",
-        "Name": "Improved Z1 Energy Capacitors"
+        "Name": {
+          "enUS": "Improved Z1 Energy Capacitors"
+        },
+        "Tooltip": {
+          "enUS": "Improved Z1 Energy Capacitors. Increases the starting and maximum energy of <span style=\"color: ffff8a\">Z1</span> by <span style=\"color: 80FFFF\">25</span> and increase energy regeneration by 1 per second."
+        },
+        "Hotkey": "N"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "LotCUPLStarMechaPassive",
+        "Icon": "btn-starmechaicon",
+        "Name": {
+          "enUS": "Starship Armored Battlesuit"
+        },
+        "Tooltip": {
+          "enUS": "Increase the health of <span style=\"color: ffff8a\">CARR</span>, <span style=\"color: ffff8a\">Z1</span>and <span style=\"color: ffff8a\">Z2</span> by 40%."
+        }
       }
     ]
   },
   "InnerRadius": 0.5,
   "CargoSize": 2,
-  "ScoreMake": 125,
-  "ScoreKill": 125,
+  "ScoreMake": 325,
+  "ScoreKill": 325,
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 40,
+  "SubgroupPriority": 50,
   "GlossaryCategory": "Unit/Category/0UPLUnits",
-  "GlossaryPriority": 50,
+  "GlossaryPriority": 58,
   "HotkeyCategory": "Unit/Category/UPLUnits",
-  "EnergyStart": 50,
+  "EnergyStart": 75,
   "EnergyMax": 100,
   "EnergyRegenRate": 0.5,
   "AlliedPushPriority": 6,
   "id": "Z1",
   "Icon": "btn-unit-upl-z1",
+  "Model": "Z1",
   "LifeArmorIcon": "btn-upgrades-upl-vehicleplating-lvl0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "Z1",
       "Icon": "btn-upgrades-upl-vehicleweapons-lvl0",
-      "Name": "MS-20 Short Rifle \"Squirt\"",
+      "Name": {
+        "enUS": "MS-20 Short Rifle \"Squirt\""
+      },
       "Amount": 27,
       "Kind": "Ranged",
       "TargetFilters": "",
@@ -1125,7 +1209,9 @@
     {
       "id": "Z1DummyWeapon",
       "Icon": "btn-upgrades-upl-vehicleweapons-lvl0",
-      "Name": "Z1 Dummy Weapon",
+      "Name": {
+        "enUS": "Z1 Dummy Weapon"
+      },
       "TargetFilters": "",
       "Range": 3,
       "Period": 0.8332
@@ -1135,37 +1221,61 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "Z1Shield",
-      "Name": " Full Size Smart Metal Shield"
+      "Name": {
+        "enUS": " Full Size Smart Metal Shield"
+      }
     },
     {
       "id": "Z1Freeze",
-      "Name": "Z1 Freeze"
+      "Name": {
+        "enUS": "Z1 Freeze"
+      }
     },
     {
       "id": "Z1BadgerBomb",
-      "Name": "Z1 Badger Bomb"
+      "Name": {
+        "enUS": "Z1 Badger Bomb"
+      }
     },
     {
       "id": "Z1ShieldCancel",
-      "Name": "Z1 Shield Cancel"
+      "Name": {
+        "enUS": "Z1 Shield Cancel"
+      }
     }
   ],
   "$Upgrades": [
-    "UPLVehiclePlatingLevel1",
+    "Button/Tooltip/UPLManufacturingFacility",
     "Z1",
     "Z1EnergyUpgrade",
+    "StarMecha",
+    "UPLManufacturingFacilityTrain",
+    "Z1SpeedUpgrade",
+    "UPLManufacturingFacility",
+    "UPLInfantryArmorLevel2",
+    "UPLInfantryArmorLevel3",
+    "UPLVehiclePlatingLevel1",
     "Z1",
     "UPLVehicleArmor",
     "UPLVehiclePlatingLevel2",
@@ -1174,9 +1284,6 @@
     "UPLVehicleWeapons",
     "UPLVehicleWeaponsLevel2",
     "UPLVehicleWeaponsLevel3",
-    "UPLManufacturingFacilityTrain",
-    "Z1SpeedUpgrade",
-    "UPLManufacturingFacility",
     "IsZ1",
     "UPLHeadquartersTrain",
     "Z1",
@@ -1190,71 +1297,117 @@
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "UPLForwardOperatingBase"
+    "UPLManufacturingFacility"
   ],
   "$Commands": [
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "Z1Freeze,Execute",
       "id": "Z1LiquidNitrogen",
       "Icon": "btn-ability-upl-liquidnitrogencanister",
-      "Tooltip": "Throws a can of liquid that Freezes enemies in a radius",
-      "Name": "Liquid Nitrogen Thrower"
+      "Name": {
+        "enUS": "Liquid Nitrogen Thrower"
+      },
+      "Tooltip": {
+        "enUS": "Slow down all non-friendly ground units in an area of radius 3, slow down 10% of their attack speed and 75% of their movement speed, last 7 seconds."
+      }
     },
     {
       "AbilCmd": "Z1Shield,Execute",
       "id": "Z1ShieldDefence",
       "Icon": "btn-ability-upl-shielddefense",
-      "Tooltip": "Temporarily gives <span style=\"color: #80FFFF\">+8 Armor</span>, but inhibits mobility",
-      "Name": "Activate Full Size Smart Metal Shield"
+      "Name": {
+        "enUS": "Activate Full Size Smart Metal Shield"
+      },
+      "Tooltip": {
+        "enUS": "Temporarily gain <span style=\"color: 80FFFF\">+8 Armor</span> for 5 seconds."
+      }
     },
     {
       "AbilCmd": "Z1BadgerBomb,Execute",
       "id": "Z1BadgerBomb",
       "Icon": "btn-ability-upl-badgerbomb",
-      "Tooltip": "Roll incendiary explosive toward enemies.  Explosives then detonate and burn all enemies in the area where it exploded, and any enemies that later run through the fire.",
-      "Name": "Badger Bomb"
+      "Name": {
+        "enUS": "Badger Bomb"
+      },
+      "Tooltip": {
+        "enUS": "Launch a bomb which travel through a linear path and decreases movement speed gradually. The bomb explodes when it stop completely  at 7 travel distance. The explosion applies burning status to all non-friendly ground units in a radius of 2 for 4 seconds, and leaves burning flame in the area for 4 seconds. <br/> The burning status cause 20 damage each seconds, and the area burning apply this status continuously."
+      }
     },
     {
       "AbilCmd": "Z1ShieldCancel,Execute",
       "id": "Z1ShieldDefenseCancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancel the Shield Defense",
-      "Name": "Deactivate Full Size Smart Metal Shield"
+      "Name": {
+        "enUS": "Deactivate Full Size Smart Metal Shield"
+      },
+      "Tooltip": {
+        "enUS": "Cancel the Shield Defense"
+      }
     }
   ]
 }

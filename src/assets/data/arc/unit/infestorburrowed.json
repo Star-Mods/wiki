@@ -1,6 +1,12 @@
 {
-  "Name": "Infestor",
-  "Description": "Infestation specialist. Can use the Fungal Growth, Infested Terran, and Neural Parasite abilities.",
+  "Name": {
+    "enUS": "Infestor",
+    "ruRU": "Infestor"
+  },
+  "Description": {
+    "enUS": "Infestation specialist. Can use the Fungal Growth, Infested Terran, and Neural Parasite abilities.",
+    "ruRU": "Infestation specialist. Can use the Fungal Growth, Infested Terran, and Neural Parasite abilities."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 90,
   "LifeMax": 90,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Burrowed",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -68,16 +77,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "InfestorBurrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "InfestorBurrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "InfestorBurrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "InfestorBurrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -197,8 +208,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -271,8 +288,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -361,8 +384,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -451,8 +480,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -608,8 +643,14 @@
         "AbilCmd": "NeuralParasite,Cancel",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -683,8 +724,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -773,8 +820,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -811,8 +864,14 @@
         "AbilCmd": "BurrowInfestorUp,Execute",
         "id": "BurrowUp",
         "Icon": "btn-ability-zerg-upburrow-color",
-        "Tooltip": "Returns the unit to the surface.",
-        "Name": "Unburrow",
+        "Name": {
+          "enUS": "Unburrow",
+          "ruRU": "Unburrow"
+        },
+        "Tooltip": {
+          "enUS": "Returns the unit to the surface.",
+          "ruRU": "Returns the unit to the surface."
+        },
         "Hotkey": "R"
       },
       {
@@ -831,8 +890,14 @@
         "Type": "Passive",
         "id": "BurrowedMove",
         "Icon": "btn-upgrade-zerg-burrowmove",
-        "Tooltip": "Can move while burrowed.",
-        "Name": "Burrow Move"
+        "Name": {
+          "enUS": "Burrow Move",
+          "ruRU": "Burrow Move"
+        },
+        "Tooltip": {
+          "enUS": "Can move while burrowed.",
+          "ruRU": "Can move while burrowed."
+        }
       },
       {
         "Info": {
@@ -987,8 +1052,14 @@
         "AbilCmd": "NeuralParasite,Execute",
         "id": "NeuralParasite",
         "Icon": "btn-ability-zerg-neuralparasite-color",
-        "Tooltip": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: #ffff8a\">Channeled ability.</span>",
-        "Name": "Neural Parasite",
+        "Name": {
+          "enUS": "Neural Parasite",
+          "ruRU": "Neural Parasite"
+        },
+        "Tooltip": {
+          "enUS": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: ffff8a\">Channeled ability.</span>",
+          "ruRU": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: ffff8a\">Channeled ability.</span>"
+        },
         "Hotkey": "E"
       }
     ]
@@ -1010,6 +1081,7 @@
   "RankDisplay": "Always",
   "id": "InfestorBurrowed",
   "Icon": "btn-unit-zerg-infestor",
+  "Model": "Infestor_Ex3",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1017,38 +1089,53 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "BurrowInfestorUp",
-      "Name": "Unburrow (Infestor)"
+      "Name": {
+        "enUS": "Unburrow (Infestor)",
+        "ruRU": "Unburrow (Infestor)"
+      }
     },
     {
       "id": "NeuralParasite",
-      "Name": "Neural Parasite"
+      "Name": {
+        "enUS": "Neural Parasite",
+        "ruRU": "Neural Parasite"
+      }
     },
     {
       "id": "AmorphousArmorcloud",
-      "Name": "Amorphous Armorcloud"
+      "Name": {
+        "enUS": "Amorphous Armorcloud",
+        "ruRU": "Аморфное бронеоблако"
+      }
     }
   ],
   "$Upgrades": [
-    "ZergGroundArmorsLevel1",
+    "BurrowInfestorDown",
     "InfestorBurrowed",
     "IsInfestorBurrowed",
     "TargetIsInfestorBurrowed",
+    "Burrow",
+    "ZergGroundArmorsLevel1",
     "Infestor",
     "InfestorBurrowedSplat",
     "NotInfestorBurrowed",
     "ZergGroundArmors",
     "ZergGroundArmorsLevel2",
     "ZergGroundArmorsLevel3",
-    "Burrow",
-    "BurrowInfestorDown",
     "Infestor_Death",
     "InfestorBurrowedNeuralParasiteGroundSplat",
     "TacticalBurrowInfestorBurrowedBullyTest",
@@ -1068,64 +1155,118 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "NeuralParasite,Cancel",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "BurrowInfestorUp,Execute",
       "id": "BurrowUp",
       "Icon": "btn-ability-zerg-upburrow-color",
-      "Tooltip": "Returns the unit to the surface.",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      },
+      "Tooltip": {
+        "enUS": "Returns the unit to the surface.",
+        "ruRU": "Returns the unit to the surface."
+      }
     },
     {
       "AbilCmd": "NeuralParasite,Execute",
       "id": "NeuralParasite",
       "Icon": "btn-ability-zerg-neuralparasite-color",
-      "Tooltip": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: #ffff8a\">Channeled ability.</span>",
-      "Name": "Neural Parasite"
+      "Name": {
+        "enUS": "Neural Parasite",
+        "ruRU": "Neural Parasite"
+      },
+      "Tooltip": {
+        "enUS": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: ffff8a\">Channeled ability.</span>",
+        "ruRU": "Target unit is controlled by the Infestor for <b>15</b> seconds. The Infestor cannot take any other action while controlling an enemy unit.<br/><br/><span style=\"color: ffff8a\">Channeled ability.</span>"
+      }
     }
   ]
 }

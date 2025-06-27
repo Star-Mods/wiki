@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Greater Deep One"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GreaterDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GreaterDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GreaterDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GreaterDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,18 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "DragonTrain",
+    "que5PassiveCancelToSelection",
+    "Rally",
+    "stop",
+    "GreaterDeepOneBuild",
+    "GreaterDeepOneTrain",
+    "GreaterDeepOne"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +199,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +239,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +261,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -297,8 +303,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -313,10 +318,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -336,12 +338,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -380,10 +379,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -406,13 +402,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -432,15 +424,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -499,6 +484,9 @@
                 },
                 "DefaultButtonFace": "GenesisPitGreater"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "GenesisPitGreater",
               "Time": 21
             },
@@ -509,6 +497,9 @@
                 },
                 "DefaultButtonFace": "AugmentationPitGreater"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitGreater",
               "Time": 56
             },
@@ -736,13 +727,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -848,14 +835,14 @@
         ],
         "Time": 56,
         "Cost": {
-          "Minerals": 50,
-          "Vespene": 150,
+          "Minerals": 125,
+          "Vespene": 250,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -3
+          "Food": -4
         },
         "Row": 0,
         "Column": 2,
@@ -867,7 +854,7 @@
           "enUS": "Spawn Hand of Power"
         },
         "Tooltip": {
-          "enUS": "Caster unit. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+          "enUS": "Caster unit that can push enemies back with its attacks. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
         },
         "Hotkey": "E"
       },
@@ -910,7 +897,7 @@
           "enUS": "Spawn Brimstone Demolisher"
         },
         "Tooltip": {
-          "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+          "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
         },
         "Hotkey": "R"
       },
@@ -922,6 +909,9 @@
             },
             "DefaultButtonFace": "GenesisPitGreater"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "GenesisPitGreater",
           "Time": 21
         },
@@ -958,6 +948,9 @@
             },
             "DefaultButtonFace": "AugmentationPitGreater"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitGreater",
           "Time": 56
         },
@@ -988,6 +981,9 @@
       }
     ]
   },
+  "TechAliasArray": [
+    "GreaterDeepOne"
+  ],
   "Sight": 9,
   "CostResource": {
     "Minerals": 200,
@@ -1010,7 +1006,7 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1020,10 +1016,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "DragonTrain",
@@ -1034,21 +1027,17 @@
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -1072,26 +1061,17 @@
     }
   ],
   "$Upgrades": [
-    "GenesisPitGreater",
-    "GreaterDeepOne",
     "GreaterDeepOneNoFootprint",
-    "PlodderBuild",
+    "GreaterDeepOne",
     "DragonPlateArmorLevel1",
     "GreaterDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "PlodderBuild"
   ],
   "$Requirements": [],
-  "$Production": [
-    "Berserker",
-    "Skyrazer",
-    "HandofPower",
-    "BrimstoneDemolisher",
-    "GenesisPitGreater",
-    "AugmentationPitGreater"
-  ],
+  "$Production": [],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -1106,25 +1086,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1132,12 +1106,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1145,25 +1116,16 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "GreaterDeepOneBuild,Halt",
@@ -1171,12 +1133,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "GreaterDeepOneTrain,Train1",
@@ -1208,7 +1167,7 @@
         "enUS": "Spawn Hand of Power"
       },
       "Tooltip": {
-        "enUS": "Caster unit. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>55</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
+        "enUS": "Caster unit that can push enemies back with its attacks. Can use Crushing Gravity and Shroud. Can be upgraded to use Portal.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>45</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Unobstructed Vision</span><br/><span style=\"color: FFE303\">Detector</span>"
       }
     },
     {
@@ -1219,7 +1178,7 @@
         "enUS": "Spawn Brimstone Demolisher"
       },
       "Tooltip": {
-        "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+        "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
       }
     },
     {

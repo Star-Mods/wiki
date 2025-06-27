@@ -1,0 +1,2437 @@
+{
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Slave"
+  },
+  "Description": {
+    "enUS": "Basic working unit. Used to gather resources, construct human structures, and repair. <br/><br/><span style=\"color: #ffff8a\">Can target the ground. </span>"
+  },
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "CABAL",
+  "DefaultAcquireLevel": "Defensive",
+  "Response": "Flee",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 45,
+  "LifeMax": 45,
+  "LifeArmorName": "-",
+  "Mover": "Ground",
+  "StationaryTurningRate": 999.8437,
+  "TurningRate": 999.8437,
+  "Radius": 0.375,
+  "SeparationRadius": 0.375,
+  "MinimapRadius": 0.375,
+  "EditorCategories": "ObjectType:Unit,ObjectFamily:CNC",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 1,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Turnable",
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDestroy",
+    "UseLineOfSight",
+    "Worker"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "CABALSlave",
+  "HotkeyAlias": "CABALSlave",
+  "SelectAlias": "CABALSlave",
+  "SubgroupAlias": "CABALSlave",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "CABALSlave",
+  "AIEvaluateAlias": "CABALSlave",
+  "ReviveType": "CABALSlave",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 33,
+      "Anim": 33,
+      "Turn": 33
+    }
+  },
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CABALSlave/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CABALSlave/Revive",
+        "Location": "Unit"
+      }
+    }
+  ],
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "_": "\r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n     _   \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n        \r\n    ",
+  "Mob": "Multiplayer",
+  "DamageDealtXP": 1,
+  "DamageTakenXP": 1,
+  "ScoreResult": "BuildOrder",
+  "GlossaryAlias": "CABALSlave",
+  "Sight": 8,
+  "AttackTargetPriority": [
+    {
+      "value": "20"
+    }
+  ],
+  "ScoreMakeCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "ScoreKillCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "Speed": 2.8125,
+  "Acceleration": 2.5,
+  "CostCategory": "Economy",
+  "Collide": [
+    "Ground",
+    "ForceField",
+    "Locust",
+    "Small"
+  ],
+  "PlaneArray": [
+    "Ground"
+  ],
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "Repair",
+    "SCVHarvest",
+    "CABALSlaveBuild",
+    "DeployMCVSupport",
+    "DeployMCVOffense",
+    "DeployMCVDefense"
+  ],
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Move",
+        "id": "Move",
+        "Icon": "btn-command-move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": "-",
+        "Hotkey": "M"
+      },
+      {
+        "Info": {
+          "class": "CAbilStop",
+          "Name": "Abil/Name/stop",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "stop",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Stop",
+          "CmdButtonArray": {
+            "Stop": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Stop"
+            },
+            "HoldFire": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "HoldFireSpecial"
+            },
+            "Cheer": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cheer"
+            },
+            "Dance": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Dance"
+            }
+          },
+          "id": "stop"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "stop,Stop",
+        "id": "Stop",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": "-",
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,HoldPos",
+        "id": "MoveHoldPosition",
+        "Icon": "btn-command-holdposition",
+        "Name": {
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
+        },
+        "Tooltip": "-",
+        "Hotkey": "H"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Patrol",
+        "id": "MovePatrol",
+        "Icon": "btn-command-patrol",
+        "Name": {
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": "-",
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "Attack",
+        "Icon": "btn-command-attack",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "AttackWorker",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuild",
+          "Name": "Abil/Name/CABALSlaveBuild",
+          "TechPlayer": "Owner",
+          "EditorCategories": "Race:Nod,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "CABALSlaveBuild",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "HaltCmdButton": {
+            "DefaultButtonFace": "Cancel"
+          },
+          "Alert": "BuildComplete",
+          "ErrorAlert": "Error",
+          "FlagArray": {
+            "BestUnit": 1,
+            "Cancelable": 1,
+            "IgnoreUnitBuildTime": 1,
+            "PeonMaintained": 1,
+            "RangeIncludesBuilding": 1,
+            "Interruptible": 1,
+            "PeonDisableCollision": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -0.75,
+              "Vespene": -0.75,
+              "Terrazine": -0.75,
+              "Custom": -0.75
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "InfoArray": {
+            "Build1": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "Outpost"
+              },
+              "Unit": "CABALOutpost",
+              "Time": 30
+            },
+            "Build2": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALControlNode"
+              },
+              "Unit": "CABALControlNode",
+              "Time": 65
+            },
+            "Build3": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "NodTiberiumSilo"
+              },
+              "ValidatorArray": [
+                "HasVespene"
+              ],
+              "Unit": "NodTiberiumSilo",
+              "Time": 30
+            },
+            "Build4": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALMonitoringStation"
+              },
+              "Unit": "CABALMonitoringStation",
+              "Time": 35
+            },
+            "Build5": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALShrine",
+                "Requirements": "HaveFactory"
+              },
+              "Unit": "CABALShrine",
+              "Time": 50
+            },
+            "Build6": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALWeaponsLaboratory",
+                "Requirements": "HaveFactory"
+              },
+              "Unit": "CABALWeaponsLaboratory",
+              "Time": 65
+            },
+            "Build7": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALGrandTemple",
+                "Requirements": "HaveFactory"
+              },
+              "Unit": "CABALGrandShrine",
+              "Time": 50
+            },
+            "Build8": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALPyramid",
+                "Requirements": "HaveFactory"
+              },
+              "Unit": "CABALPyramid",
+              "Time": 50
+            },
+            "Build9": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build10": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALViperTurret",
+                "Requirements": "CABALMonitoringStation"
+              },
+              "Unit": "CABALViperTurret0",
+              "Time": 30
+            },
+            "Build11": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALMissilePod",
+                "Requirements": "CABALMonitoringStation"
+              },
+              "Unit": "CABALMissilePodO",
+              "Time": 25
+            },
+            "Build12": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALFlameColumn",
+                "Requirements": "CABALWeaponsLaboratory"
+              },
+              "Unit": "CABALFlameColumn",
+              "Time": 45
+            },
+            "Build13": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALIncinerator",
+                "Requirements": "CABALGrandTemple"
+              },
+              "Unit": "CABALIncinerator",
+              "Time": 55
+            },
+            "Build14": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALObeliskOfLife",
+                "Requirements": "CABALShrine"
+              },
+              "Unit": "CABALObeliskOfLife",
+              "Time": 45
+            },
+            "Build15": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALShieldGenerator",
+                "Requirements": "CABALShrine"
+              },
+              "Unit": "CABALShieldGenerator",
+              "Time": 45
+            },
+            "Build16": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                },
+                "DefaultButtonFace": "CABALHelipad",
+                "Requirements": "HaveEngineeringBay"
+              },
+              "Unit": "CABALHelipad",
+              "Time": 25
+            },
+            "Build17": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build18": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build19": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build20": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build21": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build22": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build23": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build24": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build25": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build26": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build27": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build28": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build29": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            },
+            "Build30": {
+              "Button": {
+                "Flags": {
+                  "AllowMinimap": 0
+                }
+              }
+            }
+          },
+          "FidgetDelayMin": 5,
+          "FidgetDelayMax": 10,
+          "ConstructionMover": "Construction",
+          "id": "CABALSlaveBuild"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "BuildInProgress"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "BuildInProgress,Cancel",
+        "id": "CancelBuilding",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
+        },
+        "Tooltip": "-"
+      }
+    ],
+    "TBl1": [
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "CancelSubmenu",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "Outpost"
+          },
+          "Unit": "CABALOutpost",
+          "Time": 30
+        },
+        "Unit": "CABALOutpost",
+        "Time": 30,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build1",
+        "id": "Outpost",
+        "Name": {
+          "enUS": "Construct Outpost"
+        },
+        "Tooltip": {
+          "enUS": "Used to expand the construction range"
+        },
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALControlNode"
+          },
+          "Unit": "CABALControlNode",
+          "Time": 65
+        },
+        "Unit": "CABALControlNode",
+        "Time": 65,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 12
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build2",
+        "id": "CABALControlNode",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "NodTiberiumSilo"
+          },
+          "ValidatorArray": [
+            "HasVespene"
+          ],
+          "Unit": "NodTiberiumSilo",
+          "Time": 30
+        },
+        "Unit": "NodTiberiumSilo",
+        "Time": 30,
+        "Cost": {
+          "Minerals": 75,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build3",
+        "id": "NodTiberiumSilo",
+        "Name": {
+          "enUS": "Liquefied Tiberium Silo"
+        },
+        "Tooltip": {
+          "enUS": "Built on a gas spring and used to collect high-energy gas."
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALPyramid",
+            "Requirements": "HaveFactory"
+          },
+          "Unit": "CABALPyramid",
+          "Time": 50
+        },
+        "Unit": "CABALPyramid",
+        "Time": 50,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build8",
+        "id": "CABALPyramid",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALMonitoringStation"
+          },
+          "Unit": "CABALMonitoringStation",
+          "Time": 35
+        },
+        "Unit": "CABALMonitoringStation",
+        "Time": 35,
+        "Cost": {
+          "Minerals": 125,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build4",
+        "id": "CABALMonitoringStation",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALShrine",
+            "Requirements": "HaveFactory"
+          },
+          "Unit": "CABALShrine",
+          "Time": 50
+        },
+        "Unit": "CABALShrine",
+        "Time": 50,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build5",
+        "id": "CABALShrine",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALWeaponsLaboratory",
+            "Requirements": "HaveFactory"
+          },
+          "Unit": "CABALWeaponsLaboratory",
+          "Time": 65
+        },
+        "Unit": "CABALWeaponsLaboratory",
+        "Time": 65,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build6",
+        "id": "CABALWeaponsLaboratory",
+        "Name": {
+          "enUS": "WeaponsLaboratory"
+        },
+        "Tooltip": {
+          "enUS": "WeaponsLaboratory"
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALGrandTemple",
+            "Requirements": "HaveFactory"
+          },
+          "Unit": "CABALGrandShrine",
+          "Time": 50
+        },
+        "Unit": "CABALGrandShrine",
+        "Time": 50,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build7",
+        "id": "CABALGrandTemple",
+        "Icon": "grandshrineicon",
+        "Name": {
+          "enUS": "Build Grand Temple Of Nod"
+        },
+        "Tooltip": "-",
+        "Hotkey": "T"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/DeployMCVOffense",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Nod,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "DeployMCVOffense",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1
+          },
+          "Effect": [
+            "NodDeployMCVOffenseSet"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "DeployMCVOffense",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "NodEMPAttack"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Charge": {
+                "Link": "Abil/DeployMCVSupport"
+              },
+              "Cooldown": {
+                "Link": "Abil/DeployMCVSupport",
+                "Location": "Global",
+                "TimeUse": 240
+              }
+            }
+          ],
+          "Range": [
+            500
+          ],
+          "Arc": 360,
+          "CursorEffect": [
+            "NodEMPAttackSearch"
+          ],
+          "id": "DeployMCVOffense"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "DeployMCVOffense,Execute",
+        "id": "DeployOffenseMCV",
+        "Name": {
+          "enUS": "Build Offense MCV"
+        },
+        "Tooltip": {
+          "enUS": "Build Offense MCV."
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/DeployMCVDefense",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Nod,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "DeployMCVDefense",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1
+          },
+          "Effect": [
+            "NodDeployMCVDefenseSet"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "DeployMCVDefense",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "DeployDefenseMCV"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Charge": {
+                "Link": "Abil/DeployMCVSupport"
+              },
+              "Cooldown": {
+                "Link": "Abil/DeployMCVSupport",
+                "Location": "Global",
+                "TimeUse": 240
+              }
+            }
+          ],
+          "Range": [
+            500
+          ],
+          "Arc": 360,
+          "CursorEffect": [
+            "NodEMPAttackSearch"
+          ],
+          "id": "DeployMCVDefense"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "DeployMCVDefense,Execute",
+        "id": "DeployDefenseMCV",
+        "Name": {
+          "enUS": "Build Defense MCV"
+        },
+        "Tooltip": {
+          "enUS": "Mobile construction base designed for defensive purpose. <br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "Hotkey": "W"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/DeployMCVSupport",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Nod,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "DeployMCVSupport",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1
+          },
+          "Effect": [
+            "NodCreateMCVSupport"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "DeployMCVSupport",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "NodEMPAttack"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Cooldown": {
+                "Location": "Global",
+                "TimeUse": 240
+              }
+            }
+          ],
+          "Range": [
+            500
+          ],
+          "Arc": 360,
+          "CursorEffect": [
+            "NodEMPAttackSearch"
+          ],
+          "id": "DeployMCVSupport"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "DeployMCVSupport,Execute",
+        "id": "DeploySupportMCV",
+        "Name": {
+          "enUS": "Build Support MCV"
+        },
+        "Tooltip": {
+          "enUS": "Build Support MCV."
+        },
+        "Hotkey": "R"
+      }
+    ],
+    "TBl2": [
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "CancelSubmenu",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALViperTurret",
+            "Requirements": "CABALMonitoringStation"
+          },
+          "Unit": "CABALViperTurret0",
+          "Time": 30
+        },
+        "Unit": "CABALViperTurret0",
+        "Time": 30,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build10",
+        "id": "CABALViperTurret",
+        "Name": {
+          "enUS": "Build Viper Turret"
+        },
+        "Tooltip": {
+          "enUS": "Unlock the first phase of Nod technology"
+        },
+        "Hotkey": "C"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALMissilePod",
+            "Requirements": "CABALMonitoringStation"
+          },
+          "Unit": "CABALMissilePodO",
+          "Time": 25
+        },
+        "Unit": "CABALMissilePodO",
+        "Time": 25,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build11",
+        "id": "CABALMissilePod",
+        "Name": {
+          "enUS": "Build Missile Pod"
+        },
+        "Tooltip": {
+          "enUS": "Unlock the first phase of Nod technology"
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALFlameColumn",
+            "Requirements": "CABALWeaponsLaboratory"
+          },
+          "Unit": "CABALFlameColumn",
+          "Time": 45
+        },
+        "Unit": "CABALFlameColumn",
+        "Time": 45,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build12",
+        "id": "CABALFlameColumn",
+        "Name": {
+          "enUS": "Building Fire Column"
+        },
+        "Tooltip": {
+          "enUS": "Powerful defensive building<br/>can attack ground and air"
+        },
+        "Hotkey": "F"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALIncinerator",
+            "Requirements": "CABALGrandTemple"
+          },
+          "Unit": "CABALIncinerator",
+          "Time": 55
+        },
+        "Unit": "CABALIncinerator",
+        "Time": 55,
+        "Cost": {
+          "Minerals": 300,
+          "Vespene": 300,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build13",
+        "id": "CABALIncinerator",
+        "Name": {
+          "enUS": "Build Incinerator"
+        },
+        "Tooltip": {
+          "enUS": "Powerful defensive building<br/>can attack ground and air"
+        },
+        "Hotkey": "I"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALObeliskOfLife",
+            "Requirements": "CABALShrine"
+          },
+          "Unit": "CABALObeliskOfLife",
+          "Time": 45
+        },
+        "Unit": "CABALObeliskOfLife",
+        "Time": 45,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build14",
+        "id": "CABALObeliskOfLife",
+        "Name": {
+          "enUS": "Build an Obelisk of Healing"
+        },
+        "Tooltip": {
+          "enUS": "Heal friendly units"
+        },
+        "Hotkey": "H"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALShieldGenerator",
+            "Requirements": "CABALShrine"
+          },
+          "Unit": "CABALShieldGenerator",
+          "Time": 45
+        },
+        "Unit": "CABALShieldGenerator",
+        "Time": 45,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build15",
+        "id": "CABALShieldGenerator",
+        "Name": {
+          "enUS": "Build Shield Generator"
+        },
+        "Tooltip": {
+          "enUS": "Generates a shield that lasts for a period of time after the unit leaves the shield generator."
+        },
+        "Hotkey": "G"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "CABALHelipad",
+            "Requirements": "HaveEngineeringBay"
+          },
+          "Unit": "CABALHelipad",
+          "Time": 25
+        },
+        "Unit": "CABALHelipad",
+        "Time": 25,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALSlaveBuild,Build16",
+        "id": "CABALHelipad",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "B"
+      }
+    ]
+  },
+  "CargoSize": 1,
+  "SubgroupPriority": 6,
+  "id": "CABALSlave",
+  "GlossaryCategory": "Unit/Category/CABALUnits",
+  "HotkeyCategory": "Unit/Category/CABALUnits",
+  "Attributes": [
+    "Light",
+    "Biological",
+    "Mechanical"
+  ],
+  "Food": -1,
+  "CostResource": {
+    "Minerals": 50
+  },
+  "RepairTime": 8,
+  "AIOverideTargetPriority": 10,
+  "KillXP": 10,
+  "WeaponArray": [
+    {
+      "Link": "CABALSlaveFusionCutter"
+    }
+  ],
+  "InnerRadius": 0.375,
+  "ScoreMake": 50,
+  "ScoreKill": 50,
+  "TacticalAIThink": "AIThinkSCV",
+  "GlossaryPriority": 10,
+  "LateralAcceleration": 46,
+  "Weapons": [
+    {
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Slowing",
+      "Range": 0.2,
+      "Period": 1.5,
+      "id": "CABALSlaveFusionCutter",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": "-",
+      "Amount": 5,
+      "Kind": "Melee",
+      "TargetFilters": ""
+    }
+  ],
+  "Behaviors": [],
+  "Abilities": [
+    {
+      "id": "move",
+      "Name": {
+        "enUS": "move",
+        "ruRU": "Move"
+      }
+    },
+    {
+      "id": "stop",
+      "Name": {
+        "enUS": "stop",
+        "ruRU": "Stop"
+      }
+    },
+    {
+      "id": "attack",
+      "Name": {
+        "ruRU": "Attack"
+      }
+    },
+    {
+      "id": "CABALSlaveBuild",
+      "Name": {
+        "enUS": "CABAL Slave Build"
+      }
+    },
+    {
+      "id": "DeployMCVSupport",
+      "Name": {
+        "enUS": "Deploy MCV Support"
+      }
+    },
+    {
+      "id": "DeployMCVOffense",
+      "Name": {
+        "enUS": "Deploy MCV Offense"
+      }
+    },
+    {
+      "id": "DeployMCVDefense",
+      "Name": {
+        "enUS": "Deploy MCV Defense"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "CABALCrawlerTrain",
+    "CABALSlave",
+    "CABAL",
+    "IsSlave"
+  ],
+  "$Requirements": [],
+  "$Production": [
+    "CABALOutpost",
+    "CABALControlNode",
+    "NodTiberiumSilo",
+    "CABALPyramid",
+    "CABALMonitoringStation",
+    "CABALShrine",
+    "CABALWeaponsLaboratory",
+    "CABALGrandShrine",
+    "CABALViperTurret0",
+    "CABALMissilePodO",
+    "CABALFlameColumn",
+    "CABALIncinerator",
+    "CABALObeliskOfLife",
+    "CABALShieldGenerator",
+    "CABALHelipad",
+    "DropPodNodDamage",
+    "CABALOffenseCrawler",
+    "CABALDefenseCrawler",
+    "CABALSupportCrawler"
+  ],
+  "$Research": [],
+  "$Morph": [],
+  "$Phase": [],
+  "$Producers": [
+    "CABALDefenseCrawlerDeployed",
+    "CABALOffenseConstructionYard",
+    "CABALSupportConstructionYard",
+    "CABALCrawlerHangar"
+  ],
+  "$Commands": [
+    {
+      "AbilCmd": "move,Move",
+      "id": "Move",
+      "Icon": "btn-command-move",
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "stop,Stop",
+      "id": "Stop",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,HoldPos",
+      "id": "MoveHoldPosition",
+      "Icon": "btn-command-holdposition",
+      "Name": {
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,Patrol",
+      "id": "MovePatrol",
+      "Icon": "btn-command-patrol",
+      "Name": {
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "Attack",
+      "Icon": "btn-command-attack",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "AttackWorker",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "SCVHarvest,Return",
+      "id": "ReturnCargo",
+      "Icon": "btn-command-returncargo",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "BuildInProgress,Cancel",
+      "id": "CancelBuilding",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build1",
+      "id": "Outpost",
+      "Name": {
+        "enUS": "Construct Outpost"
+      },
+      "Tooltip": {
+        "enUS": "Used to expand the construction range"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build2",
+      "id": "CABALControlNode",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build3",
+      "id": "NodTiberiumSilo",
+      "Name": {
+        "enUS": "Liquefied Tiberium Silo"
+      },
+      "Tooltip": {
+        "enUS": "Built on a gas spring and used to collect high-energy gas."
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build8",
+      "id": "CABALPyramid",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build4",
+      "id": "CABALMonitoringStation",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build5",
+      "id": "CABALShrine",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build6",
+      "id": "CABALWeaponsLaboratory",
+      "Name": {
+        "enUS": "WeaponsLaboratory"
+      },
+      "Tooltip": {
+        "enUS": "WeaponsLaboratory"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build7",
+      "id": "CABALGrandTemple",
+      "Icon": "grandshrineicon",
+      "Name": {
+        "enUS": "Build Grand Temple Of Nod"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "DeployMCVOffense,Execute",
+      "id": "DeployOffenseMCV",
+      "Name": {
+        "enUS": "Build Offense MCV"
+      },
+      "Tooltip": {
+        "enUS": "Build Offense MCV."
+      }
+    },
+    {
+      "AbilCmd": "DeployMCVDefense,Execute",
+      "id": "DeployDefenseMCV",
+      "Name": {
+        "enUS": "Build Defense MCV"
+      },
+      "Tooltip": {
+        "enUS": "Mobile construction base designed for defensive purpose. <br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "DeployMCVSupport,Execute",
+      "id": "DeploySupportMCV",
+      "Name": {
+        "enUS": "Build Support MCV"
+      },
+      "Tooltip": {
+        "enUS": "Build Support MCV."
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build10",
+      "id": "CABALViperTurret",
+      "Name": {
+        "enUS": "Build Viper Turret"
+      },
+      "Tooltip": {
+        "enUS": "Unlock the first phase of Nod technology"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build11",
+      "id": "CABALMissilePod",
+      "Name": {
+        "enUS": "Build Missile Pod"
+      },
+      "Tooltip": {
+        "enUS": "Unlock the first phase of Nod technology"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build12",
+      "id": "CABALFlameColumn",
+      "Name": {
+        "enUS": "Building Fire Column"
+      },
+      "Tooltip": {
+        "enUS": "Powerful defensive building<br/>can attack ground and air"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build13",
+      "id": "CABALIncinerator",
+      "Name": {
+        "enUS": "Build Incinerator"
+      },
+      "Tooltip": {
+        "enUS": "Powerful defensive building<br/>can attack ground and air"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build14",
+      "id": "CABALObeliskOfLife",
+      "Name": {
+        "enUS": "Build an Obelisk of Healing"
+      },
+      "Tooltip": {
+        "enUS": "Heal friendly units"
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build15",
+      "id": "CABALShieldGenerator",
+      "Name": {
+        "enUS": "Build Shield Generator"
+      },
+      "Tooltip": {
+        "enUS": "Generates a shield that lasts for a period of time after the unit leaves the shield generator."
+      }
+    },
+    {
+      "AbilCmd": "CABALSlaveBuild,Build16",
+      "id": "CABALHelipad",
+      "Name": "-",
+      "Tooltip": "-"
+    }
+  ]
+}

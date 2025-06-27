@@ -1,6 +1,12 @@
 {
-  "Name": "Queen",
-  "Description": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Queen",
+    "ruRU": "Queen"
+  },
+  "Description": {
+    "enUS": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 175,
   "LifeMax": 175,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Burrowed",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "QueenBurrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "QueenBurrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "QueenBurrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "QueenBurrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,7 +107,7 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 30,
-  "ScoreKill": 150,
+  "ScoreKill": 175,
   "SubgroupPriority": 101,
   "PlaneArray": [
     "Ground"
@@ -176,8 +187,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -199,7 +216,7 @@
         },
         "Unit": "Queen",
         "Cost": {
-          "Minerals": 150,
+          "Minerals": 175,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
@@ -214,8 +231,14 @@
         "AbilCmd": "BurrowQueenUp,Execute",
         "id": "BurrowUp",
         "Icon": "btn-ability-zerg-upburrow-color",
-        "Tooltip": "Returns the unit to the surface.",
-        "Name": "Unburrow",
+        "Name": {
+          "enUS": "Unburrow",
+          "ruRU": "Unburrow"
+        },
+        "Tooltip": {
+          "enUS": "Returns the unit to the surface.",
+          "ruRU": "Returns the unit to the surface."
+        },
         "Hotkey": "R"
       }
     ]
@@ -233,11 +256,12 @@
   "KillDisplay": "Always",
   "RankDisplay": "Always",
   "CostResource": {
-    "Minerals": 150
+    "Minerals": 175
   },
   "CostCategory": "Army",
   "id": "QueenBurrowed",
   "Icon": "btn-unit-zerg-queen",
+  "Model": "Queen_Ex3",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -245,18 +269,25 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "BurrowQueenUp",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      }
     }
   ],
   "$Upgrades": [
     "BurrowQueenDown",
     "QueenBurrowed",
-    "ZergGroundArmorsLevel1",
     "IsQueenBurrowed",
+    "Burrow",
+    "ZergGroundArmorsLevel1",
     "Queen",
     "ZergGroundArmors",
     "ZergGroundArmorsLevel2",
@@ -265,7 +296,6 @@
     "ZergMissileWeapons",
     "ZergMissileWeaponsLevel2",
     "ZergMissileWeaponsLevel3",
-    "Burrow",
     "Queen_Death",
     "QueenBurrowedSplat",
     "UPLRenameZerg",
@@ -285,15 +315,27 @@
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "BurrowQueenUp,Execute",
       "id": "BurrowUp",
       "Icon": "btn-ability-zerg-upburrow-color",
-      "Tooltip": "Returns the unit to the surface.",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      },
+      "Tooltip": {
+        "enUS": "Returns the unit to the surface.",
+        "ruRU": "Returns the unit to the surface."
+      }
     }
   ]
 }

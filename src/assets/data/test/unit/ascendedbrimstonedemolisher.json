@@ -1,9 +1,10 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ascended Brimstone Demolisher"
   },
   "Description": {
-    "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+    "enUS": "Powerful massive unit. Deals heavy melee splash damage. Can be upgraded to deal ranged splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,8 +21,8 @@
     "enUS": "Dragon Plate Armor"
   },
   "Mover": "Ground",
-  "StationaryTurningRate": 405,
-  "TurningRate": 405,
+  "StationaryTurningRate": 450,
+  "TurningRate": 450,
   "Radius": 1.25,
   "SeparationRadius": 1.25,
   "MinimapRadius": 1.25,
@@ -70,16 +71,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "BrimstoneDemolisher/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "BrimstoneDemolisher/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "BrimstoneDemolisher/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "BrimstoneDemolisher/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -98,6 +101,12 @@
     "Massive",
     "Heroic"
   ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "Frenzy",
+    "BrimstoneDemolisherInfernalBreath1",
+    "DragonAscended"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -106,6 +115,16 @@
   "Acceleration": 1000,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedBrimstoneDemolisher",
+    "AscendedBrimstoneDemolisherFission",
+    "BrimstoneDemolisherFission",
+    "DragonFissionDisabled",
+    "BrimstoneDemolisherInfernalBreath"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -196,12 +215,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -241,8 +257,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -257,10 +272,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -280,12 +292,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -375,13 +384,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -471,13 +477,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -551,14 +554,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -585,7 +582,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
         },
         "Hotkey": "X"
       },
@@ -608,7 +605,7 @@
           "enUS": "Ascend"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+          "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
         },
         "Hotkey": "X"
       },
@@ -1248,8 +1245,11 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "BrimstoneDemolisher"
+  ],
   "LifeArmor": 2,
-  "Speed": 2.25,
+  "Speed": 2.5,
   "Sight": 11,
   "Food": -6,
   "CostResource": {
@@ -1258,6 +1258,17 @@
     "Custom": 140
   },
   "KillXP": 140,
+  "WeaponArray": [
+    {
+      "Link": "BrimstoneDemolisherInfernalBreath"
+    },
+    {
+      "Link": "BrimstoneDemolisherAscendedBrutalThrash"
+    },
+    {
+      "Link": "BrimstoneDemolisherInfernalBreathDummy"
+    }
+  ],
   "CargoSize": 8,
   "ScoreMake": 700,
   "ScoreKill": 700,
@@ -1279,23 +1290,32 @@
   "InnerRadius": 1,
   "Icon": "btn-unit-zerg-brakk",
   "Model": "PrimalKing",
-  "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dehaka-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "Options": {
+        "Hidden": 1,
+        "CanInitiateAttackOrder": 1
+      },
+      "Period": 0,
       "id": "BrimstoneDemolisherInfernalBreath",
+      "parent": "BrimstoneDemolisherInfernalBreathDummy",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Infernal Breath"
       },
       "Amount": 5,
       "Kind": "Splash",
       "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0
+      "Range": 7
     },
     {
-      "id": "BrimstoneDemolisherBrutalThrash",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "Range": 1.25,
+      "Effect": "BrimstoneDemolisherAscendedBrutalThrashSet",
+      "id": "BrimstoneDemolisherAscendedBrutalThrash",
+      "parent": "BrimstoneDemolisherBrutalThrash",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Brutal Thrash"
       },
@@ -1303,41 +1323,48 @@
       "Kind": "Melee",
       "DisplayAttackCount": 2,
       "TargetFilters": "Ground",
-      "Range": 0.5,
       "Period": 1.33
     },
     {
+      "EditorCategories": "Race:Dragon",
+      "Options": {
+        "Disabled": 1,
+        "CanInitiateAttackOrder": 0,
+        "LinkedCooldown": 0
+      },
+      "Icon": "btn-upgrade-dragon-fireattacks-level0",
+      "DisplayEffect": "BrimstoneDemolisherInfernalBreathDamage",
+      "TargetFilters": "Ground",
+      "AcquirePrioritization": "ByAngle",
+      "MinScanRange": 9,
+      "Range": 7,
+      "ArcSlop": 5.625,
+      "Period": 0.25,
+      "DamagePoint": 0.25,
+      "Backswing": 0,
+      "Effect": "BrimstoneDemolisherInfernalBreathCreatePersistent1",
+      "LegacyOptions": {
+        "CanRetargetWhileChanneling": 1,
+        "KeepChanneling": 1
+      },
+      "RandomDelayMin": 0,
+      "RandomDelayMax": 0,
       "id": "BrimstoneDemolisherInfernalBreathDummy",
-      "Icon": "fireball_1",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Infernal Breath"
       },
       "Amount": 5,
-      "Kind": "Splash",
-      "TargetFilters": "Ground",
-      "Range": 7,
-      "Period": 0.25
+      "Kind": "Splash"
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
       "Tooltip": "-"
-    },
-    {
-      "id": "Frenzy",
-      "Icon": "btn-ability-zerg-creepmove",
-      "Name": {
-        "enUS": "Frenzy",
-        "ruRU": "Frenzy"
-      },
-      "Tooltip": {
-        "enUS": "Deals more damage and is immune stun, slow, and mind control.",
-        "ruRU": "Deals more damage and is immune stun, slow, and mind control."
-      }
     },
     {
       "id": "BrimstoneDemolisherInfernalBreath1",
@@ -1361,22 +1388,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1412,23 +1438,29 @@
   ],
   "$Upgrades": [
     "Button/Tooltip/BrimstoneDemolisher",
+    "BrimstoneDemolisherInfernalBreath",
     "Button/Tooltip/AscendedBrimstoneDemolisher",
     "AscendedBrimstoneDemolisher",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
+    "DragonFireAttacksLevel1",
+    "DragonFireAttacks",
+    "DragonFireAttacksLevel2",
+    "DragonFireAttacksLevel3",
     "DragonPlateArmorLevel1",
     "BrimstoneDemolisher",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3"
+    "DragonPlateArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
   "$Morph": [],
-  "$Phase": [
-    "AscendedBrimstoneDemolisher",
-    "AscendedBrimstoneDemolisher"
-  ],
-  "$Phased": "AscendedBrimstoneDemolisher",
+  "$Phase": [],
   "$Producers": [],
   "$Commands": [
     {
@@ -1437,12 +1469,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1450,51 +1479,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedBrimstoneDemolisher,Execute",
@@ -1503,7 +1517,7 @@
         "enUS": "Ascend"
       },
       "Tooltip": {
-        "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>Adaptive Armor</span>"
+        "enUS": "<span style=\"color: 00FF00\">+<b>175</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+ <b>25</b>% Brutal Thrash Range<br/>Adaptive Armor</span>"
       }
     },
     {

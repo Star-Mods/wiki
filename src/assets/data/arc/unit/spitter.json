@@ -1,6 +1,12 @@
 {
-  "Name": "Spitter",
-  "Description": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Spitter",
+    "ruRU": "Спиттер"
+  },
+  "Description": {
+    "enUS": "Long ranged beast that spits acid at enemies, dealing damage in an area. Can issue attacks to specific points on the ground<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Зверь дальнего боя, который плюется кислотой во врагов, нанося урон по области. Может наносить удары по определенным точкам на земле.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 120,
   "LifeMax": 120,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Spitter/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Spitter/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Spitter/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Spitter/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -176,8 +187,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -250,8 +267,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -340,8 +363,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -430,8 +459,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -505,8 +540,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -525,8 +566,14 @@
         "Type": "Passive",
         "id": "SpitterVolatile",
         "Icon": "btn-upgrade-zagara-bilebombardment",
-        "Tooltip": "The Spitter deals <b>40</b> damage in an area around itself when it dies.",
-        "Name": "Volatile"
+        "Name": {
+          "enUS": "Volatile",
+          "ruRU": "Нестабильность"
+        },
+        "Tooltip": {
+          "enUS": "The Spitter deals <b>40</b> damage in an area around itself when it dies.",
+          "ruRU": "Спиттера наносит <b>40</b> урона по области вокруг себя когда умирает."
+        }
       },
       {
         "Info": {
@@ -599,8 +646,14 @@
         "AbilCmd": "attack,Barrage",
         "id": "AttackBarrage",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders the unit to constantly attack the target location.",
-        "Name": "Attack Ground",
+        "Name": {
+          "enUS": "Attack Ground",
+          "ruRU": "Attack Ground"
+        },
+        "Tooltip": {
+          "enUS": "Deals damage to ground units in the target area.",
+          "ruRU": "Приказывает выбранным единицам, которые могут использовать эту функцию, стрелять по выбранной точке на земле."
+        },
         "Hotkey": "G"
       }
     ]
@@ -639,12 +692,16 @@
   "SubgroupPriority": 77,
   "GlossaryAlias": "Spitter",
   "Icon": "btn-unit-xayid-spitter",
+  "Model": "Spitter",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "SpitterSpores",
-      "Name": "Spitter Spores",
+      "Name": {
+        "enUS": "Spitter Spores",
+        "ruRU": "Споры Спиттера"
+      },
       "Amount": 40,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
@@ -654,21 +711,35 @@
   ],
   "Behaviors": [
     {
-      "id": "SpitterFate"
+      "id": "SpitterFate",
+      "Name": {
+        "enUS": "Spitter Fate",
+        "ruRU": "Spitter Fate"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -702,43 +773,79 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "attack,Barrage",
       "id": "AttackBarrage",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders the unit to constantly attack the target location.",
-      "Name": "Attack Ground"
+      "Name": {
+        "enUS": "Attack Ground",
+        "ruRU": "Attack Ground"
+      },
+      "Tooltip": {
+        "enUS": "Deals damage to ground units in the target area.",
+        "ruRU": "Приказывает выбранным единицам, которые могут использовать эту функцию, стрелять по выбранной точке на земле."
+      }
     }
   ]
 }

@@ -1,6 +1,12 @@
 {
-  "Name": "Mole",
-  "Description": "Deployable artillery cannon and radar suite.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Mole",
+    "ruRU": "Крот"
+  },
+  "Description": {
+    "enUS": "Deployable artillery cannon and radar suite.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Развёртываемая артиллерия.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 125,
-  "LifeMax": 125,
-  "LifeArmorName": "Ground Mechanical Plating",
+  "LifeStart": 140,
+  "LifeMax": 140,
+  "LifeArmorName": {
+    "enUS": "Ground Mechanical Plating",
+    "ruRU": "Броня наземной механики"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 360,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Mole/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Mole/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Mole/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Mole/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -185,8 +196,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -259,8 +276,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -297,8 +320,14 @@
         "AbilCmd": "MoleDeactivate,Execute",
         "id": "MobilizeCannon",
         "Icon": "btn-ability-terran-deactivatemine",
-        "Tooltip": "Mobilizes the <span style=\"color: #FFFF80\">Mole</span>, disallowing usage of its cannon.",
-        "Name": "Mobilize Cannon",
+        "Name": {
+          "enUS": "Mobilize Cannon",
+          "ruRU": "Мобилизировать орудие"
+        },
+        "Tooltip": {
+          "enUS": "Mobilizes the <span style=\"color: FFFF80\">Mole</span>, disallowing usage of its cannon.",
+          "ruRU": "Мобилизирует <span style=\"color: FFFF80\">Крота</span>, отключая его оружие."
+        },
         "Hotkey": "D"
       },
       {
@@ -365,8 +394,14 @@
         "AbilCmd": "MoleSubterraneanSensors,On",
         "id": "SubterraneanSensors",
         "Icon": "btn-upgrade-terran-nova-detector",
-        "Tooltip": "While burrowed, the <span style=\"color: #FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: #78F0FF\">Drains <b>2</b> power per second.</span>",
-        "Name": "Subterranean Sensors",
+        "Name": {
+          "enUS": "Subterranean Sensors",
+          "ruRU": "Подземные датчики"
+        },
+        "Tooltip": {
+          "enUS": "While burrowed, the <span style=\"color: FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: 78F0FF\">Drains <b>2</b> power per second.</span>",
+          "ruRU": "<span style=\"color: FFFF80\">Кроты</span> получают +22 дальности наземного радара ."
+        },
         "Hotkey": "Q"
       },
       {
@@ -494,8 +529,14 @@
         "AbilCmd": "MoleTurnTurret,Execute",
         "id": "Turn",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to turn toward the target area or unit.",
-        "Name": "Turn",
+        "Name": {
+          "enUS": "Turn",
+          "ruRU": "Развернуться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to turn toward the target area or unit.",
+          "ruRU": "Orders selected units to turn toward the target area or unit."
+        },
         "Hotkey": "T"
       },
       {
@@ -537,8 +578,14 @@
         "AbilCmd": "MoleUnbury,Execute",
         "id": "MoleReveal",
         "Icon": "btn-ability-genetron-ambush",
-        "Tooltip": "Returns the Mole's cannon to the surface.",
-        "Name": "Reveal",
+        "Name": {
+          "enUS": "Reveal",
+          "ruRU": "Раскрыть"
+        },
+        "Tooltip": {
+          "enUS": "Returns the Mole's cannon to the surface.",
+          "ruRU": "Выкопыть орудие Крота"
+        },
         "Hotkey": "F"
       },
       {
@@ -605,8 +652,14 @@
         "AbilCmd": "MoleSubterraneanSensors,Off",
         "id": "MoleSubterraneanSensorsOff",
         "Icon": "btn-upgrade-terran-nova-detector",
-        "Tooltip": "Disables the Subterranean Sensors.",
-        "Name": "Subterranean Sensors Off",
+        "Name": {
+          "enUS": "Subterranean Sensors Off",
+          "ruRU": "Подземные сенсоры отключены"
+        },
+        "Tooltip": {
+          "enUS": "Disables the Subterranean Sensors.",
+          "ruRU": "Отключает Подземные Сенсоры <span style=\"color: FFFF80\">Крота</span>."
+        },
         "Hotkey": "W"
       },
       {
@@ -626,8 +679,14 @@
         "AbilCmd": "",
         "id": "SubterraneanSensors",
         "Icon": "btn-upgrade-terran-nova-detector",
-        "Tooltip": "While burrowed, the <span style=\"color: #FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: #78F0FF\">Drains <b>2</b> power per second.</span>",
-        "Name": "Subterranean Sensors",
+        "Name": {
+          "enUS": "Subterranean Sensors",
+          "ruRU": "Подземные датчики"
+        },
+        "Tooltip": {
+          "enUS": "While burrowed, the <span style=\"color: FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: 78F0FF\">Drains <b>2</b> power per second.</span>",
+          "ruRU": "<span style=\"color: FFFF80\">Кроты</span> получают +22 дальности наземного радара ."
+        },
         "Hotkey": "Q"
       },
       {
@@ -694,8 +753,14 @@
         "AbilCmd": "MoleSubterraneanSensors,Off",
         "id": "MoleSubterraneanSensorsOff",
         "Icon": "btn-upgrade-terran-nova-detector",
-        "Tooltip": "Disables the Subterranean Sensors.",
-        "Name": "Subterranean Sensors Off",
+        "Name": {
+          "enUS": "Subterranean Sensors Off",
+          "ruRU": "Подземные сенсоры отключены"
+        },
+        "Tooltip": {
+          "enUS": "Disables the Subterranean Sensors.",
+          "ruRU": "Отключает Подземные Сенсоры <span style=\"color: FFFF80\">Крота</span>."
+        },
         "Hotkey": "W"
       }
     ]
@@ -707,21 +772,11 @@
     "Vespene": 100
   },
   "RepairTime": 35,
-  "TurretArray": [],
   "InnerRadius": 0.5,
   "SubgroupPriority": 43,
   "AIEvalConstant": 1,
   "TechAliasArray": [
     "Alias_Mole"
-  ],
-  "EquipmentArray": [
-    {
-      "Effect": "",
-      "Icon": "",
-      "Name": "",
-      "Tooltip": "",
-      "Weapon": "LynxCannon"
-    }
   ],
   "GlossaryPriority": 8,
   "GlossaryStrongArray": [
@@ -737,43 +792,79 @@
     "Zergling"
   ],
   "KillDisplay": "Always",
+  "EquipmentArray": [
+    {
+      "Effect": "",
+      "Icon": "",
+      "Name": "",
+      "Tooltip": "",
+      "Weapon": "LynxCannonDisabled"
+    }
+  ],
   "Footprint": "",
   "Icon": "btn-unit-genetron-mole",
+  "Model": "Mole",
   "LifeArmorIcon": "btn-upgrade-genetron-groundmechplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackGenetronPowerSupplyUnit"
+      "id": "TrackGenetronPowerSupplyUnit",
+      "Name": {
+        "enUS": "Track Genetron Power Supply Unit"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "MoleSubterraneanSensors",
-      "Name": "MoleSubterraneanSensors"
+      "Name": {
+        "enUS": "MoleSubterraneanSensors",
+        "ruRU": "MoleSubterraneanSensors"
+      }
     },
     {
       "id": "MoleDeactivate",
-      "Name": "MoleDeactivate"
+      "Name": {
+        "enUS": "MoleDeactivate",
+        "ruRU": "MoleDeactivate"
+      }
     },
     {
       "id": "MoleUnbury",
-      "Name": "MoleUnbury"
+      "Name": {
+        "enUS": "MoleUnbury",
+        "ruRU": "MoleUnbury"
+      }
     },
     {
       "id": "MoleTurnTurret",
-      "Name": "MoleTurnTurret"
+      "Name": {
+        "enUS": "MoleTurnTurret",
+        "ruRU": "MoleTurnTurret"
+      }
     }
   ],
   "$Upgrades": [
@@ -788,13 +879,14 @@
     "MoleBury",
     "IsNotMoleBurrowed",
     "MoleAttackRange",
-    "MoleTurret",
+    "MoleTurretSieged",
     "MoleBurrowSound",
     "MoleBurrowedSplat"
   ],
   "$Requirements": [],
   "$Production": [
-    "MoleTurnDummy"
+    "MoleTurnDummy",
+    "GenetronPowerSupplyDummy"
   ],
   "$Research": [],
   "$Morph": [
@@ -809,57 +901,105 @@
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "MoleDeactivate,Execute",
       "id": "MobilizeCannon",
       "Icon": "btn-ability-terran-deactivatemine",
-      "Tooltip": "Mobilizes the <span style=\"color: #FFFF80\">Mole</span>, disallowing usage of its cannon.",
-      "Name": "Mobilize Cannon"
+      "Name": {
+        "enUS": "Mobilize Cannon",
+        "ruRU": "Мобилизировать орудие"
+      },
+      "Tooltip": {
+        "enUS": "Mobilizes the <span style=\"color: FFFF80\">Mole</span>, disallowing usage of its cannon.",
+        "ruRU": "Мобилизирует <span style=\"color: FFFF80\">Крота</span>, отключая его оружие."
+      }
     },
     {
       "AbilCmd": "MoleSubterraneanSensors,On",
       "id": "SubterraneanSensors",
       "Icon": "btn-upgrade-terran-nova-detector",
-      "Tooltip": "While burrowed, the <span style=\"color: #FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: #78F0FF\">Drains <b>2</b> power per second.</span>",
-      "Name": "Subterranean Sensors"
+      "Name": {
+        "enUS": "Subterranean Sensors",
+        "ruRU": "Подземные датчики"
+      },
+      "Tooltip": {
+        "enUS": "While burrowed, the <span style=\"color: FFFF80\">Mole</span> gains +<b>30</b> ground radar range.<br/><br/><span style=\"color: 78F0FF\">Drains <b>2</b> power per second.</span>",
+        "ruRU": "<span style=\"color: FFFF80\">Кроты</span> получают +22 дальности наземного радара ."
+      }
     },
     {
       "AbilCmd": "MoleTurnTurret,Execute",
       "id": "Turn",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to turn toward the target area or unit.",
-      "Name": "Turn"
+      "Name": {
+        "enUS": "Turn",
+        "ruRU": "Развернуться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to turn toward the target area or unit.",
+        "ruRU": "Orders selected units to turn toward the target area or unit."
+      }
     },
     {
       "AbilCmd": "MoleUnbury,Execute",
       "id": "MoleReveal",
       "Icon": "btn-ability-genetron-ambush",
-      "Tooltip": "Returns the Mole's cannon to the surface.",
-      "Name": "Reveal"
+      "Name": {
+        "enUS": "Reveal",
+        "ruRU": "Раскрыть"
+      },
+      "Tooltip": {
+        "enUS": "Returns the Mole's cannon to the surface.",
+        "ruRU": "Выкопыть орудие Крота"
+      }
     },
     {
       "AbilCmd": "MoleSubterraneanSensors,Off",
       "id": "MoleSubterraneanSensorsOff",
       "Icon": "btn-upgrade-terran-nova-detector",
-      "Tooltip": "Disables the Subterranean Sensors.",
-      "Name": "Subterranean Sensors Off"
+      "Name": {
+        "enUS": "Subterranean Sensors Off",
+        "ruRU": "Подземные сенсоры отключены"
+      },
+      "Tooltip": {
+        "enUS": "Disables the Subterranean Sensors.",
+        "ruRU": "Отключает Подземные Сенсоры <span style=\"color: FFFF80\">Крота</span>."
+      }
     },
     {
       "AbilCmd": "MoleSubterraneanSensors,Off",
       "id": "MoleSubterraneanSensorsOff",
       "Icon": "btn-upgrade-terran-nova-detector",
-      "Tooltip": "Disables the Subterranean Sensors.",
-      "Name": "Subterranean Sensors Off"
+      "Name": {
+        "enUS": "Subterranean Sensors Off",
+        "ruRU": "Подземные сенсоры отключены"
+      },
+      "Tooltip": {
+        "enUS": "Disables the Subterranean Sensors.",
+        "ruRU": "Отключает Подземные Сенсоры <span style=\"color: FFFF80\">Крота</span>."
+      }
     }
   ]
 }

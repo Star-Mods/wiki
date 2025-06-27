@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Augmentation Pit"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AugmentationPitLesser/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AugmentationPitLesser/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AugmentationPitLesser/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AugmentationPitLesser/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,17 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5PassiveCancelToSelection",
+    "AugmentationPit",
+    "LesserDeepOneResearchFlamespitter",
+    "LesserDeepOneResearchHunter",
+    "LesserDeepOneResearchHornedMagus",
+    "LesserDeepOneResearchUnseenBeast"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +198,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +238,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +260,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "FlamespitterFervidReconstitution",
@@ -292,14 +297,14 @@
         "Row": 0,
         "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "LesserDeepOneResearch,Research1",
+        "AbilCmd": "LesserDeepOneResearchFlamespitter,Research1",
         "id": "LesserDeepOneFervidReconstitution",
         "Icon": "btn-ability-kerrigan-wildmutation",
         "Name": {
           "enUS": "Augment Fervid Reconstitution"
         },
         "Tooltip": {
-          "enUS": "Prevents <span style=\"color: ffff8a\">Flamespitters</span> from overheating, causes them to temporarily gain increased speed while attacking, and increases their damage by 1."
+          "enUS": "Prevents <span style=\"color: ffff8a\">Flamespitters</span> from overheating, instead causing them to temporarily gain movement speed while attacking."
         },
         "Hotkey": "Q"
       },
@@ -335,7 +340,7 @@
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "LesserDeepOneResearch,Research2",
+        "AbilCmd": "LesserDeepOneResearchHunter,Research1",
         "id": "LesserDeepOneWickedBarbs",
         "Icon": "btn-upgrade-zerg-frenzy",
         "Name": {
@@ -378,7 +383,7 @@
         "Row": 0,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "LesserDeepOneResearch,Research3",
+        "AbilCmd": "LesserDeepOneResearchHornedMagus,Research1",
         "id": "GreaterDeepOneFrenzy",
         "Icon": "btn-ability-zerg-dehaka-superroar",
         "Name": {
@@ -404,10 +409,10 @@
             "Minerals": 200,
             "Vespene": 200
           },
-          "Time": 105,
+          "Time": 140,
           "Upgrade": "UnseenBeastProwl"
         },
-        "Time": 105,
+        "Time": 140,
         "Cost": {
           "Minerals": 200,
           "Vespene": 200,
@@ -421,7 +426,7 @@
         "Row": 0,
         "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "LesserDeepOneResearch,Research4",
+        "AbilCmd": "LesserDeepOneResearchUnseenBeast,Research1",
         "id": "LesserDeepOneProwl",
         "Icon": "wireframe-critter-snowbeast",
         "Name": {
@@ -462,16 +467,12 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
@@ -481,21 +482,38 @@
       }
     },
     {
-      "id": "LesserDeepOneResearch",
+      "id": "LesserDeepOneResearchFlamespitter",
       "Name": {
-        "enUS": "Lesser Deep One - Research"
+        "enUS": "Lesser Deep One - Research (Flamespitter)"
+      }
+    },
+    {
+      "id": "LesserDeepOneResearchHunter",
+      "Name": {
+        "enUS": "Lesser Deep One - Research (Hunter)"
+      }
+    },
+    {
+      "id": "LesserDeepOneResearchHornedMagus",
+      "Name": {
+        "enUS": "Lesser Deep One - Research (Horned Magus)"
+      }
+    },
+    {
+      "id": "LesserDeepOneResearchUnseenBeast",
+      "Name": {
+        "enUS": "Lesser Deep One - Research (Unseen Beast)"
       }
     }
   ],
   "$Upgrades": [
-    "LesserDeepOneBuild",
-    "AugmentationPitLesser",
     "DragonPlateArmorLevel1",
+    "AugmentationPitLesser",
+    "LesserDeepOneBuild",
     "AugmentationPitLesser",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -518,39 +536,33 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "LesserDeepOneResearch,Research1",
+      "AbilCmd": "LesserDeepOneResearchFlamespitter,Research1",
       "id": "LesserDeepOneFervidReconstitution",
       "Icon": "btn-ability-kerrigan-wildmutation",
       "Name": {
         "enUS": "Augment Fervid Reconstitution"
       },
       "Tooltip": {
-        "enUS": "Prevents <span style=\"color: ffff8a\">Flamespitters</span> from overheating, causes them to temporarily gain increased speed while attacking, and increases their damage by 1."
+        "enUS": "Prevents <span style=\"color: ffff8a\">Flamespitters</span> from overheating, instead causing them to temporarily gain movement speed while attacking."
       }
     },
     {
-      "AbilCmd": "LesserDeepOneResearch,Research2",
+      "AbilCmd": "LesserDeepOneResearchHunter,Research1",
       "id": "LesserDeepOneWickedBarbs",
       "Icon": "btn-upgrade-zerg-frenzy",
       "Name": {
@@ -561,7 +573,7 @@
       }
     },
     {
-      "AbilCmd": "LesserDeepOneResearch,Research3",
+      "AbilCmd": "LesserDeepOneResearchHornedMagus,Research1",
       "id": "GreaterDeepOneFrenzy",
       "Icon": "btn-ability-zerg-dehaka-superroar",
       "Name": {
@@ -572,7 +584,7 @@
       }
     },
     {
-      "AbilCmd": "LesserDeepOneResearch,Research4",
+      "AbilCmd": "LesserDeepOneResearchUnseenBeast,Research1",
       "id": "LesserDeepOneProwl",
       "Icon": "wireframe-critter-snowbeast",
       "Name": {

@@ -1,6 +1,12 @@
 {
-  "Name": "Refinery",
-  "Description": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
+  "Name": {
+    "enUS": "Refinery",
+    "ruRU": "Refinery"
+  },
+  "Description": {
+    "enUS": "Built over a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Built over a Vespene Geyser to allow harvesting of vespene gas."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Refinery/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Refinery/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Refinery/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Refinery/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -179,8 +190,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -243,8 +260,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -263,8 +286,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilder",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -275,7 +304,8 @@
     "RichVespeneGeyser",
     "ProtossVespeneGeyser",
     "PurifierVespeneGeyser",
-    "ShakurasVespeneGeyser"
+    "ShakurasVespeneGeyser",
+    "TempleVespeneGeyserSCBW"
   ],
   "GlossaryPriority": 244,
   "HotkeyCategory": "Unit/Category/TerranUnits",
@@ -287,33 +317,57 @@
   ],
   "id": "Refinery",
   "Icon": "btn-building-terran-refinery",
+  "Model": "RefineryEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGas",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas",
+        "ruRU": "Harvestable Vespene Geyser Gas"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "WorkerPeriodicRefineryCheck",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
-    "FilteringPlant",
+    "TerranBuildingArmor",
     "Refinery",
     "RefineryRich",
+    "FilteringPlant",
     "FilteringPlantRich",
-    "TerranBuildingArmor",
+    "SynoidSyphon",
     "TerranBuild",
     "Refinery",
-    "RefinerySplat"
+    "RefinerySplat",
+    "RefinerySCBW",
+    "SynoidSyphon",
+    "IsRefinery",
+    "CasterIsRefinery"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -328,15 +382,27 @@
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

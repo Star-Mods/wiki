@@ -1,18 +1,24 @@
 {
-  "Name": "Billet",
-  "Description": "Infantry training facility. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>Incinerator</b><br/>- <b>Mortar Trooper</b><br/>- <b>Rocket Trooper</b>",
+  "Name": {
+    "enUS": "Billet"
+  },
+  "Description": {
+    "enUS": "Infantry training facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>undefined</b><br/>- <b>Mortar Trooper</b><br/>- <b>undefined</b>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "UPL Building Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UPLBillet/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UPLBillet/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UPLBillet/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UPLBillet/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -165,8 +173,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -184,67 +198,14 @@
         "Column": 3,
         "Type": "SelectBuilder",
         "id": "UPLSelectBuilder",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
-        "Hotkey": "U"
-      },
-      {
-        "Info": {},
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
         },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "Rally,Rally1",
-        "id": "Cancel",
-        "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
-        "Hotkey": "Esc"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "UPLScout"
-          },
-          "Unit": [
-            "UPLScout"
-          ],
-          "Time": 26
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
         },
-        "Unit": [
-          "UPLScout"
-        ],
-        "Time": 26,
-        "Cost": {
-          "Minerals": 50,
-          "Vespene": 25,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": -1
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletTrain,Train9",
-        "id": "UPLScout",
-        "Icon": "btn-unit-upl-uplscout",
-        "Tooltip": "Covert Operations<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "S.C.O.U.T.",
         "Hotkey": "U"
       },
       {
@@ -256,14 +217,14 @@
             "DefaultButtonFace": "UPLTrainGuardian"
           },
           "Unit": [
-            "DarrenRodgers"
+            "UPLInfantryGuardian"
           ],
-          "Time": 26
+          "Time": 30.8
         },
         "Unit": [
-          "DarrenRodgers"
+          "UPLInfantryGuardian"
         ],
-        "Time": 26,
+        "Time": 30.8,
         "Cost": {
           "Minerals": 50,
           "Vespene": 0,
@@ -280,9 +241,80 @@
         "AbilCmd": "UPLBilletTrain,Train11",
         "id": "UPLTrainGuardian",
         "Icon": "btn-unit-upl-uplriotofficer",
-        "Tooltip": "Troopers Equipped with Combat Shotgun and Riot Shield<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Train Guardian",
+        "Name": {
+          "enUS": "Train Guardian"
+        },
+        "Tooltip": {
+          "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
         "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilQueue",
+          "Name": "Abil/Name/que5",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "que5",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "QueueCount": 1,
+          "Flags": {
+            "BestUnit": 1,
+            "NotifyAddOn": 1
+          },
+          "CmdButtonArray": {
+            "CancelLast": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "CancelSlot": {
+              "DefaultButtonFace": "CancelSlot"
+            }
+          },
+          "QueueSize": 5,
+          "id": "que5"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "que5,CancelLast",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -295,12 +327,12 @@
           "Unit": [
             "InfantryHeavy"
           ],
-          "Time": 26
+          "Time": 36.4
         },
         "Unit": [
           "InfantryHeavy"
         ],
-        "Time": 26,
+        "Time": 36.4,
         "Cost": {
           "Minerals": 75,
           "Vespene": 0,
@@ -317,8 +349,12 @@
         "AbilCmd": "UPLBilletTrain,Train2",
         "id": "InfantryHeavy",
         "Icon": "btn-unit-upl-infantryheavy",
-        "Tooltip": "Heavy Assault<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Train Heavy Gunner",
+        "Name": {
+          "enUS": "Train Heavy Gunner"
+        },
+        "Tooltip": {
+          "enUS": "Heavy Assault infantry specialized to deal with armored units. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -327,17 +363,17 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "UPLTrainInfantryFlamethrower"
+            "DefaultButtonFace": "InfantryRocket"
           },
           "Unit": [
-            "InfantryFlamethrower"
+            "UPLSpecOps"
           ],
-          "Time": 28
+          "Time": 30
         },
         "Unit": [
-          "InfantryFlamethrower"
+          "UPLSpecOps"
         ],
-        "Time": 28,
+        "Time": 30,
         "Cost": {
           "Minerals": 50,
           "Vespene": 25,
@@ -351,86 +387,16 @@
         "Row": 0,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletTrain,Train4",
-        "id": "UPLTrainInfantryFlamethrower",
-        "Icon": "btn-unit-upl-infantryflamethrower",
-        "Tooltip": "Flamethrower Infantry<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Train Incinerator",
-        "Hotkey": "F"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "UPLTrainSpecialInfantryRocket"
-          },
-          "Unit": [
-            "UPLSpecOps"
-          ],
-          "Time": 26
-        },
-        "Unit": [
-          "UPLSpecOps"
-        ],
-        "Time": 26,
-        "Cost": {
-          "Minerals": 50,
-          "Vespene": 25,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": -1
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletTrain,Train8",
+        "AbilCmd": "UPLBilletTrain,Train3",
         "id": "UPLTrainSpecialInfantryRocket",
         "Icon": "btn-unit-upl-richardgideon",
-        "Tooltip": "Anti-Armor<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units</span>",
-        "Name": "Train Rocket Trooper",
+        "Name": {
+          "enUS": "Train Rocket Trooper"
+        },
+        "Tooltip": {
+          "enUS": "Long range attack infantry with high damage output. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+        },
         "Hotkey": "R"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "InfantryMortar"
-          },
-          "Unit": [
-            "InfantryMortar"
-          ],
-          "Time": 26
-        },
-        "Unit": [
-          "InfantryMortar"
-        ],
-        "Time": 26,
-        "Cost": {
-          "Minerals": 50,
-          "Vespene": 50,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": -1
-        },
-        "Row": 1,
-        "Column": 2,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletTrain,Train5",
-        "id": "InfantryMortar",
-        "Icon": "btn-unit-upl-infantrymortar",
-        "Tooltip": "Artillery Support<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Train Mortar Trooper",
-        "Hotkey": "T"
       },
       {
         "Upgrade": "InfantryFlamethrower3xBurning",
@@ -443,16 +409,16 @@
             "Requirements": "LearnInfantryFlamethrower3xBurning"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 150,
+            "Vespene": 150
           },
-          "Time": 154,
+          "Time": 56,
           "Upgrade": "InfantryFlamethrower3xBurning"
         },
-        "Time": 154,
+        "Time": 56,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 150,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -466,8 +432,12 @@
         "AbilCmd": "UPLBilletResearch,Research4",
         "id": "InfantryFlamethrowerBurningUpgraded",
         "Icon": "btn-ability-upl-naniteignition",
-        "Tooltip": "Burning Damage is three times stronger.",
-        "Name": "Infantry Flamethrower Burning",
+        "Name": {
+          "enUS": "Infantry Flamethrower Burning"
+        },
+        "Tooltip": {
+          "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
+        },
         "Hotkey": "X"
       },
       {
@@ -505,8 +475,12 @@
         "AbilCmd": "UPLBilletResearch,Research2",
         "id": "ResearchInfantryMortarRangeUpgrade",
         "Icon": "btn-ability-upl-longrangemortar",
-        "Tooltip": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: #FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: #80FFFF\">3</span>",
-        "Name": "Research Increased Mortar Range",
+        "Name": {
+          "enUS": "Research Increased Mortar Range"
+        },
+        "Tooltip": {
+          "enUS": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: 80FFFF\">3</span>"
+        },
         "Hotkey": "V"
       },
       {
@@ -544,8 +518,12 @@
         "AbilCmd": "UPLBilletResearch,Research1",
         "id": "ResearchInfantryRifleRangeUpgrade",
         "Icon": "btn-ability-upl-longrange",
-        "Tooltip": "<c val=\"#ColorAttackInfo\"><b>Combat Infantry</b></span>, <c val=\"#ColorAttackInfo\"><b>Heavy Gunner</b></span> and <c val=\"#ColorAttackInfo\"><b>Rocket Trooper</b></span> rifles are now equipped with range finders and laser scopes.<br/><br/>Increases weapon range by <span style=\"color: #80FFFF\">1</span>",
-        "Name": "Research Infantry Targeting Equipment",
+        "Name": {
+          "enUS": "Research Infantry Targeting Equipment"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: ffff8a\">Guardian</span> Increases weapon range by <span style=\"color: 80FFFF\">0.5</span>, <span style=\"color: ffff8a\">Rocket Launcher</span>, <span style=\"color: ffff8a\">Heavy Gunner</span> and <span style=\"color: ffff8a\">SCOUT</span> Increases weapon range by <span style=\"color: 80FFFF\">1</span>"
+        },
         "Hotkey": "Z"
       },
       {
@@ -581,15 +559,213 @@
         "Type": "AbilCmd",
         "AbilCmd": "UPLBilletResearch,Research5",
         "id": "ResearchInfantryRocketAOE",
-        "Icon": "btn-ability-upl-grenadelauncher",
-        "Tooltip": "Attacks deal splash damage around the attack target.",
-        "Name": "Research Explosive Rockets",
+        "Icon": "btn_upl_infantryrocket_explosive_rocket",
+        "Name": {
+          "enUS": "Research Explosive Rockets"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
+        },
         "Hotkey": "C"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainInfantryFlamethrower"
+          },
+          "Unit": [
+            "Incinerator"
+          ],
+          "Time": 30.8
+        },
+        "Unit": [
+          "Incinerator"
+        ],
+        "Time": 30.8,
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 25,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBilletTrain,Train4",
+        "id": "UPLTrainInfantryFlamethrower",
+        "Icon": "btn-unit-upl-infantryflamethrower",
+        "Name": {
+          "enUS": "Train Incinerator"
+        },
+        "Tooltip": {
+          "enUS": "Flamethrower melee Infantry with area damage and detonate ability. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
+        "Hotkey": "F"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "InfantryMortar"
+          },
+          "Unit": [
+            "InfantryMortar"
+          ],
+          "Time": 26
+        },
+        "Unit": [
+          "InfantryMortar"
+        ],
+        "Time": 26,
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBilletTrain,Train5",
+        "id": "InfantryMortar",
+        "Icon": "btn-unit-upl-infantrymortar",
+        "Name": {
+          "enUS": "Train Mortar Trooper"
+        },
+        "Tooltip": {
+          "enUS": "Artillery Support unit, can attack at long range in siege mode. Extremely fragile in close range combat. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
+        "Hotkey": "T"
+      },
+      {
+        "Upgrade": "RiotOfficerShield",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "ResearchRiotOfficerShield",
+            "Requirements": "UseSwaptoShield"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 78.4,
+          "Upgrade": "RiotOfficerShield"
+        },
+        "Time": 78.4,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBilletResearch,Research6",
+        "id": "ResearchRiotOfficerShield",
+        "Icon": "btn-ability-upl-shielddefense",
+        "Name": {
+          "enUS": "Research Riot Officer Shield"
+        },
+        "Tooltip": {
+          "enUS": "Increase <span style=\"color: 80FFFF\">15 vital</span> for <span style=\"color: ffff8a\">Guardian</span> and enable <span style=\"color: 80FFFF\">Guardian</span> to use <span style=\"color: 80FFFF\">Swap to Shield Mode</span> ability, Increase to <span style=\"color: 80FFFF\">250% health</span> and switch to melee weapon, decrease <span style=\"color: 80FFFF\"> 33% Movement Speed</span>."
+        },
+        "Hotkey": "D"
+      },
+      {
+        "Upgrade": "SpaceSandbag",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "SpaceSandbag",
+            "Requirements": "HeavyGunnerSiegeMode"
+          },
+          "Resource": {
+            "Minerals": 50,
+            "Vespene": 50
+          },
+          "Time": 92.4,
+          "Upgrade": "SpaceSandbag"
+        },
+        "Time": 92.4,
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBilletResearch,Research7",
+        "id": "SpaceSandbag",
+        "Icon": "btn-unit-heavygunner-sieged",
+        "Name": {
+          "enUS": "Space Sandbag"
+        },
+        "Tooltip": {
+          "enUS": "Allow <span style=\"color: ffff8a\">Heavy Gunner</span> to switch to siege mode after <b>2</b> seconds casting. Heavy Gunner has increased health, <span style=\"color: 80FFFF\">160%</span> attack speed and <span style=\"color: 80FFFF\">1</span> extra weapon range during the siege mode, but movement is disabled."
+        },
+        "Hotkey": "B"
+      },
+      {
+        "Info": {},
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "Rally,Rally1",
+        "id": "Rally",
+        "Icon": "btn-ability-terran-setrallypoint",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
+        "Hotkey": "Y"
       }
     ]
   },
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 3,
+  "SubgroupPriority": 4,
   "GlossaryCategory": "Unit/Category/0UPLBuildings",
   "GlossaryPriority": 31,
   "HotkeyCategory": "Unit/Category/UPLUnits",
@@ -613,39 +789,58 @@
     "InfantryHeavy",
     "InfantryRocket",
     "InfantryMortar",
-    "InfantryFlamethrower"
+    "Incinerator"
   ],
   "DeathTime": 1,
   "DeadFootprint": "Footprint3x3Contour",
   "Icon": "btn-building-upl-uplbillet",
+  "Model": "UPLBillet",
   "LifeArmorIcon": "btn-upgrade-upl-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "UPLBilletTrain",
-      "Name": "Train"
+      "Name": {
+        "enUS": "Train"
+      }
     },
     {
       "id": "UPLBilletResearch",
-      "Name": "Research"
+      "Name": {
+        "enUS": "Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -659,18 +854,19 @@
   ],
   "$Requirements": [],
   "$Production": [
-    "UPLScout",
-    "DarrenRodgers",
+    "UPLInfantryGuardian",
     "InfantryHeavy",
-    "InfantryFlamethrower",
     "UPLSpecOps",
+    "Incinerator",
     "InfantryMortar"
   ],
   "$Research": [
     "InfantryFlamethrower3xBurning",
     "InfantryMortarRangeUpgrade",
     "InfantryRifleRangeUpgrade",
-    "InfantryRocketAOE"
+    "InfantryRocketAOE",
+    "RiotOfficerShield",
+    "SpaceSandbag"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -682,85 +878,161 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
-    },
-    {
-      "AbilCmd": "Rally,Rally1",
-      "id": "Cancel",
-      "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
-    },
-    {
-      "AbilCmd": "UPLBilletTrain,Train9",
-      "id": "UPLScout",
-      "Icon": "btn-unit-upl-uplscout",
-      "Tooltip": "Covert Operations<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "S.C.O.U.T."
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "UPLBilletTrain,Train11",
       "id": "UPLTrainGuardian",
       "Icon": "btn-unit-upl-uplriotofficer",
-      "Tooltip": "Troopers Equipped with Combat Shotgun and Riot Shield<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Train Guardian"
+      "Name": {
+        "enUS": "Train Guardian"
+      },
+      "Tooltip": {
+        "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
+    },
+    {
+      "AbilCmd": "que5,CancelLast",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "UPLBilletTrain,Train2",
       "id": "InfantryHeavy",
       "Icon": "btn-unit-upl-infantryheavy",
-      "Tooltip": "Heavy Assault<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Train Heavy Gunner"
+      "Name": {
+        "enUS": "Train Heavy Gunner"
+      },
+      "Tooltip": {
+        "enUS": "Heavy Assault infantry specialized to deal with armored units. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
     },
     {
-      "AbilCmd": "UPLBilletTrain,Train4",
-      "id": "UPLTrainInfantryFlamethrower",
-      "Icon": "btn-unit-upl-infantryflamethrower",
-      "Tooltip": "Flamethrower Infantry<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Train Incinerator"
-    },
-    {
-      "AbilCmd": "UPLBilletTrain,Train8",
+      "AbilCmd": "UPLBilletTrain,Train3",
       "id": "UPLTrainSpecialInfantryRocket",
       "Icon": "btn-unit-upl-richardgideon",
-      "Tooltip": "Anti-Armor<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units</span>",
-      "Name": "Train Rocket Trooper"
-    },
-    {
-      "AbilCmd": "UPLBilletTrain,Train5",
-      "id": "InfantryMortar",
-      "Icon": "btn-unit-upl-infantrymortar",
-      "Tooltip": "Artillery Support<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Train Mortar Trooper"
+      "Name": {
+        "enUS": "Train Rocket Trooper"
+      },
+      "Tooltip": {
+        "enUS": "Long range attack infantry with high damage output. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
+      }
     },
     {
       "AbilCmd": "UPLBilletResearch,Research4",
       "id": "InfantryFlamethrowerBurningUpgraded",
       "Icon": "btn-ability-upl-naniteignition",
-      "Tooltip": "Burning Damage is three times stronger.",
-      "Name": "Infantry Flamethrower Burning"
+      "Name": {
+        "enUS": "Infantry Flamethrower Burning"
+      },
+      "Tooltip": {
+        "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
+      }
     },
     {
       "AbilCmd": "UPLBilletResearch,Research2",
       "id": "ResearchInfantryMortarRangeUpgrade",
       "Icon": "btn-ability-upl-longrangemortar",
-      "Tooltip": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: #FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: #80FFFF\">3</span>",
-      "Name": "Research Increased Mortar Range"
+      "Name": {
+        "enUS": "Research Increased Mortar Range"
+      },
+      "Tooltip": {
+        "enUS": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: 80FFFF\">3</span>"
+      }
     },
     {
       "AbilCmd": "UPLBilletResearch,Research1",
       "id": "ResearchInfantryRifleRangeUpgrade",
       "Icon": "btn-ability-upl-longrange",
-      "Tooltip": "<c val=\"#ColorAttackInfo\"><b>Combat Infantry</b></span>, <c val=\"#ColorAttackInfo\"><b>Heavy Gunner</b></span> and <c val=\"#ColorAttackInfo\"><b>Rocket Trooper</b></span> rifles are now equipped with range finders and laser scopes.<br/><br/>Increases weapon range by <span style=\"color: #80FFFF\">1</span>",
-      "Name": "Research Infantry Targeting Equipment"
+      "Name": {
+        "enUS": "Research Infantry Targeting Equipment"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: ffff8a\">Guardian</span> Increases weapon range by <span style=\"color: 80FFFF\">0.5</span>, <span style=\"color: ffff8a\">Rocket Launcher</span>, <span style=\"color: ffff8a\">Heavy Gunner</span> and <span style=\"color: ffff8a\">SCOUT</span> Increases weapon range by <span style=\"color: 80FFFF\">1</span>"
+      }
     },
     {
       "AbilCmd": "UPLBilletResearch,Research5",
       "id": "ResearchInfantryRocketAOE",
-      "Icon": "btn-ability-upl-grenadelauncher",
-      "Tooltip": "Attacks deal splash damage around the attack target.",
-      "Name": "Research Explosive Rockets"
+      "Icon": "btn_upl_infantryrocket_explosive_rocket",
+      "Name": {
+        "enUS": "Research Explosive Rockets"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
+      }
+    },
+    {
+      "AbilCmd": "UPLBilletTrain,Train4",
+      "id": "UPLTrainInfantryFlamethrower",
+      "Icon": "btn-unit-upl-infantryflamethrower",
+      "Name": {
+        "enUS": "Train Incinerator"
+      },
+      "Tooltip": {
+        "enUS": "Flamethrower melee Infantry with area damage and detonate ability. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBilletTrain,Train5",
+      "id": "InfantryMortar",
+      "Icon": "btn-unit-upl-infantrymortar",
+      "Name": {
+        "enUS": "Train Mortar Trooper"
+      },
+      "Tooltip": {
+        "enUS": "Artillery Support unit, can attack at long range in siege mode. Extremely fragile in close range combat. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBilletResearch,Research6",
+      "id": "ResearchRiotOfficerShield",
+      "Icon": "btn-ability-upl-shielddefense",
+      "Name": {
+        "enUS": "Research Riot Officer Shield"
+      },
+      "Tooltip": {
+        "enUS": "Increase <span style=\"color: 80FFFF\">15 vital</span> for <span style=\"color: ffff8a\">Guardian</span> and enable <span style=\"color: 80FFFF\">Guardian</span> to use <span style=\"color: 80FFFF\">Swap to Shield Mode</span> ability, Increase to <span style=\"color: 80FFFF\">250% health</span> and switch to melee weapon, decrease <span style=\"color: 80FFFF\"> 33% Movement Speed</span>."
+      }
+    },
+    {
+      "AbilCmd": "UPLBilletResearch,Research7",
+      "id": "SpaceSandbag",
+      "Icon": "btn-unit-heavygunner-sieged",
+      "Name": {
+        "enUS": "Space Sandbag"
+      },
+      "Tooltip": {
+        "enUS": "Allow <span style=\"color: ffff8a\">Heavy Gunner</span> to switch to siege mode after <b>2</b> seconds casting. Heavy Gunner has increased health, <span style=\"color: 80FFFF\">160%</span> attack speed and <span style=\"color: 80FFFF\">1</span> extra weapon range during the siege mode, but movement is disabled."
+      }
+    },
+    {
+      "AbilCmd": "Rally,Rally1",
+      "id": "Rally",
+      "Icon": "btn-ability-terran-setrallypoint",
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     }
   ]
 }

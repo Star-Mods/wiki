@@ -1,6 +1,12 @@
 {
-  "Name": "Military Research Station",
-  "Description": "Advanced upgrade structure. Unlocks various equipment authorizations for spacecraft & vehicles.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Peenemunde MRLS<br/>- Citadel AAT",
+  "Name": {
+    "enUS": "Military Research Station",
+    "ruRU": "Военно-исследовательская станция"
+  },
+  "Description": {
+    "enUS": "Advanced upgrade structure. Unlocks various equipment authorizations for spacecraft & vehicles.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Peenemunde MRLS<br/>- Citadel AAT",
+    "ruRU": "Центр продвинутых исследований. Позволяет запрашивать высокотехнологичные авторизации для различных боевых единиц ОЗД.<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- МРУ «Пенемюнде»<br/>- ТШТ «Цитадель»"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 950,
   "LifeMax": 950,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MilitaryResearchStation/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MilitaryResearchStation/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MilitaryResearchStation/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MilitaryResearchStation/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -171,8 +182,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -235,47 +252,15 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
-      },
-      {
-        "Upgrade": "UpgradeAbilityCitadelUED",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "UEDButtonCitadelUpgrade",
-            "Requirements": "UEDLearnCitadelAbility"
-          },
-          "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
-          },
-          "Time": 115,
-          "Upgrade": "UpgradeAbilityCitadelUED"
-        },
-        "Time": 115,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "MilitaryResearchStationResearch,Research7",
-        "id": "UEDButtonCitadelUpgrade",
-        "Icon": "btn-ability-protoss-shieldrecharge",
-        "Tooltip": "Activate the Wave Accelerator device, starting a short charge-up cycle, temporarily immobilizing the <span style=\"color: #FFFF80\">Citadel AAT</span>. When powered, the device will allow the tank's primary cannon to fire 3.5 times faster, increase its range by 3, as well as enable the shell to penetrate its main target, dealing additional damage to enemies behind it.",
-        "Name": "Authorization Request: Magnetic wave accelerator",
-        "Hotkey": "D"
       },
       {
         "Upgrade": "DroneRepairModule",
@@ -288,16 +273,16 @@
             "Requirements": "LearnRepairCrimsonEye"
           },
           "Resource": {
-            "Minerals": 125,
-            "Vespene": 125
+            "Minerals": 150,
+            "Vespene": 150
           },
-          "Time": 95,
+          "Time": 110,
           "Upgrade": "DroneRepairModule"
         },
-        "Time": 95,
+        "Time": 110,
         "Cost": {
-          "Minerals": 125,
-          "Vespene": 125,
+          "Minerals": 150,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -311,8 +296,14 @@
         "AbilCmd": "MilitaryResearchStationResearch,Research3",
         "id": "DroneRepairModule",
         "Icon": "ui_tipicon_campaign_space01-repair",
-        "Tooltip": "Allows <span style=\"color: #FFFF80\">Crimson Eye</span> to repair mechanical units 2 times faster.",
-        "Name": "Authorize Drone Repair Module",
+        "Name": {
+          "enUS": "Authorize Drone Repair Module",
+          "ruRU": "Запрос авторизации: Модули ремонта для дронов"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: FFFF80\">Crimson Eye</span> to repair mechanical units 40% more efficiently (more HP for the same energy).",
+          "ruRU": "Позволяет <span style=\"color: FFFF80\">Рубиновому оку</span> ремонтировать механические узлы на 60% эффективнее (больше здоровья при той же энергии)."
+        },
         "Hotkey": "R"
       },
       {
@@ -349,8 +340,14 @@
         "AbilCmd": "MilitaryResearchStationResearch,Research4",
         "id": "UEDVehicalsLevel1",
         "Icon": "weapon-tank-icon-upgrade-1",
-        "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-        "Name": "Research Heavy Weaponry Targeting Adjustment, Level 1",
+        "Name": {
+          "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 1",
+          "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 1"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+          "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+        },
         "Hotkey": "V"
       },
       {
@@ -387,8 +384,14 @@
         "AbilCmd": "MilitaryResearchStationResearch,Research5",
         "id": "UEDVehicalsLevel2",
         "Icon": "weapon-tank-icon-upgrade-2",
-        "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-        "Name": "Research Heavy Weaponry Targeting Adjustment, Level 2",
+        "Name": {
+          "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 2",
+          "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 2"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+          "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+        },
         "Hotkey": "V"
       },
       {
@@ -425,47 +428,15 @@
         "AbilCmd": "MilitaryResearchStationResearch,Research6",
         "id": "UEDVehicalsLevel3",
         "Icon": "weapon-tank-icon-upgrade-3",
-        "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-        "Name": "Research Heavy Weaponry Targeting Adjustment, Level 3",
+        "Name": {
+          "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 3",
+          "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 3"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+          "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+        },
         "Hotkey": "V"
-      },
-      {
-        "Upgrade": "UpgradePenemundeRange",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "ButtonUEDUpgradePenemundeRange",
-            "Requirements": "UEDLearnPenemundeRange"
-          },
-          "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
-          },
-          "Time": 125,
-          "Upgrade": "UpgradePenemundeRange"
-        },
-        "Time": 125,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 2,
-        "Type": "AbilCmd",
-        "AbilCmd": "MilitaryResearchStationResearch,Research8",
-        "id": "ButtonUEDUpgradePenemundeRange",
-        "Icon": "btn-ability-mengsk-battlecruiser-decksights",
-        "Tooltip": "Allows <span style=\"color: #FFFF80\">Peenemunde MRLS</span> to fire at a distance of up to 25 using a Crimson Eye.",
-        "Name": "Authorization Request: Retribution Protocol",
-        "Hotkey": "F"
       },
       {
         "Upgrade": "UEDArmorLevel1",
@@ -502,8 +473,14 @@
         "AbilCmd": "TacticsAcademyResearch,Research6",
         "id": "UnknownButton",
         "Icon": "btn-upgrade-ued-armor-level1",
-        "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-        "Name": "Research Beathanium Defensive Programming, Level 1",
+        "Name": {
+          "enUS": "Research Beathanium Defensive Programming, Level 1",
+          "ruRU": "Исследовать Защитное программирование беатания, уровень 1"
+        },
+        "Tooltip": {
+          "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+          "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+        },
         "Hotkey": "A"
       },
       {
@@ -540,8 +517,14 @@
         "AbilCmd": "TacticsAcademyResearch,Research8",
         "id": "UnknownButton2",
         "Icon": "btn-upgrade-ued-armor-level2",
-        "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-        "Name": "Research Beathanium Defensive Programming, Level 2",
+        "Name": {
+          "enUS": "Research Beathanium Defensive Programming, Level 2",
+          "ruRU": "Исследовать Защитное программирование беатания, уровень 2"
+        },
+        "Tooltip": {
+          "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+          "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+        },
         "Hotkey": "A"
       },
       {
@@ -578,9 +561,103 @@
         "AbilCmd": "TacticsAcademyResearch,Research9",
         "id": "UnknownButton22",
         "Icon": "btn-upgrade-ued-armor-level3",
-        "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-        "Name": "Research Beathanium Defensive Programming, Level 3",
+        "Name": {
+          "enUS": "Research Beathanium Defensive Programming, Level 3",
+          "ruRU": "Исследовать Защитное программирование беатания, уровень 3"
+        },
+        "Tooltip": {
+          "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+          "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+        },
         "Hotkey": "A"
+      },
+      {
+        "Upgrade": "UEDHightDurability",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "ButtonUEDUpgadeStatDefense",
+            "Requirements": "UEDLearnHightDurability"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 110,
+          "Upgrade": "UEDHightDurability"
+        },
+        "Time": 110,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "MilitaryResearchStationResearch,Research11",
+        "id": "ButtonUEDUpgadeStatDefense",
+        "Icon": "uedincreaseddurability",
+        "Name": {
+          "enUS": "Authorization Request: Increased durability",
+          "ruRU": "Запрос авторизации: Повышенная прочность"
+        },
+        "Tooltip": {
+          "enUS": "Increases the strength of the static defense of the UED:<br/><span style=\"color: FFFF80\">Suppression tower </span> +100 strength.<br/><span style=\"color: FFFF80\">Heavy Tower </span>+125 strength.<br/><c val=\"FFFF80\"val=\"FFFF80\">Infusion Tower</span> +125 strength.<br/><span style=\"color: FFFF80\">Missile Tower </span>+100 strength.",
+          "ruRU": "Увеличивает прочность статической обороны ОЗД:<br/><span style=\"color: FFFF80\">Башня подавления </span> +50 прочности.<br/><span style=\"color: FFFF80\">Орудийная башня </span>+75 прочности.<br/><c val=\"FFFF80\"val=\"FFFF80\">Башня восстановления </span> +50 прочности.<br/><span style=\"color: FFFF80\">Ракетная башня </span>+100 прочности."
+        },
+        "Hotkey": "Q"
+      },
+      {
+        "Upgrade": "UpgradeAbilityCitadelUED",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UEDButtonCitadelUpgrade",
+            "Requirements": "UEDLearnCitadelAbility"
+          },
+          "Resource": {
+            "Minerals": 150,
+            "Vespene": 150
+          },
+          "Time": 84,
+          "Upgrade": "UpgradeAbilityCitadelUED"
+        },
+        "Time": 84,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "MilitaryResearchStationResearch,Research7",
+        "id": "UEDButtonCitadelUpgrade",
+        "Icon": "uedauthorizationrequestcitadelmagneticwaveaccelerator",
+        "Name": {
+          "enUS": "Authorization Request: Magnetic wave accelerator",
+          "ruRU": "Запрос авторизации: магнитно-волновой ускоритель"
+        },
+        "Tooltip": {
+          "enUS": "Activate the Wave Accelerator device, starting a short charge-up cycle, temporarily immobilizing the <span style=\"color: FFFF80\">Citadel AAT</span>. When powered, the device will allow the tank's primary cannon to fire 3.0 times faster, increase its range by 3, as well as enable the shell to penetrate its main target, dealing 6 additional weapon damage to enemies behind it. The additional splash damage ignores armor.",
+          "ruRU": "Специальное магнитное устройство не на долго лишит <span style=\"color: FFFF80\">ТШТ \"Цитадель\"</span> воможности передвигаться, но обеспечит стрельбу в 3.5 раза быстрее и на 3 ед. дальше с уроном позади стоящих целей."
+        },
+        "Hotkey": "D"
       },
       {
         "Upgrade": "UpgradePhosphoricFire",
@@ -593,16 +670,16 @@
             "Requirements": "LearnPhoshoricFire"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 150,
+            "Vespene": 150
           },
           "Time": 100,
           "Upgrade": "UpgradePhosphoricFire"
         },
         "Time": 100,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 150,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -610,14 +687,20 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 1,
-        "Column": 0,
+        "Row": 0,
+        "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "MilitaryResearchStationResearch,Research10",
         "id": "ButtonUpgradePhosphoricFire",
-        "Icon": "btn-tips-walloffire",
-        "Tooltip": "<span style=\"color: #FFFF80\">Hurakans</span> get a bonus damage on buildings of 8 units and ignoring the armor of buildings.",
-        "Name": "Authorization Request: Phosphoric fire",
+        "Icon": "uedphosphatefire",
+        "Name": {
+          "enUS": "Authorization Request: Phosphoric fire",
+          "ruRU": "Запрос авторизации: Фосфорный огонь"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Huracans</span> get +3 damage.",
+          "ruRU": "<span style=\"color: FFFF80\">Хураканы</span> получают бонусный урон по строениям в 6 ед. + игнорируют броню строений."
+        },
         "Hotkey": "G"
       }
     ]
@@ -637,6 +720,7 @@
   "Facing": 315,
   "id": "MilitaryResearchStation",
   "Icon": "btn-ued-engineering",
+  "Model": "UED_FusionCore_V3",
   "LifeArmorIcon": "btn-upgrade-stetmann-mechagroundplating-level1",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -644,19 +728,31 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "MilitaryResearchStationResearch",
-      "Name": "Research (MilitaryResearchStation)"
+      "Name": {
+        "enUS": "Research (MilitaryResearchStation)",
+        "ruRU": "Research (MilitaryResearchStation)"
+      }
     },
     {
       "id": "TacticsAcademyResearch",
-      "Name": "Research (Tactics Academy)"
+      "Name": {
+        "enUS": "Research (Tactics Academy)",
+        "ruRU": "Research (Tactics Academy)"
+      }
     }
   ],
   "$Upgrades": [
@@ -673,107 +769,178 @@
   "$Requirements": [],
   "$Production": [],
   "$Research": [
-    "UpgradeAbilityCitadelUED",
     "DroneRepairModule",
     "UEDVehicalsLevel1",
     "UEDVehicalsLevel2",
     "UEDVehicalsLevel3",
-    "UpgradePenemundeRange",
     "UEDArmorLevel1",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "UEDHightDurability",
+    "UpgradeAbilityCitadelUED",
     "UpgradePhosphoricFire"
   ],
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
-    },
-    {
-      "AbilCmd": "MilitaryResearchStationResearch,Research7",
-      "id": "UEDButtonCitadelUpgrade",
-      "Icon": "btn-ability-protoss-shieldrecharge",
-      "Tooltip": "Activate the Wave Accelerator device, starting a short charge-up cycle, temporarily immobilizing the <span style=\"color: #FFFF80\">Citadel AAT</span>. When powered, the device will allow the tank's primary cannon to fire 3.5 times faster, increase its range by 3, as well as enable the shell to penetrate its main target, dealing additional damage to enemies behind it.",
-      "Name": "Authorization Request: Magnetic wave accelerator"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "MilitaryResearchStationResearch,Research3",
       "id": "DroneRepairModule",
       "Icon": "ui_tipicon_campaign_space01-repair",
-      "Tooltip": "Allows <span style=\"color: #FFFF80\">Crimson Eye</span> to repair mechanical units 2 times faster.",
-      "Name": "Authorize Drone Repair Module"
+      "Name": {
+        "enUS": "Authorize Drone Repair Module",
+        "ruRU": "Запрос авторизации: Модули ремонта для дронов"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: FFFF80\">Crimson Eye</span> to repair mechanical units 40% more efficiently (more HP for the same energy).",
+        "ruRU": "Позволяет <span style=\"color: FFFF80\">Рубиновому оку</span> ремонтировать механические узлы на 60% эффективнее (больше здоровья при той же энергии)."
+      }
     },
     {
       "AbilCmd": "MilitaryResearchStationResearch,Research4",
       "id": "UEDVehicalsLevel1",
       "Icon": "weapon-tank-icon-upgrade-1",
-      "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-      "Name": "Research Heavy Weaponry Targeting Adjustment, Level 1"
+      "Name": {
+        "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 1",
+        "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 1"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+        "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+      }
     },
     {
       "AbilCmd": "MilitaryResearchStationResearch,Research5",
       "id": "UEDVehicalsLevel2",
       "Icon": "weapon-tank-icon-upgrade-2",
-      "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-      "Name": "Research Heavy Weaponry Targeting Adjustment, Level 2"
+      "Name": {
+        "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 2",
+        "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 2"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+        "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+      }
     },
     {
       "AbilCmd": "MilitaryResearchStationResearch,Research6",
       "id": "UEDVehicalsLevel3",
       "Icon": "weapon-tank-icon-upgrade-3",
-      "Tooltip": "Increases <span style=\"color: #ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
-      "Name": "Research Heavy Weaponry Targeting Adjustment, Level 3"
-    },
-    {
-      "AbilCmd": "MilitaryResearchStationResearch,Research8",
-      "id": "ButtonUEDUpgradePenemundeRange",
-      "Icon": "btn-ability-mengsk-battlecruiser-decksights",
-      "Tooltip": "Allows <span style=\"color: #FFFF80\">Peenemunde MRLS</span> to fire at a distance of up to 25 using a Crimson Eye.",
-      "Name": "Authorization Request: Retribution Protocol"
+      "Name": {
+        "enUS": "Research Heavy Weaponry Targeting Adjustment, Level 3",
+        "ruRU": "Исследовать Параметры прицеливания тяжёлого вооружения, уровень 3"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: ffff8a\">damage</span> from weapons of all equipment and all starships of the Directorate.",
+        "ruRU": "Увеличивает <span style=\"color: ffff8a\">урон</span> от оружия всей техники и всех звездолётов Директората."
+      }
     },
     {
       "AbilCmd": "TacticsAcademyResearch,Research6",
       "id": "UnknownButton",
       "Icon": "btn-upgrade-ued-armor-level1",
-      "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-      "Name": "Research Beathanium Defensive Programming, Level 1"
+      "Name": {
+        "enUS": "Research Beathanium Defensive Programming, Level 1",
+        "ruRU": "Исследовать Защитное программирование беатания, уровень 1"
+      },
+      "Tooltip": {
+        "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+        "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+      }
     },
     {
       "AbilCmd": "TacticsAcademyResearch,Research8",
       "id": "UnknownButton2",
       "Icon": "btn-upgrade-ued-armor-level2",
-      "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-      "Name": "Research Beathanium Defensive Programming, Level 2"
+      "Name": {
+        "enUS": "Research Beathanium Defensive Programming, Level 2",
+        "ruRU": "Исследовать Защитное программирование беатания, уровень 2"
+      },
+      "Tooltip": {
+        "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+        "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+      }
     },
     {
       "AbilCmd": "TacticsAcademyResearch,Research9",
       "id": "UnknownButton22",
       "Icon": "btn-upgrade-ued-armor-level3",
-      "Tooltip": "Improves <span style=\"color: #ffff8a\">armor</span> for mechanical UED units.",
-      "Name": "Research Beathanium Defensive Programming, Level 3"
+      "Name": {
+        "enUS": "Research Beathanium Defensive Programming, Level 3",
+        "ruRU": "Исследовать Защитное программирование беатания, уровень 3"
+      },
+      "Tooltip": {
+        "enUS": "Improves <span style=\"color: ffff8a\">armor</span> for mechanical UED units.",
+        "ruRU": "Улучшает <span style=\"color: ffff8a\">броню</span> всех механических единиц ОЗД."
+      }
+    },
+    {
+      "AbilCmd": "MilitaryResearchStationResearch,Research11",
+      "id": "ButtonUEDUpgadeStatDefense",
+      "Icon": "uedincreaseddurability",
+      "Name": {
+        "enUS": "Authorization Request: Increased durability",
+        "ruRU": "Запрос авторизации: Повышенная прочность"
+      },
+      "Tooltip": {
+        "enUS": "Increases the strength of the static defense of the UED:<br/><span style=\"color: FFFF80\">Suppression tower </span> +100 strength.<br/><span style=\"color: FFFF80\">Heavy Tower </span>+125 strength.<br/><c val=\"FFFF80\"val=\"FFFF80\">Infusion Tower</span> +125 strength.<br/><span style=\"color: FFFF80\">Missile Tower </span>+100 strength.",
+        "ruRU": "Увеличивает прочность статической обороны ОЗД:<br/><span style=\"color: FFFF80\">Башня подавления </span> +50 прочности.<br/><span style=\"color: FFFF80\">Орудийная башня </span>+75 прочности.<br/><c val=\"FFFF80\"val=\"FFFF80\">Башня восстановления </span> +50 прочности.<br/><span style=\"color: FFFF80\">Ракетная башня </span>+100 прочности."
+      }
+    },
+    {
+      "AbilCmd": "MilitaryResearchStationResearch,Research7",
+      "id": "UEDButtonCitadelUpgrade",
+      "Icon": "uedauthorizationrequestcitadelmagneticwaveaccelerator",
+      "Name": {
+        "enUS": "Authorization Request: Magnetic wave accelerator",
+        "ruRU": "Запрос авторизации: магнитно-волновой ускоритель"
+      },
+      "Tooltip": {
+        "enUS": "Activate the Wave Accelerator device, starting a short charge-up cycle, temporarily immobilizing the <span style=\"color: FFFF80\">Citadel AAT</span>. When powered, the device will allow the tank's primary cannon to fire 3.0 times faster, increase its range by 3, as well as enable the shell to penetrate its main target, dealing 6 additional weapon damage to enemies behind it. The additional splash damage ignores armor.",
+        "ruRU": "Специальное магнитное устройство не на долго лишит <span style=\"color: FFFF80\">ТШТ \"Цитадель\"</span> воможности передвигаться, но обеспечит стрельбу в 3.5 раза быстрее и на 3 ед. дальше с уроном позади стоящих целей."
+      }
     },
     {
       "AbilCmd": "MilitaryResearchStationResearch,Research10",
       "id": "ButtonUpgradePhosphoricFire",
-      "Icon": "btn-tips-walloffire",
-      "Tooltip": "<span style=\"color: #FFFF80\">Hurakans</span> get a bonus damage on buildings of 8 units and ignoring the armor of buildings.",
-      "Name": "Authorization Request: Phosphoric fire"
+      "Icon": "uedphosphatefire",
+      "Name": {
+        "enUS": "Authorization Request: Phosphoric fire",
+        "ruRU": "Запрос авторизации: Фосфорный огонь"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Huracans</span> get +3 damage.",
+        "ruRU": "<span style=\"color: FFFF80\">Хураканы</span> получают бонусный урон по строениям в 6 ед. + игнорируют броню строений."
+      }
     }
   ]
 }

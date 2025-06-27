@@ -1,6 +1,12 @@
 {
-  "Name": "Banshee",
-  "Description": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Banshee",
+    "ruRU": "Banshee"
+  },
+  "Description": {
+    "enUS": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Tactical-strike aircraft. Can be upgraded to use cloak.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 140,
   "LifeMax": 140,
-  "LifeArmorName": "Terran Ship Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Ship Plating",
+    "ruRU": "Terran Ship Plating"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 1499.9414,
   "TurningRate": 1499.9414,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Banshee/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Banshee/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Banshee/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Banshee/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -198,8 +209,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -272,8 +289,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -362,8 +385,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -437,8 +466,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -527,8 +562,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -607,8 +648,14 @@
         "AbilCmd": "BansheeCloak,On",
         "id": "CloakOnBanshee",
         "Icon": "btn-ability-terran-cloak-color",
-        "Tooltip": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: #f078ff\">Drains <b>0.9</b> energy per second.</span>",
-        "Name": "Cloak",
+        "Name": {
+          "enUS": "Cloak",
+          "ruRU": "Cloak"
+        },
+        "Tooltip": {
+          "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
+          "ruRU": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -687,8 +734,14 @@
         "AbilCmd": "BansheeCloak,Off",
         "id": "CloakOff",
         "Icon": "btn-ability-terran-decloak-color",
-        "Tooltip": "Decloaks the selected unit, making it visible to enemies.",
-        "Name": "Decloak",
+        "Name": {
+          "enUS": "Decloak",
+          "ruRU": "Decloak"
+        },
+        "Tooltip": {
+          "enUS": "Decloaks the selected unit, making it visible to enemies.",
+          "ruRU": "Decloaks the selected unit, making it visible to enemies."
+        },
         "Hotkey": "D"
       }
     ]
@@ -712,13 +765,17 @@
   ],
   "id": "Banshee",
   "Icon": "btn-unit-terran-banshee",
+  "Model": "Banshee",
   "LifeArmorIcon": "btn-upgrade-terran-shipplatinglevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "BacklashRockets",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
-      "Name": "Backlash Rockets",
+      "Name": {
+        "enUS": "Backlash Rockets",
+        "ruRU": "Backlash Rockets"
+      },
       "Amount": 12,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -731,36 +788,53 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "BansheeCloak",
-      "Name": "Cloaking Field"
+      "Name": {
+        "enUS": "Cloaking Field",
+        "ruRU": "Cloaking Field"
+      }
     }
   ],
   "$Upgrades": [
-    "BansheeCloak",
-    "Banshee",
     "TerranShipWeaponsLevel1",
+    "Banshee",
+    "Button/Tooltip/CloakOnBanshee",
+    "BansheeCloak",
     "TerranShipWeapons",
     "TerranShipWeaponsLevel2",
     "TerranShipWeaponsLevel3",
     "TerranVehicleAndShipArmorsLevel1",
     "Banshee",
+    "Button/Tooltip/CloakOnCourier",
+    "StarportTrain",
     "BansheeSpeed",
+    "Starport",
     "TerranVehicleAndShipArmors",
     "TerranVehicleAndShipArmorsLevel2",
     "TerranVehicleAndShipArmorsLevel3",
-    "StarportTrain",
-    "Starport",
+    "Chopper",
+    "SuperHangar",
+    "Hangar",
     "IsBanshee",
     "UnitThreatensBanshee",
     "TacticalBansheeCloakThreatSearch",
@@ -785,50 +859,92 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "BansheeCloak,On",
       "id": "CloakOnBanshee",
       "Icon": "btn-ability-terran-cloak-color",
-      "Tooltip": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: #f078ff\">Drains <b>0.9</b> energy per second.</span>",
-      "Name": "Cloak"
+      "Name": {
+        "enUS": "Cloak",
+        "ruRU": "Cloak"
+      },
+      "Tooltip": {
+        "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
+        "ruRU": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>"
+      }
     },
     {
       "AbilCmd": "BansheeCloak,Off",
       "id": "CloakOff",
       "Icon": "btn-ability-terran-decloak-color",
-      "Tooltip": "Decloaks the selected unit, making it visible to enemies.",
-      "Name": "Decloak"
+      "Name": {
+        "enUS": "Decloak",
+        "ruRU": "Decloak"
+      },
+      "Tooltip": {
+        "enUS": "Decloaks the selected unit, making it visible to enemies.",
+        "ruRU": "Decloaks the selected unit, making it visible to enemies."
+      }
     }
   ]
 }

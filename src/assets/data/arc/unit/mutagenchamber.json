@@ -1,6 +1,12 @@
 {
-  "Name": "Mutagen Chamber",
-  "Description": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
+  "Name": {
+    "enUS": "Mutagen Chamber",
+    "ruRU": "Мутагенная камера"
+  },
+  "Description": {
+    "enUS": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
+    "ruRU": "Содержит улучшения для наземных Зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Бродяги из логова зейтов<br/>- Скорпалиски из логова зейтов<br/>- Исцелитель из логова зейтов"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MutagenChamber/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MutagenChamber/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MutagenChamber/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MutagenChamber/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -168,8 +179,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -232,8 +249,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -271,8 +294,14 @@
         "AbilCmd": "MutagenChamberResearch,Research4",
         "id": "MutateGroundAttacks",
         "Icon": "btn-upgrade-zerg-hotsgroovedspines",
-        "Tooltip": "Upgrades the attacks of all Xayid ground units.",
-        "Name": "Mutate Ground Attacks Level 1",
+        "Name": {
+          "enUS": "Mutate Ground Attacks Level 1",
+          "ruRU": "Мутировать атаку наземных единиц"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the attacks of all Xayid ground units.",
+          "ruRU": "Улучшает атаку всех наземных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -310,8 +339,14 @@
         "AbilCmd": "MutagenChamberResearch,Research5",
         "id": "MutateGroundAttacksLevel2",
         "Icon": "btn-upgrade-xayid-missileweaponslevel2",
-        "Tooltip": "Further upgrades the attacks of all Xayid ground units.",
-        "Name": "Mutate Ground Attacks Level 2",
+        "Name": {
+          "enUS": "Mutate Ground Attacks Level 2",
+          "ruRU": "Мутировать атаку наземных единиц 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the attacks of all Xayid ground units.",
+          "ruRU": "Значительно улучшает атаку всех наземных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -349,8 +384,14 @@
         "AbilCmd": "MutagenChamberResearch,Research6",
         "id": "MutateGroundAttacksLevel3",
         "Icon": "btn-upgrade-xayid-missileweaponslevel3",
-        "Tooltip": "Maximizes the attacks of all Xayid ground units.",
-        "Name": "Mutate Ground Attacks Level 3",
+        "Name": {
+          "enUS": "Mutate Ground Attacks Level 3",
+          "ruRU": "Мутировать атаку наземных единиц 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the attacks of all Xayid ground units.",
+          "ruRU": "Максимально улучшает атаку всех наземных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -388,8 +429,14 @@
         "AbilCmd": "MutagenChamberResearch,Research1",
         "id": "MutateGroundCarapace",
         "Icon": "btn-upgrade-xayid-organiccarapace-level1",
-        "Tooltip": "Upgrades the armor of all Xayid ground units.",
-        "Name": "Mutate Ground Carapace Level 1",
+        "Name": {
+          "enUS": "Mutate Ground Carapace Level 1",
+          "ruRU": "Мутировать панцирь наземных единиц"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of all Xayid ground units.",
+          "ruRU": "Улучшает броню всех наземных Зейтов."
+        },
         "Hotkey": "C"
       },
       {
@@ -427,8 +474,14 @@
         "AbilCmd": "MutagenChamberResearch,Research2",
         "id": "MutateGroundCarapaceLevel2",
         "Icon": "btn-upgrade-xayid-organiccarapace-level2",
-        "Tooltip": "Further upgrades the armor of all Xayid ground units.",
-        "Name": "Mutate Ground Carapace Level 2",
+        "Name": {
+          "enUS": "Mutate Ground Carapace Level 2",
+          "ruRU": "Мутировать панцирь наземных единиц 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of all Xayid ground units.",
+          "ruRU": "Значительно улучшает броню всех наземных Зейтов."
+        },
         "Hotkey": "C"
       },
       {
@@ -466,8 +519,14 @@
         "AbilCmd": "MutagenChamberResearch,Research3",
         "id": "MutateGroundCarapaceLevel3",
         "Icon": "btn-upgrade-xayid-organiccarapace-level3",
-        "Tooltip": "Maximizes the armor of all Xayid ground units.",
-        "Name": "Mutate Ground Carapace Level 3",
+        "Name": {
+          "enUS": "Mutate Ground Carapace Level 3",
+          "ruRU": "Мутировать панцирь наземных единиц 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of all Xayid ground units.",
+          "ruRU": "Максимально улучшает броню всех наземных Зейтов."
+        },
         "Hotkey": "C"
       }
     ]
@@ -484,6 +543,7 @@
   "SubgroupPriority": 36,
   "GlossaryPriority": 5,
   "Icon": "btn-building-xayid-mutagenchambernew",
+  "Model": "MutagenChamber",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -491,15 +551,24 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "MutagenChamberResearch",
-      "Name": "Mutagen Chamber Research"
+      "Name": {
+        "enUS": "Mutagen Chamber Research",
+        "ruRU": "Mutagen Chamber Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -529,57 +598,105 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research4",
       "id": "MutateGroundAttacks",
       "Icon": "btn-upgrade-zerg-hotsgroovedspines",
-      "Tooltip": "Upgrades the attacks of all Xayid ground units.",
-      "Name": "Mutate Ground Attacks Level 1"
+      "Name": {
+        "enUS": "Mutate Ground Attacks Level 1",
+        "ruRU": "Мутировать атаку наземных единиц"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the attacks of all Xayid ground units.",
+        "ruRU": "Улучшает атаку всех наземных Зейтов."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research5",
       "id": "MutateGroundAttacksLevel2",
       "Icon": "btn-upgrade-xayid-missileweaponslevel2",
-      "Tooltip": "Further upgrades the attacks of all Xayid ground units.",
-      "Name": "Mutate Ground Attacks Level 2"
+      "Name": {
+        "enUS": "Mutate Ground Attacks Level 2",
+        "ruRU": "Мутировать атаку наземных единиц 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the attacks of all Xayid ground units.",
+        "ruRU": "Значительно улучшает атаку всех наземных Зейтов."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research6",
       "id": "MutateGroundAttacksLevel3",
       "Icon": "btn-upgrade-xayid-missileweaponslevel3",
-      "Tooltip": "Maximizes the attacks of all Xayid ground units.",
-      "Name": "Mutate Ground Attacks Level 3"
+      "Name": {
+        "enUS": "Mutate Ground Attacks Level 3",
+        "ruRU": "Мутировать атаку наземных единиц 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the attacks of all Xayid ground units.",
+        "ruRU": "Максимально улучшает атаку всех наземных Зейтов."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research1",
       "id": "MutateGroundCarapace",
       "Icon": "btn-upgrade-xayid-organiccarapace-level1",
-      "Tooltip": "Upgrades the armor of all Xayid ground units.",
-      "Name": "Mutate Ground Carapace Level 1"
+      "Name": {
+        "enUS": "Mutate Ground Carapace Level 1",
+        "ruRU": "Мутировать панцирь наземных единиц"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of all Xayid ground units.",
+        "ruRU": "Улучшает броню всех наземных Зейтов."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research2",
       "id": "MutateGroundCarapaceLevel2",
       "Icon": "btn-upgrade-xayid-organiccarapace-level2",
-      "Tooltip": "Further upgrades the armor of all Xayid ground units.",
-      "Name": "Mutate Ground Carapace Level 2"
+      "Name": {
+        "enUS": "Mutate Ground Carapace Level 2",
+        "ruRU": "Мутировать панцирь наземных единиц 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of all Xayid ground units.",
+        "ruRU": "Значительно улучшает броню всех наземных Зейтов."
+      }
     },
     {
       "AbilCmd": "MutagenChamberResearch,Research3",
       "id": "MutateGroundCarapaceLevel3",
       "Icon": "btn-upgrade-xayid-organiccarapace-level3",
-      "Tooltip": "Maximizes the armor of all Xayid ground units.",
-      "Name": "Mutate Ground Carapace Level 3"
+      "Name": {
+        "enUS": "Mutate Ground Carapace Level 3",
+        "ruRU": "Мутировать панцирь наземных единиц 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of all Xayid ground units.",
+        "ruRU": "Максимально улучшает броню всех наземных Зейтов."
+      }
     }
   ]
 }

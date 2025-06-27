@@ -1,6 +1,12 @@
 {
-  "Name": "Drakkar APC",
-  "Description": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: #FFFF8A\">Can attack ground targets.</span>",
+  "Name": {
+    "enUS": "Drakkar APC",
+    "ruRU": "БМП «Драккар»"
+  },
+  "Description": {
+    "enUS": "Infantry armored personnel carrier, from the inside you can attack only ground targets and from a maximum distance of 5. When the Drakkar is destroyed, the soldiers inside do not die and safely leave the car.<br/><br/><span style=\"color: FFFF8A\">Can attack ground targets.</span>",
+    "ruRU": "Бронетранспортёр пехоты, изнутри можно атаковать только наземные цели и с максимальной дистанции 5. При уничтожении «Драккара» солдаты внутри не погибают и безопасно покидают машину.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 145,
-  "LifeMax": 145,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeStart": 220,
+  "LifeMax": 220,
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 1499.9414,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DrakkarAPC/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DrakkarAPC/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DrakkarAPC/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DrakkarAPC/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -97,7 +108,7 @@
   ],
   "LifeArmor": 1,
   "LifeArmorTip": "Unit/LifeArmorName/UEDArmor",
-  "Speed": 3.1015,
+  "Speed": 3.4218,
   "Acceleration": 6,
   "Deceleration": 6,
   "LateralAcceleration": 46,
@@ -201,8 +212,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -275,8 +292,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -366,8 +389,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -441,8 +470,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -532,8 +567,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -589,272 +630,15 @@
         "AbilCmd": "GoAttackRedirect,Execute",
         "id": "OnwardComrades",
         "Icon": "btn-ability-mengsk-commandcenter-drafttroopers",
-        "Tooltip": "Inspire nearby units to fight by temporarily increasing their attack speed and  movement.",
-        "Name": "Onward, Comrades!",
+        "Name": {
+          "enUS": "Onward, Comrades!",
+          "ruRU": "В бой, товарищи!"
+        },
+        "Tooltip": {
+          "enUS": "Inspire nearby units to fight by temporarily increasing their movement by 40%.",
+          "ruRU": "Вдохновить ближайших юнитов на бой, временно увеличивая их скорость атаки и передвижения."
+        },
         "Hotkey": "F"
-      },
-      {
-        "Info": {
-          "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/AbilityFireModeDrakkar",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "AbilityFireModeDrakkar",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "RangeSlop": 1,
-          "ArcSlop": 11.25,
-          "AutoCastAcquireLevel": "Offensive",
-          "AutoCastFilters": "Visible;Player,Ally",
-          "Flags": {
-            "AbortOnAllianceChange": 1,
-            "CancelResetAutoCast": 1,
-            "ChannelingMinimum": 1,
-            "RangeUseCasterRadius": 1,
-            "ReApproachable": 1,
-            "RequireTargetVision": 1,
-            "WaitToSpend": 1,
-            "UpdateChargesOnLevelChange": 1,
-            "Transient": 1
-          },
-          "Effect": [
-            "AbilityFireModeDrakkar"
-          ],
-          "EffectRange": [
-            "0,1000"
-          ],
-          "AINotifyEffect": "AbilityFireModeDrakkar",
-          "RefundArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1
-          },
-          "RefundFraction": {
-            "Resource": {
-              "Minerals": -1,
-              "Vespene": -1,
-              "Terrazine": -1,
-              "Custom": -1
-            },
-            "Charge": -1,
-            "Cooldown": -1
-          },
-          "UseMarkerArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "PauseableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "PreemptableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "ValidatedArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "DefaultError": "MustTargetUnit",
-          "AcquirePriority": 3,
-          "SetLastTarget": "Unknown",
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "CmdButtonArray": {
-            "Execute": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "ButtonDrakkarFireMode",
-              "Requirements": "TrebovanieDrakkarSlowMove"
-            }
-          },
-          "PostEffectBehavior": {
-            "Behavior": "DrakkarAlgoritmFireMode",
-            "Count": 1
-          },
-          "id": "AbilityFireModeDrakkar"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "AbilityFireModeDrakkar,Execute",
-        "id": "ButtonDrakkarFireMode",
-        "Icon": "btn-ability-terran-detectionconedebuff",
-        "Tooltip": "Allows you to fire from the internal compartment of the Drakkar APC.",
-        "Name": "Shooting mode",
-        "Hotkey": "Q"
-      },
-      {
-        "Info": {
-          "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/AbilityFastMoveModeDrakkar",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:UED,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "AbilityFastMoveModeDrakkar",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "RangeSlop": 1,
-          "ArcSlop": 11.25,
-          "AutoCastAcquireLevel": "Offensive",
-          "AutoCastFilters": "Visible;Player,Ally",
-          "Flags": {
-            "AbortOnAllianceChange": 1,
-            "CancelResetAutoCast": 1,
-            "ChannelingMinimum": 1,
-            "RangeUseCasterRadius": 1,
-            "ReApproachable": 1,
-            "RequireTargetVision": 1,
-            "WaitToSpend": 1,
-            "UpdateChargesOnLevelChange": 1,
-            "Transient": 1
-          },
-          "Effect": [
-            "MinusFireModeDrakkar"
-          ],
-          "EffectRange": [
-            "0,1000"
-          ],
-          "AINotifyEffect": "AbilityFireModeDrakkar",
-          "RefundArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1
-          },
-          "RefundFraction": {
-            "Resource": {
-              "Minerals": -1,
-              "Vespene": -1,
-              "Terrazine": -1,
-              "Custom": -1
-            },
-            "Charge": -1,
-            "Cooldown": -1
-          },
-          "UseMarkerArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "PauseableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "PreemptableArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1,
-            "Finish": 1
-          },
-          "ValidatedArray": {
-            "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
-          },
-          "DefaultError": "MustTargetUnit",
-          "AcquirePriority": 3,
-          "SetLastTarget": "Unknown",
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "CmdButtonArray": {
-            "Execute": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "ButtonDrakkarFastMove",
-              "Requirements": "TrebovanieDrakkarFastMove"
-            }
-          },
-          "PostEffectBehavior": {
-            "Behavior": "DrakkarAlgoritmBoost",
-            "Count": 1
-          },
-          "Cost": [
-            {
-              "Cooldown": {
-                "TimeUse": 13
-              }
-            }
-          ],
-          "id": "AbilityFastMoveModeDrakkar"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "AbilityFastMoveModeDrakkar,Execute",
-        "id": "ButtonDrakkarFastMove",
-        "Icon": "btn-ability-mengsk-viking-speed",
-        "Tooltip": "Drakkar APC moves faster, but an attack from within becomes impossible.",
-        "Name": "Mode of transportation",
-        "Hotkey": "W"
       },
       {
         "Info": {
@@ -922,7 +706,7 @@
           },
           "TargetSorts": {
             "SortArray": [
-              "UEDSortingValidatator",
+              "UEDSortingValidatatorDrakkar",
               "TSInterruptible",
               "TSDistance"
             ]
@@ -959,8 +743,14 @@
         "AbilCmd": "MedivacTransport3,LoadAll",
         "id": "DrakkaAPCrLoad",
         "Icon": "btn-ability-terran-load",
-        "Tooltip": "Loads units into the APC's hold.",
-        "Name": "Load",
+        "Name": {
+          "enUS": "Load",
+          "ruRU": "Загрузить"
+        },
+        "Tooltip": {
+          "enUS": "Loads units into the APC's hold.",
+          "ruRU": "Загрузить боевые единицы в грузовой отсек БМП."
+        },
         "Hotkey": "G"
       },
       {
@@ -1029,7 +819,7 @@
           },
           "TargetSorts": {
             "SortArray": [
-              "UEDSortingValidatator",
+              "UEDSortingValidatatorDrakkar",
               "TSInterruptible",
               "TSDistance"
             ]
@@ -1066,16 +856,48 @@
         "AbilCmd": "MedivacTransport3,UnloadAll",
         "id": "DrakkarUnloadAll",
         "Icon": "btn-ability-terran-unloadall",
-        "Tooltip": "Unloads all units.",
-        "Name": "Unload All",
+        "Name": {
+          "enUS": "Unload All",
+          "ruRU": "Выгрузить всех"
+        },
+        "Tooltip": {
+          "enUS": "Unloads all units.",
+          "ruRU": "Выгрузить боевые еденицы из грузового отсека БМП"
+        },
         "Hotkey": "D"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ButtonDrakkarFireMode",
+        "Icon": "uedmotionstablizer",
+        "Name": {
+          "enUS": "Shooting mode",
+          "ruRU": "Прицельный режим"
+        },
+        "Tooltip": {
+          "enUS": "Enable to fire on the move both from the mounted cannon and from the internal compartment of the Drakkar APC.",
+          "ruRU": "Позволяет вести огонь на ходу как из навесной пушки так и из внутреннего отсека БМП \"Драккар\"."
+        },
+        "Hotkey": "Q"
       }
     ]
   },
   "InnerRadius": 0.5,
   "CargoSize": 4,
-  "ScoreMake": 100,
-  "ScoreKill": 100,
+  "ScoreMake": 150,
+  "ScoreKill": 150,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 81,
   "TacticalAIThink": "AIThinkHellion",
@@ -1098,6 +920,7 @@
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "DrakkarAPC",
   "Icon": "btn-unit-ued-militarizedtransport",
+  "Model": "UED_MilitarizedTransport_V1",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -1105,66 +928,70 @@
       "Turret": "DrakkarAPC",
       "id": "DrakkarMachineGun",
       "Icon": "weapon-tank-icon-upgrade-0",
-      "Name": "Mounted P15 machine gun",
-      "Amount": 12,
+      "Name": {
+        "enUS": "Mounted P15 machine gun",
+        "ruRU": "Пулемет навесной Р15"
+      },
+      "Amount": 10,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 5,
-      "Period": 1
-    },
-    {
-      "Turret": "DrakkarAPC",
-      "id": "DrakkarMachineGunMove",
-      "Icon": "weapon-tank-icon-upgrade-0",
-      "Amount": 12,
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 1
+      "Period": 1.5
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "MedivacTransport3",
-      "Name": "Load-Unload (APC)"
+      "Name": {
+        "enUS": "Load-Unload (APC)",
+        "ruRU": "Load-Unload (APC)"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     },
     {
-      "id": "AttackRedirectUED"
+      "id": "AttackRedirectUED",
+      "Name": {
+        "ruRU": "Перенаправить атаку"
+      }
     },
     {
-      "id": "GoAttackRedirect"
-    },
-    {
-      "id": "AbilityFireModeDrakkar"
-    },
-    {
-      "id": "AbilityFastMoveModeDrakkar"
+      "id": "GoAttackRedirect",
+      "Name": {
+        "ruRU": "В бой товарищи! Перенаправить"
+      }
     }
   ],
   "$Upgrades": [
-    "UEDVehicalsLevel1",
-    "DrakkarAPC",
-    "UpgraideDrakkar",
-    "UEDVehicalsLevel2",
-    "UEDVehicalsLevel3",
     "UEDArmorLevel1",
     "DrakkarAPC",
-    "UEDUnitSpartan",
+    "UpgraideDrakkar",
+    "DrakkarAPC",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "UEDVehicalsLevel1",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain",
     null
   ],
@@ -1181,71 +1008,105 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "GoAttackRedirect,Execute",
       "id": "OnwardComrades",
       "Icon": "btn-ability-mengsk-commandcenter-drafttroopers",
-      "Tooltip": "Inspire nearby units to fight by temporarily increasing their attack speed and  movement.",
-      "Name": "Onward, Comrades!"
-    },
-    {
-      "AbilCmd": "AbilityFireModeDrakkar,Execute",
-      "id": "ButtonDrakkarFireMode",
-      "Icon": "btn-ability-terran-detectionconedebuff",
-      "Tooltip": "Allows you to fire from the internal compartment of the Drakkar APC.",
-      "Name": "Shooting mode"
-    },
-    {
-      "AbilCmd": "AbilityFastMoveModeDrakkar,Execute",
-      "id": "ButtonDrakkarFastMove",
-      "Icon": "btn-ability-mengsk-viking-speed",
-      "Tooltip": "Drakkar APC moves faster, but an attack from within becomes impossible.",
-      "Name": "Mode of transportation"
+      "Name": {
+        "enUS": "Onward, Comrades!",
+        "ruRU": "В бой, товарищи!"
+      },
+      "Tooltip": {
+        "enUS": "Inspire nearby units to fight by temporarily increasing their movement by 40%.",
+        "ruRU": "Вдохновить ближайших юнитов на бой, временно увеличивая их скорость атаки и передвижения."
+      }
     },
     {
       "AbilCmd": "MedivacTransport3,LoadAll",
       "id": "DrakkaAPCrLoad",
       "Icon": "btn-ability-terran-load",
-      "Tooltip": "Loads units into the APC's hold.",
-      "Name": "Load"
+      "Name": {
+        "enUS": "Load",
+        "ruRU": "Загрузить"
+      },
+      "Tooltip": {
+        "enUS": "Loads units into the APC's hold.",
+        "ruRU": "Загрузить боевые единицы в грузовой отсек БМП."
+      }
     },
     {
       "AbilCmd": "MedivacTransport3,UnloadAll",
       "id": "DrakkarUnloadAll",
       "Icon": "btn-ability-terran-unloadall",
-      "Tooltip": "Unloads all units.",
-      "Name": "Unload All"
+      "Name": {
+        "enUS": "Unload All",
+        "ruRU": "Выгрузить всех"
+      },
+      "Tooltip": {
+        "enUS": "Unloads all units.",
+        "ruRU": "Выгрузить боевые еденицы из грузового отсека БМП"
+      }
     }
   ]
 }

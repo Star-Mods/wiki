@@ -1,6 +1,12 @@
 {
-  "Name": "Wasp",
-  "Description": "Can mutate into various Xayid flyers.",
+  "Name": {
+    "enUS": "Wasp",
+    "ruRU": "Мошка"
+  },
+  "Description": {
+    "enUS": "Can mutate into various Xayid flyers.",
+    "ruRU": "Может мутировать в различных летающих Зейтов."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 25,
   "LifeMax": 25,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Wasp/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Wasp/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Wasp/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Wasp/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -100,13 +111,13 @@
             "Raptor",
             "Raptor"
           ],
-          "Time": 34
+          "Time": 30
         },
         "Unit": [
           "Raptor",
           "Raptor"
         ],
-        "Time": 34,
+        "Time": 30,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -123,8 +134,14 @@
         "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train1",
         "id": "Raptor",
         "Icon": "btn-unit-xayid-raptor",
-        "Tooltip": "Fast, weak flyer. Effective against Armored targets. Two Raptors hatch from a single egg.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-        "Name": "Mutate into Raptors",
+        "Name": {
+          "enUS": "Mutate into Raptors",
+          "ruRU": "Мутировать в Рапторов"
+        },
+        "Tooltip": {
+          "enUS": "Fast, weak flyer. Effective against Armored targets. Two Raptors hatch from a single egg.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+          "ruRU": "Быстрая, слабая воздушная единица. Эффективна против бронированных целей. Два Раптора рождаются из одного кокона.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные единицы.</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -145,8 +162,8 @@
         ],
         "Time": 38,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 175,
+          "Vespene": 125,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -160,8 +177,14 @@
         "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train8",
         "id": "Assailant",
         "Icon": "btn-unit-xayid-assailant",
-        "Tooltip": "Anti-ground assault flyer. Attack missiles seek valid targets until dealing damage.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Mutate into Assailant",
+        "Name": {
+          "enUS": "Mutate into Assailant",
+          "ruRU": "Превратиться в Нападающего"
+        },
+        "Tooltip": {
+          "enUS": "Anti-ground assault flyer. Attack missiles seek valid targets until dealing damage.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+          "ruRU": "Противоназемная летающая единица.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "A"
       },
       {
@@ -183,8 +206,8 @@
         ],
         "Time": 38,
         "Cost": {
-          "Minerals": 175,
-          "Vespene": 125,
+          "Minerals": 200,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -198,8 +221,14 @@
         "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train3",
         "id": "Exterminator",
         "Icon": "btn-unit-xayid-exterminator",
-        "Tooltip": "Anti-air fighter that excels vs Light targets.<br/><br/><span style=\"color: #FFFF80\">Can attack air units.</span>",
-        "Name": "Mutate into Exterminator",
+        "Name": {
+          "enUS": "Mutate into Exterminator",
+          "ruRU": "Мутировать в Истребителя"
+        },
+        "Tooltip": {
+          "enUS": "Anti-air fighter that excels vs Light targets.<br/><br/><span style=\"color: FFFF80\">Can attack air units.</span>",
+          "ruRU": "Противовоздушный боец. Эффективен против лёгких целей. Может использовать зажигательный настой.<br/><br/><span style=\"color: FFFF80\">Может атаковать воздушные цели.</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -214,12 +243,12 @@
           "Unit": [
             "Xayithoan"
           ],
-          "Time": 40
+          "Time": 30
         },
         "Unit": [
           "Xayithoan"
         ],
-        "Time": 40,
+        "Time": 30,
         "Cost": {
           "Minerals": 100,
           "Vespene": 200,
@@ -236,8 +265,14 @@
         "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train4",
         "id": "Xayithoan",
         "Icon": "btn-unit-xayid-xayithoan",
-        "Tooltip": "Aerial detector and spell caster. Can use Adaptive Injection, Protective Cloud and Spawn Watcher.<br/><br/><span style=\"color: #FFFF00\">Detector</span>",
-        "Name": "Mutate into Xayithoan",
+        "Name": {
+          "enUS": "Mutate into Xayithoan",
+          "ruRU": "Мутировать в Зейтона"
+        },
+        "Tooltip": {
+          "enUS": "Aerial detector and spell caster. Can use Adaptive Injection, Protective Cloud and Spawn Watcher.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Летающий детектор и кастер. Может использовать Адаптивную инъекцию и Защитное облако. <br/><br/><span style=\"color: FFFF00\">Детектор</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -274,8 +309,14 @@
         "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train6",
         "id": "Kraken",
         "Icon": "btn-unit-xayid-kraken",
-        "Tooltip": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-        "Name": "Mutate into Kraken",
+        "Name": {
+          "enUS": "Mutate into Kraken",
+          "ruRU": "Мутировать в Кракена"
+        },
+        "Tooltip": {
+          "enUS": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+          "ruRU": "Огромный мощный зверь с разрушительной атакой. Может использовать неустойчивый разряд.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -335,8 +376,14 @@
         "AbilCmd": "que1,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -375,22 +422,34 @@
     "Kraken"
   ],
   "Icon": "btn-unit-zerg-locustflyerex3",
+  "Model": "SwarmHostSpawnFlyer",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "LarvaWander"
+      "id": "LarvaWander",
+      "Name": {
+        "enUS": "Larva Wander",
+        "ruRU": "Larva Wander"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "que1",
-      "Name": "Queue (1)"
+      "Name": {
+        "ruRU": "Queue (1)",
+        "enUS": "Queue (1)"
+      }
     },
     {
       "id": "AerialNestWaspMutateXayidFlyers",
-      "Name": "Mutate Xayid Flyers"
+      "Name": {
+        "enUS": "Mutate Xayid Flyers",
+        "ruRU": "Mutate Xayid Flyers"
+      }
     }
   ],
   "$Upgrades": [
@@ -409,10 +468,6 @@
   ],
   "$Research": [],
   "$Morph": [
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
     "XayidCocoon"
   ],
   "$Phase": [],
@@ -422,43 +477,79 @@
       "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train1",
       "id": "Raptor",
       "Icon": "btn-unit-xayid-raptor",
-      "Tooltip": "Fast, weak flyer. Effective against Armored targets. Two Raptors hatch from a single egg.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-      "Name": "Mutate into Raptors"
+      "Name": {
+        "enUS": "Mutate into Raptors",
+        "ruRU": "Мутировать в Рапторов"
+      },
+      "Tooltip": {
+        "enUS": "Fast, weak flyer. Effective against Armored targets. Two Raptors hatch from a single egg.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+        "ruRU": "Быстрая, слабая воздушная единица. Эффективна против бронированных целей. Два Раптора рождаются из одного кокона.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные единицы.</span>"
+      }
     },
     {
       "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train8",
       "id": "Assailant",
       "Icon": "btn-unit-xayid-assailant",
-      "Tooltip": "Anti-ground assault flyer. Attack missiles seek valid targets until dealing damage.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Mutate into Assailant"
+      "Name": {
+        "enUS": "Mutate into Assailant",
+        "ruRU": "Превратиться в Нападающего"
+      },
+      "Tooltip": {
+        "enUS": "Anti-ground assault flyer. Attack missiles seek valid targets until dealing damage.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+        "ruRU": "Противоназемная летающая единица.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train3",
       "id": "Exterminator",
       "Icon": "btn-unit-xayid-exterminator",
-      "Tooltip": "Anti-air fighter that excels vs Light targets.<br/><br/><span style=\"color: #FFFF80\">Can attack air units.</span>",
-      "Name": "Mutate into Exterminator"
+      "Name": {
+        "enUS": "Mutate into Exterminator",
+        "ruRU": "Мутировать в Истребителя"
+      },
+      "Tooltip": {
+        "enUS": "Anti-air fighter that excels vs Light targets.<br/><br/><span style=\"color: FFFF80\">Can attack air units.</span>",
+        "ruRU": "Противовоздушный боец. Эффективен против лёгких целей. Может использовать зажигательный настой.<br/><br/><span style=\"color: FFFF80\">Может атаковать воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train4",
       "id": "Xayithoan",
       "Icon": "btn-unit-xayid-xayithoan",
-      "Tooltip": "Aerial detector and spell caster. Can use Adaptive Injection, Protective Cloud and Spawn Watcher.<br/><br/><span style=\"color: #FFFF00\">Detector</span>",
-      "Name": "Mutate into Xayithoan"
+      "Name": {
+        "enUS": "Mutate into Xayithoan",
+        "ruRU": "Мутировать в Зейтона"
+      },
+      "Tooltip": {
+        "enUS": "Aerial detector and spell caster. Can use Adaptive Injection, Protective Cloud and Spawn Watcher.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Летающий детектор и кастер. Может использовать Адаптивную инъекцию и Защитное облако. <br/><br/><span style=\"color: FFFF00\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "AerialNestWaspMutateXayidFlyers,Train6",
       "id": "Kraken",
       "Icon": "btn-unit-xayid-kraken",
-      "Tooltip": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-      "Name": "Mutate into Kraken"
+      "Name": {
+        "enUS": "Mutate into Kraken",
+        "ruRU": "Мутировать в Кракена"
+      },
+      "Tooltip": {
+        "enUS": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+        "ruRU": "Огромный мощный зверь с разрушительной атакой. Может использовать неустойчивый разряд.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+      }
     },
     {
       "AbilCmd": "que1,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     }
   ]
 }

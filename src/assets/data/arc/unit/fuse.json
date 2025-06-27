@@ -1,6 +1,12 @@
 {
-  "Name": "Fuse",
-  "Description": "Support unit. Can use Fusion.",
+  "Name": {
+    "enUS": "Fuse",
+    "ruRU": "Предохранитель"
+  },
+  "Description": {
+    "enUS": "Support unit. Can use Fusion.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+    "ruRU": "Еденица поддержки. Может использовать Слияние."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 75,
   "LifeMax": 75,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 1350,
   "TurningRate": 1350,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Fuse/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Fuse/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Fuse/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Fuse/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,6 +99,7 @@
     "Flying"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 4,
   "Sight": 9,
   "CostCategory": "Army",
@@ -180,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -254,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -344,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -509,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -599,8 +641,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -621,8 +669,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -761,8 +815,14 @@
         "AbilCmd": "FuseFusion,Execute",
         "id": "Fusion",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Fuses the caster to the target unit, granting it an additional <b>125</b> maximum shields.",
-        "Name": "Fusion",
+        "Name": {
+          "enUS": "Fusion",
+          "ruRU": "Слияние"
+        },
+        "Tooltip": {
+          "enUS": "Fuses the caster to the target unit, granting it an additional <b>125</b> maximum shields.",
+          "ruRU": "Сливается и целевой единицей, обеспеивая ей <b>125</b> к максимуму щитов."
+        },
         "Hotkey": "F"
       },
       {
@@ -781,8 +841,39 @@
         "Type": "Passive",
         "id": "InterlacingBond",
         "Icon": "btn-upgrade-stetmann-zerglinghardenedshield",
-        "Tooltip": "The infused unit gains +0.5 shield armor.",
-        "Name": "Interlacing Bond"
+        "Name": {
+          "enUS": "Interlacing Bond",
+          "ruRU": "Переплетение Связей"
+        },
+        "Tooltip": {
+          "enUS": "Gains 1 shield armor. The infused unit gains +0.5 shield armor.",
+          "ruRU": "Юнит получает +0.5 к уровню щита"
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "Detector",
+        "Icon": "btn-status-detector",
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       }
     ]
   },
@@ -798,7 +889,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Fuse",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Fuse",
   "Height": 3.75,
   "VisionHeight": 4,
@@ -821,36 +915,64 @@
   "GlossaryPriority": 31,
   "LateralAcceleration": 6,
   "RankDisplay": "Never",
-  "LifeArmor": 1,
   "Icon": "btn-unit-keiron-fuse",
+  "Model": "Fuse",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "Detector9",
+      "Icon": "btn-status-detector",
+      "Name": {
+        "enUS": "Detector9",
+        "ruRU": "Detector9"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseFusion",
-      "Name": "Fusion"
+      "Name": {
+        "enUS": "Fusion",
+        "ruRU": "Fusion"
+      }
     }
   ],
   "$Upgrades": [
@@ -858,6 +980,7 @@
     "Fuse",
     "Conduit",
     "IsFuse",
+    "Button/Tooltip/FuseCost",
     "KeironCitadelMaterialize",
     "CitadelCharged",
     "KeironBioArmorLevel1",
@@ -888,57 +1011,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "FuseFusion,Execute",
       "id": "Fusion",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Fuses the caster to the target unit, granting it an additional <b>125</b> maximum shields.",
-      "Name": "Fusion"
+      "Name": {
+        "enUS": "Fusion",
+        "ruRU": "Слияние"
+      },
+      "Tooltip": {
+        "enUS": "Fuses the caster to the target unit, granting it an additional <b>125</b> maximum shields.",
+        "ruRU": "Сливается и целевой единицей, обеспеивая ей <b>125</b> к максимуму щитов."
+      }
     }
   ]
 }

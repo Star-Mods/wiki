@@ -1,6 +1,12 @@
 {
-  "Name": "Political Advisor",
-  "Description": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: #FFE303\">",
+  "Name": {
+    "enUS": "Political Advisor",
+    "ruRU": "Политический советник"
+  },
+  "Description": {
+    "enUS": "Master of ideological warfare. Can inspire troops around her to fight harder. It can throw shock and light grenades.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">",
+    "ruRU": "Мастер идеологической войны. Может вдохновлять боевые единицы поблизости, увеличивая их скорость атаки и перемещения. Может бростать ударные и световые гранаты.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные и воздушные цели."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -64,16 +73,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "PoliticalAdvisor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "PoliticalAdvisor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "PoliticalAdvisor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "PoliticalAdvisor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -204,8 +215,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -278,8 +295,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -369,8 +392,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -460,8 +489,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -534,8 +569,14 @@
         "Type": "AbilCmd",
         "AbilCmd": "attackUED,Execute",
         "id": "AttackGhost",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -671,8 +712,14 @@
         "AbilCmd": "OnwardComrades,Execute",
         "id": "OnwardComrades",
         "Icon": "btn-ability-mengsk-commandcenter-drafttroopers",
-        "Tooltip": "Inspire nearby units to fight by temporarily increasing their attack speed and  movement.",
-        "Name": "Onward, Comrades!",
+        "Name": {
+          "enUS": "Onward, Comrades!",
+          "ruRU": "В бой, товарищи!"
+        },
+        "Tooltip": {
+          "enUS": "Inspire nearby units to fight by temporarily increasing their movement by 40%.",
+          "ruRU": "Вдохновить ближайших юнитов на бой, временно увеличивая их скорость атаки и передвижения."
+        },
         "Hotkey": "F"
       },
       {
@@ -811,8 +858,14 @@
         "AbilCmd": "OpticalFlare,Execute",
         "id": "OpticalFlare",
         "Icon": "btn-upgrade-nova-btn-upgrade-nova-flashgrenade",
-        "Tooltip": "Shoot a powerful light grenade. In the field of action, all enemy targets will be deprived of the function of invisibility, detector and vision for 8.5 seconds. Opens the terrain.",
-        "Name": "Optical Flare",
+        "Name": {
+          "enUS": "Optical Flare",
+          "ruRU": "Оптическая вспышка"
+        },
+        "Tooltip": {
+          "enUS": "Shoot a powerful light grenade. In the field of action, all enemy targets will be deprived of the function of invisibility, detector and vision for 8.5 seconds. Opens the terrain.",
+          "ruRU": "Выстрелить мощной световой гранатой. В области действия все вражеские цели будут лишены функции маскировки, детектора и зрения в течении 8.5 сек. Открывает местность."
+        },
         "Hotkey": "W"
       },
       {
@@ -953,14 +1006,20 @@
         "AbilCmd": "UEDTossGrenade,Execute",
         "id": "StrikeGrenade",
         "Icon": "btn-ability-tychus-tychus-shreddergrenade",
-        "Tooltip": "Throw a grenade that explodes on contact. Deals <b>6</b> damage and slows attack speed by <b>99</b>% for <b>13</b> seconds. The deceleration effect can add up to 2 times.",
-        "Name": "Throw Strike grenade",
+        "Name": {
+          "enUS": "Throw Strike grenade",
+          "ruRU": "Бросить Ударную гранату"
+        },
+        "Tooltip": {
+          "enUS": "Throw a grenade that explodes on contact. Deals <b>6</b> damage and slows attack speed by <b>100</b>% for <b>8</b> seconds.",
+          "ruRU": "Бросить гранату, взрывающуюся при контакте. Наносит <b>6</b> ед. урона и замедляет скорость атаки на <b>100</b>% в течении <b>8</b> сек. Эффект замедления может складываться до 2 раз."
+        },
         "Hotkey": "E"
       }
     ]
   },
   "InnerRadius": 0.375,
-  "CargoSize": 2,
+  "CargoSize": 1,
   "ScoreMake": 300,
   "ScoreKill": 300,
   "ScoreResult": "BuildOrder",
@@ -981,13 +1040,17 @@
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "PoliticalAdvisor",
   "Icon": "btn-unit-terran-ghostmengsk",
+  "Model": "Ghost_Mengsk_COOP",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "Type769BattleRifle2",
       "Icon": "weapon-trooper-icon-upgrade-0",
-      "Name": "Type-769 Battle Rifle",
+      "Name": {
+        "enUS": "Type-769 Battle Rifle",
+        "ruRU": "Боевая винтовка «Тип-769»"
+      },
       "Amount": 12,
       "Kind": "Ranged",
       "TargetFilters": "",
@@ -997,6 +1060,9 @@
     {
       "id": "DrakkarType769BattleRifle22",
       "Icon": "weapon-trooper-icon-upgrade-0",
+      "Name": {
+        "ruRU": "Боевая винтовка «Тип-769» Драккар"
+      },
       "Amount": 12,
       "Kind": "Ranged",
       "DisplayAttackCount": 1,
@@ -1009,38 +1075,62 @@
     {
       "id": "UnitDeathPrevention",
       "Icon": "btn-ability-kerrigan_revive",
-      "Tooltip": "This unit does not die immediately, within 5 seconds it can be resurrected."
+      "Name": {
+        "enUS": "Unit Death Prevention",
+        "ruRU": "Аура лазаруса"
+      },
+      "Tooltip": {
+        "enUS": "This unit does not die immediately, within 5 seconds it can be resurrected.",
+        "ruRU": "Боевая еденица сразу не умирает, в течении 5 сек ее можно воскресить."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     },
     {
       "id": "OnwardComrades",
-      "Name": "Onward, Comrades!"
+      "Name": {
+        "enUS": "Onward, Comrades!",
+        "ruRU": "В бой, товарищи!"
+      }
     },
     {
       "id": "OpticalFlare",
-      "Name": "Optical Flare"
+      "Name": {
+        "enUS": "Optical Flare"
+      }
     },
     {
       "id": "UEDTossGrenade",
-      "Name": "UEDToss Grenade"
+      "Name": {
+        "enUS": "UEDToss Grenade"
+      }
     }
   ],
   "$Upgrades": [
-    "UEDWeaponsLevel1",
+    "UEDisPoliticalAdvisor",
     "PoliticalAdvisor",
+    "UEDWeaponsLevel1",
     "AllowUnitPoliticalAdvisor",
     "StrikeGrenade",
     "CommandoTraining",
@@ -1068,56 +1158,104 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "AttackGhost",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "OnwardComrades,Execute",
       "id": "OnwardComrades",
       "Icon": "btn-ability-mengsk-commandcenter-drafttroopers",
-      "Tooltip": "Inspire nearby units to fight by temporarily increasing their attack speed and  movement.",
-      "Name": "Onward, Comrades!"
+      "Name": {
+        "enUS": "Onward, Comrades!",
+        "ruRU": "В бой, товарищи!"
+      },
+      "Tooltip": {
+        "enUS": "Inspire nearby units to fight by temporarily increasing their movement by 40%.",
+        "ruRU": "Вдохновить ближайших юнитов на бой, временно увеличивая их скорость атаки и передвижения."
+      }
     },
     {
       "AbilCmd": "OpticalFlare,Execute",
       "id": "OpticalFlare",
       "Icon": "btn-upgrade-nova-btn-upgrade-nova-flashgrenade",
-      "Tooltip": "Shoot a powerful light grenade. In the field of action, all enemy targets will be deprived of the function of invisibility, detector and vision for 8.5 seconds. Opens the terrain.",
-      "Name": "Optical Flare"
+      "Name": {
+        "enUS": "Optical Flare",
+        "ruRU": "Оптическая вспышка"
+      },
+      "Tooltip": {
+        "enUS": "Shoot a powerful light grenade. In the field of action, all enemy targets will be deprived of the function of invisibility, detector and vision for 8.5 seconds. Opens the terrain.",
+        "ruRU": "Выстрелить мощной световой гранатой. В области действия все вражеские цели будут лишены функции маскировки, детектора и зрения в течении 8.5 сек. Открывает местность."
+      }
     },
     {
       "AbilCmd": "UEDTossGrenade,Execute",
       "id": "StrikeGrenade",
       "Icon": "btn-ability-tychus-tychus-shreddergrenade",
-      "Tooltip": "Throw a grenade that explodes on contact. Deals <b>6</b> damage and slows attack speed by <b>99</b>% for <b>13</b> seconds. The deceleration effect can add up to 2 times.",
-      "Name": "Throw Strike grenade"
+      "Name": {
+        "enUS": "Throw Strike grenade",
+        "ruRU": "Бросить Ударную гранату"
+      },
+      "Tooltip": {
+        "enUS": "Throw a grenade that explodes on contact. Deals <b>6</b> damage and slows attack speed by <b>100</b>% for <b>8</b> seconds.",
+        "ruRU": "Бросить гранату, взрывающуюся при контакте. Наносит <b>6</b> ед. урона и замедляет скорость атаки на <b>100</b>% в течении <b>8</b> сек. Эффект замедления может складываться до 2 раз."
+      }
     }
   ]
 }

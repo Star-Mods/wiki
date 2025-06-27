@@ -1,6 +1,12 @@
 {
-  "Name": "Raven",
-  "Description": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
+  "Name": {
+    "enUS": "Raven",
+    "ruRU": "Raven"
+  },
+  "Description": {
+    "enUS": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+    "ruRU": "Aerial support unit. Can use Auto-Turret, Point Defense Drone, and Seeker Missile.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 140,
   "LifeMax": 140,
-  "LifeArmorName": "Terran Ship Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Ship Plating",
+    "ruRU": "Terran Ship Plating"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -68,16 +77,18 @@
       "Anim": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Raven/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Raven/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Raven/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Raven/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -203,8 +214,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -277,8 +294,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -367,8 +390,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -457,8 +486,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -609,8 +644,14 @@
         "AbilCmd": "BuildAutoTurret,Execute",
         "id": "AutoTurret",
         "Icon": "btn-building-terran-autoturret",
-        "Tooltip": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "Build Auto-Turret",
+        "Name": {
+          "enUS": "Build Auto-Turret",
+          "ruRU": "Build Auto-Turret"
+        },
+        "Tooltip": {
+          "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+          "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -684,8 +725,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -774,8 +821,14 @@
         "AbilCmd": "move,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -794,8 +847,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       },
       {
         "Info": {
@@ -934,8 +993,12 @@
         "AbilCmd": "RavenShredderMissile,Execute",
         "id": "RavenShredderMissile",
         "Icon": "btn-ability-terran-shreddermissile-color",
-        "Tooltip": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds.",
-        "Name": "Anti-Armor Missile",
+        "Name": {
+          "enUS": "Anti-Armor Missile"
+        },
+        "Tooltip": {
+          "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds."
+        },
         "Hotkey": "R"
       },
       {
@@ -1082,8 +1145,12 @@
         "AbilCmd": "RavenScramblerMissile,Execute",
         "id": "RavenScramblerMissile",
         "Icon": "btn-upgrade-terran-interferencematrix",
-        "Tooltip": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><c val=\"#ColorAttackInfo\">Can target mechanical and psionic units.</span>",
-        "Name": "Interference Matrix",
+        "Name": {
+          "enUS": "Interference Matrix"
+        },
+        "Tooltip": {
+          "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>"
+        },
         "Hotkey": "C"
       }
     ]
@@ -1112,6 +1179,7 @@
   ],
   "id": "Raven",
   "Icon": "btn-unit-terran-raven",
+  "Model": "Raven",
   "LifeArmorIcon": "btn-upgrade-terran-shipplatinglevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1119,44 +1187,65 @@
     {
       "id": "Detector11",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "RavenShredderMissile",
-      "Name": "Shredder Missile"
+      "Name": {
+        "enUS": "Shredder Missile",
+        "ruRU": "Shredder Missile"
+      }
     },
     {
       "id": "RavenScramblerMissile",
-      "Name": "Scrambler Missile"
+      "Name": {
+        "enUS": "Scrambler Missile",
+        "ruRU": "Scrambler Missile"
+      }
     },
     {
       "id": "BuildAutoTurret",
-      "Name": "Place Auto Turret"
+      "Name": {
+        "enUS": "Place Auto Turret",
+        "ruRU": "Place Auto Turret"
+      }
     }
   ],
   "$Upgrades": [
     "TerranVehicleAndShipArmorsLevel1",
     "Raven",
     "InterferenceMatrix",
+    "StarportTrain",
+    "Starport",
     "Raven",
     "TerranVehicleAndShipArmors",
     "TerranVehicleAndShipArmorsLevel2",
     "TerranVehicleAndShipArmorsLevel3",
-    "AscendedGrimGlider",
-    "GrimGlider",
-    "StarportTrain",
-    "Starport",
+    "SuperHangar",
+    "Hangar",
     "IsRaven"
   ],
   "$Requirements": [],
@@ -1174,64 +1263,114 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "BuildAutoTurret,Execute",
       "id": "AutoTurret",
       "Icon": "btn-building-terran-autoturret",
-      "Tooltip": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "Build Auto-Turret"
+      "Name": {
+        "enUS": "Build Auto-Turret",
+        "ruRU": "Build Auto-Turret"
+      },
+      "Tooltip": {
+        "enUS": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+        "ruRU": "Automated defensive turret. Times out after <b>11</b> seconds.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "RavenShredderMissile,Execute",
       "id": "RavenShredderMissile",
       "Icon": "btn-ability-terran-shreddermissile-color",
-      "Tooltip": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds.",
-      "Name": "Anti-Armor Missile"
+      "Name": {
+        "enUS": "Anti-Armor Missile"
+      },
+      "Tooltip": {
+        "enUS": "Deploys a missile which pursues the target unit and, upon contact, reduces the armor and shield armor of affected units by <b>2</b> for <b>30</b> seconds."
+      }
     },
     {
       "AbilCmd": "RavenScramblerMissile,Execute",
       "id": "RavenScramblerMissile",
       "Icon": "btn-upgrade-terran-interferencematrix",
-      "Tooltip": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><c val=\"#ColorAttackInfo\">Can target mechanical and psionic units.</span>",
-      "Name": "Interference Matrix"
+      "Name": {
+        "enUS": "Interference Matrix"
+      },
+      "Tooltip": {
+        "enUS": "Disables a target unit rendering it unable to attack or use abilities for <b>15</b> seconds. Reveals Cloaked units.<br/><br/><span style=\"color: #ffff8a\">Can target mechanical and psionic units.</span>"
+      }
     }
   ]
 }

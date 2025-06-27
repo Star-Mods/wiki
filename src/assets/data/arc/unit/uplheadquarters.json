@@ -1,18 +1,24 @@
 {
-  "Name": "Headquarters",
-  "Description": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>",
+  "Name": {
+    "enUS": "Headquarters"
+  },
+  "Description": {
+    "enUS": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "UPL Building Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -67,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UPLHeadquarters/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UPLHeadquarters/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UPLHeadquarters/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UPLHeadquarters/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -168,28 +176,15 @@
         "AbilCmd": "que5CancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
         },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "UPLSelectBuilder",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
-        "Hotkey": "U"
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
+        "Hotkey": "Esc"
       },
       {
         "Info": {
@@ -251,8 +246,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -280,8 +281,12 @@
         "AbilCmd": "RallyHeadquarters,Rally2",
         "id": "RallyMiningDrone",
         "Icon": "btn-ability-upl-setworkerrallypoint",
-        "Tooltip": "Sends constructed worker units to the designated point. Workers rallied to Mineral Fields or Exhumers will begin gathering automatically.",
-        "Name": "Set Worker Rally Point",
+        "Name": {
+          "enUS": "Set Worker Rally Point"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed worker units to the designated point. Workers rallied to Mineral Fields or Exhumers will begin gathering automatically."
+        },
         "Hotkey": "G"
       },
       {
@@ -309,8 +314,12 @@
         "AbilCmd": "RallyHeadquarters,Rally1",
         "id": "RallyCARR",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed CARR to the designated point.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed CARR to the designated point."
+        },
         "Hotkey": "Y"
       },
       {
@@ -347,9 +356,55 @@
         "AbilCmd": "UPLHeadquartersTrain,Train1",
         "id": "MiningDrone",
         "Icon": "btn-unit-upl-miningdrone",
-        "Tooltip": "Nano-Enabled Construction Robot<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Build Mining Drone",
+        "Name": {
+          "enUS": "Build Mining Drone"
+        },
+        "Tooltip": {
+          "enUS": "Nano-Enabled Construction Robot<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
         "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainCARR",
+            "Requirements": "HaveUPLManufacturingFacility"
+          },
+          "Unit": [
+            "CARR"
+          ],
+          "Time": 75
+        },
+        "Unit": [
+          "CARR"
+        ],
+        "Time": 75,
+        "Cost": {
+          "Minerals": 450,
+          "Vespene": 150,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -6
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLManufacturingFacilityTrain,Train23",
+        "id": "CARR",
+        "Icon": "btn-unit-upl-carr",
+        "Name": {
+          "enUS": "Train CARR"
+        },
+        "Tooltip": {
+          "enUS": "Massive, armed robotic strategy adviser with bio-detection passive ability. Able to launch grenade."
+        },
+        "Hotkey": "C"
       },
       {
         "Upgrade": "UPLMiningDronesGrenadeLauncher",
@@ -385,14 +440,18 @@
         "AbilCmd": "UPLForwardOperatingBaseResearch,Research5",
         "id": "ResearchMiningDroneGrenadeLauncher",
         "Icon": "btn-ability-upl-miningdronecombatmode",
-        "Tooltip": "Mining Drone replaces a harvester arm with a grenade launcher",
-        "Name": "Research  Grenade Launcher",
+        "Name": {
+          "enUS": "Research  Grenade Launcher"
+        },
+        "Tooltip": {
+          "enUS": "Allow Mining Drone to switch to a grenade launcher weapon which attacks at a short range and does more damage. Mining Drone cannot harvest resources, construct building or use any abilities in Grenade Launcher mode."
+        },
         "Hotkey": "Z"
       }
     ]
   },
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 3,
+  "SubgroupPriority": 4,
   "GlossaryCategory": "Unit/Category/0UPLBuildings",
   "GlossaryPriority": 1,
   "HotkeyCategory": "Unit/Category/UPLUnits",
@@ -431,45 +490,65 @@
   "DeathTime": 1,
   "DeadFootprint": "Footprint5x5Contour",
   "Icon": "btn-building-upl-uplheadquarters",
+  "Model": "UPLHeadquarters",
   "LifeArmorIcon": "btn-upgrade-upl-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5CancelToSelection",
-      "Name": "Queue (5) (Cancel To Selection)"
+      "Name": {
+        "ruRU": "Queue (5) (Cancel To Selection)",
+        "enUS": "Queue (5) (Cancel To Selection)"
+      }
     },
     {
       "id": "RallyHeadquarters",
-      "Name": "Headquarters - Rally"
+      "Name": {
+        "enUS": "Headquarters - Rally"
+      }
     },
     {
       "id": "UPLHeadquartersTrain",
-      "Name": "Train"
+      "Name": {
+        "enUS": "Train"
+      }
     },
     {
       "id": "UPLForwardOperatingBaseResearch",
-      "Name": "Research"
+      "Name": {
+        "enUS": "Research"
+      }
     },
     {
       "id": "UPLManufacturingFacilityTrain",
-      "Name": "Train"
+      "Name": {
+        "enUS": "Train"
+      }
     }
   ],
   "$Upgrades": [
-    "UPL",
-    "UPLHeadquarters",
+    "UPLL",
     "UPLBuild",
     "IsUPLHeadquarters",
+    "UPLHeadquarters",
     "UPLHeadquarters",
     "UPLHeadquartersSplat",
     "UPLHeadquarters",
@@ -493,43 +572,82 @@
       "AbilCmd": "que5CancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "RallyHeadquarters,Rally2",
       "id": "RallyMiningDrone",
       "Icon": "btn-ability-upl-setworkerrallypoint",
-      "Tooltip": "Sends constructed worker units to the designated point. Workers rallied to Mineral Fields or Exhumers will begin gathering automatically.",
-      "Name": "Set Worker Rally Point"
+      "Name": {
+        "enUS": "Set Worker Rally Point"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed worker units to the designated point. Workers rallied to Mineral Fields or Exhumers will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "RallyHeadquarters,Rally1",
       "id": "RallyCARR",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed CARR to the designated point.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed CARR to the designated point."
+      }
     },
     {
       "AbilCmd": "UPLHeadquartersTrain,Train1",
       "id": "MiningDrone",
       "Icon": "btn-unit-upl-miningdrone",
-      "Tooltip": "Nano-Enabled Construction Robot<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Build Mining Drone"
+      "Name": {
+        "enUS": "Build Mining Drone"
+      },
+      "Tooltip": {
+        "enUS": "Nano-Enabled Construction Robot<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLManufacturingFacilityTrain,Train23",
+      "id": "CARR",
+      "Icon": "btn-unit-upl-carr",
+      "Name": {
+        "enUS": "Train CARR"
+      },
+      "Tooltip": {
+        "enUS": "Massive, armed robotic strategy adviser with bio-detection passive ability. Able to launch grenade."
+      }
     },
     {
       "AbilCmd": "UPLForwardOperatingBaseResearch,Research5",
       "id": "ResearchMiningDroneGrenadeLauncher",
       "Icon": "btn-ability-upl-miningdronecombatmode",
-      "Tooltip": "Mining Drone replaces a harvester arm with a grenade launcher",
-      "Name": "Research  Grenade Launcher"
+      "Name": {
+        "enUS": "Research  Grenade Launcher"
+      },
+      "Tooltip": {
+        "enUS": "Allow Mining Drone to switch to a grenade launcher weapon which attacks at a short range and does more damage. Mining Drone cannot harvest resources, construct building or use any abilities in Grenade Launcher mode."
+      }
     }
   ]
 }

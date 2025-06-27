@@ -1,69 +1,13 @@
-
-.unit-stats {
-  position: relative;
-  display: block;
-  overflow: auto;
-  text-overflow: ellipsis;
-}
-.unit-stat {
-  display: inline-block;
-  width: 120px;
-}
-.cards-container{
+:host{
+  width: 410px;
+  height: 260px;
   display: block;
 }
-
-.sc-attribute:not(:last-of-type){
-  &:after{
-    content: " - "
-  }
-}
-
-table.cards {
-  border: 2px solid #2765a4;
-  border-spacing: 0;
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
-
-  > tr {
-    height: 48px;
-
-    > td {
-      width: 48px;
-      position: relative;
-      height: 48px;
-      padding: 0;
-      background-image: url(./../../../assets/ui/ui_ingame_coop_topbar_stetmann_commandbuttons_blue_normal.png);
-      background-size: 50px;
-      background-position: center;
-
-      &.disabled{
-        opacity: 0.1;
-      }
-
-      .card-hotkey{
-        position: absolute;
-        left: 6px;
-        top: 6px;
-        color: white;
-        text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black;
-        z-index: 1;
-      }
-      img {
-        width: 48px;
-        display: block;
-        height: 48px;
-      }
-    }
-  }
-}
-
 
 .viewer-small{
   float: right;
   position: relative;
-  width: 210px;
+  width: 410px;
   height: 260px;
   display: inline-block;
   margin: 5px;
@@ -75,14 +19,19 @@ table.cards {
     content: "";
     width: 100%;
     height: 100%;
-    background: url(./../../../assets/ui/sc2_ui_tradeshow_modeselectionbutton_border_hover.png);
 
     pointer-events: none;
     background-size: 100% 100%;
+    border-width: 10px;
+    border-style: solid;
+    border-image-source: url(./../../../assets/ui/sc2_ui_tradeshow_modeselectionbutton_border_hover.png);
+    border-image-slice: 9;
+    border-image-repeat: stretch;
+    box-sizing: inherit;
   }
 }
 .viewer-inner {
-  width: 200px;
+  width: 400px;
   height: 250px;
 }
 

@@ -63,6 +63,7 @@ export class SCDataService {
               private router: Router,
               private title: Title,
               private meta: Meta,
+              private route: ActivatedRoute,
               @Optional() @Inject(ENVIRONMENT) environment: any
   ) {
     this.environment = environment !== null ? environment : {};
@@ -79,18 +80,40 @@ export class SCDataService {
 
     this.http.get(`${this.dataRoot}mods.json`).subscribe(data => this.modsData = data)
 
+
     this.router.events.pipe(
       filter(e => e instanceof NavigationEnd)
     ).subscribe(e => {
-      let [mod,race,catalog,entity] = this.router.url.substring(1).split("/")
+      let mod,race,unit,upgrade,catalog,entity
+      // [mod,race,catalog,entity] = this.router.url.substring(1).split("/")
 
-      let switchRace = this.raceID !== race
+    })
+
+
+    this.route.queryParamMap.subscribe(params => {
+      let mod,race,unit,upgrade,catalog,entity
+      mod = params.get('mod');
+      race = params.get('race');
+      unit = params.get('unit');
+      upgrade = params.get('upgrade');
+
+
+      if(upgrade){catalog = "upgrade";entity = upgrade}
+      if(unit){catalog = "unit";entity = unit}
+      let switchRace;
       mod = mod?.toLowerCase()
       race = race?.toLowerCase()
       entity = entity?.toLowerCase()
       catalog = catalog?.toLowerCase()
 
+      if((entity || race) && !mod){
+        mod = "arc";
+      }
+
+      let forceEntityUpdate= false;
+
       if(this.modID !== mod){
+        forceEntityUpdate = true;
         this.modID = mod
         if(mod){
           this.modLoading = true
@@ -106,62 +129,83 @@ export class SCDataService {
           this.modData = null
         }
       }
-      if(switchRace){
-        this.raceID = race
-        if(race){
-          this.http.get(`${this.dataRoot}${this.modID}/race/${race}.json`).subscribe(data => {
-            this.raceData = data
-            this.updateTitle()
-          },()=>{
-            this.raceData = null
-            this.updateTitle()
-          })
-        }
-        else{
-          this.raceData = null
-          this.updateTitle()
-        }
-      }
-      if( this.entityID !== entity || this.entityCatalog !== catalog) {
+
+
+      if(entity && catalog && (forceEntityUpdate || this.entityID !== entity || this.entityCatalog !== catalog)) {
         this.entityID = entity
         this.entityCatalog = catalog
 
-        if(entity && catalog){
-          this.http.get(`${this.dataRoot}${this.modID}/${catalog}/${entity}.json`).subscribe(data => {
+         this.http.get(`${this.dataRoot}${this.modID}/${catalog}/${entity}.json`).subscribe(data => {
 
+          switch(catalog){
+            case "unit":
+              let unitData = data as SCUnit
+              this.unitData = unitData
+              this.upgradeData = null
+              this.updateTitle()
+              break;
+            case "upgrade":
+              this.unitData = null
+              this.upgradeData = data as SCUpgrade
+              break;
+            default:
+              this.unitData = null
+              this.upgradeData = null
+          }
 
-            switch(catalog){
-              case "unit":
-                let unitData = data as SCUnit
-                this.unitData = unitData
-                this.upgradeData = null
-                this.updateTitle()
-                break;
-              case "upgrade":
-                this.unitData = null
-                this.upgradeData = data as SCUpgrade
-                break;
-              default:
-                this.unitData = null
-                this.upgradeData = null
-            }
+           if(!race){
+             race = this.unitData?.Race || this.upgradeData?.Race
+             this.http.get(`${this.dataRoot}${this.modID}/race/${race.toLowerCase()}.json`).subscribe(data => {
+               this.raceData = data
+               this.updateTitle()
+             },()=>{
+               this.raceData = null
+               this.updateTitle()
+             })
+           }
 
-
-          },()=>{
-            this.unitData = null
-            this.upgradeData = null
-            this.updateTitle()
-          })
-        }
-        else{
+        },()=>{
+          this.unitData = null
+          this.upgradeData = null
+          this.updateTitle()
+        })
+      }
+      else{
+        switchRace = this.raceID !== race
+        if(!entity){
           this.unitData = null
           this.upgradeData = null
           this.updateTitle()
         }
+
+        if(switchRace){
+          this.raceID = race
+          if(race){
+            this.http.get(`${this.dataRoot}${this.modID}/race/${race}.json`).subscribe(data => {
+              this.raceData = data
+              this.updateTitle()
+            },()=>{
+              this.raceData = null
+              this.updateTitle()
+            })
+          }
+          else{
+            this.raceData = null
+            this.updateTitle()
+          }
+        }
       }
-    })
 
 
+    });
+
+
+  }
+  getModQueryParam(options : any){
+    if(this.modData.id !== "arc"){
+      options.mod = this.modData.id;
+    }
+    return options
   }
   updateTitle(){
 
@@ -185,16 +229,19 @@ export class SCDataService {
     this.meta.updateTag({property: 'og:url', content: window.location.href})
   }
   modRoute( mod: any){
-    return ['/', mod.id.toLowerCase()]
+    // return ['/', mod.id.toLowerCase()]
+    return `/mod=${mod.id.toLowerCase()}`
   }
   raceRoute( entity: any){
     return ['/', this.modID.toLowerCase(), entity.id.toLowerCase()]
   }
   upgradeRoute( entity: any){
-    return ['/', this.modID.toLowerCase(), this.raceID.toLowerCase(), 'upgrade' , entity.id.toLowerCase()]
+    // return ['/', this.modID.toLowerCase(), this.raceID.toLowerCase(), 'upgrade' , entity.id.toLowerCase()]
+    return `/mod=${this.modID.toLowerCase()}&race=${this.raceID.toLowerCase()}&upgrade=${entity.id.toLowerCase()}`
   }
   unitRoute( entity: any){
-    return ['/', this.modID.toLowerCase(), this.raceID.toLowerCase(), 'unit' , entity.id.toLowerCase()]
+    // return ['/', this.modID.toLowerCase(), this.raceID.toLowerCase(), 'unit' , entity.id.toLowerCase()]
+    return `/mod=${this.modID.toLowerCase()}&race=${this.raceID.toLowerCase()}&unit=${entity.id.toLowerCase()}`
   }
   isSelected(catalog: string, entity : string){
     return  this.entityID === entity && this.entityCatalog === catalog

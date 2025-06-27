@@ -1,6 +1,10 @@
 {
-  "Name": "Plodder",
-  "Description": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
+  "Name": {
+    "enUS": "Plodder"
+  },
+  "Description": {
+    "enUS": "Basic worker unit. Can harvest minerals and vespene gas. Can excavate structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 35,
   "LifeMax": 35,
-  "LifeArmorName": "Dragon Scale Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Scale Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -62,16 +68,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Plodder/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Plodder/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Plodder/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Plodder/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -126,8 +134,12 @@
         "AbilCmd": "PlodderBuild,Build1",
         "id": "DenizenoftheDeep",
         "Icon": "btn-building-zerg-primalhive",
-        "Tooltip": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters",
-        "Name": "Unearth Denizen of the Deep",
+        "Name": {
+          "enUS": "Unearth Denizen of the Deep"
+        },
+        "Tooltip": {
+          "enUS": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/>Generates <b>14</b> rage per minute.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters"
+        },
         "Hotkey": "Q"
       },
       {
@@ -140,10 +152,10 @@
             "Requirements": "HaveFrontierDeepOne"
           },
           "Unit": "LesserDeepOne",
-          "Time": 65
+          "Time": 56
         },
         "Unit": "LesserDeepOne",
-        "Time": 65,
+        "Time": 56,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -160,8 +172,12 @@
         "AbilCmd": "PlodderBuild,Build3",
         "id": "LesserDeepOne",
         "Icon": "btn-building-zerg-nydusworm",
-        "Tooltip": "Spawns lesser Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters",
-        "Name": "Unearth Lesser Deep One",
+        "Name": {
+          "enUS": "Unearth Lesser Deep One"
+        },
+        "Tooltip": {
+          "enUS": "Spawns lesser Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters"
+        },
         "Hotkey": "A"
       },
       {
@@ -174,12 +190,12 @@
             "Requirements": "HaveLesserDeepOne"
           },
           "Unit": "GreaterDeepOne",
-          "Time": 65
+          "Time": 70
         },
         "Unit": "GreaterDeepOne",
-        "Time": 65,
+        "Time": 70,
         "Cost": {
-          "Minerals": 150,
+          "Minerals": 200,
           "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
@@ -194,8 +210,12 @@
         "AbilCmd": "PlodderBuild,Build4",
         "id": "GreaterDeepOne",
         "Icon": "btn-unit-zerg-nydusdragon",
-        "Tooltip": "Spawns greater Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers",
-        "Name": "Unearth Greater Deep One",
+        "Name": {
+          "enUS": "Unearth Greater Deep One"
+        },
+        "Tooltip": {
+          "enUS": "Spawns greater Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers"
+        },
         "Hotkey": "S"
       },
       {
@@ -208,13 +228,13 @@
             "Requirements": "HaveLesserDeepOne"
           },
           "Unit": "ToweringDeepOne",
-          "Time": 65
+          "Time": 84
         },
         "Unit": "ToweringDeepOne",
-        "Time": 65,
+        "Time": 84,
         "Cost": {
           "Minerals": 150,
-          "Vespene": 100,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -228,8 +248,12 @@
         "AbilCmd": "PlodderBuild,Build5",
         "id": "ToweringDeepOne",
         "Icon": "btn-unit-zerg-nydusdestroyer",
-        "Tooltip": "Spawns flying Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms",
-        "Name": "Unearth Towering Deep One",
+        "Name": {
+          "enUS": "Unearth Towering Deep One"
+        },
+        "Tooltip": {
+          "enUS": "Spawns flying Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms"
+        },
         "Hotkey": "D"
       },
       {
@@ -241,10 +265,10 @@
             "DefaultButtonFace": "FrontierDeepOne"
           },
           "Unit": "FrontierDeepOne",
-          "Time": 25
+          "Time": 28
         },
         "Unit": "FrontierDeepOne",
-        "Time": 25,
+        "Time": 28,
         "Cost": {
           "Minerals": 100,
           "Vespene": 0,
@@ -261,8 +285,12 @@
         "AbilCmd": "PlodderBuild,Build2",
         "id": "FrontierDeepOne",
         "Icon": "btn-unit-zerg-nyduscreeptower",
-        "Tooltip": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians",
-        "Name": "Unearth Frontier Deep One",
+        "Name": {
+          "enUS": "Unearth Frontier Deep One"
+        },
+        "Tooltip": {
+          "enUS": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians"
+        },
         "Hotkey": "W"
       },
       {
@@ -281,8 +309,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ],
@@ -373,8 +407,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -447,8 +487,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -537,8 +583,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -627,8 +679,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -702,8 +760,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -715,7 +779,7 @@
           "Minerals": 50,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 100,
+          "Custom": 20,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -726,8 +790,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "AscendedPlodder,Execute",
         "id": "AscendedPlodder",
-        "Tooltip": "<span style=\"color: #00FF00\">+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -745,8 +813,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedPlodder",
-        "Tooltip": "<span style=\"color: #00FF00\">+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -860,7 +932,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 140
+                "Custom": 40
               }
             }
           ],
@@ -870,7 +942,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 140,
+          "Custom": 40,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -882,8 +954,12 @@
         "AbilCmd": "AscendedPlodderFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -997,7 +1073,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 60
+                "Custom": 20
               }
             }
           ],
@@ -1007,7 +1083,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 60,
+          "Custom": 20,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -1019,8 +1095,12 @@
         "AbilCmd": "PlodderFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -1153,8 +1233,12 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -1230,6 +1314,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "DroneHarvest"
         },
         "Cost": {
@@ -1248,8 +1336,12 @@
         "AbilCmd": "DroneHarvest,Gather",
         "id": "PlodderGather",
         "Icon": "btn-ability-zerg-gather",
-        "Tooltip": "Orders Plodder to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "Name": "Gather",
+        "Name": {
+          "enUS": "Gather"
+        },
+        "Tooltip": {
+          "enUS": "Orders Plodder to gather resources from a selected Mineral Field or Vespene Geyser."
+        },
         "Hotkey": "G"
       },
       {
@@ -1325,6 +1417,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "DroneHarvest"
         },
         "Cost": {
@@ -1343,8 +1439,14 @@
         "AbilCmd": "DroneHarvest,Return",
         "id": "ReturnCargo",
         "Icon": "btn-command-returncargo",
-        "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-        "Name": "Return Cargo",
+        "Name": {
+          "enUS": "Return Cargo",
+          "ruRU": "Return Cargo"
+        },
+        "Tooltip": {
+          "enUS": "Returns the carried resources to the nearest drop-off point.",
+          "ruRU": "Returns the carried resources to the nearest drop-off point."
+        },
         "Hotkey": "C"
       },
       {
@@ -1484,8 +1586,14 @@
         "AbilCmd": "SprayDragon,Execute",
         "id": "Spray",
         "Icon": "btn-command-spray",
-        "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "Name": "Spray",
+        "Name": {
+          "enUS": "Spray",
+          "ruRU": "Граффити"
+        },
+        "Tooltip": {
+          "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        },
         "Hotkey": "Y"
       },
       {
@@ -1506,8 +1614,12 @@
         "SubmenuCardId": "2",
         "id": "UnearthDeepOne",
         "Icon": "btn-ability-zerg-deeptunnel",
-        "Tooltip": "A list of structures.",
-        "Name": "Unearth Deep One",
+        "Name": {
+          "enUS": "Unearth Deep One"
+        },
+        "Tooltip": {
+          "enUS": "A list of structures."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -1517,6 +1629,9 @@
   "Collide": [
     "Ground",
     "ForceField"
+  ],
+  "TechAliasArray": [
+    "Plodder"
   ],
   "LifeArmor": 1,
   "Speed": 2.8125,
@@ -1530,82 +1645,106 @@
   "CargoSize": 1,
   "ScoreMake": 50,
   "ScoreKill": 50,
-  "SubgroupPriority": 7,
+  "SubgroupPriority": 51,
   "GlossaryPriority": 11,
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "InnerRadius": 0.3125,
   "Icon": "btn-critter-crabeetle",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "Model": "Crabeetle",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "PlodderPincer",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
-      "Name": "Pincer",
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "Name": {
+        "enUS": "Pincer"
+      },
       "Amount": 5,
       "Kind": "Melee",
       "TargetFilters": "Ground",
-      "Range": 0.1,
+      "Range": 0.2,
       "Period": 1.5
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedPlodder",
-      "Name": "Ascended Plodder"
+      "Name": {
+        "enUS": "Ascended Plodder"
+      }
     },
     {
       "id": "AscendedPlodderFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "PlodderFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "PlodderBuild",
-      "Name": "Plodder - Build"
+      "Name": {
+        "enUS": "Plodder - Build"
+      }
     },
     {
       "id": "DroneHarvest",
-      "Name": "Gather (Drone)"
+      "Name": {
+        "enUS": "Gather (Drone)",
+        "ruRU": "Gather (Drone)"
+      }
     },
     {
-      "id": "SprayDragon"
+      "id": "SprayDragon",
+      "Name": "-"
     }
   ],
   "$Upgrades": [
-    "GreaterDeepOneNoFootprint",
-    "Plodder",
-    "AscendedPlodder",
-    "DenizenoftheDeepTrain",
-    "DenizenoftheDeepNoFootprint",
-    "ToweringDeepOne",
-    "ToweringDeepOneNoFootprint",
-    "LesserDeepOneNoFootprint",
-    "LesserDeepOne",
     "GreaterDeepOne",
+    "AscendedPlodder",
+    "Button/Tooltip/AscendedPlodder",
     "DragonMeleeAttacksLevel1",
     "DragonMeleeAttacks",
     "DragonMeleeAttacksLevel2",
@@ -1615,9 +1754,18 @@
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
     "DragonScaleArmorLevel3",
+    "LesserDeepOneNoFootprint",
+    "LesserDeepOne",
+    "ToweringDeepOneNoFootprint",
+    "ToweringDeepOne",
+    "Button/Tooltip/Plodder",
+    "Plodder",
+    "GreaterDeepOneNoFootprint",
+    "DenizenoftheDeepTrain",
     "DenizenoftheDeep",
     "Dragon",
-    "Plodder_Death"
+    "Plodder_Death",
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -1633,134 +1781,219 @@
   ],
   "$Phase": [],
   "$Producers": [
-    "DenizenoftheDeep",
-    "DenizenoftheDeepNoFootprint"
+    "DenizenoftheDeep"
   ],
   "$Commands": [
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedPlodder,Execute",
       "id": "AscendedPlodder",
-      "Tooltip": "<span style=\"color: #00FF00\">+10 Life<br/>+1 Armor<br/>+3 Minerals Gathered<br/>+2 Vespene Gathered</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>10</b> Life<br/>+<b>1</b> Armor<br/>+<b>3</b> Minerals Gathered<br/>+<b>2</b> Vespene Gathered</span>"
+      }
     },
     {
       "AbilCmd": "AscendedPlodderFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "PlodderFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DroneHarvest,Gather",
       "id": "PlodderGather",
       "Icon": "btn-ability-zerg-gather",
-      "Tooltip": "Orders Plodder to gather resources from a selected Mineral Field or Vespene Geyser.",
-      "Name": "Gather"
+      "Name": {
+        "enUS": "Gather"
+      },
+      "Tooltip": {
+        "enUS": "Orders Plodder to gather resources from a selected Mineral Field or Vespene Geyser."
+      }
     },
     {
       "AbilCmd": "DroneHarvest,Return",
       "id": "ReturnCargo",
       "Icon": "btn-command-returncargo",
-      "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-      "Name": "Return Cargo"
+      "Name": {
+        "enUS": "Return Cargo",
+        "ruRU": "Return Cargo"
+      },
+      "Tooltip": {
+        "enUS": "Returns the carried resources to the nearest drop-off point.",
+        "ruRU": "Returns the carried resources to the nearest drop-off point."
+      }
     },
     {
       "AbilCmd": "SprayDragon,Execute",
       "id": "Spray",
       "Icon": "btn-command-spray",
-      "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-      "Name": "Spray"
+      "Name": {
+        "enUS": "Spray",
+        "ruRU": "Граффити"
+      },
+      "Tooltip": {
+        "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build1",
       "id": "UnearthDeepOne",
       "Icon": "btn-ability-zerg-deeptunnel",
-      "Tooltip": "A list of structures.",
-      "Name": "Unearth Deep One"
+      "Name": {
+        "enUS": "Unearth Deep One"
+      },
+      "Tooltip": {
+        "enUS": "A list of structures."
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build1",
       "id": "DenizenoftheDeep",
       "Icon": "btn-building-zerg-primalhive",
-      "Tooltip": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters",
-      "Name": "Unearth Denizen of the Deep"
+      "Name": {
+        "enUS": "Unearth Denizen of the Deep"
+      },
+      "Tooltip": {
+        "enUS": "Primary structure. Used to receive gathered resources. Propogates economic Dragon structures.<br/><br/>Generates <b>14</b> rage per minute.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Plodders<br/>- Razorbacks<br/>- Coagulaters"
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build3",
       "id": "LesserDeepOne",
       "Icon": "btn-building-zerg-nydusworm",
-      "Tooltip": "Spawns lesser Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters",
-      "Name": "Unearth Lesser Deep One"
+      "Name": {
+        "enUS": "Unearth Lesser Deep One"
+      },
+      "Tooltip": {
+        "enUS": "Spawns lesser Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Flamespitters<br/>- Hunters"
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build4",
       "id": "GreaterDeepOne",
       "Icon": "btn-unit-zerg-nydusdragon",
-      "Tooltip": "Spawns greater Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers",
-      "Name": "Unearth Greater Deep One"
+      "Name": {
+        "enUS": "Unearth Greater Deep One"
+      },
+      "Tooltip": {
+        "enUS": "Spawns greater Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Berserkers<br/>- Skyrazers"
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build5",
       "id": "ToweringDeepOne",
       "Icon": "btn-unit-zerg-nydusdestroyer",
-      "Tooltip": "Spawns flying Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms",
-      "Name": "Unearth Towering Deep One"
+      "Name": {
+        "enUS": "Unearth Towering Deep One"
+      },
+      "Tooltip": {
+        "enUS": "Spawns flying Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms"
+      }
     },
     {
       "AbilCmd": "PlodderBuild,Build2",
       "id": "FrontierDeepOne",
       "Icon": "btn-unit-zerg-nyduscreeptower",
-      "Tooltip": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians",
-      "Name": "Unearth Frontier Deep One"
+      "Name": {
+        "enUS": "Unearth Frontier Deep One"
+      },
+      "Tooltip": {
+        "enUS": "Propogates basic Dragon structures. Heals nearby biological units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Razorbacks<br/>- Augmentation Pits<br/>- Sunken Guardians<br/>- Phlogiston Guardians"
+      }
     }
   ]
 }

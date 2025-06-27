@@ -1,6 +1,12 @@
 {
-  "Name": "Shield Battery",
-  "Description": "Defensive structure. Recharges shields of nearby units.",
+  "Name": {
+    "enUS": "Shield Battery",
+    "ruRU": "Shield Battery"
+  },
+  "Description": {
+    "enUS": "Defensive structure. Recharges shields of nearby units.",
+    "ruRU": "Defensive structure. Recharges shields of nearby units."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 150,
-  "LifeMax": 150,
-  "LifeArmorName": "Protoss Armor",
+  "LifeStart": 200,
+  "LifeMax": 200,
+  "LifeArmorName": {
+    "enUS": "Synoid Armor",
+    "ruRU": "Protoss Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ShieldBattery/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ShieldBattery/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ShieldBattery/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ShieldBattery/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -106,11 +117,14 @@
   "EnergyStart": 100,
   "EnergyMax": 100,
   "EnergyRegenRate": 0.5625,
-  "ShieldsStart": 150,
-  "ShieldsMax": 150,
+  "ShieldsStart": 200,
+  "ShieldsMax": 200,
   "ShieldRegenDelay": 10,
   "ShieldRegenRate": 2,
-  "ShieldArmorName": "Protoss Plasma Shields",
+  "ShieldArmorName": {
+    "enUS": "Protoss Plasma Shields",
+    "ruRU": "Плазменные щиты протоссов"
+  },
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
@@ -179,8 +193,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -284,16 +304,14 @@
             "Execute": {
               "Flags": {
                 "ShowInGlossary": 1,
-                "UseDefaultButton": 1,
-                "CreateDefaultButton": 0
+                "UseDefaultButton": 1
               },
               "DefaultButtonFace": "ShieldBatteryRecharge"
             },
             "Cancel": {
               "Flags": {
                 "ToSelection": 1,
-                "UseDefaultButton": 1,
-                "CreateDefaultButton": 0
+                "UseDefaultButton": 1
               },
               "DefaultButtonFace": "Stop"
             }
@@ -341,8 +359,12 @@
         "AbilCmd": "ShieldBatteryRechargeEx5,Execute",
         "id": "ShieldBatteryRecharge",
         "Icon": "btn-ability-protoss-shieldbattery-color",
-        "Tooltip": "Restores target unit or structure's shields.",
-        "Name": "Restore",
+        "Name": {
+          "enUS": "Restore"
+        },
+        "Tooltip": {
+          "enUS": "Restores target unit or structure's shields."
+        },
         "Hotkey": "R"
       },
       {
@@ -415,8 +437,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -489,8 +517,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -553,8 +587,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -570,25 +610,42 @@
   "HotkeyCategory": "Unit/Category/ProtossUnits",
   "id": "ShieldBattery",
   "Icon": "btn-building-protoss-shieldbattery",
+  "Model": "ProtossShield_Battery",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "PowerUserQueueSmall"
+      "id": "PowerUserQueueSmall",
+      "Name": {
+        "enUS": "Power User (Queue, Small)",
+        "ruRU": "Power User (Queue, Small)"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "BatteryEnergy"
+      "id": "BatteryEnergy",
+      "Name": {
+        "enUS": "BatteryEnergy",
+        "ruRU": "BatteryEnergy"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "ShieldBatteryRechargeEx5",
-      "Name": ""
+      "Name": {
+        "enUS": "",
+        "ruRU": ""
+      }
     }
   ],
   "$Upgrades": [
@@ -600,7 +657,8 @@
     "ProtossShieldsLevel2",
     "ProtossShieldsLevel3",
     "ProtossBuild",
-    "ProtossBuildingBirthSmall"
+    "ProtossBuildingBirthSmall",
+    "CasterIsShieldBattery"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -615,36 +673,64 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "ShieldBatteryRechargeEx5,Execute",
       "id": "ShieldBatteryRecharge",
       "Icon": "btn-ability-protoss-shieldbattery-color",
-      "Tooltip": "Restores target unit or structure's shields.",
-      "Name": "Restore"
+      "Name": {
+        "enUS": "Restore"
+      },
+      "Tooltip": {
+        "enUS": "Restores target unit or structure's shields."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Augmentation Pit"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AugmentationPitTowering/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AugmentationPitTowering/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AugmentationPitTowering/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AugmentationPitTowering/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,17 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "que5PassiveCancelToSelection",
+    "AugmentationPit",
+    "ToweringDeepOneResearchFleshrender",
+    "ToweringDeepOneResearchAuroraConduit",
+    "ToweringDeepOneResearchVolcanicHarbinger",
+    "ToweringDeepOneResearchGrimGlider"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +198,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +238,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +260,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "FleshrenderProliferation",
@@ -292,7 +297,7 @@
         "Row": 0,
         "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "ToweringDeepOneResearch,Research1",
+        "AbilCmd": "ToweringDeepOneResearchFleshrender,Research1",
         "id": "ToweringDeepOneProliferation",
         "Icon": "btn-ability-kerrigan-broodlingnest",
         "Name": {
@@ -335,14 +340,14 @@
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "ToweringDeepOneResearch,Research2",
+        "AbilCmd": "ToweringDeepOneResearchAuroraConduit,Research1",
         "id": "ToweringDeepOneConduction",
         "Icon": "btn-ability-swarm-kerrigan-chainreaction",
         "Name": {
           "enUS": "Augment Conduction"
         },
         "Tooltip": {
-          "enUS": "Causes the <span style=\"color: ffff8a\">Aurora Conduit's</span> Nether Shock armor reduction to chain to up to three additional targets."
+          "enUS": "Causes the <span style=\"color: ffff8a\">Aurora Conduit's</span> Nether Shock armor reduction to chain to up to two additional targets."
         },
         "Hotkey": "W"
       },
@@ -378,14 +383,14 @@
         "Row": 0,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "ToweringDeepOneResearch,Research3",
+        "AbilCmd": "ToweringDeepOneResearchVolcanicHarbinger,Research1",
         "id": "ToweringDeepOnePlasmaCatalyst",
         "Icon": "btn-ability-spearofadun-shieldovercharge",
         "Name": {
           "enUS": "Augment Plasma Catalyst"
         },
         "Tooltip": {
-          "enUS": "Allows <span style=\"color: ffff8a\">Volcanic Harbingers</span> to Overload while attacking and reduces the charge time to 3 seconds."
+          "enUS": "Allows <span style=\"color: ffff8a\">Volcanic Harbingers</span> to Overload while attacking, prevents them from wasting charges on overkills, and reduces the charge time to 3 seconds."
         },
         "Hotkey": "E"
       },
@@ -421,7 +426,7 @@
         "Row": 0,
         "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "ToweringDeepOneResearch,Research4",
+        "AbilCmd": "ToweringDeepOneResearchGrimGlider,Research1",
         "id": "ToweringDeepOneMortalitysEclipse",
         "Icon": "btn-ability-protoss-amoncloud",
         "Name": {
@@ -462,16 +467,12 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
@@ -481,21 +482,38 @@
       }
     },
     {
-      "id": "ToweringDeepOneResearch",
+      "id": "ToweringDeepOneResearchFleshrender",
       "Name": {
-        "enUS": "Towering Deep One - Research"
+        "enUS": "Towering Deep One - Research (Fleshrender)"
+      }
+    },
+    {
+      "id": "ToweringDeepOneResearchAuroraConduit",
+      "Name": {
+        "enUS": "Towering Deep One - Research (Aurora Conduit)"
+      }
+    },
+    {
+      "id": "ToweringDeepOneResearchVolcanicHarbinger",
+      "Name": {
+        "enUS": "Towering Deep One - Research (Volcanic Harbinger)"
+      }
+    },
+    {
+      "id": "ToweringDeepOneResearchGrimGlider",
+      "Name": {
+        "enUS": "Towering Deep One - Research (Grim Glider)"
       }
     }
   ],
   "$Upgrades": [
-    "ToweringDeepOneBuild",
-    "AugmentationPitTowering",
     "DragonPlateArmorLevel1",
+    "AugmentationPitTowering",
+    "ToweringDeepOneBuild",
     "AugmentationPitTowering",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -518,28 +536,22 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "ToweringDeepOneResearch,Research1",
+      "AbilCmd": "ToweringDeepOneResearchFleshrender,Research1",
       "id": "ToweringDeepOneProliferation",
       "Icon": "btn-ability-kerrigan-broodlingnest",
       "Name": {
@@ -550,29 +562,29 @@
       }
     },
     {
-      "AbilCmd": "ToweringDeepOneResearch,Research2",
+      "AbilCmd": "ToweringDeepOneResearchAuroraConduit,Research1",
       "id": "ToweringDeepOneConduction",
       "Icon": "btn-ability-swarm-kerrigan-chainreaction",
       "Name": {
         "enUS": "Augment Conduction"
       },
       "Tooltip": {
-        "enUS": "Causes the <span style=\"color: ffff8a\">Aurora Conduit's</span> Nether Shock armor reduction to chain to up to three additional targets."
+        "enUS": "Causes the <span style=\"color: ffff8a\">Aurora Conduit's</span> Nether Shock armor reduction to chain to up to two additional targets."
       }
     },
     {
-      "AbilCmd": "ToweringDeepOneResearch,Research3",
+      "AbilCmd": "ToweringDeepOneResearchVolcanicHarbinger,Research1",
       "id": "ToweringDeepOnePlasmaCatalyst",
       "Icon": "btn-ability-spearofadun-shieldovercharge",
       "Name": {
         "enUS": "Augment Plasma Catalyst"
       },
       "Tooltip": {
-        "enUS": "Allows <span style=\"color: ffff8a\">Volcanic Harbingers</span> to Overload while attacking and reduces the charge time to 3 seconds."
+        "enUS": "Allows <span style=\"color: ffff8a\">Volcanic Harbingers</span> to Overload while attacking, prevents them from wasting charges on overkills, and reduces the charge time to 3 seconds."
       }
     },
     {
-      "AbilCmd": "ToweringDeepOneResearch,Research4",
+      "AbilCmd": "ToweringDeepOneResearchGrimGlider,Research1",
       "id": "ToweringDeepOneMortalitysEclipse",
       "Icon": "btn-ability-protoss-amoncloud",
       "Name": {

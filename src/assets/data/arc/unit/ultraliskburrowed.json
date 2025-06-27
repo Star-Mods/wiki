@@ -1,6 +1,12 @@
 {
-  "Name": "Ultralisk",
-  "Description": "Heavy assault beast. Has an area-damage attack.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Ultralisk",
+    "ruRU": "Ultralisk"
+  },
+  "Description": {
+    "enUS": "Heavy assault beast. Has an area-damage attack.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Heavy assault beast. Has an area-damage attack.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,13 +18,16 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Burrowed",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
-  "Radius": 0.875,
+  "Radius": 1,
   "SeparationRadius": 0,
-  "MinimapRadius": 0.875,
+  "MinimapRadius": 1,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
@@ -39,7 +48,8 @@
     "Cloaked",
     "Buried",
     "AIThreatGround",
-    "ArmySelect"
+    "ArmySelect",
+    "Resistant"
   ],
   "EditorFlags": [
     "BlockStructures"
@@ -65,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "UltraliskBurrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "UltraliskBurrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "UltraliskBurrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "UltraliskBurrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -91,7 +103,6 @@
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "KillXP": 150,
-  "InnerRadius": 0.6875,
   "ScoreKill": 500,
   "SubgroupPriority": 88,
   "TacticalAIThink": "AIThinkUltralisk",
@@ -172,8 +183,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -205,8 +222,14 @@
         "AbilCmd": "BurrowUltraliskUp,Execute",
         "id": "BurrowUp",
         "Icon": "btn-ability-zerg-upburrow-color",
-        "Tooltip": "Returns the unit to the surface.",
-        "Name": "Unburrow",
+        "Name": {
+          "enUS": "Unburrow",
+          "ruRU": "Unburrow"
+        },
+        "Tooltip": {
+          "enUS": "Returns the unit to the surface.",
+          "ruRU": "Returns the unit to the surface."
+        },
         "Hotkey": "R"
       },
       {
@@ -225,8 +248,14 @@
         "Type": "Passive",
         "id": "Frenzied",
         "Icon": "btn-ability-zerg-frenzied-color",
-        "Tooltip": "Immune to snare, stun, and mind control effects.",
-        "Name": "Frenzied"
+        "Name": {
+          "enUS": "Frenzied",
+          "ruRU": "Frenzied"
+        },
+        "Tooltip": {
+          "enUS": "Immune to snare, stun, and mind control effects.",
+          "ruRU": "Immune to snare, stun, and mind control effects."
+        }
       }
     ]
   },
@@ -245,43 +274,57 @@
   "KillDisplay": "Always",
   "RankDisplay": "Always",
   "CostCategory": "Army",
+  "InnerRadius": 0.75,
   "id": "UltraliskBurrowed",
   "Icon": "btn-unit-zerg-omegalisk",
+  "Model": "UltraliskEx1",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "Frenzy",
-      "Icon": "btn-ability-zerg-creepmove"
+      "Icon": "btn-ability-zerg-creepmove",
+      "Name": {
+        "enUS": "Frenzy",
+        "ruRU": "Frenzy"
+      },
+      "Tooltip": {
+        "enUS": "Deals more damage and is immune stun, slow, and mind control.",
+        "ruRU": "Deals more damage and is immune stun, slow, and mind control."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BurrowUltraliskUp",
-      "Name": "Unburrow (Ultralisk)"
+      "Name": {
+        "enUS": "Unburrow (Ultralisk)",
+        "ruRU": "Unburrow (Ultralisk)"
+      }
     }
   ],
   "$Upgrades": [
-    "ZergMeleeWeaponsLevel1",
+    "IsUltraliskBurrowed",
+    "BurrowUltraliskDown",
+    "ChitinousPlating",
     "UltraliskBurrowed",
+    "Burrow",
+    "ZergMeleeWeaponsLevel1",
     "ZergMeleeWeapons",
     "ZergMeleeWeaponsLevel2",
     "ZergMeleeWeaponsLevel3",
     "ZergGroundArmorsLevel1",
-    "IsUltraliskBurrowed",
     "Ultralisk",
     "ZergGroundArmors",
     "ZergGroundArmorsLevel2",
     "ZergGroundArmorsLevel3",
-    "ChitinousPlating",
-    "Burrow",
-    "BurrowUltraliskDown",
     "UltraliskBurrowedSplat",
-    "UltraliskBurrowedSplat2",
     "UPLRenameZerg",
     "TacticalBurrowUltraliskBurrowedBullyTest",
-    "TacticalBurrowUltraliskCampaignNoHostilesBullyBurrow"
+    "TacticalBurrowUltraliskCampaignNoHostilesBullyBurrow",
+    "UltraliskSCBW@TacticalBurrowUltraliskBurrowedBullyTest",
+    "UltraliskSCBW@TacticalBurrowUltraliskCampaignNoHostilesBullyBurrow"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -297,15 +340,27 @@
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "BurrowUltraliskUp,Execute",
       "id": "BurrowUp",
       "Icon": "btn-ability-zerg-upburrow-color",
-      "Tooltip": "Returns the unit to the surface.",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      },
+      "Tooltip": {
+        "enUS": "Returns the unit to the surface.",
+        "ruRU": "Returns the unit to the surface."
+      }
     }
   ]
 }

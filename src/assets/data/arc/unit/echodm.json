@@ -1,6 +1,12 @@
 {
-  "Name": "Echo",
-  "Description": "Close range air fighter. Can use Discord Mode and Reverb.<br/><br/><span style=\"color: #FFFF80\">Can attack air units.</span>",
+  "Name": {
+    "enUS": "Echo",
+    "ruRU": "Эхо"
+  },
+  "Description": {
+    "enUS": "Close range air fighter. Can use Discord Mode and Reverb.<br/><br/><span style=\"color: FFFF80\">Can attack air units.</span>",
+    "ruRU": "Воздушная единица ближнего боя. Может использовать Режим Разлада и Отражение.<br/><br/><span style=\"color: FFFF80\">Может атаковать воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,15 +16,18 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 100,
-  "LifeMax": 100,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeStart": 80,
+  "LifeMax": 80,
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
-  "Radius": 0.5,
-  "SeparationRadius": 0.5,
-  "MinimapRadius": 0.5,
+  "Radius": 0.625,
+  "SeparationRadius": 0.625,
+  "MinimapRadius": 0.75,
   "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Echo/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Echo/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Echo/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Echo/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -87,6 +98,7 @@
     "Flying"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 4,
   "Sight": 12,
   "CostCategory": "Army",
@@ -163,8 +175,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -293,8 +311,14 @@
         "AbilCmd": "SonicImage,255",
         "id": "SonicImage",
         "Icon": "btn-ability-zeratul-sentry-eclipseprotocol",
-        "Tooltip": "Places a sonic image, which the Echo can teleport back to if it remains close by.",
-        "Name": "Sonic Image",
+        "Name": {
+          "enUS": "Sonic Image",
+          "ruRU": "Звуковое Изображение"
+        },
+        "Tooltip": {
+          "enUS": "Places a sonic image, which the Echo can teleport back to if it remains close by.",
+          "ruRU": "Размещает Звуковое Изображение, к которому Эхо может телепортироваться, если оно будет неподалёку."
+        },
         "Hotkey": "G"
       },
       {
@@ -417,8 +441,14 @@
         "AbilCmd": "ReverbRB,Execute",
         "id": "Reverb",
         "Icon": "btn-ability-zeratul-warpprism-transferlink",
-        "Tooltip": "Teleports the Echo back to its Sonic Image.",
-        "Name": "Reverb",
+        "Name": {
+          "enUS": "Reverb",
+          "ruRU": "Отражение"
+        },
+        "Tooltip": {
+          "enUS": "Teleports the Echo back to its Sonic Image.",
+          "ruRU": "Телепортирует Эхо обратно к его Звуковому Изображению."
+        },
         "Hotkey": "R"
       },
       {
@@ -454,8 +484,14 @@
         "AbilCmd": "EchoFighterMode,Execute",
         "id": "FighterModeEcho",
         "Icon": "btn-unit-keiron-echo",
-        "Tooltip": "The Echo resumes its usual form, allowing it to move and attack.",
-        "Name": "Fighter Mode",
+        "Name": {
+          "enUS": "Fighter Mode",
+          "ruRU": "Режим Истребителя"
+        },
+        "Tooltip": {
+          "enUS": "The Echo resumes its usual form, allowing it to move and attack.",
+          "ruRU": "Эхо возвращается в свою обычную форму, может двигаться и атаковать."
+        },
         "Hotkey": "D"
       },
       {
@@ -582,8 +618,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       },
       {
@@ -619,8 +661,14 @@
         "AbilCmd": "EchoDiscordMode,Execute",
         "id": "DiscordMode",
         "Icon": "btn-unit-keiron-echo-discord",
-        "Tooltip": "The Echo becomes stationary, slowing enemy movement and production.",
-        "Name": "Discord Mode",
+        "Name": {
+          "enUS": "Discord Mode",
+          "ruRU": "Режим Разлада"
+        },
+        "Tooltip": {
+          "enUS": "The Echo becomes stationary, slowing enemy movement and production.",
+          "ruRU": "Эхо становится неподвижным и создаёт вокруг себя зону замедления перемещения и производства, также раскрывающую замаскированные боевые единицы."
+        },
         "Hotkey": "E"
       },
       {
@@ -747,8 +795,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       }
     ]
@@ -765,7 +819,10 @@
   "GlossaryCategory": "",
   "GlossaryAlias": "Echo",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "EchoDM",
   "Height": 3.75,
   "VisionHeight": 4,
@@ -774,8 +831,8 @@
     "Biological",
     "Mechanical"
   ],
-  "ShieldsStart": 140,
-  "ShieldsMax": 140,
+  "ShieldsStart": 160,
+  "ShieldsMax": 160,
   "Speed": 0,
   "LateralAcceleration": 46,
   "Food": -2,
@@ -794,56 +851,90 @@
   "KillDisplay": "Always",
   "RankDisplay": "Always",
   "Icon": "btn-unit-keiron-echo",
+  "Model": "Echo",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "ReverberatorFlare",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Reverberator Flare",
-      "Amount": 10,
+      "Name": {
+        "enUS": "Reverberator Flare",
+        "ruRU": "Ревербераторная Вспышка"
+      },
+      "Amount": 12,
       "Kind": "Ranged",
       "TargetFilters": "Air",
       "Range": 3,
-      "Period": 1.008
+      "Period": 1.12
     }
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "DiscordZoneRadius"
+      "id": "DiscordZoneRadius",
+      "Name": {
+        "enUS": "Discord Zone Radius",
+        "ruRU": "Discord Zone Radius"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
       "id": "SonicImage",
-      "Name": "Sonic Image"
+      "Name": {
+        "enUS": "Sonic Image",
+        "ruRU": "Sonic Image"
+      }
     },
     {
       "id": "ReverbRB",
-      "Name": "Reverb Teleport"
+      "Name": {
+        "enUS": "Reverb Teleport",
+        "ruRU": "Reverb Teleport"
+      }
     },
     {
       "id": "EchoFighterMode",
-      "Name": "Fighter Mode"
+      "Name": {
+        "enUS": "Fighter Mode",
+        "ruRU": "Fighter Mode"
+      }
     },
     {
       "id": "SonicImage",
-      "Name": "Sonic Image"
+      "Name": {
+        "enUS": "Sonic Image",
+        "ruRU": "Sonic Image"
+      }
     },
     {
       "id": "EchoDiscordMode",
-      "Name": "Discord Mode"
+      "Name": {
+        "enUS": "Discord Mode",
+        "ruRU": "Discord Mode"
+      }
     }
   ],
   "$Upgrades": [
@@ -885,50 +976,92 @@
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "SonicImage,255",
       "id": "SonicImage",
       "Icon": "btn-ability-zeratul-sentry-eclipseprotocol",
-      "Tooltip": "Places a sonic image, which the Echo can teleport back to if it remains close by.",
-      "Name": "Sonic Image"
+      "Name": {
+        "enUS": "Sonic Image",
+        "ruRU": "Звуковое Изображение"
+      },
+      "Tooltip": {
+        "enUS": "Places a sonic image, which the Echo can teleport back to if it remains close by.",
+        "ruRU": "Размещает Звуковое Изображение, к которому Эхо может телепортироваться, если оно будет неподалёку."
+      }
     },
     {
       "AbilCmd": "ReverbRB,Execute",
       "id": "Reverb",
       "Icon": "btn-ability-zeratul-warpprism-transferlink",
-      "Tooltip": "Teleports the Echo back to its Sonic Image.",
-      "Name": "Reverb"
+      "Name": {
+        "enUS": "Reverb",
+        "ruRU": "Отражение"
+      },
+      "Tooltip": {
+        "enUS": "Teleports the Echo back to its Sonic Image.",
+        "ruRU": "Телепортирует Эхо обратно к его Звуковому Изображению."
+      }
     },
     {
       "AbilCmd": "EchoFighterMode,Execute",
       "id": "FighterModeEcho",
       "Icon": "btn-unit-keiron-echo",
-      "Tooltip": "The Echo resumes its usual form, allowing it to move and attack.",
-      "Name": "Fighter Mode"
+      "Name": {
+        "enUS": "Fighter Mode",
+        "ruRU": "Режим Истребителя"
+      },
+      "Tooltip": {
+        "enUS": "The Echo resumes its usual form, allowing it to move and attack.",
+        "ruRU": "Эхо возвращается в свою обычную форму, может двигаться и атаковать."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     },
     {
       "AbilCmd": "EchoDiscordMode,Execute",
       "id": "DiscordMode",
       "Icon": "btn-unit-keiron-echo-discord",
-      "Tooltip": "The Echo becomes stationary, slowing enemy movement and production.",
-      "Name": "Discord Mode"
+      "Name": {
+        "enUS": "Discord Mode",
+        "ruRU": "Режим Разлада"
+      },
+      "Tooltip": {
+        "enUS": "The Echo becomes stationary, slowing enemy movement and production.",
+        "ruRU": "Эхо становится неподвижным и создаёт вокруг себя зону замедления перемещения и производства, также раскрывающую замаскированные боевые единицы."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     }
   ]
 }

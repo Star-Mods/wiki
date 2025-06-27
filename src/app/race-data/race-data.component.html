@@ -1,3 +1,7 @@
+<ng-template #entityfield let-value="value" let-title="title">
+  <tr *ngIf="value"><td>{{title}}: </td><td>{{value}}</td></tr>
+</ng-template>
+
 <ng-template #unitTemplate let-unit="unit" let-phase="phase" let-title="title">
   <ng-template #unitTooltip>
     <div><b>{{scdata.text(unit.Name)}} <span *ngIf="scdata.developer">({{unit.id}})</span></b></div>
@@ -15,7 +19,7 @@
   <div class="sc-unit-container">
     <sc-icon [class.selected]="scdata.isSelected('unit', unit)"
              class="frame link" [src]="unit.Icon"
-             [routerLink]="scdata.unitRoute(unit)"
+             [routerLink]="'' && scdata.unitRoute(unit)"  [queryParams]="scdata.getModQueryParam({unit: unit.id})"
              [tooltip]="unitTooltip"  contentType="template" tooltipClass="sc-tooltip" [animationDuration]="0" [hideDelay]="0">
     </sc-icon>
     <div class="phases" *ngIf="!phase && scdata.filteredUnits(unit.$Phase).length">
@@ -33,7 +37,7 @@
         <div><b>{{scdata.text(upgrade.Name)}}<span *ngIf="scdata.developer">({{upgrade.id}})</span></b></div>
       </ng-template>
       <sc-icon
-        [routerLink]="scdata.upgradeRoute( upgrade)"
+        [routerLink]="'' && scdata.upgradeRoute( upgrade)" [queryParams]="scdata.getModQueryParam({upgrade: upgrade.id})"
         [class.selected]="scdata.isSelected('upgrade',upgrade.id)" class="frame link" [src]="upgrade.Icon" [title]="scdata.text(upgrade.Name)"></sc-icon>
     </span>
     <div class="phases" *ngIf="!phase && scdata.filteredUpgrades(upgrade.$Phase).length">
@@ -43,6 +47,9 @@
     </div>
   </div>
 </ng-template>
+<div class="container" *ngIf="!scdata.modData">
+  <mods-list></mods-list>
+</div>
 
 <div class="container" *ngIf="scdata.modData">
   <nav>
@@ -64,7 +71,7 @@
       <article class="sc-unit-categories"  [class.hidden-categories]="scdata.unitData">
         <h5>
           {{scdata.text(rd.Name)}}
-          <a class="close" [routerLink]="scdata.modRoute(scdata.modData)"></a>
+          <a class="close" [routerLink]="'' && scdata.modRoute(scdata.modData)" [queryParams]="scdata.getModQueryParam({mod: scdata.modData.id})"></a>
 <!--        <div class="results-header__option">-->
 <!--          <div (click)="setUnitsListStyle('grid')" [class.selected]="unitsListStyle === 'grid'" class="option__button option&#45;&#45;grid"><span></span><span></span><span></span><span></span><span>Grid</span></div>-->
 <!--          <div (click)="setUnitsListStyle('list')" [class.selected]="unitsListStyle === 'list'" class="option__button option&#45;&#45;list"><span></span><span></span><span></span><span>List</span></div>-->
@@ -111,7 +118,7 @@
           <div class="unit-detailed" *ngFor="let unit of rd.units">
             <sc-icon  [class.selected]="scdata.isSelected('unit',unit.id)"
                       class="frame link" [src]="unit.Icon"
-                      [routerLink]="scdata.unitRoute( unit)"
+                      [routerLink]="'' && scdata.unitRoute(unit)"  [queryParams]="scdata.getModQueryParam({unit: unit.id})"
                       [title]="scdata.text(unit.Name) + ' (' + unit.id + ')'">
             </sc-icon>
             <div>
@@ -124,7 +131,7 @@
           <div class="unit-detailed" *ngFor="let unit of rd.structures">
             <sc-icon  [class.selected]="scdata.isSelected('unit',unit.id)"
                       class="frame link" [src]="unit.Icon"
-                      [routerLink]="scdata.unitRoute( unit)"
+                      [routerLink]="'' && scdata.unitRoute(unit)"  [queryParams]="scdata.getModQueryParam({unit: unit.id})"
                       [title]="scdata.text(unit.Name) + ' (' + unit.id + ')'">
             </sc-icon>
             <div>
@@ -161,8 +168,8 @@
 
       <article *ngIf="scdata.unitData as unit" class="sc-unit-details">
           <h5>
-            {{scdata.text(unit.Name)}}
-            <a *ngIf="rd" class="close" [routerLink]="scdata.raceRoute(rd)"></a>
+            {{scdata.text(unit.Name)}} ({{unit.id}})
+            <a *ngIf="rd" class="close" [routerLink]="'' && scdata.raceRoute(rd)" [queryParams]="scdata.getModQueryParam({ race:rd.id })"></a>
           </h5>
           <div class="sc-unit-details-content">
             <div class="unit-main-info-container">
@@ -189,73 +196,136 @@
                 <!--            <p><a target="_blank" [href]="scdata.unitURL(unit)">{{unit.Name}}</a></p>-->
                 <p class="unit-description" [innerHTML]="scdata.text(unit.Description)  | safe: 'html'"></p>
 
-                <sc-unit-stats [unit]="unit"></sc-unit-stats>
+
+                <div class="unit-stats">
+                  <p><span class="sc-attribute" *ngFor="let attribute of unit.Attributes">{{attribute}}</span></p>
+                  <div class="unit-short-stats unit-stats">
+                    <div *ngIf="unit.LifeMax" class="unit-stat" [title]="scdata.text(unit.LifeArmorName)">
+                      <sc-icon [src]="unit.LifeArmorIcon" class="short-icon unit-armor">
+                        <span *ngIf="unit.LifeArmor">{{unit.LifeArmor}}</span>
+                      </sc-icon>
+                      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.LifeStart && unit.LifeStart !== unit.LifeMax">{{unit.LifeStart}}<span class="smaller"> / </span></ng-container>{{unit.LifeMax}}
+                        <sub class="smaller" *ngIf="unit.LifeRegenRate">+{{unit.LifeRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+                    </div>
+                    <div *ngIf="unit.ShieldsMax" class="unit-stat" [title]="scdata.text(unit.ShieldsArmorName)" >
+                      <sc-icon [src]="unit.ShieldArmorIcon" class="short-icon unit-shield">
+                        <span *ngIf="unit.ShieldArmor">{{unit.ShieldArmor}}</span>
+                      </sc-icon>
+                      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.ShieldsStart && unit.ShieldsStart !== unit.ShieldsMax">{{unit.ShieldsStart}}<span class="smaller"> / </span></ng-container>{{unit.ShieldsMax}}
+                        <sub class="smaller" *ngIf="unit.ShieldRegenRate">+{{unit.ShieldRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+                    </div>
+                    <div *ngIf="unit.EnergyMax" class="unit-stat ">
+                      <span class="resources-energy"></span>
+                      <span class="unit-stat-value">
+                      <ng-container *ngIf="unit.EnergyStart && unit.EnergyStart !== unit.EnergyMax">{{unit.EnergyStart}}<span class="smaller"> / </span></ng-container>{{unit.EnergyMax}}
+                        <sub class="smaller" *ngIf="unit.EnergyRegenRate">+{{unit.EnergyRegenRate| number : '.1-1'}}/s</sub>
+                    </span>
+                    </div>
+                  </div>
+                </div>
+
 
               </div>
             </div>
 
-            <ng-container *ngIf="scdata.filteredWeapons(unit.Weapons).length">
-              <p class="sc-unit-category">Weapons:</p>
+            <details open *ngIf="unit.Model">
+              <summary> <p class="sc-unit-category">Model:</p></summary>
+              <sc-unit-stats [unit]="unit"></sc-unit-stats>
+            </details>
+
+            <details open>
+              <summary> <p class="sc-unit-category">Stats:</p></summary>
+
+              <div class="table-container">
+
+                <table >
+                  <ng-container  *ngFor="let field of fields">
+                    <ng-container *ngTemplateOutlet="entityfield; context: {title:  field.title, value:  field.field ? unit[field.field] : field.get(unit) }">
+                    </ng-container>
+                  </ng-container>
+
+                    <ng-container  *ngFor="let field of getAdditionalFields(unit)">
+                      <ng-container *ngTemplateOutlet="entityfield; context: { title:  field,  value: getField(unit,field)}"></ng-container>
+                    </ng-container>
+                </table>
+              </div>
+              <p>
+                <a class="sc-button" target="_blank" [href]="scdata.unitURL(unit)">Raw Data</a>
+              </p>
+            </details>
+
+            <details *ngIf="scdata.filteredWeapons(unit.Weapons).length" open>
+              <summary> <p class="sc-unit-category">Weapons:</p></summary>
               <sc-unit-weapons [unit]="unit"></sc-unit-weapons>
-            </ng-container>
+            </details>
 
-            <ng-container *ngIf="unit.CardLayouts?.Root">
-              <p class="sc-unit-category">Card:</p>
+            <details *ngIf="unit.CardLayouts?.Root" open>
+              <summary> <p class="sc-unit-category">Card:</p></summary>
               <sc-unit-cards [unit]="unit"></sc-unit-cards>
-            </ng-container>
+            </details>
 
-            <div *ngIf="scdata.filteredUpgrades(unit.$Upgrades).length">
-              <p class="sc-unit-category">Upgrades:</p>
+            <details *ngIf="scdata.filteredUpgrades(unit.$Upgrades).length" open>
+              <summary> <p class="sc-unit-category">Upgrades:</p></summary>
               <div>
                 <ng-container *ngFor="let upgrade of scdata.filteredUpgrades(unit.$Upgrades)">
                   <span  [tooltip]="upgradeTooltip" contentType="template" tooltipClass="sc-tooltip" [animationDuration]="0" [hideDelay]="0">
                     <ng-template #upgradeTooltip>
                       <div><b>{{scdata.text(unit.Name)}}<span *ngIf="scdata.developer">({{unit.id}})</span></b></div>
                     </ng-template>
-                    <sc-icon class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id"  [routerLink]="scdata.upgradeRoute(unit)"></sc-icon>
+                    <sc-icon class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id"
+                             [routerLink]="'' && scdata.upgradeRoute(unit)"
+                             [queryParams]="scdata.getModQueryParam({upgrade: unit.id})"></sc-icon>
                   </span>
                 </ng-container>
               </div>
-            </div>
+            </details>
 
-            <div *ngIf="scdata.filteredUpgrades(unit.$Research).length">
-              <p class="sc-unit-category">Research: </p>
+            <details *ngIf="scdata.filteredUpgrades(unit.$Research).length" open>
+              <summary> <p class="sc-unit-category">Research:</p></summary>
               <div>
                 <span *ngFor="let upgrade of scdata.filteredUpgrades(unit.$Research)" [tooltip]="upgradeTooltip" contentType="template" tooltipClass="sc-tooltip" [animationDuration]="0" [hideDelay]="0">
                   <ng-template #upgradeTooltip>
                     <div><b>{{scdata.text(upgrade.Name)}}<span *ngIf="scdata.developer">({{upgrade.id}})</span></b></div>
                   </ng-template>
-                  <sc-icon class="frame link" [src]="upgrade.Icon" [title]="upgrade.Name ? scdata.text(upgrade.Name) : upgrade.id" [routerLink]="scdata.upgradeRoute(  upgrade)"></sc-icon>
+                  <sc-icon class="frame link" [src]="upgrade.Icon" [title]="upgrade.Name ? scdata.text(upgrade.Name) : upgrade.id"
+                           [routerLink]="'' && scdata.upgradeRoute(  upgrade)"
+                           [queryParams]="scdata.getModQueryParam({upgrade: upgrade.id})"></sc-icon>
                 </span>
               </div>
-            </div>
+            </details>
 
-            <div *ngIf="scdata.filteredUnits(unit.$Production).length">
+            <details *ngIf="scdata.filteredUnits(unit.$Production).length" open>
               <p class="sc-unit-category">Production: </p>
               <div>
-                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Production)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id" [routerLink]="scdata.unitRoute( unit)"></sc-icon>
+                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Production)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id"
+                            [routerLink]="'' && scdata.unitRoute(unit)"
+                            [queryParams]="scdata.getModQueryParam({unit: unit.id})"
+                  ></sc-icon>
               </div>
-            </div>
+            </details>
 
-            <div *ngIf="scdata.filteredUnits(unit.$Producers).length">
-              <p class="sc-unit-category">Producers: </p>
+            <details *ngIf="scdata.filteredUnits(unit.$Producers).length" open>
+              <summary> <p class="sc-unit-category">Producers:</p></summary>
               <div>
-                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Producers)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id" [routerLink]="scdata.unitRoute( unit)"></sc-icon>
+                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Producers)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id"
+                            [routerLink]="'' && scdata.unitRoute(unit)"
+                            [queryParams]="scdata.getModQueryParam({unit: unit.id})"
+                  ></sc-icon>
               </div>
-            </div>
+            </details>
 
-            <div *ngIf="scdata.filteredUnits(unit.$Morph).length">
-              <p class="sc-unit-category">Morph: </p>
+            <details *ngIf="scdata.filteredUnits(unit.$Morph).length" open>
+              <summary> <p class="sc-unit-category">Morph:</p></summary>
               <div>
-                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Morph)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id" [routerLink]="scdata.unitRoute( unit)"></sc-icon>
+                  <sc-icon  *ngFor="let unit of scdata.filteredUnits(unit.$Morph)" class="frame link" [src]="unit.Icon" [title]="unit.Name ? scdata.text(unit.Name) : unit.id"
+                            [routerLink]="'' && scdata.unitRoute(unit)"  [queryParams]="scdata.getModQueryParam({unit: unit.id})"
+                  ></sc-icon>
               </div>
-            </div>
-
-
-
-
-
-
+            </details>
 
 
             <!--        <div *ngIf="unit?.Requirements?.length">-->
@@ -285,14 +355,14 @@
   <!--            </div>-->
   <!--          </details>-->
 
-            <p>
-              <a class="sc-button" target="_blank" [href]="scdata.unitURL(unit)">Raw Data</a>
-            </p>
           </div>
       </article>
 
       <article *ngIf="scdata.upgradeData as ud" class="sc-unit-details"  >
-        <h5>{{scdata.text(rd?.cache?.upgrades?.[ud.id]?.Name)}}<a *ngIf="rd" class="close" [routerLink]="scdata.raceRoute(rd)" [queryParams]="{}"></a></h5>
+        <h5>{{scdata.text(rd?.cache?.upgrades?.[ud.id]?.Name)}}
+          <a *ngIf="rd" class="close"
+             [routerLink]="'' && scdata.raceRoute(rd)"
+             [queryParams]="scdata.getModQueryParam({ race:rd.id })" ></a></h5>
 
         <div class="sc-unit-details-content">
           <div class="unit-main-info-container">
@@ -315,7 +385,11 @@
             <p class="sc-unit-category">AffectedUnitArray:</p>
             <div>
               <ng-container *ngFor="let unit of ud.AffectedUnitArray">
-                <sc-icon  *ngIf="rd?.cache?.units?.[unit] as u" class="frame link" [src]="u.Icon" [title]="u.Name ? scdata.text(u.Name) : u.id" [routerLink]="scdata.unitRoute( u)"></sc-icon>
+<!--                <sc-icon  *ngIf="rd?.cache?.units?.[unit] as u" class="frame link" [src]="u.Icon" [title]="u.Name ? scdata.text(u.Name) : u.id" [routerLink]="scdata.unitRoute( u)"></sc-icon>-->
+                <sc-icon  *ngIf="rd?.cache?.units?.[unit] as u" class="frame link" [src]="u.Icon" [title]="u.Name ? scdata.text(u.Name) : u.id"
+                          [routerLink]="'' && scdata.unitRoute(u)"
+                          [queryParams]="scdata.getModQueryParam({unit: u.id})"
+                ></sc-icon>
               </ng-container>
             </div>
           </div>

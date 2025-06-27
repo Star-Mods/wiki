@@ -1,6 +1,10 @@
 {
-  "Name": "Ascended Berserker",
-  "Description": "Durable melee unit.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
+  "Name": {
+    "enUS": "Ascended Berserker"
+  },
+  "Description": {
+    "enUS": "Durable melee unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,12 +14,14 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 450,
-  "LifeMax": 450,
-  "LifeArmorName": "Dragon Scale Armor",
+  "LifeStart": 500,
+  "LifeMax": 500,
+  "LifeArmorName": {
+    "enUS": "Dragon Scale Armor"
+  },
   "Mover": "Ground",
-  "StationaryTurningRate": 720,
-  "TurningRate": 720,
+  "StationaryTurningRate": 495,
+  "TurningRate": 495,
   "Radius": 1.0625,
   "SeparationRadius": 1.0625,
   "MinimapRadius": 1.0625,
@@ -64,16 +70,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Ravager/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Ravager/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Berserker/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Berserker/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -186,8 +194,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -260,8 +274,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -350,8 +370,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -440,8 +466,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -515,8 +547,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -528,7 +566,7 @@
           "Minerals": 250,
           "Vespene": 100,
           "Terazine": 0,
-          "Custom": 980,
+          "Custom": 70,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -539,8 +577,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "AscendedBerserker,Execute",
         "id": "AscendedBerserker",
-        "Tooltip": "<span style=\"color: #00FF00\">+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -558,8 +600,12 @@
         "Column": 4,
         "Type": "Passive",
         "id": "AscendedBerserker",
-        "Tooltip": "<span style=\"color: #00FF00\">+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
-        "Name": "Ascend",
+        "Name": {
+          "enUS": "Ascend"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 00FF00\">+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+        },
         "Hotkey": "X"
       },
       {
@@ -673,7 +719,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 1372
+                "Custom": 140
               }
             }
           ],
@@ -683,7 +729,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 1372,
+          "Custom": 140,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -695,8 +741,12 @@
         "AbilCmd": "AscendedBerserkerFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -810,7 +860,7 @@
                 "TimeUse": 1
               },
               "Resource": {
-                "Custom": 588
+                "Custom": 70
               }
             }
           ],
@@ -820,7 +870,7 @@
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
-          "Custom": 588,
+          "Custom": 70,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
@@ -832,8 +882,12 @@
         "AbilCmd": "BerserkerFission,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -966,8 +1020,12 @@
         "AbilCmd": "DragonFissionDisabled,Execute",
         "id": "DragonFission",
         "Icon": "btn-ability-zerg-disguise",
-        "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-        "Name": "Fission",
+        "Name": {
+          "enUS": "Fission"
+        },
+        "Tooltip": {
+          "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -984,10 +1042,14 @@
         "Row": 1,
         "Column": 0,
         "Type": "Passive",
-        "id": "BerserkerMadness",
-        "Icon": "btn-ability-zerg-dehaka-intimidatingroar",
-        "Tooltip": "Nearby ground enemies that can attack the Berserker are forced to do so.",
-        "Name": "Madness"
+        "id": "BerserkerBerserk",
+        "Icon": "btn-ability-zerg-dehaka-superroar",
+        "Name": {
+          "enUS": "Berserk"
+        },
+        "Tooltip": {
+          "enUS": "Increases movement speed by <b>100</b>% for 1 second upon taking damage."
+        }
       },
       {
         "Cost": {
@@ -1003,10 +1065,37 @@
         "Row": 1,
         "Column": 1,
         "Type": "Passive",
-        "id": "BerserkerBerserk",
-        "Icon": "btn-ability-zerg-dehaka-superroar",
-        "Tooltip": "Increases movement speed by <b>50</b>% for 1 second upon taking damage.",
-        "Name": "Berserk"
+        "id": "BerserkerMadness",
+        "Icon": "btn-ability-zerg-dehaka-intimidatingroar",
+        "Name": {
+          "enUS": "Madness"
+        },
+        "Tooltip": {
+          "enUS": "Ground enemies within <b>4</b> range of a Berserker that are not attacking one have their movement speed slowed by <b>25</b>% or by <b>50</b>% if in melee range."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "Passive",
+        "id": "DragonIndomitableStrength",
+        "Icon": "btn-ability-protoss-confusion",
+        "Name": {
+          "enUS": "Indomitable Strength"
+        },
+        "Tooltip": {
+          "enUS": "Can push through other units and is immune to snare, stun, mind control, and movement altering effects."
+        }
       }
     ]
   },
@@ -1018,6 +1107,9 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
+  "TechAliasArray": [
+    "Berserker"
+  ],
   "LifeArmor": 2,
   "Speed": 2.75,
   "Sight": 9,
@@ -1025,13 +1117,13 @@
   "CostResource": {
     "Minerals": 250,
     "Vespene": 100,
-    "Custom": 980
+    "Custom": 70
   },
   "KillXP": 15,
   "CargoSize": 4,
   "ScoreMake": 100,
   "ScoreKill": 100,
-  "SubgroupPriority": 11,
+  "SubgroupPriority": 61,
   "GlossaryPriority": 0,
   "GlossaryStrongArray": [
     "Marine",
@@ -1045,12 +1137,15 @@
   ],
   "InnerRadius": 1,
   "Icon": "btn-unit-zerg-primalultralisk",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "Model": "PrimalZergMeleeHeavy_00",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "BerserkerAscendedCrushingBlow",
-      "Name": "Crushing Blow",
+      "Name": {
+        "enUS": "Crushing Blow"
+      },
       "Amount": 24,
       "Kind": "Melee",
       "TargetFilters": "Ground",
@@ -1060,58 +1155,111 @@
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "Berserker"
+      "id": "BerserkerBerserk",
+      "Name": {
+        "enUS": "Berserk"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "BerserkerBerserk"
+      "id": "BerserkerMadness",
+      "Name": {
+        "enUS": "Berserker - Madness"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "DragonAscended",
       "Icon": "btn-ability-zerg-dehakaspawn",
-      "Tooltip": "This Dragon is more powerful. If it dies in combat it will provide its owner with a small amount of Rage.",
-      "Name": "Ascended"
+      "Name": {
+        "enUS": "Ascended"
+      },
+      "Tooltip": {
+        "enUS": "This Dragon is more powerful."
+      }
+    },
+    {
+      "id": "Frenzy",
+      "Icon": "btn-ability-zerg-creepmove",
+      "Name": {
+        "enUS": "Frenzy",
+        "ruRU": "Frenzy"
+      },
+      "Tooltip": {
+        "enUS": "Deals more damage and is immune stun, slow, and mind control.",
+        "ruRU": "Deals more damage and is immune stun, slow, and mind control."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AscendedBerserker",
-      "Name": "Ascended Berserker"
+      "Name": {
+        "enUS": "Ascended Berserker"
+      }
     },
     {
       "id": "AscendedBerserkerFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "BerserkerFission",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     },
     {
       "id": "DragonFissionDisabled",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      }
     }
   ],
   "$Upgrades": [
+    "Button/Tooltip/Berserker",
+    "BerserkerMadness",
+    "Button/Tooltip/AscendedBerserker",
     "AscendedBerserker",
+    "DragonMeleeAttacksLevel1",
+    "DragonMeleeAttacks",
+    "DragonMeleeAttacksLevel2",
+    "DragonMeleeAttacksLevel3",
     "DragonScaleArmorLevel1",
     "Berserker",
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
-    "DragonScaleArmorLevel3"
+    "DragonScaleArmorLevel3",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1128,63 +1276,109 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "AscendedBerserker,Execute",
       "id": "AscendedBerserker",
-      "Tooltip": "<span style=\"color: #00FF00\">+75 Life<br/>+7 Damage<br/>Massive<br/>Not Light<br/>Berserk</span>",
-      "Name": "Ascend"
+      "Name": {
+        "enUS": "Ascend"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: 00FF00\">+<b>125</b> Life<br/>+<b>7</b> Attack Damage<br/>Massive<br/>Not Light<br/>Indomitable Strength</span>"
+      }
     },
     {
       "AbilCmd": "AscendedBerserkerFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "BerserkerFission,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     },
     {
       "AbilCmd": "DragonFissionDisabled,Execute",
       "id": "DragonFission",
       "Icon": "btn-ability-zerg-disguise",
-      "Tooltip": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%.",
-      "Name": "Fission"
+      "Name": {
+        "enUS": "Fission"
+      },
+      "Tooltip": {
+        "enUS": "Splits into two identical clones that start with 40% life and damage. These clones have 2 regeneration and when they reach full life their damage is restored to 100%."
+      }
     }
   ]
 }

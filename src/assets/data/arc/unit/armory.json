@@ -1,6 +1,12 @@
 {
-  "Name": "Armory",
-  "Description": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory",
+  "Name": {
+    "enUS": "Armory",
+    "ruRU": "Armory"
+  },
+  "Description": {
+    "enUS": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory",
+    "ruRU": "Contains weapon and armor upgrades for Factory and Starport units. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Hellbat at the Factory<br/>- Thor at the Factory"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Armory/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Armory/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Armory/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Armory/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -153,8 +164,14 @@
         "AbilCmd": "ArmoryResearch,Research6",
         "id": "TerranVehicleWeaponsLevel1",
         "Icon": "btn-upgrade-terran-vehicleweaponslevel1",
-        "Tooltip": "Upgrades the damage dealt by ground vehicles.",
-        "Name": "Upgrade Vehicle Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Vehicle Weapons Level 1",
+          "ruRU": "Upgrade Vehicle Weapons Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage dealt by ground vehicles.",
+          "ruRU": "Upgrades the damage dealt by ground vehicles."
+        },
         "Hotkey": "E"
       },
       {
@@ -191,8 +208,14 @@
         "AbilCmd": "ArmoryResearch,Research7",
         "id": "TerranVehicleWeaponsLevel2",
         "Icon": "btn-upgrade-terran-vehicleweaponslevel2",
-        "Tooltip": "Further upgrades the damage dealt by ground vehicles.",
-        "Name": "Upgrade Vehicle Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Vehicle Weapons Level 2",
+          "ruRU": "Upgrade Vehicle Weapons Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage dealt by ground vehicles.",
+          "ruRU": "Further upgrades the damage dealt by ground vehicles."
+        },
         "Hotkey": "E"
       },
       {
@@ -229,8 +252,14 @@
         "AbilCmd": "ArmoryResearch,Research8",
         "id": "TerranVehicleWeaponsLevel3",
         "Icon": "btn-upgrade-terran-vehicleweaponslevel3",
-        "Tooltip": "Maximizes the damage dealt by ground vehicles.",
-        "Name": "Upgrade Vehicle Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Vehicle Weapons Level 3",
+          "ruRU": "Upgrade Vehicle Weapons Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage dealt by ground vehicles.",
+          "ruRU": "Maximizes the damage dealt by ground vehicles."
+        },
         "Hotkey": "E"
       },
       {
@@ -290,8 +319,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -354,8 +389,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -418,31 +459,27 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
-        "Upgrade": "TerranVehicleArmorsLevel1",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "TerranVehiclePlatingLevel1",
-            "Requirements": "LearnTerranVehicleArmor1"
-          },
-          "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
-          },
-          "Time": 160,
-          "Upgrade": "TerranVehicleArmorsLevel1"
+            }
+          }
         },
-        "Time": 160,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 0,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -456,31 +493,27 @@
         "AbilCmd": "ArmoryResearch,Research3",
         "id": "TerranVehiclePlatingLevel1",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel1",
-        "Tooltip": "Upgrades the armor of ground vehicles.",
-        "Name": "Upgrade Vehicle Plating Level 1",
+        "Name": {
+          "enUS": "Upgrade Vehicle Plating Level 1",
+          "ruRU": "Upgrade Vehicle Plating Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of ground vehicles.",
+          "ruRU": "Upgrades the armor of ground vehicles."
+        },
         "Hotkey": "V"
       },
       {
-        "Upgrade": "TerranVehicleArmorsLevel2",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "TerranVehiclePlatingLevel2",
-            "Requirements": "LearnTerranVehicleArmor2"
-          },
-          "Resource": {
-            "Minerals": 175,
-            "Vespene": 175
-          },
-          "Time": 190,
-          "Upgrade": "TerranVehicleArmorsLevel2"
+            }
+          }
         },
-        "Time": 190,
         "Cost": {
-          "Minerals": 175,
-          "Vespene": 175,
+          "Minerals": 0,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -494,31 +527,27 @@
         "AbilCmd": "ArmoryResearch,Research4",
         "id": "TerranVehiclePlatingLevel2",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel2",
-        "Tooltip": "Further upgrades the armor of ground vehicles.",
-        "Name": "Upgrade Vehicle Plating Level 2",
+        "Name": {
+          "enUS": "Upgrade Vehicle Plating Level 2",
+          "ruRU": "Upgrade Vehicle Plating Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of ground vehicles.",
+          "ruRU": "Further upgrades the armor of ground vehicles."
+        },
         "Hotkey": "V"
       },
       {
-        "Upgrade": "TerranVehicleArmorsLevel3",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "TerranVehiclePlatingLevel3",
-            "Requirements": "LearnTerranVehicleArmor3"
-          },
-          "Resource": {
-            "Minerals": 250,
-            "Vespene": 250
-          },
-          "Time": 220,
-          "Upgrade": "TerranVehicleArmorsLevel3"
+            }
+          }
         },
-        "Time": 220,
         "Cost": {
-          "Minerals": 250,
-          "Vespene": 250,
+          "Minerals": 0,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -532,8 +561,14 @@
         "AbilCmd": "ArmoryResearch,Research5",
         "id": "TerranVehiclePlatingLevel3",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel3",
-        "Tooltip": "Maximizes the armor of ground vehicles.",
-        "Name": "Upgrade Vehicle Plating Level 3",
+        "Name": {
+          "enUS": "Upgrade Vehicle Plating Level 3",
+          "ruRU": "Upgrade Vehicle Plating Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of ground vehicles.",
+          "ruRU": "Maximizes the armor of ground vehicles."
+        },
         "Hotkey": "V"
       },
       {
@@ -570,8 +605,14 @@
         "AbilCmd": "ArmoryResearch,Research12",
         "id": "TerranShipWeaponsLevel1",
         "Icon": "btn-upgrade-terran-shipweaponslevel1",
-        "Tooltip": "Upgrades the damage dealt by units built at a Starport.",
-        "Name": "Upgrade Ship Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Ship Weapons Level 1",
+          "ruRU": "Upgrade Ship Weapons Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage dealt by units built at a Starport.",
+          "ruRU": "Upgrades the damage dealt by units built at a Starport."
+        },
         "Hotkey": "S"
       },
       {
@@ -608,8 +649,14 @@
         "AbilCmd": "ArmoryResearch,Research13",
         "id": "TerranShipWeaponsLevel2",
         "Icon": "btn-upgrade-terran-shipweaponslevel2",
-        "Tooltip": "Further upgrades the damage dealt by units built at a Starport.",
-        "Name": "Upgrade Ship Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Ship Weapons Level 2",
+          "ruRU": "Upgrade Ship Weapons Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage dealt by units built at a Starport.",
+          "ruRU": "Further upgrades the damage dealt by units built at a Starport."
+        },
         "Hotkey": "S"
       },
       {
@@ -646,8 +693,14 @@
         "AbilCmd": "ArmoryResearch,Research14",
         "id": "TerranShipWeaponsLevel3",
         "Icon": "btn-upgrade-terran-shipweaponslevel3",
-        "Tooltip": "Maximizes the damage dealt by units built at a Starport.",
-        "Name": "Upgrade Ship Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Ship Weapons Level 3",
+          "ruRU": "Upgrade Ship Weapons Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage dealt by units built at a Starport.",
+          "ruRU": "Maximizes the damage dealt by units built at a Starport."
+        },
         "Hotkey": "S"
       },
       {
@@ -684,8 +737,14 @@
         "AbilCmd": "ArmoryResearch,Research9",
         "id": "TerranShipPlatingLevel1",
         "Icon": "btn-upgrade-terran-shipplatinglevel1",
-        "Tooltip": "Upgrades the armor of units built at a Starport.",
-        "Name": "Upgrade Ship Plating Level 1",
+        "Name": {
+          "enUS": "Upgrade Ship Plating Level 1",
+          "ruRU": "Upgrade Ship Plating Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of units built at a Starport.",
+          "ruRU": "Upgrades the armor of units built at a Starport."
+        },
         "Hotkey": "P"
       },
       {
@@ -722,8 +781,14 @@
         "AbilCmd": "ArmoryResearch,Research10",
         "id": "TerranShipPlatingLevel2",
         "Icon": "btn-upgrade-terran-shipplatinglevel2",
-        "Tooltip": "Further upgrades the armor of units built at a Starport.",
-        "Name": "Upgrade Ship Plating Level 2",
+        "Name": {
+          "enUS": "Upgrade Ship Plating Level 2",
+          "ruRU": "Upgrade Ship Plating Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of units built at a Starport.",
+          "ruRU": "Further upgrades the armor of units built at a Starport."
+        },
         "Hotkey": "P"
       },
       {
@@ -760,8 +825,14 @@
         "AbilCmd": "ArmoryResearch,Research11",
         "id": "TerranShipPlatingLevel3",
         "Icon": "btn-upgrade-terran-shipplatinglevel3",
-        "Tooltip": "Maximizes the armor of units built at a Starport.",
-        "Name": "Upgrade Ship Plating Level 3",
+        "Name": {
+          "enUS": "Upgrade Ship Plating Level 3",
+          "ruRU": "Upgrade Ship Plating Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of units built at a Starport.",
+          "ruRU": "Maximizes the armor of units built at a Starport."
+        },
         "Hotkey": "P"
       },
       {
@@ -780,8 +851,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilder",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
         "Hotkey": "Q"
       },
       {
@@ -818,9 +895,15 @@
         "AbilCmd": "ArmoryResearch,Research15",
         "id": "TerranVehicleAndShipPlatingLevel1",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel1",
-        "Tooltip": "Upgrades the armor of units built at a Factory or Starport.",
-        "Name": "Upgrade Vehicle and Ship Plating Level 1",
-        "Hotkey": "V"
+        "Name": {
+          "enUS": "Upgrade Vehicle and Ship Plating Level 1",
+          "ruRU": "Upgrade Vehicle and Ship Plating Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of units built at a Factory or Starport.",
+          "ruRU": "Upgrades the armor of units built at a Factory or Starport."
+        },
+        "Hotkey": "W"
       },
       {
         "Upgrade": "TerranVehicleAndShipArmorsLevel2",
@@ -856,9 +939,15 @@
         "AbilCmd": "ArmoryResearch,Research16",
         "id": "TerranVehicleAndShipPlatingLevel2",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel2",
-        "Tooltip": "Further upgrades the armor of units built at a Factory or Starport.",
-        "Name": "Upgrade Vehicle and Ship Plating Level 2",
-        "Hotkey": "V"
+        "Name": {
+          "enUS": "Upgrade Vehicle and Ship Plating Level 2",
+          "ruRU": "Upgrade Vehicle and Ship Plating Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of units built at a Factory or Starport.",
+          "ruRU": "Further upgrades the armor of units built at a Factory or Starport."
+        },
+        "Hotkey": "W"
       },
       {
         "Upgrade": "TerranVehicleAndShipArmorsLevel3",
@@ -894,9 +983,15 @@
         "AbilCmd": "ArmoryResearch,Research17",
         "id": "TerranVehicleAndShipPlatingLevel3",
         "Icon": "btn-upgrade-terran-vehicleplatinglevel3",
-        "Tooltip": "Maximizes the armor of units built at a Factory or Starport.",
-        "Name": "Upgrade Vehicle and Ship Plating Level 3",
-        "Hotkey": "V"
+        "Name": {
+          "enUS": "Upgrade Vehicle and Ship Plating Level 3",
+          "ruRU": "Upgrade Vehicle and Ship Plating Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of units built at a Factory or Starport.",
+          "ruRU": "Maximizes the armor of units built at a Factory or Starport."
+        },
+        "Hotkey": "W"
       }
     ]
   },
@@ -908,26 +1003,41 @@
   ],
   "id": "Armory",
   "Icon": "btn-building-terran-armory",
+  "Model": "ArmoryEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "ArmoryResearch",
-      "Name": "Research (Armory)"
+      "Name": {
+        "enUS": "Research (Armory)",
+        "ruRU": "Research (Armory)"
+      }
     }
   ],
   "$Upgrades": [
@@ -939,6 +1049,7 @@
     "IsArmory",
     "Armory",
     "ArmorySplat",
+    "CasterIsArmory",
     "CountUnitArmoryCompleteOnly609241497TechTreeCheat"
   ],
   "$Requirements": [],
@@ -947,9 +1058,7 @@
     "TerranVehicleWeaponsLevel1",
     "TerranVehicleWeaponsLevel2",
     "TerranVehicleWeaponsLevel3",
-    "TerranVehicleArmorsLevel1",
-    "TerranVehicleArmorsLevel2",
-    "TerranVehicleArmorsLevel3",
+    null,
     "TerranShipWeaponsLevel1",
     "TerranShipWeaponsLevel2",
     "TerranShipWeaponsLevel3",
@@ -970,127 +1079,235 @@
       "AbilCmd": "ArmoryResearch,Research6",
       "id": "TerranVehicleWeaponsLevel1",
       "Icon": "btn-upgrade-terran-vehicleweaponslevel1",
-      "Tooltip": "Upgrades the damage dealt by ground vehicles.",
-      "Name": "Upgrade Vehicle Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Vehicle Weapons Level 1",
+        "ruRU": "Upgrade Vehicle Weapons Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage dealt by ground vehicles.",
+        "ruRU": "Upgrades the damage dealt by ground vehicles."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research7",
       "id": "TerranVehicleWeaponsLevel2",
       "Icon": "btn-upgrade-terran-vehicleweaponslevel2",
-      "Tooltip": "Further upgrades the damage dealt by ground vehicles.",
-      "Name": "Upgrade Vehicle Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Vehicle Weapons Level 2",
+        "ruRU": "Upgrade Vehicle Weapons Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage dealt by ground vehicles.",
+        "ruRU": "Further upgrades the damage dealt by ground vehicles."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research8",
       "id": "TerranVehicleWeaponsLevel3",
       "Icon": "btn-upgrade-terran-vehicleweaponslevel3",
-      "Tooltip": "Maximizes the damage dealt by ground vehicles.",
-      "Name": "Upgrade Vehicle Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Vehicle Weapons Level 3",
+        "ruRU": "Upgrade Vehicle Weapons Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage dealt by ground vehicles.",
+        "ruRU": "Maximizes the damage dealt by ground vehicles."
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research3",
       "id": "TerranVehiclePlatingLevel1",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel1",
-      "Tooltip": "Upgrades the armor of ground vehicles.",
-      "Name": "Upgrade Vehicle Plating Level 1"
+      "Name": {
+        "enUS": "Upgrade Vehicle Plating Level 1",
+        "ruRU": "Upgrade Vehicle Plating Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of ground vehicles.",
+        "ruRU": "Upgrades the armor of ground vehicles."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research4",
       "id": "TerranVehiclePlatingLevel2",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel2",
-      "Tooltip": "Further upgrades the armor of ground vehicles.",
-      "Name": "Upgrade Vehicle Plating Level 2"
+      "Name": {
+        "enUS": "Upgrade Vehicle Plating Level 2",
+        "ruRU": "Upgrade Vehicle Plating Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of ground vehicles.",
+        "ruRU": "Further upgrades the armor of ground vehicles."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research5",
       "id": "TerranVehiclePlatingLevel3",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel3",
-      "Tooltip": "Maximizes the armor of ground vehicles.",
-      "Name": "Upgrade Vehicle Plating Level 3"
+      "Name": {
+        "enUS": "Upgrade Vehicle Plating Level 3",
+        "ruRU": "Upgrade Vehicle Plating Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of ground vehicles.",
+        "ruRU": "Maximizes the armor of ground vehicles."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research12",
       "id": "TerranShipWeaponsLevel1",
       "Icon": "btn-upgrade-terran-shipweaponslevel1",
-      "Tooltip": "Upgrades the damage dealt by units built at a Starport.",
-      "Name": "Upgrade Ship Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Ship Weapons Level 1",
+        "ruRU": "Upgrade Ship Weapons Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage dealt by units built at a Starport.",
+        "ruRU": "Upgrades the damage dealt by units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research13",
       "id": "TerranShipWeaponsLevel2",
       "Icon": "btn-upgrade-terran-shipweaponslevel2",
-      "Tooltip": "Further upgrades the damage dealt by units built at a Starport.",
-      "Name": "Upgrade Ship Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Ship Weapons Level 2",
+        "ruRU": "Upgrade Ship Weapons Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage dealt by units built at a Starport.",
+        "ruRU": "Further upgrades the damage dealt by units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research14",
       "id": "TerranShipWeaponsLevel3",
       "Icon": "btn-upgrade-terran-shipweaponslevel3",
-      "Tooltip": "Maximizes the damage dealt by units built at a Starport.",
-      "Name": "Upgrade Ship Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Ship Weapons Level 3",
+        "ruRU": "Upgrade Ship Weapons Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage dealt by units built at a Starport.",
+        "ruRU": "Maximizes the damage dealt by units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research9",
       "id": "TerranShipPlatingLevel1",
       "Icon": "btn-upgrade-terran-shipplatinglevel1",
-      "Tooltip": "Upgrades the armor of units built at a Starport.",
-      "Name": "Upgrade Ship Plating Level 1"
+      "Name": {
+        "enUS": "Upgrade Ship Plating Level 1",
+        "ruRU": "Upgrade Ship Plating Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of units built at a Starport.",
+        "ruRU": "Upgrades the armor of units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research10",
       "id": "TerranShipPlatingLevel2",
       "Icon": "btn-upgrade-terran-shipplatinglevel2",
-      "Tooltip": "Further upgrades the armor of units built at a Starport.",
-      "Name": "Upgrade Ship Plating Level 2"
+      "Name": {
+        "enUS": "Upgrade Ship Plating Level 2",
+        "ruRU": "Upgrade Ship Plating Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of units built at a Starport.",
+        "ruRU": "Further upgrades the armor of units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research11",
       "id": "TerranShipPlatingLevel3",
       "Icon": "btn-upgrade-terran-shipplatinglevel3",
-      "Tooltip": "Maximizes the armor of units built at a Starport.",
-      "Name": "Upgrade Ship Plating Level 3"
+      "Name": {
+        "enUS": "Upgrade Ship Plating Level 3",
+        "ruRU": "Upgrade Ship Plating Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of units built at a Starport.",
+        "ruRU": "Maximizes the armor of units built at a Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research15",
       "id": "TerranVehicleAndShipPlatingLevel1",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel1",
-      "Tooltip": "Upgrades the armor of units built at a Factory or Starport.",
-      "Name": "Upgrade Vehicle and Ship Plating Level 1"
+      "Name": {
+        "enUS": "Upgrade Vehicle and Ship Plating Level 1",
+        "ruRU": "Upgrade Vehicle and Ship Plating Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of units built at a Factory or Starport.",
+        "ruRU": "Upgrades the armor of units built at a Factory or Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research16",
       "id": "TerranVehicleAndShipPlatingLevel2",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel2",
-      "Tooltip": "Further upgrades the armor of units built at a Factory or Starport.",
-      "Name": "Upgrade Vehicle and Ship Plating Level 2"
+      "Name": {
+        "enUS": "Upgrade Vehicle and Ship Plating Level 2",
+        "ruRU": "Upgrade Vehicle and Ship Plating Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of units built at a Factory or Starport.",
+        "ruRU": "Further upgrades the armor of units built at a Factory or Starport."
+      }
     },
     {
       "AbilCmd": "ArmoryResearch,Research17",
       "id": "TerranVehicleAndShipPlatingLevel3",
       "Icon": "btn-upgrade-terran-vehicleplatinglevel3",
-      "Tooltip": "Maximizes the armor of units built at a Factory or Starport.",
-      "Name": "Upgrade Vehicle and Ship Plating Level 3"
+      "Name": {
+        "enUS": "Upgrade Vehicle and Ship Plating Level 3",
+        "ruRU": "Upgrade Vehicle and Ship Plating Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of units built at a Factory or Starport.",
+        "ruRU": "Maximizes the armor of units built at a Factory or Starport."
+      }
     }
   ]
 }

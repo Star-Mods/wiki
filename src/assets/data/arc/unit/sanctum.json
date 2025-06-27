@@ -1,6 +1,12 @@
 {
-  "Name": "Sanctum",
-  "Description": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
+  "Name": {
+    "enUS": "Sanctum",
+    "ruRU": "Святилище"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
+    "ruRU": "Технический объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Пульсары из Цитадели<br/>  - Субъекторы из Цитадели"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 700,
   "LifeMax": 700,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Sanctum/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Sanctum/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Sanctum/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Sanctum/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -106,7 +117,10 @@
   "Food": 6,
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -125,8 +139,14 @@
         "Type": "Passive",
         "id": "KeironCharges",
         "Icon": "btn-upgrade-karax-unitybarrier",
-        "Tooltip": "The number of unit charges the structure is presently storing.",
-        "Name": "Charges"
+        "Name": {
+          "enUS": "Charges",
+          "ruRU": "Заряды"
+        },
+        "Tooltip": {
+          "enUS": "The number of unit charges the structure is presently storing.",
+          "ruRU": "Количество зарядов, хранящихся в строении в настоящее время."
+        }
       },
       {
         "Cost": {
@@ -144,8 +164,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       },
       {
@@ -208,8 +234,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -269,8 +301,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -308,8 +346,14 @@
         "AbilCmd": "SanctumResearch,Research1",
         "id": "DevelopAmplifiedSphere",
         "Icon": "btn-upgrade-protoss-fenix-scoutchampionrange",
-        "Tooltip": "Increases the attack range of <span style=\"color: #FFFF80\">Cataracts</span>.",
-        "Name": "Develop Amplified Sphere",
+        "Name": {
+          "enUS": "Develop Amplified Sphere",
+          "ruRU": "Разработать Усиленную Сферу"
+        },
+        "Tooltip": {
+          "enUS": "Increases the attack range of <span style=\"color: FFFF80\">Cataracts</span>.",
+          "ruRU": "Увеличивает дальность атаки <c val = \"FFFF80\">Субъектора</span>."
+        },
         "Hotkey": "A"
       },
       {
@@ -348,8 +392,14 @@
         "AbilCmd": "SanctumResearch,Research2",
         "id": "DevelopPulsarDampener",
         "Icon": "btn-ability-keiron-dampener",
-        "Tooltip": "Allows <span style=\"color: #FFFF80\">Pulsars</span> to use the Dampener ability.",
-        "Name": "Develop Dampener",
+        "Name": {
+          "enUS": "Develop Dampener",
+          "ruRU": "Разработать Гаситель"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: FFFF80\">Pulsars</span> to use the Dampener ability.",
+          "ruRU": "Позволяет <span style=\"color: FFFF80\">Пульсару</span> использовать способность Гаситель."
+        },
         "Hotkey": "D"
       }
     ]
@@ -372,33 +422,55 @@
     "Cataract"
   ],
   "Icon": "btn-building-keiron-sanctum",
+  "Model": "Sanctum",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironChargeDummyCreation"
+      "id": "KeironChargeDummyCreation",
+      "Name": {
+        "enUS": "Keiron - Charge Dummy Creation",
+        "ruRU": "Keiron - Charge Dummy Creation"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "KeironCitadelMaterialize",
-      "Name": "Keiron - Citadel Materialize"
+      "Name": {
+        "enUS": "Keiron - Citadel Materialize",
+        "ruRU": "Keiron - Citadel Materialize"
+      }
     },
     {
       "id": "SanctumResearch",
-      "Name": "Sanctum Research"
+      "Name": {
+        "enUS": "Sanctum Research",
+        "ruRU": "Sanctum Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -415,7 +487,9 @@
     "KeironShieldsRevert"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "KeironChargeDummy"
+  ],
   "$Research": [
     "AmplifiedSphere",
     "PulsarDampener"
@@ -430,29 +504,53 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "SanctumResearch,Research1",
       "id": "DevelopAmplifiedSphere",
       "Icon": "btn-upgrade-protoss-fenix-scoutchampionrange",
-      "Tooltip": "Increases the attack range of <span style=\"color: #FFFF80\">Cataracts</span>.",
-      "Name": "Develop Amplified Sphere"
+      "Name": {
+        "enUS": "Develop Amplified Sphere",
+        "ruRU": "Разработать Усиленную Сферу"
+      },
+      "Tooltip": {
+        "enUS": "Increases the attack range of <span style=\"color: FFFF80\">Cataracts</span>.",
+        "ruRU": "Увеличивает дальность атаки <c val = \"FFFF80\">Субъектора</span>."
+      }
     },
     {
       "AbilCmd": "SanctumResearch,Research2",
       "id": "DevelopPulsarDampener",
       "Icon": "btn-ability-keiron-dampener",
-      "Tooltip": "Allows <span style=\"color: #FFFF80\">Pulsars</span> to use the Dampener ability.",
-      "Name": "Develop Dampener"
+      "Name": {
+        "enUS": "Develop Dampener",
+        "ruRU": "Разработать Гаситель"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: FFFF80\">Pulsars</span> to use the Dampener ability.",
+        "ruRU": "Позволяет <span style=\"color: FFFF80\">Пульсару</span> использовать способность Гаситель."
+      }
     }
   ]
 }

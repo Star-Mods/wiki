@@ -1,6 +1,12 @@
 {
-  "Name": "Support Shuttle",
-  "Description": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
+  "Name": {
+    "enUS": "Support Shuttle",
+    "ruRU": "Шаттл поддержки"
+  },
+  "Description": {
+    "enUS": "Combat support ship. Can use Cloaking Drone that temporarily cloaks the targeted unit, and is capable of deploying Psionic Suppression Field that prevents any abilities in the area from being cast.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+    "ruRU": "Корабль боевой поддержки. Может развёртывать Маскировочных дронов, применять Поле подавления псионики и задействовать Направленный гравитационный щит.<br/><br/><span style=\"color: FFE303\">Детектор"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 150,
   "LifeMax": 150,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SupportShuttle/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SupportShuttle/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SupportShuttle/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SupportShuttle/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -204,8 +215,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -278,8 +295,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -369,8 +392,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -460,8 +489,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -535,8 +570,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -626,8 +667,14 @@
         "AbilCmd": "moveUED,AcquireMove",
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "Name": "Scan Move",
+        "Name": {
+          "enUS": "Scan Move",
+          "ruRU": "Двигаться в режиме наблюдения"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+        },
         "Hotkey": "A"
       },
       {
@@ -673,7 +720,7 @@
             "NoDeceleration": 1
           },
           "Effect": [
-            "ApplyAlgoritmInvisUEDBegin"
+            "UEDCloakingDroneTimeCheckerSet"
           ],
           "EffectRange": [
             "0,1000"
@@ -764,8 +811,14 @@
         "AbilCmd": "CloakingDrone,Execute",
         "id": "CloakingDrone",
         "Icon": "btn-ability-hornerhan-wraith-permanentcloak",
-        "Tooltip": "The specified combat unit receives a disguise before causing any damage to other combat units, but no more than 121 seconds. Movement speed increases.<br/><br/><c val=\"#ColorAttackInfo\">The unit does not attack on its own until the attack command is given.",
-        "Name": "Activate Cloaking Drone",
+        "Name": {
+          "enUS": "Activate Cloaking Drone",
+          "ruRU": "Активировать Маскировочного дрона"
+        },
+        "Tooltip": {
+          "enUS": "The specified combat unit receives a disguise before causing any damage to other combat units, but no more than 121 seconds. Movement speed increases.<br/><br/><span style=\"color: #ffff8a\">The unit does not attack on its own until the attack command is given.",
+          "ruRU": "Указанная боевая единица получает маскировку до нанесения какого либо урона другим боевым единицам, но не более 121 сек. Скорость передвижения увеличивается.<br/><br/><span style=\"color: #ffff8a\">Единица самостоятельно не атакует до тех пор, пока не будет дана команда атаки."
+        },
         "Hotkey": "Q"
       },
       {
@@ -880,7 +933,7 @@
             }
           ],
           "Range": [
-            10
+            8
           ],
           "CursorEffect": [
             "EMPSearch2"
@@ -903,8 +956,14 @@
         "AbilCmd": "PsionicSuppressionField,Execute",
         "id": "DeployPsionicSuppressionField",
         "Icon": "btn-ability-stetmann-stetzonegenerator-energy",
-        "Tooltip": "All targets affected by the suppression of psionic activity in the specified area will be able to deal only 50% of the damage from abilities for 12 sec.",
-        "Name": "Create an impulse to suppress psionic energy",
+        "Name": {
+          "enUS": "Create an impulse to suppress psionic energy",
+          "ruRU": "Создать импульс подавления псионической энергии"
+        },
+        "Tooltip": {
+          "enUS": "All targets affected by the suppression of psionic activity in the specified area will deal only 50% spell damage for next 12 seconds.",
+          "ruRU": "Все цели попавшие под импульс подавления псионической активности в указанной области смогут наносить только 50% урона от способностей в течении 12 сек."
+        },
         "Hotkey": "E"
       },
       {
@@ -1046,8 +1105,14 @@
         "AbilCmd": "ProjectedGravityShield,Execute",
         "id": "ProjectedGravitySheild",
         "Icon": "btn-ability-protoss-hardenedshields-color",
-        "Tooltip": "Creates a barrier for 100 shields, hiding the attributes of the unit (light, armored, large) for 11 seconds.",
-        "Name": "Activate the gravity barrier",
+        "Name": {
+          "enUS": "Activate the gravity barrier",
+          "ruRU": "Активировать гравитационный барьер"
+        },
+        "Tooltip": {
+          "enUS": "Creates a barrier for 150 shields, hiding the attributes of the unit (light, armored, large) for 14 seconds.",
+          "ruRU": "Создает защитный барьер на 100 щитов, скрывающий атрибуты боевой единицы (легкий, бронированный, крупный) в течении 14 сек."
+        },
         "Hotkey": "W"
       },
       {
@@ -1066,8 +1131,14 @@
         "Type": "Passive",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Detector"
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "This unit can detect cloaked, burrowed, and hallucinated units."
+        }
       }
     ]
   },
@@ -1086,6 +1157,7 @@
   "HotkeyCategory": "Unit/Category/UEDUnits",
   "id": "SupportShuttle",
   "Icon": "btn-ued-supportshuttle",
+  "Model": "KelMorian_SkyLancer",
   "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1093,46 +1165,61 @@
     {
       "id": "Detector11",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
-    },
-    {
-      "id": "Detector11",
-      "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор /// Detector"
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "CloakingDrone",
-      "Name": "Cloaking Drone"
+      "Name": {
+        "enUS": "Cloaking Drone",
+        "ruRU": "Cloaking Drone"
+      }
     },
     {
       "id": "PsionicSuppressionField",
-      "Name": "Psionic Suppression Field"
+      "Name": {
+        "enUS": "Psionic Suppression Field",
+        "ruRU": "Psionic Suppression Field"
+      }
     },
     {
       "id": "ProjectedGravityShield",
-      "Name": "Projected Gravity Shield"
+      "Name": {
+        "enUS": "Projected Gravity Shield",
+        "ruRU": "Projected Gravity Shield"
+      }
     }
   ],
   "$Upgrades": [
-    "UEDVehicalsLevel2",
     "SupportShuttle",
-    "UEDVehicalsLevel3",
-    "Medivac3",
+    "SupportShuttle",
     "UEDArmorLevel1",
     "UEDArmorLevel2",
     "UEDArmorLevel3",
+    "UEDVehicalsLevel2",
+    "UEDVehicalsLevel3",
     "TeleportationNodeTrain",
     "UpgradeEnergeSupportShutl",
     "ProjectedGravityShield",
@@ -1151,64 +1238,118 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-      "Name": "Scan Move"
+      "Name": {
+        "enUS": "Scan Move",
+        "ruRU": "Двигаться в режиме наблюдения"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "CloakingDrone,Execute",
       "id": "CloakingDrone",
       "Icon": "btn-ability-hornerhan-wraith-permanentcloak",
-      "Tooltip": "The specified combat unit receives a disguise before causing any damage to other combat units, but no more than 121 seconds. Movement speed increases.<br/><br/><c val=\"#ColorAttackInfo\">The unit does not attack on its own until the attack command is given.",
-      "Name": "Activate Cloaking Drone"
+      "Name": {
+        "enUS": "Activate Cloaking Drone",
+        "ruRU": "Активировать Маскировочного дрона"
+      },
+      "Tooltip": {
+        "enUS": "The specified combat unit receives a disguise before causing any damage to other combat units, but no more than 121 seconds. Movement speed increases.<br/><br/><span style=\"color: #ffff8a\">The unit does not attack on its own until the attack command is given.",
+        "ruRU": "Указанная боевая единица получает маскировку до нанесения какого либо урона другим боевым единицам, но не более 121 сек. Скорость передвижения увеличивается.<br/><br/><span style=\"color: #ffff8a\">Единица самостоятельно не атакует до тех пор, пока не будет дана команда атаки."
+      }
     },
     {
       "AbilCmd": "PsionicSuppressionField,Execute",
       "id": "DeployPsionicSuppressionField",
       "Icon": "btn-ability-stetmann-stetzonegenerator-energy",
-      "Tooltip": "All targets affected by the suppression of psionic activity in the specified area will be able to deal only 50% of the damage from abilities for 12 sec.",
-      "Name": "Create an impulse to suppress psionic energy"
+      "Name": {
+        "enUS": "Create an impulse to suppress psionic energy",
+        "ruRU": "Создать импульс подавления псионической энергии"
+      },
+      "Tooltip": {
+        "enUS": "All targets affected by the suppression of psionic activity in the specified area will deal only 50% spell damage for next 12 seconds.",
+        "ruRU": "Все цели попавшие под импульс подавления псионической активности в указанной области смогут наносить только 50% урона от способностей в течении 12 сек."
+      }
     },
     {
       "AbilCmd": "ProjectedGravityShield,Execute",
       "id": "ProjectedGravitySheild",
       "Icon": "btn-ability-protoss-hardenedshields-color",
-      "Tooltip": "Creates a barrier for 100 shields, hiding the attributes of the unit (light, armored, large) for 11 seconds.",
-      "Name": "Activate the gravity barrier"
+      "Name": {
+        "enUS": "Activate the gravity barrier",
+        "ruRU": "Активировать гравитационный барьер"
+      },
+      "Tooltip": {
+        "enUS": "Creates a barrier for 150 shields, hiding the attributes of the unit (light, armored, large) for 14 seconds.",
+        "ruRU": "Создает защитный барьер на 100 щитов, скрывающий атрибуты боевой единицы (легкий, бронированный, крупный) в течении 14 сек."
+      }
     }
   ]
 }

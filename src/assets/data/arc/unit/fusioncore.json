@@ -1,6 +1,12 @@
 {
-  "Name": "Fusion Core",
-  "Description": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
+  "Name": {
+    "enUS": "Fusion Core",
+    "ruRU": "Fusion Core"
+  },
+  "Description": {
+    "enUS": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport",
+    "ruRU": "Contains Battlecruiser upgrades. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Battlecruisers at the Starport"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": "Terran Building Plating",
+  "LifeArmorName": {
+    "enUS": "Terran Building Plating",
+    "ruRU": "Terran Building Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FusionCore/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FusionCore/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FusionCore/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FusionCore/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -155,8 +166,14 @@
         "AbilCmd": "FusionCoreResearch,Research1",
         "id": "ResearchBattlecruiserSpecializations",
         "Icon": "btn-ability-terran-yamatogun-color",
-        "Tooltip": "Enables use of the <span style=\"color: #ffff8a\">Battlecruiser</span> Yamato Cannon.",
-        "Name": "Research Weapon Refit",
+        "Name": {
+          "enUS": "Research Weapon Refit",
+          "ruRU": "Research Weapon Refit"
+        },
+        "Tooltip": {
+          "enUS": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon.",
+          "ruRU": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon."
+        },
         "Hotkey": "R"
       },
       {
@@ -216,8 +233,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -280,8 +303,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -344,8 +373,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -364,8 +399,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilder",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Select Builder"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Selects the unit constructing this structure."
+        },
         "Hotkey": "Q"
       },
       {
@@ -402,8 +443,13 @@
         "AbilCmd": "FusionCoreResearch,Research4",
         "id": "ResearchMedivacEnergyUpgrade",
         "Icon": "btn-upgrade-terran-caduceusreactor",
-        "Tooltip": "Increases the energy regeneration rate of <span style=\"color: #ffff8a\">Medivacs</span> by <b>100</b>%.",
-        "Name": "Research Caduceus Reactor",
+        "Name": {
+          "enUS": "Research Caduceus Reactor",
+          "ruRU": "Research Caduceus Reactor"
+        },
+        "Tooltip": {
+          "enUS": "Increases the energy regeneration rate of <span style=\"color: ffff8a\">Medivacs</span> by <b>100</b>%."
+        },
         "Hotkey": "A"
       },
       {
@@ -436,8 +482,14 @@
         "AbilCmd": "FusionCoreResearch,Research3",
         "id": "ResearchBallisticRange",
         "Icon": "btn-upgrade-terran-advanceballistics",
-        "Tooltip": "Increases the range of <span style=\"color: #ffff8a\">Liberators</span> in Defender Mode by 4.",
-        "Name": "Research Advanced Ballistics",
+        "Name": {
+          "enUS": "Research Advanced Ballistics",
+          "ruRU": "Research Advanced Ballistics"
+        },
+        "Tooltip": {
+          "enUS": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4.",
+          "ruRU": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4."
+        },
         "Hotkey": "N"
       }
     ]
@@ -449,26 +501,41 @@
   ],
   "id": "FusionCore",
   "Icon": "btn-building-terran-fusioncore",
+  "Model": "FusionCore",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "TerranBuildingBurnDown"
+      "id": "TerranBuildingBurnDown",
+      "Name": {
+        "enUS": "Building Burnout",
+        "ruRU": "Building Burnout"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "FusionCoreResearch",
-      "Name": "Research"
+      "Name": {
+        "enUS": "Research",
+        "ruRU": "Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -480,6 +547,7 @@
     "IsFusionCore",
     "FusionCore",
     "FusionCoreSplat",
+    "CasterIsFusionCore",
     "UnitFusionCoreCompleteOnly"
   ],
   "$Requirements": [],
@@ -499,43 +567,78 @@
       "AbilCmd": "FusionCoreResearch,Research1",
       "id": "ResearchBattlecruiserSpecializations",
       "Icon": "btn-ability-terran-yamatogun-color",
-      "Tooltip": "Enables use of the <span style=\"color: #ffff8a\">Battlecruiser</span> Yamato Cannon.",
-      "Name": "Research Weapon Refit"
+      "Name": {
+        "enUS": "Research Weapon Refit",
+        "ruRU": "Research Weapon Refit"
+      },
+      "Tooltip": {
+        "enUS": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon.",
+        "ruRU": "Enables use of the <span style=\"color: ffff8a\">Battlecruiser</span> Yamato Cannon."
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "FusionCoreResearch,Research4",
       "id": "ResearchMedivacEnergyUpgrade",
       "Icon": "btn-upgrade-terran-caduceusreactor",
-      "Tooltip": "Increases the energy regeneration rate of <span style=\"color: #ffff8a\">Medivacs</span> by <b>100</b>%.",
-      "Name": "Research Caduceus Reactor"
+      "Name": {
+        "enUS": "Research Caduceus Reactor",
+        "ruRU": "Research Caduceus Reactor"
+      },
+      "Tooltip": {
+        "enUS": "Increases the energy regeneration rate of <span style=\"color: ffff8a\">Medivacs</span> by <b>100</b>%."
+      }
     },
     {
       "AbilCmd": "FusionCoreResearch,Research3",
       "id": "ResearchBallisticRange",
       "Icon": "btn-upgrade-terran-advanceballistics",
-      "Tooltip": "Increases the range of <span style=\"color: #ffff8a\">Liberators</span> in Defender Mode by 4.",
-      "Name": "Research Advanced Ballistics"
+      "Name": {
+        "enUS": "Research Advanced Ballistics",
+        "ruRU": "Research Advanced Ballistics"
+      },
+      "Tooltip": {
+        "enUS": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4.",
+        "ruRU": "Increases the range of <span style=\"color: ffff8a\">Liberators</span> in Defender Mode by 4."
+      }
     }
   ]
 }

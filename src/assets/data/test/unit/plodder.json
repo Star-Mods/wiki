@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Plodder"
   },
@@ -68,16 +69,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Plodder/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Plodder/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Plodder/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Plodder/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -93,6 +96,9 @@
     "Biological",
     "Light"
   ],
+  "BehaviorArray": [
+    "DragonLineage"
+  ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
   "ScoreResult": "BuildOrder",
@@ -101,6 +107,18 @@
   "Acceleration": 2.5,
   "CostCategory": "Economy",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "attack",
+    "AscendedPlodder",
+    "AscendedPlodderFission",
+    "PlodderFission",
+    "DragonFissionDisabled",
+    "PlodderBuild",
+    "DroneHarvest",
+    "SprayDragon"
+  ],
   "CardLayouts": {
     "2": [
       {
@@ -309,13 +327,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ],
     "Root": [
@@ -407,12 +421,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -452,8 +463,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -468,10 +478,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -491,12 +498,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -586,13 +590,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -682,13 +683,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -762,14 +760,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -1245,206 +1237,6 @@
       },
       {
         "Info": {
-          "class": "CAbilHarvest",
-          "Name": "Abil/Name/DroneHarvest",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "DroneHarvest",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Gather": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Gather"
-            },
-            "Return": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "ReturnCargo"
-            }
-          },
-          "AcquireRadius": 10,
-          "AbilSetId": "Harv",
-          "ReservedMarker": {
-            "Link": "Abil/HarvestDefault"
-          },
-          "ResourceAllowed": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "ResourceAcquire": {
-            "Minerals": 1
-          },
-          "ResourceDestroy": {
-            "Minerals": 1,
-            "Vespene": 1
-          },
-          "ResourceAmountMultiplier": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "ResourceTimeMultiplier": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "UninterruptibleArray": {
-            "WaitToReturn": 1
-          },
-          "id": "DroneHarvest"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "DroneHarvest,Gather",
-        "id": "PlodderGather",
-        "Icon": "btn-ability-zerg-gather",
-        "Name": {
-          "enUS": "Gather"
-        },
-        "Tooltip": {
-          "enUS": "Orders Plodder to gather resources from a selected Mineral Field or Vespene Geyser."
-        },
-        "Hotkey": "G"
-      },
-      {
-        "Info": {
-          "class": "CAbilHarvest",
-          "Name": "Abil/Name/DroneHarvest",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "DroneHarvest",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Gather": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "Gather"
-            },
-            "Return": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "ReturnCargo"
-            }
-          },
-          "AcquireRadius": 10,
-          "AbilSetId": "Harv",
-          "ReservedMarker": {
-            "Link": "Abil/HarvestDefault"
-          },
-          "ResourceAllowed": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "ResourceAcquire": {
-            "Minerals": 1
-          },
-          "ResourceDestroy": {
-            "Minerals": 1,
-            "Vespene": 1
-          },
-          "ResourceAmountMultiplier": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "ResourceTimeMultiplier": {
-            "Minerals": 1,
-            "Vespene": 1,
-            "Terrazine": 1,
-            "Custom": 1
-          },
-          "UninterruptibleArray": {
-            "WaitToReturn": 1
-          },
-          "id": "DroneHarvest"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "DroneHarvest,Return",
-        "id": "ReturnCargo",
-        "Icon": "btn-command-returncargo",
-        "Name": {
-          "enUS": "Return Cargo",
-          "ruRU": "Return Cargo"
-        },
-        "Tooltip": {
-          "enUS": "Returns the carried resources to the nearest drop-off point.",
-          "ruRU": "Returns the carried resources to the nearest drop-off point."
-        },
-        "Hotkey": "C"
-      },
-      {
-        "Info": {
           "class": "CAbilEffectTarget",
           "Name": "Abil/Name/SprayDragon",
           "TechPlayer": "Upkeep",
@@ -1580,15 +1372,8 @@
         "AbilCmd": "SprayDragon,Execute",
         "id": "Spray",
         "Icon": "btn-command-spray",
-        "Name": {
-          "enUS": "Spray",
-          "ruRU": "Граффити"
-        },
-        "Tooltip": {
-          "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Cost": {
@@ -1624,6 +1409,9 @@
     "Ground",
     "ForceField"
   ],
+  "TechAliasArray": [
+    "Plodder"
+  ],
   "LifeArmor": 1,
   "Speed": 2.8125,
   "LateralAcceleration": 46.0625,
@@ -1633,6 +1421,11 @@
     "Minerals": 50
   },
   "KillXP": 10,
+  "WeaponArray": [
+    {
+      "Link": "PlodderPincer"
+    }
+  ],
   "CargoSize": 1,
   "ScoreMake": 50,
   "ScoreKill": 50,
@@ -1643,25 +1436,29 @@
   "InnerRadius": 0.3125,
   "Icon": "btn-critter-crabeetle",
   "Model": "Crabeetle",
-  "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
+  "LifeArmorIcon": "btn-upgrade-dragon-scalearmor-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level0",
+      "DisplayEffect": "PlodderPincerDamage",
+      "TargetFilters": "Ground",
+      "Range": 0.2,
+      "Period": 1.5,
+      "Effect": "PlodderPincerDamage",
+      "EditorCategories": "Race:Dragon",
       "id": "PlodderPincer",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Pincer"
       },
       "Amount": 5,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.2,
-      "Period": 1.5
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [
     {
-      "id": "DragonLineageLesser",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1672,22 +1469,21 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
@@ -1721,30 +1517,14 @@
       }
     },
     {
-      "id": "DroneHarvest",
-      "Name": {
-        "enUS": "Gather (Drone)",
-        "ruRU": "Gather (Drone)"
-      }
-    },
-    {
       "id": "SprayDragon",
       "Name": "-"
     }
   ],
   "$Upgrades": [
-    "GreaterDeepOneNoFootprint",
+    "GreaterDeepOne",
     "AscendedPlodder",
     "Button/Tooltip/AscendedPlodder",
-    "DenizenoftheDeepTrain",
-    "DenizenoftheDeepNoFootprint",
-    "LesserDeepOneNoFootprint",
-    "LesserDeepOne",
-    "ToweringDeepOneNoFootprint",
-    "ToweringDeepOne",
-    "Button/Tooltip/Plodder",
-    "Plodder",
-    "GreaterDeepOne",
     "DragonMeleeAttacksLevel1",
     "DragonMeleeAttacks",
     "DragonMeleeAttacksLevel2",
@@ -1754,9 +1534,18 @@
     "DragonScaleArmors",
     "DragonScaleArmorLevel2",
     "DragonScaleArmorLevel3",
+    "LesserDeepOneNoFootprint",
+    "LesserDeepOne",
+    "ToweringDeepOneNoFootprint",
+    "ToweringDeepOne",
+    "Button/Tooltip/Plodder",
+    "Plodder",
+    "GreaterDeepOneNoFootprint",
+    "DenizenoftheDeepTrain",
     "DenizenoftheDeep",
     "Dragon",
-    "Plodder_Death"
+    "Plodder_Death",
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -1767,13 +1556,10 @@
     "FrontierDeepOne"
   ],
   "$Research": [],
-  "$Morph": [
-    "AscendedPlodder"
-  ],
+  "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "DenizenoftheDeep",
-    "DenizenoftheDeepNoFootprint"
+    "DenizenoftheDeep"
   ],
   "$Commands": [
     {
@@ -1782,12 +1568,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1795,51 +1578,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "AscendedPlodder,Execute",
@@ -1899,27 +1667,15 @@
       "AbilCmd": "DroneHarvest,Return",
       "id": "ReturnCargo",
       "Icon": "btn-command-returncargo",
-      "Name": {
-        "enUS": "Return Cargo",
-        "ruRU": "Return Cargo"
-      },
-      "Tooltip": {
-        "enUS": "Returns the carried resources to the nearest drop-off point.",
-        "ruRU": "Returns the carried resources to the nearest drop-off point."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "SprayDragon,Execute",
       "id": "Spray",
       "Icon": "btn-command-spray",
-      "Name": {
-        "enUS": "Spray",
-        "ruRU": "Граффити"
-      },
-      "Tooltip": {
-        "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "PlodderBuild,Build1",

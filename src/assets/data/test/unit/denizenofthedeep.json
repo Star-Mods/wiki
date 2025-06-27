@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Denizen of the Deep"
   },
@@ -73,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DenizenoftheDeep/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DenizenoftheDeep/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DenizenoftheDeep/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DenizenoftheDeep/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -98,6 +101,11 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage",
+    "DenizenoftheDeepRage",
+    "DeepOne5x5"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -116,7 +124,18 @@
   "LifeArmor": 1,
   "CostCategory": "Economy",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "DragonTrain",
+    "que5PassiveCancelToSelection",
+    "DenizenoftheDeepRally",
+    "stop",
+    "DenizenoftheDeepBuild",
+    "DenizenoftheDeepTrain",
+    "DenizenoftheDeep"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -184,13 +203,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -228,10 +243,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -253,14 +265,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -299,8 +307,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -315,10 +322,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -338,12 +342,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -364,15 +365,8 @@
         "AbilCmd": "DenizenoftheDeepRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -392,15 +386,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -459,6 +446,9 @@
                 },
                 "DefaultButtonFace": "Razorback"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "Razorback",
               "Time": 21
             },
@@ -470,6 +460,7 @@
                 "DefaultButtonFace": "Coagulator"
               },
               "ValidatorArray": [
+                "HasVision",
                 "HasVespene"
               ],
               "Unit": "Coagulator",
@@ -700,13 +691,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -758,6 +745,9 @@
             },
             "DefaultButtonFace": "Razorback"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "Razorback",
           "Time": 21
         },
@@ -783,7 +773,7 @@
           "enUS": "Propagate Razorback"
         },
         "Tooltip": {
-          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>+<b>100.0</b>% Supply</span>"
+          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
         },
         "Hotkey": "Z"
       },
@@ -796,6 +786,7 @@
             "DefaultButtonFace": "Coagulator"
           },
           "ValidatorArray": [
+            "HasVision",
             "HasVespene"
           ],
           "Unit": "Coagulator",
@@ -829,6 +820,9 @@
       }
     ]
   },
+  "TechAliasArray": [
+    "Alias_DenizenoftheDeep"
+  ],
   "Facing": 90,
   "ResourceDropOff": {
     "Minerals": 1,
@@ -841,7 +835,7 @@
   "CostResource": {
     "Minerals": 400
   },
-  "Footprint": "Footprint5x5Contour",
+  "Footprint": "",
   "PlacementFootprint": "Footprint5x5DropOff",
   "ScoreMake": 400,
   "ScoreKill": 400,
@@ -862,7 +856,7 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -874,15 +868,19 @@
         "enUS": "Denizen of the Deep - Rage"
       },
       "Tooltip": "-"
+    },
+    {
+      "id": "DeepOne5x5",
+      "Name": {
+        "enUS": "Deep One (5x5)"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "DragonTrain",
@@ -893,8 +891,7 @@
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
@@ -906,7 +903,7 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -921,32 +918,22 @@
       "Name": {
         "enUS": "Denizen of the Deep - Train"
       }
-    },
-    {
-      "id": "DenizenoftheDeep",
-      "Name": {
-        "enUS": "Denizen of the Deep"
-      }
     }
   ],
   "$Upgrades": [
     "Dragon",
     "DenizenoftheDeep",
-    "PlodderBuild",
     "NotDenizenoftheDeep1",
-    "DenizenoftheDeepNoFootprint",
+    "PlodderBuild",
     "DragonPlateArmorLevel1",
     "DenizenoftheDeep",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [
-    "Plodder",
-    "Razorback",
-    "Coagulator"
+    "DeepOne5x5"
   ],
   "$Research": [],
   "$Morph": [],
@@ -962,25 +949,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -988,38 +969,23 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DenizenoftheDeepRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DenizenoftheDeepBuild,Halt",
@@ -1027,12 +993,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DenizenoftheDeepTrain,Train1",
@@ -1053,7 +1016,7 @@
         "enUS": "Propagate Razorback"
       },
       "Tooltip": {
-        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>+<b>100.0</b>% Supply</span>"
+        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>100</b> Life<br/>+<b>8.0</b> Supply<br/>Improved Spiked Carapace</span>"
       }
     },
     {

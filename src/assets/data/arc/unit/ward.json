@@ -1,6 +1,12 @@
 {
-  "Name": "Ward",
-  "Description": "Support unit. Can use Restitution and Shell Dome.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Ward",
+    "ruRU": "Защитник"
+  },
+  "Description": {
+    "enUS": "Support unit. Can use Restitution and Shell Dome.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Юнит поддержки. Может использовать Восстановление и Силовой Купол.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": "Keiron Mechanical Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Mechanical Armor",
+    "ruRU": "Броня Механических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 630,
   "TurningRate": 630,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Ward/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Ward/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Ward/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Ward/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,6 +99,7 @@
     "ForceField"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 1000,
   "Sight": 10,
   "CostCategory": "Army",
@@ -180,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -254,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -344,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -509,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -660,8 +702,14 @@
         "AbilCmd": "WardShellDome,Cancel",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -682,8 +730,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -810,8 +864,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       },
       {
@@ -950,8 +1010,14 @@
         "AbilCmd": "WardRestitution,Execute",
         "id": "Restitution",
         "Icon": "btn-ability-keiron-restitution",
-        "Tooltip": "Restores the target unit's shields proportional to the shields expended by the caster. The target and units in an area have their shield's charge restored as well.",
-        "Name": "Restitution",
+        "Name": {
+          "enUS": "Restitution",
+          "ruRU": "Восстановление"
+        },
+        "Tooltip": {
+          "enUS": "Restores the target unit's shields proportional to the shields expended by the caster. The target and units in an area have their shield's charge restored as well.",
+          "ruRU": "Восстанавливает щиты цели пропорционально количеству щитов, потраченных кастером. Боевые еденицы рядом с целью также восстанавливают заряд щитов."
+        },
         "Hotkey": "R"
       },
       {
@@ -1101,8 +1167,14 @@
         "AbilCmd": "WardShellDome,Execute",
         "id": "ShellDome",
         "Icon": "btn-ability-keiron-shelldome",
-        "Tooltip": "Places a Shell Dome, a structure which protects ground units in an area from all attack damage. The protection is equal to the shields of the caster.",
-        "Name": "Shell Dome",
+        "Name": {
+          "enUS": "Shell Dome",
+          "ruRU": "Силовой Купол"
+        },
+        "Tooltip": {
+          "enUS": "Places a Shell Dome, a structure which protects ground units in an area from all attack damage. The protection is equal to the shields of the caster.",
+          "ruRU": "Установить Силовой Купол, защищеющий юнитов под ним от атак. Защита купола равна количеству заряда щитов кастера."
+        },
         "Hotkey": "D"
       }
     ]
@@ -1119,7 +1191,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Ward",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Ward",
   "Attributes": [
     "Armored",
@@ -1131,7 +1206,7 @@
   "Speed": 2.5,
   "Food": -3,
   "CostResource": {
-    "Minerals": 150,
+    "Minerals": 100,
     "Vespene": 150
   },
   "EffectArray": {
@@ -1142,13 +1217,17 @@
   "SubgroupPriority": 30,
   "GlossaryPriority": 20,
   "Icon": "btn-unit-keiron-ward",
+  "Model": "Ward",
   "LifeArmorIcon": "btn-upgrade-keiron-mechanicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "WardWeapon",
       "Icon": "btn-upgrade-keiron-mechanicalweaponslevel0",
-      "Name": "Reclaimation Shards",
+      "Name": {
+        "enUS": "Reclaimation Shards",
+        "ruRU": "Осколки восстановления"
+      },
       "Amount": 6,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -1159,50 +1238,90 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "WardPassiveShellRegen"
+      "id": "WardPassiveShellRegen",
+      "Name": {
+        "enUS": "Ward - Passive Shell Regen"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "WardShellDomeReqDummy"
+      "id": "WardShellDomeReqDummy",
+      "Name": {
+        "enUS": "Ward - Shell Dome Req Dummy"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "WardShellDomeTracker"
+      "id": "WardShellDomeTracker",
+      "Name": {
+        "enUS": "Ward - Shell Dome Tracker"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
       "id": "WardRestitution",
-      "Name": "Ward - Restitution"
+      "Name": {
+        "enUS": "Ward - Restitution",
+        "ruRU": "Ward - Restitution"
+      }
     },
     {
       "id": "WardShellDome",
-      "Name": "Ward - Shell Dome"
+      "Name": {
+        "enUS": "Ward - Shell Dome",
+        "ruRU": "Ward - Shell Dome"
+      }
     }
   ],
   "$Upgrades": [
@@ -1245,71 +1364,131 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "WardShellDome,Cancel",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     },
     {
       "AbilCmd": "WardRestitution,Execute",
       "id": "Restitution",
       "Icon": "btn-ability-keiron-restitution",
-      "Tooltip": "Restores the target unit's shields proportional to the shields expended by the caster. The target and units in an area have their shield's charge restored as well.",
-      "Name": "Restitution"
+      "Name": {
+        "enUS": "Restitution",
+        "ruRU": "Восстановление"
+      },
+      "Tooltip": {
+        "enUS": "Restores the target unit's shields proportional to the shields expended by the caster. The target and units in an area have their shield's charge restored as well.",
+        "ruRU": "Восстанавливает щиты цели пропорционально количеству щитов, потраченных кастером. Боевые еденицы рядом с целью также восстанавливают заряд щитов."
+      }
     },
     {
       "AbilCmd": "WardShellDome,Execute",
       "id": "ShellDome",
       "Icon": "btn-ability-keiron-shelldome",
-      "Tooltip": "Places a Shell Dome, a structure which protects ground units in an area from all attack damage. The protection is equal to the shields of the caster.",
-      "Name": "Shell Dome"
+      "Name": {
+        "enUS": "Shell Dome",
+        "ruRU": "Силовой Купол"
+      },
+      "Tooltip": {
+        "enUS": "Places a Shell Dome, a structure which protects ground units in an area from all attack damage. The protection is equal to the shields of the caster.",
+        "ruRU": "Установить Силовой Купол, защищеющий юнитов под ним от атак. Защита купола равна количеству заряда щитов кастера."
+      }
     }
   ]
 }

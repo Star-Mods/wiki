@@ -1,6 +1,12 @@
 {
-  "Name": "Infusion Tower",
-  "Description": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: #FFE303\">There is a detection function.</span>",
+  "Name": {
+    "enUS": "Infusion Tower",
+    "ruRU": "Башня восстановления"
+  },
+  "Description": {
+    "enUS": "Support structure. Regenerates health for all nearby allied units.<br/><br/><span style=\"color: FFE303\">There is a detection function.</span>",
+    "ruRU": "Строение поддержки. Восстанавливает здоровье всех находящихся поблизости союзников.<br/><br/><span style=\"color: FFE303\">Есть функция детекции.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 400,
   "LifeMax": 400,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "InfusionTower/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "InfusionTower/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "InfusionTower/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "InfusionTower/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -175,8 +186,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -195,8 +212,14 @@
         "Type": "Passive",
         "id": "BeathaniumInfusionField",
         "Icon": "btn-ued-infusiontowerheal",
-        "Tooltip": "Infuses staballoy plating of nearby units with purified beathanium, slowly regenerating their health.",
-        "Name": "Beathanium Infusion Field"
+        "Name": {
+          "enUS": "Beathanium Infusion Field",
+          "ruRU": "Поле восстановления беатания"
+        },
+        "Tooltip": {
+          "enUS": "Infuses staballoy plating of nearby units with purified beathanium, slowly regenerating their health.",
+          "ruRU": "Восстанавливает очищенный беатаний в броне находящихся поблизости дружественных единиц, тем самым восстанавливая их здоровье."
+        }
       },
       {
         "Info": {
@@ -233,7 +256,7 @@
             "ChannelingMinimum": 1,
             "RangeUseCasterRadius": 1,
             "ReApproachable": 1,
-            "RequireTargetVision": 1,
+            "RequireTargetVision": 0,
             "WaitToSpend": 1,
             "UpdateChargesOnLevelChange": 1,
             "BestUnit": 1
@@ -313,7 +336,7 @@
             }
           ],
           "Range": [
-            25
+            30
           ],
           "Arc": 360,
           "UninterruptibleArray": {
@@ -342,8 +365,14 @@
         "AbilCmd": "AbilitiIrradiationBMField,Execute",
         "id": "UnknownButton3",
         "Icon": "btn-ability-mengsk-blimp-propagandamode",
-        "Tooltip": "Irradiate everyone with a Beatan magnetic field in the specified area.<br/>Units at the same time <span style=\"color: #FFFF00\">lose invisibility for 10 seconds.",
-        "Name": "Beatan magnetic field emitter",
+        "Name": {
+          "enUS": "Beatan magnetic field emitter",
+          "ruRU": "Излучатель беатанового магнитного поля"
+        },
+        "Tooltip": {
+          "enUS": "Irradiate and reveal everyone with a Beatan magnetic field in the specified area.<br/>Units at the same time <span style=\"color: FFFF00\">lose invisibility for 10 seconds.",
+          "ruRU": "Облучить всех беатаново-магнитным полем в указаной области.<br/>Цели при этом  <span style=\"color: FFFF00\">теряют возможность маскировки на 10 сек."
+        },
         "Hotkey": "R"
       },
       {
@@ -477,8 +506,14 @@
         "AbilCmd": "AbilityHightRegeneration,Execute",
         "id": "ButtonIonRecharging",
         "Icon": "btn-techupgrade-terran-stabilizermedpacks",
-        "Tooltip": "Restores health by 200% stronger. Duration 20 sec.",
-        "Name": "Ion charging",
+        "Name": {
+          "enUS": "Ion charging",
+          "ruRU": "Ионная подзарядка"
+        },
+        "Tooltip": {
+          "enUS": "Restores 200% extra health to friendly units within 7 distances in 20 seconds duration",
+          "ruRU": "Восстанавливает здоровье на 200% сильнее. Продолжительность 20 сек."
+        },
         "Hotkey": "G"
       }
     ]
@@ -500,30 +535,47 @@
   "EnergyRegenRate": 0.5625,
   "id": "InfusionTower",
   "Icon": "btn-structure-ued-hivemindemulator",
+  "Model": "UED_HiveMindEmulator_V1",
   "LifeArmorIcon": "btn-upgrade-stetmann-mechagroundplating-level1",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDheal"
+      "id": "UEDheal",
+      "Name": {
+        "enUS": "UEDheal",
+        "ruRU": "UEDheal"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
-      "id": "AbilitiIrradiationBMField"
+      "id": "AbilitiIrradiationBMField",
+      "Name": {
+        "ruRU": "Облучить низкочастотным электромагнитным полем"
+      }
     },
     {
-      "id": "AbilityHightRegeneration"
+      "id": "AbilityHightRegeneration",
+      "Name": {
+        "enUS": "Ионная подзарядка",
+        "ruRU": "Повышенная регенерация"
+      }
     }
   ],
   "$Upgrades": [
     "UpgradeToInfusionTower",
     "InfusionTower",
     "CountUnitInfusionTowerCompleteOnlyTechTreeCheat",
+    "UEDHightDurability",
     "Arsenal2",
     "UEDPlacementDummySmall",
     "UEDPlacementDummySmall2",
@@ -543,22 +595,40 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "AbilitiIrradiationBMField,Execute",
       "id": "UnknownButton3",
       "Icon": "btn-ability-mengsk-blimp-propagandamode",
-      "Tooltip": "Irradiate everyone with a Beatan magnetic field in the specified area.<br/>Units at the same time <span style=\"color: #FFFF00\">lose invisibility for 10 seconds.",
-      "Name": "Beatan magnetic field emitter"
+      "Name": {
+        "enUS": "Beatan magnetic field emitter",
+        "ruRU": "Излучатель беатанового магнитного поля"
+      },
+      "Tooltip": {
+        "enUS": "Irradiate and reveal everyone with a Beatan magnetic field in the specified area.<br/>Units at the same time <span style=\"color: FFFF00\">lose invisibility for 10 seconds.",
+        "ruRU": "Облучить всех беатаново-магнитным полем в указаной области.<br/>Цели при этом  <span style=\"color: FFFF00\">теряют возможность маскировки на 10 сек."
+      }
     },
     {
       "AbilCmd": "AbilityHightRegeneration,Execute",
       "id": "ButtonIonRecharging",
       "Icon": "btn-techupgrade-terran-stabilizermedpacks",
-      "Tooltip": "Restores health by 200% stronger. Duration 20 sec.",
-      "Name": "Ion charging"
+      "Name": {
+        "enUS": "Ion charging",
+        "ruRU": "Ионная подзарядка"
+      },
+      "Tooltip": {
+        "enUS": "Restores 200% extra health to friendly units within 7 distances in 20 seconds duration",
+        "ruRU": "Восстанавливает здоровье на 200% сильнее. Продолжительность 20 сек."
+      }
     }
   ]
 }

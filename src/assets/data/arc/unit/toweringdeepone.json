@@ -1,6 +1,10 @@
 {
-  "Name": "Towering Deep One",
-  "Description": "Spawns flying Dragon units.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms",
+  "Name": {
+    "enUS": "Towering Deep One"
+  },
+  "Description": {
+    "enUS": "Spawns flying Dragon units.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 180,
   "TurningRate": 180,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ToweringDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ToweringDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ToweringDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ToweringDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -312,8 +333,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -376,8 +403,14 @@
         "AbilCmd": "BuildInProgress,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -398,8 +431,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -459,8 +498,11 @@
                 },
                 "DefaultButtonFace": "GenesisPitTowering"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "GenesisPitTowering",
-              "Time": 30
+              "Time": 21
             },
             "Build2": {
               "Button": {
@@ -469,8 +511,11 @@
                 },
                 "DefaultButtonFace": "AugmentationPitTowering"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitTowering",
-              "Time": 50
+              "Time": 56
             },
             "Build3": {
               "Button": {
@@ -694,8 +739,14 @@
         "AbilCmd": "ToweringDeepOneBuild,Halt",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -709,13 +760,13 @@
           "Unit": [
             "Fleshrender"
           ],
-          "Time": 40,
+          "Time": 21,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "Fleshrender"
         ],
-        "Time": 40,
+        "Time": 21,
         "Cost": {
           "Minerals": 50,
           "Vespene": 25,
@@ -732,8 +783,12 @@
         "AbilCmd": "ToweringDeepOneTrain,Train1",
         "id": "Fleshrender",
         "Icon": "btn-unit-zerg-scourge",
-        "Tooltip": "Fast flying melee unit.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+15 Life<br/>Infernal Effigy</span>",
-        "Name": "Spawn Fleshrender",
+        "Name": {
+          "enUS": "Spawn Fleshrender"
+        },
+        "Tooltip": {
+          "enUS": "Fast flying melee unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>15</b> Life<br/>Infernal Effigy</span>"
+        },
         "Hotkey": "Q"
       },
       {
@@ -747,13 +802,13 @@
           "Unit": [
             "AuroraConduit"
           ],
-          "Time": 45,
+          "Time": 49,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "AuroraConduit"
         ],
-        "Time": 45,
+        "Time": 49,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -770,8 +825,12 @@
         "AbilCmd": "ToweringDeepOneTrain,Train2",
         "id": "AuroraConduit",
         "Icon": "btn-unit-zerg-mutalisk-broodlord",
-        "Tooltip": "Flying ranged support unit. Reduces enemy armor on attack.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Range<br/>Nether Shock chain deals damage</span>",
-        "Name": "Spawn Aurora Conduit",
+        "Name": {
+          "enUS": "Spawn Aurora Conduit"
+        },
+        "Tooltip": {
+          "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed</span>"
+        },
         "Hotkey": "W"
       },
       {
@@ -785,13 +844,13 @@
           "Unit": [
             "Arkwyrm"
           ],
-          "Time": 35,
+          "Time": 28,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "Arkwyrm"
         ],
-        "Time": 35,
+        "Time": 28,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -808,8 +867,12 @@
         "AbilCmd": "ToweringDeepOneTrain,Train3",
         "id": "Arkwyrm",
         "Icon": "btn-unit-zerg-leviathan",
-        "Tooltip": "Flying transport. Can load and unload units. Ranged unload.<br/><br/><span style=\"color: #00FF00\">Ascend:<br/>+75 Life<br/>+1 Armor<br/>+0.7 Speed</span>",
-        "Name": "Spawn Arkwyrm",
+        "Name": {
+          "enUS": "Spawn Arkwyrm"
+        },
+        "Tooltip": {
+          "enUS": "Flying transport. Can load and unload units. Ranged unload.<br/><br/><span style=\"color: 00FF00\">Ascend:<br/>+<b>75</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Territorial Dive</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -824,13 +887,13 @@
           "Unit": [
             "VolcanicHarbinger"
           ],
-          "Time": 75,
+          "Time": 70,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "VolcanicHarbinger"
         ],
-        "Time": 75,
+        "Time": 70,
         "Cost": {
           "Minerals": 300,
           "Vespene": 200,
@@ -847,8 +910,12 @@
         "AbilCmd": "ToweringDeepOneTrain,Train4",
         "id": "VolcanicHarbinger",
         "Icon": "btn-lostvinking-swarmguardian",
-        "Tooltip": "Heavy siege flyer that charges up attacks.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+45 Life<br/>+50% Attack Speed<br/>+1 Attack Range</span>",
-        "Name": "Spawn Volcanic Harbinger",
+        "Name": {
+          "enUS": "Spawn Volcanic Harbinger"
+        },
+        "Tooltip": {
+          "enUS": "Heavy siege flyer that charges up attacks. Can be upgraded to gain charges while attacking.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>100</b>% Overload Speed</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -858,27 +925,27 @@
               "AllowMinimap": 0
             },
             "DefaultButtonFace": "GrimGlider",
-            "Requirements": "GrimGlider"
+            "Requirements": "AugmentationPit"
           },
           "Unit": [
             "GrimGlider"
           ],
-          "Time": 90,
+          "Time": 84,
           "Effect": "DragonTrainApplyBehavior1"
         },
         "Unit": [
           "GrimGlider"
         ],
-        "Time": 90,
+        "Time": 84,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 300,
+          "Minerals": 300,
+          "Vespene": 400,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -8
         },
         "Row": 0,
         "Column": 4,
@@ -886,8 +953,12 @@
         "AbilCmd": "ToweringDeepOneTrain,Train5",
         "id": "GrimGlider",
         "Icon": "btn-critter-sporeray",
-        "Tooltip": "Massive flying unit. Can rise units slain nearby as temporary shades.<br/><br/><span style=\"color: #FFE303\">Detector</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
-        "Name": "Spawn Grim Glider",
+        "Name": {
+          "enUS": "Spawn Grim Glider"
+        },
+        "Tooltip": {
+          "enUS": "Massive flying unit. Can drain energy, shields, and life from targets. Can destroy enemy projectiles. Can be upgraded to raise units slain nearby as temporary shades.<br/><br/><span style=\"color: FFE303\">Detector</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -898,11 +969,14 @@
             },
             "DefaultButtonFace": "GenesisPitTowering"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "GenesisPitTowering",
-          "Time": 30
+          "Time": 21
         },
         "Unit": "GenesisPitTowering",
-        "Time": 30,
+        "Time": 21,
         "Cost": {
           "Minerals": 75,
           "Vespene": 25,
@@ -918,8 +992,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "ToweringDeepOneBuild,Build1",
         "id": "GenesisPitTowering",
-        "Tooltip": "Spawns flying Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Fleshreders<br/>- Aurora Conduits<br/>- Arkwyrms",
-        "Name": "Propogate Genesis Pit",
+        "Name": {
+          "enUS": "Propagate Genesis Pit"
+        },
+        "Tooltip": {
+          "enUS": "Spawns flying Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms"
+        },
         "Hotkey": "Z"
       },
       {
@@ -930,11 +1008,14 @@
             },
             "DefaultButtonFace": "AugmentationPitTowering"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitTowering",
-          "Time": 50
+          "Time": 56
         },
         "Unit": "AugmentationPitTowering",
-        "Time": 50,
+        "Time": 56,
         "Cost": {
           "Minerals": 25,
           "Vespene": 75,
@@ -950,81 +1031,111 @@
         "Type": "AbilCmd",
         "AbilCmd": "ToweringDeepOneBuild,Build2",
         "id": "AugmentationPitTowering",
-        "Tooltip": "Contains upgrades for Dragon units spawned by Towering Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Volcanic Harbingers",
-        "Name": "Propogate Augmentation Pit",
+        "Name": {
+          "enUS": "Propagate Augmentation Pit"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Dragon units spawned by Towering Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Volcanic Harbingers<br/>- Grim Gliders"
+        },
         "Hotkey": "X"
       }
     ]
   },
+  "TechAliasArray": [
+    "ToweringDeepOne"
+  ],
   "Sight": 9,
   "CostResource": {
     "Minerals": 150,
-    "Vespene": 100
+    "Vespene": 150
   },
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
   "ScoreMake": 250,
   "ScoreKill": 250,
   "GlossaryPriority": 24,
-  "SubgroupPriority": 5,
+  "SubgroupPriority": 32,
   "TechTreeProducedUnitArray": [
     "Plodder",
     "Razorback"
   ],
   "Icon": "btn-unit-zerg-nydusdestroyer",
+  "Model": "ZergNydusAttacker",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "DragonTrain",
-      "Name": "Dragon - Train"
+      "Name": {
+        "enUS": "Dragon - Train"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "ToweringDeepOneBuild",
-      "Name": "Towering Deep One - Build"
+      "Name": {
+        "enUS": "Towering Deep One - Build"
+      }
     },
     {
       "id": "ToweringDeepOneTrain",
-      "Name": "Towering Deep One - Train"
+      "Name": {
+        "enUS": "Towering Deep One - Train"
+      }
     },
     {
       "id": "ToweringDeepOne",
-      "Name": "Towering Deep One"
+      "Name": {
+        "enUS": "Towering Deep One"
+      }
     }
   ],
   "$Upgrades": [
-    "ToweringDeepOneNoFootprint",
-    "ToweringDeepOne",
-    "GenesisPitTowering",
-    "PlodderBuild",
     "DragonPlateArmorLevel1",
+    "ToweringDeepOne",
+    "ToweringDeepOneNoFootprint",
     "ToweringDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "PlodderBuild"
   ],
   "$Requirements": [],
   "$Production": [
@@ -1048,90 +1159,154 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneBuild,Halt",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train1",
       "id": "Fleshrender",
       "Icon": "btn-unit-zerg-scourge",
-      "Tooltip": "Fast flying melee unit.<br/><br/><c val=\"#ColorAttackInfo\">Can attack air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+15 Life<br/>Infernal Effigy</span>",
-      "Name": "Spawn Fleshrender"
+      "Name": {
+        "enUS": "Spawn Fleshrender"
+      },
+      "Tooltip": {
+        "enUS": "Fast flying melee unit.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>15</b> Life<br/>Infernal Effigy</span>"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train2",
       "id": "AuroraConduit",
       "Icon": "btn-unit-zerg-mutalisk-broodlord",
-      "Tooltip": "Flying ranged support unit. Reduces enemy armor on attack.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+30 Life<br/>+1 Range<br/>Nether Shock chain deals damage</span>",
-      "Name": "Spawn Aurora Conduit"
+      "Name": {
+        "enUS": "Spawn Aurora Conduit"
+      },
+      "Tooltip": {
+        "enUS": "Flying ranged support unit. Reduces armor on attack. Can be upgraded to reduce the armor of additional targets.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>60</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>50.0</b>% Attack Speed</span>"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train3",
       "id": "Arkwyrm",
       "Icon": "btn-unit-zerg-leviathan",
-      "Tooltip": "Flying transport. Can load and unload units. Ranged unload.<br/><br/><span style=\"color: #00FF00\">Ascend:<br/>+75 Life<br/>+1 Armor<br/>+0.7 Speed</span>",
-      "Name": "Spawn Arkwyrm"
+      "Name": {
+        "enUS": "Spawn Arkwyrm"
+      },
+      "Tooltip": {
+        "enUS": "Flying transport. Can load and unload units. Ranged unload.<br/><br/><span style=\"color: 00FF00\">Ascend:<br/>+<b>75</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Territorial Dive</span>"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train4",
       "id": "VolcanicHarbinger",
       "Icon": "btn-lostvinking-swarmguardian",
-      "Tooltip": "Heavy siege flyer that charges up attacks.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+45 Life<br/>+50% Attack Speed<br/>+1 Attack Range</span>",
-      "Name": "Spawn Volcanic Harbinger"
+      "Name": {
+        "enUS": "Spawn Volcanic Harbinger"
+      },
+      "Tooltip": {
+        "enUS": "Heavy siege flyer that charges up attacks. Can be upgraded to gain charges while attacking.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>+<b>1</b> Attack Range<br/>+<b>100</b>% Overload Speed</span>"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneTrain,Train5",
       "id": "GrimGlider",
       "Icon": "btn-critter-sporeray",
-      "Tooltip": "Massive flying unit. Can rise units slain nearby as temporary shades.<br/><br/><span style=\"color: #FFE303\">Detector</span><br/><br/><span style=\"color: #00FF00\">Ascended:<br/>+120 Life<br/>+200% Energy Regeneration<br/>+1.4 Speed</span>",
-      "Name": "Spawn Grim Glider"
+      "Name": {
+        "enUS": "Spawn Grim Glider"
+      },
+      "Tooltip": {
+        "enUS": "Massive flying unit. Can drain energy, shields, and life from targets. Can destroy enemy projectiles. Can be upgraded to raise units slain nearby as temporary shades.<br/><br/><span style=\"color: FFE303\">Detector</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>70</b> Life<br/>+<b>100</b>% Energy Regeneration<br/>+<b>1.0</b> Speed<br/>Wraith Night</span>"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneBuild,Build1",
       "id": "GenesisPitTowering",
-      "Tooltip": "Spawns flying Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Fleshreders<br/>- Aurora Conduits<br/>- Arkwyrms",
-      "Name": "Propogate Genesis Pit"
+      "Name": {
+        "enUS": "Propagate Genesis Pit"
+      },
+      "Tooltip": {
+        "enUS": "Spawns flying Dragon units. Inherits Augmentation Pit status from its parent.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Fleshrenders<br/>- Aurora Conduits<br/>- Arkwyrms"
+      }
     },
     {
       "AbilCmd": "ToweringDeepOneBuild,Build2",
       "id": "AugmentationPitTowering",
-      "Tooltip": "Contains upgrades for Dragon units spawned by Towering Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Volcanic Harbingers",
-      "Name": "Propogate Augmentation Pit"
+      "Name": {
+        "enUS": "Propagate Augmentation Pit"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Dragon units spawned by Towering Deep Ones. Provides additional unit options for its parent and attached Genesis Pits.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Volcanic Harbingers<br/>- Grim Gliders"
+      }
     }
   ]
 }

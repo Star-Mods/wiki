@@ -1,6 +1,12 @@
 {
-  "Name": "Vespene Purification Plant",
-  "Description": "Calldown onto a Vespene Geyser to allow harvesting of vespene gas.",
+  "Name": {
+    "enUS": "Vespene Purification Plant",
+    "ruRU": "Станция очистки веспена"
+  },
+  "Description": {
+    "enUS": "Calldown onto a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Вызовите на веспеновый гейзер, чтобы обеспечить сбор веспена."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "VespenePurificationPlant/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "VespenePurificationPlant/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "VespenePurificationPlant/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "VespenePurificationPlant/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -177,8 +188,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -210,13 +227,21 @@
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGas",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas",
+        "ruRU": "Harvestable Vespene Geyser Gas"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -233,16 +258,21 @@
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

@@ -1,6 +1,10 @@
 {
-  "Name": "Augmentation Pit",
-  "Description": "Contains upgrades for Dragon units.",
+  "Name": {
+    "enUS": "Augmentation Pit"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Dragon units."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AugmentationPitGreater/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AugmentationPitGreater/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AugmentationPitGreater/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AugmentationPitGreater/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -257,10 +278,16 @@
             "Minerals": 50,
             "Vespene": 50
           },
-          "Time": 60,
+          "Charge": {
+            "Link": "Abil/GreaterDeepOneResearchSkyrazer"
+          },
+          "Cooldown": {
+            "Link": "Abil/GreaterDeepOneResearchSkyrazer"
+          },
+          "Time": 56,
           "Upgrade": "BerserkerMadness"
         },
-        "Time": 60,
+        "Time": 56,
         "Cost": {
           "Minerals": 50,
           "Vespene": 50,
@@ -274,11 +301,15 @@
         "Row": 0,
         "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research1",
+        "AbilCmd": "GreaterDeepOneResearchBerserker,Research1",
         "id": "GreaterDeepOneMadness",
         "Icon": "btn-ability-zerg-dehaka-intimidatingroar",
-        "Tooltip": "Forces enemies near Berserkers to attack them.",
-        "Name": "Augment Madness",
+        "Name": {
+          "enUS": "Augment Madness"
+        },
+        "Tooltip": {
+          "enUS": "Ground enemies within <b>4</b> range of a <span style=\"color: ffff8a\">Berserker</span> that are not attacking one have their movement speed slowed by <b>25</b>% or by <b>50</b>% if in melee range."
+        },
         "Hotkey": "Q"
       },
       {
@@ -296,10 +327,10 @@
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 80,
+          "Time": 105,
           "Upgrade": "SkyrazerEmberCore"
         },
-        "Time": 80,
+        "Time": 105,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -313,32 +344,36 @@
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research2",
+        "AbilCmd": "GreaterDeepOneResearchSkyrazer,Research1",
         "id": "GreaterDeepOneEmberCore",
         "Icon": "ui_tipicon_evolution_baneling-lava",
-        "Tooltip": "Increases the range of Skyrazers by their current cliff level.",
-        "Name": "Augment Ember Core",
+        "Name": {
+          "enUS": "Augment Ember Core"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Skyrazors</span> to use <span style=\"color: ffff8a\">Superior Blast</span> against targets on higher cliff levels. Increases the range of <span style=\"color: ffff8a\">Inferior Blast</span> by 1 and <span style=\"color: ffff8a\">Superior Blast</span> by 2."
+        },
         "Hotkey": "W"
       },
       {
-        "Upgrade": "HandofPowerMightyFist",
+        "Upgrade": "HandofPowerPortal",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0,
               "ShowInGlossary": 1
             },
-            "DefaultButtonFace": "GreaterDeepOneMightyFist",
-            "Requirements": "AugmentMightyFist"
+            "DefaultButtonFace": "GreaterDeepOnePortal",
+            "Requirements": "AugmentPortal"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
-          "Upgrade": "HandofPowerMightyFist"
+          "Time": 105,
+          "Upgrade": "HandofPowerPortal"
         },
-        "Time": 110,
+        "Time": 105,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -352,51 +387,16 @@
         "Row": 0,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research3",
-        "id": "GreaterDeepOneMightyFist",
-        "Icon": "ui_tipicon_campaign_hyb02-nullzone",
-        "Tooltip": "Increases the starting energy of Hands of Power by 25.",
-        "Name": "Augment Mighty Fist",
+        "AbilCmd": "GreaterDeepOneResearchHandofPower,Research1",
+        "id": "GreaterDeepOnePortal",
+        "Icon": "btn-ability-protoss-blackhole-color",
+        "Name": {
+          "enUS": "Augment Portal"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Hands of Power</span> to use Portal and increases their starting energy by 25."
+        },
         "Hotkey": "E"
-      },
-      {
-        "Upgrade": "HandofPowerFrenzy",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1
-            },
-            "DefaultButtonFace": "GreaterDeepOneFrenzy",
-            "Requirements": "AugmentFrenzy"
-          },
-          "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
-          },
-          "Time": 110,
-          "Upgrade": "HandofPowerFrenzy"
-        },
-        "Time": 110,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research4",
-        "id": "GreaterDeepOneFrenzy",
-        "Icon": "btn-ability-kerrigan-wildmutation",
-        "Tooltip": "Allows Hands of Power to use Frenzy, causing biological units in the target area to go mad for <b>14</b> seconds. Increases attack and movement speed by 50% but reduces armor by 2 and prevents control.",
-        "Name": "Augment Frenzy",
-        "Hotkey": "R"
       },
       {
         "Upgrade": "BrimstoneDemolisherInfernalBreath",
@@ -428,52 +428,18 @@
           "Food": 0
         },
         "Row": 0,
-        "Column": 4,
+        "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research5",
+        "AbilCmd": "GreaterDeepOneResearchBrimstoneDemolisher,Research1",
         "id": "GreaterDeepOneInfernalBreath",
-        "Icon": "btn-tips-walloffire",
-        "Tooltip": "Increases Brimstone Demolisher starting energy by 25 and Scorching Blaze range by 3.",
-        "Name": "Augment Infernal Breath",
-        "Hotkey": "T"
-      },
-      {
-        "Upgrade": "BrimstoneDemolisher",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "GreaterDeepOneBrimstoneDemolisher",
-            "Requirements": "AugmentBrimstoneDemolisher"
-          },
-          "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
-          },
-          "Time": 110,
-          "Upgrade": "BrimstoneDemolisher"
+        "Icon": "btn-ability-zerg-dehaka-godzillabreath",
+        "Name": {
+          "enUS": "Augment Infernal Breath"
         },
-        "Time": 110,
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: ffff8a\">Brimstone Demolishers</span> to use Infernal Breath."
         },
-        "Row": 2,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "GreaterDeepOneResearch,Research6",
-        "id": "GreaterDeepOneBrimstoneDemolisher",
-        "Icon": "btn-unit-zerg-brakk",
-        "Tooltip": "Allows the production of Brimstone Demolishers from Greater Deep Ones and attached Genesis Pits supported by Augmentation Pits.",
-        "Name": "Augment Brimstone Demolishers",
-        "Hotkey": "Z"
+        "Hotkey": "R"
       }
     ]
   },
@@ -487,32 +453,65 @@
     "Minerals": 25,
     "Vespene": 75
   },
-  "SubgroupPriority": 8,
+  "SubgroupPriority": 22,
   "Icon": "wireframe-zerg-primalproductiona",
+  "Model": "PrimalProductionA",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineage"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "AugmentationPit",
-      "Name": "Augmentation Pit"
+      "Name": {
+        "enUS": "Augmentation Pit"
+      }
     },
     {
-      "id": "GreaterDeepOneResearch",
-      "Name": "Greater Deep One - Research"
+      "id": "GreaterDeepOneResearchBerserker",
+      "Name": {
+        "enUS": "Greater Deep One - Research (Berserker)"
+      }
+    },
+    {
+      "id": "GreaterDeepOneResearchSkyrazer",
+      "Name": {
+        "enUS": "Greater Deep One - Research (Skyrazer)"
+      }
+    },
+    {
+      "id": "GreaterDeepOneResearchHandofPower",
+      "Name": {
+        "enUS": "Greater Deep One - Research (Hand of Power)"
+      }
+    },
+    {
+      "id": "GreaterDeepOneResearchBrimstoneDemolisher",
+      "Name": {
+        "enUS": "Greater Deep One - Research (Brimstone Demolisher)"
+      }
     }
   ],
   "$Upgrades": [
@@ -522,18 +521,15 @@
     "AugmentationPitGreater",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
-    "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "DragonPlateArmorLevel3"
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [
     "BerserkerMadness",
     "SkyrazerEmberCore",
-    "HandofPowerMightyFist",
-    "HandofPowerFrenzy",
-    "BrimstoneDemolisherInfernalBreath",
-    "BrimstoneDemolisher"
+    "HandofPowerPortal",
+    "BrimstoneDemolisherInfernalBreath"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -546,57 +542,71 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
-      "AbilCmd": "GreaterDeepOneResearch,Research1",
+      "AbilCmd": "GreaterDeepOneResearchBerserker,Research1",
       "id": "GreaterDeepOneMadness",
       "Icon": "btn-ability-zerg-dehaka-intimidatingroar",
-      "Tooltip": "Forces enemies near Berserkers to attack them.",
-      "Name": "Augment Madness"
+      "Name": {
+        "enUS": "Augment Madness"
+      },
+      "Tooltip": {
+        "enUS": "Ground enemies within <b>4</b> range of a <span style=\"color: ffff8a\">Berserker</span> that are not attacking one have their movement speed slowed by <b>25</b>% or by <b>50</b>% if in melee range."
+      }
     },
     {
-      "AbilCmd": "GreaterDeepOneResearch,Research2",
+      "AbilCmd": "GreaterDeepOneResearchSkyrazer,Research1",
       "id": "GreaterDeepOneEmberCore",
       "Icon": "ui_tipicon_evolution_baneling-lava",
-      "Tooltip": "Increases the range of Skyrazers by their current cliff level.",
-      "Name": "Augment Ember Core"
+      "Name": {
+        "enUS": "Augment Ember Core"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Skyrazors</span> to use <span style=\"color: ffff8a\">Superior Blast</span> against targets on higher cliff levels. Increases the range of <span style=\"color: ffff8a\">Inferior Blast</span> by 1 and <span style=\"color: ffff8a\">Superior Blast</span> by 2."
+      }
     },
     {
-      "AbilCmd": "GreaterDeepOneResearch,Research3",
-      "id": "GreaterDeepOneMightyFist",
-      "Icon": "ui_tipicon_campaign_hyb02-nullzone",
-      "Tooltip": "Increases the starting energy of Hands of Power by 25.",
-      "Name": "Augment Mighty Fist"
+      "AbilCmd": "GreaterDeepOneResearchHandofPower,Research1",
+      "id": "GreaterDeepOnePortal",
+      "Icon": "btn-ability-protoss-blackhole-color",
+      "Name": {
+        "enUS": "Augment Portal"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Hands of Power</span> to use Portal and increases their starting energy by 25."
+      }
     },
     {
-      "AbilCmd": "GreaterDeepOneResearch,Research4",
-      "id": "GreaterDeepOneFrenzy",
-      "Icon": "btn-ability-kerrigan-wildmutation",
-      "Tooltip": "Allows Hands of Power to use Frenzy, causing biological units in the target area to go mad for <b>14</b> seconds. Increases attack and movement speed by 50% but reduces armor by 2 and prevents control.",
-      "Name": "Augment Frenzy"
-    },
-    {
-      "AbilCmd": "GreaterDeepOneResearch,Research5",
+      "AbilCmd": "GreaterDeepOneResearchBrimstoneDemolisher,Research1",
       "id": "GreaterDeepOneInfernalBreath",
-      "Icon": "btn-tips-walloffire",
-      "Tooltip": "Increases Brimstone Demolisher starting energy by 25 and Scorching Blaze range by 3.",
-      "Name": "Augment Infernal Breath"
-    },
-    {
-      "AbilCmd": "GreaterDeepOneResearch,Research6",
-      "id": "GreaterDeepOneBrimstoneDemolisher",
-      "Icon": "btn-unit-zerg-brakk",
-      "Tooltip": "Allows the production of Brimstone Demolishers from Greater Deep Ones and attached Genesis Pits supported by Augmentation Pits.",
-      "Name": "Augment Brimstone Demolishers"
+      "Icon": "btn-ability-zerg-dehaka-godzillabreath",
+      "Name": {
+        "enUS": "Augment Infernal Breath"
+      },
+      "Tooltip": {
+        "enUS": "Allows <span style=\"color: ffff8a\">Brimstone Demolishers</span> to use Infernal Breath."
+      }
     }
   ]
 }

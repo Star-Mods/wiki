@@ -1,6 +1,12 @@
 {
-  "Name": "Tech Vault",
-  "Description": "Contains weapon upgrades for Genetron heavy ground units, and weapon and armor upgrades for Genetron air units.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Inciters at the Fabricator<br/>- Virtus at the Fabricator",
+  "Name": {
+    "enUS": "Tech Vault",
+    "ruRU": "Хранилище технологий"
+  },
+  "Description": {
+    "enUS": "Contains weapon upgrades for Genetron heavy ground units, and weapon and armor upgrades for Genetron air units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Inciters at the Fabricator<br/>- Virtus at the Fabricator",
+    "ruRU": "Содержит улучшения оружия для тяжелых наземных единиц и улучшения брони и оружия для всех воздушнх едениц Генетронов. <br/><br/><span style=\"color: FFFF80\">Открывает:<br/></span>- Аквила в Мануфактуре<br/>- Виртус в Фабрикаторе<br/>- Барсуки в Сборочном Массиве"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "TechVault/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "TechVault/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "TechVault/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "TechVault/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -177,8 +188,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -241,8 +258,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -280,8 +303,14 @@
         "AbilCmd": "TechVaultResearch,Research1",
         "id": "UpgradeHeavyWeapons",
         "Icon": "btn-upgrade-genetron-heavymechweapons-level1",
-        "Tooltip": "Upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-        "Name": "Upgrade Heavy Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Heavy Weapons Level 1",
+          "ruRU": "Улучшить тяжёлое вооружение до 1 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+          "ruRU": "Улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+        },
         "Hotkey": "R"
       },
       {
@@ -319,8 +348,14 @@
         "AbilCmd": "TechVaultResearch,Research2",
         "id": "UpgradeHeavyWeaponsLevel2",
         "Icon": "btn-upgrade-genetron-heavymechweapons-level2",
-        "Tooltip": "Further upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-        "Name": "Upgrade Heavy Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Heavy Weapons Level 2",
+          "ruRU": "Улучшить тяжёлое вооружение до 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+          "ruRU": "Значитель улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+        },
         "Hotkey": "R"
       },
       {
@@ -358,8 +393,14 @@
         "AbilCmd": "TechVaultResearch,Research3",
         "id": "UpgradeHeavyWeaponsLevel3",
         "Icon": "btn-upgrade-genetron-heavymechweapons-level3",
-        "Tooltip": "Maximizes the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-        "Name": "Upgrade Heavy Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Heavy Weapons Level 3",
+          "ruRU": "Улучшить тяжёлое вооружение до 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+          "ruRU": "Максимально улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+        },
         "Hotkey": "R"
       },
       {
@@ -397,8 +438,14 @@
         "AbilCmd": "TechVaultResearch,Research7",
         "id": "UpgradeAircraftWeapons",
         "Icon": "btn-upgrade-genetron-rocketweapons-level1",
-        "Tooltip": "Upgrades the damage of aircraft weapons.",
-        "Name": "Upgrade Aircraft Weapons Level 1",
+        "Name": {
+          "enUS": "Upgrade Aircraft Weapons Level 1",
+          "ruRU": "Улучшить вооружение авиации до 1 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the damage of aircraft weapons.",
+          "ruRU": "Улучшает атаку всех воздушных единиц Генетронов"
+        },
         "Hotkey": "E"
       },
       {
@@ -436,8 +483,14 @@
         "AbilCmd": "TechVaultResearch,Research8",
         "id": "UpgradeAircraftWeaponsLevel2",
         "Icon": "btn-upgrade-genetron-rocketweapons-level2",
-        "Tooltip": "Further upgrades the damage of aircraft weapons.",
-        "Name": "Upgrade Aircraft Weapons Level 2",
+        "Name": {
+          "enUS": "Upgrade Aircraft Weapons Level 2",
+          "ruRU": "Улучшить вооружение авиации до 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the damage of aircraft weapons.",
+          "ruRU": "Значительно улучшает атаку всех воздушных единиц Генетронов."
+        },
         "Hotkey": "E"
       },
       {
@@ -475,8 +528,14 @@
         "AbilCmd": "TechVaultResearch,Research9",
         "id": "UpgradeAircraftWeaponsLevel3",
         "Icon": "btn-upgrade-genetron-rocketweapons-level3",
-        "Tooltip": "Maximizes the damage of aircraft weapons.",
-        "Name": "Upgrade Aircraft Weapons Level 3",
+        "Name": {
+          "enUS": "Upgrade Aircraft Weapons Level 3",
+          "ruRU": "Улучшить вооружение авиации до 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the damage of aircraft weapons.",
+          "ruRU": "Максимально улучшает атаку всех воздушных единиц Генетронов."
+        },
         "Hotkey": "E"
       },
       {
@@ -514,8 +573,14 @@
         "AbilCmd": "TechVaultResearch,Research4",
         "id": "UpgradeAircraftPlating",
         "Icon": "btn-upgrade-genetron-aircraftplating-level1",
-        "Tooltip": "Upgrades the armor of Genetron air units.",
-        "Name": "Upgrade Aircraft Plating Level 1",
+        "Name": {
+          "enUS": "Upgrade Aircraft Plating Level 1",
+          "ruRU": "Улучшить обшивку авиации до 1 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of Genetron air units.",
+          "ruRU": "Улучшает броню всех воздушных единиц Генетронов."
+        },
         "Hotkey": "A"
       },
       {
@@ -552,8 +617,14 @@
         "AbilCmd": "TechVaultResearch,Research5",
         "id": "UpgradeAircraftPlatingLevel2",
         "Icon": "btn-upgrade-genetron-aircraftplating-level2",
-        "Tooltip": "Further upgrades the armor of Genetron air units.",
-        "Name": "Upgrade Aircraft Plating Level 2",
+        "Name": {
+          "enUS": "Upgrade Aircraft Plating Level 2",
+          "ruRU": "Улучшить обшивку авиации до 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of Genetron air units.",
+          "ruRU": "Значительно улучшает броню всех воздушных единиц Генетронов."
+        },
         "Hotkey": "A"
       },
       {
@@ -591,8 +662,14 @@
         "AbilCmd": "TechVaultResearch,Research6",
         "id": "UpgradeAircraftPlatingLevel3",
         "Icon": "btn-upgrade-genetron-aircraftplating-level3",
-        "Tooltip": "Maximizes the armor of Genetron air units.",
-        "Name": "Upgrade Aircraft Plating Level 3",
+        "Name": {
+          "enUS": "Upgrade Aircraft Plating Level 3",
+          "ruRU": "Улучшить обшивку авиации до 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of Genetron air units.",
+          "ruRU": "Максимально улучшает броню всех воздушных единиц Генетронов."
+        },
         "Hotkey": "A"
       }
     ]
@@ -611,6 +688,7 @@
     "Virtus"
   ],
   "Icon": "btn-building-genetron-techvault",
+  "Model": "TechVault",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -618,22 +696,37 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "TechVaultResearch",
-      "Name": "Research"
+      "Name": {
+        "enUS": "Research",
+        "ruRU": "Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -667,78 +760,144 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research1",
       "id": "UpgradeHeavyWeapons",
       "Icon": "btn-upgrade-genetron-heavymechweapons-level1",
-      "Tooltip": "Upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-      "Name": "Upgrade Heavy Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Heavy Weapons Level 1",
+        "ruRU": "Улучшить тяжёлое вооружение до 1 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+        "ruRU": "Улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research2",
       "id": "UpgradeHeavyWeaponsLevel2",
       "Icon": "btn-upgrade-genetron-heavymechweapons-level2",
-      "Tooltip": "Further upgrades the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-      "Name": "Upgrade Heavy Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Heavy Weapons Level 2",
+        "ruRU": "Улучшить тяжёлое вооружение до 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+        "ruRU": "Значитель улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research3",
       "id": "UpgradeHeavyWeaponsLevel3",
       "Icon": "btn-upgrade-genetron-heavymechweapons-level3",
-      "Tooltip": "Maximizes the damage of units produced from the <span style=\"color: #FFFF80\">Fabricator</span>.",
-      "Name": "Upgrade Heavy Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Heavy Weapons Level 3",
+        "ruRU": "Улучшить тяжёлое вооружение до 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage of units produced from the <span style=\"color: FFFF80\">Fabricator</span>.",
+        "ruRU": "Максимально улучшает атаку единиц произведённых в <span style=\"color: FFFF80\">Фабрикаторах</span>."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research7",
       "id": "UpgradeAircraftWeapons",
       "Icon": "btn-upgrade-genetron-rocketweapons-level1",
-      "Tooltip": "Upgrades the damage of aircraft weapons.",
-      "Name": "Upgrade Aircraft Weapons Level 1"
+      "Name": {
+        "enUS": "Upgrade Aircraft Weapons Level 1",
+        "ruRU": "Улучшить вооружение авиации до 1 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the damage of aircraft weapons.",
+        "ruRU": "Улучшает атаку всех воздушных единиц Генетронов"
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research8",
       "id": "UpgradeAircraftWeaponsLevel2",
       "Icon": "btn-upgrade-genetron-rocketweapons-level2",
-      "Tooltip": "Further upgrades the damage of aircraft weapons.",
-      "Name": "Upgrade Aircraft Weapons Level 2"
+      "Name": {
+        "enUS": "Upgrade Aircraft Weapons Level 2",
+        "ruRU": "Улучшить вооружение авиации до 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the damage of aircraft weapons.",
+        "ruRU": "Значительно улучшает атаку всех воздушных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research9",
       "id": "UpgradeAircraftWeaponsLevel3",
       "Icon": "btn-upgrade-genetron-rocketweapons-level3",
-      "Tooltip": "Maximizes the damage of aircraft weapons.",
-      "Name": "Upgrade Aircraft Weapons Level 3"
+      "Name": {
+        "enUS": "Upgrade Aircraft Weapons Level 3",
+        "ruRU": "Улучшить вооружение авиации до 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the damage of aircraft weapons.",
+        "ruRU": "Максимально улучшает атаку всех воздушных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research4",
       "id": "UpgradeAircraftPlating",
       "Icon": "btn-upgrade-genetron-aircraftplating-level1",
-      "Tooltip": "Upgrades the armor of Genetron air units.",
-      "Name": "Upgrade Aircraft Plating Level 1"
+      "Name": {
+        "enUS": "Upgrade Aircraft Plating Level 1",
+        "ruRU": "Улучшить обшивку авиации до 1 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of Genetron air units.",
+        "ruRU": "Улучшает броню всех воздушных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research5",
       "id": "UpgradeAircraftPlatingLevel2",
       "Icon": "btn-upgrade-genetron-aircraftplating-level2",
-      "Tooltip": "Further upgrades the armor of Genetron air units.",
-      "Name": "Upgrade Aircraft Plating Level 2"
+      "Name": {
+        "enUS": "Upgrade Aircraft Plating Level 2",
+        "ruRU": "Улучшить обшивку авиации до 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of Genetron air units.",
+        "ruRU": "Значительно улучшает броню всех воздушных единиц Генетронов."
+      }
     },
     {
       "AbilCmd": "TechVaultResearch,Research6",
       "id": "UpgradeAircraftPlatingLevel3",
       "Icon": "btn-upgrade-genetron-aircraftplating-level3",
-      "Tooltip": "Maximizes the armor of Genetron air units.",
-      "Name": "Upgrade Aircraft Plating Level 3"
+      "Name": {
+        "enUS": "Upgrade Aircraft Plating Level 3",
+        "ruRU": "Улучшить обшивку авиации до 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of Genetron air units.",
+        "ruRU": "Максимально улучшает броню всех воздушных единиц Генетронов."
+      }
     }
   ]
 }

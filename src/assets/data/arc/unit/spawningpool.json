@@ -1,6 +1,12 @@
 {
-  "Name": "Spawning Pool",
-  "Description": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones",
+  "Name": {
+    "enUS": "Spawning Pool",
+    "ruRU": "Spawning Pool"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones",
+    "ruRU": "Contains upgrades for Zerglings.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Queens at the Hatchery, Lair, or Hive<br/>- Zerglings from Larvae<br/>- Spine Crawlers from Drones<br/>- Spore Crawlers from Drones"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Zerg Building Armor",
+  "LifeArmorName": {
+    "enUS": "Zerg Building Armor",
+    "ruRU": "Zerg Building Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SpawningPool/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SpawningPool/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SpawningPool/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SpawningPool/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -171,8 +182,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -235,8 +252,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -274,8 +297,14 @@
         "AbilCmd": "SpawningPoolResearch,Research2",
         "id": "zerglingmovementspeed",
         "Icon": "btn-upgrade-zerg-metabolicboost",
-        "Tooltip": "Increases the movement speed of <span style=\"color: #ffff8a\">Zerglings</span>.",
-        "Name": "Evolve Metabolic Boost",
+        "Name": {
+          "enUS": "Evolve Metabolic Boost",
+          "ruRU": "Evolve Metabolic Boost"
+        },
+        "Tooltip": {
+          "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>.",
+          "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>."
+        },
         "Hotkey": "M"
       },
       {
@@ -313,8 +342,14 @@
         "AbilCmd": "SpawningPoolResearch,Research1",
         "id": "zerglingattackspeed",
         "Icon": "btn-upgrade-zerg-adrenalglands",
-        "Tooltip": "Increases the attack speed of <span style=\"color: #ffff8a\">Zerglings</span> by 20%.",
-        "Name": "Evolve Adrenal Glands",
+        "Name": {
+          "enUS": "Evolve Adrenal Glands",
+          "ruRU": "Evolve Adrenal Glands"
+        },
+        "Tooltip": {
+          "enUS": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%.",
+          "ruRU": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%."
+        },
         "Hotkey": "A"
       }
     ]
@@ -331,45 +366,73 @@
   ],
   "id": "SpawningPool",
   "Icon": "btn-building-zerg-spawningpool",
+  "Model": "SpawningPoolEx1",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "OnCreep"
+      "id": "OnCreep",
+      "Name": {
+        "enUS": "On Creep",
+        "ruRU": "On Creep"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "ZergBuildingNotOnCreep"
+      "id": "ZergBuildingNotOnCreep",
+      "Name": {
+        "enUS": "Building Not On Creep",
+        "ruRU": "Building Not On Creep"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "ZergBuildingDies6"
+      "id": "ZergBuildingDies6",
+      "Name": {
+        "enUS": "Zerg Building Dies 6",
+        "ruRU": "Zerg Building Dies 6"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "SpawningPoolResearch",
-      "Name": "Research (Spawning Pool)"
+      "Name": {
+        "enUS": "Research (Spawning Pool)",
+        "ruRU": "Research (Spawning Pool)"
+      }
     }
   ],
   "$Upgrades": [
-    "CountUnitSpawningPoolCompleteOnlyTechTreeCheat",
-    "SpawningPool",
     "ZergBuild",
+    "SpawningPool",
+    "CountUnitSpawningPoolCompleteOnlyTechTreeCheat",
     "IsSpawningPool",
     "SpawningPool",
     "UPLRenameZerg",
+    "CasterIsSpawningPool",
     "CountUnitSpawningPoolCompleteOnly"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "Broodling"
+  ],
   "$Research": [
     "zerglingmovementspeed",
     "zerglingattackspeed"
@@ -384,29 +447,53 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "SpawningPoolResearch,Research2",
       "id": "zerglingmovementspeed",
       "Icon": "btn-upgrade-zerg-metabolicboost",
-      "Tooltip": "Increases the movement speed of <span style=\"color: #ffff8a\">Zerglings</span>.",
-      "Name": "Evolve Metabolic Boost"
+      "Name": {
+        "enUS": "Evolve Metabolic Boost",
+        "ruRU": "Evolve Metabolic Boost"
+      },
+      "Tooltip": {
+        "enUS": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>.",
+        "ruRU": "Increases the movement speed of <span style=\"color: ffff8a\">Zerglings</span>."
+      }
     },
     {
       "AbilCmd": "SpawningPoolResearch,Research1",
       "id": "zerglingattackspeed",
       "Icon": "btn-upgrade-zerg-adrenalglands",
-      "Tooltip": "Increases the attack speed of <span style=\"color: #ffff8a\">Zerglings</span> by 20%.",
-      "Name": "Evolve Adrenal Glands"
+      "Name": {
+        "enUS": "Evolve Adrenal Glands",
+        "ruRU": "Evolve Adrenal Glands"
+      },
+      "Tooltip": {
+        "enUS": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%.",
+        "ruRU": "Increases the attack speed of <span style=\"color: ffff8a\">Zerglings</span> by 20%."
+      }
     }
   ]
 }

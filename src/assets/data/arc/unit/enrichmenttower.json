@@ -1,6 +1,12 @@
 {
-  "Name": "Enrichment Tower",
-  "Description": "Being installed next to mineral druses allows you to extract more minerals.",
+  "Name": {
+    "enUS": "Enrichment Tower",
+    "ruRU": "Башня обогащения"
+  },
+  "Description": {
+    "enUS": "Being installed next to mineral druses allows you to extract more minerals.",
+    "ruRU": "Будучи установленной рядом с минеральными друзами позволяет добывать большее количество минералов."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 100,
-  "LifeMax": 100,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeStart": 200,
+  "LifeMax": 200,
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EnrichmentTower/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EnrichmentTower/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EnrichmentTower/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EnrichmentTower/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -107,8 +118,8 @@
   "Sight": 8,
   "CostCategory": "Economy",
   "CostResource": {
-    "Minerals": 150,
-    "Vespene": 150
+    "Minerals": 100,
+    "Vespene": 100
   },
   "RepairTime": 30,
   "AttackTargetPriority": 11,
@@ -174,8 +185,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -192,10 +209,14 @@
         "Row": 2,
         "Column": 0,
         "Type": "Passive",
-        "id": "UnknownButton4",
+        "id": "UEDRadiationofBeatania",
         "Icon": "btn-tips-richminerals",
-        "Tooltip": "It was noticed that beatanium can be embedded in the crystal lattice of mineral druse and thereby increase the amount of extracted resources by 1 unit.",
-        "Name": "Radiation of Beatania"
+        "Name": {
+          "enUS": "Radiation of Beatania"
+        },
+        "Tooltip": {
+          "enUS": "It was noticed that beatanium can be embedded in the crystal lattice of mineral druse and thereby increase the amount of extracted resources by 1 unit."
+        }
       },
       {
         "Info": {
@@ -265,8 +286,14 @@
         "AbilCmd": "OtklTowerMining,Off",
         "id": "ButtonTowerMiningVkl",
         "Icon": "btn-techupgrade-terran-ripwavemissiles",
-        "Tooltip": "Resume irradiation of mineral druze with beatings.",
-        "Name": "Turn on the Tower",
+        "Name": {
+          "enUS": "Turn on the Tower",
+          "ruRU": "Включить Башню"
+        },
+        "Tooltip": {
+          "enUS": "Resume irradiation of mineral druze with beatings.",
+          "ruRU": "Возобновить облучение минеральных друз беатанием."
+        },
         "Hotkey": "D"
       },
       {
@@ -337,8 +364,14 @@
         "AbilCmd": "OtklTowerMining,On",
         "id": "ButtonTowerMiningOtkl",
         "Icon": "btn-command-stop",
-        "Tooltip": "To stop irradiation of mineral druze with beatings.",
-        "Name": "Disable the Tower",
+        "Name": {
+          "enUS": "Disable the Tower",
+          "ruRU": "Отключить Башню"
+        },
+        "Tooltip": {
+          "enUS": "To stop irradiation of mineral druze with beatings.",
+          "ruRU": "Прекратить облучение минеральных друз беатанием."
+        },
         "Hotkey": "S"
       }
     ]
@@ -357,30 +390,43 @@
   "PlacementFootprint": "FootprintNoBuild1x1",
   "id": "EnrichmentTower",
   "Icon": "btn-building-terran-sensortower-silver",
+  "Model": "SensorTower_Silver",
   "LifeArmorIcon": "btn-upgrade-stetmann-mechagroundplating-level1",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "AlgoritmIrradiationFieldBeatan",
-      "Icon": "btn-structure-ued-sensortower"
+      "Icon": "btn-structure-ued-sensortower",
+      "Name": {
+        "ruRU": "Излучение поля беатания"
+      },
+      "Tooltip": {
+        "ruRU": "Минеральная друза подвергается воздействию беатанического излучения. Рабочий может добывать с нее большее количество минералов."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "OtklTowerMining",
-      "Name": "Disable the Enrichment Tower"
+      "Name": {
+        "enUS": "Disable the Enrichment Tower",
+        "ruRU": "Отключить башню обогащения"
+      }
     }
   ],
   "$Upgrades": [
-    "BeaconBuild",
-    "EnrichmentTower",
     "CreatUnitTowerMining",
+    "EnrichmentTower",
     "CalldownEnrichmentTower",
+    "BeaconBuild",
     "UEDCalldownStructure",
     "EnrichmentTower",
     "EnrichmentTowerSplat"
@@ -396,22 +442,40 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "OtklTowerMining,Off",
       "id": "ButtonTowerMiningVkl",
       "Icon": "btn-techupgrade-terran-ripwavemissiles",
-      "Tooltip": "Resume irradiation of mineral druze with beatings.",
-      "Name": "Turn on the Tower"
+      "Name": {
+        "enUS": "Turn on the Tower",
+        "ruRU": "Включить Башню"
+      },
+      "Tooltip": {
+        "enUS": "Resume irradiation of mineral druze with beatings.",
+        "ruRU": "Возобновить облучение минеральных друз беатанием."
+      }
     },
     {
       "AbilCmd": "OtklTowerMining,On",
       "id": "ButtonTowerMiningOtkl",
       "Icon": "btn-command-stop",
-      "Tooltip": "To stop irradiation of mineral druze with beatings.",
-      "Name": "Disable the Tower"
+      "Name": {
+        "enUS": "Disable the Tower",
+        "ruRU": "Отключить Башню"
+      },
+      "Tooltip": {
+        "enUS": "To stop irradiation of mineral druze with beatings.",
+        "ruRU": "Прекратить облучение минеральных друз беатанием."
+      }
     }
   ]
 }

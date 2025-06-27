@@ -1,5 +1,12 @@
 {
-  "Name": "Garmr",
+  "Name": {
+    "enUS": "Garmr",
+    "ruRU": "Гармр"
+  },
+  "Description": {
+    "enUS": "Genetically engineered monstrosity. Effective against lightly-armored targets, and it can tunnel through the ground to cross vast distances quickly.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Чудовищный продукт генной инженерии. Обладает огненным дыханием, эффективным против легкобронированных целей. Может быстро пересекать большие дистанции за счет подкопов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -11,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 45,
   "LifeMax": 45,
-  "LifeArmorName": "UED Beathanium-Infused Carapace",
+  "LifeArmorName": {
+    "enUS": "UED Beathanium-Infused Carapace",
+    "ruRU": "Усиленный беатанием панцирь"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -63,16 +73,26 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Garmr/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GarmrDownUED/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GarmrDownUED/Revive",
+        "Location": "Unit"
+      }
     },
-    "Cooldown": {
-      "Link": "Garmr/Revive",
-      "Location": "Unit"
+    {
+      "Charge": {
+        "Link": "Garmr/Revive"
+      },
+      "Cooldown": {
+        "Link": "Garmr/Revive"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -194,8 +214,14 @@
         "AbilCmd": "moveUED,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -268,8 +294,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -359,8 +391,14 @@
         "AbilCmd": "moveUED,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +472,14 @@
         "AbilCmd": "attackUED,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -525,8 +569,14 @@
         "AbilCmd": "moveUED,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -682,8 +732,14 @@
         "AbilCmd": "BurrowChargeRevD2,Execute",
         "id": "BurrowChargeGarmr",
         "Icon": "btn-upgrade-zerg-burrowcharge",
-        "Tooltip": "Burrow and charge towards the target point. Upon unburrowing, all units in the vicinity are knocked back and take damage.",
-        "Name": "Burrow Charge",
+        "Name": {
+          "enUS": "Burrow Charge",
+          "ruRU": "Подземный рывок"
+        },
+        "Tooltip": {
+          "enUS": "Burrow and charge towards the target point. Upon unburrowing, all units in the vicinity are knocked back and take 9 damage.",
+          "ruRU": "Закопаться и совершить рывок к указанной области. Достигнув её, боевая единица выкапывается, отбрасывая всех противников поблизости и наносит им урон."
+        },
         "Hotkey": "Q"
       },
       {
@@ -702,8 +758,14 @@
         "Type": "Passive",
         "id": "IcarusCatalyst",
         "Icon": "btn-ability-mengsk-ghost-pyrokineticimmolation_orange",
-        "Tooltip": "<span style=\"color: #ffff8a\">Garmrs</span> receives an injection of the Icarus compound, which increases its movement speed and causes an explosion when dealing fatal damage, causing up to 15 damage in a small radius around the unit. During the next 5 seconds, slows down the movement speed by 30% and deals another 15 damage, adds up to 3 times.",
-        "Name": "Icarus Catalyst",
+        "Name": {
+          "enUS": "Icarus Catalyst",
+          "ruRU": "Катализатор «Икар»"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: ffff8a\">Garmrs</span> receives an injection of the Icarus compound, which increases its movement speed and causes an explosion when dealing fatal damage, causing up to 15 damage in a small radius around the unit. During the next 5 seconds, slows down the movement speed by 30% and deals another 15 damage, adds up to 3 times.",
+          "ruRU": "<span style=\"color: ffff8a\">Гармр</span> получает инъекцию состава «Икар», что увеличивает его скорость перемещения и вызывает взрыв при нанесении смертельного урона, наносящий до 15 урона в небольшом радиусе вокруг единицы. В течении следующих 5 сек замедляет скорость передвижения на 30% и наносит еще 15 урона, складывается до 3 раз."
+        },
         "Hotkey": ""
       }
     ]
@@ -714,8 +776,6 @@
   "ScoreKill": 100,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 82,
-  "GlossaryCategory": "Unit/Category/UEDUnits",
-  "GlossaryPriority": 65,
   "GlossaryStrongArray": [
     "Hellion",
     "Zergling",
@@ -730,11 +790,18 @@
   "KillDisplay": "Always",
   "RankDisplay": "Always",
   "id": "GarmrDownUED",
+  "Icon": "btn-ued-dog",
+  "Model": "RedstoneLavaCritter",
+  "LifeArmorIcon": "btn-upgrade-ued-armor-level0",
+  "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "CombustiveGob",
       "Icon": "weapon-trooper-icon-upgrade-0",
-      "Name": "Combustive Gob",
+      "Name": {
+        "enUS": "Combustive Gob",
+        "ruRU": "Горючий плевок"
+      },
       "Amount": 6,
       "AttributeBonus": {
         "Light": 3
@@ -747,30 +814,45 @@
   ],
   "Behaviors": [
     {
-      "id": "ExplodingBarrelLargeExplosion"
+      "id": "ExplodingBarrelLargeExplosion",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attackUED",
-      "Name": "Attack UED"
+      "Name": {
+        "enUS": "Attack UED",
+        "ruRU": "Attack UED"
+      }
     },
     {
       "id": "moveUED",
-      "Name": "Move UED"
+      "Name": {
+        "enUS": "Move UED",
+        "ruRU": "Move UED"
+      }
     },
     {
       "id": "BurrowChargeRevD2",
-      "Name": "Burrow Charge Garmr"
+      "Name": {
+        "enUS": "Burrow Charge Garmr",
+        "ruRU": "Burrow Charge Garmr"
+      }
     }
   ],
   "$Upgrades": [
     "UEDGarmrTransformDown",
-    "IcarusCatalyst"
+    "IcarusCatalyst",
+    "GarmrDownUED"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -789,43 +871,79 @@
       "AbilCmd": "moveUED,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "moveUED,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attackUED,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "moveUED,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "BurrowChargeRevD2,Execute",
       "id": "BurrowChargeGarmr",
       "Icon": "btn-upgrade-zerg-burrowcharge",
-      "Tooltip": "Burrow and charge towards the target point. Upon unburrowing, all units in the vicinity are knocked back and take damage.",
-      "Name": "Burrow Charge"
+      "Name": {
+        "enUS": "Burrow Charge",
+        "ruRU": "Подземный рывок"
+      },
+      "Tooltip": {
+        "enUS": "Burrow and charge towards the target point. Upon unburrowing, all units in the vicinity are knocked back and take 9 damage.",
+        "ruRU": "Закопаться и совершить рывок к указанной области. Достигнув её, боевая единица выкапывается, отбрасывая всех противников поблизости и наносит им урон."
+      }
     }
   ]
 }

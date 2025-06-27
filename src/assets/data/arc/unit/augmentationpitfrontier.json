@@ -1,6 +1,10 @@
 {
-  "Name": "Augmentation Pit",
-  "Description": "Contains upgrades for Dragon units.",
+  "Name": {
+    "enUS": "Augmentation Pit"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Dragon units."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +16,9 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": "Dragon Plate Armor",
+  "LifeArmorName": {
+    "enUS": "Dragon Plate Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AugmentationPitFrontier/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AugmentationPitFrontier/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AugmentationPitFrontier/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AugmentationPitFrontier/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +117,7 @@
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -174,8 +183,14 @@
         "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -238,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -253,16 +274,16 @@
             "Requirements": "AugmentDragonMeleeAttacksLevel1"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 50,
+            "Vespene": 50
           },
           "Time": 160,
           "Upgrade": "DragonMeleeAttacksLevel1"
         },
         "Time": 160,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -275,9 +296,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research1",
         "id": "AugmentDragonMeleeAttacksLevel1",
-        "Icon": "btn-upgrade-zerg-meleeattacks-level1",
-        "Tooltip": "Upgrades all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-        "Name": "Augment Dragon Melee Attacks Level 1",
+        "Icon": "btn-upgrade-dehaka-meleeattacks-level1",
+        "Name": {
+          "enUS": "Augment Dragon Melee Attacks Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+        },
         "Hotkey": "Q"
       },
       {
@@ -291,16 +316,16 @@
             "Requirements": "AugmentDragonMeleeAttacksLevel2"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 75,
+            "Vespene": 75
           },
           "Time": 190,
           "Upgrade": "DragonMeleeAttacksLevel2"
         },
         "Time": 190,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 75,
+          "Vespene": 75,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -313,9 +338,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research2",
         "id": "AugmentDragonMeleeAttacksLevel2",
-        "Icon": "btn-upgrade-zerg-meleeattacks-level2",
-        "Tooltip": "Further upgrades all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-        "Name": "Augment Dragon Melee Attacks Level 2",
+        "Icon": "btn-upgrade-dehaka-meleeattacks-level2",
+        "Name": {
+          "enUS": "Augment Dragon Melee Attacks Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+        },
         "Hotkey": "Q"
       },
       {
@@ -329,16 +358,16 @@
             "Requirements": "AugmentDragonMeleeAttacksLevel3"
           },
           "Resource": {
-            "Minerals": 200,
-            "Vespene": 200
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 220,
           "Upgrade": "DragonMeleeAttacksLevel3"
         },
         "Time": 220,
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -351,9 +380,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research3",
         "id": "AugmentDragonMeleeAttacksLevel3",
-        "Icon": "btn-upgrade-zerg-meleeattacks-level3",
-        "Tooltip": "Maximizes all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-        "Name": "Augment Dragon Melee Attacks Level 3",
+        "Icon": "btn-upgrade-dehaka-meleeattacks-level3",
+        "Name": {
+          "enUS": "Augment Dragon Melee Attacks Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+        },
         "Hotkey": "Q"
       },
       {
@@ -367,16 +400,16 @@
             "Requirements": "AugmentDragonFireAttacksLevel1"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 160,
           "Upgrade": "DragonFireAttacksLevel1"
         },
         "Time": 160,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -389,9 +422,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research4",
         "id": "AugmentDragonFireAttacksLevel1",
-        "Icon": "fireball_6",
-        "Tooltip": "Upgrades the ranged attacks of all fire breathing Dragon units.",
-        "Name": "Augment Dragon Fire Attacks Level 1",
+        "Icon": "btn-upgrade-dragon-fireattacks-level1",
+        "Name": {
+          "enUS": "Augment Dragon Fire Attacks Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the ranged attacks of all fire breathing Dragon units."
+        },
         "Hotkey": "W"
       },
       {
@@ -405,16 +442,16 @@
             "Requirements": "AugmentDragonFireAttacksLevel2"
           },
           "Resource": {
-            "Minerals": 200,
-            "Vespene": 200
+            "Minerals": 175,
+            "Vespene": 175
           },
           "Time": 190,
           "Upgrade": "DragonFireAttacksLevel2"
         },
         "Time": 190,
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -427,9 +464,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research5",
         "id": "AugmentDragonFireAttacksLevel2",
-        "Icon": "fireball_3",
-        "Tooltip": "Further upgrades the ranged attacks of all fire breathing Dragon units.",
-        "Name": "Augment Dragon Fire Attacks Level 2",
+        "Icon": "btn-upgrade-dragon-fireattacks-level2",
+        "Name": {
+          "enUS": "Augment Dragon Fire Attacks Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the ranged attacks of all fire breathing Dragon units."
+        },
         "Hotkey": "W"
       },
       {
@@ -465,9 +506,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research6",
         "id": "AugmentDragonFireAttacksLevel3",
-        "Icon": "fireball_1hot",
-        "Tooltip": "Maximizes the ranged attacks of all fire breathing Dragon units.",
-        "Name": "Augment Dragon Fire Attacks Level 3",
+        "Icon": "btn-upgrade-dragon-fireattacks-level3",
+        "Name": {
+          "enUS": "Augment Dragon Fire Attacks Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the ranged attacks of all fire breathing Dragon units."
+        },
         "Hotkey": "W"
       },
       {
@@ -503,9 +548,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research7",
         "id": "AugmentDragonScaleArmorLevel1",
-        "Icon": "btn-upgrade-zerg-flyercarapace-level1",
-        "Tooltip": "Upgrades the armor of all light Dragon units.",
-        "Name": "Augment Dragon Scale Armor Level 1",
+        "Icon": "btn-upgrade-dragon-scalearmor-level1",
+        "Name": {
+          "enUS": "Augment Dragon Scale Armor Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of all light Dragon units."
+        },
         "Hotkey": "A"
       },
       {
@@ -541,9 +590,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research8",
         "id": "AugmentDragonScaleArmorLevel2",
-        "Icon": "btn-upgrade-zerg-flyercarapace-level2",
-        "Tooltip": "Further upgrades the armor of all light Dragon units.",
-        "Name": "Augment Dragon Scale Armor Level 2",
+        "Icon": "btn-upgrade-dragon-scalearmor-level2",
+        "Name": {
+          "enUS": "Augment Dragon Scale Armor Level 2"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of all light Dragon units."
+        },
         "Hotkey": "A"
       },
       {
@@ -579,9 +632,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research9",
         "id": "AugmentDragonScaleArmorLevel3",
-        "Icon": "btn-upgrade-zerg-flyercarapace-level3",
-        "Tooltip": "Maximizes the armor of all light Dragon units.",
-        "Name": "Augment Dragon Scale Armor Level 3",
+        "Icon": "btn-upgrade-dragon-scalearmor-level3",
+        "Name": {
+          "enUS": "Augment Dragon Scale Armor Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of all light Dragon units."
+        },
         "Hotkey": "A"
       },
       {
@@ -595,16 +652,16 @@
             "Requirements": "AugmentDragonPlateArmorLevel1"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 160,
           "Upgrade": "DragonPlateArmorLevel1"
         },
         "Time": 160,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -617,9 +674,13 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research10",
         "id": "AugmentDragonPlateArmorLevel1",
-        "Icon": "btn-upgrade-zerg-groundcarapace-level1",
-        "Tooltip": "Upgrades the armor of all armored Dragon units and structures.",
-        "Name": "Augment Dragon Plate Armor Level 1",
+        "Icon": "btn-upgrade-dehaka-groundcarapace-level1",
+        "Name": {
+          "enUS": "Augment Dragon Plate Armor Level 1"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of all armored Dragon units and structures."
+        },
         "Hotkey": "S"
       },
       {
@@ -633,16 +694,16 @@
             "Requirements": "AugmentDragonPlateArmorLevel2"
           },
           "Resource": {
-            "Minerals": 225,
-            "Vespene": 225
+            "Minerals": 175,
+            "Vespene": 175
           },
           "Time": 190,
           "Upgrade": "DragonPlateArmorLevel2"
         },
         "Time": 190,
         "Cost": {
-          "Minerals": 225,
-          "Vespene": 225,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -656,8 +717,10 @@
         "AbilCmd": "FrontierDeepOneResearch,Research11",
         "id": "AugmentDragonPlateArmorLevel2",
         "Icon": "btn-upgrade-zerg-groundcarapace-level2",
-        "Tooltip": "Further upgrades the armor of all armored Dragon units and structures.",
-        "Name": "Augment Dragon Plate Armor Level 2",
+        "Name": {
+          "enUS": "Augment Dragon Plate Armor Level 2"
+        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -671,16 +734,16 @@
             "Requirements": "AugmentDragonPlateArmorLevel3"
           },
           "Resource": {
-            "Minerals": 300,
-            "Vespene": 300
+            "Minerals": 250,
+            "Vespene": 250
           },
           "Time": 220,
           "Upgrade": "DragonPlateArmorLevel3"
         },
         "Time": 220,
         "Cost": {
-          "Minerals": 300,
-          "Vespene": 300,
+          "Minerals": 250,
+          "Vespene": 250,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -693,32 +756,37 @@
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research12",
         "id": "AugmentDragonPlateArmorLevel3",
-        "Icon": "btn-upgrade-zerg-groundcarapace-level3",
-        "Tooltip": "Maximizes the armor of all armored Dragon units and structures.",
-        "Name": "Augment Dragon Plate Armor Level 3",
+        "Icon": "btn-upgrade-dehaka-groundcarapace-level3",
+        "Name": {
+          "enUS": "Augment Dragon Plate Armor Level 3"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of all armored Dragon units and structures."
+        },
         "Hotkey": "S"
       },
       {
-        "Upgrade": "RazorbackAbundance",
+        "Upgrade": "RazorbackMigratoryEndurance",
         "Info": {
           "Button": {
             "Flags": {
-              "AllowMinimap": 0
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
             },
-            "DefaultButtonFace": "FrontierDeepOneAbundance",
-            "Requirements": "AugmentAbundance"
+            "DefaultButtonFace": "FrontierDeepOneMigratoryEndurance",
+            "Requirements": "AugmentMigratoryEndurance"
           },
           "Resource": {
-            "Minerals": 200,
-            "Vespene": 200
+            "Minerals": 100,
+            "Vespene": 100
           },
-          "Time": 130,
-          "Upgrade": "RazorbackAbundance"
+          "Time": 56,
+          "Upgrade": "RazorbackMigratoryEndurance"
         },
-        "Time": 130,
+        "Time": 56,
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -730,10 +798,14 @@
         "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "FrontierDeepOneResearch,Research13",
-        "id": "FrontierDeepOneAbundance",
-        "Icon": "btn-ability-zerg-regenaura",
-        "Tooltip": "Increases Razorback supply provided by 4, movement speed by 0.5, and provides constant regeneration. Additionally allows Denizen of the Deep to convert resources.",
-        "Name": "Augment Abundance",
+        "id": "FrontierDeepOneMigratoryEndurance",
+        "Icon": "btn-ability-zerg-kraith-chargingcrash",
+        "Name": {
+          "enUS": "Augment Migratory Endurance"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: ffff8a\">Razorback</span> movement speed by 200%."
+        },
         "Hotkey": "Z"
       },
       {
@@ -747,16 +819,16 @@
             "Requirements": "AugmentDragonLineage"
           },
           "Resource": {
-            "Minerals": 300,
-            "Vespene": 300
+            "Minerals": 200,
+            "Vespene": 200
           },
-          "Time": 170,
+          "Time": 140,
           "Upgrade": "DragonLineage"
         },
-        "Time": 170,
+        "Time": 140,
         "Cost": {
-          "Minerals": 300,
-          "Vespene": 300,
+          "Minerals": 200,
+          "Vespene": 200,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -770,8 +842,12 @@
         "AbilCmd": "FrontierDeepOneResearch,Research14",
         "id": "FrontierDeepOneDragonLineage",
         "Icon": "btn-unit-zerg-finalboss",
-        "Tooltip": "Provides all Dragon units with lesser regeneration out of combat, propogated Dragon structures moderate regeneration out of combat, and Dragon Deep Ones greater regeneration out of combat. Additionally provides 1 armor to propogated Dragon structures and 2 armor to Dragon Deep Ones.",
-        "Name": "Augment Dragon Lineage",
+        "Name": {
+          "enUS": "Augment Dragon Lineage"
+        },
+        "Tooltip": {
+          "enUS": "Provides all Dragon units and structures with ramping life regeneration out of combat."
+        },
         "Hotkey": "X"
       }
     ]
@@ -786,38 +862,52 @@
     "Minerals": 100,
     "Vespene": 0
   },
-  "SubgroupPriority": 6,
+  "SubgroupPriority": 24,
   "Icon": "wireframe-zerg-primalproductiona",
+  "Model": "PrimalProductionA",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineage"
+      "id": "DragonLineage",
+      "Name": {
+        "enUS": "Dragon Lineage"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5PassiveCancelToSelection",
-      "Name": "Queue (5) Passive (Cancel to Selection)"
+      "Name": {
+        "ruRU": "Queue (5) Passive (Cancel to Selection)",
+        "enUS": "Queue (5) Passive (Cancel to Selection)"
+      }
     },
     {
       "id": "AugmentationPit",
-      "Name": "Augmentation Pit"
+      "Name": {
+        "enUS": "Augmentation Pit"
+      }
     },
     {
       "id": "FrontierDeepOneResearch",
-      "Name": "Frontier Deep One - Research"
+      "Name": {
+        "enUS": "Frontier Deep One - Research"
+      }
     }
   ],
   "$Upgrades": [
-    "DragonLineage",
-    "AugmentationPitFrontier",
     "FrontierDeepOneBuild",
+    "AugmentationPitFrontier",
     "DragonPlateArmorLevel1",
     "AugmentationPitFrontier",
     "DragonPlateArmors",
@@ -839,7 +929,7 @@
     "DragonPlateArmorLevel1",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "RazorbackAbundance",
+    "RazorbackMigratoryEndurance",
     "DragonLineage"
   ],
   "$Morph": [],
@@ -852,113 +942,179 @@
       "AbilCmd": "que5PassiveCancelToSelection,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research1",
       "id": "AugmentDragonMeleeAttacksLevel1",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level1",
-      "Tooltip": "Upgrades all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-      "Name": "Augment Dragon Melee Attacks Level 1"
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level1",
+      "Name": {
+        "enUS": "Augment Dragon Melee Attacks Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research2",
       "id": "AugmentDragonMeleeAttacksLevel2",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level2",
-      "Tooltip": "Further upgrades all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-      "Name": "Augment Dragon Melee Attacks Level 2"
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level2",
+      "Name": {
+        "enUS": "Augment Dragon Melee Attacks Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research3",
       "id": "AugmentDragonMeleeAttacksLevel3",
-      "Icon": "btn-upgrade-zerg-meleeattacks-level3",
-      "Tooltip": "Maximizes all Dragon melee attacks and the ranged attacks of Hunters and Sunken Guardians.",
-      "Name": "Augment Dragon Melee Attacks Level 3"
+      "Icon": "btn-upgrade-dehaka-meleeattacks-level3",
+      "Name": {
+        "enUS": "Augment Dragon Melee Attacks Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes all Dragon melee attacks, the ranged attacks of Hunters and Sunken Guardians, and the Spiked Carapace of Razorbacks."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research4",
       "id": "AugmentDragonFireAttacksLevel1",
-      "Icon": "fireball_6",
-      "Tooltip": "Upgrades the ranged attacks of all fire breathing Dragon units.",
-      "Name": "Augment Dragon Fire Attacks Level 1"
+      "Icon": "btn-upgrade-dragon-fireattacks-level1",
+      "Name": {
+        "enUS": "Augment Dragon Fire Attacks Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the ranged attacks of all fire breathing Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research5",
       "id": "AugmentDragonFireAttacksLevel2",
-      "Icon": "fireball_3",
-      "Tooltip": "Further upgrades the ranged attacks of all fire breathing Dragon units.",
-      "Name": "Augment Dragon Fire Attacks Level 2"
+      "Icon": "btn-upgrade-dragon-fireattacks-level2",
+      "Name": {
+        "enUS": "Augment Dragon Fire Attacks Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the ranged attacks of all fire breathing Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research6",
       "id": "AugmentDragonFireAttacksLevel3",
-      "Icon": "fireball_1hot",
-      "Tooltip": "Maximizes the ranged attacks of all fire breathing Dragon units.",
-      "Name": "Augment Dragon Fire Attacks Level 3"
+      "Icon": "btn-upgrade-dragon-fireattacks-level3",
+      "Name": {
+        "enUS": "Augment Dragon Fire Attacks Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the ranged attacks of all fire breathing Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research7",
       "id": "AugmentDragonScaleArmorLevel1",
-      "Icon": "btn-upgrade-zerg-flyercarapace-level1",
-      "Tooltip": "Upgrades the armor of all light Dragon units.",
-      "Name": "Augment Dragon Scale Armor Level 1"
+      "Icon": "btn-upgrade-dragon-scalearmor-level1",
+      "Name": {
+        "enUS": "Augment Dragon Scale Armor Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of all light Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research8",
       "id": "AugmentDragonScaleArmorLevel2",
-      "Icon": "btn-upgrade-zerg-flyercarapace-level2",
-      "Tooltip": "Further upgrades the armor of all light Dragon units.",
-      "Name": "Augment Dragon Scale Armor Level 2"
+      "Icon": "btn-upgrade-dragon-scalearmor-level2",
+      "Name": {
+        "enUS": "Augment Dragon Scale Armor Level 2"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of all light Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research9",
       "id": "AugmentDragonScaleArmorLevel3",
-      "Icon": "btn-upgrade-zerg-flyercarapace-level3",
-      "Tooltip": "Maximizes the armor of all light Dragon units.",
-      "Name": "Augment Dragon Scale Armor Level 3"
+      "Icon": "btn-upgrade-dragon-scalearmor-level3",
+      "Name": {
+        "enUS": "Augment Dragon Scale Armor Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of all light Dragon units."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research10",
       "id": "AugmentDragonPlateArmorLevel1",
-      "Icon": "btn-upgrade-zerg-groundcarapace-level1",
-      "Tooltip": "Upgrades the armor of all armored Dragon units and structures.",
-      "Name": "Augment Dragon Plate Armor Level 1"
+      "Icon": "btn-upgrade-dehaka-groundcarapace-level1",
+      "Name": {
+        "enUS": "Augment Dragon Plate Armor Level 1"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of all armored Dragon units and structures."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research11",
       "id": "AugmentDragonPlateArmorLevel2",
       "Icon": "btn-upgrade-zerg-groundcarapace-level2",
-      "Tooltip": "Further upgrades the armor of all armored Dragon units and structures.",
-      "Name": "Augment Dragon Plate Armor Level 2"
+      "Name": {
+        "enUS": "Augment Dragon Plate Armor Level 2"
+      },
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research12",
       "id": "AugmentDragonPlateArmorLevel3",
-      "Icon": "btn-upgrade-zerg-groundcarapace-level3",
-      "Tooltip": "Maximizes the armor of all armored Dragon units and structures.",
-      "Name": "Augment Dragon Plate Armor Level 3"
+      "Icon": "btn-upgrade-dehaka-groundcarapace-level3",
+      "Name": {
+        "enUS": "Augment Dragon Plate Armor Level 3"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of all armored Dragon units and structures."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research13",
-      "id": "FrontierDeepOneAbundance",
-      "Icon": "btn-ability-zerg-regenaura",
-      "Tooltip": "Increases Razorback supply provided by 4, movement speed by 0.5, and provides constant regeneration. Additionally allows Denizen of the Deep to convert resources.",
-      "Name": "Augment Abundance"
+      "id": "FrontierDeepOneMigratoryEndurance",
+      "Icon": "btn-ability-zerg-kraith-chargingcrash",
+      "Name": {
+        "enUS": "Augment Migratory Endurance"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: ffff8a\">Razorback</span> movement speed by 200%."
+      }
     },
     {
       "AbilCmd": "FrontierDeepOneResearch,Research14",
       "id": "FrontierDeepOneDragonLineage",
       "Icon": "btn-unit-zerg-finalboss",
-      "Tooltip": "Provides all Dragon units with lesser regeneration out of combat, propogated Dragon structures moderate regeneration out of combat, and Dragon Deep Ones greater regeneration out of combat. Additionally provides 1 armor to propogated Dragon structures and 2 armor to Dragon Deep Ones.",
-      "Name": "Augment Dragon Lineage"
+      "Name": {
+        "enUS": "Augment Dragon Lineage"
+      },
+      "Tooltip": {
+        "enUS": "Provides all Dragon units and structures with ramping life regeneration out of combat."
+      }
     }
   ]
 }

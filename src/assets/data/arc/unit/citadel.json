@@ -1,6 +1,12 @@
 {
-  "Name": "Citadel",
-  "Description": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
+  "Name": {
+    "enUS": "Citadel",
+    "ruRU": "Цитадель"
+  },
+  "Description": {
+    "enUS": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
+    "ruRU": "Продвинутая тяжелобронированная единица, оснащённая композитной защитой, дальнобойным основным орудием и мощными противотанковыми ракетами.<br/><br/><span style=\"color: FFFF8A\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1250,
   "LifeMax": 1250,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -67,16 +76,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Citadel/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Citadel/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Citadel/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Citadel/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -110,7 +121,10 @@
   "Food": 18,
   "Footprint": "FootprintCitadelContour",
   "PlacementFootprint": "FootprintCitadelDropOff",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -170,8 +184,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -234,8 +254,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -254,8 +280,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       },
       {
@@ -276,8 +308,14 @@
         "AbilCmd": "RallyCommand,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -313,8 +351,14 @@
         "AbilCmd": "KeironCitadelTrain,Train1",
         "id": "Converter",
         "Icon": "btn-unit-keiron-converter",
-        "Tooltip": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Materialize Converter",
+        "Name": {
+          "enUS": "Materialize Converter",
+          "ruRU": "Материализовать Конвертер"
+        },
+        "Tooltip": {
+          "enUS": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Базовая рабочая единица. Может собирать ресурсы и формировать строения Кейронов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "E"
       },
       {
@@ -334,8 +378,14 @@
         "SubmenuCardId": "0003",
         "id": "MaterializeAirUnits",
         "Icon": "btn-command-keiron-materializeair",
-        "Tooltip": "A list of air units.",
-        "Name": "Materialize Air Units",
+        "Name": {
+          "enUS": "Materialize Air Units",
+          "ruRU": "Материализовать Воздушные Единицы"
+        },
+        "Tooltip": {
+          "enUS": "A list of air units.",
+          "ruRU": "Список воздушных единиц."
+        },
         "Hotkey": "X"
       },
       {
@@ -355,8 +405,14 @@
         "SubmenuCardId": "0002",
         "id": "MaterializeGroundUnits",
         "Icon": "btn-command-keiron-materializeground",
-        "Tooltip": "A list of ground units.",
-        "Name": "Materialize Ground Units",
+        "Name": {
+          "enUS": "Materialize Ground Units",
+          "ruRU": "Материализовать Наземные Единицы"
+        },
+        "Tooltip": {
+          "enUS": "A list of ground units.",
+          "ruRU": "Список наземных единиц."
+        },
         "Hotkey": "Z"
       },
       {
@@ -396,8 +452,14 @@
         "AbilCmd": "KeironCitadelAegisTrain,Train1",
         "id": "Aegis",
         "Icon": "btn-unit-keiron-aegis",
-        "Tooltip": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-        "Name": "Materialize Aegis",
+        "Name": {
+          "enUS": "Materialize Aegis",
+          "ruRU": "Материализовать Эгиду"
+        },
+        "Tooltip": {
+          "enUS": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+          "ruRU": "Мощное оборонительное сооружение. Может использовать способности Перемещение и Активировать Щит.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные еденицы.</span>"
+        },
         "Hotkey": "A"
       },
       {
@@ -526,8 +588,14 @@
         "AbilCmd": "CitadelChargeMorph,Execute",
         "id": "ChargeCitadel",
         "Icon": "btn-ability-keiron-citadelcharge",
-        "Tooltip": "Upgrades the Citadel, unlocking the Energize ability.",
-        "Name": "Charge Citadel",
+        "Name": {
+          "enUS": "Charge Citadel",
+          "ruRU": "Зарядить Цитадель"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the Citadel, unlocking the Energize ability.",
+          "ruRU": "Улучшает Цитадель, открывая доступ к Подзарядке."
+        },
         "Hotkey": "C"
       },
       {
@@ -659,8 +727,14 @@
         "AbilCmd": "CitadelEnergize,Execute",
         "id": "CitadelEnergize",
         "Icon": "btn-progression-protoss-fenix-10-acceleratedtech",
-        "Tooltip": "Boosts the movement speed, shield armor, and regeneration of nearby units.<br/><br/><span style=\"color: #FFFF80\">Also increases worker harvesting speeds.</span>",
-        "Name": "Energize",
+        "Name": {
+          "enUS": "Energize",
+          "ruRU": "Подзарядка"
+        },
+        "Tooltip": {
+          "enUS": "Buffs nearby friendly units. Boosts movement speed, shield armor, and heals up to <b>25</b> life and <b>38</b> shields over time. <br/><br/><span style=\"color: FFFF80\">Also increases worker harvesting speeds.</span>",
+          "ruRU": "Повышает скорость передвижения и регенерации, а также укрепляет щиты находящихся рядом юнитов. <br/><br/><span style=\"color: FFFF80\">Также повышает скорость добычи ресурсов.</span>"
+        },
         "Hotkey": "G"
       }
     ],
@@ -704,8 +778,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train1",
         "id": "MaterializePariah",
         "Icon": "btn-unit-keiron-pariah",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Edifice</span>.<br/><br/>",
-        "Name": "Materialize Pariah",
+        "Name": {
+          "enUS": "Materialize Pariah",
+          "ruRU": "Материализовать Парию"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Edifice</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Доме Доктрин</span>.<br/><br/>"
+        },
         "Hotkey": "A"
       },
       {
@@ -747,8 +827,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train2",
         "id": "MaterializeVolt",
         "Icon": "btn-unit-keiron-volt",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Edifice</span>.<br/><br/>",
-        "Name": "Materialize Volt",
+        "Name": {
+          "enUS": "Materialize Volt",
+          "ruRU": "Материализовать Вольта"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Edifice</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Доме Доктрин</span>.<br/><br/>"
+        },
         "Hotkey": "V"
       },
       {
@@ -790,8 +876,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train3",
         "id": "MaterializePulsar",
         "Icon": "btn-unit-keiron-pulsar",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Sanctum</span>.<br/><br/>",
-        "Name": "Materialize Pulsar",
+        "Name": {
+          "enUS": "Materialize Pulsar",
+          "ruRU": "Материализовать Пульсар"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Sanctum</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Святилище</span>.<br/><br/>"
+        },
         "Hotkey": "R"
       },
       {
@@ -833,8 +925,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train4",
         "id": "MaterializeCataract",
         "Icon": "btn-unit-keiron-cataract",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Sanctum</span>.<br/><br/>",
-        "Name": "Materialize Cataract",
+        "Name": {
+          "enUS": "Materialize Cataract",
+          "ruRU": "Материализовать Субъектор"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Sanctum</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Святилище</span>.<br/><br/>"
+        },
         "Hotkey": "C"
       },
       {
@@ -876,8 +974,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train8",
         "id": "MaterializeMyriad",
         "Icon": "btn-unit-keiron-myriad",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Atrium</span>.<br/><br/>",
-        "Name": "Materialize Myriad",
+        "Name": {
+          "enUS": "Materialize Myriad",
+          "ruRU": "Материализовать Мириад"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Atrium</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Атриуме</span>.<br/><br/>"
+        },
         "Hotkey": "Y"
       },
       {
@@ -919,8 +1023,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train5",
         "id": "MaterializeCrux",
         "Icon": "btn-unit-keiron-meridian",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Elysium</span>.<br/><br/>",
-        "Name": "Materialize Crux",
+        "Name": {
+          "enUS": "Materialize Crux",
+          "ruRU": "Материализовать Кракса"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Elysium</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Элизиуме</span>.<br/><br/>"
+        },
         "Hotkey": "E"
       },
       {
@@ -962,8 +1072,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train6",
         "id": "MaterializeUmbra",
         "Icon": "btn-unit-keiron-umbra",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Foundry</span>.<br/><br/>",
-        "Name": "Materialize Umbra",
+        "Name": {
+          "enUS": "Materialize Umbra",
+          "ruRU": "Материализовать Умбру"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Foundry</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Литейном Заводе</span>.<br/><br/>"
+        },
         "Hotkey": "B"
       },
       {
@@ -990,7 +1106,7 @@
         "Unit": "Ward",
         "Time": 5,
         "Cost": {
-          "Minerals": 150,
+          "Minerals": 100,
           "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
@@ -1005,8 +1121,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train18",
         "id": "MaterializeWard",
         "Icon": "btn-unit-keiron-ward",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Foundry</span>.<br/><br/>",
-        "Name": "Materialize Ward",
+        "Name": {
+          "enUS": "Materialize Ward",
+          "ruRU": "Материализовать Защитника"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Foundry</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Литейном Заводе</span>.<br/><br/>"
+        },
         "Hotkey": "W"
       },
       {
@@ -1048,8 +1170,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train7",
         "id": "MaterializeInducer",
         "Icon": "btn-unit-keiron-inducer",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Atrium</span>.<br/><br/>",
-        "Name": "Materialize Inducer",
+        "Name": {
+          "enUS": "Materialize Inducer",
+          "ruRU": "Материализовать Индуктора"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Atrium</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Атриуме</span>.<br/><br/>"
+        },
         "Hotkey": "D"
       },
       {
@@ -1068,8 +1196,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1089,8 +1223,14 @@
         "SubmenuCardId": "0003",
         "id": "MaterializeAirUnits",
         "Icon": "btn-command-keiron-materializeair",
-        "Tooltip": "A list of air units.",
-        "Name": "Materialize Air Units",
+        "Name": {
+          "enUS": "Materialize Air Units",
+          "ruRU": "Материализовать Воздушные Единицы"
+        },
+        "Tooltip": {
+          "enUS": "A list of air units.",
+          "ruRU": "Список воздушных единиц."
+        },
         "Hotkey": "X"
       },
       {
@@ -1132,8 +1272,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train9",
         "id": "MaterializeTitan",
         "Icon": "btn-unit-keiron-titan",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Pantheon</span>.</n><br/>",
-        "Name": "Materialize Titan",
+        "Name": {
+          "enUS": "Materialize Titan",
+          "ruRU": "Материализовать Титана"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Pantheon</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Пантеоне</span>.<br/><br/>"
+        },
         "Hotkey": "T"
       }
     ],
@@ -1177,8 +1323,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train10",
         "id": "MaterializeEcho",
         "Icon": "btn-unit-keiron-echo",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Conduit</span>.<br/><br/>",
-        "Name": "Materialize Echo",
+        "Name": {
+          "enUS": "Materialize Echo",
+          "ruRU": "Материализовать Эхо"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Conduit</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Канале</span>.<br/><br/>"
+        },
         "Hotkey": "E"
       },
       {
@@ -1220,7 +1372,10 @@
         "AbilCmd": "KeironCitadelMaterialize,Train17",
         "id": "MaterializeFuse",
         "Icon": "btn-unit-keiron-fuse",
-        "Name": "Materialize Fuse",
+        "Name": {
+          "enUS": "Materialize Fuse",
+          "ruRU": "Материализовать Предохранителя"
+        },
         "Hotkey": "F"
       },
       {
@@ -1248,7 +1403,7 @@
         "Time": 5,
         "Cost": {
           "Minerals": 150,
-          "Vespene": 125,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -1262,8 +1417,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train11",
         "id": "MaterializeAurora",
         "Icon": "btn-unit-keiron-aurora",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Outlet</span>.<br/><br/>",
-        "Name": "Materialize Aurora",
+        "Name": {
+          "enUS": "Materialize Aurora",
+          "ruRU": "Материализовать Аврору"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Outlet</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Точке Выпуска</span>.<br/><br/>"
+        },
         "Hotkey": "A"
       },
       {
@@ -1305,8 +1466,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train12",
         "id": "MaterializeAperture",
         "Icon": "btn-unit-keiron-aperture",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Outlet</span>.<br/><br/>",
-        "Name": "Materialize Aperture",
+        "Name": {
+          "enUS": "Materialize Aperture",
+          "ruRU": "Материализовать Апертуру"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Outlet</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Точке Выпуска</span>.<br/><br/>"
+        },
         "Hotkey": "T"
       },
       {
@@ -1348,8 +1515,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train13",
         "id": "MaterializeHarbinger",
         "Icon": "btn-unit-keiron-harbinger",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Empyrean</span>.<br/><br/>",
-        "Name": "Materialize Harbinger",
+        "Name": {
+          "enUS": "Materialize Harbinger",
+          "ruRU": "Материализовать Предвестника"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Empyrean</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Эмпирее</span>.<br/><br/>"
+        },
         "Hotkey": "H"
       },
       {
@@ -1387,8 +1560,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train14",
         "id": "MaterializeGyre",
         "Icon": "btn-unit-keiron-paradox",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Empyrean</span>.<br/><br/>",
-        "Name": "Materialize Gyre",
+        "Name": {
+          "enUS": "Materialize Gyre",
+          "ruRU": "Материализовать Вихрь"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Empyrean</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Эмпирее</span>.<br/><br/>"
+        },
         "Hotkey": "R"
       },
       {
@@ -1430,8 +1609,14 @@
         "AbilCmd": "KeironCitadelMaterialize,Train15",
         "id": "MaterializeParagon",
         "Icon": "btn-unit-keiron-paragon",
-        "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Zenith</span>.<br/><br/>",
-        "Name": "Materialize Paragon",
+        "Name": {
+          "enUS": "Materialize Paragon",
+          "ruRU": "Материализовать Парагон"
+        },
+        "Tooltip": {
+          "enUS": "Produced by the <span style=\"color: FFFF80\">Zenith</span>.<br/><br/>",
+          "ruRU": "Производится в <span style=\"color: FFFF80\">Зените</span>.<br/><br/>"
+        },
         "Hotkey": "G"
       },
       {
@@ -1450,8 +1635,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1471,8 +1662,14 @@
         "SubmenuCardId": "0002",
         "id": "MaterializeGroundUnits",
         "Icon": "btn-command-keiron-materializeground",
-        "Tooltip": "A list of ground units.",
-        "Name": "Materialize Ground Units",
+        "Name": {
+          "enUS": "Materialize Ground Units",
+          "ruRU": "Материализовать Наземные Единицы"
+        },
+        "Tooltip": {
+          "enUS": "A list of ground units.",
+          "ruRU": "Список наземных единиц."
+        },
         "Hotkey": "Z"
       }
     ]
@@ -1515,53 +1712,91 @@
     "Aegis"
   ],
   "Icon": "btn-building-keiron-citadel",
+  "Model": "Citadel",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "CitadelPowerSource",
-      "Icon": "btn-building-keiron-citadel"
+      "Icon": "btn-building-keiron-citadel",
+      "Name": {
+        "enUS": "Citadel Power Source",
+        "ruRU": "Citadel Power Source"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironShellRestorationAura"
+      "id": "KeironShellRestorationAura",
+      "Name": {
+        "enUS": "Shell Restoration Aura"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "RallyCommand",
-      "Name": "Command Center - Rally"
+      "Name": {
+        "enUS": "Command Center - Rally",
+        "ruRU": "Command Center - Rally"
+      }
     },
     {
       "id": "KeironCitadelTrain",
-      "Name": "Keiron - Citadel Train"
+      "Name": {
+        "enUS": "Keiron - Citadel Train",
+        "ruRU": "Keiron - Citadel Train"
+      }
     },
     {
       "id": "KeironCitadelAegisTrain",
-      "Name": "Keiron - Citadel Aegis Train"
+      "Name": {
+        "enUS": "Keiron - Citadel Aegis Train",
+        "ruRU": "Keiron - Citadel Aegis Train"
+      }
     },
     {
       "id": "KeironCitadelMaterialize",
-      "Name": "Keiron - Citadel Materialize"
+      "Name": {
+        "enUS": "Keiron - Citadel Materialize",
+        "ruRU": "Keiron - Citadel Materialize"
+      }
     },
     {
       "id": "CitadelEnergize",
-      "Name": "Citadel - Energize"
+      "Name": {
+        "enUS": "Citadel - Energize",
+        "ruRU": "Citadel - Energize"
+      }
     },
     {
       "id": "CitadelChargeMorph",
-      "Name": "Citadel Charge Instant"
+      "Name": {
+        "enUS": "Citadel Charge Instant",
+        "ruRU": "Citadel Charge Instant"
+      }
     }
   ],
   "$Upgrades": [
@@ -1614,175 +1849,322 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "CitadelCharge,255",
       "id": "CancelUpgradeMorph",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels the upgrade order, returning the structure to its original state.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Cancel"
+      },
+      "Tooltip": {
+        "enUS": "Cancels the upgrade order, returning the structure to its original state.",
+        "ruRU": "Cancels the upgrade order, returning the structure to its original state."
+      }
     },
     {
       "AbilCmd": "RallyCommand,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "KeironCitadelTrain,Train1",
       "id": "Converter",
       "Icon": "btn-unit-keiron-converter",
-      "Tooltip": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Materialize Converter"
+      "Name": {
+        "enUS": "Materialize Converter",
+        "ruRU": "Материализовать Конвертер"
+      },
+      "Tooltip": {
+        "enUS": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Базовая рабочая единица. Может собирать ресурсы и формировать строения Кейронов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelAegisTrain,Train1",
       "id": "Aegis",
       "Icon": "btn-unit-keiron-aegis",
-      "Tooltip": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-      "Name": "Materialize Aegis"
+      "Name": {
+        "enUS": "Materialize Aegis",
+        "ruRU": "Материализовать Эгиду"
+      },
+      "Tooltip": {
+        "enUS": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+        "ruRU": "Мощное оборонительное сооружение. Может использовать способности Перемещение и Активировать Щит.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные еденицы.</span>"
+      }
     },
     {
       "AbilCmd": "CitadelChargeMorph,Execute",
       "id": "ChargeCitadel",
       "Icon": "btn-ability-keiron-citadelcharge",
-      "Tooltip": "Upgrades the Citadel, unlocking the Energize ability.",
-      "Name": "Charge Citadel"
+      "Name": {
+        "enUS": "Charge Citadel",
+        "ruRU": "Зарядить Цитадель"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the Citadel, unlocking the Energize ability.",
+        "ruRU": "Улучшает Цитадель, открывая доступ к Подзарядке."
+      }
     },
     {
       "AbilCmd": "CitadelEnergize,Execute",
       "id": "CitadelEnergize",
       "Icon": "btn-progression-protoss-fenix-10-acceleratedtech",
-      "Tooltip": "Boosts the movement speed, shield armor, and regeneration of nearby units.<br/><br/><span style=\"color: #FFFF80\">Also increases worker harvesting speeds.</span>",
-      "Name": "Energize"
+      "Name": {
+        "enUS": "Energize",
+        "ruRU": "Подзарядка"
+      },
+      "Tooltip": {
+        "enUS": "Buffs nearby friendly units. Boosts movement speed, shield armor, and heals up to <b>25</b> life and <b>38</b> shields over time. <br/><br/><span style=\"color: FFFF80\">Also increases worker harvesting speeds.</span>",
+        "ruRU": "Повышает скорость передвижения и регенерации, а также укрепляет щиты находящихся рядом юнитов. <br/><br/><span style=\"color: FFFF80\">Также повышает скорость добычи ресурсов.</span>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train1",
       "id": "MaterializePariah",
       "Icon": "btn-unit-keiron-pariah",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Edifice</span>.<br/><br/>",
-      "Name": "Materialize Pariah"
+      "Name": {
+        "enUS": "Materialize Pariah",
+        "ruRU": "Материализовать Парию"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Edifice</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Доме Доктрин</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train2",
       "id": "MaterializeVolt",
       "Icon": "btn-unit-keiron-volt",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Edifice</span>.<br/><br/>",
-      "Name": "Materialize Volt"
+      "Name": {
+        "enUS": "Materialize Volt",
+        "ruRU": "Материализовать Вольта"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Edifice</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Доме Доктрин</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train3",
       "id": "MaterializePulsar",
       "Icon": "btn-unit-keiron-pulsar",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Sanctum</span>.<br/><br/>",
-      "Name": "Materialize Pulsar"
+      "Name": {
+        "enUS": "Materialize Pulsar",
+        "ruRU": "Материализовать Пульсар"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Sanctum</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Святилище</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train4",
       "id": "MaterializeCataract",
       "Icon": "btn-unit-keiron-cataract",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Sanctum</span>.<br/><br/>",
-      "Name": "Materialize Cataract"
+      "Name": {
+        "enUS": "Materialize Cataract",
+        "ruRU": "Материализовать Субъектор"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Sanctum</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Святилище</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train8",
       "id": "MaterializeMyriad",
       "Icon": "btn-unit-keiron-myriad",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Atrium</span>.<br/><br/>",
-      "Name": "Materialize Myriad"
+      "Name": {
+        "enUS": "Materialize Myriad",
+        "ruRU": "Материализовать Мириад"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Atrium</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Атриуме</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train5",
       "id": "MaterializeCrux",
       "Icon": "btn-unit-keiron-meridian",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Elysium</span>.<br/><br/>",
-      "Name": "Materialize Crux"
+      "Name": {
+        "enUS": "Materialize Crux",
+        "ruRU": "Материализовать Кракса"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Elysium</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Элизиуме</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train6",
       "id": "MaterializeUmbra",
       "Icon": "btn-unit-keiron-umbra",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Foundry</span>.<br/><br/>",
-      "Name": "Materialize Umbra"
+      "Name": {
+        "enUS": "Materialize Umbra",
+        "ruRU": "Материализовать Умбру"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Foundry</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Литейном Заводе</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train18",
       "id": "MaterializeWard",
       "Icon": "btn-unit-keiron-ward",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Foundry</span>.<br/><br/>",
-      "Name": "Materialize Ward"
+      "Name": {
+        "enUS": "Materialize Ward",
+        "ruRU": "Материализовать Защитника"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Foundry</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Литейном Заводе</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train7",
       "id": "MaterializeInducer",
       "Icon": "btn-unit-keiron-inducer",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Atrium</span>.<br/><br/>",
-      "Name": "Materialize Inducer"
+      "Name": {
+        "enUS": "Materialize Inducer",
+        "ruRU": "Материализовать Индуктора"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Atrium</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Атриуме</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train9",
       "id": "MaterializeTitan",
       "Icon": "btn-unit-keiron-titan",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Pantheon</span>.</n><br/>",
-      "Name": "Materialize Titan"
+      "Name": {
+        "enUS": "Materialize Titan",
+        "ruRU": "Материализовать Титана"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Pantheon</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Пантеоне</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train10",
       "id": "MaterializeEcho",
       "Icon": "btn-unit-keiron-echo",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Conduit</span>.<br/><br/>",
-      "Name": "Materialize Echo"
+      "Name": {
+        "enUS": "Materialize Echo",
+        "ruRU": "Материализовать Эхо"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Conduit</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Канале</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train17",
       "id": "MaterializeFuse",
       "Icon": "btn-unit-keiron-fuse",
-      "Name": "Materialize Fuse"
+      "Name": {
+        "enUS": "Materialize Fuse",
+        "ruRU": "Материализовать Предохранителя"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train11",
       "id": "MaterializeAurora",
       "Icon": "btn-unit-keiron-aurora",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Outlet</span>.<br/><br/>",
-      "Name": "Materialize Aurora"
+      "Name": {
+        "enUS": "Materialize Aurora",
+        "ruRU": "Материализовать Аврору"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Outlet</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Точке Выпуска</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train12",
       "id": "MaterializeAperture",
       "Icon": "btn-unit-keiron-aperture",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Outlet</span>.<br/><br/>",
-      "Name": "Materialize Aperture"
+      "Name": {
+        "enUS": "Materialize Aperture",
+        "ruRU": "Материализовать Апертуру"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Outlet</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Точке Выпуска</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train13",
       "id": "MaterializeHarbinger",
       "Icon": "btn-unit-keiron-harbinger",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Empyrean</span>.<br/><br/>",
-      "Name": "Materialize Harbinger"
+      "Name": {
+        "enUS": "Materialize Harbinger",
+        "ruRU": "Материализовать Предвестника"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Empyrean</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Эмпирее</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train14",
       "id": "MaterializeGyre",
       "Icon": "btn-unit-keiron-paradox",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Empyrean</span>.<br/><br/>",
-      "Name": "Materialize Gyre"
+      "Name": {
+        "enUS": "Materialize Gyre",
+        "ruRU": "Материализовать Вихрь"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Empyrean</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Эмпирее</span>.<br/><br/>"
+      }
     },
     {
       "AbilCmd": "KeironCitadelMaterialize,Train15",
       "id": "MaterializeParagon",
       "Icon": "btn-unit-keiron-paragon",
-      "Tooltip": "Produced by the <span style=\"color: #FFFF80\">Zenith</span>.<br/><br/>",
-      "Name": "Materialize Paragon"
+      "Name": {
+        "enUS": "Materialize Paragon",
+        "ruRU": "Материализовать Парагон"
+      },
+      "Tooltip": {
+        "enUS": "Produced by the <span style=\"color: FFFF80\">Zenith</span>.<br/><br/>",
+        "ruRU": "Производится в <span style=\"color: FFFF80\">Зените</span>.<br/><br/>"
+      }
     }
   ]
 }

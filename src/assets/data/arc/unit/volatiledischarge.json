@@ -1,6 +1,12 @@
 {
-  "Name": "Volatile Discharge",
-  "Description": "After a charge up of <b>10</b> seconds, the <span style=\"color: #FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: #FFFF80\">Damages air and ground units, including friendlies.</span>",
+  "Name": {
+    "enUS": "Volatile Discharge",
+    "ruRU": "Неустойчивый разряд"
+  },
+  "Description": {
+    "enUS": "After a charge up of <b>10</b> seconds, the <span style=\"color: FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: FFFF80\">Damages air and ground units, including friendlies.</span>",
+    "ruRU": "Спустя <b>10</b> секунд, <span style=\"color: FFFF80\">Неустойчивый разряд</span> взорвётся, нанося 200 единиц урона по всем на большом расстоянии, включая союзные единицы. Если уничтожить до завершения зарядки, детонация будет отменена."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "VolatileDischarge/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "VolatileDischarge/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "VolatileDischarge/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "VolatileDischarge/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -228,8 +239,14 @@
         "AbilCmd": "VolatileDischargeCancel,Execute",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -237,6 +254,7 @@
   "GlossaryCategory": "Unit/Category/XayidUnits",
   "GlossaryPriority": 50,
   "Icon": "btn-ability-xayid-volatiledischarge",
+  "Model": "VolatileDischarge",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -244,11 +262,17 @@
   "Abilities": [
     {
       "id": "VolatileDischargeCancel",
-      "Name": "Volatile Discharge Cancel"
+      "Name": {
+        "enUS": "Volatile Discharge Cancel",
+        "ruRU": "Volatile Discharge Cancel"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -270,8 +294,14 @@
       "AbilCmd": "VolatileDischargeCancel,Execute",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     }
   ]
 }

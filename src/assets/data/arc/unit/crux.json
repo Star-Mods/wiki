@@ -1,6 +1,12 @@
 {
-  "Name": "Crux",
-  "Description": "Spell caster. Can use Beholder and Lightning Bolt. Can be upgraded to use Convergence.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Crux",
+    "ruRU": "Кракс"
+  },
+  "Description": {
+    "enUS": "Spell caster. Can use Beholder and Lightning Bolt. Can be upgraded to use Convergence.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Кастер. Может использовать Смотрителя и Удар Молнии. Можно исследовать способность Конвергенция.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 80,
-  "LifeMax": 80,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeStart": 70,
+  "LifeMax": 70,
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Crux/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Crux/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Crux/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Crux/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -91,8 +102,9 @@
     "Small"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 1000,
-  "Sight": 10,
+  "Sight": 20,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
   "CardLayouts": {
@@ -183,8 +195,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -257,8 +275,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -347,8 +371,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -437,8 +467,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -512,8 +548,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -534,8 +576,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "Y"
       },
       {
@@ -681,8 +729,14 @@
         "AbilCmd": "CruxLightningBolt,Execute",
         "id": "CruxLightningBolt",
         "Icon": "btn-ability-keiron-lightningbolt",
-        "Tooltip": "Deals <b>80</b> damage to a primary target. Can bounce onto <b>2</b> additional enemies, dealing <b>40</b> damage to each.",
-        "Name": "Lightning Bolt",
+        "Name": {
+          "enUS": "Lightning Bolt",
+          "ruRU": "Молния"
+        },
+        "Tooltip": {
+          "enUS": "Deals <b>80</b> damage to a primary target. Can bounce onto <b>2</b> additional enemies, dealing <b>40</b> damage to each.",
+          "ruRU": "Наносит <b>80</b> урона основной цели. Может отпрыгивать на <b>2</b> дополнительных врага, нанося <b>40</b> урона каждому."
+        },
         "Hotkey": "T"
       },
       {
@@ -822,8 +876,14 @@
         "AbilCmd": "CruxConvergence,Execute",
         "id": "CruxConvergence",
         "Icon": "btn-ability-keiron-convergence",
-        "Tooltip": "Strikes all units in an area after channeling for <b>3</b> seconds. Stricken units take <b>50</b> (<b>53</b> vs Mechanical) damage over <b>4</b> seconds.",
-        "Name": "Convergence",
+        "Name": {
+          "enUS": "Convergence",
+          "ruRU": "Конвергенция"
+        },
+        "Tooltip": {
+          "enUS": "Strikes all units in an area after channeling for <b>3</b> seconds. Stricken units take <b>50</b> (<b>53</b> vs Mechanical) damage over <b>4</b> seconds.",
+          "ruRU": "Наносит <b>3</b> (+<b>3</b> против Механических) урона по площади после зарядки в течении <b>3</b> секунд."
+        },
         "Hotkey": "E"
       },
       {
@@ -842,8 +902,14 @@
         "Type": "Passive",
         "id": "CruxSycophant",
         "Icon": "btn-ability-keiron-sycophant",
-        "Tooltip": "Restores <b>5</b> energy when attacking biological units. Also diminishes energy of attacked units.",
-        "Name": "Sycophant"
+        "Name": {
+          "enUS": "Sycophant",
+          "ruRU": "Подхолимство"
+        },
+        "Tooltip": {
+          "enUS": "Restores <b>5</b> energy when attacking biological units. Also diminishes energy of attacked units.",
+          "ruRU": "Восстанавливает <b>5</b> энергии за каждую атаку по биологическим юнитам. Также уменьшает энергию атакованного юнита."
+        }
       },
       {
         "Info": {
@@ -975,8 +1041,14 @@
         "AbilCmd": "Beholder,Execute",
         "id": "Beholder",
         "Icon": "btn-ability-keiron-beholder",
-        "Tooltip": "The Crux gains detection and additional sight range for <b>21</b> seconds.",
-        "Name": "Beholder",
+        "Name": {
+          "enUS": "Beholder",
+          "ruRU": "Смотрящий"
+        },
+        "Tooltip": {
+          "enUS": "The Crux gains detection and additional sight range for <b>21</b> seconds.",
+          "ruRU": "Меридиан получает детекцию и дополнительную дальность обзора на <b>21</b> секунд."
+        },
         "Hotkey": "B"
       },
       {
@@ -1103,8 +1175,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       }
     ]
@@ -1121,7 +1199,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Crux",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Crux",
   "Attributes": [
     "Light",
@@ -1131,8 +1212,8 @@
   "EnergyStart": 75,
   "EnergyMax": 200,
   "EnergyRegenRate": 0.5625,
-  "ShieldsStart": 60,
-  "ShieldsMax": 60,
+  "ShieldsStart": 70,
+  "ShieldsMax": 70,
   "Speed": 2.5,
   "Food": -3,
   "CostResource": {
@@ -1147,13 +1228,17 @@
   "GlossaryPriority": 18,
   "InnerRadius": 0.5,
   "Icon": "btn-unit-keiron-meridian",
+  "Model": "Meridian",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "id": "CruxWeapon",
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Sycophant",
+      "Name": {
+        "enUS": "Sycophant",
+        "ruRU": "Подхолимство"
+      },
       "Amount": 15,
       "Kind": "Ranged",
       "TargetFilters": "",
@@ -1163,45 +1248,76 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
       "id": "Beholder",
-      "Name": "Beholder"
+      "Name": {
+        "enUS": "Beholder",
+        "ruRU": "Beholder"
+      }
     },
     {
       "id": "CruxLightningBolt",
-      "Name": "Crux - Lightning Bolt"
+      "Name": {
+        "enUS": "Crux - Lightning Bolt",
+        "ruRU": "Crux - Lightning Bolt"
+      }
     },
     {
       "id": "CruxConvergence",
-      "Name": "Crux - Convergence"
+      "Name": {
+        "enUS": "Crux - Convergence",
+        "ruRU": "Crux - Convergence"
+      }
     }
   ],
   "$Upgrades": [
@@ -1243,71 +1359,131 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
     },
     {
       "AbilCmd": "CruxLightningBolt,Execute",
       "id": "CruxLightningBolt",
       "Icon": "btn-ability-keiron-lightningbolt",
-      "Tooltip": "Deals <b>80</b> damage to a primary target. Can bounce onto <b>2</b> additional enemies, dealing <b>40</b> damage to each.",
-      "Name": "Lightning Bolt"
+      "Name": {
+        "enUS": "Lightning Bolt",
+        "ruRU": "Молния"
+      },
+      "Tooltip": {
+        "enUS": "Deals <b>80</b> damage to a primary target. Can bounce onto <b>2</b> additional enemies, dealing <b>40</b> damage to each.",
+        "ruRU": "Наносит <b>80</b> урона основной цели. Может отпрыгивать на <b>2</b> дополнительных врага, нанося <b>40</b> урона каждому."
+      }
     },
     {
       "AbilCmd": "CruxConvergence,Execute",
       "id": "CruxConvergence",
       "Icon": "btn-ability-keiron-convergence",
-      "Tooltip": "Strikes all units in an area after channeling for <b>3</b> seconds. Stricken units take <b>50</b> (<b>53</b> vs Mechanical) damage over <b>4</b> seconds.",
-      "Name": "Convergence"
+      "Name": {
+        "enUS": "Convergence",
+        "ruRU": "Конвергенция"
+      },
+      "Tooltip": {
+        "enUS": "Strikes all units in an area after channeling for <b>3</b> seconds. Stricken units take <b>50</b> (<b>53</b> vs Mechanical) damage over <b>4</b> seconds.",
+        "ruRU": "Наносит <b>3</b> (+<b>3</b> против Механических) урона по площади после зарядки в течении <b>3</b> секунд."
+      }
     },
     {
       "AbilCmd": "Beholder,Execute",
       "id": "Beholder",
       "Icon": "btn-ability-keiron-beholder",
-      "Tooltip": "The Crux gains detection and additional sight range for <b>21</b> seconds.",
-      "Name": "Beholder"
+      "Name": {
+        "enUS": "Beholder",
+        "ruRU": "Смотрящий"
+      },
+      "Tooltip": {
+        "enUS": "The Crux gains detection and additional sight range for <b>21</b> seconds.",
+        "ruRU": "Меридиан получает детекцию и дополнительную дальность обзора на <b>21</b> секунд."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     }
   ]
 }

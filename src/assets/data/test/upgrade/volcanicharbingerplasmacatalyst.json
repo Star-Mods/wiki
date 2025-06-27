@@ -7,7 +7,7 @@
     "UpgradeCheat": 1
   },
   "MaxLevel": 1,
-  "Alert": "UpgradeComplete",
+  "Alert": "ResearchComplete",
   "ScoreCount": "MiscTechnologyCount",
   "ScoreValue": "MiscTechnologyValue",
   "WebPriority": 1,
@@ -19,16 +19,33 @@
       "value": ""
     }
   },
+  "InfoTooltipPriority": 0,
   "Race": "Dragon",
-  "ScoreAmount": 680,
+  "ScoreAmount": 400,
   "EffectArray": [
     {
       "Operation": "Set",
       "Reference": "Abil,VolcanicHarbingerOverload,InfoArray[Ammo1].Time",
-      "Value": "4.200000"
+      "Value": "4.125000"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Unit,VolcanicHarbingerOverload,Description",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Button,VolcanicHarbingerOverload,AlertTooltip",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Button,VolcanicHarbingerOverload,Tooltip",
+      "Value": "Button/Tooltip/VolcanicHarbingerOverloadPlasmaCatalyst"
     }
   ],
   "AffectedUnitArray": [
-    "VolcanicHarbinger"
+    "VolcanicHarbinger",
+    "AscendedVolcanicHarbinger"
   ]
 }

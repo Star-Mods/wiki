@@ -1,6 +1,12 @@
 {
-  "Name": "Nullifier",
-  "Description": "Anti-ground defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Nullifier",
+    "ruRU": "Обнулитель"
+  },
+  "Description": {
+    "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Противоназемное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 175,
   "LifeMax": 175,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Nullifier/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Nullifier/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Nullifier/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Nullifier/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -106,7 +117,10 @@
   "Food": 0,
   "Footprint": "Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -179,8 +193,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -243,8 +263,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -263,8 +289,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -281,6 +313,7 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryPriority": 50,
   "Icon": "btn-building-keiron-nullifier",
+  "Model": "Nullifier",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
@@ -288,7 +321,10 @@
       "Turret": "Nullifier",
       "id": "NullifierWeapon",
       "Icon": "btn-building-keiron-nullifier",
-      "Name": "Nullifier - Weapon",
+      "Name": {
+        "enUS": "Nullifier - Weapon",
+        "ruRU": "Обнулитель - Оружие"
+      },
       "Amount": 13,
       "Kind": "Ranged",
       "TargetFilters": "Ground",
@@ -298,7 +334,10 @@
     {
       "Turret": "NullifierMovement",
       "id": "NullifierWeaponDummy",
-      "Name": "Nullifier - Weapon Dummy",
+      "Name": {
+        "enUS": "Nullifier - Weapon Dummy",
+        "ruRU": "Nullifier - Weapon Dummy"
+      },
       "TargetFilters": "Ground",
       "Range": 7,
       "Period": 0.6
@@ -306,24 +345,42 @@
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironConstructionFreeze"
+      "id": "KeironConstructionFreeze",
+      "Name": {
+        "enUS": "Keiron Construction Freeze",
+        "ruRU": "Keiron Construction Freeze"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -349,15 +406,27 @@
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

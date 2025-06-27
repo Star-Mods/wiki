@@ -1,6 +1,12 @@
 {
-  "Name": "Extractor",
-  "Description": "Mutated over a Vespene Geyser to allow harvesting of vespene gas.",
+  "Name": {
+    "enUS": "Extractor",
+    "ruRU": "Extractor"
+  },
+  "Description": {
+    "enUS": "Mutated over a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Mutated over a Vespene Geyser to allow harvesting of vespene gas."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Zerg Building Armor",
+  "LifeArmorName": {
+    "enUS": "Zerg Building Armor",
+    "ruRU": "Zerg Building Armor"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Extractor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Extractor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Extractor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Extractor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -175,8 +186,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -187,7 +204,8 @@
     "RichVespeneGeyser",
     "ProtossVespeneGeyser",
     "PurifierVespeneGeyser",
-    "ShakurasVespeneGeyser"
+    "ShakurasVespeneGeyser",
+    "TempleVespeneGeyserSCBW"
   ],
   "GlossaryPriority": 22,
   "HotkeyCategory": "Unit/Category/ZergUnits",
@@ -200,19 +218,33 @@
   ],
   "id": "Extractor",
   "Icon": "btn-building-zerg-extractor",
+  "Model": "ExtractorEx1",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGasZerg",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas Zerg",
+        "ruRU": "Harvestable Vespene Geyser Gas Zerg"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "WorkerPeriodicRefineryCheck",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -222,8 +254,10 @@
     "Siphoner",
     "IsExtractor",
     "Extractor",
+    "ExtractorSCBW",
     "SiphonerRich",
-    "Siphoner"
+    "Siphoner",
+    "CasterIsExtractor"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -238,8 +272,14 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     }
   ]
 }

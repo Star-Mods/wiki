@@ -1,17 +1,22 @@
 {
-  "Name": "Routhe Tank",
+  "Name": {
+    "enUS": "Routhe Tank"
+  },
+  "Description": "-",
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
+  "Race": "UPLL",
   "DefaultAcquireLevel": "Offensive",
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 175,
   "LifeMax": 175,
-  "LifeArmorName": "UPL Vehicle Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Vehicle Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 360,
@@ -63,16 +68,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "RoutheTank/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "RoutheTank/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "RoutheTank/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "RoutheTank/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -197,8 +204,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -271,8 +284,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -361,8 +380,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -436,8 +461,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -526,8 +557,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -546,8 +583,12 @@
         "Type": "Passive",
         "id": "RoutheTankExplosiveShells",
         "Icon": "btn-ability-upl-explosiverounds",
-        "Tooltip": "Shells are equipped with a drilling mechanism that pierces enemy armor before the shell detonates, significantly increasing damage.<br/><br/>Routhe Tank deals additional damage to armored targets and structures.",
-        "Name": "Explosive Shells"
+        "Name": {
+          "enUS": "Explosive Shells"
+        },
+        "Tooltip": {
+          "enUS": "<br/>Routhe Tank deals additional damage to armored targets and structures. The overall damage to structure increases by <span style=\"color: 80FFFF\">9</span> for each <span style=\"color: 80FFFF\">vehicle weapon upgrade</span>.<br/>"
+        }
       },
       {
         "Cost": {
@@ -565,23 +606,51 @@
         "Type": "Passive",
         "id": "RoutheTankArmorPlating",
         "Icon": "btn-ability-upl-unobtaniumarmorplating",
-        "Tooltip": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/>Increases armor of <span style=\"color: #FFFF80\"><b>Routhe Tank</b></span> by <span style=\"color: #80FFFF\">+2</span> and maximum life by <span style=\"color: #80FFFF\">+75</span>",
-        "Name": "Unobtanium Armor Plating"
+        "Name": {
+          "enUS": "Unobtanium Armor Plating"
+        },
+        "Tooltip": {
+          "enUS": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/> increases maximum life by <span style=\"color: 80FFFF\">+75</span>"
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "Passive",
+        "id": "LotCUPLStarArmorPassive",
+        "Icon": "btn-stararmoricon2",
+        "Name": {
+          "enUS": "Starship Armored Shell"
+        },
+        "Tooltip": {
+          "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span>, <span style=\"color: ffff8a\">Condor</span>and <span style=\"color: ffff8a\">Behemoth</span> by 2."
+        }
       }
     ]
   },
   "InnerRadius": 0.875,
   "CargoSize": 4,
-  "ScoreMake": 275,
-  "ScoreKill": 275,
+  "ScoreMake": 250,
+  "ScoreKill": 250,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 12,
   "GlossaryCategory": "Unit/Category/0UPLUnits",
-  "GlossaryPriority": 43,
+  "GlossaryPriority": 48,
   "HotkeyCategory": "Unit/Category/UPLUnits",
   "AlliedPushPriority": 15,
   "id": "RoutheTank",
   "Icon": "btn-unit-upl-routhetank",
+  "Model": "RoutheTank",
   "LifeArmorIcon": "btn-upgrades-upl-vehicleplating-lvl0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
@@ -589,7 +658,9 @@
       "Turret": "RoutheTank",
       "id": "RoutheTank",
       "Icon": "btn-upgrades-upl-vehicleweapons-lvl0",
-      "Name": "Routhe Longbolt Cannon Mount",
+      "Name": {
+        "enUS": "Routhe Longbolt Cannon Mount"
+      },
       "Amount": 30,
       "AttributeBonus": {
         "Armored": 10,
@@ -598,32 +669,50 @@
       "Kind": "Ranged",
       "TargetFilters": "Ground",
       "Range": 7,
-      "Period": 1.2
+      "Period": 1.12
     }
   ],
   "Behaviors": [
     {
-      "id": "RoutheTankDust"
+      "id": "RoutheTankDust",
+      "Name": {
+        "enUS": "Routhe Tank Dust"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     }
   ],
   "$Upgrades": [
-    "UPLVehiclePlatingLevel1",
+    "Button/Tooltip/UPLManufacturingFacility",
     "RoutheTank",
     "RoutheTankArmorPlating",
+    "StarArmor",
+    "UPLManufacturingFacilityTrain",
+    "AllowUnitRoutheTank",
+    "UPLManufacturingFacility",
+    "UPLVehiclePlatingLevel1",
     "RoutheTank",
     "UPLVehicleArmor",
     "UPLVehiclePlatingLevel2",
@@ -632,9 +721,6 @@
     "UPLVehicleWeapons",
     "UPLVehicleWeaponsLevel2",
     "UPLVehicleWeaponsLevel3",
-    "UPLManufacturingFacilityTrain",
-    "AllowUnitRoutheTank",
-    "UPLManufacturingFacility",
     "IsRoutheTank",
     "RoutheTank",
     null
@@ -652,36 +738,66 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     }
   ]
 }

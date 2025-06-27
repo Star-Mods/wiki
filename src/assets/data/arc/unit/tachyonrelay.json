@@ -1,6 +1,12 @@
 {
-  "Name": "Tachyon Relay",
-  "Description": "Long-range communications array. Provides equipment authorizations for the Directorate Navy assets.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- Honorguards",
+  "Name": {
+    "enUS": "Tachyon Relay",
+    "ruRU": "Тахионное реле"
+  },
+  "Description": {
+    "enUS": "Long-range communications array. Provides equipment authorizations for the Directorate Navy assets.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- Honorguards",
+    "ruRU": "Коммуникационная станция сверхдальнего действия. Позволяет запрашивать авторизации на применение средств ВКФ ОЗД.<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- Почётных стражей"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 800,
   "LifeMax": 800,
-  "LifeArmorName": "UED Adaptive Staballoy Plating",
+  "LifeArmorName": {
+    "enUS": "UED Adaptive Staballoy Plating",
+    "ruRU": "Броня из адаптивного стаб-сплава"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "TachyonRelay/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "TachyonRelay/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "TachyonRelay/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "TachyonRelay/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -172,8 +183,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -236,8 +253,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel Building",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -275,8 +298,14 @@
         "AbilCmd": "FusionCoreResearch2,Research1",
         "id": "AuthorizeEnrichedUraniumOrdinance",
         "Icon": "btn-ability-mengsk-topbar-nuclearannihilation",
-        "Tooltip": "Equipped with tactical nuclear warheads, Honorguard's Boomerang missiles will be capable of dealing additional damage to the enemies surrounding the main target.",
-        "Name": "Authorize Enriched Uranium Ordinance",
+        "Name": {
+          "enUS": "Authorize Enriched Uranium Ordinance",
+          "ruRU": "Запрос авторизации: Тактическое ядерное вооружение"
+        },
+        "Tooltip": {
+          "enUS": "Equipped with tactical nuclear warheads, Honorguard's Boomerang missiles will be capable of dealing additional damage to the enemies surrounding the main target.",
+          "ruRU": "Будучи оснащёнными ядерными боеголовками, ракеты «Бумеранг», выпускаемые <span style=\"color: FFFF80\">Почётным стражем</span>, смогут наносить урон по области."
+        },
         "Hotkey": "E"
       }
     ]
@@ -299,25 +328,41 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "UEDConstructionVisionDebuff"
+      "id": "UEDConstructionVisionDebuff",
+      "Name": {
+        "enUS": "UED Construction - Vision Debuff"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "FusionCoreResearch2",
-      "Name": "Research"
+      "Name": {
+        "enUS": "Research",
+        "ruRU": "Research"
+      }
     },
     {
       "id": "MilitaryResearchStationResearch",
-      "Name": "Research (MilitaryResearchStation)"
+      "Name": {
+        "enUS": "Research (MilitaryResearchStation)",
+        "ruRU": "Research (MilitaryResearchStation)"
+      }
     }
   ],
   "$Upgrades": [
@@ -339,30 +384,47 @@
   "$Morph": [],
   "$Phase": [],
   "$Producers": [
-    "BeaconUED",
-    "OperationHeadquarters"
+    "BeaconUED"
   ],
   "$Commands": [
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel Building",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
+      }
     },
     {
       "AbilCmd": "FusionCoreResearch2,Research1",
       "id": "AuthorizeEnrichedUraniumOrdinance",
       "Icon": "btn-ability-mengsk-topbar-nuclearannihilation",
-      "Tooltip": "Equipped with tactical nuclear warheads, Honorguard's Boomerang missiles will be capable of dealing additional damage to the enemies surrounding the main target.",
-      "Name": "Authorize Enriched Uranium Ordinance"
+      "Name": {
+        "enUS": "Authorize Enriched Uranium Ordinance",
+        "ruRU": "Запрос авторизации: Тактическое ядерное вооружение"
+      },
+      "Tooltip": {
+        "enUS": "Equipped with tactical nuclear warheads, Honorguard's Boomerang missiles will be capable of dealing additional damage to the enemies surrounding the main target.",
+        "ruRU": "Будучи оснащёнными ядерными боеголовками, ракеты «Бумеранг», выпускаемые <span style=\"color: FFFF80\">Почётным стражем</span>, смогут наносить урон по области."
+      }
     }
   ]
 }

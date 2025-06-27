@@ -1,6 +1,12 @@
 {
-  "Name": "Queen",
-  "Description": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Queen",
+    "ruRU": "Queen"
+  },
+  "Description": {
+    "enUS": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Defensive unit. Can use Spawn Larvae, Spawn Creep Tumor, and Transfusion. Moves much faster on creep.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 175,
   "LifeMax": 175,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -65,16 +74,18 @@
       "Anim": 50
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Queen/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Queen/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Queen/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Queen/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -101,8 +112,8 @@
   "DamageTakenXP": 1,
   "KillXP": 30,
   "CargoSize": 2,
-  "ScoreMake": 150,
-  "ScoreKill": 150,
+  "ScoreMake": 175,
+  "ScoreKill": 175,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 101,
   "PlaneArray": [
@@ -203,8 +214,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -277,8 +294,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -367,8 +390,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -457,8 +486,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -532,8 +567,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -687,8 +728,14 @@
         "AbilCmd": "SpawnLarva,Execute",
         "id": "MorphMorphalisk",
         "Icon": "btn-unit-zerg-larva",
-        "Tooltip": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae.",
-        "Name": "Spawn Larvae",
+        "Name": {
+          "enUS": "Spawn Larvae",
+          "ruRU": "Spawn Larvae"
+        },
+        "Tooltip": {
+          "enUS": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae.",
+          "ruRU": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae."
+        },
         "Hotkey": "V"
       },
       {
@@ -725,8 +772,14 @@
         "AbilCmd": "QueenBuild,Build1",
         "id": "BuildCreepTumor",
         "Icon": "btn-building-zerg-creeptumor",
-        "Tooltip": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><c val=\"#ColorAttackInfo\">Bonus: Zerg move faster on creep.</span>",
-        "Name": "Spawn Creep Tumor",
+        "Name": {
+          "enUS": "Spawn Creep Tumor",
+          "ruRU": "Spawn Creep Tumor"
+        },
+        "Tooltip": {
+          "enUS": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
+          "ruRU": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -879,8 +932,14 @@
         "AbilCmd": "Transfusion,Execute",
         "id": "Transfusion",
         "Icon": "btn-ability-zerg-transfusion-color",
-        "Tooltip": "Instantly restores 125 life to target biological unit or structure.",
-        "Name": "Transfusion",
+        "Name": {
+          "enUS": "Transfusion",
+          "ruRU": "Transfusion"
+        },
+        "Tooltip": {
+          "enUS": "Instantly restores 125 life to target biological unit or structure.",
+          "ruRU": "Instantly restores 125 life to target biological unit or structure."
+        },
         "Hotkey": "T"
       },
       {
@@ -907,7 +966,7 @@
         },
         "Unit": "QueenBurrowed",
         "Cost": {
-          "Minerals": 150,
+          "Minerals": 175,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
@@ -922,8 +981,14 @@
         "AbilCmd": "BurrowQueenDown,Execute",
         "id": "BurrowDown",
         "Icon": "btn-ability-zerg-burrow-color",
-        "Tooltip": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "Name": "Burrow",
+        "Name": {
+          "enUS": "Burrow",
+          "ruRU": "Burrow"
+        },
+        "Tooltip": {
+          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+        },
         "Hotkey": "D"
       }
     ]
@@ -939,7 +1004,7 @@
   "LifeArmor": 1,
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 150
+    "Minerals": 175
   },
   "KillDisplay": "Always",
   "RankDisplay": "Always",
@@ -958,13 +1023,17 @@
   ],
   "id": "Queen",
   "Icon": "btn-unit-zerg-queen",
+  "Model": "Queen_Ex3",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "AcidSpines",
       "Icon": "btn-upgrade-zerg-missileattacks-level0",
-      "Name": "Acid Spines",
+      "Name": {
+        "enUS": "Acid Spines",
+        "ruRU": "Acid Spines"
+      },
       "Amount": 9,
       "Kind": "Ranged",
       "TargetFilters": "Air",
@@ -974,7 +1043,10 @@
     {
       "id": "Talons",
       "Icon": "btn-upgrade-zerg-missileattacks-level0",
-      "Name": "Talons",
+      "Name": {
+        "enUS": "Talons",
+        "ruRU": "Talons"
+      },
       "Amount": 4,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -985,7 +1057,10 @@
     {
       "id": "TalonsMissile",
       "Icon": "btn-upgrade-zerg-missileattacks-level0",
-      "Name": "Talons",
+      "Name": {
+        "enUS": "Talons",
+        "ruRU": "Talons"
+      },
       "Amount": 4,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -996,44 +1071,76 @@
   ],
   "Behaviors": [
     {
-      "id": "QueenMustBeOnCreep"
+      "id": "QueenMustBeOnCreep",
+      "Name": {
+        "enUS": "Queen Must Be On Creep",
+        "ruRU": "Queen Must Be On Creep"
+      },
+      "Tooltip": {
+        "enUS": "Queen Must Be On Creep",
+        "ruRU": "Queen Must Be On Creep"
+      }
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "QueenBuild",
-      "Name": "Build"
+      "Name": {
+        "enUS": "Build",
+        "ruRU": "Build"
+      }
     },
     {
       "id": "BurrowQueenDown",
-      "Name": "Burrow"
+      "Name": {
+        "enUS": "Burrow",
+        "ruRU": "Burrow"
+      }
     },
     {
       "id": "SpawnLarva",
-      "Name": "Larva Swarm"
+      "Name": {
+        "enUS": "Larva Swarm",
+        "ruRU": "Larva Swarm"
+      }
     },
     {
       "id": "Transfusion",
-      "Name": "Transfusion"
+      "Name": {
+        "enUS": "Transfusion",
+        "ruRU": "Transfusion"
+      }
     }
   ],
   "$Upgrades": [
-    "Burrow",
+    "BurrowQueenUp",
     "Queen",
     "QueenBurrowed",
-    "BurrowQueenUp",
+    "NotQueen",
+    "TrainQueen",
+    "Burrow",
+    "SpawningPool",
     "ZergGroundArmorsLevel1",
     "Queen",
     "ZergGroundArmors",
@@ -1043,9 +1150,6 @@
     "ZergMissileWeapons",
     "ZergMissileWeaponsLevel2",
     "ZergMissileWeaponsLevel3",
-    "NotQueen",
-    "TrainQueen",
-    "SpawningPool",
     "Hatchery",
     "DigesterQueen",
     "QueenLand",
@@ -1078,64 +1182,118 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "SpawnLarva,Execute",
       "id": "MorphMorphalisk",
       "Icon": "btn-unit-zerg-larva",
-      "Tooltip": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae.",
-      "Name": "Spawn Larvae"
+      "Name": {
+        "enUS": "Spawn Larvae",
+        "ruRU": "Spawn Larvae"
+      },
+      "Tooltip": {
+        "enUS": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae.",
+        "ruRU": "Target Hatchery, Lair, or Hive spawns 4 Larvae in <b>40</b> seconds. If Hatchery, Lair, or Hive has more than 3 Larvae at one time, regular Larva production will stop until there are fewer than 3 Larvae."
+      }
     },
     {
       "AbilCmd": "QueenBuild,Build1",
       "id": "BuildCreepTumor",
       "Icon": "btn-building-zerg-creeptumor",
-      "Tooltip": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><c val=\"#ColorAttackInfo\">Bonus: Zerg move faster on creep.</span>",
-      "Name": "Spawn Creep Tumor"
+      "Name": {
+        "enUS": "Spawn Creep Tumor",
+        "ruRU": "Spawn Creep Tumor"
+      },
+      "Tooltip": {
+        "enUS": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>",
+        "ruRU": "A burrowed creep generator. Creep feeds nearby Zerg structures. A Creep Tumor can spawn one additional Creep Tumor.<br/><br/><span style=\"color: #ffff8a\">Bonus: Zerg move faster on creep.</span>"
+      }
     },
     {
       "AbilCmd": "Transfusion,Execute",
       "id": "Transfusion",
       "Icon": "btn-ability-zerg-transfusion-color",
-      "Tooltip": "Instantly restores 125 life to target biological unit or structure.",
-      "Name": "Transfusion"
+      "Name": {
+        "enUS": "Transfusion",
+        "ruRU": "Transfusion"
+      },
+      "Tooltip": {
+        "enUS": "Instantly restores 125 life to target biological unit or structure.",
+        "ruRU": "Instantly restores 125 life to target biological unit or structure."
+      }
     },
     {
       "AbilCmd": "BurrowQueenDown,Execute",
       "id": "BurrowDown",
       "Icon": "btn-ability-zerg-burrow-color",
-      "Tooltip": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-      "Name": "Burrow"
+      "Name": {
+        "enUS": "Burrow",
+        "ruRU": "Burrow"
+      },
+      "Tooltip": {
+        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
+        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+      }
     }
   ]
 }

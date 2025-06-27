@@ -1,4 +1,5 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Lesser Deep One"
   },
@@ -71,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "LesserDeepOne/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "LesserDeepOne/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "LesserDeepOne/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "LesserDeepOne/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,6 +99,9 @@
     "Biological",
     "Armored",
     "Structure"
+  ],
+  "BehaviorArray": [
+    "DragonLineage"
   ],
   "DamageDealtXP": 1,
   "DamageTakenXP": 1,
@@ -114,7 +120,18 @@
   "LifeArmor": 1,
   "CostCategory": "Technology",
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "BuildInProgress",
+    "DragonTrain",
+    "que5PassiveCancelToSelection",
+    "Rally",
+    "stop",
+    "LesserDeepOneBuild",
+    "LesserDeepOneTrain",
+    "LesserDeepOne"
+  ],
   "FogVisibility": "Snapshot",
+  "GlossaryCategory": "Unit/Category/DragonUnits",
   "HotkeyCategory": "Unit/Category/DragonUnits",
   "CardLayouts": {
     "Root": [
@@ -182,13 +199,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -226,10 +239,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -251,14 +261,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -297,8 +303,7 @@
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "Ashm",
-              "Requirements": "Hide"
+              "DefaultButtonFace": "HoldFireSpecial"
             },
             "Cheer": {
               "Flags": {
@@ -313,10 +318,7 @@
               "DefaultButtonFace": "Dance"
             }
           },
-          "id": "stop",
-          "Flags": {
-            "HoldFire": 1
-          }
+          "id": "stop"
         },
         "Cost": {
           "Minerals": 0,
@@ -336,12 +338,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -380,10 +379,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -406,13 +402,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -432,15 +424,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -499,6 +484,9 @@
                 },
                 "DefaultButtonFace": "GenesisPitLesser"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "GenesisPitLesser",
               "Time": 21
             },
@@ -509,6 +497,9 @@
                 },
                 "DefaultButtonFace": "AugmentationPitLesser"
               },
+              "ValidatorArray": [
+                "HasVision"
+              ],
               "Unit": "AugmentationPitLesser",
               "Time": 63
             },
@@ -736,13 +727,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -782,7 +769,7 @@
           "enUS": "Spawn Flamespitter"
         },
         "Tooltip": {
-          "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+          "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
         },
         "Hotkey": "Q"
       },
@@ -824,7 +811,7 @@
           "enUS": "Spawn Hunter"
         },
         "Tooltip": {
-          "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+          "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
         },
         "Hotkey": "W"
       },
@@ -904,12 +891,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "LesserDeepOneTrain,Train4",
         "id": "UnseenBeast",
-        "Icon": "wireframe-critter-matriarchsnowbeast",
+        "Icon": "wireframe-critter-snowbeast",
         "Name": {
           "enUS": "Spawn Unseen Beast"
         },
         "Tooltip": {
-          "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>1</b> Armor<br/>Teleport Assault</span>"
+          "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>Teleport Assault</span>"
         },
         "Hotkey": "R"
       },
@@ -921,6 +908,9 @@
             },
             "DefaultButtonFace": "GenesisPitLesser"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "GenesisPitLesser",
           "Time": 21
         },
@@ -957,6 +947,9 @@
             },
             "DefaultButtonFace": "AugmentationPitLesser"
           },
+          "ValidatorArray": [
+            "HasVision"
+          ],
           "Unit": "AugmentationPitLesser",
           "Time": 63
         },
@@ -987,6 +980,9 @@
       }
     ]
   },
+  "TechAliasArray": [
+    "LesserDeepOne"
+  ],
   "Sight": 9,
   "CostResource": {
     "Minerals": 150
@@ -1008,7 +1004,7 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "DragonLineageGreater",
+      "id": "DragonLineage",
       "Name": {
         "enUS": "Dragon Lineage"
       },
@@ -1018,10 +1014,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "DragonTrain",
@@ -1032,21 +1025,17 @@
     {
       "id": "que5PassiveCancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) Passive (Cancel to Selection)",
-        "enUS": "Queue (5) Passive (Cancel to Selection)"
+        "ruRU": "Queue (5) Passive (Cancel to Selection)"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -1070,26 +1059,17 @@
     }
   ],
   "$Upgrades": [
-    "PlodderBuild",
-    "LesserDeepOne",
-    "GenesisPitLesser",
-    "LesserDeepOneNoFootprint",
     "DragonPlateArmorLevel1",
+    "LesserDeepOne",
+    "LesserDeepOneNoFootprint",
     "LesserDeepOne",
     "DragonPlateArmors",
     "DragonPlateArmorLevel2",
     "DragonPlateArmorLevel3",
-    "DragonLineage"
+    "PlodderBuild"
   ],
   "$Requirements": [],
-  "$Production": [
-    "Flamespitter",
-    "DragonHunter",
-    "HornedMagus",
-    "UnseenBeast",
-    "GenesisPitLesser",
-    "AugmentationPitLesser"
-  ],
+  "$Production": [],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -1104,25 +1084,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1130,12 +1104,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1143,25 +1114,16 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "LesserDeepOneBuild,Halt",
@@ -1169,12 +1131,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "LesserDeepOneTrain,Train1",
@@ -1184,7 +1143,7 @@
         "enUS": "Spawn Flamespitter"
       },
       "Tooltip": {
-        "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>1</b> Attack Damage<br/>Can Attack air units</span>"
+        "enUS": "Fragile ranged unit. Projectiles may retarget.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>3</b> Melee Attack Damage<br/>Can Attack air units</span>"
       }
     },
     {
@@ -1195,7 +1154,7 @@
         "enUS": "Spawn Hunter"
       },
       "Tooltip": {
-        "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>40</b> Life<br/>+<b>1</b> Armor<br/>+<b>0.5</b> Speed<br/>Feast</span>"
+        "enUS": "Fast ranged unit. Pulls enemies with ranged attack. Can jump up and down cliffs.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>75</b> Life<br/>Feast</span><br/><span style=\"color: FF0000\">No Cliff Jump</span>"
       }
     },
     {
@@ -1212,12 +1171,12 @@
     {
       "AbilCmd": "LesserDeepOneTrain,Train4",
       "id": "UnseenBeast",
-      "Icon": "wireframe-critter-matriarchsnowbeast",
+      "Icon": "wireframe-critter-snowbeast",
       "Name": {
         "enUS": "Spawn Unseen Beast"
       },
       "Tooltip": {
-        "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>30</b> Life<br/>+<b>1</b> Armor<br/>Teleport Assault</span>"
+        "enUS": "Mobile melee assassin. Can be upgraded to cloak rendering the unit invisible to enemies without detection.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span><br/><br/><span style=\"color: 00FF00\">Ascended:<br/>+<b>35</b> Life<br/>Teleport Assault</span>"
       }
     },
     {

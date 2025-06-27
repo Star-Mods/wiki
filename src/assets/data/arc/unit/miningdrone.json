@@ -1,18 +1,24 @@
 {
-  "Name": "Mining Drone",
-  "Description": "Nano-Enabled Construction Robot<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
+  "Name": {
+    "enUS": "Mining Drone"
+  },
+  "Description": {
+    "enUS": "Nano-Enabled Construction Robot<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
   "DeathRevealType": "Snapshot",
-  "Race": "UPL",
-  "DefaultAcquireLevel": "Offensive",
-  "Response": "Acquire",
+  "Race": "UPLL",
+  "DefaultAcquireLevel": "Defensive",
+  "Response": "Flee",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
   "LifeStart": 45,
   "LifeMax": 45,
-  "LifeArmorName": "UPL Vehicle Plating",
+  "LifeArmorName": {
+    "enUS": "UPL Vehicle Plating"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -64,16 +70,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MiningDrone/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MiningDrone/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MiningDrone/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MiningDrone/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -92,7 +100,9 @@
   ],
   "Attributes": [
     "Light",
-    "Mechanical"
+    "Mechanical",
+    "Robotic",
+    "Hover"
   ],
   "Speed": 2.8125,
   "Acceleration": 2.5,
@@ -197,8 +207,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -271,8 +287,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -361,8 +383,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -435,8 +463,14 @@
         "Type": "AbilCmd",
         "AbilCmd": "attack,Execute",
         "id": "AttackWorker",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -525,8 +559,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -655,8 +695,12 @@
         "AbilCmd": "UPLMiningDroneRepair,Execute",
         "id": "UPLMiningDroneRepair",
         "Icon": "btn-ability-upl-miningdronesacrifice",
-        "Tooltip": "<span style=\"color: #FFFFFF\">Sacrifices</span> the Mining Drone to repair a targeted mechanical unit for <span style=\"color: #FFFF80\">500 </span>life over 8 seconds",
-        "Name": "Nanite Repair",
+        "Name": {
+          "enUS": "Nanite Repair"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFFFF\">Sacrifices</span> the Mining Drone to repair a targeted mechanical unit for <span style=\"color: FFFF80\">500 </span>life over 8 seconds"
+        },
         "Hotkey": "R"
       },
       {
@@ -732,6 +776,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "SCVHarvest"
         },
         "Cost": {
@@ -750,8 +798,12 @@
         "AbilCmd": "SCVHarvest,Gather",
         "id": "GatherUPL",
         "Icon": "btn-ability-terran-gather",
-        "Tooltip": "Orders Mining Drone to gather resources from a selected Mineral Field or Fluorite Deposit.",
-        "Name": "Gather",
+        "Name": {
+          "enUS": "Gather"
+        },
+        "Tooltip": {
+          "enUS": "Orders Mining Drone to gather resources from a selected Mineral Field or Fluorite Deposit."
+        },
         "Hotkey": "G"
       },
       {
@@ -827,6 +879,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "SCVHarvest"
         },
         "Cost": {
@@ -845,8 +901,14 @@
         "AbilCmd": "SCVHarvest,Return",
         "id": "ReturnCargo",
         "Icon": "btn-command-returncargo",
-        "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-        "Name": "Return Cargo",
+        "Name": {
+          "enUS": "Return Cargo",
+          "ruRU": "Return Cargo"
+        },
+        "Tooltip": {
+          "enUS": "Returns the carried resources to the nearest drop-off point.",
+          "ruRU": "Returns the carried resources to the nearest drop-off point."
+        },
         "Hotkey": "C"
       },
       {
@@ -866,8 +928,14 @@
         "SubmenuCardId": "TBl1",
         "id": "TerranBuild",
         "Icon": "btn-command-terran-buildstructure",
-        "Tooltip": "A list of basic structures.",
-        "Name": "Build Structure",
+        "Name": {
+          "enUS": "Build Structure",
+          "ruRU": "Build Structure"
+        },
+        "Tooltip": {
+          "enUS": "A list of basic structures.",
+          "ruRU": "A list of basic structures."
+        },
         "Hotkey": "B"
       },
       {
@@ -949,8 +1017,12 @@
         "AbilCmd": "MiningDroneSwitchMode,On",
         "id": "MiningDroneSwitchMode",
         "Icon": "btn-ability-upl-miningdronecombatmode",
-        "Tooltip": "Mining Drone replaces a harvester arm with a grenade launcher",
-        "Name": "Activate Grenade Launcher",
+        "Name": {
+          "enUS": "Activate Grenade Launcher"
+        },
+        "Tooltip": {
+          "enUS": "Mining Drone replaces a harvester arm with a grenade launcher which attacks at a short range and does more damage. In Grenade Launcher mode, Mining Drone cannot harvest resources, construct building or use any abilities."
+        },
         "Hotkey": "T"
       },
       {
@@ -1047,7 +1119,7 @@
                 "Requirements": "HaveUPLGenerator"
               },
               "Unit": "UPLBillet",
-              "Time": 60
+              "Time": 74
             },
             "Build5": {
               "Button": {
@@ -1101,7 +1173,7 @@
                   "AllowMinimap": 0
                 },
                 "DefaultButtonFace": "UPLCommStation",
-                "Requirements": "HaveUPLForwardOperatingBase"
+                "Requirements": "UnknownRequirement3"
               },
               "Unit": "UPLCommStation",
               "Time": 25
@@ -1134,17 +1206,21 @@
                   "AllowMinimap": 0
                 },
                 "DefaultButtonFace": "UPLAirstrip",
-                "Requirements": "HaveUPLBilletAndUPLManufacturingFacility"
+                "Requirements": "HaveUPLBillet"
               },
               "Unit": "UPLAirstrip",
-              "Time": 50
+              "Time": 65
             },
             "Build13": {
               "Button": {
                 "Flags": {
                   "AllowMinimap": 0
-                }
-              }
+                },
+                "DefaultButtonFace": "CreateBattleStation",
+                "Requirements": "UnknownRequirement2"
+              },
+              "Unit": "UPLBattleStation",
+              "Time": 36
             },
             "Build14": {
               "Button": {
@@ -1295,10 +1371,16 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "UPLBuild,Halt",
-        "id": "CancelBuilding",
+        "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1380,8 +1462,12 @@
         "AbilCmd": "MiningDroneSwitchMode,Off",
         "id": "MiningDroneSwitchModeOff",
         "Icon": "btn-ability-upl-miningdroneharvestmode",
-        "Tooltip": "Mining Drone exits combat mode to resume harvesting duties",
-        "Name": "Deactivate Grenade Launcher",
+        "Name": {
+          "enUS": "Deactivate Grenade Launcher"
+        },
+        "Tooltip": {
+          "enUS": "Mining Drone exits combat mode to resume harvesting duties"
+        },
         "Hotkey": "Y"
       }
     ],
@@ -1415,8 +1501,12 @@
         "AbilCmd": "UPLBuild,Build1",
         "id": "UPLHeadquarters",
         "Icon": "btn-building-upl-uplheadquarters",
-        "Tooltip": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>",
-        "Name": "Build Headquarters",
+        "Name": {
+          "enUS": "Build Headquarters"
+        },
+        "Tooltip": {
+          "enUS": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>"
+        },
         "Hotkey": "H"
       },
       {
@@ -1451,8 +1541,12 @@
         "AbilCmd": "UPLBuild,Build3",
         "id": "UPLExhumer",
         "Icon": "btn-building-upl-uplexhumer",
-        "Tooltip": "Resource Production Facility <br/><br/>Built over a Fluorine Deposit to Allow Production of Francine Gas",
-        "Name": "Build Exhumer",
+        "Name": {
+          "enUS": "Build Exhumer"
+        },
+        "Tooltip": {
+          "enUS": "Resource Production Facility <br/><br/>Built over a Fluorine Deposit to Allow Production of Francine Gas"
+        },
         "Hotkey": "E"
       },
       {
@@ -1484,43 +1578,13 @@
         "AbilCmd": "UPLBuild,Build2",
         "id": "UPLGenerator",
         "Icon": "btn-building-upl-uplgenerator",
-        "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-        "Name": "Build Fusion Generator",
+        "Name": {
+          "enUS": "Build Fusion Generator"
+        },
+        "Tooltip": {
+          "enUS": "Provides supply.<br/>Supply allows you to create more units."
+        },
         "Hotkey": "S"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "UPLForwardOperatingBase",
-            "Requirements": "HaveUPLBillet"
-          },
-          "Unit": "UPLForwardOperatingBase",
-          "Time": 40
-        },
-        "Unit": "UPLForwardOperatingBase",
-        "Time": 40,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 50,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBuild,Build10",
-        "id": "UPLForwardOperatingBase",
-        "Icon": "btn-building-upl-uplforwardoperatingbase",
-        "Tooltip": "Support Unit Production<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Infantry Officer</b><br/>- <b>CSV</b>",
-        "Name": "Build Forward Operating Base",
-        "Hotkey": "F"
       },
       {
         "Info": {
@@ -1547,13 +1611,17 @@
           "Food": 0
         },
         "Row": 1,
-        "Column": 1,
+        "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "UPLBuild,Build11",
         "id": "UPLManufacturingFacility",
         "Icon": "btn-building-upl-uplmanufacturingfacility",
-        "Tooltip": "Ground Vehicle Production facility.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>-  <b>Z-1</b><br/>-  <b>A-6</b><br/>-  <b>TR-17</b><br/>-  <b>Routhe Tank</b>",
-        "Name": "Build Manufacturing Facility",
+        "Name": {
+          "enUS": "Build Manufacturing Facility"
+        },
+        "Tooltip": {
+          "enUS": "Ground Vehicle Production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>-  <b>Z-1</b><br/>-  <b>A-6</b><br/>-  <b>TR-17</b><br/>-  <b>Routhe Tank</b>"
+        },
         "Hotkey": "M"
       },
       {
@@ -1562,8 +1630,46 @@
             "Flags": {
               "AllowMinimap": 0
             },
+            "DefaultButtonFace": "UPLRnDFacility",
+            "Requirements": "HaveUPLBilletAndUPLManufacturingFacility"
+          },
+          "Unit": "UPLRnDFacility",
+          "Time": 35
+        },
+        "Unit": "UPLRnDFacility",
+        "Time": 35,
+        "Cost": {
+          "Minerals": 150,
+          "Vespene": 50,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBuild,Build5",
+        "id": "UPLRnDFacility",
+        "Icon": "btn-building-upl-uplr&d",
+        "Name": {
+          "enUS": "Build R & D Facility"
+        },
+        "Tooltip": {
+          "enUS": "Research and Development.  <br/><br/>Research upgrades for your forces."
+        },
+        "Hotkey": "R"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
             "DefaultButtonFace": "UPLCommStation",
-            "Requirements": "HaveUPLForwardOperatingBase"
+            "Requirements": "UnknownRequirement3"
           },
           "Unit": "UPLCommStation",
           "Time": 25
@@ -1571,8 +1677,8 @@
         "Unit": "UPLCommStation",
         "Time": 25,
         "Cost": {
-          "Minerals": 125,
-          "Vespene": 100,
+          "Minerals": 100,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -1586,8 +1692,12 @@
         "AbilCmd": "UPLBuild,Build9",
         "id": "UPLCommStation",
         "Icon": "btn-building-upl-uplcommstation",
-        "Tooltip": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Build Comm Station",
+        "Name": {
+          "enUS": "Build Comm Station"
+        },
+        "Tooltip": {
+          "enUS": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -1620,8 +1730,12 @@
         "AbilCmd": "UPLBuild,Build6",
         "id": "UPLElectrostaticDefenseTower",
         "Icon": "btn-building-upl-uplelectrostaticdefensetower",
-        "Tooltip": "Automated Defensive Structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-        "Name": "Build Electrostatic Defense Tower",
+        "Name": {
+          "enUS": "Build Electrostatic Defense Tower"
+        },
+        "Tooltip": {
+          "enUS": "Automated Defensive Structure.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span> <br/><br/><span style=\"color: FFE303\">Detector</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -1640,8 +1754,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1651,13 +1771,13 @@
               "AllowMinimap": 0
             },
             "DefaultButtonFace": "UPLAirstrip",
-            "Requirements": "HaveUPLBilletAndUPLManufacturingFacility"
+            "Requirements": "HaveUPLBillet"
           },
           "Unit": "UPLAirstrip",
-          "Time": 50
+          "Time": 65
         },
         "Unit": "UPLAirstrip",
-        "Time": 50,
+        "Time": 65,
         "Cost": {
           "Minerals": 150,
           "Vespene": 100,
@@ -1674,8 +1794,12 @@
         "AbilCmd": "UPLBuild,Build12",
         "id": "UPLAirstrip",
         "Icon": "btn-building-upl-uplairstrip",
-        "Tooltip": "Aircraft production facility.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>-  <b>Raptor Jet</b><br/>-  <b>Osprey</b><br/>-  <b>Condor</b>",
-        "Name": "Build Airstrip",
+        "Name": {
+          "enUS": "Build Airstrip"
+        },
+        "Tooltip": {
+          "enUS": "Aircraft production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>-  <b>Raptor Jet</b><br/>-  <b>Osprey</b><br/>-  <b>Condor</b>"
+        },
         "Hotkey": "A"
       },
       {
@@ -1708,8 +1832,12 @@
         "AbilCmd": "UPLBuild,Build7",
         "id": "UPLNightjar",
         "Icon": "btn-building-upl-uplnightjar",
-        "Tooltip": "Anti-Armor / Anti-Air Cannon<br/><br/><c val=\"#ColorAttackInfo\">Can Attack Ground and Air units.</span>",
-        "Name": "Nightjar",
+        "Name": {
+          "enUS": "Nightjar"
+        },
+        "Tooltip": {
+          "enUS": "Anti-Armor / Anti-Air Cannon<br/><br/><span style=\"color: #ffff8a\">Can Attack Ground and Air units.</span>"
+        },
         "Hotkey": "G"
       },
       {
@@ -1722,10 +1850,10 @@
             "Requirements": "HaveUPLGenerator"
           },
           "Unit": "UPLBillet",
-          "Time": 60
+          "Time": 74
         },
         "Unit": "UPLBillet",
-        "Time": 60,
+        "Time": 74,
         "Cost": {
           "Minerals": 150,
           "Vespene": 0,
@@ -1742,8 +1870,12 @@
         "AbilCmd": "UPLBuild,Build4",
         "id": "UPLBillet",
         "Icon": "btn-building-upl-uplbillet",
-        "Tooltip": "Infantry training facility. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>Incinerator</b><br/>- <b>Mortar Trooper</b><br/>- <b>Rocket Trooper</b>",
-        "Name": "Build Billet",
+        "Name": {
+          "enUS": "Build Billet"
+        },
+        "Tooltip": {
+          "enUS": "Infantry training facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>undefined</b><br/>- <b>Mortar Trooper</b><br/>- <b>undefined</b>"
+        },
         "Hotkey": "B"
       },
       {
@@ -1752,14 +1884,14 @@
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "UPLRnDFacility",
-            "Requirements": "HaveUPLBilletAndUPLManufacturingFacility"
+            "DefaultButtonFace": "UPLForwardOperatingBase",
+            "Requirements": "HaveUPLBillet"
           },
-          "Unit": "UPLRnDFacility",
-          "Time": 35
+          "Unit": "UPLForwardOperatingBase",
+          "Time": 40
         },
-        "Unit": "UPLRnDFacility",
-        "Time": 35,
+        "Unit": "UPLForwardOperatingBase",
+        "Time": 40,
         "Cost": {
           "Minerals": 150,
           "Vespene": 50,
@@ -1773,12 +1905,16 @@
         "Row": 1,
         "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "UPLBuild,Build5",
-        "id": "UPLRnDFacility",
-        "Icon": "btn-building-upl-uplr&d",
-        "Tooltip": "Research and Development.  <br/><br/>Research upgrades for your forces.",
-        "Name": "Build R & D Facility",
-        "Hotkey": "R"
+        "AbilCmd": "UPLBuild,Build10",
+        "id": "UPLForwardOperatingBase",
+        "Icon": "btn-building-upl-uplforwardoperatingbase",
+        "Name": {
+          "enUS": "Build Forward Operating Base"
+        },
+        "Tooltip": {
+          "enUS": "Support Unit Production<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Infantry Officer</b><br/>- <b>CSV</b>"
+        },
+        "Hotkey": "F"
       },
       {
         "Info": {
@@ -1810,8 +1946,12 @@
         "AbilCmd": "UPLBuild,Build14",
         "id": "UPLSolitaire",
         "Icon": "btn-building-upl-uplsolitaire",
-        "Tooltip": "Manned Defensive structure.  <br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-        "Name": "Solitaire",
+        "Name": {
+          "enUS": "Solitaire"
+        },
+        "Tooltip": {
+          "enUS": "Manned Defensive structure.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
         "Hotkey": "Y"
       }
     ]
@@ -1830,13 +1970,16 @@
   "AlliedPushPriority": 8,
   "id": "MiningDrone",
   "Icon": "btn-unit-upl-miningdrone",
+  "Model": "MiningDrone",
   "LifeArmorIcon": "btn-upgrades-upl-vehicleplating-lvl0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "MningDrill",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
-      "Name": "Mining Drill",
+      "Name": {
+        "enUS": "Mining Drill"
+      },
       "Amount": 5,
       "Kind": "Melee",
       "TargetFilters": "Ground",
@@ -1848,35 +1991,53 @@
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "SCVHarvest",
-      "Name": "Gather (SCV)"
+      "Name": {
+        "enUS": "Gather (SCV)",
+        "ruRU": "Gather (SCV)"
+      }
     },
     {
       "id": "UPLBuild",
-      "Name": "Build"
+      "Name": {
+        "enUS": "Build"
+      }
     },
     {
       "id": "MiningDroneSwitchMode",
-      "Name": "MiningDroneSwitchMode"
+      "Name": {
+        "enUS": "MiningDroneSwitchMode"
+      }
     },
     {
       "id": "UPLMiningDroneRepair",
-      "Name": "UPLMiningDroneRepair"
+      "Name": {
+        "enUS": "UPLMiningDroneRepair"
+      }
     }
   ],
   "$Upgrades": [
-    "IsMiningDrone",
+    "Button/Tooltip/UPLHeadquarters",
     "MiningDrone",
     "UPLVehiclePlatingLevel1",
     "MiningDrone",
@@ -1887,9 +2048,10 @@
     "UPLVehicleWeapons",
     "UPLVehicleWeaponsLevel2",
     "UPLVehicleWeaponsLevel3",
+    "IsMiningDrone",
     "UPLHeadquartersTrain",
     "UPLHeadquarters",
-    "UPL",
+    "UPLL",
     "MiningDrone",
     null
   ],
@@ -1898,14 +2060,14 @@
     "UPLHeadquarters",
     "UPLExhumer",
     "UPLGenerator",
-    "UPLForwardOperatingBase",
     "UPLManufacturingFacility",
+    "UPLRnDFacility",
     "UPLCommStation",
     "UPLElectrostaticDefenseTower",
     "UPLAirstrip",
     "UPLNightjar",
     "UPLBillet",
-    "UPLRnDFacility",
+    "UPLForwardOperatingBase",
     "UPLSolitaire"
   ],
   "$Research": [],
@@ -1919,161 +2081,267 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackWorker",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "UPLMiningDroneRepair,Execute",
       "id": "UPLMiningDroneRepair",
       "Icon": "btn-ability-upl-miningdronesacrifice",
-      "Tooltip": "<span style=\"color: #FFFFFF\">Sacrifices</span> the Mining Drone to repair a targeted mechanical unit for <span style=\"color: #FFFF80\">500 </span>life over 8 seconds",
-      "Name": "Nanite Repair"
+      "Name": {
+        "enUS": "Nanite Repair"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFFFF\">Sacrifices</span> the Mining Drone to repair a targeted mechanical unit for <span style=\"color: FFFF80\">500 </span>life over 8 seconds"
+      }
     },
     {
       "AbilCmd": "SCVHarvest,Gather",
       "id": "GatherUPL",
       "Icon": "btn-ability-terran-gather",
-      "Tooltip": "Orders Mining Drone to gather resources from a selected Mineral Field or Fluorite Deposit.",
-      "Name": "Gather"
+      "Name": {
+        "enUS": "Gather"
+      },
+      "Tooltip": {
+        "enUS": "Orders Mining Drone to gather resources from a selected Mineral Field or Fluorite Deposit."
+      }
     },
     {
       "AbilCmd": "SCVHarvest,Return",
       "id": "ReturnCargo",
       "Icon": "btn-command-returncargo",
-      "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-      "Name": "Return Cargo"
+      "Name": {
+        "enUS": "Return Cargo",
+        "ruRU": "Return Cargo"
+      },
+      "Tooltip": {
+        "enUS": "Returns the carried resources to the nearest drop-off point.",
+        "ruRU": "Returns the carried resources to the nearest drop-off point."
+      }
     },
     {
       "AbilCmd": "MiningDroneSwitchMode,On",
       "id": "MiningDroneSwitchMode",
       "Icon": "btn-ability-upl-miningdronecombatmode",
-      "Tooltip": "Mining Drone replaces a harvester arm with a grenade launcher",
-      "Name": "Activate Grenade Launcher"
+      "Name": {
+        "enUS": "Activate Grenade Launcher"
+      },
+      "Tooltip": {
+        "enUS": "Mining Drone replaces a harvester arm with a grenade launcher which attacks at a short range and does more damage. In Grenade Launcher mode, Mining Drone cannot harvest resources, construct building or use any abilities."
+      }
     },
     {
       "AbilCmd": "UPLBuild,Halt",
-      "id": "CancelBuilding",
+      "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "MiningDroneSwitchMode,Off",
       "id": "MiningDroneSwitchModeOff",
       "Icon": "btn-ability-upl-miningdroneharvestmode",
-      "Tooltip": "Mining Drone exits combat mode to resume harvesting duties",
-      "Name": "Deactivate Grenade Launcher"
+      "Name": {
+        "enUS": "Deactivate Grenade Launcher"
+      },
+      "Tooltip": {
+        "enUS": "Mining Drone exits combat mode to resume harvesting duties"
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build1",
       "id": "UPLHeadquarters",
       "Icon": "btn-building-upl-uplheadquarters",
-      "Tooltip": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>",
-      "Name": "Build Headquarters"
+      "Name": {
+        "enUS": "Build Headquarters"
+      },
+      "Tooltip": {
+        "enUS": "Primary structure. Used to receive gathered resources. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Mining Drone</b><br/>- <b>CARR</b>"
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build3",
       "id": "UPLExhumer",
       "Icon": "btn-building-upl-uplexhumer",
-      "Tooltip": "Resource Production Facility <br/><br/>Built over a Fluorine Deposit to Allow Production of Francine Gas",
-      "Name": "Build Exhumer"
+      "Name": {
+        "enUS": "Build Exhumer"
+      },
+      "Tooltip": {
+        "enUS": "Resource Production Facility <br/><br/>Built over a Fluorine Deposit to Allow Production of Francine Gas"
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build2",
       "id": "UPLGenerator",
       "Icon": "btn-building-upl-uplgenerator",
-      "Tooltip": "Provides supply.<br/>Supply allows you to create more units.",
-      "Name": "Build Fusion Generator"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build10",
-      "id": "UPLForwardOperatingBase",
-      "Icon": "btn-building-upl-uplforwardoperatingbase",
-      "Tooltip": "Support Unit Production<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Infantry Officer</b><br/>- <b>CSV</b>",
-      "Name": "Build Forward Operating Base"
+      "Name": {
+        "enUS": "Build Fusion Generator"
+      },
+      "Tooltip": {
+        "enUS": "Provides supply.<br/>Supply allows you to create more units."
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build11",
       "id": "UPLManufacturingFacility",
       "Icon": "btn-building-upl-uplmanufacturingfacility",
-      "Tooltip": "Ground Vehicle Production facility.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>-  <b>Z-1</b><br/>-  <b>A-6</b><br/>-  <b>TR-17</b><br/>-  <b>Routhe Tank</b>",
-      "Name": "Build Manufacturing Facility"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build9",
-      "id": "UPLCommStation",
-      "Icon": "btn-building-upl-uplcommstation",
-      "Tooltip": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Build Comm Station"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build6",
-      "id": "UPLElectrostaticDefenseTower",
-      "Icon": "btn-building-upl-uplelectrostaticdefensetower",
-      "Tooltip": "Automated Defensive Structure.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground and air units.</span>",
-      "Name": "Build Electrostatic Defense Tower"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build12",
-      "id": "UPLAirstrip",
-      "Icon": "btn-building-upl-uplairstrip",
-      "Tooltip": "Aircraft production facility.<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>-  <b>Raptor Jet</b><br/>-  <b>Osprey</b><br/>-  <b>Condor</b>",
-      "Name": "Build Airstrip"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build7",
-      "id": "UPLNightjar",
-      "Icon": "btn-building-upl-uplnightjar",
-      "Tooltip": "Anti-Armor / Anti-Air Cannon<br/><br/><c val=\"#ColorAttackInfo\">Can Attack Ground and Air units.</span>",
-      "Name": "Nightjar"
-    },
-    {
-      "AbilCmd": "UPLBuild,Build4",
-      "id": "UPLBillet",
-      "Icon": "btn-building-upl-uplbillet",
-      "Tooltip": "Infantry training facility. <br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>Incinerator</b><br/>- <b>Mortar Trooper</b><br/>- <b>Rocket Trooper</b>",
-      "Name": "Build Billet"
+      "Name": {
+        "enUS": "Build Manufacturing Facility"
+      },
+      "Tooltip": {
+        "enUS": "Ground Vehicle Production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>-  <b>Z-1</b><br/>-  <b>A-6</b><br/>-  <b>TR-17</b><br/>-  <b>Routhe Tank</b>"
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build5",
       "id": "UPLRnDFacility",
       "Icon": "btn-building-upl-uplr&d",
-      "Tooltip": "Research and Development.  <br/><br/>Research upgrades for your forces.",
-      "Name": "Build R & D Facility"
+      "Name": {
+        "enUS": "Build R & D Facility"
+      },
+      "Tooltip": {
+        "enUS": "Research and Development.  <br/><br/>Research upgrades for your forces."
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build9",
+      "id": "UPLCommStation",
+      "Icon": "btn-building-upl-uplcommstation",
+      "Name": {
+        "enUS": "Build Comm Station"
+      },
+      "Tooltip": {
+        "enUS": "SatNet Communications<br/><br/>Increases speed of nearby allied units and detects cloaked units.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build6",
+      "id": "UPLElectrostaticDefenseTower",
+      "Icon": "btn-building-upl-uplelectrostaticdefensetower",
+      "Name": {
+        "enUS": "Build Electrostatic Defense Tower"
+      },
+      "Tooltip": {
+        "enUS": "Automated Defensive Structure.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span> <br/><br/><span style=\"color: FFE303\">Detector</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build12",
+      "id": "UPLAirstrip",
+      "Icon": "btn-building-upl-uplairstrip",
+      "Name": {
+        "enUS": "Build Airstrip"
+      },
+      "Tooltip": {
+        "enUS": "Aircraft production facility.<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>-  <b>Raptor Jet</b><br/>-  <b>Osprey</b><br/>-  <b>Condor</b>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build7",
+      "id": "UPLNightjar",
+      "Icon": "btn-building-upl-uplnightjar",
+      "Name": {
+        "enUS": "Nightjar"
+      },
+      "Tooltip": {
+        "enUS": "Anti-Armor / Anti-Air Cannon<br/><br/><span style=\"color: #ffff8a\">Can Attack Ground and Air units.</span>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build4",
+      "id": "UPLBillet",
+      "Icon": "btn-building-upl-uplbillet",
+      "Name": {
+        "enUS": "Build Billet"
+      },
+      "Tooltip": {
+        "enUS": "Infantry training facility. <br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Combat Infantry</b><br/>- <b>Heavy Gunner</b><br/>- <b>undefined</b><br/>- <b>Mortar Trooper</b><br/>- <b>undefined</b>"
+      }
+    },
+    {
+      "AbilCmd": "UPLBuild,Build10",
+      "id": "UPLForwardOperatingBase",
+      "Icon": "btn-building-upl-uplforwardoperatingbase",
+      "Name": {
+        "enUS": "Build Forward Operating Base"
+      },
+      "Tooltip": {
+        "enUS": "Support Unit Production<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- <b>Infantry Officer</b><br/>- <b>CSV</b>"
+      }
     },
     {
       "AbilCmd": "UPLBuild,Build14",
       "id": "UPLSolitaire",
       "Icon": "btn-building-upl-uplsolitaire",
-      "Tooltip": "Manned Defensive structure.  <br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units</span>",
-      "Name": "Solitaire"
+      "Name": {
+        "enUS": "Solitaire"
+      },
+      "Tooltip": {
+        "enUS": "Manned Defensive structure.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+      }
     }
   ]
 }

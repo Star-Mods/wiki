@@ -1,0 +1,981 @@
+{
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Leviathan"
+  },
+  "Description": {
+    "enUS": "The ultimate battleship that can deal area damage and has interceptors. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air</span>"
+  },
+  "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
+  "DeathRevealRadius": 3,
+  "DeathRevealDuration": 4,
+  "DeathRevealType": "Snapshot",
+  "Race": "CABAL",
+  "DefaultAcquireLevel": "Offensive",
+  "Response": "Acquire",
+  "ResourceState": "Unknown",
+  "ResourceType": "Unknown",
+  "LifeStart": 600,
+  "LifeMax": 600,
+  "LifeArmorName": {
+    "enUS": "CABAL Vehicles Armor"
+  },
+  "Mover": "Fly",
+  "StationaryTurningRate": 990,
+  "TurningRate": 990,
+  "Radius": 1.375,
+  "SeparationRadius": 1.375,
+  "MinimapRadius": 1.375,
+  "EditorCategories": "ObjectType:Unit,ObjectFamily:CNC",
+  "TacticalAIFilters": "-;Player,Ally,Neutral",
+  "AIEvalFactor": 0.8,
+  "Mass": 0.4,
+  "FlagArray": [
+    "Movable",
+    "Unclickable",
+    "Unhighlightable",
+    "Untooltipable",
+    "KillCredit",
+    "ShowResources",
+    "ClearRallyOnTargetLost",
+    "PlayerRevivable",
+    "CameraFollow",
+    "PreventDestroy",
+    "UseLineOfSight",
+    "ArmySelect"
+  ],
+  "EditorFlags": [
+    "BlockStructures"
+  ],
+  "PushPriority": 10,
+  "LeaderAlias": "CABALLeviathan",
+  "HotkeyAlias": "CABALLeviathan",
+  "SelectAlias": "CABALLeviathan",
+  "SubgroupAlias": "CABALLeviathan",
+  "OccludeHeight": 0.75,
+  "TacticalAI": "CABALLeviathan",
+  "AIEvaluateAlias": "CABALLeviathan",
+  "ReviveType": "CABALLeviathan",
+  "PawnItemReduction": 1,
+  "Fidget": {
+    "DelayMax": 30,
+    "DelayMin": 10,
+    "DistanceMax": 4,
+    "DistanceMin": 1,
+    "TurnAngle": 90,
+    "TurningRate": 90,
+    "ChanceArray": {
+      "Idle": 100
+    }
+  },
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CABALLeviathan/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CABALLeviathan/Revive",
+        "Location": "Unit"
+      }
+    }
+  ],
+  "InnerRadiusSafetyMultiplier": 1,
+  "ArmorType": "Unknown",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Mob": "Multiplayer",
+  "DamageDealtXP": 1,
+  "DamageTakenXP": 1,
+  "ScoreResult": "BuildOrder",
+  "GlossaryAlias": "CABALLeviathan",
+  "Sight": 14,
+  "AttackTargetPriority": [
+    {
+      "value": "20"
+    }
+  ],
+  "ScoreMakeCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "ScoreKillCostFactor": {
+    "Minerals": 1,
+    "Vespene": 1
+  },
+  "Speed": 1.1054,
+  "CostCategory": "Army",
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "HangarQueue5",
+    "CABALLeviathanHangar"
+  ],
+  "CardLayouts": {
+    "Root": [
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Patrol",
+        "id": "MovePatrol",
+        "Icon": "btn-command-patrol",
+        "Name": {
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": "-",
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,HoldPos",
+        "id": "MoveHoldPosition",
+        "Icon": "btn-command-holdposition",
+        "Name": {
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
+        },
+        "Tooltip": "-",
+        "Hotkey": "H"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "Attack",
+        "Icon": "btn-command-attack",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilStop",
+          "Name": "Abil/Name/stop",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "stop",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Stop",
+          "CmdButtonArray": {
+            "Stop": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Stop"
+            },
+            "HoldFire": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "HoldFireSpecial"
+            },
+            "Cheer": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cheer"
+            },
+            "Dance": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Dance"
+            }
+          },
+          "id": "stop"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "stop,Stop",
+        "id": "Stop",
+        "Icon": "btn-command-stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": "-",
+        "Hotkey": "S"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,Move",
+        "id": "Move",
+        "Icon": "btn-command-move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": "-",
+        "Hotkey": "M"
+      },
+      {
+        "Info": {
+          "Charge": {
+            "Link": "CarrierInterceptor",
+            "Location": "Unit"
+          },
+          "Cooldown": {
+            "Link": "CarrierTrainInterceptor",
+            "TimeUse": 0.01
+          },
+          "Button": {
+            "Flags": {
+              "ToSelection": 1
+            },
+            "DefaultButtonFace": "Interceptor",
+            "Requirements": "NodArmInterceptor"
+          },
+          "Flags": {
+            "AutoBuild": 1,
+            "AutoBuildOn": 1,
+            "LeashRetarget": 1
+          },
+          "Time": 10,
+          "CountStart": 4,
+          "Manage": "Recall",
+          "Unit": "CABALLeviathanDrone"
+        },
+        "Unit": "CABALLeviathanDrone",
+        "Time": 10,
+        "Cost": {
+          "Minerals": 15,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "CABALLeviathanHangar,Ammo1",
+        "id": "CABALInterceptor",
+        "Name": {
+          "enUS": "Create an interceptor"
+        },
+        "Tooltip": {
+          "enUS": "Create an interceptor. Interceptors are capable of autonomously attacking Leviathan targets. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+        },
+        "Hotkey": "I"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "Passive",
+        "AbilCmd": "launchinterceptor,Execute",
+        "id": "InterceptorLaunch",
+        "Name": {
+          "enUS": "Launch interceptor"
+        },
+        "Tooltip": {
+          "enUS": "Commands the interceptor to attack the enemy"
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "NodAramUpgrade",
+        "Name": {
+          "enUS": "Upgrade"
+        },
+        "Tooltip": {
+          "enUS": "The troops to which Nod belongs do not have the conventional third-level armament upgrade in the Koprulu sector, but instead have battlefield experience upgrades. <br/>Each Nod unit needs to kill units twice its own production value before it can advance. <br/>Level 1: Increase armor by 1 point. <br/>Level 2: Increase weapon damage by 15%. <br/>Level 3: Increase armor by 1 point and gain slow health recovery. <br/>If there are multiple Nod units nearby when a unit is killed, the experience gained by the killed unit will be divided equally. <br/>Each unit can be upgraded up to 3 times."
+        }
+      }
+    ]
+  },
+  "PlaneArray": [
+    "Air"
+  ],
+  "Collide": [
+    "Flying"
+  ],
+  "Height": 3.75,
+  "VisionHeight": 4,
+  "GlossaryCategory": "Unit/Category/CABALUnits",
+  "HotkeyCategory": "Unit/Category/CABALUnits",
+  "SubgroupPriority": 18,
+  "id": "CABALLeviathan",
+  "Attributes": [
+    "Armored",
+    "Mechanical",
+    "Massive"
+  ],
+  "ShieldArmorName": "-",
+  "Acceleration": 1.375,
+  "Deceleration": 1,
+  "Food": -10,
+  "CostResource": {
+    "Minerals": 400,
+    "Vespene": 400
+  },
+  "KillXP": 50,
+  "BehaviorArray": [
+    "LeviathanWeaponSearch",
+    "Tech3"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "CABALLeviathanMissile1"
+    },
+    {
+      "Link": "CABALLeviathanMissile2"
+    },
+    {
+      "Link": "CABALLeviathanMissile3"
+    },
+    {
+      "Link": "NodLaserCannon"
+    },
+    {
+      "Link": "CABALInterceptorLaunch"
+    }
+  ],
+  "ScoreMake": 600,
+  "ScoreKill": 600,
+  "TacticalAIThink": "AIThinkMothership",
+  "GlossaryPriority": 190,
+  "RepairTime": 30,
+  "LifeArmorLevel": 3,
+  "Weapons": [
+    {
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "LeviathanLiquidTibDamage",
+      "DisplayAttackCount": 3,
+      "TargetFilters": "Ground",
+      "Range": 8,
+      "Arc": 360,
+      "Period": 2,
+      "Effect": "CABALLeviathanLaunchMissile",
+      "AllowedMovement": "Moving",
+      "id": "CABALLeviathanMissile1",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Leviathan Weapon 1"
+      },
+      "Amount": 4,
+      "AttributeBonus": {
+        "Structure": 8
+      },
+      "Kind": "Splash"
+    },
+    {
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "LeviathanLiquidTibDamage",
+      "DisplayAttackCount": 1,
+      "TargetFilters": "Ground",
+      "Range": 8,
+      "Arc": 360,
+      "Period": 2,
+      "Effect": "CABALLeviathanLaunchMissile2",
+      "AllowedMovement": "Moving",
+      "id": "CABALLeviathanMissile2",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Leviathan Weapon 2"
+      },
+      "Amount": 4,
+      "AttributeBonus": {
+        "Structure": 8
+      },
+      "Kind": "Splash"
+    },
+    {
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "LeviathanLiquidTibDamage",
+      "DisplayAttackCount": 1,
+      "TargetFilters": "Ground",
+      "Range": 8,
+      "Arc": 360,
+      "Period": 2,
+      "Effect": "CABALLeviathanLaunchMissile3",
+      "AllowedMovement": "Moving",
+      "id": "CABALLeviathanMissile3",
+      "parent": "CABALWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Leviathan Weapon 3"
+      },
+      "Amount": 4,
+      "AttributeBonus": {
+        "Structure": 8
+      },
+      "Kind": "Splash"
+    },
+    {
+      "DisplayEffect": "NodLaserCannonDamage",
+      "TargetFilters": "",
+      "Range": 8,
+      "TeleportResetRange": 0,
+      "Cost": {
+        "Cooldown": {
+          "Location": "Unit"
+        }
+      },
+      "Period": 3.5,
+      "Effect": "NodLaserCannonDamage",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0
+      },
+      "LegacyOptions": {
+        "FaceTargetWhileInCooldown": 0
+      },
+      "AllowedMovement": "Moving",
+      "Arc": 360,
+      "id": "NodLaserCannon",
+      "parent": "NodWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Nod Laser Cannon"
+      },
+      "Amount": 40,
+      "AttributeBonus": {
+        "Massive": 25
+      },
+      "Kind": "Ranged"
+    },
+    {
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
+      "DisplayEffect": "Carrier",
+      "TargetFilters": "",
+      "Range": 8,
+      "Arc": 360,
+      "Period": 3,
+      "DamagePoint": 0,
+      "Backswing": 0,
+      "Effect": "InterceptorLaunchPersistent",
+      "AllowedMovement": "Moving",
+      "id": "CABALInterceptorLaunch",
+      "parent": "CABALWeapon",
+      "icon": "InterceptorIcon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Launch interceptor"
+      }
+    }
+  ],
+  "Behaviors": [
+    {
+      "id": "LeviathanWeaponSearch",
+      "Name": {
+        "enUS": "Leviathan WeaponSearch"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "Tech3",
+      "Icon": "nodfxtier2techupgrade",
+      "Name": {
+        "enUS": "Level 3 License"
+      },
+      "Tooltip": {
+        "enUS": "Unit's weapon damage increased"
+      }
+    }
+  ],
+  "Abilities": [
+    {
+      "id": "move",
+      "Name": {
+        "enUS": "move",
+        "ruRU": "Move"
+      }
+    },
+    {
+      "id": "stop",
+      "Name": {
+        "enUS": "stop",
+        "ruRU": "Stop"
+      }
+    },
+    {
+      "id": "attack",
+      "Name": {
+        "ruRU": "Attack"
+      }
+    },
+    {
+      "id": "HangarQueue5",
+      "Name": "-"
+    },
+    {
+      "id": "CABALLeviathanHangar",
+      "Name": {
+        "enUS": "Nod Leviathan Hangar"
+      }
+    }
+  ],
+  "$Upgrades": [
+    "CABALAirTowerTrain",
+    "CABALLeviathan",
+    "CABALSupportConstructionYard",
+    "UQ_CABALLeviathan",
+    "UN_CABALLeviathan"
+  ],
+  "$Requirements": [],
+  "$Production": [
+    "CABALLeviathanDrone"
+  ],
+  "$Research": [],
+  "$Morph": [],
+  "$Phase": [],
+  "$Producers": [
+    "CABALSupportConstructionYard"
+  ],
+  "$Commands": [
+    {
+      "AbilCmd": "move,Patrol",
+      "id": "MovePatrol",
+      "Icon": "btn-command-patrol",
+      "Name": {
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,HoldPos",
+      "id": "MoveHoldPosition",
+      "Icon": "btn-command-holdposition",
+      "Name": {
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "Attack",
+      "Icon": "btn-command-attack",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "stop,Stop",
+      "id": "Stop",
+      "Icon": "btn-command-stop",
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,Move",
+      "id": "Move",
+      "Icon": "btn-command-move",
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "CABALLeviathanHangar,Ammo1",
+      "id": "CABALInterceptor",
+      "Name": {
+        "enUS": "Create an interceptor"
+      },
+      "Tooltip": {
+        "enUS": "Create an interceptor. Interceptors are capable of autonomously attacking Leviathan targets. <br/><br/><span style=\"color: #ffff8a\">Can be used against ground and air. </span>"
+      }
+    },
+    {
+      "AbilCmd": "launchinterceptor,Execute",
+      "id": "InterceptorLaunch",
+      "Name": {
+        "enUS": "Launch interceptor"
+      },
+      "Tooltip": {
+        "enUS": "Commands the interceptor to attack the enemy"
+      }
+    }
+  ]
+}

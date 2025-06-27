@@ -1,6 +1,12 @@
 {
-  "Name": "Aquila",
-  "Description": "Support trooper. Can use Nanite Emitter.<br/><br/><span style=\"color: #78F0FF\">Power user.</span><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Aquila",
+    "ruRU": "Аквила"
+  },
+  "Description": {
+    "enUS": "Support trooper. Can use Nanite Emitter.<br/><br/><span style=\"color: 78F0FF\">Power user.</span><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Юнит поддержки. Может использовать Перегрузку и Нанитовую Гранату.<br/><br/><span style=\"color: f078ff\">Потребляет энергию.</span><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +16,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 80,
-  "LifeMax": 80,
-  "LifeArmorName": "Ground Mechanical Plating",
+  "LifeStart": 70,
+  "LifeMax": 70,
+  "LifeArmorName": {
+    "enUS": "Ground Mechanical Plating",
+    "ruRU": "Броня наземной механики"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -65,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Aquila/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Aquila/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Aquila/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Aquila/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -202,8 +213,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -292,8 +309,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -367,8 +390,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -441,8 +470,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -531,8 +566,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -634,14 +675,14 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "AquilaNaniteEmitter",
-              "Requirements": "AquilaNaniteGrenadeReq"
+              "Requirements": "GenetronPowerBalance0100"
             }
           },
           "FollowRange": 5,
           "Cost": [
             {
               "Vital": {
-                "Energy": 50
+                "Energy": 100
               },
               "Charge": {
                 "Link": "Abil/FlashGrenade"
@@ -653,7 +694,7 @@
             }
           ],
           "Range": [
-            10
+            9
           ],
           "FinishTime": [
             0.5
@@ -672,7 +713,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 50,
+          "Energy": 100,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -683,15 +724,19 @@
         "AbilCmd": "AquilaNaniteEmitter,Execute",
         "id": "AquilaNaniteEmitter",
         "Icon": "btn-upgrade-nova-btn-upgrade-nova-pulsegrenade",
-        "Tooltip": "Creates a zone on the ground which lasts <b>4</b> seconds. Ground units inside of this zone have their movement and attack speed decreased by <b>50</b>%.<br/><br/><span style=\"color: #78F0FF\">Uses <b>50</b> power.</span><br/><span style=\"color: #FFFF80\">Massive units have <b>50</b>% immunity.</span>",
-        "Name": "Nanite Emitter",
+        "Name": {
+          "enUS": "Nanite Emitter"
+        },
+        "Tooltip": {
+          "enUS": "Creates a zone on the ground which lasts <b>3</b> seconds. Ground units inside of this zone have their movement and attack speed decreased by <b>50</b>%.<br/><br/><span style=\"color: 78F0FF\">Uses <b>100</b> power.</span><br/><span style=\"color: FFFF80\">Massive units have <b>50</b>% immunity.</span>"
+        },
         "Hotkey": "G"
       }
     ]
   },
   "CargoSize": 2,
-  "EnergyStart": 80,
-  "EnergyMax": 80,
+  "EnergyStart": 150,
+  "EnergyMax": 150,
   "Food": -2,
   "CostResource": {
     "Minerals": 100,
@@ -715,47 +760,67 @@
   "InnerRadius": 0.375,
   "EnergyRegenRate": 1.125,
   "Icon": "btn-unit-genetron-aquila",
+  "Model": "Aquila",
   "LifeArmorIcon": "btn-upgrade-genetron-groundmechplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "D15Magnum",
       "Icon": "btn-upgrade-genetron-lightmechweapons-level0",
-      "Name": "D-15 Magnum",
-      "Amount": 16,
+      "Name": {
+        "enUS": "D-15 Magnum",
+        "ruRU": "D-15 Магнум"
+      },
+      "Amount": 18,
       "Kind": "Ranged",
       "TargetFilters": "",
-      "Range": 8,
-      "Period": 1.47
+      "Range": 7,
+      "Period": 1.54
     }
   ],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackGenetronPowerSupplyUnit"
-    },
-    {
-      "id": "AquilaNaniteGrenadeReq"
+      "id": "TrackGenetronPowerSupplyUnit",
+      "Name": {
+        "enUS": "Track Genetron Power Supply Unit"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AquilaNaniteEmitter",
-      "Name": "Aquila - Nanite Emitter"
+      "Name": {
+        "enUS": "Aquila - Nanite Emitter"
+      }
     }
   ],
   "$Upgrades": [
@@ -775,14 +840,16 @@
     "CountUnitAquilaQueuedOrBetterAtUnit",
     "Manufacturer",
     "Manufacturer",
-    "CountUnitAquilaInProgressOnlyAtUnit",
     "GenetronGroundPlatingRevert",
     "GenetronLightWeaponsRevert",
     "ThreatensAquila",
+    "CountUnitAquilaInProgressOnlyAtUnit",
     "IsAquila"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "GenetronPowerSupplyDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -794,43 +861,77 @@
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "AquilaNaniteEmitter,Execute",
       "id": "AquilaNaniteEmitter",
       "Icon": "btn-upgrade-nova-btn-upgrade-nova-pulsegrenade",
-      "Tooltip": "Creates a zone on the ground which lasts <b>4</b> seconds. Ground units inside of this zone have their movement and attack speed decreased by <b>50</b>%.<br/><br/><span style=\"color: #78F0FF\">Uses <b>50</b> power.</span><br/><span style=\"color: #FFFF80\">Massive units have <b>50</b>% immunity.</span>",
-      "Name": "Nanite Emitter"
+      "Name": {
+        "enUS": "Nanite Emitter"
+      },
+      "Tooltip": {
+        "enUS": "Creates a zone on the ground which lasts <b>3</b> seconds. Ground units inside of this zone have their movement and attack speed decreased by <b>50</b>%.<br/><br/><span style=\"color: 78F0FF\">Uses <b>100</b> power.</span><br/><span style=\"color: FFFF80\">Massive units have <b>50</b>% immunity.</span>"
+      }
     }
   ]
 }

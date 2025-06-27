@@ -1,6 +1,12 @@
 {
-  "Name": "Worm",
-  "Description": "Can mutate into various Xayid ground units.",
+  "Name": {
+    "enUS": "Worm",
+    "ruRU": "Червь"
+  },
+  "Description": {
+    "enUS": "Can mutate into various Xayid ground units.",
+    "ruRU": "Может мутировать в различных наземных Зейтов."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 25,
   "LifeMax": 25,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Worm/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Worm/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Worm/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Worm/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -122,7 +133,10 @@
         "AbilCmd": "MutateXayidUnits,Train1",
         "id": "Xayidling",
         "Icon": "btn-unit-xayid-xayidling",
-        "Name": "Mutate into Xayidling",
+        "Name": {
+          "enUS": "Mutate into Xayidling",
+          "ruRU": "Мутировать в Зейтлинга"
+        },
         "Hotkey": "X"
       },
       {
@@ -151,7 +165,7 @@
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -2
+          "Food": -1.5
         },
         "Row": 1,
         "Column": 0,
@@ -159,8 +173,10 @@
         "AbilCmd": "MutateXayidUnits,Train8",
         "id": "Roamer",
         "Icon": "btn-unit-xayid-roamer",
-        "Tooltip": "Fast anti-light skirmisher. Can use Scour.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Mutate into Roamer",
+        "Name": {
+          "enUS": "Mutate into Roamer",
+          "ruRU": "Мутировать в Роамера"
+        },
         "Hotkey": "R"
       },
       {
@@ -197,8 +213,14 @@
         "AbilCmd": "MutateXayidUnits,Train3",
         "id": "Scorpalisk",
         "Icon": "btn-unit-xayid-scorpalisk",
-        "Tooltip": "Armored melee attacker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Mutate into Scorpalisk",
+        "Name": {
+          "enUS": "Mutate into Scorpalisk",
+          "ruRU": "Мутировать в Скорпалиска"
+        },
+        "Tooltip": {
+          "enUS": "Armored melee attacker.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+          "ruRU": "Бронированный боец ближнего боя.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "C"
       },
       {
@@ -227,7 +249,7 @@
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -2
+          "Food": -1.5
         },
         "Row": 0,
         "Column": 2,
@@ -235,8 +257,10 @@
         "AbilCmd": "MutateXayidUnits,Train4",
         "id": "Mendling",
         "Icon": "btn-unit-xayid-mendling",
-        "Tooltip": "Healer unit. Can use Mend, Covering Spray and Sacrificial Mutation.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-        "Name": "Mutate into Mendling",
+        "Name": {
+          "enUS": "Mutate into Mendling",
+          "ruRU": "Мутировать в Исцелителя"
+        },
         "Hotkey": "D"
       },
       {
@@ -273,8 +297,14 @@
         "AbilCmd": "MutateXayidUnits,Train6",
         "id": "Casnolisk",
         "Icon": "btn-unit-xayid-casnolisk",
-        "Tooltip": "Armored spell caster. Can use Stagnating Bile and Explosive Glob.",
-        "Name": "Mutate into Casnolisk",
+        "Name": {
+          "enUS": "Mutate into Casnolisk",
+          "ruRU": "Мутировать в Каснолиска"
+        },
+        "Tooltip": {
+          "enUS": "Spell caster. Can use Stagnating Bile and Explosive Glob.",
+          "ruRU": "Бронированный кастер. Может использовать настой желчи и взрывной шар."
+        },
         "Hotkey": "A"
       },
       {
@@ -334,8 +364,14 @@
         "AbilCmd": "que1,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       },
       {
@@ -372,8 +408,14 @@
         "AbilCmd": "MutateXayidUnits,Train7",
         "id": "Eroder",
         "Icon": "btn-unit-xayid-eroder",
-        "Tooltip": "Long ranged anti-armor beast.<br/><br/><span style=\"color: #FFFF80\">Can target ground units.</span>",
-        "Name": "Mutate into Eroder",
+        "Name": {
+          "enUS": "Mutate into Eroder",
+          "ruRU": "Мутировать в Эродера"
+        },
+        "Tooltip": {
+          "enUS": "Long ranged anti-armor beast.<br/><br/><span style=\"color: FFFF80\">Can target ground units.</span>",
+          "ruRU": "Эффективный против бронированных целей зверь с высокой дальностью атаки.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "E"
       }
     ]
@@ -412,22 +454,34 @@
     "Eroder"
   ],
   "Icon": "btn-unit-zerg-larvalqueen",
+  "Model": "LarvalQueen",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "LarvaWander"
+      "id": "LarvaWander",
+      "Name": {
+        "enUS": "Larva Wander",
+        "ruRU": "Larva Wander"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "que1",
-      "Name": "Queue (1)"
+      "Name": {
+        "ruRU": "Queue (1)",
+        "enUS": "Queue (1)"
+      }
     },
     {
       "id": "MutateXayidUnits",
-      "Name": "Mutate Xayid Units"
+      "Name": {
+        "enUS": "Mutate Xayid Units",
+        "ruRU": "Mutate Xayid Units"
+      }
     }
   ],
   "$Upgrades": [
@@ -447,11 +501,6 @@
   ],
   "$Research": [],
   "$Morph": [
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
-    "XayidCocoon",
     "XayidCocoon"
   ],
   "$Phase": [],
@@ -461,49 +510,80 @@
       "AbilCmd": "MutateXayidUnits,Train1",
       "id": "Xayidling",
       "Icon": "btn-unit-xayid-xayidling",
-      "Name": "Mutate into Xayidling"
+      "Name": {
+        "enUS": "Mutate into Xayidling",
+        "ruRU": "Мутировать в Зейтлинга"
+      }
     },
     {
       "AbilCmd": "MutateXayidUnits,Train8",
       "id": "Roamer",
       "Icon": "btn-unit-xayid-roamer",
-      "Tooltip": "Fast anti-light skirmisher. Can use Scour.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Mutate into Roamer"
+      "Name": {
+        "enUS": "Mutate into Roamer",
+        "ruRU": "Мутировать в Роамера"
+      }
     },
     {
       "AbilCmd": "MutateXayidUnits,Train3",
       "id": "Scorpalisk",
       "Icon": "btn-unit-xayid-scorpalisk",
-      "Tooltip": "Armored melee attacker.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Mutate into Scorpalisk"
+      "Name": {
+        "enUS": "Mutate into Scorpalisk",
+        "ruRU": "Мутировать в Скорпалиска"
+      },
+      "Tooltip": {
+        "enUS": "Armored melee attacker.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+        "ruRU": "Бронированный боец ближнего боя.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "MutateXayidUnits,Train4",
       "id": "Mendling",
       "Icon": "btn-unit-xayid-mendling",
-      "Tooltip": "Healer unit. Can use Mend, Covering Spray and Sacrificial Mutation.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
-      "Name": "Mutate into Mendling"
+      "Name": {
+        "enUS": "Mutate into Mendling",
+        "ruRU": "Мутировать в Исцелителя"
+      }
     },
     {
       "AbilCmd": "MutateXayidUnits,Train6",
       "id": "Casnolisk",
       "Icon": "btn-unit-xayid-casnolisk",
-      "Tooltip": "Armored spell caster. Can use Stagnating Bile and Explosive Glob.",
-      "Name": "Mutate into Casnolisk"
+      "Name": {
+        "enUS": "Mutate into Casnolisk",
+        "ruRU": "Мутировать в Каснолиска"
+      },
+      "Tooltip": {
+        "enUS": "Spell caster. Can use Stagnating Bile and Explosive Glob.",
+        "ruRU": "Бронированный кастер. Может использовать настой желчи и взрывной шар."
+      }
     },
     {
       "AbilCmd": "que1,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить"
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий."
+      }
     },
     {
       "AbilCmd": "MutateXayidUnits,Train7",
       "id": "Eroder",
       "Icon": "btn-unit-xayid-eroder",
-      "Tooltip": "Long ranged anti-armor beast.<br/><br/><span style=\"color: #FFFF80\">Can target ground units.</span>",
-      "Name": "Mutate into Eroder"
+      "Name": {
+        "enUS": "Mutate into Eroder",
+        "ruRU": "Мутировать в Эродера"
+      },
+      "Tooltip": {
+        "enUS": "Long ranged anti-armor beast.<br/><br/><span style=\"color: FFFF80\">Can target ground units.</span>",
+        "ruRU": "Эффективный против бронированных целей зверь с высокой дальностью атаки.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+      }
     }
   ]
 }

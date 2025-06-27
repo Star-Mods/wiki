@@ -1,6 +1,12 @@
 {
-  "Name": "Scavenger",
-  "Description": "Basic builder and worker unit.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "Name": {
+    "enUS": "Scavenger",
+    "ruRU": "Сборщик"
+  },
+  "Description": {
+    "enUS": "Basic builder and worker unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Базовая рабочая единица.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные единицы.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 45,
   "LifeMax": 45,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Scavenger/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Scavenger/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Scavenger/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Scavenger/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -174,8 +185,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -248,8 +265,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -338,8 +361,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -428,8 +457,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -503,8 +538,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -525,8 +566,14 @@
         "SubmenuCardId": "0002",
         "id": "FormBasicStructure",
         "Icon": "btn-ability-xayid-basicformation-color",
-        "Tooltip": "A list of basic structures.",
-        "Name": "Form Basic Structure",
+        "Name": {
+          "enUS": "Form Basic Structure",
+          "ruRU": "Создание"
+        },
+        "Tooltip": {
+          "enUS": "A list of basic structures.",
+          "ruRU": "Список основных строений."
+        },
         "Hotkey": "B"
       },
       {
@@ -546,8 +593,14 @@
         "SubmenuCardId": "0003",
         "id": "FormAdvancedStructure",
         "Icon": "btn-ability-xayid-advancedformation",
-        "Tooltip": "A list of advanced structures.",
-        "Name": "Form Advanced Structure",
+        "Name": {
+          "enUS": "Form Advanced Structure",
+          "ruRU": "Продвинутое создание"
+        },
+        "Tooltip": {
+          "enUS": "A list of advanced structures.",
+          "ruRU": "Список дополнительных строений."
+        },
         "Hotkey": "V"
       },
       {
@@ -759,7 +812,12 @@
                 "Flags": {
                   "AllowMinimap": 0
                 }
-              }
+              },
+              "ValidatorArray": [
+                "HasVespene"
+              ],
+              "Unit": "SiphonerRich",
+              "Time": 30
             },
             "Build17": {
               "Button": {
@@ -886,8 +944,14 @@
         "AbilCmd": "FormStructures,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить"
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+        },
         "Hotkey": "T"
       },
       {
@@ -963,6 +1027,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "DroneHarvest"
         },
         "Cost": {
@@ -981,8 +1049,14 @@
         "AbilCmd": "DroneHarvest,Gather",
         "id": "GatherZerg",
         "Icon": "btn-ability-zerg-gather",
-        "Tooltip": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "Name": "Gather",
+        "Name": {
+          "enUS": "Gather",
+          "ruRU": "Gather"
+        },
+        "Tooltip": {
+          "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
+          "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+        },
         "Hotkey": "G"
       },
       {
@@ -1058,6 +1132,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "DroneHarvest"
         },
         "Cost": {
@@ -1076,8 +1154,14 @@
         "AbilCmd": "DroneHarvest,Return",
         "id": "ReturnCargo",
         "Icon": "btn-command-returncargo",
-        "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-        "Name": "Return Cargo",
+        "Name": {
+          "enUS": "Return Cargo",
+          "ruRU": "Return Cargo"
+        },
+        "Tooltip": {
+          "enUS": "Returns the carried resources to the nearest drop-off point.",
+          "ruRU": "Returns the carried resources to the nearest drop-off point."
+        },
         "Hotkey": "C"
       },
       {
@@ -1217,8 +1301,14 @@
         "AbilCmd": "SprayZerg,Execute",
         "id": "Spray",
         "Icon": "btn-command-spray",
-        "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "Name": "Spray",
+        "Name": {
+          "enUS": "Spray",
+          "ruRU": "Граффити"
+        },
+        "Tooltip": {
+          "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+          "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+        },
         "Hotkey": "Y"
       }
     ],
@@ -1252,8 +1342,14 @@
         "AbilCmd": "FormStructures,Build1",
         "id": "ScavengerNest",
         "Icon": "btn-building-xayid-scavengernest",
-        "Tooltip": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Scavengers",
-        "Name": "Form Scavenger Nest",
+        "Name": {
+          "enUS": "Form Scavenger Nest",
+          "ruRU": "Создать гнездо сборщиков"
+        },
+        "Tooltip": {
+          "enUS": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Scavengers",
+          "ruRU": "Основное строение Зейтов. Служит для хранения добытых ресурсов и строительства сборщиков.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Сборщики"
+        },
         "Hotkey": "S"
       },
       {
@@ -1285,8 +1381,14 @@
         "AbilCmd": "FormStructures,Build2",
         "id": "FeedingPool",
         "Icon": "btn-building-xayid-feedingpool",
-        "Tooltip": "Provides supply.<br/>Supply allows you to create more units.<br/>Boosts the production of nearby structures and heals nearby units.",
-        "Name": "Form Feeding Pool",
+        "Name": {
+          "enUS": "Form Feeding Pool",
+          "ruRU": "Создать бассейн для кормления"
+        },
+        "Tooltip": {
+          "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Boosts the production of nearby structures and heals nearby units.",
+          "ruRU": "<span style=\"color: FFFF80\">Увеличивает лимит припасов.</span><br/>Лимит припасов повышает максимальный размер армии.<br/>Ускоряет производство в рядом стоящих строениях, лечит повреждённые единицы."
+        },
         "Hotkey": "F"
       },
       {
@@ -1321,8 +1423,14 @@
         "AbilCmd": "FormStructures,Build3",
         "id": "Siphoner",
         "Icon": "btn-building-xayid-siphoner",
-        "Tooltip": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
-        "Name": "Form Siphoner",
+        "Name": {
+          "enUS": "Form Siphoner",
+          "ruRU": "Создать сифонер"
+        },
+        "Tooltip": {
+          "enUS": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
+          "ruRU": "Строится на веспеновом гейзере. Позволяет собирать веспен."
+        },
         "Hotkey": "E"
       },
       {
@@ -1355,8 +1463,14 @@
         "AbilCmd": "FormStructures,Build4",
         "id": "XayidDen",
         "Icon": "btn-building-xayid-xayidden",
-        "Tooltip": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Roamers<br/>- Bile Pits from Scavengers",
-        "Name": "Form Xayid Den",
+        "Name": {
+          "enUS": "Form Xayid Den",
+          "ruRU": "Создать логово ксаидов"
+        },
+        "Tooltip": {
+          "enUS": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Bile Pits from Scavengers",
+          "ruRU": "Создает личинки, которые, в свою очередь, используются для мутации в различных существ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Зейтлинги<br/>- Роамеры<br/>- Ядовитые гнёзда у Сборщиков"
+        },
         "Hotkey": "X"
       },
       {
@@ -1389,8 +1503,14 @@
         "AbilCmd": "FormStructures,Build5",
         "id": "MutagenChamber",
         "Icon": "btn-building-xayid-mutagenchambernew",
-        "Tooltip": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
-        "Name": "Form Mutagen Chamber",
+        "Name": {
+          "enUS": "Form Mutagen Chamber",
+          "ruRU": "Мутировать в мутагенную камеру"
+        },
+        "Tooltip": {
+          "enUS": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
+          "ruRU": "Содержит улучшения для наземных Зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Бродяги из логова зейтов<br/>- Скорпалиски из логова зейтов<br/>- Исцелитель из логова зейтов"
+        },
         "Hotkey": "T"
       },
       {
@@ -1423,8 +1543,14 @@
         "AbilCmd": "FormStructures,Build14",
         "id": "BilePit",
         "Icon": "btn-building-xayid-bilepit",
-        "Tooltip": "Primary defensive structure. Must be placed near a <span style=\"color: #FFFF80\">Feeding Pool</span> or <span style=\"color: #FFFF80\">Scavenger Nest</span>.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span><br/><span style=\"color: #FFFF00\">Detector</span>",
-        "Name": "Form Bile Pit",
+        "Name": {
+          "enUS": "Form Bile Pit",
+          "ruRU": "Создать ядовитое гнездо"
+        },
+        "Tooltip": {
+          "enUS": "Primary defensive structure. Must be placed near a <span style=\"color: FFFF80\">Feeding Pool</span> or <span style=\"color: FFFF80\">Scavenger Nest</span>.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Оборонительное сооружение с высокой скоростью атаки. Должно быть размещено рядом с <span style=\"color: FFFF80\">Бассейном для кормления</span> или <span style=\"color: FFFF80\">Гнездом сборщиков</span>.<br/><br/><span style=\"color: FFFF00\">Детектор</span><br/><span style=\"color: FFFF80\">Может атаковать воздушные и наземные единицы.</span>"
+        },
         "Hotkey": "B"
       },
       {
@@ -1443,8 +1569,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ],
@@ -1479,8 +1611,14 @@
         "AbilCmd": "FormStructures,Build7",
         "id": "CasnoliskDen",
         "Icon": "btn-building-xayid-casnoliskden",
-        "Tooltip": "Contains upgrades for Xayidlings, Roamers, Scorpalisks, and Mendlings.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Casnolisks from the Xayid Den",
-        "Name": "Form Casnolisk Den",
+        "Name": {
+          "enUS": "Form Casnolisk Den",
+          "ruRU": "Создать логово Каснолисков"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Xayidlings, Roamers, Scorpalisks, and Mendlings.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Casnolisks from the Xayid Den",
+          "ruRU": "Содержит улучшения для различных юнитов ксаид.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Каснолиски из логова ксаидов"
+        },
         "Hotkey": "D"
       },
       {
@@ -1513,8 +1651,14 @@
         "AbilCmd": "FormStructures,Build8",
         "id": "BiomassHatchery",
         "Icon": "btn-building-xayid-biomasshatchery",
-        "Tooltip": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
-        "Name": "Form Biomass Hatchery",
+        "Name": {
+          "enUS": "Form Biomass Hatchery",
+          "ruRU": "Создать инкубатор биомассы"
+        },
+        "Tooltip": {
+          "enUS": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
+          "ruRU": "Создаёт личинки, каждая личинка может мутировать в различных чудовищ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Ревилеры<br/>- Феррионы<br/> - Бродяги<br/>- Спиттеры"
+        },
         "Hotkey": "B"
       },
       {
@@ -1547,8 +1691,14 @@
         "AbilCmd": "FormStructures,Build9",
         "id": "BiomassCavern",
         "Icon": "btn-building-xayid-biomasscavern",
-        "Tooltip": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
-        "Name": "Form Biomass Cavern",
+        "Name": {
+          "enUS": "Form Biomass Cavern",
+          "ruRU": "Создать пещеру биомассы"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
+          "ruRU": "Содержит улучшения для различных юнитов зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Массалиски"
+        },
         "Hotkey": "C"
       },
       {
@@ -1581,8 +1731,14 @@
         "AbilCmd": "FormStructures,Build10",
         "id": "AvianNest",
         "Icon": "btn-building-xayid-aviannest",
-        "Tooltip": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
-        "Name": "Form Avian Nest",
+        "Name": {
+          "enUS": "Form Avian Nest",
+          "ruRU": "Создать гнездо авианов"
+        },
+        "Tooltip": {
+          "enUS": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
+          "ruRU": "Порождает мошек, Которые мутируют в воздушных ксаидов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Рапторы<br/>- Нападающие"
+        },
         "Hotkey": "A"
       },
       {
@@ -1615,8 +1771,14 @@
         "AbilCmd": "FormStructures,Build11",
         "id": "CatalystPit",
         "Icon": "btn-building-xayid-catalystpit",
-        "Tooltip": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
-        "Name": "Form Catalyst Pit",
+        "Name": {
+          "enUS": "Form Catalyst Pit",
+          "ruRU": "Создать Эволюционный Катализатор"
+        },
+        "Tooltip": {
+          "enUS": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
+          "ruRU": "Содержит различные улучшения для воздушных юнитов зейдов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Истребители из гнезда авианов<br/>- Зейтоны из гнезда авианов"
+        },
         "Hotkey": "T"
       },
       {
@@ -1649,8 +1811,14 @@
         "AbilCmd": "FormStructures,Build12",
         "id": "SunkenWarren",
         "Icon": "btn-building-xayid-sunkenwarren",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Krakens at the Avian Nest",
-        "Name": "Form Sunken Warren",
+        "Name": {
+          "enUS": "Form Sunken Warren",
+          "ruRU": "Создать затонувшую лощину"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Krakens at the Avian Nest",
+          "ruRU": "Содержит улушения для Кракенов, Рапторов и Истребителей.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Кракены из гнезда авианов"
+        },
         "Hotkey": "S"
       },
       {
@@ -1669,8 +1837,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить"
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий."
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -1709,12 +1883,16 @@
   "GlossaryAlias": "Scavenger",
   "LateralAcceleration": 46,
   "Icon": "btn-unit-xayid-scavenger",
+  "Model": "Scavenger",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "ScavengerClaws",
-      "Name": "Claws",
+      "Name": {
+        "enUS": "Claws",
+        "ruRU": "Когти"
+      },
       "Amount": 5,
       "Kind": "Melee",
       "TargetFilters": "Ground",
@@ -1726,26 +1904,42 @@
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "DroneHarvest",
-      "Name": "Gather (Drone)"
+      "Name": {
+        "enUS": "Gather (Drone)",
+        "ruRU": "Gather (Drone)"
+      }
     },
     {
       "id": "FormStructures",
-      "Name": "Form Structures"
+      "Name": {
+        "enUS": "Form Structures",
+        "ruRU": "Form Structures"
+      }
     },
     {
-      "id": "SprayZerg"
+      "id": "SprayZerg",
+      "Name": "-"
     }
   ],
   "$Upgrades": [
@@ -1756,7 +1950,6 @@
     "XayidGroundCarapace",
     "XayidGroundCarapaceLevel2",
     "XayidGroundCarapaceLevel3",
-    "ScavengerSpawn",
     "ScavengerNest",
     "Xayi",
     "XayidGroundCarapaceRevert"
@@ -1787,155 +1980,287 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "FormStructures,Build1",
       "id": "FormBasicStructure",
       "Icon": "btn-ability-xayid-basicformation-color",
-      "Tooltip": "A list of basic structures.",
-      "Name": "Form Basic Structure"
+      "Name": {
+        "enUS": "Form Basic Structure",
+        "ruRU": "Создание"
+      },
+      "Tooltip": {
+        "enUS": "A list of basic structures.",
+        "ruRU": "Список основных строений."
+      }
     },
     {
       "AbilCmd": "FormStructures,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить"
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить."
+      }
     },
     {
       "AbilCmd": "DroneHarvest,Gather",
       "id": "GatherZerg",
       "Icon": "btn-ability-zerg-gather",
-      "Tooltip": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
-      "Name": "Gather"
+      "Name": {
+        "enUS": "Gather",
+        "ruRU": "Gather"
+      },
+      "Tooltip": {
+        "enUS": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser.",
+        "ruRU": "Orders Drone to gather resources from a selected Mineral Field or Vespene Geyser."
+      }
     },
     {
       "AbilCmd": "DroneHarvest,Return",
       "id": "ReturnCargo",
       "Icon": "btn-command-returncargo",
-      "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-      "Name": "Return Cargo"
+      "Name": {
+        "enUS": "Return Cargo",
+        "ruRU": "Return Cargo"
+      },
+      "Tooltip": {
+        "enUS": "Returns the carried resources to the nearest drop-off point.",
+        "ruRU": "Returns the carried resources to the nearest drop-off point."
+      }
     },
     {
       "AbilCmd": "SprayZerg,Execute",
       "id": "Spray",
       "Icon": "btn-command-spray",
-      "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-      "Name": "Spray"
+      "Name": {
+        "enUS": "Spray",
+        "ruRU": "Граффити"
+      },
+      "Tooltip": {
+        "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+        "ruRU": "Orders the unit to apply your currently selected spray to the terrain at the target location."
+      }
     },
     {
       "AbilCmd": "FormStructures,Build1",
       "id": "ScavengerNest",
       "Icon": "btn-building-xayid-scavengernest",
-      "Tooltip": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Scavengers",
-      "Name": "Form Scavenger Nest"
+      "Name": {
+        "enUS": "Form Scavenger Nest",
+        "ruRU": "Создать гнездо сборщиков"
+      },
+      "Tooltip": {
+        "enUS": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Scavengers",
+        "ruRU": "Основное строение Зейтов. Служит для хранения добытых ресурсов и строительства сборщиков.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Сборщики"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build2",
       "id": "FeedingPool",
       "Icon": "btn-building-xayid-feedingpool",
-      "Tooltip": "Provides supply.<br/>Supply allows you to create more units.<br/>Boosts the production of nearby structures and heals nearby units.",
-      "Name": "Form Feeding Pool"
+      "Name": {
+        "enUS": "Form Feeding Pool",
+        "ruRU": "Создать бассейн для кормления"
+      },
+      "Tooltip": {
+        "enUS": "Provides supply.<br/>Supply allows you to create more units.<br/>Boosts the production of nearby structures and heals nearby units.",
+        "ruRU": "<span style=\"color: FFFF80\">Увеличивает лимит припасов.</span><br/>Лимит припасов повышает максимальный размер армии.<br/>Ускоряет производство в рядом стоящих строениях, лечит повреждённые единицы."
+      }
     },
     {
       "AbilCmd": "FormStructures,Build3",
       "id": "Siphoner",
       "Icon": "btn-building-xayid-siphoner",
-      "Tooltip": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
-      "Name": "Form Siphoner"
+      "Name": {
+        "enUS": "Form Siphoner",
+        "ruRU": "Создать сифонер"
+      },
+      "Tooltip": {
+        "enUS": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
+        "ruRU": "Строится на веспеновом гейзере. Позволяет собирать веспен."
+      }
     },
     {
       "AbilCmd": "FormStructures,Build4",
       "id": "XayidDen",
       "Icon": "btn-building-xayid-xayidden",
-      "Tooltip": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Roamers<br/>- Bile Pits from Scavengers",
-      "Name": "Form Xayid Den"
+      "Name": {
+        "enUS": "Form Xayid Den",
+        "ruRU": "Создать логово ксаидов"
+      },
+      "Tooltip": {
+        "enUS": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Bile Pits from Scavengers",
+        "ruRU": "Создает личинки, которые, в свою очередь, используются для мутации в различных существ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Зейтлинги<br/>- Роамеры<br/>- Ядовитые гнёзда у Сборщиков"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build5",
       "id": "MutagenChamber",
       "Icon": "btn-building-xayid-mutagenchambernew",
-      "Tooltip": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
-      "Name": "Form Mutagen Chamber"
+      "Name": {
+        "enUS": "Form Mutagen Chamber",
+        "ruRU": "Мутировать в мутагенную камеру"
+      },
+      "Tooltip": {
+        "enUS": "Contains weapon and armor upgrades for Xayid ground units.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Roamers at the Xayid Den<br/>- Scorpalisks at the Xayid Den<br/>- Mendlings at the Xayid Den",
+        "ruRU": "Содержит улучшения для наземных Зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Бродяги из логова зейтов<br/>- Скорпалиски из логова зейтов<br/>- Исцелитель из логова зейтов"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build14",
       "id": "BilePit",
       "Icon": "btn-building-xayid-bilepit",
-      "Tooltip": "Primary defensive structure. Must be placed near a <span style=\"color: #FFFF80\">Feeding Pool</span> or <span style=\"color: #FFFF80\">Scavenger Nest</span>.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span><br/><span style=\"color: #FFFF00\">Detector</span>",
-      "Name": "Form Bile Pit"
+      "Name": {
+        "enUS": "Form Bile Pit",
+        "ruRU": "Создать ядовитое гнездо"
+      },
+      "Tooltip": {
+        "enUS": "Primary defensive structure. Must be placed near a <span style=\"color: FFFF80\">Feeding Pool</span> or <span style=\"color: FFFF80\">Scavenger Nest</span>.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Оборонительное сооружение с высокой скоростью атаки. Должно быть размещено рядом с <span style=\"color: FFFF80\">Бассейном для кормления</span> или <span style=\"color: FFFF80\">Гнездом сборщиков</span>.<br/><br/><span style=\"color: FFFF00\">Детектор</span><br/><span style=\"color: FFFF80\">Может атаковать воздушные и наземные единицы.</span>"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build7",
       "id": "CasnoliskDen",
       "Icon": "btn-building-xayid-casnoliskden",
-      "Tooltip": "Contains upgrades for Xayidlings, Roamers, Scorpalisks, and Mendlings.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Casnolisks from the Xayid Den",
-      "Name": "Form Casnolisk Den"
+      "Name": {
+        "enUS": "Form Casnolisk Den",
+        "ruRU": "Создать логово Каснолисков"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Xayidlings, Roamers, Scorpalisks, and Mendlings.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Casnolisks from the Xayid Den",
+        "ruRU": "Содержит улучшения для различных юнитов ксаид.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Каснолиски из логова ксаидов"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build8",
       "id": "BiomassHatchery",
       "Icon": "btn-building-xayid-biomasshatchery",
-      "Tooltip": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
-      "Name": "Form Biomass Hatchery"
+      "Name": {
+        "enUS": "Form Biomass Hatchery",
+        "ruRU": "Создать инкубатор биомассы"
+      },
+      "Tooltip": {
+        "enUS": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
+        "ruRU": "Создаёт личинки, каждая личинка может мутировать в различных чудовищ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Ревилеры<br/>- Феррионы<br/> - Бродяги<br/>- Спиттеры"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build9",
       "id": "BiomassCavern",
       "Icon": "btn-building-xayid-biomasscavern",
-      "Tooltip": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
-      "Name": "Form Biomass Cavern"
+      "Name": {
+        "enUS": "Form Biomass Cavern",
+        "ruRU": "Создать пещеру биомассы"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
+        "ruRU": "Содержит улучшения для различных юнитов зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Массалиски"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build10",
       "id": "AvianNest",
       "Icon": "btn-building-xayid-aviannest",
-      "Tooltip": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
-      "Name": "Form Avian Nest"
+      "Name": {
+        "enUS": "Form Avian Nest",
+        "ruRU": "Создать гнездо авианов"
+      },
+      "Tooltip": {
+        "enUS": "Creates Wasps, which are mutated into Xayid flyers.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Raptors<br/>- Assailants",
+        "ruRU": "Порождает мошек, Которые мутируют в воздушных ксаидов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Рапторы<br/>- Нападающие"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build11",
       "id": "CatalystPit",
       "Icon": "btn-building-xayid-catalystpit",
-      "Tooltip": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
-      "Name": "Form Catalyst Pit"
+      "Name": {
+        "enUS": "Form Catalyst Pit",
+        "ruRU": "Создать Эволюционный Катализатор"
+      },
+      "Tooltip": {
+        "enUS": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
+        "ruRU": "Содержит различные улучшения для воздушных юнитов зейдов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Истребители из гнезда авианов<br/>- Зейтоны из гнезда авианов"
+      }
     },
     {
       "AbilCmd": "FormStructures,Build12",
       "id": "SunkenWarren",
       "Icon": "btn-building-xayid-sunkenwarren",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Krakens at the Avian Nest",
-      "Name": "Form Sunken Warren"
+      "Name": {
+        "enUS": "Form Sunken Warren",
+        "ruRU": "Создать затонувшую лощину"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Krakens at the Avian Nest",
+        "ruRU": "Содержит улушения для Кракенов, Рапторов и Истребителей.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Кракены из гнезда авианов"
+      }
     }
   ]
 }

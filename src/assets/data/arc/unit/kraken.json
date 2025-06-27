@@ -1,6 +1,12 @@
 {
-  "Name": "Kraken",
-  "Description": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Kraken",
+    "ruRU": "Кракен"
+  },
+  "Description": {
+    "enUS": "A huge powerful beast, with a devastating attack. Can use Volatile Discharge.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Огромный мощный зверь с разрушительной атакой. Может использовать неустойчивый разряд.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Xayid Flyer Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Flyer Carapace",
+    "ruRU": "Панцирь летающих Зейтов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 540,
@@ -62,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Kraken/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Kraken/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Kraken/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Kraken/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -175,8 +186,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+        },
         "Hotkey": "M"
       },
       {
@@ -249,8 +266,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Orders selected units to cancel all orders and stop moving."
+        },
         "Hotkey": "S"
       },
       {
@@ -339,8 +362,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
         "Hotkey": "H"
       },
       {
@@ -429,8 +458,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+        },
         "Hotkey": "P"
       },
       {
@@ -504,8 +539,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -657,8 +698,14 @@
         "AbilCmd": "VolatileDischarge,Execute",
         "id": "VolatileDischarge",
         "Icon": "btn-ability-xayid-volatiledischarge",
-        "Tooltip": "After a charge up of <b>10</b> seconds, the <span style=\"color: #FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: #FFFF80\">Damages air and ground units, including friendlies.</span>",
-        "Name": "Volatile Discharge",
+        "Name": {
+          "enUS": "Volatile Discharge",
+          "ruRU": "Неустойчивый разряд"
+        },
+        "Tooltip": {
+          "enUS": "After a charge up of <b>10</b> seconds, the <span style=\"color: FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: FFFF80\">Damages air and ground units, including friendlies.</span>",
+          "ruRU": "Спустя <b>10</b> секунд, <span style=\"color: FFFF80\">Неустойчивый разряд</span> взорвётся, нанося 200 единиц урона по всем на большом расстоянии, включая союзные единицы. Если уничтожить до завершения зарядки, детонация будет отменена."
+        },
         "Hotkey": "V"
       }
     ]
@@ -696,12 +743,16 @@
   "GlossaryPriority": 19,
   "SubgroupPriority": 79,
   "Icon": "btn-unit-xayid-kraken",
+  "Model": "Kraken",
   "LifeArmorIcon": "btn-upgrade-zerg-pneumatizedcarapace",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "id": "BileSwarm",
-      "Name": "Bile Swarm",
+      "Name": {
+        "enUS": "Bile Swarm",
+        "ruRU": "Токсичный рой"
+      },
       "Amount": 15,
       "Kind": "Ranged",
       "DisplayAttackCount": 2,
@@ -714,19 +765,31 @@
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "VolatileDischarge",
-      "Name": "Volatile Discharge"
+      "Name": {
+        "enUS": "Volatile Discharge",
+        "ruRU": "Volatile Discharge"
+      }
     }
   ],
   "$Upgrades": [
@@ -763,43 +826,79 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Orders selected units to cancel all orders and stop moving."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "VolatileDischarge,Execute",
       "id": "VolatileDischarge",
       "Icon": "btn-ability-xayid-volatiledischarge",
-      "Tooltip": "After a charge up of <b>10</b> seconds, the <span style=\"color: #FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: #FFFF80\">Damages air and ground units, including friendlies.</span>",
-      "Name": "Volatile Discharge"
+      "Name": {
+        "enUS": "Volatile Discharge",
+        "ruRU": "Неустойчивый разряд"
+      },
+      "Tooltip": {
+        "enUS": "After a charge up of <b>10</b> seconds, the <span style=\"color: FFFF80\">Volatile Discharge</span> will explode for 200 damage in a large area. If destroyed before charge up is complete, the detonation will be cancelled.<br/><br/><span style=\"color: FFFF80\">Damages air and ground units, including friendlies.</span>",
+        "ruRU": "Спустя <b>10</b> секунд, <span style=\"color: FFFF80\">Неустойчивый разряд</span> взорвётся, нанося 200 единиц урона по всем на большом расстоянии, включая союзные единицы. Если уничтожить до завершения зарядки, детонация будет отменена."
+      }
     }
   ]
 }

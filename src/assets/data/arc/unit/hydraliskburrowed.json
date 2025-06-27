@@ -1,6 +1,12 @@
 {
-  "Name": "Hydralisk",
-  "Description": "Ranged attacker. Can morph into a Lurker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+  "Name": {
+    "enUS": "Hydralisk",
+    "ruRU": "Hydralisk"
+  },
+  "Description": {
+    "enUS": "Ranged attacker. Can morph into a Lurker.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+    "ruRU": "Ranged attacker. Can morph into a Lurker.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +18,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 90,
   "LifeMax": 90,
-  "LifeArmorName": "Zerg Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Zerg Ground Carapace",
+    "ruRU": "Панцирь наземных зергов"
+  },
   "Mover": "Burrowed",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -66,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "HydraliskBurrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "HydraliskBurrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "HydraliskBurrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "HydraliskBurrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -93,7 +104,7 @@
   "KillXP": 20,
   "InnerRadius": 0.375,
   "ScoreKill": 150,
-  "SubgroupPriority": 70,
+  "SubgroupPriority": 89,
   "PlaneArray": [
     "Ground"
   ],
@@ -171,8 +182,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
@@ -209,8 +226,14 @@
         "AbilCmd": "BurrowHydraliskUp,Execute",
         "id": "BurrowUp",
         "Icon": "btn-ability-zerg-upburrow-color",
-        "Tooltip": "Returns the unit to the surface.",
-        "Name": "Unburrow",
+        "Name": {
+          "enUS": "Unburrow",
+          "ruRU": "Unburrow"
+        },
+        "Tooltip": {
+          "enUS": "Returns the unit to the surface.",
+          "ruRU": "Returns the unit to the surface."
+        },
         "Hotkey": "R"
       }
     ]
@@ -231,6 +254,7 @@
   "RankDisplay": "Always",
   "id": "HydraliskBurrowed",
   "Icon": "btn-unit-zerg-hydralisk",
+  "Model": "Hydralisk",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -238,14 +262,20 @@
   "Abilities": [
     {
       "id": "BurrowHydraliskUp",
-      "Name": "Unburrow (Hydralisk)"
+      "Name": {
+        "enUS": "Unburrow (Hydralisk)",
+        "ruRU": "Unburrow (Hydralisk)"
+      }
     }
   ],
   "$Upgrades": [
     "BurrowHydraliskDown",
     "HydraliskBurrowed",
-    "ZergGroundArmorsLevel1",
     "IsHydraliskBurrowed",
+    "EvolveGroovedSpines",
+    "EvolveMuscularAugments",
+    "Burrow",
+    "ZergGroundArmorsLevel1",
     "Hydralisk",
     "ZergGroundArmors",
     "ZergGroundArmorsLevel2",
@@ -254,13 +284,14 @@
     "ZergMissileWeapons",
     "ZergMissileWeaponsLevel2",
     "ZergMissileWeaponsLevel3",
-    "EvolveGroovedSpines",
-    "EvolveMuscularAugments",
-    "Burrow",
     "HydraliskBurrowedSplat",
     "UPLRenameZerg",
     "TacticalBurrowHydraliskBurrowedBullyTest",
-    "TacticalBurrowHydraliskCampaignNoHostilesBullyBurrow"
+    "TacticalBurrowHydraliskCampaignNoHostilesBullyBurrow",
+    "DefilerSCBW@TacticalBurrowDefilerBurrowedBullyTest",
+    "DefilerSCBW@TacticalBurrowDefilerCampaignNoHostilesBullyBurrow2",
+    "HydraliskSCBW@TacticalBurrowHydraliskBurrowedBullyTest",
+    "HydraliskSCBW@TacticalBurrowHydraliskCampaignNoHostilesBullyBurrow"
   ],
   "$Requirements": [],
   "$Production": [],
@@ -277,15 +308,27 @@
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
+      }
     },
     {
       "AbilCmd": "BurrowHydraliskUp,Execute",
       "id": "BurrowUp",
       "Icon": "btn-ability-zerg-upburrow-color",
-      "Tooltip": "Returns the unit to the surface.",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      },
+      "Tooltip": {
+        "enUS": "Returns the unit to the surface.",
+        "ruRU": "Returns the unit to the surface."
+      }
     }
   ]
 }
