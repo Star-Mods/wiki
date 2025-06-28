@@ -1,0 +1,36 @@
+{
+  "id": "NodCyberneticLegs",
+  "Icon": "nodcyberneticlegs",
+  "Name": "Upgrade/Name/NodCyberneticLegs",
+  "class": "CUpgrade",
+  "Flags": {
+    "UpgradeCheat": 1
+  },
+  "MaxLevel": 1,
+  "Alert": "UpgradeComplete",
+  "ScoreCount": "MiscTechnologyCount",
+  "ScoreValue": "MiscTechnologyValue",
+  "WebPriority": 1,
+  "LeaderAlias": "NodCyberneticLegs",
+  "EditorCategories": "Race:Nod,UpgradeType:SpellResearch",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Race": "Nod",
+  "EffectArrayTemplate": [
+    {
+      "Operation": "AddBaseMultiply",
+      "Reference": "Unit,^ParamId^,Speed",
+      "Value": "0.3"
+    }
+  ],
+  "AffectedUnitArray": [
+    "NodSaboteur",
+    "NodEnlightened",
+    "NodTiberiumTrooper",
+    "NodBlackHand"
+  ]
+}

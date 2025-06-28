@@ -1,0 +1,44 @@
+{
+  "id": "ScrinShieldsLevel2",
+  "Icon": "scrinshieldslevel2",
+  "Name": "Upgrade/Name/ScrinShieldsLevel2",
+  "class": "CUpgrade",
+  "Flags": {
+    "UpgradeCheat": 1
+  },
+  "MaxLevel": 1,
+  "Alert": "UpgradeComplete",
+  "ScoreCount": "ArmorTechnologyCount",
+  "ScoreValue": "ArmorTechnologyValue",
+  "WebPriority": 1,
+  "LeaderAlias": "ScrinShieldsLevel2",
+  "EditorCategories": "Race:Scrin,UpgradeType:ArmorBonus",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Race": "Scrin",
+  "ScoreResult": "BuildOrder",
+  "AffectedUnitArray": [
+    "ScrinHarvester"
+  ],
+  "EffectArrayTemplate": [
+    {
+      "Reference": "Unit,^ParamId^,ShieldArmor",
+      "Value": "1"
+    },
+    {
+      "Reference": "Unit,^ParamId^,ShieldArmorLevel",
+      "Value": "1"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Actor,^ParamId^,ShieldArmorIcon",
+      "Value": "Assets\\Icons\\Scrin\\ScrinShieldsLevel2.dds"
+    }
+  ],
+  "ScoreAmount": 300,
+  "LeaderLevel": 2
+}

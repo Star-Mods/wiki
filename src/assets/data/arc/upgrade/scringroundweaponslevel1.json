@@ -1,0 +1,52 @@
+{
+  "id": "ScrinGroundWeaponsLevel1",
+  "Icon": "scringroundweaponslevel1",
+  "Name": "Upgrade/Name/ScrinGroundWeaponsLevel1",
+  "class": "CUpgrade",
+  "Flags": {
+    "UpgradeCheat": 1
+  },
+  "MaxLevel": 1,
+  "Alert": "UpgradeComplete",
+  "ScoreCount": "WeaponTechnologyCount",
+  "ScoreValue": "WeaponTechnologyValue",
+  "WebPriority": 1,
+  "LeaderAlias": "ScrinGroundWeaponsLevel1",
+  "EditorCategories": "Race:Scrin,UpgradeType:AttackBonus",
+  "$tokens": {
+    "ID": {
+      "type": "string",
+      "value": ""
+    }
+  },
+  "Race": "Scrin",
+  "ScoreResult": "BuildOrder",
+  "EffectArrayTemplate": [
+    {
+      "Reference": "Weapon,^ParamId^,Level",
+      "Value": "1"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Weapon,^ParamId^,Icon",
+      "Value": "Assets\\Icons\\Scrin\\ScrinGroundWeaponsLevel1.dds"
+    }
+  ],
+  "AffectedUnitArray": [
+    "ScrinMilitant",
+    "ScrinConfessor",
+    "ScrinTiberiumTrooper",
+    "ScrinCommando",
+    "ScrinAwakened",
+    "ScrinEnlightened",
+    "ScrinShadow",
+    "ScrinShadowFlying",
+    "ScrinPurifier",
+    "ScrinRaider",
+    "ScrinAvatar",
+    "ScrinBeamCannon",
+    "ScrinScorpionTank"
+  ],
+  "LeaderLevel": 1,
+  "ScoreAmount": 200
+}
