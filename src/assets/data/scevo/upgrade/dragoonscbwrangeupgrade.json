@@ -1,11 +1,14 @@
 {
-  "id": "DragoonSCBWRangeUpgrade",
-  "Icon": "btn-upgrade-artanis-singularitycharge",
-  "Name": "Upgrade/Name/DragoonSCBWRangeUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Singularity Charge",
+    "zhCN": "Singularity Charge",
+    "koKR": "Singularity Charge"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,16 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "DragoonSCBWRangeUpgrade",
+  "id": "DragoonSCBWRangeUpgrade",
+  "Icon": "btn-upgrade-artanis-singularitycharge",
   "EffectArrayTemplate": [
     {
       "Reference": "Weapon,^ParamId^Weapon,Range",
@@ -31,8 +43,8 @@
       "Value": "1"
     }
   ],
-  "Race": "Prot",
-  "ScoreAmount": 300,
+  "Race": "BWPr",
+  "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "DragoonSCBW"

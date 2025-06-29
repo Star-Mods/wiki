@@ -1,6 +1,13 @@
 {
-  "Name": "Formulator",
-  "Description": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Formulator",
+    "ruRU": "Формулятор"
+  },
+  "Description": {
+    "enUS": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Формируется над Веспеновым Гейзером, позволяя собирать веспен."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 350,
   "LifeMax": 350,
-  "LifeArmorName": "Protoss Armor",
+  "LifeArmorName": {
+    "enUS": "Protoss Armor",
+    "ruRU": "Броня протоссов "
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Formulator/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Formulator/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Formulator/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Formulator/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -102,13 +114,24 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Economy",
+  "AbilArray": [
+    "BuildInProgress",
+    "ReliquaryResearch"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "HarvestableVespeneGeyserGasKeiron"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
   "Food": 0,
   "Footprint": "FootprintGeyserRoundedBuilt",
   "PlacementFootprint": "Footprint3x3CappedGeyser",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -171,8 +194,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -191,8 +220,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -221,26 +256,43 @@
   "SubgroupPriority": 1,
   "GlossaryPriority": 14,
   "Icon": "btn-building-keiron-formulator",
+  "Model": "Formulator",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "HarvestableVespeneGeyserGasKeiron",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas Keiron",
+        "ruRU": "Harvestable Vespene Geyser Gas Keiron"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "ReliquaryResearch",
-      "Name": "Reliquary Research"
+      "Name": {
+        "enUS": "Reliquary Research",
+        "ruRU": "Reliquary Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -267,8 +319,14 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     }
   ]
 }

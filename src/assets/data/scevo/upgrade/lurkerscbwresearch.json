@@ -1,11 +1,14 @@
 {
-  "id": "LurkerSCBWResearch",
-  "Icon": "btn-unit-zerg-lurker",
-  "Name": "Upgrade/Name/LurkerSCBWResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Lurker Aspect",
+    "zhCN": "Lurker Aspect",
+    "koKR": "Lurker Aspect"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,12 +23,21 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "LurkerSCBWResearch",
+  "id": "LurkerSCBWResearch",
+  "Icon": "btn-unit-zerg-lurker@scbw",
   "AffectedUnitArray": [
     "HydraliskSCBW"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
-  "ScoreAmount": 400,
+  "Race": "BWZe",
+  "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Evolution Chamber",
-    "zhCN": "进化腔",
-    "koKR": "에볼루션 챔버 /// Evolution Chamber"
+    "zhCN": "Evolution Chamber",
+    "koKR": "Evolution Chamber"
   },
   "Description": {
     "enUS": "Contains upgrades for Zerg ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Spore Colony</b> from <b>Creep Colony</b>",
-    "zhCN": "为异虫地面单位提供升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Creep Colony</b>可以变异为<b>Spore Colony</b>",
-    "koKR": "저그 지상 유닛을 업그레이드합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Spore Colony</b> (<b>Creep Colony</b>에서 변이) /// Contains upgrades for Zerg ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Spore Colony</b> from <b>Creep Colony</b>"
+    "zhCN": "Contains upgrades for Zerg ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Spore Colony</b> from <b>Creep Colony</b>",
+    "koKR": "Contains upgrades for Zerg ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Spore Colony</b> from <b>Creep Colony</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EvolutionChamberSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EvolutionChamberSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EvolutionChamberSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EvolutionChamberSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -125,8 +125,18 @@
   "CostResource": {
     "Minerals": 125
   },
-  "BuildTime": 35,
+  "BuildTime": 28,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "que5",
+    "ZergGroundCarapaceSCBW",
+    "ZergMeleeAttacksSCBW",
+    "ZergMissileAttacksSCBW"
+  ],
+  "BehaviorArray": [
+    "OnCreep"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -188,20 +198,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -214,14 +220,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -235,7 +241,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -250,18 +257,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "ZergGroundCarapaceSCBW@Lvl1",
@@ -275,6 +278,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZergGroundCarapaceSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ZergGroundCarapaceSCBW@Lvl1"
           },
           "Resource": {
@@ -303,13 +307,13 @@
         "Icon": "btn-upgrade-zerg-groundcarapace-level1",
         "Name": {
           "enUS": "Evolve Ground Carapace Level 1",
-          "zhCN": "进化地面单位甲壳等级1",
-          "koKR": "갑피 진화 레벨 1 /// Evolve Ground Carapace Level 1"
+          "zhCN": "Evolve Ground Carapace Level 1",
+          "koKR": "Evolve Ground Carapace Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of all Zerg ground units.",
-          "zhCN": "提升所有异虫地面单位的护甲。",
-          "koKR": "모든 저그 지상 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of all Zerg ground units."
+          "zhCN": "Upgrades the armor of all Zerg ground units.",
+          "koKR": "Upgrades the armor of all Zerg ground units."
         },
         "Hotkey": "C"
       },
@@ -324,20 +328,21 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergGroundCarapaceSCBW@Lvl2",
             "Requirements": "ZergGroundCarapaceSCBW@Lvl2"
           },
           "Resource": {
-            "Minerals": 225,
-            "Vespene": 225
+            "Minerals": 200,
+            "Vespene": 200
           },
           "Time": 190,
           "Upgrade": "ZergGroundCarapaceSCBW@Lvl2"
         },
         "Time": 190,
         "Cost": {
-          "Minerals": 225,
-          "Vespene": 225,
+          "Minerals": 200,
+          "Vespene": 200,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -353,13 +358,13 @@
         "Icon": "btn-upgrade-zerg-groundcarapace-level2",
         "Name": {
           "enUS": "Evolve Ground Carapace Level 2",
-          "zhCN": "进化地面单位甲壳等级2",
-          "koKR": "갑피 진화 레벨 2 /// Evolve Ground Carapace Level 2"
+          "zhCN": "Evolve Ground Carapace Level 2",
+          "koKR": "Evolve Ground Carapace Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of all Zerg ground units.",
-          "zhCN": "进一步提升所有异虫地面单位的护甲。",
-          "koKR": "모든 저그 지상 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Zerg ground units."
+          "zhCN": "Further upgrades the armor of all Zerg ground units.",
+          "koKR": "Further upgrades the armor of all Zerg ground units."
         },
         "Hotkey": "C"
       },
@@ -374,20 +379,21 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergGroundCarapaceSCBW@Lvl3",
             "Requirements": "ZergGroundCarapaceSCBW@Lvl3"
           },
           "Resource": {
-            "Minerals": 300,
-            "Vespene": 300
+            "Minerals": 250,
+            "Vespene": 250
           },
           "Time": 220,
           "Upgrade": "ZergGroundCarapaceSCBW@Lvl3"
         },
         "Time": 220,
         "Cost": {
-          "Minerals": 300,
-          "Vespene": 300,
+          "Minerals": 250,
+          "Vespene": 250,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -403,13 +409,13 @@
         "Icon": "btn-upgrade-zerg-groundcarapace-level3",
         "Name": {
           "enUS": "Evolve Ground Carapace Level 3",
-          "zhCN": "进化地面单位甲壳等级3",
-          "koKR": "갑피 진화 레벨 3 /// Evolve Ground Carapace Level 3"
+          "zhCN": "Evolve Ground Carapace Level 3",
+          "koKR": "Evolve Ground Carapace Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of all Zerg ground units.",
-          "zhCN": "使所有异虫地面单位的护甲最大化。",
-          "koKR": "모든 저그 지상 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of all Zerg ground units."
+          "zhCN": "Maximizes the armor of all Zerg ground units.",
+          "koKR": "Maximizes the armor of all Zerg ground units."
         },
         "Hotkey": "C"
       },
@@ -425,6 +431,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZergMeleeAttacksSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ZergMeleeAttacksSCBW@Lvl1"
           },
           "Resource": {
@@ -453,13 +460,13 @@
         "Icon": "btn-upgrade-zerg-meleeattacks-level1",
         "Name": {
           "enUS": "Evolve Melee Attacks Level 1",
-          "zhCN": "进化近战攻击等级1",
-          "koKR": "근접 공격력 업그레이드 레벨 1 /// Evolve Melee Attacks Level 1"
+          "zhCN": "Evolve Melee Attacks Level 1",
+          "koKR": "Evolve Melee Attacks Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades all Zerg melee attacks.",
-          "zhCN": "提升所有异虫单位的近战攻击力。",
-          "koKR": "모든 저그 근접 공격 유닛의 공격력을 업그레이드합니다. /// Upgrades all Zerg melee attacks."
+          "zhCN": "Upgrades all Zerg melee attacks.",
+          "koKR": "Upgrades all Zerg melee attacks."
         },
         "Hotkey": "E"
       },
@@ -474,6 +481,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergMeleeAttacksSCBW@Lvl2",
             "Requirements": "ZergMeleeAttacksSCBW@Lvl2"
           },
@@ -503,13 +511,13 @@
         "Icon": "btn-upgrade-zerg-meleeattacks-level2",
         "Name": {
           "enUS": "Evolve Melee Attacks Level 2",
-          "zhCN": "进化近战攻击等级2",
-          "koKR": "근접 공격력 업그레이드 레벨 2 /// Evolve Melee Attacks Level 2"
+          "zhCN": "Evolve Melee Attacks Level 2",
+          "koKR": "Evolve Melee Attacks Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades all Zerg melee attacks.",
-          "zhCN": "进一步提升所有异虫单位的近战攻击力。",
-          "koKR": "모든 저그 근접 공격 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades all Zerg melee attacks."
+          "zhCN": "Further upgrades all Zerg melee attacks.",
+          "koKR": "Further upgrades all Zerg melee attacks."
         },
         "Hotkey": "E"
       },
@@ -524,6 +532,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergMeleeAttacksSCBW@Lvl3",
             "Requirements": "ZergMeleeAttacksSCBW@Lvl3"
           },
@@ -553,13 +562,13 @@
         "Icon": "btn-upgrade-zerg-meleeattacks-level3",
         "Name": {
           "enUS": "Evolve Melee Attacks Level 3",
-          "zhCN": "进化近战攻击等级3",
-          "koKR": "근접 공격력 업그레이드 레벨 3 /// Evolve Melee Attacks Level 3"
+          "zhCN": "Evolve Melee Attacks Level 3",
+          "koKR": "Evolve Melee Attacks Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes all Zerg melee attacks.",
-          "zhCN": "使所有异虫单位的近战攻击力最大化。",
-          "koKR": "모든 저그 근접 공격 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes all Zerg melee attacks."
+          "zhCN": "Maximizes all Zerg melee attacks.",
+          "koKR": "Maximizes all Zerg melee attacks."
         },
         "Hotkey": "E"
       },
@@ -575,6 +584,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZergMissileAttacksSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ZergMissileAttacksSCBW@Lvl1"
           },
           "Resource": {
@@ -603,13 +613,13 @@
         "Icon": "btn-upgrade-zerg-missileattacks-level1",
         "Name": {
           "enUS": "Evolve Missile Attacks Level 1",
-          "zhCN": "进化喷射攻击等级1",
-          "koKR": "발사 공격력 업그레이드 레벨 1 ///Evolve Missile Attacks Level 1"
+          "zhCN": "Evolve Missile Attacks Level 1",
+          "koKR": "Evolve Missile Attacks Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the attacks of all Zerg ground ranged units.",
-          "zhCN": "提升所有异虫地面远程单位的攻击力。",
-          "koKR": "모든 저그 지상 원거리 유닛의 공격력을 업그레이드합니다. /// Upgrades the attacks of all Zerg ground ranged units."
+          "zhCN": "Upgrades the attacks of all Zerg ground ranged units.",
+          "koKR": "Upgrades the attacks of all Zerg ground ranged units."
         },
         "Hotkey": "A"
       },
@@ -624,6 +634,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergMissileAttacksSCBW@Lvl2",
             "Requirements": "ZergMissileAttacksSCBW@Lvl2"
           },
@@ -653,13 +664,13 @@
         "Icon": "btn-upgrade-zerg-missileattacks-level2",
         "Name": {
           "enUS": "Evolve Missile Attacks Level 2",
-          "zhCN": "进化喷射攻击等级2",
-          "koKR": "발사 공격력 업그레이드 레벨 2 ///Evolve Missile Attacks Level 2"
+          "zhCN": "Evolve Missile Attacks Level 2",
+          "koKR": "Evolve Missile Attacks Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the attacks of all Zerg ground ranged units.",
-          "zhCN": "进一步提升所有异虫地面远程单位的攻击力。",
-          "koKR": "모든 저그 지상 원거리 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the attacks of all Zerg ground ranged units."
+          "zhCN": "Further upgrades the attacks of all Zerg ground ranged units.",
+          "koKR": "Further upgrades the attacks of all Zerg ground ranged units."
         },
         "Hotkey": "A"
       },
@@ -674,6 +685,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergMissileAttacksSCBW@Lvl3",
             "Requirements": "ZergMissileAttacksSCBW@Lvl3"
           },
@@ -703,13 +715,13 @@
         "Icon": "btn-upgrade-zerg-missileattacks-level3",
         "Name": {
           "enUS": "Evolve Missile Attacks Level 3",
-          "zhCN": "进化喷射攻击等级3",
-          "koKR": "발사 공격력 업그레이드 레벨 3 ///Evolve Missile Attacks Level 3"
+          "zhCN": "Evolve Missile Attacks Level 3",
+          "koKR": "Evolve Missile Attacks Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the attacks of all Zerg ground ranged units.",
-          "zhCN": "使所有异虫地面远程单位的攻击力最大化。",
-          "koKR": "모든 저그 지상 원거리 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the attacks of all Zerg ground ranged units."
+          "zhCN": "Maximizes the attacks of all Zerg ground ranged units.",
+          "koKR": "Maximizes the attacks of all Zerg ground ranged units."
         },
         "Hotkey": "A"
       }
@@ -722,61 +734,50 @@
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 26,
   "GlossaryPriority": 29,
-  "TechTreeUnlockedUnitArray": [
-    ""
-  ],
   "TacticalAIThink": "AIThinkEvolutionChamberSCBW",
   "Icon": "btn-building-zerg-evolutionchamber",
+  "Model": "EvolutionChamberEx1",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
-  "Behaviors": [
-    {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
-    }
-  ],
+  "Behaviors": [],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "ZergGroundCarapaceSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ZergMeleeAttacksSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ZergMissileAttacksSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
@@ -820,25 +821,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZergGroundCarapaceSCBW,Research1",
@@ -846,13 +841,13 @@
       "Icon": "btn-upgrade-zerg-groundcarapace-level1",
       "Name": {
         "enUS": "Evolve Ground Carapace Level 1",
-        "zhCN": "进化地面单位甲壳等级1",
-        "koKR": "갑피 진화 레벨 1 /// Evolve Ground Carapace Level 1"
+        "zhCN": "Evolve Ground Carapace Level 1",
+        "koKR": "Evolve Ground Carapace Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of all Zerg ground units.",
-        "zhCN": "提升所有异虫地面单位的护甲。",
-        "koKR": "모든 저그 지상 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of all Zerg ground units."
+        "zhCN": "Upgrades the armor of all Zerg ground units.",
+        "koKR": "Upgrades the armor of all Zerg ground units."
       }
     },
     {
@@ -861,13 +856,13 @@
       "Icon": "btn-upgrade-zerg-groundcarapace-level2",
       "Name": {
         "enUS": "Evolve Ground Carapace Level 2",
-        "zhCN": "进化地面单位甲壳等级2",
-        "koKR": "갑피 진화 레벨 2 /// Evolve Ground Carapace Level 2"
+        "zhCN": "Evolve Ground Carapace Level 2",
+        "koKR": "Evolve Ground Carapace Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of all Zerg ground units.",
-        "zhCN": "进一步提升所有异虫地面单位的护甲。",
-        "koKR": "모든 저그 지상 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Zerg ground units."
+        "zhCN": "Further upgrades the armor of all Zerg ground units.",
+        "koKR": "Further upgrades the armor of all Zerg ground units."
       }
     },
     {
@@ -876,13 +871,13 @@
       "Icon": "btn-upgrade-zerg-groundcarapace-level3",
       "Name": {
         "enUS": "Evolve Ground Carapace Level 3",
-        "zhCN": "进化地面单位甲壳等级3",
-        "koKR": "갑피 진화 레벨 3 /// Evolve Ground Carapace Level 3"
+        "zhCN": "Evolve Ground Carapace Level 3",
+        "koKR": "Evolve Ground Carapace Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of all Zerg ground units.",
-        "zhCN": "使所有异虫地面单位的护甲最大化。",
-        "koKR": "모든 저그 지상 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of all Zerg ground units."
+        "zhCN": "Maximizes the armor of all Zerg ground units.",
+        "koKR": "Maximizes the armor of all Zerg ground units."
       }
     },
     {
@@ -891,13 +886,13 @@
       "Icon": "btn-upgrade-zerg-meleeattacks-level1",
       "Name": {
         "enUS": "Evolve Melee Attacks Level 1",
-        "zhCN": "进化近战攻击等级1",
-        "koKR": "근접 공격력 업그레이드 레벨 1 /// Evolve Melee Attacks Level 1"
+        "zhCN": "Evolve Melee Attacks Level 1",
+        "koKR": "Evolve Melee Attacks Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades all Zerg melee attacks.",
-        "zhCN": "提升所有异虫单位的近战攻击力。",
-        "koKR": "모든 저그 근접 공격 유닛의 공격력을 업그레이드합니다. /// Upgrades all Zerg melee attacks."
+        "zhCN": "Upgrades all Zerg melee attacks.",
+        "koKR": "Upgrades all Zerg melee attacks."
       }
     },
     {
@@ -906,13 +901,13 @@
       "Icon": "btn-upgrade-zerg-meleeattacks-level2",
       "Name": {
         "enUS": "Evolve Melee Attacks Level 2",
-        "zhCN": "进化近战攻击等级2",
-        "koKR": "근접 공격력 업그레이드 레벨 2 /// Evolve Melee Attacks Level 2"
+        "zhCN": "Evolve Melee Attacks Level 2",
+        "koKR": "Evolve Melee Attacks Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades all Zerg melee attacks.",
-        "zhCN": "进一步提升所有异虫单位的近战攻击力。",
-        "koKR": "모든 저그 근접 공격 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades all Zerg melee attacks."
+        "zhCN": "Further upgrades all Zerg melee attacks.",
+        "koKR": "Further upgrades all Zerg melee attacks."
       }
     },
     {
@@ -921,13 +916,13 @@
       "Icon": "btn-upgrade-zerg-meleeattacks-level3",
       "Name": {
         "enUS": "Evolve Melee Attacks Level 3",
-        "zhCN": "进化近战攻击等级3",
-        "koKR": "근접 공격력 업그레이드 레벨 3 /// Evolve Melee Attacks Level 3"
+        "zhCN": "Evolve Melee Attacks Level 3",
+        "koKR": "Evolve Melee Attacks Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes all Zerg melee attacks.",
-        "zhCN": "使所有异虫单位的近战攻击力最大化。",
-        "koKR": "모든 저그 근접 공격 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes all Zerg melee attacks."
+        "zhCN": "Maximizes all Zerg melee attacks.",
+        "koKR": "Maximizes all Zerg melee attacks."
       }
     },
     {
@@ -936,13 +931,13 @@
       "Icon": "btn-upgrade-zerg-missileattacks-level1",
       "Name": {
         "enUS": "Evolve Missile Attacks Level 1",
-        "zhCN": "进化喷射攻击等级1",
-        "koKR": "발사 공격력 업그레이드 레벨 1 ///Evolve Missile Attacks Level 1"
+        "zhCN": "Evolve Missile Attacks Level 1",
+        "koKR": "Evolve Missile Attacks Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the attacks of all Zerg ground ranged units.",
-        "zhCN": "提升所有异虫地面远程单位的攻击力。",
-        "koKR": "모든 저그 지상 원거리 유닛의 공격력을 업그레이드합니다. /// Upgrades the attacks of all Zerg ground ranged units."
+        "zhCN": "Upgrades the attacks of all Zerg ground ranged units.",
+        "koKR": "Upgrades the attacks of all Zerg ground ranged units."
       }
     },
     {
@@ -951,13 +946,13 @@
       "Icon": "btn-upgrade-zerg-missileattacks-level2",
       "Name": {
         "enUS": "Evolve Missile Attacks Level 2",
-        "zhCN": "进化喷射攻击等级2",
-        "koKR": "발사 공격력 업그레이드 레벨 2 ///Evolve Missile Attacks Level 2"
+        "zhCN": "Evolve Missile Attacks Level 2",
+        "koKR": "Evolve Missile Attacks Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the attacks of all Zerg ground ranged units.",
-        "zhCN": "进一步提升所有异虫地面远程单位的攻击力。",
-        "koKR": "모든 저그 지상 원거리 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the attacks of all Zerg ground ranged units."
+        "zhCN": "Further upgrades the attacks of all Zerg ground ranged units.",
+        "koKR": "Further upgrades the attacks of all Zerg ground ranged units."
       }
     },
     {
@@ -966,13 +961,13 @@
       "Icon": "btn-upgrade-zerg-missileattacks-level3",
       "Name": {
         "enUS": "Evolve Missile Attacks Level 3",
-        "zhCN": "进化喷射攻击等级3",
-        "koKR": "발사 공격력 업그레이드 레벨 3 ///Evolve Missile Attacks Level 3"
+        "zhCN": "Evolve Missile Attacks Level 3",
+        "koKR": "Evolve Missile Attacks Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the attacks of all Zerg ground ranged units.",
-        "zhCN": "使所有异虫地面远程单位的攻击力最大化。",
-        "koKR": "모든 저그 지상 원거리 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the attacks of all Zerg ground ranged units."
+        "zhCN": "Maximizes the attacks of all Zerg ground ranged units.",
+        "koKR": "Maximizes the attacks of all Zerg ground ranged units."
       }
     }
   ]

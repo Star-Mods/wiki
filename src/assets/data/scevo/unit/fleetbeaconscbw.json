@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Fleet Beacon",
-    "zhCN": "舰队航标",
-    "koKR": "플릿 비콘 /// Fleet Beacon"
+    "zhCN": "Fleet Beacon",
+    "koKR": "Fleet Beacon"
   },
   "Description": {
     "enUS": "Contains upgrades for Protoss Air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Carrier</b>s at the <b>Stargate</b>",
-    "zhCN": "为星灵空军单位提供升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- 可以从<b>Stargate</b>折跃<b>Carrier</b><br/>- 若有<b>Templar Archives</b>，可以折跃<b>Arbiter Tribunal</b>",
-    "koKR": "프로토스 공중 유닛을 업그레이드합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Carrier</b> (<b>Stargate</b>) /// Contains upgrades for Protoss Air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Carrier</b>s at the <b>Stargate</b><br/>- <b>Arbiter Tribunal</b> with <b>Templar Archives</b>"
+    "zhCN": "Contains upgrades for Protoss Air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Carrier</b>s at the <b>Stargate</b>",
+    "koKR": "Contains upgrades for Protoss Air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Carrier</b>s at the <b>Stargate</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FleetBeaconSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FleetBeaconSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FleetBeaconSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FleetBeaconSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -116,18 +116,27 @@
   "LifeArmor": 1,
   "ShieldsStart": 500,
   "ShieldsMax": 500,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 300,
-    "Vespene": 200
+    "Minerals": 200,
+    "Vespene": 150
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "ScoutSCBWSpeedUpgrade",
+    "ScoutSCBWSightUpgrade",
+    "CorsairSCBWEnergyUpgrade",
+    "CorsairSCBWDisruptionWebResearch",
+    "CarrierSCBWHangarIncreaseUpgrade"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -189,20 +198,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -215,14 +220,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -236,7 +241,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -251,18 +257,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "ScoutSCBWSightUpgrade",
@@ -276,19 +278,20 @@
               "CreateDefaultButton": 0
             },
             "DefaultButtonFace": "ScoutSCBWSightUpgrade",
+            "State": "Restricted",
             "Requirements": "ScoutSCBWSightUpgrade"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 50,
+            "Vespene": 50
           },
-          "Time": 110,
+          "Time": 50,
           "Upgrade": "ScoutSCBWSightUpgrade"
         },
-        "Time": 110,
+        "Time": 50,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -303,14 +306,14 @@
         "id": "ScoutSCBWSightUpgrade",
         "Icon": "btn-upgrade-protoss-apialsensors@scbw",
         "Name": {
-          "enUS": "Research Apial Sensors",
-          "zhCN": "研究蜂氏传感器",
-          "koKR": "에이피얼 탐지기 개발 /// Research Apial Sensors"
+          "enUS": "Develop Apial Sensors",
+          "zhCN": "Develop Apial Sensors",
+          "koKR": "Develop Apial Sensors"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的视野范围提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 시야 범위가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "E"
       },
@@ -326,19 +329,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ScoutSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ScoutSCBWSpeedUpgrade"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 50,
+            "Vespene": 50
           },
           "Time": 80,
           "Upgrade": "ScoutSCBWSpeedUpgrade"
         },
         "Time": 80,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -353,14 +357,14 @@
         "id": "ScoutSCBWSpeedUpgrade",
         "Icon": "btn-upgrade-protoss-graviticbooster",
         "Name": {
-          "enUS": "Research Gravitic Thrusters",
-          "zhCN": "研究重力推进器",
-          "koKR": "중력 추진기 개발 /// Research Gravitic Thrusters"
+          "enUS": "Develop Gravitic Thrusters",
+          "zhCN": "Develop Gravitic Thrusters",
+          "koKR": "Develop Gravitic Thrusters"
         },
         "Tooltip": {
-          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>."
         },
         "Hotkey": "R"
       },
@@ -376,19 +380,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CarrierSCBWHangarIncreaseUpgrade",
+            "State": "Restricted",
             "Requirements": "CarrierSCBWHangarIncreaseUpgrade"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 200,
+            "Vespene": 200
           },
-          "Time": 65,
+          "Time": 90,
           "Upgrade": "CarrierSCBWHangarIncreaseUpgrade"
         },
-        "Time": 65,
+        "Time": 90,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 200,
+          "Vespene": 200,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -403,14 +408,14 @@
         "id": "CarrierSCBWHangarIncreaseUpgrade",
         "Icon": "btn-upgrade-protoss-gravitoncatapult",
         "Name": {
-          "enUS": "Research Carrier Capacity",
-          "zhCN": "研究航母机库扩容",
-          "koKR": "캐리어 수용력 증가 /// Research Carrier Capacity"
+          "enUS": "Increased Carrier Capacity",
+          "zhCN": "Increased Carrier Capacity",
+          "koKR": "Increased Carrier Capacity"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>机库容量提高到<span class=\"style-TooltipBuffSCBW\"><b>8</b></span>架。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> 수용량이 <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>개로 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
         },
         "Hotkey": "S"
       },
@@ -426,19 +431,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CorsairSCBWDisruptionWebResearch",
+            "State": "Restricted",
             "Requirements": "CorsairSCBWDisruptionWebResearch"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 150
+            "Minerals": 50,
+            "Vespene": 50
           },
-          "Time": 90,
+          "Time": 80,
           "Upgrade": "CorsairSCBWDisruptionWebResearch"
         },
-        "Time": 90,
+        "Time": 80,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 150,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -453,14 +459,14 @@
         "id": "CorsairSCBWDisruptionWebResearch",
         "Icon": "btn-ability-protoss-disruptionweb",
         "Name": {
-          "enUS": "Research Disruption Web",
-          "zhCN": "研究干扰网",
-          "koKR": "디스럽션 웹 연구 /// Research Disruption Web"
+          "enUS": "Develop Disruption Web",
+          "zhCN": "Develop Disruption Web",
+          "koKR": "Develop Disruption Web"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
         },
         "Hotkey": "C"
       },
@@ -476,6 +482,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CorsairSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "CorsairSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -503,16 +510,43 @@
         "id": "CorsairSCBWEnergyUpgrade",
         "Icon": "btn-ability-protoss-stasistrap",
         "Name": {
-          "enUS": "Research Argus Jewel",
-          "zhCN": "研究阿古斯宝石",
-          "koKR": "아르거스 보석 개발 /// Research Argus Jewel"
+          "enUS": "Develop Argus Jewel",
+          "zhCN": "Develop Argus Jewel",
+          "koKR": "Develop Argus Jewel"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "J"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "CarrierSCBW@Passive",
+        "Icon": "btn-unit-protoss-carrier@scbw",
+        "Name": {
+          "enUS": "Carrier",
+          "zhCN": "Carrier",
+          "koKR": "Carrier"
+        },
+        "Tooltip": {
+          "enUS": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Carrier</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>.",
+          "zhCN": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Carrier</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>.",
+          "koKR": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Carrier</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>."
+        }
       },
       {
         "Upgrade": "ScoutSCBWSpeedUpgrade",
@@ -526,19 +560,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ScoutSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ScoutSCBWSpeedUpgrade"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 50,
+            "Vespene": 50
           },
           "Time": 80,
           "Upgrade": "ScoutSCBWSpeedUpgrade"
         },
         "Time": 80,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -553,14 +588,14 @@
         "id": "ScoutSCBWSpeedUpgrade",
         "Icon": "btn-upgrade-protoss-graviticbooster",
         "Name": {
-          "enUS": "Research Gravitic Thrusters",
-          "zhCN": "研究重力推进器",
-          "koKR": "중력 추진기 개발 /// Research Gravitic Thrusters"
+          "enUS": "Develop Gravitic Thrusters",
+          "zhCN": "Develop Gravitic Thrusters",
+          "koKR": "Develop Gravitic Thrusters"
         },
         "Tooltip": {
-          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>."
         },
         "Hotkey": "R"
       },
@@ -576,6 +611,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CorsairSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "CorsairSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -603,14 +639,14 @@
         "id": "CorsairSCBWEnergyUpgrade",
         "Icon": "btn-ability-protoss-stasistrap",
         "Name": {
-          "enUS": "Research Argus Jewel",
-          "zhCN": "研究阿古斯宝石",
-          "koKR": "아르거스 보석 개발 /// Research Argus Jewel"
+          "enUS": "Develop Argus Jewel",
+          "zhCN": "Develop Argus Jewel",
+          "koKR": "Develop Argus Jewel"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "J"
       },
@@ -626,19 +662,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CorsairSCBWDisruptionWebResearch",
+            "State": "Restricted",
             "Requirements": "CorsairSCBWDisruptionWebResearch"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 150
+            "Minerals": 50,
+            "Vespene": 50
           },
-          "Time": 90,
+          "Time": 80,
           "Upgrade": "CorsairSCBWDisruptionWebResearch"
         },
-        "Time": 90,
+        "Time": 80,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 150,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -653,14 +690,14 @@
         "id": "CorsairSCBWDisruptionWebResearch",
         "Icon": "btn-ability-protoss-disruptionweb",
         "Name": {
-          "enUS": "Research Disruption Web",
-          "zhCN": "研究干扰网",
-          "koKR": "디스럽션 웹 연구 /// Research Disruption Web"
+          "enUS": "Develop Disruption Web",
+          "zhCN": "Develop Disruption Web",
+          "koKR": "Develop Disruption Web"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
         },
         "Hotkey": "C"
       },
@@ -676,19 +713,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "CarrierSCBWHangarIncreaseUpgrade",
+            "State": "Restricted",
             "Requirements": "CarrierSCBWHangarIncreaseUpgrade"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 200,
+            "Vespene": 200
           },
-          "Time": 65,
+          "Time": 90,
           "Upgrade": "CarrierSCBWHangarIncreaseUpgrade"
         },
-        "Time": 65,
+        "Time": 90,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 200,
+          "Vespene": 200,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -703,14 +741,14 @@
         "id": "CarrierSCBWHangarIncreaseUpgrade",
         "Icon": "btn-upgrade-protoss-gravitoncatapult",
         "Name": {
-          "enUS": "Research Carrier Capacity",
-          "zhCN": "研究航母机库扩容",
-          "koKR": "캐리어 수용력 증가 /// Research Carrier Capacity"
+          "enUS": "Increased Carrier Capacity",
+          "zhCN": "Increased Carrier Capacity",
+          "koKR": "Increased Carrier Capacity"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>机库容量提高到<span class=\"style-TooltipBuffSCBW\"><b>8</b></span>架。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> 수용량이 <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>개로 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
         },
         "Hotkey": "S"
       }
@@ -718,8 +756,8 @@
   },
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ScoreMake": 500,
-  "ScoreKill": 500,
+  "ScoreMake": 350,
+  "ScoreKill": 350,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 14,
   "GlossaryPriority": 217,
@@ -727,17 +765,17 @@
   "TechTreeUnlockedUnitArray": [
     "CarrierSCBW"
   ],
-  "BuildTime": 55,
-  "ShieldRegenDelay": 10,
+  "BuildTime": 50,
   "id": "FleetBeaconSCBW",
   "Icon": "btn-building-protoss-fleetbeacon",
+  "Model": "FleetBeaconEx1",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
@@ -747,49 +785,49 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "ScoutSCBWSpeedUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ScoutSCBWSightUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "CorsairSCBWEnergyUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "CorsairSCBWDisruptionWebResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
@@ -803,7 +841,6 @@
   ],
   "$Upgrades": [
     "FleetBeaconSCBW@Count",
-    "Button/Tooltip/TemplarArchiveSCBW",
     "FleetBeaconSCBW",
     "FleetBeaconSCBW@AllowUnit",
     "ProbeSCBW@BuildAdv",
@@ -839,39 +876,33 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ScoutSCBWSightUpgrade,Research1",
       "id": "ScoutSCBWSightUpgrade",
       "Icon": "btn-upgrade-protoss-apialsensors@scbw",
       "Name": {
-        "enUS": "Research Apial Sensors",
-        "zhCN": "研究蜂氏传感器",
-        "koKR": "에이피얼 탐지기 개발 /// Research Apial Sensors"
+        "enUS": "Develop Apial Sensors",
+        "zhCN": "Develop Apial Sensors",
+        "koKR": "Develop Apial Sensors"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的视野范围提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 시야 범위가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ScoutSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -879,14 +910,14 @@
       "id": "ScoutSCBWSpeedUpgrade",
       "Icon": "btn-upgrade-protoss-graviticbooster",
       "Name": {
-        "enUS": "Research Gravitic Thrusters",
-        "zhCN": "研究重力推进器",
-        "koKR": "중력 추진기 개발 /// Research Gravitic Thrusters"
+        "enUS": "Develop Gravitic Thrusters",
+        "zhCN": "Develop Gravitic Thrusters",
+        "koKR": "Develop Gravitic Thrusters"
       },
       "Tooltip": {
-        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>."
       }
     },
     {
@@ -894,14 +925,14 @@
       "id": "CarrierSCBWHangarIncreaseUpgrade",
       "Icon": "btn-upgrade-protoss-gravitoncatapult",
       "Name": {
-        "enUS": "Research Carrier Capacity",
-        "zhCN": "研究航母机库扩容",
-        "koKR": "캐리어 수용력 증가 /// Research Carrier Capacity"
+        "enUS": "Increased Carrier Capacity",
+        "zhCN": "Increased Carrier Capacity",
+        "koKR": "Increased Carrier Capacity"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>机库容量提高到<span class=\"style-TooltipBuffSCBW\"><b>8</b></span>架。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> 수용량이 <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>개로 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
       }
     },
     {
@@ -909,14 +940,14 @@
       "id": "CorsairSCBWDisruptionWebResearch",
       "Icon": "btn-ability-protoss-disruptionweb",
       "Name": {
-        "enUS": "Research Disruption Web",
-        "zhCN": "研究干扰网",
-        "koKR": "디스럽션 웹 연구 /// Research Disruption Web"
+        "enUS": "Develop Disruption Web",
+        "zhCN": "Develop Disruption Web",
+        "koKR": "Develop Disruption Web"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
       }
     },
     {
@@ -924,14 +955,14 @@
       "id": "CorsairSCBWEnergyUpgrade",
       "Icon": "btn-ability-protoss-stasistrap",
       "Name": {
-        "enUS": "Research Argus Jewel",
-        "zhCN": "研究阿古斯宝石",
-        "koKR": "아르거스 보석 개발 /// Research Argus Jewel"
+        "enUS": "Develop Argus Jewel",
+        "zhCN": "Develop Argus Jewel",
+        "koKR": "Develop Argus Jewel"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -939,14 +970,14 @@
       "id": "ScoutSCBWSpeedUpgrade",
       "Icon": "btn-upgrade-protoss-graviticbooster",
       "Name": {
-        "enUS": "Research Gravitic Thrusters",
-        "zhCN": "研究重力推进器",
-        "koKR": "중력 추진기 개발 /// Research Gravitic Thrusters"
+        "enUS": "Develop Gravitic Thrusters",
+        "zhCN": "Develop Gravitic Thrusters",
+        "koKR": "Develop Gravitic Thrusters"
       },
       "Tooltip": {
-        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Scout</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>25</b>%</span>."
       }
     },
     {
@@ -954,14 +985,14 @@
       "id": "CorsairSCBWEnergyUpgrade",
       "Icon": "btn-ability-protoss-stasistrap",
       "Name": {
-        "enUS": "Research Argus Jewel",
-        "zhCN": "研究阿古斯宝石",
-        "koKR": "아르거스 보석 개발 /// Research Argus Jewel"
+        "enUS": "Develop Argus Jewel",
+        "zhCN": "Develop Argus Jewel",
+        "koKR": "Develop Argus Jewel"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,CorsairSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -969,14 +1000,14 @@
       "id": "CorsairSCBWDisruptionWebResearch",
       "Icon": "btn-ability-protoss-disruptionweb",
       "Name": {
-        "enUS": "Research Disruption Web",
-        "zhCN": "研究干扰网",
-        "koKR": "디스럽션 웹 연구 /// Research Disruption Web"
+        "enUS": "Develop Disruption Web",
+        "zhCN": "Develop Disruption Web",
+        "koKR": "Develop Disruption Web"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Corsair</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span> ability."
       }
     },
     {
@@ -984,14 +1015,14 @@
       "id": "CarrierSCBWHangarIncreaseUpgrade",
       "Icon": "btn-upgrade-protoss-gravitoncatapult",
       "Name": {
-        "enUS": "Research Carrier Capacity",
-        "zhCN": "研究航母机库扩容",
-        "koKR": "캐리어 수용력 증가 /// Research Carrier Capacity"
+        "enUS": "Increased Carrier Capacity",
+        "zhCN": "Increased Carrier Capacity",
+        "koKR": "Increased Carrier Capacity"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>机库容量提高到<span class=\"style-TooltipBuffSCBW\"><b>8</b></span>架。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> 수용량이 <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>개로 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Carrier</b></span>'s <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span> capacity to <span class=\"style-TooltipBuffSCBW\"><b>8</b></span>."
       }
     }
   ]

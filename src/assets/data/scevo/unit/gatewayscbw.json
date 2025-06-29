@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Gateway",
-    "zhCN": "传送门",
-    "koKR": "게이트웨이 /// Gateway"
+    "zhCN": "Gateway",
+    "koKR": "Gateway"
   },
   "Description": {
     "enUS": "Warps in Protoss ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zealot</b>",
-    "zhCN": "使星灵可以利用折跃技术召集地面单位。",
-    "koKR": "프로토스 지상 유닛을 소환합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Zealot</b> /// Warps in Protoss ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zealot</b>"
+    "zhCN": "Warps in Protoss ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zealot</b>",
+    "koKR": "Warps in Protoss ground units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zealot</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GatewaySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GatewaySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GatewaySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GatewaySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -116,17 +116,23 @@
   "LifeArmor": 1,
   "ShieldsStart": 500,
   "ShieldsMax": 500,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
     "Minerals": 150
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "GatewaySCBW@Train",
+    "Rally"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -188,20 +194,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -214,14 +216,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -235,7 +237,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -250,1528 +253,17 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 10
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Duration": 10
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 10
-              }
-            }
-          },
-          "Unit": "WarpGate"
-        },
-        "Unit": "WarpGate",
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "UpgradeToWarpGate,Cancel",
-        "id": "Cancel",
-        "Icon": "btn-command-cancel",
-        "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
-        },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Info": {
-          "class": "CAbilTrain",
-          "Name": "Abil/Name/GatewaySCBW@Train",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Protoss,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "GatewaySCBW@Train",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "Alert": "TrainComplete",
-          "ErrorAlert": "TrainError",
-          "Flags": {
-            "AutoCastOffOwnerLeave": 1,
-            "BestUnit": 1,
-            "IgnoreUnitBuildTime": 0,
-            "IgnoreUnitStockCharge": 1,
-            "WaitForFood": 1
-          },
-          "Range": [
-            2
-          ],
-          "DeathTypeOnFinish": "TrainingComplete",
-          "DeathTypeOnCancel": "TrainingCancel",
-          "InfoArray": {
-            "Train1": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "ZealotSCBW",
-                "Requirements": "ZealotSCBW"
-              },
-              "Unit": [
-                "ZealotSCBW"
-              ]
-            },
-            "Train2": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DragoonSCBW",
-                "Requirements": "DragoonSCBW"
-              },
-              "Unit": [
-                "DragoonSCBW"
-              ]
-            },
-            "Train3": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "HighTemplarSCBW",
-                "Requirements": "HighTemplarSCBW"
-              },
-              "Unit": [
-                "HighTemplarSCBW"
-              ]
-            },
-            "Train4": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DarkTemplarSCBW",
-                "Requirements": "DarkTemplarSCBW"
-              },
-              "Unit": [
-                "DarkTemplarSCBW"
-              ]
-            },
-            "Train5": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train6": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train7": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train8": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train9": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train10": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train11": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train12": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train13": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train14": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train15": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train16": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train17": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train18": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train19": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train20": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train21": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train22": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train23": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train24": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train25": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train26": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train27": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train28": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train29": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train30": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            }
-          },
-          "AbilityCategories": {
-            "CanBeIllusionDisabled": 1
-          },
-          "id": "GatewaySCBW@Train",
-          "Activity": "UI/Warping"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "GatewaySCBW@Train,255",
-        "id": "ZealotSCBW",
-        "Icon": "btn-unit-protoss-zealot@scbw",
-        "Name": {
-          "enUS": "Warp In Zealot",
-          "zhCN": "折跃狂热者",
-          "koKR": "질럿 소환 /// Warp In Zealot"
-        },
-        "Tooltip": {
-          "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "强大的近战战士。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "강력한 근접 전사입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-        },
-        "Hotkey": "Z"
-      },
-      {
-        "Info": {
-          "class": "CAbilTrain",
-          "Name": "Abil/Name/GatewaySCBW@Train",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Protoss,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "GatewaySCBW@Train",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "Alert": "TrainComplete",
-          "ErrorAlert": "TrainError",
-          "Flags": {
-            "AutoCastOffOwnerLeave": 1,
-            "BestUnit": 1,
-            "IgnoreUnitBuildTime": 0,
-            "IgnoreUnitStockCharge": 1,
-            "WaitForFood": 1
-          },
-          "Range": [
-            2
-          ],
-          "DeathTypeOnFinish": "TrainingComplete",
-          "DeathTypeOnCancel": "TrainingCancel",
-          "InfoArray": {
-            "Train1": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "ZealotSCBW",
-                "Requirements": "ZealotSCBW"
-              },
-              "Unit": [
-                "ZealotSCBW"
-              ]
-            },
-            "Train2": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DragoonSCBW",
-                "Requirements": "DragoonSCBW"
-              },
-              "Unit": [
-                "DragoonSCBW"
-              ]
-            },
-            "Train3": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "HighTemplarSCBW",
-                "Requirements": "HighTemplarSCBW"
-              },
-              "Unit": [
-                "HighTemplarSCBW"
-              ]
-            },
-            "Train4": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DarkTemplarSCBW",
-                "Requirements": "DarkTemplarSCBW"
-              },
-              "Unit": [
-                "DarkTemplarSCBW"
-              ]
-            },
-            "Train5": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train6": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train7": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train8": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train9": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train10": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train11": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train12": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train13": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train14": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train15": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train16": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train17": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train18": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train19": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train20": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train21": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train22": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train23": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train24": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train25": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train26": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train27": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train28": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train29": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train30": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            }
-          },
-          "AbilityCategories": {
-            "CanBeIllusionDisabled": 1
-          },
-          "id": "GatewaySCBW@Train",
-          "Activity": "UI/Warping"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "GatewaySCBW@Train,255",
-        "id": "DragoonSCBW",
-        "Icon": "btn-unit-protoss-dragoon@scbw",
-        "Name": {
-          "enUS": "Warp In Dragoon",
-          "zhCN": "折跃龙骑士",
-          "koKR": "드라군 소환 /// Warp In Dragoon"
-        },
-        "Tooltip": {
-          "enUS": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "远程步战机甲。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "원거리 돌격형 4족 보행 유닛입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
-        },
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "class": "CAbilTrain",
-          "Name": "Abil/Name/GatewaySCBW@Train",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Protoss,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "GatewaySCBW@Train",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "Alert": "TrainComplete",
-          "ErrorAlert": "TrainError",
-          "Flags": {
-            "AutoCastOffOwnerLeave": 1,
-            "BestUnit": 1,
-            "IgnoreUnitBuildTime": 0,
-            "IgnoreUnitStockCharge": 1,
-            "WaitForFood": 1
-          },
-          "Range": [
-            2
-          ],
-          "DeathTypeOnFinish": "TrainingComplete",
-          "DeathTypeOnCancel": "TrainingCancel",
-          "InfoArray": {
-            "Train1": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "ZealotSCBW",
-                "Requirements": "ZealotSCBW"
-              },
-              "Unit": [
-                "ZealotSCBW"
-              ]
-            },
-            "Train2": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DragoonSCBW",
-                "Requirements": "DragoonSCBW"
-              },
-              "Unit": [
-                "DragoonSCBW"
-              ]
-            },
-            "Train3": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "HighTemplarSCBW",
-                "Requirements": "HighTemplarSCBW"
-              },
-              "Unit": [
-                "HighTemplarSCBW"
-              ]
-            },
-            "Train4": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DarkTemplarSCBW",
-                "Requirements": "DarkTemplarSCBW"
-              },
-              "Unit": [
-                "DarkTemplarSCBW"
-              ]
-            },
-            "Train5": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train6": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train7": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train8": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train9": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train10": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train11": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train12": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train13": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train14": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train15": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train16": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train17": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train18": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train19": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train20": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train21": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train22": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train23": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train24": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train25": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train26": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train27": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train28": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train29": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train30": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            }
-          },
-          "AbilityCategories": {
-            "CanBeIllusionDisabled": 1
-          },
-          "id": "GatewaySCBW@Train",
-          "Activity": "UI/Warping"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 2,
-        "Type": "AbilCmd",
-        "AbilCmd": "GatewaySCBW@Train,255",
-        "id": "HighTemplarSCBW",
-        "Icon": "btn-unit-protoss-hightemplar@scbw",
-        "Name": {
-          "enUS": "Warp In High Templar",
-          "zhCN": "折跃高阶圣堂武士",
-          "koKR": "하이 템플러 소환 /// Warp In High Templar"
-        },
-        "Tooltip": {
-          "enUS": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "强大的灵能运用大师。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>。可以融合为<span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "강한 사이오닉 능력을 지니고 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능.</span> /// Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-        },
-        "Hotkey": "T"
-      },
-      {
-        "Info": {
-          "class": "CAbilTrain",
-          "Name": "Abil/Name/GatewaySCBW@Train",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Protoss,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "GatewaySCBW@Train",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "Alert": "TrainComplete",
-          "ErrorAlert": "TrainError",
-          "Flags": {
-            "AutoCastOffOwnerLeave": 1,
-            "BestUnit": 1,
-            "IgnoreUnitBuildTime": 0,
-            "IgnoreUnitStockCharge": 1,
-            "WaitForFood": 1
-          },
-          "Range": [
-            2
-          ],
-          "DeathTypeOnFinish": "TrainingComplete",
-          "DeathTypeOnCancel": "TrainingCancel",
-          "InfoArray": {
-            "Train1": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "ZealotSCBW",
-                "Requirements": "ZealotSCBW"
-              },
-              "Unit": [
-                "ZealotSCBW"
-              ]
-            },
-            "Train2": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DragoonSCBW",
-                "Requirements": "DragoonSCBW"
-              },
-              "Unit": [
-                "DragoonSCBW"
-              ]
-            },
-            "Train3": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "HighTemplarSCBW",
-                "Requirements": "HighTemplarSCBW"
-              },
-              "Unit": [
-                "HighTemplarSCBW"
-              ]
-            },
-            "Train4": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                },
-                "DefaultButtonFace": "DarkTemplarSCBW",
-                "Requirements": "DarkTemplarSCBW"
-              },
-              "Unit": [
-                "DarkTemplarSCBW"
-              ]
-            },
-            "Train5": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train6": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train7": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train8": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train9": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train10": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train11": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train12": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train13": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train14": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train15": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train16": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train17": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train18": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train19": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train20": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train21": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train22": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train23": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train24": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train25": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train26": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train27": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train28": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train29": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            },
-            "Train30": {
-              "Button": {
-                "Flags": {
-                  "AllowMinimap": 0,
-                  "UseDefaultButton": 1,
-                  "CreateDefaultButton": 1
-                }
-              }
-            }
-          },
-          "AbilityCategories": {
-            "CanBeIllusionDisabled": 1
-          },
-          "id": "GatewaySCBW@Train",
-          "Activity": "UI/Warping"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 0,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "GatewaySCBW@Train,255",
-        "id": "DarkTemplarSCBW",
-        "Icon": "btn-unit-protoss-darktemplar",
-        "Name": {
-          "enUS": "Warp In Dark Templar",
-          "zhCN": "折跃黑暗圣堂武士",
-          "koKR": "다크 템플러 소환 /// Warp In Dark Templar"
-        },
-        "Tooltip": {
-          "enUS": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "致命的近战杀手。永久隐形。可融合为<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "무시무시한 암살 전사입니다. 영구히 은폐합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-        },
-        "Hotkey": "A"
-      },
-      {
+        "Info": {},
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
@@ -1783,19 +275,39 @@
           "Food": 0
         },
         "Row": 1,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "Rally,Rally1",
+        "id": "Rally",
+        "Icon": "btn-ability-terran-setrallypoint",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
         "Column": 0,
         "Type": "Passive",
-        "id": "GatewaySCBWResonantMatrixResearch@Passive",
-        "Icon": "btn-ability-protoss-resonantmatrix",
+        "id": "ShieldBatterySCBW@Passive",
+        "Icon": "btn-building-protoss-shieldbattery@scbw",
         "Name": {
-          "enUS": "Resonant Matrix",
-          "zhCN": "Resonant Matrix",
-          "koKR": "Resonant Matrix"
+          "enUS": "Shield Battery",
+          "zhCN": "Shield Battery",
+          "koKR": "Shield Battery"
         },
         "Tooltip": {
-          "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Gateway</b>s</span> to produce two units at the same time.",
-          "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Gateway</b>s</span> to produce two units at the same time.",
-          "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Gateway</b>s</span> to produce two units at the same time."
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\">Shield Batteries</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\">Shield Batteries</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\">Shield Batteries</span>."
         }
       },
       {
@@ -1806,6 +318,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZealotSCBW",
             "Requirements": "ZealotSCBW"
           },
@@ -1834,13 +347,13 @@
         "Icon": "btn-unit-protoss-zealot@scbw",
         "Name": {
           "enUS": "Warp In Zealot",
-          "zhCN": "折跃狂热者",
-          "koKR": "질럿 소환 /// Warp In Zealot"
+          "zhCN": "Warp In Zealot",
+          "koKR": "Warp In Zealot"
         },
         "Tooltip": {
           "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "强大的近战战士。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "강력한 근접 전사입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "koKR": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "Z"
       },
@@ -1852,6 +365,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "DragoonSCBW",
             "Requirements": "DragoonSCBW"
           },
@@ -1880,13 +394,13 @@
         "Icon": "btn-unit-protoss-dragoon@scbw",
         "Name": {
           "enUS": "Warp In Dragoon",
-          "zhCN": "折跃龙骑士",
-          "koKR": "드라군 소환 /// Warp In Dragoon"
+          "zhCN": "Warp In Dragoon",
+          "koKR": "Warp In Dragoon"
         },
         "Tooltip": {
           "enUS": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "远程步战机甲。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "원거리 돌격형 4족 보행 유닛입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "zhCN": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+          "koKR": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "D"
       },
@@ -1898,6 +412,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "HighTemplarSCBW",
             "Requirements": "HighTemplarSCBW"
           },
@@ -1918,21 +433,21 @@
           "Shields": 0,
           "Food": -2
         },
-        "Row": 0,
-        "Column": 2,
+        "Row": 1,
+        "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "GatewaySCBW@Train,Train3",
         "id": "HighTemplarSCBW",
         "Icon": "btn-unit-protoss-hightemplar@scbw",
         "Name": {
           "enUS": "Warp In High Templar",
-          "zhCN": "折跃高阶圣堂武士",
-          "koKR": "하이 템플러 소환 /// Warp In High Templar"
+          "zhCN": "Warp In High Templar",
+          "koKR": "Warp In High Templar"
         },
         "Tooltip": {
           "enUS": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "强大的灵能运用大师。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>。可以融合为<span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "강한 사이오닉 능력을 지니고 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능.</span> /// Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "koKR": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "T"
       },
@@ -1944,6 +459,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "DarkTemplarSCBW",
             "Requirements": "DarkTemplarSCBW"
           },
@@ -1964,21 +480,21 @@
           "Shields": 0,
           "Food": -2
         },
-        "Row": 0,
-        "Column": 3,
+        "Row": 1,
+        "Column": 1,
         "Type": "AbilCmd",
         "AbilCmd": "GatewaySCBW@Train,Train4",
         "id": "DarkTemplarSCBW",
         "Icon": "btn-unit-protoss-darktemplar",
         "Name": {
           "enUS": "Warp In Dark Templar",
-          "zhCN": "折跃黑暗圣堂武士",
-          "koKR": "다크 템플러 소환 /// Warp In Dark Templar"
+          "zhCN": "Warp In Dark Templar",
+          "koKR": "Warp In Dark Templar"
         },
         "Tooltip": {
           "enUS": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "致命的近战杀手。永久隐形。可融合为<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "무시무시한 암살 전사입니다. 영구히 은폐합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "koKR": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "A"
       }
@@ -1992,7 +508,7 @@
   "SubgroupPriority": 24,
   "TacticalAIThink": "AIThinkGatewaySCBW",
   "TechAliasArray": [
-    "Alias_Gateway"
+    "Alias_GatewaySCBW"
   ],
   "GlossaryPriority": 22,
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
@@ -2003,72 +519,63 @@
     "DarkTemplarSCBW"
   ],
   "BuildTime": 65,
-  "ShieldRegenDelay": 10,
   "id": "GatewaySCBW",
   "Icon": "btn-building-protoss-gateway",
+  "Model": "GatewayEx1",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
-      },
-      "Tooltip": "-"
-    },
-    {
-      "id": "GatewaySCBWResonantMatrixResearch@Queue",
-      "Name": {
-        "enUS": "Queue",
-        "zhCN": "Queue",
-        "koKR": "Queue"
       },
       "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "GatewaySCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
     "GatewaySCBW@AllowUnit",
     "GatewaySCBW",
     "Button/Tooltip/CyberneticsCoreSCBW",
+    "Button/Tooltip/DragoonSCBW@Passive",
     "Button/Tooltip/TemplarArchiveSCBW",
-    "GatewaySCBWResonantMatrixResearch",
-    "Button/Tooltip/GatewaySCBWResonantMatrixResearch",
-    "ProbeSCBW@Build",
+    "Button/Tooltip/HighTemplarSCBW@Passive",
+    "Button/Tooltip/DarkTemplarSCBW@Passive",
     "GatewaySCBW@Count",
+    "GatewaySCBWResonantMatrixResearch",
+    "ProbeSCBW@Build",
+    "Button/Tooltip/GatewaySCBWResonantMatrixResearch",
     "ProtossBuildingSCBW@Birth",
     "GatewaySCBW",
     "GatewaySCBW@Splat",
@@ -2077,7 +584,10 @@
     "CasterIsGatewaySCBW",
     "GatewaySCBW@QoB",
     "GatewaySCBW@QoBAtUnit",
-    "GatewaySCBW"
+    "GatewaySCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -2100,25 +610,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UpgradeToWarpGate,Cancel",
@@ -2126,72 +630,16 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "GatewaySCBW@Train,255",
-      "id": "ZealotSCBW",
-      "Icon": "btn-unit-protoss-zealot@scbw",
-      "Name": {
-        "enUS": "Warp In Zealot",
-        "zhCN": "折跃狂热者",
-        "koKR": "질럿 소환 /// Warp In Zealot"
-      },
-      "Tooltip": {
-        "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "强大的近战战士。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "강력한 근접 전사입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-      }
-    },
-    {
-      "AbilCmd": "GatewaySCBW@Train,255",
-      "id": "DragoonSCBW",
-      "Icon": "btn-unit-protoss-dragoon@scbw",
-      "Name": {
-        "enUS": "Warp In Dragoon",
-        "zhCN": "折跃龙骑士",
-        "koKR": "드라군 소환 /// Warp In Dragoon"
-      },
-      "Tooltip": {
-        "enUS": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "远程步战机甲。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "원거리 돌격형 4족 보행 유닛입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
-      }
-    },
-    {
-      "AbilCmd": "GatewaySCBW@Train,255",
-      "id": "HighTemplarSCBW",
-      "Icon": "btn-unit-protoss-hightemplar@scbw",
-      "Name": {
-        "enUS": "Warp In High Templar",
-        "zhCN": "折跃高阶圣堂武士",
-        "koKR": "하이 템플러 소환 /// Warp In High Templar"
-      },
-      "Tooltip": {
-        "enUS": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "强大的灵能运用大师。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>。可以融合为<span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "강한 사이오닉 능력을 지니고 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능.</span> /// Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-      }
-    },
-    {
-      "AbilCmd": "GatewaySCBW@Train,255",
-      "id": "DarkTemplarSCBW",
-      "Icon": "btn-unit-protoss-darktemplar",
-      "Name": {
-        "enUS": "Warp In Dark Templar",
-        "zhCN": "折跃黑暗圣堂武士",
-        "koKR": "다크 템플러 소환 /// Warp In Dark Templar"
-      },
-      "Tooltip": {
-        "enUS": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "致命的近战杀手。永久隐形。可融合为<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "무시무시한 암살 전사입니다. 영구히 은폐합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
-      }
+      "AbilCmd": "Rally,Rally1",
+      "id": "Rally",
+      "Icon": "btn-ability-terran-setrallypoint",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "GatewaySCBW@Train,Train1",
@@ -2199,13 +647,13 @@
       "Icon": "btn-unit-protoss-zealot@scbw",
       "Name": {
         "enUS": "Warp In Zealot",
-        "zhCN": "折跃狂热者",
-        "koKR": "질럿 소환 /// Warp In Zealot"
+        "zhCN": "Warp In Zealot",
+        "koKR": "Warp In Zealot"
       },
       "Tooltip": {
         "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "强大的近战战士。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "강력한 근접 전사입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "koKR": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
       }
     },
     {
@@ -2214,13 +662,13 @@
       "Icon": "btn-unit-protoss-dragoon@scbw",
       "Name": {
         "enUS": "Warp In Dragoon",
-        "zhCN": "折跃龙骑士",
-        "koKR": "드라군 소환 /// Warp In Dragoon"
+        "zhCN": "Warp In Dragoon",
+        "koKR": "Warp In Dragoon"
       },
       "Tooltip": {
         "enUS": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "远程步战机甲。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "원거리 돌격형 4족 보행 유닛입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "zhCN": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+        "koKR": "Ranged assault strider.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -2229,13 +677,13 @@
       "Icon": "btn-unit-protoss-hightemplar@scbw",
       "Name": {
         "enUS": "Warp In High Templar",
-        "zhCN": "折跃高阶圣堂武士",
-        "koKR": "하이 템플러 소환 /// Warp In High Templar"
+        "zhCN": "Warp In High Templar",
+        "koKR": "Warp In High Templar"
       },
       "Tooltip": {
         "enUS": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "强大的灵能运用大师。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>。可以融合为<span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "강한 사이오닉 능력을 지니고 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능.</span> /// Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "koKR": "Potent psionic master. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Psi Storm</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Hallucination</b></span>. Can merge into an <span class=\"style-TooltipHighlightSCBW\"><b>Archon</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
       }
     },
     {
@@ -2244,13 +692,13 @@
       "Icon": "btn-unit-protoss-darktemplar",
       "Name": {
         "enUS": "Warp In Dark Templar",
-        "zhCN": "折跃黑暗圣堂武士",
-        "koKR": "다크 템플러 소환 /// Warp In Dark Templar"
+        "zhCN": "Warp In Dark Templar",
+        "koKR": "Warp In Dark Templar"
       },
       "Tooltip": {
         "enUS": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "致命的近战杀手。永久隐形。可融合为<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "무시무시한 암살 전사입니다. 영구히 은폐합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "koKR": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
       }
     }
   ]

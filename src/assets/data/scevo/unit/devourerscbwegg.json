@@ -1,8 +1,9 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Devourer Cocoon",
-    "zhCN": "吞噬者茧",
-    "koKR": "디바우러 코쿤 /// Devourer Cocoon"
+    "zhCN": "Devourer Cocoon",
+    "koKR": "Devourer Cocoon"
   },
   "Description": "-",
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
@@ -16,10 +17,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": {
-    "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -70,16 +68,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DevourerSCBWEgg/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DevourerSCBWEgg/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DevourerSCBWEgg/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DevourerSCBWEgg/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -99,15 +99,15 @@
     "Biological",
     "Massive"
   ],
-  "LifeRegenRate": 0.25,
-  "Sight": 4,
+  "Sight": 5,
   "Height": 3.75,
-  "VisionHeight": 4,
-  "Food": -3,
+  "VisionHeight": 15,
+  "Food": -2,
   "AttackTargetPriority": 10,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 30,
+  "AbilArray": [
+    "DevourerSCBW@Morph",
+    "move"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -198,12 +198,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -278,12 +275,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -373,13 +367,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -469,13 +460,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -549,68 +537,22 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Stats": {
-              "EffectArray": {
-                "Start": "SC1_ArmorTracker_Update",
-                "Finish": "SC1_ArmorTracker_Update",
-                "Cancel": "SC1_ArmorTracker_Update"
-              }
-            }
-          },
-          "Unit": "DevourerSCBWEgg",
-          "RandomDelayMin": 0.001,
-          "RandomDelayMax": 0.001
-        },
-        "Unit": "DevourerSCBWEgg",
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": -3
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "DevourerSCBW@Morph,Cancel",
-        "id": "CancelCocoonMorph",
-        "Icon": "btn-command-cancel",
-        "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Cancel"
-        },
-        "Tooltip": {
-          "enUS": "Cancels the morph order.",
-          "ruRU": "Cancels the morph order."
-        },
-        "Hotkey": "Esc"
       }
     ]
   },
-  "ScoreKill": 550,
+  "ScoreKill": 200,
   "SubgroupPriority": 54,
   "CostResource": {
     "Minerals": 100,
     "Vespene": 100
   },
+  "LifeRegenRate": 0.2734,
   "id": "DevourerSCBWEgg",
   "Icon": "wireframe-zerg-broodlordegg",
+  "Model": "BroodLordEgg",
   "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -620,14 +562,14 @@
       "id": "DevourerSCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     }
@@ -654,12 +596,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -667,64 +606,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
-    },
-    {
-      "AbilCmd": "DevourerSCBW@Morph,Cancel",
-      "id": "CancelCocoonMorph",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the morph order.",
-        "ruRU": "Cancels the morph order."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

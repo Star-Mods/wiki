@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Hatchery",
-    "zhCN": "孵化场",
-    "koKR": "해처리 /// Hatchery"
+    "zhCN": "Hatchery",
+    "koKR": "Hatchery"
   },
   "Description": {
-    "enUS": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Drone</b>",
-    "zhCN": "基础建筑，能够孵化所有异虫单位并接收采集到的资源。可以生成菌毯，满足附近异虫建筑的存活需求。可以进化为<span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Drone</b>",
-    "koKR": "주 건물입니다. 저그 유닛을 생성하고 채취한 자원을 수집합니다. 크립을 생성하여 주위 저그 구조물에 양분을 공급합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>로 변이할 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Drone</b> /// Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Drone</b>"
+    "enUS": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>.",
+    "zhCN": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>.",
+    "koKR": "Primary structure. Used to spawn all Zerg units and receive gathered resources. Grows creep used to feed nearby Zerg structures. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 1250,
   "LifeMax": 1250,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "HatcherySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "HatcherySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "HatcherySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "HatcherySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -130,10 +130,21 @@
   "Food": 6,
   "CostCategory": "Economy",
   "CostResource": {
-    "Minerals": 300
+    "Minerals": 350
   },
   "BuildTime": 100,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "que5CancelToSelection",
+    "LairSCBW@Morph",
+    "HatcherySCBW@Rally",
+    "ZergSCBWBurrowResearch"
+  ],
+  "BehaviorArray": [
+    "ZergBuildingSCBW@CreepGrowthLarge",
+    "HatcherySCBW@SpawnLarva"
+  ],
   "EffectArray": {
     "Create": "HatcheryCreateSet",
     "Birth": "HatcheryBirthSet"
@@ -148,7 +159,7 @@
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 33,
   "TechAliasArray": [
-    "HatcherySCBW"
+    "Alias_HatcherySCBW"
   ],
   "GlossaryPriority": 10,
   "TechTreeProducedUnitArray": [
@@ -162,6 +173,7 @@
   "Behaviors": [
     {
       "id": "ZergBuildingSCBW@CreepGrowthLarge",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Creep Growth Large",
         "zhCN": "Creep Growth Large",
@@ -171,6 +183,7 @@
     },
     {
       "id": "HatcherySCBW@SpawnLarva",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Spawn Larva",
         "zhCN": "Spawn Larva",
@@ -178,40 +191,48 @@
       },
       "Tooltip": {
         "enUS": "This structure is spawning additional Larvae.",
-        "zhCN": "该建筑正在孵化额外的幼虫。",
+        "zhCN": "This structure is spawning additional Larvae.",
         "koKR": "This structure is spawning additional Larvae."
       }
     }
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "que5CancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) (Cancel To Selection)",
-        "enUS": "Queue (5) (Cancel To Selection)"
+        "ruRU": "Queue (5) (Cancel To Selection)"
       }
     },
     {
       "id": "LairSCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     },
     {
       "id": "HatcherySCBW@Rally",
       "Name": {
         "enUS": " Rally",
-        "zhCN": " 集结",
-        "koKR": "집결 /// Rally"
+        "zhCN": " Rally",
+        "koKR": " Rally"
+      }
+    },
+    {
+      "id": "ZergSCBWBurrowResearch",
+      "Name": {
+        "enUS": "Research",
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
@@ -222,30 +243,33 @@
     "HatcherySCBW@AllowUnit",
     "DroneSCBW@Build",
     "HatcherySCBW@Count",
-    "HatcherySCBW@CountAtUnit",
-    "HiveSCBW",
-    "LairSCBW",
     "HatcherySCBW",
     "HatcherySCBW@PlayerDecalMacro",
     "LairSCBW",
     "LairSCBW@MorphProgress",
     "HatcherySCBW",
+    "CasterNotHatcherySCBW",
     "IsHatcherySCBW",
     "NotHatcherySCBW",
     "CasterIsHatcherySCBW",
+    "HatcherySCBW@CountAtUnit",
     "HatcherySCBW@CountAtUnitNoTechtree",
     "HatcherySCBW@QoB",
     "HatcherySCBW@QoBAtUnit",
-    "HatcherySCBW"
+    "HatcherySCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
     "LarvaSCBW"
   ],
-  "$Research": [],
+  "$Research": [
+    "ZergSCBWBurrowResearch"
+  ],
   "$Morph": [
-    "LairSCBW",
-    null
+    "LairSCBW"
   ],
   "$Phase": [],
   "$Producers": [
@@ -259,38 +283,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "LairSCBW@Morph,Cancel",
-      "id": "CancelMutateMorph",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the mutation order, returning the structure to its original state.",
-        "ruRU": "Cancels the mutation order, returning the structure to its original state."
-      }
-    },
-    {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "LairSCBW@Morph,Execute",
@@ -298,13 +303,13 @@
       "Icon": "btn-building-zerg-lair-remastered",
       "Name": {
         "enUS": "Mutate into Lair",
-        "zhCN": "变异为虫穴",
-        "koKR": "레어로 변이 /// Mutate into Lair"
+        "zhCN": "Mutate into Lair",
+        "koKR": "Mutate into Lair"
       },
       "Tooltip": {
         "enUS": "Evolved version of the <span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span> that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span>的高级形态，为异虫提供更多的升级方案和建筑方案。可孵化所有异虫单位和接收采集到的资源。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span>의 진화된 형태인 <span class=\"style-TooltipHighlightSCBW\"><b>Lair</b></span>는 추가적인 업그레이드와 다양한 건물 생산을 가능하게 해줍니다. 또한 모든 저그 유닛을 생성할 수 있으며 채취한 자원을 수집할 수 있습니다. /// Evolved version of the <span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span> that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources."
+        "zhCN": "Evolved version of the <span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span> that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources.",
+        "koKR": "Evolved version of the <span class=\"style-TooltipHighlightSCBW\"><b>Hatchery</b></span> that allows additional upgrades and structures to be produced. Also spawns all Zerg units and receives gathered resources."
       }
     },
     {
@@ -313,13 +318,13 @@
       "Icon": "btn-ability-zerg-setworkerrallypoint",
       "Name": {
         "enUS": "Set Worker Rally Point",
-        "zhCN": "设定工作单位集结点",
-        "koKR": "일꾼 집결 지점 설정 /// Set Worker Rally Point"
+        "zhCN": "Set Worker Rally Point",
+        "koKR": "Set Worker Rally Point"
       },
       "Tooltip": {
         "enUS": "Sends morphed worker units and Overlords to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically.",
-        "zhCN": "将孵化的工作单位和王虫派往指定地点，派往资源点的工作单位会自动开始采集。",
-        "koKR": "변태한 일꾼과 오버로드를 지정한 지점으로 보냅니다. 미네랄 지대나 익스트랙터로 보낸 일꾼은 자동으로 자원 채취를 시작합니다. /// Sends morphed worker units and Overlords to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically."
+        "zhCN": "Sends morphed worker units and Overlords to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically.",
+        "koKR": "Sends morphed worker units and Overlords to the designated point. Workers rallied to Mineral Fields or Extractors will begin gathering automatically."
       }
     },
     {
@@ -328,13 +333,43 @@
       "Icon": "btn-ability-terran-setrallypoint",
       "Name": {
         "enUS": "Set Rally Point",
-        "zhCN": "设定集结点",
-        "koKR": "집결 지점 설정 /// Set Rally Point"
+        "zhCN": "Set Rally Point",
+        "koKR": "Set Rally Point"
       },
       "Tooltip": {
         "enUS": "Sends morphed units to the designated point.",
-        "zhCN": "将孵化的单位派往指定地点。",
-        "koKR": "변태한 유닛을 지정한 지점으로 보냅니다. /// Sends morphed units to the designated point."
+        "zhCN": "Sends morphed units to the designated point.",
+        "koKR": "Sends morphed units to the designated point."
+      }
+    },
+    {
+      "AbilCmd": "ZergSCBWBurrowResearch,Research1",
+      "id": "ZergSCBWBurrowResearch",
+      "Icon": "btn-ability-zerg-burrow-color",
+      "Name": {
+        "enUS": "Evolve Burrow",
+        "zhCN": "Evolve Burrow",
+        "koKR": "Evolve Burrow"
+      },
+      "Tooltip": {
+        "enUS": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
+        "zhCN": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
+        "koKR": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects."
+      }
+    },
+    {
+      "AbilCmd": "ZergSCBWBurrowResearch,Research1",
+      "id": "ZergSCBWBurrowResearch",
+      "Icon": "btn-ability-zerg-burrow-color",
+      "Name": {
+        "enUS": "Evolve Burrow",
+        "zhCN": "Evolve Burrow",
+        "koKR": "Evolve Burrow"
+      },
+      "Tooltip": {
+        "enUS": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
+        "zhCN": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects.",
+        "koKR": "Enables almost all <span class=\"style-TooltipHighlightSCBW\">Zerg ground units</span> to use the <span class=\"style-TooltipHighlightSCBW\">Burrow</span> ability. Burrow allows a unit to take cover underground, rendering it unable to attack. A burrowed unit is invisible unless revealed by detectors or effects."
       }
     }
   ]

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Forge",
-    "zhCN": "煅炉",
-    "koKR": "포지 /// Forge"
+    "zhCN": "Forge",
+    "koKR": "Forge"
   },
   "Description": {
     "enUS": "Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Photon Cannon</b>s from <b>Probe</b>s",
-    "zhCN": "为星灵地面单位提供武器和护甲升级方案，并为所有星灵单位和建筑提供护盾升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- 使<b>Probe</b>可以折跃<b>Photon Cannon</b>",
-    "koKR": "프로토스 지상 유닛의 무기와 장갑, 모든 프로토스 유닛과 구조물의 쉴드를 업그레이드합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Photon Cannon</b> (<b>Probe</b> 소환) /// Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Photon Cannon</b>s from <b>Probe</b>s"
+    "zhCN": "Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Photon Cannon</b>s from <b>Probe</b>s",
+    "koKR": "Contains weapon and armor upgrades for Protoss ground units and shield upgrades for all Protoss units and structures.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Photon Cannon</b>s from <b>Probe</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 550,
   "LifeMax": 550,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,26 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Forge/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ForgeSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ForgeSCBW/Revive",
+        "Location": "Unit"
+      }
     },
-    "Cooldown": {
-      "Link": "Forge/Revive",
-      "Location": "Unit"
+    {
+      "Charge": {
+        "Link": "Forge/Revive"
+      },
+      "Cooldown": {
+        "Link": "Forge/Revive"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -116,17 +124,24 @@
   "LifeArmor": 1,
   "ShieldsStart": 550,
   "ShieldsMax": 550,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
     "Minerals": 150
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "ProtossGroundArmorsSCBW",
+    "ProtossGroundWeaponsSCBW",
+    "ProtossShieldsSCBW"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -188,20 +203,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -214,14 +225,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -235,7 +246,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -250,18 +262,41 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
+        },
+        "Tooltip": "-"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "PhotonCannonSCBW@Passive",
+        "Icon": "btn-building-protoss-photoncannon@scbw",
+        "Name": {
+          "enUS": "Photon Cannon",
+          "zhCN": "Photon Cannon",
+          "koKR": "Photon Cannon"
         },
         "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\"><b>Photon Cannon</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\"><b>Photon Cannon</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>Probe</b>s</span> to warp in <span style=\"color: #SCBW_ColorHighlight\"><b>Photon Cannon</b>s</span>."
+        }
       },
       {
         "Upgrade": "ProtossGroundArmorsSCBW@Lvl1",
@@ -275,16 +310,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ProtossGroundArmorsSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ProtossGroundArmorsSCBW@Lvl1"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 170,
+          "Time": 160,
           "Upgrade": "ProtossGroundArmorsSCBW@Lvl1"
         },
-        "Time": 170,
+        "Time": 160,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -303,13 +339,13 @@
         "Icon": "btn-upgrade-protoss-groundarmorlevel1",
         "Name": {
           "enUS": "Upgrade Ground Armor Level 1",
-          "zhCN": "升级地面单位护甲等级1",
-          "koKR": "지상 방어력 업그레이드 레벨 1 ///Upgrade Ground Armor Level 1"
+          "zhCN": "Upgrade Ground Armor Level 1",
+          "koKR": "Upgrade Ground Armor Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of Protoss ground units.",
-          "zhCN": "提升星灵地面单位的护甲。",
-          "koKR": "프로토스 지상 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of Protoss ground units."
+          "zhCN": "Upgrades the armor of Protoss ground units.",
+          "koKR": "Upgrades the armor of Protoss ground units."
         },
         "Hotkey": "A"
       },
@@ -324,6 +360,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossGroundArmorsSCBW@Lvl2",
             "Requirements": "ProtossGroundArmorsSCBW@Lvl2"
           },
@@ -331,10 +368,10 @@
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 202.5,
+          "Time": 190,
           "Upgrade": "ProtossGroundArmorsSCBW@Lvl2"
         },
-        "Time": 202.5,
+        "Time": 190,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -353,13 +390,13 @@
         "Icon": "btn-upgrade-protoss-groundarmorlevel2",
         "Name": {
           "enUS": "Upgrade Ground Armor Level 2",
-          "zhCN": "升级地面单位护甲等级2",
-          "koKR": "지상 방어력 업그레이드 레벨 2 ///Upgrade Ground Armor Level 2"
+          "zhCN": "Upgrade Ground Armor Level 2",
+          "koKR": "Upgrade Ground Armor Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of Protoss ground units.",
-          "zhCN": "进一步提升星灵地面单位的护甲。",
-          "koKR": "프로토스 지상 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of Protoss ground units."
+          "zhCN": "Further upgrades the armor of Protoss ground units.",
+          "koKR": "Further upgrades the armor of Protoss ground units."
         },
         "Hotkey": "A"
       },
@@ -374,6 +411,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossGroundArmorsSCBW@Lvl3",
             "Requirements": "ProtossGroundArmorsSCBW@Lvl3"
           },
@@ -381,10 +419,10 @@
             "Minerals": 200,
             "Vespene": 200
           },
-          "Time": 235,
+          "Time": 220,
           "Upgrade": "ProtossGroundArmorsSCBW@Lvl3"
         },
-        "Time": 235,
+        "Time": 220,
         "Cost": {
           "Minerals": 200,
           "Vespene": 200,
@@ -403,13 +441,13 @@
         "Icon": "btn-upgrade-protoss-groundarmorlevel3",
         "Name": {
           "enUS": "Upgrade Ground Armor Level 3",
-          "zhCN": "升级地面单位护甲等级3",
-          "koKR": "지상 방어력 업그레이드 레벨 3 ///Upgrade Ground Armor Level 3"
+          "zhCN": "Upgrade Ground Armor Level 3",
+          "koKR": "Upgrade Ground Armor Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of Protoss ground units.",
-          "zhCN": "使星灵地面单位的护甲最大化。",
-          "koKR": "프로토스 지상 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of Protoss ground units."
+          "zhCN": "Maximizes the armor of Protoss ground units.",
+          "koKR": "Maximizes the armor of Protoss ground units."
         },
         "Hotkey": "A"
       },
@@ -425,16 +463,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ProtossGroundWeaponsSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ProtossGroundWeaponsSCBW@Lvl1"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 170,
+          "Time": 160,
           "Upgrade": "ProtossGroundWeaponsSCBW@Lvl1"
         },
-        "Time": 170,
+        "Time": 160,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -453,13 +492,13 @@
         "Icon": "btn-upgrade-protoss-groundweaponslevel1",
         "Name": {
           "enUS": "Upgrade Ground Weapons Level 1",
-          "zhCN": "升级地面单位武器等级1",
-          "koKR": "지상 공격력 업그레이드 레벨 1 /// Upgrade Ground Weapons Level 1"
+          "zhCN": "Upgrade Ground Weapons Level 1",
+          "koKR": "Upgrade Ground Weapons Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of all Protoss ground units.",
-          "zhCN": "提升星灵地面单位的火力。",
-          "koKR": "프로토스 지상 유닛의 공격력을 업그레이드합니다. /// Upgrades the armor of all Protoss ground units."
+          "zhCN": "Upgrades the armor of all Protoss ground units.",
+          "koKR": "Upgrades the armor of all Protoss ground units."
         },
         "Hotkey": "E"
       },
@@ -474,6 +513,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossGroundWeaponsSCBW@Lvl2",
             "Requirements": "ProtossGroundWeaponsSCBW@Lvl2"
           },
@@ -481,10 +521,10 @@
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 202.5,
+          "Time": 190,
           "Upgrade": "ProtossGroundWeaponsSCBW@Lvl2"
         },
-        "Time": 202.5,
+        "Time": 190,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -503,13 +543,13 @@
         "Icon": "btn-upgrade-protoss-groundweaponslevel2",
         "Name": {
           "enUS": "Upgrade Ground Weapons Level 2",
-          "zhCN": "升级地面单位武器等级2",
-          "koKR": "지상 공격력 업그레이드 레벨 2 /// Upgrade Ground Weapons Level 2"
+          "zhCN": "Upgrade Ground Weapons Level 2",
+          "koKR": "Upgrade Ground Weapons Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of all Protoss ground units.",
-          "zhCN": "进一步提升星灵地面单位的火力。",
-          "koKR": "프로토스 지상 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Protoss ground units."
+          "zhCN": "Further upgrades the armor of all Protoss ground units.",
+          "koKR": "Further upgrades the armor of all Protoss ground units."
         },
         "Hotkey": "E"
       },
@@ -524,6 +564,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossGroundWeaponsSCBW@Lvl3",
             "Requirements": "ProtossGroundWeaponsSCBW@Lvl3"
           },
@@ -531,10 +572,10 @@
             "Minerals": 200,
             "Vespene": 200
           },
-          "Time": 235,
+          "Time": 220,
           "Upgrade": "ProtossGroundWeaponsSCBW@Lvl3"
         },
-        "Time": 235,
+        "Time": 220,
         "Cost": {
           "Minerals": 200,
           "Vespene": 200,
@@ -553,13 +594,13 @@
         "Icon": "btn-upgrade-protoss-groundweaponslevel3",
         "Name": {
           "enUS": "Upgrade Ground Weapons Level 3",
-          "zhCN": "升级地面单位武器等级3",
-          "koKR": "지상 공격력 업그레이드 레벨 3 /// Upgrade Ground Weapons Level 3"
+          "zhCN": "Upgrade Ground Weapons Level 3",
+          "koKR": "Upgrade Ground Weapons Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of all Protoss ground units.",
-          "zhCN": "使星灵地面单位的火力最大化。",
-          "koKR": "프로토스 지상 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the armor of all Protoss ground units."
+          "zhCN": "Maximizes the armor of all Protoss ground units.",
+          "koKR": "Maximizes the armor of all Protoss ground units."
         },
         "Hotkey": "E"
       },
@@ -575,16 +616,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ProtossShieldsSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ProtossShieldsSCBW@Lvl1"
           },
           "Resource": {
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 170,
+          "Time": 160,
           "Upgrade": "ProtossShieldsSCBW@Lvl1"
         },
-        "Time": 170,
+        "Time": 160,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -603,13 +645,13 @@
         "Icon": "btn-upgrade-protoss-shieldslevel1",
         "Name": {
           "enUS": "Upgrade Shields Level 1",
-          "zhCN": "升级护盾等级1",
-          "koKR": "플라스마 쉴드 업그레이드 레벨 1 /// Upgrade Shields Level 1"
+          "zhCN": "Upgrade Shields Level 1",
+          "koKR": "Upgrade Shields Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the shields of all Protoss units and structures.",
-          "zhCN": "提升所有星灵单位和建筑的护盾。",
-          "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 업그레이드합니다. /// Upgrades the shields of all Protoss units and structures."
+          "zhCN": "Upgrades the shields of all Protoss units and structures.",
+          "koKR": "Upgrades the shields of all Protoss units and structures."
         },
         "Hotkey": "S"
       },
@@ -624,6 +666,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossShieldsSCBW@Lvl2",
             "Requirements": "ProtossShieldsSCBW@Lvl2"
           },
@@ -631,10 +674,10 @@
             "Minerals": 200,
             "Vespene": 200
           },
-          "Time": 202.5,
+          "Time": 190,
           "Upgrade": "ProtossShieldsSCBW@Lvl2"
         },
-        "Time": 202.5,
+        "Time": 190,
         "Cost": {
           "Minerals": 200,
           "Vespene": 200,
@@ -653,13 +696,13 @@
         "Icon": "btn-upgrade-protoss-shieldslevel2",
         "Name": {
           "enUS": "Upgrade Shields Level 2",
-          "zhCN": "升级护盾等级2",
-          "koKR": "플라스마 쉴드 업그레이드 레벨 2 /// Upgrade Shields Level 2"
+          "zhCN": "Upgrade Shields Level 2",
+          "koKR": "Upgrade Shields Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the shields of all Protoss units and structures.",
-          "zhCN": "进一步提升所有星灵单位和建筑的护盾。",
-          "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 한 단계 더 업그레이드합니다. /// Further upgrades the shields of all Protoss units and structures."
+          "zhCN": "Further upgrades the shields of all Protoss units and structures.",
+          "koKR": "Further upgrades the shields of all Protoss units and structures."
         },
         "Hotkey": "S"
       },
@@ -674,6 +717,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProtossShieldsSCBW@Lvl3",
             "Requirements": "ProtossShieldsSCBW@Lvl3"
           },
@@ -681,10 +725,10 @@
             "Minerals": 250,
             "Vespene": 250
           },
-          "Time": 235,
+          "Time": 220,
           "Upgrade": "ProtossShieldsSCBW@Lvl3"
         },
-        "Time": 235,
+        "Time": 220,
         "Cost": {
           "Minerals": 250,
           "Vespene": 250,
@@ -703,13 +747,13 @@
         "Icon": "btn-upgrade-protoss-shieldslevel3",
         "Name": {
           "enUS": "Upgrade Shields Level 3",
-          "zhCN": "升级护盾等级3",
-          "koKR": "플라스마 쉴드 업그레이드 레벨 3 /// Upgrade Shields Level 3"
+          "zhCN": "Upgrade Shields Level 3",
+          "koKR": "Upgrade Shields Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the shields of all Protoss units and structures.",
-          "zhCN": "使所有星灵单位和建筑的护盾最大化。",
-          "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 최대로 업그레이드합니다. /// Maximizes the shields of all Protoss units and structures."
+          "zhCN": "Maximizes the shields of all Protoss units and structures.",
+          "koKR": "Maximizes the shields of all Protoss units and structures."
         },
         "Hotkey": "S"
       }
@@ -725,16 +769,16 @@
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
   "BuildTime": 45,
   "TacticalAIThink": "AIThinkForgeSCBW",
-  "ShieldRegenDelay": 10,
   "id": "ForgeSCBW",
   "Icon": "btn-building-protoss-forge",
+  "Model": "Forge_Ex2",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
@@ -744,49 +788,49 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "ProtossGroundArmorsSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ProtossGroundWeaponsSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ProtossShieldsSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
   "$Upgrades": [
     "ForgeSCBW@AllowUnit",
     "ForgeSCBW",
-    "ProbeSCBW@Build",
     "ForgeSCBW@Count",
+    "ProbeSCBW@Build",
     "ProtossBuildingSCBW@Birth",
     "ForgeSCBW",
     "ForgeSCBW@Splat",
@@ -823,25 +867,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ProtossGroundArmorsSCBW,Research1",
@@ -849,13 +887,13 @@
       "Icon": "btn-upgrade-protoss-groundarmorlevel1",
       "Name": {
         "enUS": "Upgrade Ground Armor Level 1",
-        "zhCN": "升级地面单位护甲等级1",
-        "koKR": "지상 방어력 업그레이드 레벨 1 ///Upgrade Ground Armor Level 1"
+        "zhCN": "Upgrade Ground Armor Level 1",
+        "koKR": "Upgrade Ground Armor Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of Protoss ground units.",
-        "zhCN": "提升星灵地面单位的护甲。",
-        "koKR": "프로토스 지상 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of Protoss ground units."
+        "zhCN": "Upgrades the armor of Protoss ground units.",
+        "koKR": "Upgrades the armor of Protoss ground units."
       }
     },
     {
@@ -864,13 +902,13 @@
       "Icon": "btn-upgrade-protoss-groundarmorlevel2",
       "Name": {
         "enUS": "Upgrade Ground Armor Level 2",
-        "zhCN": "升级地面单位护甲等级2",
-        "koKR": "지상 방어력 업그레이드 레벨 2 ///Upgrade Ground Armor Level 2"
+        "zhCN": "Upgrade Ground Armor Level 2",
+        "koKR": "Upgrade Ground Armor Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of Protoss ground units.",
-        "zhCN": "进一步提升星灵地面单位的护甲。",
-        "koKR": "프로토스 지상 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of Protoss ground units."
+        "zhCN": "Further upgrades the armor of Protoss ground units.",
+        "koKR": "Further upgrades the armor of Protoss ground units."
       }
     },
     {
@@ -879,13 +917,13 @@
       "Icon": "btn-upgrade-protoss-groundarmorlevel3",
       "Name": {
         "enUS": "Upgrade Ground Armor Level 3",
-        "zhCN": "升级地面单位护甲等级3",
-        "koKR": "지상 방어력 업그레이드 레벨 3 ///Upgrade Ground Armor Level 3"
+        "zhCN": "Upgrade Ground Armor Level 3",
+        "koKR": "Upgrade Ground Armor Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of Protoss ground units.",
-        "zhCN": "使星灵地面单位的护甲最大化。",
-        "koKR": "프로토스 지상 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of Protoss ground units."
+        "zhCN": "Maximizes the armor of Protoss ground units.",
+        "koKR": "Maximizes the armor of Protoss ground units."
       }
     },
     {
@@ -894,13 +932,13 @@
       "Icon": "btn-upgrade-protoss-groundweaponslevel1",
       "Name": {
         "enUS": "Upgrade Ground Weapons Level 1",
-        "zhCN": "升级地面单位武器等级1",
-        "koKR": "지상 공격력 업그레이드 레벨 1 /// Upgrade Ground Weapons Level 1"
+        "zhCN": "Upgrade Ground Weapons Level 1",
+        "koKR": "Upgrade Ground Weapons Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of all Protoss ground units.",
-        "zhCN": "提升星灵地面单位的火力。",
-        "koKR": "프로토스 지상 유닛의 공격력을 업그레이드합니다. /// Upgrades the armor of all Protoss ground units."
+        "zhCN": "Upgrades the armor of all Protoss ground units.",
+        "koKR": "Upgrades the armor of all Protoss ground units."
       }
     },
     {
@@ -909,13 +947,13 @@
       "Icon": "btn-upgrade-protoss-groundweaponslevel2",
       "Name": {
         "enUS": "Upgrade Ground Weapons Level 2",
-        "zhCN": "升级地面单位武器等级2",
-        "koKR": "지상 공격력 업그레이드 레벨 2 /// Upgrade Ground Weapons Level 2"
+        "zhCN": "Upgrade Ground Weapons Level 2",
+        "koKR": "Upgrade Ground Weapons Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of all Protoss ground units.",
-        "zhCN": "进一步提升星灵地面单位的火力。",
-        "koKR": "프로토스 지상 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Protoss ground units."
+        "zhCN": "Further upgrades the armor of all Protoss ground units.",
+        "koKR": "Further upgrades the armor of all Protoss ground units."
       }
     },
     {
@@ -924,13 +962,13 @@
       "Icon": "btn-upgrade-protoss-groundweaponslevel3",
       "Name": {
         "enUS": "Upgrade Ground Weapons Level 3",
-        "zhCN": "升级地面单位武器等级3",
-        "koKR": "지상 공격력 업그레이드 레벨 3 /// Upgrade Ground Weapons Level 3"
+        "zhCN": "Upgrade Ground Weapons Level 3",
+        "koKR": "Upgrade Ground Weapons Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of all Protoss ground units.",
-        "zhCN": "使星灵地面单位的火力最大化。",
-        "koKR": "프로토스 지상 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the armor of all Protoss ground units."
+        "zhCN": "Maximizes the armor of all Protoss ground units.",
+        "koKR": "Maximizes the armor of all Protoss ground units."
       }
     },
     {
@@ -939,13 +977,13 @@
       "Icon": "btn-upgrade-protoss-shieldslevel1",
       "Name": {
         "enUS": "Upgrade Shields Level 1",
-        "zhCN": "升级护盾等级1",
-        "koKR": "플라스마 쉴드 업그레이드 레벨 1 /// Upgrade Shields Level 1"
+        "zhCN": "Upgrade Shields Level 1",
+        "koKR": "Upgrade Shields Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the shields of all Protoss units and structures.",
-        "zhCN": "提升所有星灵单位和建筑的护盾。",
-        "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 업그레이드합니다. /// Upgrades the shields of all Protoss units and structures."
+        "zhCN": "Upgrades the shields of all Protoss units and structures.",
+        "koKR": "Upgrades the shields of all Protoss units and structures."
       }
     },
     {
@@ -954,13 +992,13 @@
       "Icon": "btn-upgrade-protoss-shieldslevel2",
       "Name": {
         "enUS": "Upgrade Shields Level 2",
-        "zhCN": "升级护盾等级2",
-        "koKR": "플라스마 쉴드 업그레이드 레벨 2 /// Upgrade Shields Level 2"
+        "zhCN": "Upgrade Shields Level 2",
+        "koKR": "Upgrade Shields Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the shields of all Protoss units and structures.",
-        "zhCN": "进一步提升所有星灵单位和建筑的护盾。",
-        "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 한 단계 더 업그레이드합니다. /// Further upgrades the shields of all Protoss units and structures."
+        "zhCN": "Further upgrades the shields of all Protoss units and structures.",
+        "koKR": "Further upgrades the shields of all Protoss units and structures."
       }
     },
     {
@@ -969,13 +1007,13 @@
       "Icon": "btn-upgrade-protoss-shieldslevel3",
       "Name": {
         "enUS": "Upgrade Shields Level 3",
-        "zhCN": "升级护盾等级3",
-        "koKR": "플라스마 쉴드 업그레이드 레벨 3 /// Upgrade Shields Level 3"
+        "zhCN": "Upgrade Shields Level 3",
+        "koKR": "Upgrade Shields Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the shields of all Protoss units and structures.",
-        "zhCN": "使所有星灵单位和建筑的护盾最大化。",
-        "koKR": "모든 프로토스 유닛과 구조물의 쉴드를 최대로 업그레이드합니다. /// Maximizes the shields of all Protoss units and structures."
+        "zhCN": "Maximizes the shields of all Protoss units and structures.",
+        "koKR": "Maximizes the shields of all Protoss units and structures."
       }
     }
   ]

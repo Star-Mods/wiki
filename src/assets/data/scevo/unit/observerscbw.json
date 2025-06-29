@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Observer",
-    "zhCN": "侦测器",
-    "koKR": "옵저버 /// Observer"
+    "zhCN": "Observer",
+    "koKR": "Observer"
   },
   "Description": {
     "enUS": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-    "zhCN": "间谍型空中单位，可以永久隐形。敌人没有侦测手段将无法看到隐形单位。<br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-    "koKR": "정찰용 비행 유닛입니다. 은폐 능력이 있으며, 탐지 능력이 없는 적에게는 보이지 않습니다.<br/><br/><span style=\"color: FFE303\">디텍터</span> /// Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+    "zhCN": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+    "koKR": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 40,
   "LifeMax": 40,
-  "LifeArmorName": {
-    "enUS": "Protoss Plating",
-    "ruRU": "Protoss Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -75,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ObserverSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ObserverSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ObserverSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ObserverSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,13 +96,10 @@
   "Mob": "Multiplayer",
   "EnergyRegenRate": 0.5,
   "id": "ObserverSCBW",
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldArmorName": "-",
   "GlossaryCategory": "Unit/Category/ProtossUnitsSCBW",
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
-  "ShieldRegenRate": 2,
+  "ShieldRegenRate": 0.711,
   "PlaneArray": [
     "Air"
   ],
@@ -113,25 +110,29 @@
     "Light",
     "Mechanical"
   ],
-  "ShieldsStart": 20,
-  "ShieldsMax": 20,
-  "Speed": 1.875,
-  "Acceleration": 2,
-  "Sight": 9,
+  "ShieldsStart": 30,
+  "ShieldsMax": 30,
+  "Speed": 2.0156,
+  "Acceleration": 2.125,
+  "Sight": 11,
   "Height": 3.75,
-  "VisionHeight": 4,
+  "VisionHeight": 15,
   "Food": -1,
   "CostCategory": "Army",
   "CostResource": {
     "Minerals": 25,
     "Vespene": 75
   },
-  "BuildTime": 30,
-  "RepairTime": 25,
+  "BuildTime": 14,
+  "RepairTime": 14,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 20,
+  "AbilArray": [
+    "stop",
+    "move"
+  ],
+  "BehaviorArray": [
+    "ObserverSCBW@Detector"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -222,12 +223,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -302,12 +300,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -397,13 +392,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -493,13 +485,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -573,14 +562,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -670,13 +653,10 @@
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
         "Name": {
-          "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -697,13 +677,13 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "zhCN": "侦测单位",
-          "koKR": "디텍터 /// Detector"
+          "zhCN": "Detector",
+          "koKR": "Detector"
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked and burrowed units.",
-          "zhCN": "该单位能够侦测到隐形和潜地单位。",
-          "koKR": "이 유닛은 클로크하거나 버로우한 유닛을 탐지할 수 있습니다. /// This unit can detect cloaked and burrowed units."
+          "zhCN": "This unit can detect cloaked and burrowed units.",
+          "koKR": "This unit can detect cloaked and burrowed units."
         }
       },
       {
@@ -717,18 +697,47 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 2,
-        "Column": 2,
+        "Row": 1,
+        "Column": 0,
         "Type": "Passive",
-        "id": "PermanentlyCloakedObserver",
-        "Icon": "btn-ability-protoss-permanentlycloaked-observer-color",
+        "id": "ObserverSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-protoss-graviticbooster",
         "Name": {
-          "enUS": "Permanently Cloaked",
-          "ruRU": "Permanently Cloaked"
+          "enUS": "Gravitic Booster",
+          "zhCN": "Gravitic Booster",
+          "koKR": "Gravitic Booster"
         },
         "Tooltip": {
-          "enUS": "The Observer is permanently cloaked.",
-          "ruRU": "The Observer is permanently cloaked."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "ObserverSCBWSightUpgrade@Passive",
+        "Icon": "btn-ability-zeratul-observer-sensorarray",
+        "Name": {
+          "enUS": "Sensor Array",
+          "zhCN": "Sensor Array",
+          "koKR": "Sensor Array"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ObserverSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ObserverSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Observer</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ObserverSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         }
       }
     ]
@@ -736,7 +745,7 @@
   "ScoreMake": 100,
   "ScoreKill": 100,
   "ScoreResult": "BuildOrder",
-  "SubgroupPriority": 36,
+  "SubgroupPriority": 4,
   "GlossaryPriority": 110,
   "GlossaryStrongArray": [
     "WraithSCBW",
@@ -749,14 +758,15 @@
     "PhotonCannonSCBW"
   ],
   "TacticalAIThink": "AIThinkObserverSCBW",
-  "ShieldRegenDelay": 10,
   "Icon": "btn-unit-protoss-observer",
+  "Model": "Observer",
   "LifeArmorIcon": "btn-upgrade-protoss-airarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "ObserverSCBW@Detector",
+      "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
         "zhCN": "Detector",
@@ -769,46 +779,45 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
-    },
-    {
-      "id": "ObserverSCBW@Morph",
-      "Name": "-"
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/ObservatorySCBW",
+    "ObserverSCBWSightUpgrade",
     "ObserverSCBW",
-    "Button/Tooltip/ObserverSCBWSieged@Morph",
+    "Button/Tooltip/ObserverSCBWSpeedUpgrade",
+    "ObserverSCBWSpeedUpgrade",
+    "Button/Tooltip/ObserverSCBWSightUpgrade",
     "ObserverSCBWSieged",
     "Button/Tooltip/ObserverSCBW@Morph",
     "ObserverSCBWSieged@Morph",
-    "Button/Tooltip/ObserverSCBWSightUpgrade",
-    "ObserverSCBWSightUpgrade",
-    "Button/Tooltip/ObserverSCBWSpeedUpgrade",
-    "ObserverSCBWSpeedUpgrade",
+    "Button/Tooltip/ObserverSCBWSieged@Morph",
+    "Button/Tooltip/ObservatorySCBW",
+    "Button/Tooltip/ObserverSCBW@Passive",
     "ObservatorySCBW",
     "ObserverSCBW@AllowUnit",
     "RoboticsFacilitySCBW@Train",
     "RoboticsFacilitySCBW",
     "ObserverSCBW",
-    "Button/Tooltip/ObserverSCBWSpeedUpgrade@Passive",
     "IsObserverSCBW",
     "NotObserverSCBW",
     "CasterIsObserverSCBW",
     "ObserverSCBW@Count",
     "ObserverSCBW@QoB",
     "ObserverSCBW@QoBAtUnit",
-    "ObserverSCBW"
+    "ObserverSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -826,12 +835,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -839,64 +845,46 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
       "Name": {
-        "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     }
   ]
 }

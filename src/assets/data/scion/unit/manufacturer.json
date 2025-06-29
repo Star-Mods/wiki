@@ -1,6 +1,13 @@
 {
-  "Name": "Manufacturer",
-  "Description": "Produces light-weight machines.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Spitfires",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Manufacturer",
+    "ruRU": "Мануфактура"
+  },
+  "Description": {
+    "enUS": "Produces light-weight machines.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Spitfires",
+    "ruRU": "Производит лёгкую технику.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Спитфаеры"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Manufacturer/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Manufacturer/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Manufacturer/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Manufacturer/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -118,6 +130,21 @@
   "Facing": 45,
   "FogVisibility": "Snapshot",
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "Scion_DisplayCooldownDummy",
+    "Rally",
+    "TrainLightweightMechs",
+    "Scion_Overclock"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "GenetronPowerSupplyTracker",
+    "Manufacturer",
+    "TrackAndMirrorGenetronPowerSupply",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -177,8 +204,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -241,8 +274,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -263,8 +302,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       },
       {
@@ -300,8 +345,14 @@
         "AbilCmd": "TrainLightweightMechs,Train1",
         "id": "FabricateSpitfire",
         "Icon": "btn-unit-genetron-spitfire",
-        "Tooltip": "",
-        "Name": "Fabricate Spitfire",
+        "Name": {
+          "enUS": "Fabricate Spitfire",
+          "ruRU": "Изготовить Спитфаер"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+        },
         "Hotkey": "S"
       },
       {
@@ -338,8 +389,14 @@
         "AbilCmd": "TrainLightweightMechs,Train6",
         "id": "FabricateFixer",
         "Icon": "btn-unit-genetron-fixer",
-        "Tooltip": "",
-        "Name": "Fabricate Fixer",
+        "Name": {
+          "enUS": "Fabricate Fixer",
+          "ruRU": "Изготовить Фиксатора"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+        },
         "Hotkey": "F"
       },
       {
@@ -376,8 +433,14 @@
         "AbilCmd": "TrainLightweightMechs,Train3",
         "id": "FabricateBlitzer",
         "Icon": "btn-unit-genetron-blitzer",
-        "Tooltip": "",
-        "Name": "Fabricate Blitzer",
+        "Name": {
+          "enUS": "Fabricate Blitzer",
+          "ruRU": "Изготовить Блитзера"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+        },
         "Hotkey": "B"
       },
       {
@@ -414,8 +477,14 @@
         "AbilCmd": "TrainLightweightMechs,Train2",
         "id": "FabricateEqualizer",
         "Icon": "btn-unit-genetron-equalizer-v2",
-        "Tooltip": "",
-        "Name": "Fabricate Equalizer",
+        "Name": {
+          "enUS": "Fabricate Equalizer",
+          "ruRU": "Изготовить Уравнителя"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+        },
         "Hotkey": "R"
       },
       {
@@ -452,8 +521,14 @@
         "AbilCmd": "TrainLightweightMechs,Train5",
         "id": "FabricateAquila",
         "Icon": "btn-unit-genetron-aquila",
-        "Tooltip": "",
-        "Name": "Fabricate Aquila",
+        "Name": {
+          "enUS": "Fabricate Aquila",
+          "ruRU": "Изготовить Аквилу"
+        },
+        "Tooltip": {
+          "enUS": "",
+          "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+        },
         "Hotkey": "A"
       },
       {
@@ -496,7 +571,7 @@
             "UpdateChargesOnLevelChange": 1
           },
           "Effect": [
-            "Scion_OverclockPowerEnum"
+            "GenetronOverclockInit"
           ],
           "EffectRange": [
             "0,1000"
@@ -565,10 +640,6 @@
               }
             }
           ],
-          "PreEffectBehavior": {
-            "Behavior": "Scion_OverclockTargetMarker",
-            "Count": 1
-          },
           "id": "Scion_Overclock"
         },
         "Cost": {
@@ -587,8 +658,12 @@
         "AbilCmd": "Scion_Overclock,Execute",
         "id": "Scion_Overclock",
         "Icon": "btn-ability-genetron-productionmode-overclock",
-        "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT75\"><b>75</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases production speed by <b>-98</b>% for <b>28</b> seconds. Repeated casts increase the duration up to <b>112</b> seconds.",
-        "Name": "Overclock",
+        "Name": {
+          "enUS": "Overclock"
+        },
+        "Tooltip": {
+          "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT75\"><b>75</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases production speed by <b>-98</b>% for <b>28</b> seconds. Repeated casts increase the duration up to <b>112</b> seconds."
+        },
         "Hotkey": "Z"
       }
     ]
@@ -609,6 +684,7 @@
     "Aquila"
   ],
   "Icon": "btn-building-genetron-manufacturer",
+  "Model": "Manufacturer",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -616,49 +692,89 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "Manufacturer"
+      "id": "Manufacturer",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Manufacturer"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackAndMirrorGenetronPowerSupply"
+      "id": "TrackAndMirrorGenetronPowerSupply",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Track And Mirror Genetron Power Supply"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UnderConstruction"
-    },
-    {
-      "id": "OverclockPowerReq"
+      "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "Scion_DisplayCooldownDummy",
-      "Name": "Display Cooldown Dummy"
+      "Name": {
+        "enUS": "Display Cooldown Dummy"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     },
     {
       "id": "TrainLightweightMechs",
-      "Name": "Train Lightweight Mechs"
+      "Name": {
+        "enUS": "Train Lightweight Mechs",
+        "ruRU": "Train Lightweight Mechs"
+      }
     },
     {
       "id": "Scion_Overclock",
-      "Name": "Genetron - Overclock"
+      "Name": {
+        "enUS": "Genetron - Overclock"
+      }
     }
   ],
   "$Upgrades": [
@@ -677,7 +793,8 @@
     "Fixer",
     "Blitzer",
     "Equalizer",
-    "Aquila"
+    "Aquila",
+    "GenetronPowerSupplyDummy"
   ],
   "$Research": [],
   "$Morph": [],
@@ -690,64 +807,116 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     },
     {
       "AbilCmd": "TrainLightweightMechs,Train1",
       "id": "FabricateSpitfire",
       "Icon": "btn-unit-genetron-spitfire",
-      "Tooltip": "",
-      "Name": "Fabricate Spitfire"
+      "Name": {
+        "enUS": "Fabricate Spitfire",
+        "ruRU": "Изготовить Спитфаер"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+      }
     },
     {
       "AbilCmd": "TrainLightweightMechs,Train6",
       "id": "FabricateFixer",
       "Icon": "btn-unit-genetron-fixer",
-      "Tooltip": "",
-      "Name": "Fabricate Fixer"
+      "Name": {
+        "enUS": "Fabricate Fixer",
+        "ruRU": "Изготовить Фиксатора"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+      }
     },
     {
       "AbilCmd": "TrainLightweightMechs,Train3",
       "id": "FabricateBlitzer",
       "Icon": "btn-unit-genetron-blitzer",
-      "Tooltip": "",
-      "Name": "Fabricate Blitzer"
+      "Name": {
+        "enUS": "Fabricate Blitzer",
+        "ruRU": "Изготовить Блитзера"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+      }
     },
     {
       "AbilCmd": "TrainLightweightMechs,Train2",
       "id": "FabricateEqualizer",
       "Icon": "btn-unit-genetron-equalizer-v2",
-      "Tooltip": "",
-      "Name": "Fabricate Equalizer"
+      "Name": {
+        "enUS": "Fabricate Equalizer",
+        "ruRU": "Изготовить Уравнителя"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/>0<img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+      }
     },
     {
       "AbilCmd": "TrainLightweightMechs,Train5",
       "id": "FabricateAquila",
       "Icon": "btn-unit-genetron-aquila",
-      "Tooltip": "",
-      "Name": "Fabricate Aquila"
+      "Name": {
+        "enUS": "Fabricate Aquila",
+        "ruRU": "Изготовить Аквилу"
+      },
+      "Tooltip": {
+        "enUS": "",
+        "ruRU": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-performance-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-standard-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\btn-ability-genetron-productionmode-overclock-nobg.dds\"width=\"21\" height=\"21\" alignment=\"absolutemiddle\"/><b>0</b><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"48\" alignment=\"middle\"/><br/>"
+      }
     },
     {
       "AbilCmd": "Scion_Overclock,Execute",
       "id": "Scion_Overclock",
       "Icon": "btn-ability-genetron-productionmode-overclock",
-      "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT75\"><b>75</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases production speed by <b>-98</b>% for <b>28</b> seconds. Repeated casts increase the duration up to <b>112</b> seconds.",
-      "Name": "Overclock"
+      "Name": {
+        "enUS": "Overclock"
+      },
+      "Tooltip": {
+        "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT75\"><b>75</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases production speed by <b>-98</b>% for <b>28</b> seconds. Repeated casts increase the duration up to <b>112</b> seconds."
+      }
     }
   ]
 }

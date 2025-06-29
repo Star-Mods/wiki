@@ -4,7 +4,7 @@
     "enUS": "Iron Fletcher"
   },
   "Description": {
-    "enUS": "Quick assault unit that applies damage stacks with each attack. Each stack adds +2 bonus damage per attack from any unit, with a maximum of 4 stacks per targeted unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
+    "enUS": "Quick anti-light assault unit.<br/> Can quickly morph into anti-armored and tanky charged form. <br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -121,7 +121,8 @@
   "AbilArray": [
     "stop",
     "attack",
-    "move"
+    "move",
+    "SynoidIronFletcherChargePower"
   ],
   "WeaponArray": [
     {
@@ -579,6 +580,38 @@
           "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
         },
         "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "Unit": "SynoidChargingIronFletcher",
+          "CollideRange": 3,
+          "RandomDelayMin": 0.001,
+          "RandomDelayMax": 0.001
+        },
+        "Unit": "SynoidChargingIronFletcher",
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "SynoidIronFletcherChargePower,Execute",
+        "id": "SynoidIronFletcherChargePower",
+        "Icon": "btn_synoid_iron_fletcher_charged",
+        "Name": {
+          "enUS": "Charge Power"
+        },
+        "Tooltip": {
+          "enUS": "Morph to Charged Iron Fletcher which has more health, less range and anti-armored attack."
+        },
+        "Hotkey": "C"
       }
     ]
   },
@@ -643,7 +676,9 @@
       "Name": {
         "enUS": "RegenBioSteel"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "This unit has been upgraded to regenerate faster."
+      }
     }
   ],
   "Abilities": [
@@ -667,6 +702,12 @@
         "enUS": "Move",
         "ruRU": "Move"
       }
+    },
+    {
+      "id": "SynoidIronFletcherChargePower",
+      "Name": {
+        "enUS": "Charge Power"
+      }
     }
   ],
   "$Upgrades": [
@@ -680,12 +721,16 @@
     "SynoidMechanicalWeaponsLevel2",
     "SynoidMechanicalWeaponsLevel3",
     "AssemblyTrain",
-    "SynoidRegenBioSteel"
+    "SynoidRegenBioSteel",
+    "SynoidIronFletcherPowerCharging"
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
-  "$Morph": [],
+  "$Morph": [
+    "SynoidChargingIronFletcher",
+    "SynoidChargedIronFletcher"
+  ],
   "$Phase": [],
   "$Producers": [
     "SuperAssembly",
@@ -755,6 +800,17 @@
       "Tooltip": {
         "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
         "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
+    },
+    {
+      "AbilCmd": "SynoidIronFletcherChargePower,Execute",
+      "id": "SynoidIronFletcherChargePower",
+      "Icon": "btn_synoid_iron_fletcher_charged",
+      "Name": {
+        "enUS": "Charge Power"
+      },
+      "Tooltip": {
+        "enUS": "Morph to Charged Iron Fletcher which has more health, less range and anti-armored attack."
       }
     }
   ]

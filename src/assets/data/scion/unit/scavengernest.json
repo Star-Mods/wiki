@@ -1,6 +1,13 @@
 {
-  "Name": "Scavenger Nest",
-  "Description": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Scavengers",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Scavenger Nest",
+    "ruRU": "Гнездо сборщиков"
+  },
+  "Description": {
+    "enUS": "Primary structure. Used to receive gathered resources.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Scavengers",
+    "ruRU": "Основное строение Зейтов. Служит для хранения добытых ресурсов и строительства сборщиков.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Сборщики"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1750,
   "LifeMax": 1750,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -66,16 +76,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ScavengerNest/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ScavengerNest/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ScavengerNest/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ScavengerNest/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -104,6 +116,12 @@
   "LifeArmor": 1,
   "Sight": 11,
   "CostCategory": "Economy",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "RallyCommand",
+    "BirthScavenger"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "ScavengerNest",
@@ -173,8 +191,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -237,8 +261,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -259,8 +289,14 @@
         "AbilCmd": "RallyCommand,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       },
       {
@@ -296,8 +332,14 @@
         "AbilCmd": "BirthScavenger,Train1",
         "id": "BirthScavenger",
         "Icon": "btn-unit-xayid-scavenger",
-        "Tooltip": "Basic builder and worker unit.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-        "Name": "Birth Scavenger",
+        "Name": {
+          "enUS": "Birth Scavenger",
+          "ruRU": "Породить собирателя"
+        },
+        "Tooltip": {
+          "enUS": "Basic builder and worker unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+          "ruRU": "Базовая рабочая единица.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные единицы.</span>"
+        },
         "Hotkey": "S"
       }
     ]
@@ -308,40 +350,67 @@
   "ScoreMake": 400,
   "ScoreKill": 400,
   "SubgroupPriority": 40,
+  "BehaviorArray": [
+    "BilePitPower",
+    "ScavengerNestPower"
+  ],
   "GlossaryPriority": 1,
   "TechTreeProducedUnitArray": [
     "Scavenger"
   ],
   "Icon": "btn-building-xayid-scavengernest",
+  "Model": "ScavengerNest",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "BilePitPower",
-      "Icon": "btn-ability-zerg-transfusion-color"
+      "Icon": "btn-ability-zerg-transfusion-color",
+      "Name": {
+        "enUS": "Bile Pit Power",
+        "ruRU": "Bile Pit Power"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "ScavengerNestPower",
-      "Icon": "btn-building-xayid-scavengernest"
+      "Icon": "btn-building-xayid-scavengernest",
+      "Name": {
+        "enUS": "Scavenger Nest Power",
+        "ruRU": "Scavenger Nest Power"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "RallyCommand",
-      "Name": "Command Center - Rally"
+      "Name": {
+        "enUS": "Command Center - Rally",
+        "ruRU": "Command Center - Rally"
+      }
     },
     {
       "id": "BirthScavenger",
-      "Name": "Birth Scavenger"
+      "Name": {
+        "enUS": "Birth Scavenger",
+        "ruRU": "Birth Scavenger"
+      }
     }
   ],
   "$Upgrades": [
@@ -369,29 +438,53 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "RallyCommand,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     },
     {
       "AbilCmd": "BirthScavenger,Train1",
       "id": "BirthScavenger",
       "Icon": "btn-unit-xayid-scavenger",
-      "Tooltip": "Basic builder and worker unit.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
-      "Name": "Birth Scavenger"
+      "Name": {
+        "enUS": "Birth Scavenger",
+        "ruRU": "Породить собирателя"
+      },
+      "Tooltip": {
+        "enUS": "Basic builder and worker unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+        "ruRU": "Базовая рабочая единица.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные единицы.</span>"
+      }
     }
   ]
 }

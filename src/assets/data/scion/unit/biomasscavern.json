@@ -1,6 +1,13 @@
 {
-  "Name": "Biomass Cavern",
-  "Description": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Biomass Cavern",
+    "ruRU": "Пещера биомассы"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Revilers, Prowlers and Spitters.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Massalisks at the Biomass Hatchery",
+    "ruRU": "Содержит улучшения для различных юнитов зейтов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Массалиски"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "BiomassCavern/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "BiomassCavern/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "BiomassCavern/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "BiomassCavern/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -102,6 +114,11 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "BiomassCavernResearch"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "BiomassCavern",
@@ -148,8 +165,14 @@
         "AbilCmd": "BiomassCavernResearch,Research1",
         "id": "MutateBattleFrenzy",
         "Icon": "btn-upgrade-xayid-battlefrenzy",
-        "Tooltip": "<span style=\"color: #FFFF80\">Reviler</span> attack speed increases by <b>8</b>% each time they attack. The attack speed bonus maxes at <b>64</b>%. Lasts <b>6</b> seconds. Continued attacks will refresh the duration.",
-        "Name": "Mutate Battle Frenzy",
+        "Name": {
+          "enUS": "Mutate Battle Frenzy",
+          "ruRU": "Мутировать Боевое Неистовство"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Reviler</span> attack speed increases by <b>8</b>% each time they attack. The attack speed bonus maxes at <b>64</b>%. Lasts <b>6</b> seconds. Continued attacks will refresh the duration.",
+          "ruRU": "Позволяет <span style=\"color: FFFF80\">Ревилерам</span> атаковать на 6% быстрее за каждую атаку, складывается до 30%. Длится <b>6</b> секунд. Продолжающиеся атаки обновляют эффект."
+        },
         "Hotkey": "R"
       },
       {
@@ -188,8 +211,14 @@
         "AbilCmd": "BiomassCavernResearch,Research2",
         "id": "MutateProlongedSpores",
         "Icon": "btn-upgrade-xayid-protractivespores",
-        "Tooltip": "Increases <span style=\"color: #FFFF80\">Spitters</span> weapon range by 3.",
-        "Name": "Mutate Prolonged Spores",
+        "Name": {
+          "enUS": "Mutate Prolonged Spores",
+          "ruRU": "Мутировать дальнобойные споры"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span style=\"color: FFFF80\">Spitters</span> weapon range by 3.",
+          "ruRU": "Увеличивает дальность атаки <span style=\"color: FFFF80\">Спиттеров</span> на 3."
+        },
         "Hotkey": "D"
       },
       {
@@ -249,8 +278,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -313,8 +348,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -332,6 +373,7 @@
   "SubgroupPriority": 34,
   "GlossaryPriority": 23,
   "Icon": "btn-building-xayid-biomasscavern",
+  "Model": "BiomassCavern",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -339,15 +381,24 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "BiomassCavernResearch",
-      "Name": "Biomass Cavern Research"
+      "Name": {
+        "enUS": "Biomass Cavern Research",
+        "ruRU": "Biomass Cavern Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -373,29 +424,53 @@
       "AbilCmd": "BiomassCavernResearch,Research1",
       "id": "MutateBattleFrenzy",
       "Icon": "btn-upgrade-xayid-battlefrenzy",
-      "Tooltip": "<span style=\"color: #FFFF80\">Reviler</span> attack speed increases by <b>8</b>% each time they attack. The attack speed bonus maxes at <b>64</b>%. Lasts <b>6</b> seconds. Continued attacks will refresh the duration.",
-      "Name": "Mutate Battle Frenzy"
+      "Name": {
+        "enUS": "Mutate Battle Frenzy",
+        "ruRU": "Мутировать Боевое Неистовство"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Reviler</span> attack speed increases by <b>8</b>% each time they attack. The attack speed bonus maxes at <b>64</b>%. Lasts <b>6</b> seconds. Continued attacks will refresh the duration.",
+        "ruRU": "Позволяет <span style=\"color: FFFF80\">Ревилерам</span> атаковать на 6% быстрее за каждую атаку, складывается до 30%. Длится <b>6</b> секунд. Продолжающиеся атаки обновляют эффект."
+      }
     },
     {
       "AbilCmd": "BiomassCavernResearch,Research2",
       "id": "MutateProlongedSpores",
       "Icon": "btn-upgrade-xayid-protractivespores",
-      "Tooltip": "Increases <span style=\"color: #FFFF80\">Spitters</span> weapon range by 3.",
-      "Name": "Mutate Prolonged Spores"
+      "Name": {
+        "enUS": "Mutate Prolonged Spores",
+        "ruRU": "Мутировать дальнобойные споры"
+      },
+      "Tooltip": {
+        "enUS": "Increases <span style=\"color: FFFF80\">Spitters</span> weapon range by 3.",
+        "ruRU": "Увеличивает дальность атаки <span style=\"color: FFFF80\">Спиттеров</span> на 3."
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     }
   ]
 }

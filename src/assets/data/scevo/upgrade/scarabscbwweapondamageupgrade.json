@@ -1,11 +1,14 @@
 {
-  "id": "ScarabSCBWWeaponDamageUpgrade",
-  "Icon": "btn-upgrade-artanis-scarabsplashradius",
-  "Name": "Upgrade/Name/ScarabSCBWWeaponDamageUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Scarab Damage",
+    "zhCN": "Scarab Damage",
+    "koKR": "Scarab Damage"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,20 +23,36 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "ScarabSCBWWeaponDamageUpgrade",
+  "id": "ScarabSCBWWeaponDamageUpgrade",
   "InfoTooltipPriority": 1,
-  "Race": "Prot",
-  "ScoreAmount": 400,
+  "Icon": "btn-upgrade-artanis-scarabsplashradius",
+  "Race": "BWPr",
+  "ScoreAmount": 250,
   "ScoreResult": "BuildOrder",
   "EffectArrayTemplate": [
     {
-      "Reference": "Effect,^ParamId^Weapon@Damage,AttributeBonus[Armored]",
-      "Value": "40"
+      "Reference": "Effect,^ParamId^Weapon@Damage,Amount",
+      "Value": "25"
     },
     {
-      "Operation": "Set",
-      "Reference": "Weapon,^ParamId^Weapon,Icon",
-      "Value": "Assets\\Effects\\Protoss\\SardineS_ReaverMod\\ScarabUpgradePurple.dds"
+      "Reference": "Effect,^ParamId^Weapon@DamageFallback,Amount",
+      "Value": "25"
+    },
+    {
+      "Reference": "Effect,^ParamId^Weapon@Damage,ShieldBonus",
+      "Value": "30"
+    },
+    {
+      "Reference": "Effect,^ParamId^Weapon@DamageFallback,ShieldBonus",
+      "Value": "30"
     }
   ],
   "AffectedUnitArray": [

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Marine",
-    "zhCN": "陆战队员",
-    "koKR": "마린 /// Marine"
+    "zhCN": "Marine",
+    "koKR": "Marine"
   },
   "Description": {
     "enUS": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
-    "zhCN": "通用型步兵。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地和对空。</span>",
-    "koKR": "다목적 보병입니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 및 공중 유닛 공격 가능</span> /// General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
+    "zhCN": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
+    "koKR": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 45,
   "LifeMax": 45,
-  "LifeArmorName": {
-    "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -76,16 +74,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MarineSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MarineSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MarineSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MarineSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -124,9 +124,17 @@
   "BuildTime": 25,
   "RepairTime": 20,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 10,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "MarineSCBWStimpack"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "MarineSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -217,12 +225,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -297,12 +302,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -392,13 +394,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -472,14 +471,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -569,13 +562,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -686,7 +676,7 @@
           "Cost": [
             {
               "Vital": {
-                "Life": 5
+                "Life": 10
               }
             }
           ],
@@ -698,7 +688,7 @@
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
-          "Life": 5,
+          "Life": 10,
           "Shields": 0,
           "Food": 0
         },
@@ -710,15 +700,42 @@
         "Icon": "btn-ability-terran-stimpack-color",
         "Name": {
           "enUS": "Stimpack",
-          "zhCN": "强化剂",
-          "koKR": "스팀팩 /// Stimpack"
+          "zhCN": "Stimpack",
+          "koKR": "Stimpack"
         },
         "Tooltip": {
-          "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> of the unit's life.",
-          "zhCN": "给单位注入强效的刺激物，大幅提高其移动和攻击速度，持续数秒。该单位会受到<span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> 点伤害。",
-          "koKR": "몇 초 동안 이동 및 공격 속도를 크게 향상시키는 강력한 스팀팩을 유닛에게 투여합니다. 유닛은 체력 <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>만큼의 상처를 입습니다. /// Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\">10</span> of the unit's life."
+          "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+          "zhCN": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+          "koKR": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life."
         },
         "Hotkey": "T"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "MarineSCBWRangeUpgrade@Passive",
+        "Icon": "btn-tips-terran-penetrator",
+        "Name": {
+          "enUS": "U-238 Shells",
+          "zhCN": "U-238 Shells",
+          "koKR": "U-238 Shells"
+        },
+        "Tooltip": {
+          "enUS": "Improves the <span class=\"style-TooltipHighlightSCBW\"><b>Marine</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Gauss Rifle</b></span> increasing its range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MarineSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Improves the <span class=\"style-TooltipHighlightSCBW\"><b>Marine</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Gauss Rifle</b></span> increasing its range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MarineSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Improves the <span class=\"style-TooltipHighlightSCBW\"><b>Marine</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Gauss Rifle</b></span> increasing its range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MarineSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
       }
     ]
   },
@@ -749,18 +766,28 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "MarineSCBWWeapon",
-      "Icon": "btn-upgrade-terran-infantryweaponslevel0",
-      "Name": {
-        "enUS": "Gauss Rifle",
-        "zhCN": "高斯步枪",
-        "koKR": "가우스 라이플 /// Gauss Rifle"
+      "EditorCategories": "Race:Terran",
+      "Options": {
+        "NeverMiss": 0
       },
-      "Amount": 6,
-      "Kind": "Ranged",
+      "Icon": "btn-upgrade-terran-infantryweaponslevel0",
+      "DisplayEffect": "MarineSCBWWeapon@Damage",
       "TargetFilters": "",
       "Range": 5,
-      "Period": 0.8608
+      "Period": 0.9375,
+      "DamagePoint": 0.05,
+      "Backswing": 0.75,
+      "Effect": "MarineSCBWWeapon@Damage",
+      "MinScanRange": 5.5,
+      "id": "MarineSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Gauss Rifle",
+        "zhCN": "Gauss Rifle",
+        "koKR": "Gauss Rifle"
+      },
+      "Amount": 6,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -768,21 +795,20 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -790,30 +816,32 @@
       "id": "MarineSCBWStimpack",
       "Name": {
         "enUS": "Stimpack (Marine)",
-        "zhCN": "强化剂（陆战队员）",
-        "koKR": "스팀팩 (마린) /// Stimpack (Marine)"
+        "zhCN": "Stimpack (Marine)",
+        "koKR": "Stimpack (Marine)"
       }
     }
   ],
   "$Upgrades": [
     "StimpackSCBWResearch",
     "MarineSCBW",
+    "Button/Tooltip/MarineSCBWRangeUpgrade",
+    "MarineSCBW",
     "Button/Tooltip/BarracksSCBW",
-    "Button/Tooltip/MarineSCBWStimpack@Redirect",
-    "Button/Tooltip/FirebatSCBWStimpack@Redirect",
     "MarineSCBW@AllowUnit",
     "BarracksSCBW@Train",
-    "Button/Tooltip/MarineSCBWRangeUpgrade",
-    "MarineSCBWRangeUpgrade",
     "BarracksSCBW",
+    "MarineSCBWRangeUpgrade",
+    "Button/Tooltip/MarineSCBWStimpack@Redirect",
+    "Button/Tooltip/FirebatSCBWStimpack@Redirect",
     "ChangelingMarineSCBW",
-    "MarineSCBW",
-    "MarineSCBW@Death",
     "MarineSCBWStimpack",
     "IsMarineSCBW",
     "NotMarineSCBW",
     "CasterIsMarineSCBW",
-    "MarineSCBW"
+    "MarineSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -831,12 +859,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -844,51 +869,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "MarineSCBWStimpack,Execute",
@@ -896,13 +906,13 @@
       "Icon": "btn-ability-terran-stimpack-color",
       "Name": {
         "enUS": "Stimpack",
-        "zhCN": "强化剂",
-        "koKR": "스팀팩 /// Stimpack"
+        "zhCN": "Stimpack",
+        "koKR": "Stimpack"
       },
       "Tooltip": {
-        "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> of the unit's life.",
-        "zhCN": "给单位注入强效的刺激物，大幅提高其移动和攻击速度，持续数秒。该单位会受到<span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> 点伤害。",
-        "koKR": "몇 초 동안 이동 및 공격 속도를 크게 향상시키는 강력한 스팀팩을 유닛에게 투여합니다. 유닛은 체력 <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>만큼의 상처를 입습니다. /// Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\">10</span> of the unit's life."
+        "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+        "zhCN": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+        "koKR": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life."
       }
     }
   ]

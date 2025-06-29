@@ -1,11 +1,14 @@
 {
-  "id": "QueenSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-zerg-pathogenglands",
-  "Name": "Upgrade/Name/QueenSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Gamete Meiosis",
+    "zhCN": "Gamete Meiosis",
+    "koKR": "Gamete Meiosis"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,22 +23,31 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "QueenSCBWEnergyUpgrade",
+  "id": "QueenSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
+  "Icon": "btn-upgrade-zerg-pathogenglands",
   "AffectedUnitArray": [
     "QueenSCBW"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

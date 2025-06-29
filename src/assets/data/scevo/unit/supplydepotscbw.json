@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Supply Depot",
-    "zhCN": "补给站",
-    "koKR": "서플라이 디포 /// Supply Depot"
+    "zhCN": "Supply Depot",
+    "koKR": "Supply Depot"
   },
   "Description": {
     "enUS": "Provides supply.<br/>Supply allows you to create more units.",
-    "zhCN": "提供补给。<br/>提高本方单位数量上限。",
-    "koKR": "보급품을 공급합니다.<br/>보급품을 늘리면 더 많은 유닛을 훈련할 수 있습니다. /// Provides supply.<br/>Supply allows you to create more units."
+    "zhCN": "Provides supply.<br/>Supply allows you to create more units.",
+    "koKR": "Provides supply.<br/>Supply allows you to create more units."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 400,
-  "LifeMax": 400,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeStart": 500,
+  "LifeMax": 500,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SupplyDepotSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SupplyDepotSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SupplyDepotSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SupplyDepotSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,9 @@
   "SubgroupPriority": 1,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_SupplyDepotSCBW"
   ],
@@ -124,6 +127,9 @@
   ],
   "PlaneArray": [
     "Ground"
+  ],
+  "AbilArray": [
+    "BuildInProgress"
   ],
   "Facing": 315,
   "LifeArmor": 1,
@@ -193,13 +199,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -259,40 +261,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+        "Tooltip": "-"
       }
     ]
   },
@@ -309,6 +281,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -320,10 +293,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
@@ -354,25 +324,19 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

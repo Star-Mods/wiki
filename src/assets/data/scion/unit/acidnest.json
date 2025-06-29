@@ -1,6 +1,13 @@
 {
-  "Name": "Acid Nest",
-  "Description": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Acid Nest",
+    "ruRU": "Кислотная мина"
+  },
+  "Description": {
+    "enUS": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
+    "ruRU": "<span style=\"color: FFFF80\">Ядовитая мина</span> взрывается нанося 50 единиц урона вражеским наземным единицам, которые коснулись её. Наносит 35 единиц урона врагам вокруг себя."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 50,
   "LifeMax": 50,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -63,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AcidNest/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AcidNest/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AcidNest/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AcidNest/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -101,6 +113,10 @@
   "LifeArmor": 1,
   "Sight": 7,
   "CostCategory": "Army",
+  "AbilArray": [
+    "BuildInProgress",
+    "que1"
+  ],
   "ScoreResult": "",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "AcidNest",
@@ -109,6 +125,10 @@
     "Minerals": 10,
     "Vespene": 5
   },
+  "BehaviorArray": [
+    "VolatileAcidFate",
+    "AcidNestVolatileAcidSearch"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -127,8 +147,14 @@
         "Type": "Passive",
         "id": "AcidNest",
         "Icon": "btn-ability-zerg-banelingspooge",
-        "Tooltip": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
-        "Name": "Volatile Acid"
+        "Name": {
+          "enUS": "Volatile Acid",
+          "ruRU": "Кислотная мина"
+        },
+        "Tooltip": {
+          "enUS": "Burrowed explosive mine. Deals <b>80</b> damage on contact with an enemy ground unit. Deals <b>35</b> splash damage to other enemy ground units around it.",
+          "ruRU": "<span style=\"color: FFFF80\">Ядовитая мина</span> взрывается нанося 50 единиц урона вражеским наземным единицам, которые коснулись её. Наносит 35 единиц урона врагам вокруг себя."
+        }
       },
       {
         "Info": {
@@ -190,8 +216,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -210,8 +242,14 @@
         "Type": "Passive",
         "id": "ResidualAcid",
         "Icon": "btn-upgrade-xayid-residualacid",
-        "Tooltip": "<span style=\"color: #FFFF80\">Acid Nests</span> leave behind a puddle of acid upon death, dealing <b>10</b> damage per second, and slowing enemy movement speed by 30% in an area. Lasts <b>20</b> seconds.",
-        "Name": "Residual Acid"
+        "Name": {
+          "enUS": "Residual Acid",
+          "ruRU": "Остаточная кислота"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Acid Nests</span> leave behind a puddle of acid upon death, dealing <b>16</b> damage per second, and slowing enemy movement speed by 30% in an area. Lasts <b>13</b> seconds.",
+          "ruRU": "<span style=\"color: FFFF80\">Ядовитые мины</span> оставляют после себя лужу кислоты, наносящую <b>16</b> урона в секунду, замедляя противников в области на 30%. Длится <b>13</b> секунд."
+        }
       }
     ]
   },
@@ -224,26 +262,42 @@
   "GlossaryAlias": "AcidNest",
   "GlossaryCategory": "Unit/Category/XayidUnits",
   "Icon": "btn-ability-xayid-prowlerexplosive",
+  "Model": "ProwlerEgg",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "VolatileAcidFate",
-      "Icon": "btn-ability-zerg-banelingspooge"
+      "Icon": "btn-ability-zerg-banelingspooge",
+      "Name": {
+        "enUS": "Volatile Acid Fate"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "AcidNestVolatileAcidSearch"
+      "id": "AcidNestVolatileAcidSearch",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Acid Nest - Volatile Acid Search"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que1",
-      "Name": "Queue (1)"
+      "Name": {
+        "ruRU": "Queue (1)",
+        "enUS": "Queue (1)"
+      }
     }
   ],
   "$Upgrades": [
@@ -251,10 +305,7 @@
     "AcidNest",
     "ResidualAcid",
     "ProwlerPlaceAcidNest",
-    "AcidNestMorph",
     "AcidNest",
-    "AcidNestBuild",
-    "AcidNestBuild",
     "AcidNestSplat",
     "IsAcidNest"
   ],
@@ -271,8 +322,14 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     }
   ]
 }

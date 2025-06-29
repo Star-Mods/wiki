@@ -1,11 +1,14 @@
 {
-  "id": "HydraliskSCBWRangeUpgrade",
-  "Icon": "btn-upgrade-zerg-groovedspines",
-  "Name": "Upgrade/Name/HydraliskSCBWRangeUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Grooved Spines",
+    "zhCN": "Grooved Spines",
+    "koKR": "Grooved Spines"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,16 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "HydraliskSCBWRangeUpgrade",
+  "id": "HydraliskSCBWRangeUpgrade",
+  "Icon": "btn-upgrade-zerg-groovedspines",
   "EffectArrayTemplate": [
     {
       "Reference": "Weapon,^ParamId^Weapon,Range",
@@ -29,13 +41,22 @@
     {
       "Reference": "Weapon,^ParamId^Weapon,MinScanRange",
       "Value": "1"
+    },
+    {
+      "Reference": "Weapon,^ParamId^WeaponAlt,Range",
+      "Value": "1"
+    },
+    {
+      "Reference": "Weapon,^ParamId^WeaponAlt,MinScanRange",
+      "Value": "1"
     }
   ],
   "AffectedUnitArray": [
-    "HydraliskSCBW"
+    "HydraliskSCBW",
+    "HydraliskSCBW@Burrowed"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

@@ -124,7 +124,8 @@
     "Z1Shield",
     "Z1Freeze",
     "Z1BadgerBomb",
-    "Z1ShieldCancel"
+    "Z1ShieldCancel",
+    "UPLScoutGrenade"
   ],
   "WeaponArray": [
     {
@@ -1190,6 +1191,164 @@
         "Tooltip": {
           "enUS": "Increase the health of <span style=\"color: ffff8a\">CARR</span>, <span style=\"color: ffff8a\">Z1</span>and <span style=\"color: ffff8a\">Z2</span> by 40%."
         }
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/UPLScoutGrenade",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "AbilityorEffectType:Units,Race:UPL",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UPLScoutGrenade",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1
+          },
+          "Effect": [
+            "UPLScoutGrenadeLaunch"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "UPLScoutGrenadeSearch",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "UPLScoutGrenade"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Vital": {
+                "Energy": 75
+              },
+              "Charge": {
+                "CountMax": 2,
+                "CountStart": 1,
+                "CountUse": 1,
+                "TimeUse": 30
+              }
+            }
+          ],
+          "Range": [
+            5
+          ],
+          "CastIntroTime": [
+            0.4
+          ],
+          "FinishTime": [
+            0.75
+          ],
+          "CursorEffect": [
+            "UPLScoutGrenadeSearch"
+          ],
+          "UninterruptibleArray": {
+            "Cast": 1,
+            "Channel": 1
+          },
+          "id": "UPLScoutGrenade"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 75,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLScoutGrenade,Execute",
+        "id": "UPLScoutGrenade",
+        "Icon": "btn-ability-upl-fraggrenade",
+        "Name": {
+          "enUS": "Fragmentation Grenade"
+        },
+        "Tooltip": {
+          "enUS": "Deals <b>5</b>(+125 vs structure) damage in a <b>3</b> radius<br/><br/><span style=\"color: #ffff8a\">Can Target Ground units.</span>"
+        },
+        "Hotkey": "Q"
       }
     ]
   },
@@ -1291,6 +1450,12 @@
       "id": "Z1ShieldCancel",
       "Name": {
         "enUS": "Z1 Shield Cancel"
+      }
+    },
+    {
+      "id": "UPLScoutGrenade",
+      "Name": {
+        "enUS": "Frag Grenade"
       }
     }
   ],
@@ -1436,6 +1601,17 @@
       },
       "Tooltip": {
         "enUS": "Cancel the Shield Defense"
+      }
+    },
+    {
+      "AbilCmd": "UPLScoutGrenade,Execute",
+      "id": "UPLScoutGrenade",
+      "Icon": "btn-ability-upl-fraggrenade",
+      "Name": {
+        "enUS": "Fragmentation Grenade"
+      },
+      "Tooltip": {
+        "enUS": "Deals <b>5</b>(+125 vs structure) damage in a <b>3</b> radius<br/><br/><span style=\"color: #ffff8a\">Can Target Ground units.</span>"
       }
     }
   ]

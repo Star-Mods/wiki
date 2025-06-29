@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Overlord",
-    "zhCN": "王虫",
-    "koKR": "오버로드 /// Overlord"
+    "zhCN": "Overlord",
+    "koKR": "Overlord"
   },
   "Description": {
     "enUS": "Increases supply. Supply allows you to create more units.<br/><br/><span style=\"color: ffff8a\">Cannot attack.</span><br/><br/><span style=\"color: FFE303\">Detector</span>",
-    "zhCN": "提供补给。提高本方单位数量上限。<br/><br/><span style=\"color: ffff8a\">无法攻击。</span><br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-    "koKR": "보급품을 공급합니다. 더 많은 유닛을 생산할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">공격할 수 없습니다.</span><br/><br/><span style=\"color: FFE303\">디텍터</span> /// Increases supply. Supply allows you to create more units.<br/><br/><span style=\"color: ffff8a\">Cannot attack.</span><br/><br/><span style=\"color: FFE303\">Detector</span>"
+    "zhCN": "Increases supply. Supply allows you to create more units.<br/><br/><span style=\"color: ffff8a\">Cannot attack.</span><br/><br/><span style=\"color: FFE303\">Detector</span>",
+    "koKR": "Increases supply. Supply allows you to create more units.<br/><br/><span style=\"color: ffff8a\">Cannot attack.</span><br/><br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": {
-    "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -73,16 +71,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "OverlordSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "OverlordSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "OverlordSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "OverlordSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -108,7 +108,7 @@
     "Biological"
   ],
   "Speed": 0.6445,
-  "Acceleration": 1.0625,
+  "Acceleration": 1.6875,
   "LateralAcceleration": 46.0625,
   "Sight": 10,
   "Height": 3.75,
@@ -119,9 +119,11 @@
     "Minerals": 100
   },
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 20,
+  "AbilArray": [
+    "stop",
+    "move",
+    "OverlordSCBW@Transport"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -212,12 +214,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -292,12 +291,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -387,13 +383,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -467,14 +460,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -564,13 +551,10 @@
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
         "Name": {
-          "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -660,47 +644,38 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
-        "Info": {
-          "Unit": "OverlordCocoon",
-          "RandomDelayMin": 0.001,
-          "RandomDelayMax": 0.001
-        },
-        "Unit": "OverlordCocoon",
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 100,
+          "Minerals": 0,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": 8
+          "Food": 0
         },
         "Row": 2,
         "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "MorphToOverseer,Cancel",
-        "id": "Cancel",
-        "Icon": "btn-command-cancel",
+        "Type": "Passive",
+        "id": "DetectorSCBW@Detector",
+        "Icon": "btn-status-detector",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Detector",
+          "zhCN": "Detector",
+          "koKR": "Detector"
         },
         "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+          "enUS": "This unit can detect cloaked and burrowed units.",
+          "zhCN": "This unit can detect cloaked and burrowed units.",
+          "koKR": "This unit can detect cloaked and burrowed units."
+        }
       },
       {
         "Info": {
@@ -789,7 +764,8 @@
           "LoadTransportBehavior": "OverlordSCBW@Transport",
           "UnloadPeriod": 1,
           "LoadValidatorArray": [
-            "NotWidowMineTarget"
+            "NotWidowMineTarget",
+            "SCBW_IsTransportable"
           ],
           "id": "OverlordSCBW@Transport"
         },
@@ -804,20 +780,20 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 0,
+        "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "OverlordSCBW@Transport,Load",
         "id": "OverlordSCBW@Load",
         "Icon": "btn-ability-terran-load",
         "Name": {
           "enUS": "Load",
-          "zhCN": "装载",
-          "koKR": "들이기 /// Load"
+          "zhCN": "Load",
+          "koKR": "Load"
         },
         "Tooltip": {
           "enUS": "Loads units into the Overlord's ventral sacs.",
-          "zhCN": "将单位装载进王虫的腹囊。",
-          "koKR": "유닛을 오버로드의 배주머니로 들입니다. /// Loads units into the Overlord's ventral sacs."
+          "zhCN": "Loads units into the Overlord's ventral sacs.",
+          "koKR": "Loads units into the Overlord's ventral sacs."
         },
         "Hotkey": "L"
       },
@@ -908,7 +884,8 @@
           "LoadTransportBehavior": "OverlordSCBW@Transport",
           "UnloadPeriod": 1,
           "LoadValidatorArray": [
-            "NotWidowMineTarget"
+            "NotWidowMineTarget",
+            "SCBW_IsTransportable"
           ],
           "id": "OverlordSCBW@Transport"
         },
@@ -923,49 +900,22 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 1,
+        "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "OverlordSCBW@Transport,UnloadAt",
         "id": "OverlordSCBW@Unload",
         "Icon": "btn-ability-terran-unloadall",
         "Name": {
           "enUS": "Unload All",
-          "zhCN": "卸载全部",
-          "koKR": "모두 내보내기 /// Unload All"
+          "zhCN": "Unload All",
+          "koKR": "Unload All"
         },
         "Tooltip": {
           "enUS": "Unloads all units.",
-          "zhCN": "卸载所有单位。",
-          "koKR": "모든 유닛을 내보냅니다. /// Unloads all units."
+          "zhCN": "Unloads all units.",
+          "koKR": "Unloads all units."
         },
         "Hotkey": "D"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "Passive",
-        "id": "DetectorSCBW@Detector",
-        "Icon": "btn-status-detector",
-        "Name": {
-          "enUS": "Detector",
-          "zhCN": "侦测单位",
-          "koKR": "디텍터 /// Detector"
-        },
-        "Tooltip": {
-          "enUS": "This unit can detect cloaked and burrowed units.",
-          "zhCN": "该单位能够侦测到隐形和潜地单位。",
-          "koKR": "이 유닛은 클로크하거나 버로우한 유닛을 탐지할 수 있습니다. /// This unit can detect cloaked and burrowed units."
-        }
       },
       {
         "Cost": {
@@ -981,17 +931,71 @@
         "Row": 1,
         "Column": 0,
         "Type": "Passive",
+        "id": "OverlordSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-pneumatizedcarapace",
+        "Name": {
+          "enUS": "Pneumatized Carapace",
+          "zhCN": "Pneumatized Carapace",
+          "koKR": "Pneumatized Carapace"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>238</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>238</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>238</b>%</span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "OverlordSCBWTransportResearch@Passive",
+        "Icon": "btn-upgrade-zerg-ventralsacs",
+        "Name": {
+          "enUS": "Ventral Sacs",
+          "zhCN": "Ventral Sacs",
+          "koKR": "Ventral Sacs"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> to transport units.",
+          "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> to transport units.",
+          "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> to transport units."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "Passive",
         "id": "OverlordSCBWSightUpgrade@Passive",
         "Icon": "btn-ability-zerg-overlord-oversight-off",
         "Name": {
           "enUS": "Antennae",
-          "zhCN": "触须",
-          "koKR": "안테나 /// Antennae"
+          "zhCN": "Antennae",
+          "koKR": "Antennae"
         },
         "Tooltip": {
-          "enUS": "<span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> have increased sight range and can detect cloaked and burrowed units.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> have increased sight range and can detect cloaked and burrowed units.",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b></span>의 시야 범위가 증가하였습니다. /// <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> have increased sight range."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,OverlordSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,OverlordSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Overlord</b>s</span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,OverlordSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         }
       }
     ]
@@ -1002,18 +1006,25 @@
   "SubgroupPriority": 72,
   "GlossaryPriority": 201,
   "BuildTime": 25,
+  "BehaviorArray": [
+    "OverlordSCBW@Detector"
+  ],
   "GlossaryWeakArray": [
     "MissileTurretSCBW",
     "SporeColonySCBW",
     "PhotonCannonSCBW"
   ],
-  "Icon": "btn-unit-zerg-overlord",
+  "TauntDuration": {
+    "Dance": 5
+  },
+  "Icon": "btn-unit-zerg-overlord@scbw",
   "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "OverlordSCBW@Detector",
+      "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
         "zhCN": "Detector",
@@ -1026,14 +1037,14 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -1041,36 +1052,37 @@
       "id": "OverlordSCBW@Transport",
       "Name": {
         "enUS": "Transport",
-        "zhCN": "运输",
-        "koKR": "들이기/내보내기 /// Transport"
+        "zhCN": "Transport",
+        "koKR": "Transport"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/OverlordSCBWSightUpgrade",
+    "OverlordSCBWSightUpgrade",
     "OverlordSCBW",
     "OverlordSCBWTransportResearch",
-    "OverlordSCBWSightUpgrade",
-    "Button/Tooltip/OverlordSCBWSightUpgrade@Passive",
     "Button/Tooltip/OverlordSCBWSpeedUpgrade",
     "OverlordSCBWSpeedUpgrade",
     "Button/Tooltip/OverlordSCBWTransportResearch",
+    "Button/Tooltip/OverlordSCBWSightUpgrade",
     "OverlordSCBW@AllowUnit",
     "LarvaSCBW@Train",
     "LarvaSCBW",
     "BWZe",
     "OverlordSCBW",
     "OverlordSCBW@Death",
-    "Button/Tooltip/OverlordSCBWSpeedUpgrade@Passive",
-    "Button/Tooltip/OverlordSCBWTransportResearch@Passive",
     "IsOverlordSCBW",
     "NotOverlordSCBW",
     "CasterIsOverlordSCBW",
+    "OverlordSCBW",
     "OverlordSCBW@Count",
     "OverlordSCBW@CountAtUnit",
     "OverlordSCBW@QoB",
     "OverlordSCBW@QoBAtUnit",
-    "OverlordSCBW"
+    "OverlordSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1088,12 +1100,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1101,77 +1110,46 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
       "Name": {
-        "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
-    },
-    {
-      "AbilCmd": "MorphToOverseer,Cancel",
-      "id": "Cancel",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "OverlordSCBW@Transport,Load",
@@ -1179,13 +1157,13 @@
       "Icon": "btn-ability-terran-load",
       "Name": {
         "enUS": "Load",
-        "zhCN": "装载",
-        "koKR": "들이기 /// Load"
+        "zhCN": "Load",
+        "koKR": "Load"
       },
       "Tooltip": {
         "enUS": "Loads units into the Overlord's ventral sacs.",
-        "zhCN": "将单位装载进王虫的腹囊。",
-        "koKR": "유닛을 오버로드의 배주머니로 들입니다. /// Loads units into the Overlord's ventral sacs."
+        "zhCN": "Loads units into the Overlord's ventral sacs.",
+        "koKR": "Loads units into the Overlord's ventral sacs."
       }
     },
     {
@@ -1194,13 +1172,13 @@
       "Icon": "btn-ability-terran-unloadall",
       "Name": {
         "enUS": "Unload All",
-        "zhCN": "卸载全部",
-        "koKR": "모두 내보내기 /// Unload All"
+        "zhCN": "Unload All",
+        "koKR": "Unload All"
       },
       "Tooltip": {
         "enUS": "Unloads all units.",
-        "zhCN": "卸载所有单位。",
-        "koKR": "모든 유닛을 내보냅니다. /// Unloads all units."
+        "zhCN": "Unloads all units.",
+        "koKR": "Unloads all units."
       }
     }
   ]

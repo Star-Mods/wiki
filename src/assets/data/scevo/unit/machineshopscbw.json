@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Machine Shop",
-    "zhCN": "机械车间",
-    "koKR": "머신 샵 /// Machine Shop"
+    "zhCN": "Machine Shop",
+    "koKR": "Machine Shop"
   },
   "Description": {
     "enUS": "Vehicle research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Siege Tank</b>",
-    "zhCN": "战车研究设施。<span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Siege Tank</b>",
-    "koKR": "차량 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Siege Tank</b> /// Vehicle research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Siege Tank</b>"
+    "zhCN": "Vehicle research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Siege Tank</b>",
+    "koKR": "Vehicle research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Machine Shop</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Factory</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Siege Tank</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MachineShopSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MachineShopSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MachineShopSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MachineShopSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,10 @@
   "SubgroupPriority": 11,
   "AIKiteRange": 0,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "TerranBuildingSCBW@AddonDetached"
+  ],
   "TechAliasArray": [
     "Alias_MachineShopSCBW"
   ],
@@ -126,11 +130,19 @@
     "Ground"
   ],
   "Facing": 315,
+  "AbilArray": [
+    "que5Addon",
+    "BuildInProgress",
+    "SiegeModeSCBWResearch",
+    "VulturePlaceSpiderMineSCBWResearch",
+    "VultureSCBWSpeedUpgrade",
+    "GoliathSCBWRangeUpgrade"
+  ],
   "Footprint": "Footprint2x2Contour",
   "AddedOnArray": [
     {
       "UnitLink": "FactorySCBW",
-      "BehaviorLink": "##id##@Attached",
+      "BehaviorLink": "MachineShopSCBW@Attached",
       "ParentBehaviorLink": "AddonIsWorkingSCBW"
     }
   ],
@@ -141,7 +153,7 @@
   "LifeArmor": 1,
   "CostResource": {
     "Minerals": 50,
-    "Vespene": 50
+    "Vespene": 25
   },
   "RepairTime": 75,
   "CardLayouts": {
@@ -205,13 +217,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -271,14 +279,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "VultureSCBWSpeedUpgrade",
@@ -292,16 +296,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "VultureSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "VultureSCBWSpeedUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 100,
+          "Time": 75,
           "Upgrade": "VultureSCBWSpeedUpgrade"
         },
-        "Time": 100,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -320,13 +325,13 @@
         "Icon": "btn-ability-terran-emergencythrusters",
         "Name": {
           "enUS": "Research Ion Thrusters",
-          "zhCN": "研究离子推进器",
-          "koKR": "이온 추진기 연구 /// Research Ion Thrusters"
+          "zhCN": "Research Ion Thrusters",
+          "koKR": "Research Ion Thrusters"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
         },
         "Hotkey": "T"
       },
@@ -342,16 +347,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "VulturePlaceSpiderMineSCBWResearch",
+            "State": "Restricted",
             "Requirements": "VulturePlaceSpiderMineSCBWResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 100,
+          "Time": 75,
           "Upgrade": "VulturePlaceSpiderMineSCBWResearch"
         },
-        "Time": 100,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -370,13 +376,13 @@
         "Icon": "btn-upgrade-siegetank-spidermines",
         "Name": {
           "enUS": "Research Spider Mines",
-          "zhCN": "研究蜘蛛雷",
-          "koKR": "스파이더 마인 연구 /// Research Spider Mines"
+          "zhCN": "Research Spider Mines",
+          "koKR": "Research Spider Mines"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>可以部署<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>。<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>会对进入范围内的敌人进行追击，引爆后可造成大量范围伤害。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>은 범위 내의 적 유닛을 찾아 폭발하여 큰 피해를 입힙니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
         },
         "Hotkey": "S"
       },
@@ -392,19 +398,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "SiegeModeSCBWResearch",
+            "State": "Restricted",
             "Requirements": "SiegeModeSCBWResearch"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 50,
+            "Vespene": 50
           },
-          "Time": 80,
+          "Time": 55,
           "Upgrade": "SiegeModeSCBWResearch"
         },
-        "Time": 80,
+        "Time": 55,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -420,13 +427,13 @@
         "Icon": "btn-upgrade-terran-nova-siegetankrange",
         "Name": {
           "enUS": "Research Siege Mode",
-          "zhCN": "研究攻城模式",
-          "koKR": "시즈 모드 연구 /// Research Siege Mode"
+          "zhCN": "Research Siege Mode",
+          "koKR": "Research Siege Mode"
         },
         "Tooltip": {
           "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span>可以部署为<span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. 该模式下，<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span> 的射程极大提高，造成范围伤害，但无法移动，也无法向过近的单位开火。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>를 사용할 수 있습니다. 사거리가 크게 증가하여 범위 피해를 주지만, 이동하거나 근접한 적 유닛을 공격할 수 없습니다. /// Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
+          "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+          "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
         },
         "Hotkey": "E"
       },
@@ -442,16 +449,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "GoliathSCBWRangeUpgrade",
+            "State": "Restricted",
             "Requirements": "GoliathSCBWRangeUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 100,
           "Upgrade": "GoliathSCBWRangeUpgrade"
         },
-        "Time": 110,
+        "Time": 100,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -470,18 +478,18 @@
         "Icon": "btn-upgrade-terran-magfieldaccelerator",
         "Name": {
           "enUS": "Research Charon Boosters",
-          "zhCN": "研究卡戎助推器",
-          "koKR": "카론 부스터 연구 /// Research Charon Boosters"
+          "zhCN": "Research Charon Boosters",
+          "koKR": "Research Charon Boosters"
         },
         "Tooltip": {
-          "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span>射程提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>의 대공 사거리가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "C"
       },
       {
-        "Upgrade": "StingerSCBWAttackMoveUpgrade",
+        "Upgrade": "SiegeModeSCBWResearch",
         "Info": {
           "Button": {
             "Flags": {
@@ -491,20 +499,21 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
-            "DefaultButtonFace": "StingerSCBWAttackMoveUpgrade",
-            "Requirements": "StingerSCBWAttackMoveUpgrade"
+            "DefaultButtonFace": "SiegeModeSCBWResearch",
+            "State": "Restricted",
+            "Requirements": "SiegeModeSCBWResearch"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 50,
+            "Vespene": 50
           },
-          "Time": 150,
-          "Upgrade": "StingerSCBWAttackMoveUpgrade"
+          "Time": 55,
+          "Upgrade": "SiegeModeSCBWResearch"
         },
-        "Time": 150,
+        "Time": 55,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 50,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -512,23 +521,23 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 1,
-        "Column": 1,
+        "Row": 0,
+        "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "StingerSCBWAttackMoveUpgrade,Research1",
-        "id": "StingerSCBWAttackMoveUpgrade",
-        "Icon": "btn-ability-mengsk-siegetank-flyingtankarmament",
+        "AbilCmd": "SiegeModeSCBWResearch,Research1",
+        "id": "SiegeModeSCBWResearch",
+        "Icon": "btn-upgrade-terran-nova-siegetankrange",
         "Name": {
-          "enUS": "Research Helios Tracer Rounds",
-          "zhCN": "Research Helios Tracer Rounds",
-          "koKR": "Research Helios Tracer Rounds"
+          "enUS": "Research Siege Mode",
+          "zhCN": "Research Siege Mode",
+          "koKR": "Research Siege Mode"
         },
         "Tooltip": {
-          "enUS": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-          "zhCN": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-          "koKR": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving."
+          "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+          "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+          "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
         },
-        "Hotkey": "R"
+        "Hotkey": "E"
       },
       {
         "Upgrade": "VulturePlaceSpiderMineSCBWResearch",
@@ -542,16 +551,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "VulturePlaceSpiderMineSCBWResearch",
+            "State": "Restricted",
             "Requirements": "VulturePlaceSpiderMineSCBWResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 100,
+          "Time": 75,
           "Upgrade": "VulturePlaceSpiderMineSCBWResearch"
         },
-        "Time": 100,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -570,13 +580,13 @@
         "Icon": "btn-upgrade-siegetank-spidermines",
         "Name": {
           "enUS": "Research Spider Mines",
-          "zhCN": "研究蜘蛛雷",
-          "koKR": "스파이더 마인 연구 /// Research Spider Mines"
+          "zhCN": "Research Spider Mines",
+          "koKR": "Research Spider Mines"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>可以部署<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>。<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>会对进入范围内的敌人进行追击，引爆后可造成大量范围伤害。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>은 범위 내의 적 유닛을 찾아 폭발하여 큰 피해를 입힙니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
         },
         "Hotkey": "S"
       },
@@ -592,16 +602,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "VultureSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "VultureSCBWSpeedUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 100,
+          "Time": 75,
           "Upgrade": "VultureSCBWSpeedUpgrade"
         },
-        "Time": 100,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -620,13 +631,13 @@
         "Icon": "btn-ability-terran-emergencythrusters",
         "Name": {
           "enUS": "Research Ion Thrusters",
-          "zhCN": "研究离子推进器",
-          "koKR": "이온 추진기 연구 /// Research Ion Thrusters"
+          "zhCN": "Research Ion Thrusters",
+          "koKR": "Research Ion Thrusters"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
         },
         "Hotkey": "T"
       },
@@ -642,16 +653,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "GoliathSCBWRangeUpgrade",
+            "State": "Restricted",
             "Requirements": "GoliathSCBWRangeUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 100,
           "Upgrade": "GoliathSCBWRangeUpgrade"
         },
-        "Time": 110,
+        "Time": 100,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -670,71 +682,21 @@
         "Icon": "btn-upgrade-terran-magfieldaccelerator",
         "Name": {
           "enUS": "Research Charon Boosters",
-          "zhCN": "研究卡戎助推器",
-          "koKR": "카론 부스터 연구 /// Research Charon Boosters"
+          "zhCN": "Research Charon Boosters",
+          "koKR": "Research Charon Boosters"
         },
         "Tooltip": {
-          "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span>射程提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>의 대공 사거리가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "C"
-      },
-      {
-        "Upgrade": "StingerSCBWAttackMoveUpgrade",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1,
-              "ToSelection": 1,
-              "UseDefaultButton": 1,
-              "CreateDefaultButton": 1
-            },
-            "DefaultButtonFace": "StingerSCBWAttackMoveUpgrade",
-            "Requirements": "StingerSCBWAttackMoveUpgrade"
-          },
-          "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
-          },
-          "Time": 150,
-          "Upgrade": "StingerSCBWAttackMoveUpgrade"
-        },
-        "Time": 150,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "StingerSCBWAttackMoveUpgrade,Research1",
-        "id": "StingerSCBWAttackMoveUpgrade",
-        "Icon": "btn-ability-mengsk-siegetank-flyingtankarmament",
-        "Name": {
-          "enUS": "Research Helios Tracer Rounds",
-          "zhCN": "Research Helios Tracer Rounds",
-          "koKR": "Research Helios Tracer Rounds"
-        },
-        "Tooltip": {
-          "enUS": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-          "zhCN": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-          "koKR": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving."
-        },
-        "Hotkey": "R"
       }
     ]
   },
-  "ScoreMake": 100,
-  "ScoreKill": 100,
-  "BuildTime": 37.5,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
+  "BuildTime": 25,
   "AddedOnUnit": "FactorySCBW",
   "Icon": "btn-building-terran-machineshop@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
@@ -743,6 +705,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -752,6 +715,7 @@
     },
     {
       "id": "TerranBuildingSCBW@AddonDetached",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Addon Detached",
         "zhCN": "Addon Detached",
@@ -764,43 +728,39 @@
     {
       "id": "que5Addon",
       "Name": {
-        "ruRU": "Queue",
-        "enUS": "Queue"
+        "ruRU": "Queue"
       }
     },
     {
       "id": "BuildInProgress",
+      "Name": "-"
+    },
+    {
+      "id": "SiegeModeSCBWResearch",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Research",
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "VulturePlaceSpiderMineSCBWResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "VultureSCBWSpeedUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "GoliathSCBWRangeUpgrade",
-      "Name": {
-        "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
-      }
-    },
-    {
-      "id": "StingerSCBWAttackMoveUpgrade",
       "Name": {
         "enUS": "Research",
         "zhCN": "Research",
@@ -821,7 +781,10 @@
     "MachineShopSCBW@Count",
     "MachineShopSCBW@QoB",
     "MachineShopSCBW@QoBAtUnit",
-    "MachineShopSCBW"
+    "MachineShopSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -829,8 +792,7 @@
     "VultureSCBWSpeedUpgrade",
     "VulturePlaceSpiderMineSCBWResearch",
     "SiegeModeSCBWResearch",
-    "GoliathSCBWRangeUpgrade",
-    "StingerSCBWAttackMoveUpgrade"
+    "GoliathSCBWRangeUpgrade"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -846,25 +808,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "VultureSCBWSpeedUpgrade,Research1",
@@ -872,13 +828,13 @@
       "Icon": "btn-ability-terran-emergencythrusters",
       "Name": {
         "enUS": "Research Ion Thrusters",
-        "zhCN": "研究离子推进器",
-        "koKR": "이온 추진기 연구 /// Research Ion Thrusters"
+        "zhCN": "Research Ion Thrusters",
+        "koKR": "Research Ion Thrusters"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
       }
     },
     {
@@ -887,13 +843,13 @@
       "Icon": "btn-upgrade-siegetank-spidermines",
       "Name": {
         "enUS": "Research Spider Mines",
-        "zhCN": "研究蜘蛛雷",
-        "koKR": "스파이더 마인 연구 /// Research Spider Mines"
+        "zhCN": "Research Spider Mines",
+        "koKR": "Research Spider Mines"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>可以部署<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>。<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>会对进入范围内的敌人进行追击，引爆后可造成大量范围伤害。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>은 범위 내의 적 유닛을 찾아 폭발하여 큰 피해를 입힙니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
       }
     },
     {
@@ -902,13 +858,13 @@
       "Icon": "btn-upgrade-terran-nova-siegetankrange",
       "Name": {
         "enUS": "Research Siege Mode",
-        "zhCN": "研究攻城模式",
-        "koKR": "시즈 모드 연구 /// Research Siege Mode"
+        "zhCN": "Research Siege Mode",
+        "koKR": "Research Siege Mode"
       },
       "Tooltip": {
         "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span>可以部署为<span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. 该模式下，<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span> 的射程极大提高，造成范围伤害，但无法移动，也无法向过近的单位开火。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>를 사용할 수 있습니다. 사거리가 크게 증가하여 범위 피해를 주지만, 이동하거나 근접한 적 유닛을 공격할 수 없습니다. /// Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
+        "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+        "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
       }
     },
     {
@@ -917,28 +873,28 @@
       "Icon": "btn-upgrade-terran-magfieldaccelerator",
       "Name": {
         "enUS": "Research Charon Boosters",
-        "zhCN": "研究卡戎助推器",
-        "koKR": "카론 부스터 연구 /// Research Charon Boosters"
+        "zhCN": "Research Charon Boosters",
+        "koKR": "Research Charon Boosters"
       },
       "Tooltip": {
-        "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span>射程提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>의 대공 사거리가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
-      "AbilCmd": "StingerSCBWAttackMoveUpgrade,Research1",
-      "id": "StingerSCBWAttackMoveUpgrade",
-      "Icon": "btn-ability-mengsk-siegetank-flyingtankarmament",
+      "AbilCmd": "SiegeModeSCBWResearch,Research1",
+      "id": "SiegeModeSCBWResearch",
+      "Icon": "btn-upgrade-terran-nova-siegetankrange",
       "Name": {
-        "enUS": "Research Helios Tracer Rounds",
-        "zhCN": "Research Helios Tracer Rounds",
-        "koKR": "Research Helios Tracer Rounds"
+        "enUS": "Research Siege Mode",
+        "zhCN": "Research Siege Mode",
+        "koKR": "Research Siege Mode"
       },
       "Tooltip": {
-        "enUS": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-        "zhCN": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-        "koKR": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving."
+        "enUS": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+        "zhCN": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range.",
+        "koKR": "Allows <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> to deploy into <span class=\"style-TooltipHighlightSCBW\"><b>Siege Mode</b></span>. In this mode tanks gain significant range and inflict area damage. <span class=\"style-TooltipHighlightSCBW\"><b>Siege Tank</b>s</span> in this mode cannot move or attack targets at close range."
       }
     },
     {
@@ -947,13 +903,13 @@
       "Icon": "btn-upgrade-siegetank-spidermines",
       "Name": {
         "enUS": "Research Spider Mines",
-        "zhCN": "研究蜘蛛雷",
-        "koKR": "스파이더 마인 연구 /// Research Spider Mines"
+        "zhCN": "Research Spider Mines",
+        "koKR": "Research Spider Mines"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>可以部署<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>。<span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>会对进入范围内的敌人进行追击，引爆后可造成大量范围伤害。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b></span>은 범위 내의 적 유닛을 찾아 폭발하여 큰 피해를 입힙니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b>s</span> to deploy <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span>. <span class=\"style-TooltipHighlightSCBW\"><b>Spider Mine</b>s</span> seek enemy units that come in range, detonating for heavy area damage."
       }
     },
     {
@@ -962,13 +918,13 @@
       "Icon": "btn-ability-terran-emergencythrusters",
       "Name": {
         "enUS": "Research Ion Thrusters",
-        "zhCN": "研究离子推进器",
-        "koKR": "이온 추진기 연구 /// Research Ion Thrusters"
+        "zhCN": "Research Ion Thrusters",
+        "koKR": "Research Ion Thrusters"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Vulture</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
       }
     },
     {
@@ -977,28 +933,13 @@
       "Icon": "btn-upgrade-terran-magfieldaccelerator",
       "Name": {
         "enUS": "Research Charon Boosters",
-        "zhCN": "研究卡戎助推器",
-        "koKR": "카론 부스터 연구 /// Research Charon Boosters"
+        "zhCN": "Research Charon Boosters",
+        "koKR": "Research Charon Boosters"
       },
       "Tooltip": {
-        "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span>射程提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b></span>의 대공 사거리가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>"
-      }
-    },
-    {
-      "AbilCmd": "StingerSCBWAttackMoveUpgrade,Research1",
-      "id": "StingerSCBWAttackMoveUpgrade",
-      "Icon": "btn-ability-mengsk-siegetank-flyingtankarmament",
-      "Name": {
-        "enUS": "Research Helios Tracer Rounds",
-        "zhCN": "Research Helios Tracer Rounds",
-        "koKR": "Research Helios Tracer Rounds"
-      },
-      "Tooltip": {
-        "enUS": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-        "zhCN": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving.",
-        "koKR": "Allows the <span class=\"style-TooltipHighlightSCBW\"><b>Stinger</b></span> to attack targets while moving."
+        "enUS": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Improves <span class=\"style-TooltipHighlightSCBW\"><b>Goliath</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Hellfire Missile Pack</b></span> increasing anti-air range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GoliathSCBWRangeUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     }
   ]

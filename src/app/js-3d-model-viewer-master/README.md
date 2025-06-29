@@ -67,7 +67,7 @@ First install dependencies:
 npm i
 ```
 
-All the code is in the `src/Player.ts` file. Once you did your changes you have to run the dev build:
+All the code is in the `src/Player.js` file. Once you did your changes you have to run the dev build:
 
 ```
 npm run build

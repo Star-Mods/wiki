@@ -1,6 +1,13 @@
 {
-  "Name": "Atrium",
-  "Description": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Atrium",
+    "ruRU": "Атриум"
+  },
+  "Description": {
+    "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
+    "ruRU": "Технологичное здание.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Индукторы из Цитадели<br/>  - Мириады из Цитадели"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 800,
   "LifeMax": 800,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Atrium/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Atrium/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Atrium/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Atrium/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -100,13 +112,26 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "KeironCitadelMaterialize",
+    "AtriumResearch"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironChargeDummyCreation"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
   "Food": 8,
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -125,8 +150,14 @@
         "Type": "Passive",
         "id": "KeironCharges",
         "Icon": "btn-upgrade-karax-unitybarrier",
-        "Tooltip": "The number of unit charges the structure is presently storing.",
-        "Name": "Charges"
+        "Name": {
+          "enUS": "Charges",
+          "ruRU": "Заряды"
+        },
+        "Tooltip": {
+          "enUS": "The number of unit charges the structure is presently storing.",
+          "ruRU": "Количество зарядов, хранящихся в строении в настоящее время."
+        }
       },
       {
         "Cost": {
@@ -144,8 +175,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       },
       {
@@ -208,8 +245,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -269,8 +312,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -294,33 +343,57 @@
     "Myriad"
   ],
   "Icon": "btn-building-keiron-atrium",
+  "Model": "Atrium",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironChargeDummyCreation"
+      "id": "KeironChargeDummyCreation",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Keiron - Charge Dummy Creation",
+        "ruRU": "Keiron - Charge Dummy Creation"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "KeironCitadelMaterialize",
-      "Name": "Keiron - Citadel Materialize"
+      "Name": {
+        "enUS": "Keiron - Citadel Materialize",
+        "ruRU": "Keiron - Citadel Materialize"
+      }
     },
     {
       "id": "AtriumResearch",
-      "Name": "Atrium Research"
+      "Name": {
+        "enUS": "Atrium Research",
+        "ruRU": "Atrium Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -337,7 +410,9 @@
     "KeironShieldsRevert"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "KeironChargeDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -349,15 +424,27 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     }
   ]
 }

@@ -1,11 +1,14 @@
 {
-  "id": "ScienceVesselSCBWIrradiateResearch",
-  "Icon": "btn-upgrade-swann-irradiate",
-  "Name": "Upgrade/Name/ScienceVesselSCBWIrradiateResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Irradiate Research",
+    "zhCN": "Irradiate Research",
+    "koKR": "Irradiate Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,9 +23,18 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "ScienceVesselSCBWIrradiateResearch",
-  "Race": "Terr",
-  "ScoreAmount": 400,
+  "id": "ScienceVesselSCBWIrradiateResearch",
+  "Icon": "btn-upgrade-swann-irradiate",
+  "Race": "BWTe",
+  "ScoreAmount": 300,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "ScienceVesselSCBW"

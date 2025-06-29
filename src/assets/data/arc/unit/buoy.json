@@ -4,7 +4,7 @@
     "enUS": "Buoy"
   },
   "Description": {
-    "enUS": "Mobile flying requisition source. <br/><span style=\"color: FFE303\">Detector</span>"
+    "enUS": "Slow flying surveillance detector with WarpJump ability, can use siege mode to increase area. <br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 7,
@@ -124,7 +124,8 @@
     "move",
     "AnathemaLightningStorm",
     "BuoySiege",
-    "SynoidBuoyWrapJump"
+    "SynoidBuoyWrapJump",
+    "SynoidBuoyChargePower"
   ],
   "BehaviorArray": [
     "RegenBioSteel",
@@ -674,7 +675,7 @@
           "enUS": "Activate Siege Mode"
         },
         "Tooltip": {
-          "enUS": "Elevate Buoy and increase their line of sight from 14 to 20, disable movement and suspend ability cooldown timer."
+          "enUS": "Elevate Buoy and increase their <span style=\"color: 80FFFF\">line of sight from 12 to 20</span>, disable movement."
         },
         "Hotkey": "E"
       },
@@ -924,9 +925,40 @@
           "enUS": "WarpJump"
         },
         "Tooltip": {
-          "enUS": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
+          "enUS": "After <span style=\"color: 80FFFF\"><b>6</b></span>, warps to the target location. <br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
         },
         "Hotkey": "T"
+      },
+      {
+        "Info": {
+          "Unit": "SynoidBuoyCharging",
+          "RandomDelayMin": 0.001,
+          "RandomDelayMax": 0.001
+        },
+        "Unit": "SynoidBuoyCharging",
+        "Cost": {
+          "Minerals": 225,
+          "Vespene": 125,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -2
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "SynoidBuoyChargePower,Execute",
+        "id": "SynoidBuoyChargePower",
+        "Icon": "btn_synoid_buoy_charged",
+        "Name": {
+          "enUS": "Charge Power"
+        },
+        "Tooltip": {
+          "enUS": "Morph to Charged Buoy for <span style=\"color: 80FFFF\"><b>140</b></span>. <br/><br/><span style=\"color: #ffff8a\">Charge Buoy cannot detect or teleport, but enable power field for Synoid construction and some other abilities.</span>"
+        },
+        "Hotkey": "C"
       }
     ]
   },
@@ -965,18 +997,16 @@
   "Weapons": [
     {
       "EditorCategories": "Race:Synoid",
-      "Options": {
-        "Hidden": 1
-      },
       "TargetFilters": "",
       "AcquireFilters": "-;Self,Neutral,Enemy,Missile,Dead,Hidden,Benign",
       "Arc": 360,
+      "Range": 7.5,
       "id": "BuoyDudWeapon",
       "class": "CWeaponLegacy",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Buoy Dud Weapon"
       },
-      "Range": 5,
       "Period": 0.8332
     }
   ],
@@ -987,14 +1017,19 @@
       "Name": {
         "enUS": "RegenBioSteel"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "This unit has been upgraded to regenerate faster."
+      }
     },
     {
       "id": "Buoycloak",
+      "Icon": "btn-unit-terran-sabotagedroneblackops",
       "Name": {
         "enUS": "Buoy cloak"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "Buoy is cloaked when there are friendly units around."
+      }
     },
     {
       "id": "SynoidDetector14",
@@ -1039,6 +1074,12 @@
       "Name": {
         "enUS": "BuoyWrapJump"
       }
+    },
+    {
+      "id": "SynoidBuoyChargePower",
+      "Name": {
+        "enUS": "Charge Power"
+      }
     }
   ],
   "$Upgrades": [
@@ -1053,14 +1094,19 @@
     "SynoidRegenBioSteel",
     "ActuationTrain",
     "CommDomTrain",
-    "BuildRangeBuoy"
+    "SynodBuoyPowerCharging3rdsupport",
+    "SynoidBuoyPowerCharging",
+    "SynodBuoyPowerCharging2ndsupport"
   ],
   "$Requirements": [],
   "$Production": [
     "Buoy"
   ],
   "$Research": [],
-  "$Morph": [],
+  "$Morph": [
+    "SynoidBuoyCharging",
+    "SynoidBuoyCharged"
+  ],
   "$Phase": [],
   "$Producers": [
     "MycoChoir"
@@ -1139,7 +1185,7 @@
         "enUS": "Activate Siege Mode"
       },
       "Tooltip": {
-        "enUS": "Elevate Buoy and increase their line of sight from 14 to 20, disable movement and suspend ability cooldown timer."
+        "enUS": "Elevate Buoy and increase their <span style=\"color: 80FFFF\">line of sight from 12 to 20</span>, disable movement."
       }
     },
     {
@@ -1161,7 +1207,18 @@
         "enUS": "WarpJump"
       },
       "Tooltip": {
-        "enUS": "After <b>6</b>, warps to the target location. Battlecruiser is invulnerable while warping.<br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
+        "enUS": "After <span style=\"color: 80FFFF\"><b>6</b></span>, warps to the target location. <br/><br/><span style=\"color: #ffff8a\">Does not require vision.</span>"
+      }
+    },
+    {
+      "AbilCmd": "SynoidBuoyChargePower,Execute",
+      "id": "SynoidBuoyChargePower",
+      "Icon": "btn_synoid_buoy_charged",
+      "Name": {
+        "enUS": "Charge Power"
+      },
+      "Tooltip": {
+        "enUS": "Morph to Charged Buoy for <span style=\"color: 80FFFF\"><b>140</b></span>. <br/><br/><span style=\"color: #ffff8a\">Charge Buoy cannot detect or teleport, but enable power field for Synoid construction and some other abilities.</span>"
       }
     }
   ]

@@ -1,6 +1,13 @@
 {
-  "Name": "Xayid Den",
-  "Description": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Roamers<br/>- Bile Pits from Scavengers",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Xayid Den",
+    "ruRU": "Логово Зейтов"
+  },
+  "Description": {
+    "enUS": "Creates larva, which are in turn used to mutate various basic creatures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Xayidlings<br/>- Bile Pits from Scavengers",
+    "ruRU": "Создает личинки, которые, в свою очередь, используются для мутации в различных существ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Зейтлинги<br/>- Роамеры<br/>- Ядовитые гнёзда у Сборщиков"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1250,
   "LifeMax": 1250,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "XayidDen/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "XayidDen/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "XayidDen/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "XayidDen/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -102,6 +114,10 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "Rally"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "XayidDen",
@@ -111,6 +127,9 @@
   },
   "Footprint": "Footprint3x3Xayid",
   "PlacementFootprint": "Footprint3x3Xayid",
+  "BehaviorArray": [
+    "XayidDenSpawnWorm"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -173,8 +192,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -193,8 +218,14 @@
         "Type": "SelectLarva",
         "id": "SelectWorms",
         "Icon": "btn-unit-zerg-larvalqueen",
-        "Tooltip": "Can mutate into various Xayid ground units.",
-        "Name": "Select Worms",
+        "Name": {
+          "enUS": "Select Worms",
+          "ruRU": "Выбрать червей"
+        },
+        "Tooltip": {
+          "enUS": "Can mutate into various Xayid ground units.",
+          "ruRU": "Может мутировать в различные наземные единицы Зейтов."
+        },
         "Hotkey": "S"
       },
       {
@@ -215,8 +246,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       }
     ]
@@ -232,22 +269,34 @@
   "SubgroupPriority": 39,
   "GlossaryPriority": 4,
   "Icon": "btn-building-xayid-xayidden",
+  "Model": "XayidDen",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "XayidDenSpawnWorm"
+      "id": "XayidDenSpawnWorm",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Spawn Worm"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -272,15 +321,27 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     }
   ]
 }

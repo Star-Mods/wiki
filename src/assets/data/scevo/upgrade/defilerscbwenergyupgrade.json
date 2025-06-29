@@ -1,11 +1,14 @@
 {
-  "id": "DefilerSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-zerg-tissueassimilation",
-  "Name": "Upgrade/Name/DefilerSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Metasynaptic Node",
+    "zhCN": "Metasynaptic Node",
+    "koKR": "Metasynaptic Node"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,22 +23,32 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "DefilerSCBWEnergyUpgrade",
+  "id": "DefilerSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
+  "Icon": "btn-upgrade-zerg-tissueassimilation",
   "AffectedUnitArray": [
-    "DefilerSCBW"
+    "DefilerSCBW",
+    "DefilerSCBW@Burrowed"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

@@ -1,6 +1,13 @@
 {
-  "Name": "Converter",
-  "Description": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Converter",
+    "ruRU": "Конвертер"
+  },
+  "Description": {
+    "enUS": "Basic worker unit. Can gather resources and shape Keiron structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "ruRU": "Базовая рабочая единица. Может собирать ресурсы и формировать строения Кейронов.<br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 20,
   "LifeMax": 20,
-  "LifeArmorName": "Keiron Biological Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Biological Armor",
+    "ruRU": "Броня Биологических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -62,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Converter/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Converter/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Converter/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Converter/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -89,10 +101,23 @@
     "Small"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 2.5,
   "Sight": 8,
   "CostCategory": "Economy",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "FuseUnfuse",
+    "ProbeHarvest",
+    "KeironBuild",
+    "SprayProtoss"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -181,8 +206,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -255,8 +286,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -345,8 +382,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -435,8 +478,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -510,8 +559,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -587,6 +642,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "ProbeHarvest"
         },
         "Cost": {
@@ -605,8 +664,14 @@
         "AbilCmd": "ProbeHarvest,Gather",
         "id": "GatherProt",
         "Icon": "btn-ability-protoss-gather",
-        "Tooltip": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
-        "Name": "Gather",
+        "Name": {
+          "enUS": "Gather",
+          "ruRU": "Добывать "
+        },
+        "Tooltip": {
+          "enUS": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
+          "ruRU": "Приказывает зонду добывать ресурсы на месторождении минералов или из веспенового гейзера."
+        },
         "Hotkey": "G"
       },
       {
@@ -682,6 +747,10 @@
           "UninterruptibleArray": {
             "WaitToReturn": 1
           },
+          "CancelableArray": {
+            "ApproachResource": 1,
+            "WaitAtResource": 1
+          },
           "id": "ProbeHarvest"
         },
         "Cost": {
@@ -700,8 +769,14 @@
         "AbilCmd": "ProbeHarvest,Return",
         "id": "ReturnCargo",
         "Icon": "btn-command-returncargo",
-        "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-        "Name": "Return Cargo",
+        "Name": {
+          "enUS": "Return Cargo",
+          "ruRU": "Выгрузить ресурсы "
+        },
+        "Tooltip": {
+          "enUS": "Returns the carried resources to the nearest drop-off point.",
+          "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
+        },
         "Hotkey": "C"
       },
       {
@@ -721,8 +796,14 @@
         "SubmenuCardId": "0003",
         "id": "ShapeAdvancedStructure",
         "Icon": "btn-command-keiron-shapeadvancedstructure",
-        "Tooltip": "A list of advanced structures.",
-        "Name": "Shape Advanced Structure",
+        "Name": {
+          "enUS": "Shape Advanced Structure",
+          "ruRU": "Сформировать Продвинутое Строение"
+        },
+        "Tooltip": {
+          "enUS": "A list of advanced structures.",
+          "ruRU": "Список Продвинутых Строений"
+        },
         "Hotkey": "V"
       },
       {
@@ -742,8 +823,14 @@
         "SubmenuCardId": "0002",
         "id": "ShapeStructure",
         "Icon": "btn-command-keiron-shapestructure",
-        "Tooltip": "A list of basic structures.",
-        "Name": "Shape Structure",
+        "Name": {
+          "enUS": "Shape Structure",
+          "ruRU": "Сформировать Строение"
+        },
+        "Tooltip": {
+          "enUS": "A list of basic structures.",
+          "ruRU": "Список Основных Строений."
+        },
         "Hotkey": "B"
       },
       {
@@ -1104,8 +1191,14 @@
         "AbilCmd": "KeironBuild,Halt",
         "id": "Halt",
         "Icon": "btn-command-stop",
-        "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-        "Name": "Halt",
+        "Name": {
+          "enUS": "Halt",
+          "ruRU": "Приостановить "
+        },
+        "Tooltip": {
+          "enUS": "Halts construction of this structure. The partial construction will remain.",
+          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
+        },
         "Hotkey": "T"
       },
       {
@@ -1232,8 +1325,14 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
       },
       {
@@ -1373,8 +1472,14 @@
         "AbilCmd": "SprayProtoss,Execute",
         "id": "Spray",
         "Icon": "btn-command-spray",
-        "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-        "Name": "Spray",
+        "Name": {
+          "enUS": "Spray",
+          "ruRU": "Граффити"
+        },
+        "Tooltip": {
+          "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+          "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
+        },
         "Hotkey": "Y"
       }
     ],
@@ -1395,8 +1500,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1428,8 +1539,14 @@
         "AbilCmd": "KeironBuild,Build1",
         "id": "Citadel",
         "Icon": "btn-building-keiron-citadel",
-        "Tooltip": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
-        "Name": "Shape Citadel",
+        "Name": {
+          "enUS": "Shape Citadel",
+          "ruRU": "Сформировать Цитадель"
+        },
+        "Tooltip": {
+          "enUS": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
+          "ruRU": "Основное строение. Используется для создания всех юнитов Кейронов и хранения собранных ресурсов. Может быть улучшено для использования Подзарядки."
+        },
         "Hotkey": "C"
       },
       {
@@ -1462,8 +1579,14 @@
         "AbilCmd": "KeironBuild,Build8",
         "id": "Sanctum",
         "Icon": "btn-building-keiron-sanctum",
-        "Tooltip": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
-        "Name": "Shape Sanctum",
+        "Name": {
+          "enUS": "Shape Sanctum",
+          "ruRU": "Сформировать Святилище"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
+          "ruRU": "Технический объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Пульсары из Цитадели<br/>  - Субъекторы из Цитадели"
+        },
         "Hotkey": "S"
       },
       {
@@ -1496,8 +1619,14 @@
         "AbilCmd": "KeironBuild,Build7",
         "id": "Edifice",
         "Icon": "btn-building-keiron-edifice",
-        "Tooltip": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
-        "Name": "Shape Edifice",
+        "Name": {
+          "enUS": "Shape Edifice",
+          "ruRU": "Сформировать Дом Доктрин"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
+          "ruRU": "Базовое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Парии из Цитадели<br/>  - Вольты из Цитадели<br/>  - Око из Конвертеров"
+        },
         "Hotkey": "E"
       },
       {
@@ -1530,8 +1659,14 @@
         "AbilCmd": "KeironBuild,Build4",
         "id": "Nullifier",
         "Icon": "btn-building-keiron-nullifier",
-        "Tooltip": "Anti-ground defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "Name": "Shape Nullifier",
+        "Name": {
+          "enUS": "Shape Nullifier",
+          "ruRU": "Сформировать Обнулитель"
+        },
+        "Tooltip": {
+          "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Противоназемное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+        },
         "Hotkey": "N"
       },
       {
@@ -1564,8 +1699,14 @@
         "AbilCmd": "KeironBuild,Build6",
         "id": "Oculus",
         "Icon": "btn-building-keiron-oculus",
-        "Tooltip": "Able to grant vision of areas on the map at a long range.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Shape Oculus",
+        "Name": {
+          "enUS": "Shape Oculus",
+          "ruRU": "Сформировать Око"
+        },
+        "Tooltip": {
+          "enUS": "Able to grant vision of areas on the map at a long range.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Может дать обзор области на огромном расстоянии от себя.<br/><br/><span style=\"color: FFE303\">Детектор</span>"
+        },
         "Hotkey": "U"
       },
       {
@@ -1597,8 +1738,14 @@
         "AbilCmd": "KeironBuild,Build2",
         "id": "Formulator",
         "Icon": "btn-building-keiron-formulator",
-        "Tooltip": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
-        "Name": "Shape Formulator",
+        "Name": {
+          "enUS": "Shape Formulator",
+          "ruRU": "Сформировать Формулятор"
+        },
+        "Tooltip": {
+          "enUS": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
+          "ruRU": "Формируется над Веспеновым Гейзером, позволяя собирать веспен."
+        },
         "Hotkey": "F"
       },
       {
@@ -1631,8 +1778,14 @@
         "AbilCmd": "KeironBuild,Build5",
         "id": "Stratus",
         "Icon": "btn-building-keiron-stratus",
-        "Tooltip": "Anti-air defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/>",
-        "Name": "Shape Stratus",
+        "Name": {
+          "enUS": "Shape Stratus",
+          "ruRU": "Сформировать Стратус"
+        },
+        "Tooltip": {
+          "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+          "ruRU": "Противовоздушное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+        },
         "Hotkey": "T"
       },
       {
@@ -1665,8 +1818,14 @@
         "AbilCmd": "KeironBuild,Build3",
         "id": "Reliquary",
         "Icon": "btn-building-keiron-reliquary",
-        "Tooltip": "Contains weapon and armor upgrades for all Keiron units, and shield upgrades for all Keiron units and structures.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Nullifiers from Converters<br/>- Strati from Converters",
-        "Name": "Shape Reliquary",
+        "Name": {
+          "enUS": "Shape Reliquary",
+          "ruRU": "Сформировать Реликварий"
+        },
+        "Tooltip": {
+          "enUS": "Contains weapon and armor upgrades for all Keiron units, and shield upgrades for all Keiron units and structures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Nullifiers from Converters<br/>- Strati from Converters",
+          "ruRU": "Модернизированный технический объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Обнулители из Конвертеров<br/>  - Стратусы из Конвертеров"
+        },
         "Hotkey": "R"
       },
       {
@@ -1699,8 +1858,14 @@
         "AbilCmd": "KeironBuild,Build13",
         "id": "Conduit",
         "Icon": "btn-building-keiron-conduit",
-        "Tooltip": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
-        "Name": "Shape Conduit",
+        "Name": {
+          "enUS": "Shape Conduit",
+          "ruRU": "Сформировать Канал"
+        },
+        "Tooltip": {
+          "enUS": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
+          "ruRU": "Базовое строение воздушной техники.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Эхо из Цитадели<br/>  - Предохранители из Цитадели<br/>"
+        },
         "Hotkey": "D"
       }
     ],
@@ -1721,8 +1886,14 @@
         "Type": "CancelSubmenu",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -1755,8 +1926,14 @@
         "AbilCmd": "KeironBuild,Build9",
         "id": "Elysium",
         "Icon": "btn-building-keiron-elysium",
-        "Tooltip": "Contains an upgrade for Cruxes.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Cruxes from Citadels",
-        "Name": "Shape Elysium",
+        "Name": {
+          "enUS": "Shape Elysium",
+          "ruRU": "Сформировать Элизиум"
+        },
+        "Tooltip": {
+          "enUS": "Contains an upgrade for Cruxes.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Cruxes from Citadels",
+          "ruRU": "Продвинутое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Меридианы из Цитадели"
+        },
         "Hotkey": "E"
       },
       {
@@ -1775,7 +1952,7 @@
         "Time": 60,
         "Cost": {
           "Minerals": 225,
-          "Vespene": 75,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -1789,8 +1966,14 @@
         "AbilCmd": "KeironBuild,Build10",
         "id": "Foundry",
         "Icon": "btn-building-keiron-foundry",
-        "Tooltip": "Contains an upgrade for Umbrae.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Umbrae from Citadels<br/>- Wards from Citadels",
-        "Name": "Shape Foundry",
+        "Name": {
+          "enUS": "Shape Foundry",
+          "ruRU": "Сформировать Литейный Завод"
+        },
+        "Tooltip": {
+          "enUS": "Contains an upgrade for Umbrae.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Umbrae from Citadels<br/>- Wards from Citadels",
+          "ruRU": "Продвинутое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Умбры из Цитадели"
+        },
         "Hotkey": "F"
       },
       {
@@ -1823,8 +2006,14 @@
         "AbilCmd": "KeironBuild,Build11",
         "id": "Atrium",
         "Icon": "btn-building-keiron-atrium",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
-        "Name": "Shape Atrium",
+        "Name": {
+          "enUS": "Shape Atrium",
+          "ruRU": "Сформировать Атриум"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
+          "ruRU": "Технологичное здание.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Индукторы из Цитадели<br/>  - Мириады из Цитадели"
+        },
         "Hotkey": "A"
       },
       {
@@ -1857,8 +2046,14 @@
         "AbilCmd": "KeironBuild,Build14",
         "id": "Outlet",
         "Icon": "btn-building-keiron-outlet",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Apertures from Citadels<br/>- Auroras from Citadels",
-        "Name": "Shape Outlet",
+        "Name": {
+          "enUS": "Shape Outlet",
+          "ruRU": "Сформировать Точку Выпуска"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Apertures from Citadels<br/>- Auroras from Citadels",
+          "ruRU": "Комплекс передовых авиационных технологий.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Апертуры из Цитадели<br/>  - Авроры из цитадели"
+        },
         "Hotkey": "C"
       },
       {
@@ -1891,8 +2086,14 @@
         "AbilCmd": "KeironBuild,Build12",
         "id": "Pantheon",
         "Icon": "btn-building-keiron-pantheon",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Titans from Citadels<br/>- Aegis from a Citadel",
-        "Name": "Shape Pantheon",
+        "Name": {
+          "enUS": "Shape Pantheon",
+          "ruRU": "Сформировать Пантеон"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Titans from Citadels<br/>- Aegis from a Citadel",
+          "ruRU": "Высокотехнологичный объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Титаны из Цитадели"
+        },
         "Hotkey": "H"
       },
       {
@@ -1925,8 +2126,14 @@
         "AbilCmd": "KeironBuild,Build15",
         "id": "Empyrean",
         "Icon": "btn-building-keiron-empyrean",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Harbingers from Citadels<br/>- Gyres from Citadels",
-        "Name": "Shape Empyrean",
+        "Name": {
+          "enUS": "Shape Empyrean",
+          "ruRU": "Сформировать Эмпирей"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Harbingers from Citadels<br/>- Gyres from Citadels",
+          "ruRU": "Продвинутое воздушное технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Предвестники из Цитадели<br/>  - Вихри из Цитадели"
+        },
         "Hotkey": "T"
       },
       {
@@ -1959,8 +2166,14 @@
         "AbilCmd": "KeironBuild,Build16",
         "id": "Zenith",
         "Icon": "btn-building-keiron-zenith",
-        "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Paragons from Citadels<br/>- Aegis from a Citadel",
-        "Name": "Shape Zenith",
+        "Name": {
+          "enUS": "Shape Zenith",
+          "ruRU": "Сформировать Зенит"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Paragons from Citadels<br/>- Aegis from a Citadel",
+          "ruRU": "Высшая технология.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Парагоны из Цитадели"
+        },
         "Hotkey": "Z"
       }
     ]
@@ -1977,7 +2190,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Converter",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Converter",
   "ShieldsStart": 20,
   "ShieldsMax": 20,
@@ -1992,58 +2208,96 @@
     "Biological",
     "Mechanical"
   ],
+  "WeaponArray": [
+    {
+      "Link": "ConverterDissolutionRay"
+    }
+  ],
   "Food": -1,
   "GlossaryPriority": 10,
   "SubgroupPriority": 3,
   "AIOverideTargetPriority": 10,
   "InnerRadius": 0.375,
   "Icon": "btn-unit-keiron-converter",
+  "Model": "Converter",
   "LifeArmorIcon": "btn-upgrade-keiron-biologicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
-      "id": "ConverterDissolutionRay",
+      "EditorCategories": "Race:Keiron",
+      "Options": {
+        "Melee": 1
+      },
       "Icon": "btn-upgrade-keiron-biologicalweaponslevel0",
-      "Name": "Dissolution Ray",
-      "Amount": 5,
-      "Kind": "Melee",
       "TargetFilters": "Ground",
       "Range": 0.1,
-      "Period": 1.5
+      "Period": 1.5,
+      "id": "ConverterDissolutionRay",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Dissolution Ray",
+        "ruRU": "Луч Растворения"
+      },
+      "Amount": 5,
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
       "id": "ProbeHarvest",
-      "Name": "Gather (Probe)"
+      "Name": {
+        "enUS": "Gather (Probe)",
+        "ruRU": "Gather (Probe)"
+      }
     },
     {
       "id": "KeironBuild",
-      "Name": "Keiron Build"
+      "Name": {
+        "enUS": "Keiron Build",
+        "ruRU": "Keiron Build"
+      }
     },
     {
-      "id": "SprayProtoss"
+      "id": "SprayProtoss",
+      "Name": "-"
     }
   ],
   "$Upgrades": [
@@ -2096,183 +2350,339 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "ProbeHarvest,Gather",
       "id": "GatherProt",
       "Icon": "btn-ability-protoss-gather",
-      "Tooltip": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
-      "Name": "Gather"
+      "Name": {
+        "enUS": "Gather",
+        "ruRU": "Добывать "
+      },
+      "Tooltip": {
+        "enUS": "Orders Probe to gather resources from a selected Mineral Field or Vespene Geyser.",
+        "ruRU": "Приказывает зонду добывать ресурсы на месторождении минералов или из веспенового гейзера."
+      }
     },
     {
       "AbilCmd": "ProbeHarvest,Return",
       "id": "ReturnCargo",
       "Icon": "btn-command-returncargo",
-      "Tooltip": "Returns the carried resources to the nearest drop-off point.",
-      "Name": "Return Cargo"
+      "Name": {
+        "enUS": "Return Cargo",
+        "ruRU": "Выгрузить ресурсы "
+      },
+      "Tooltip": {
+        "enUS": "Returns the carried resources to the nearest drop-off point.",
+        "ruRU": "Приказать выгрузить ресурсы в ближайший приемный пункт. "
+      }
     },
     {
       "AbilCmd": "KeironBuild,Halt",
       "id": "Halt",
       "Icon": "btn-command-stop",
-      "Tooltip": "Halts construction of this structure. The partial construction will remain.",
-      "Name": "Halt"
+      "Name": {
+        "enUS": "Halt",
+        "ruRU": "Приостановить "
+      },
+      "Tooltip": {
+        "enUS": "Halts construction of this structure. The partial construction will remain.",
+        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. "
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
     },
     {
       "AbilCmd": "SprayProtoss,Execute",
       "id": "Spray",
       "Icon": "btn-command-spray",
-      "Tooltip": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
-      "Name": "Spray"
+      "Name": {
+        "enUS": "Spray",
+        "ruRU": "Граффити"
+      },
+      "Tooltip": {
+        "enUS": "Orders the unit to apply your currently selected spray to the terrain at the target location.",
+        "ruRU": "Приказать боевой единице отобразить на указанном участке поверхности ваше текущее граффити."
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build1",
       "id": "Citadel",
       "Icon": "btn-building-keiron-citadel",
-      "Tooltip": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
-      "Name": "Shape Citadel"
+      "Name": {
+        "enUS": "Shape Citadel",
+        "ruRU": "Сформировать Цитадель"
+      },
+      "Tooltip": {
+        "enUS": "Primary structure. Used to create all Keiron units and receive gathered resources. Can be upgraded to use Energize.",
+        "ruRU": "Основное строение. Используется для создания всех юнитов Кейронов и хранения собранных ресурсов. Может быть улучшено для использования Подзарядки."
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build8",
       "id": "Sanctum",
       "Icon": "btn-building-keiron-sanctum",
-      "Tooltip": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
-      "Name": "Shape Sanctum"
+      "Name": {
+        "enUS": "Shape Sanctum",
+        "ruRU": "Сформировать Святилище"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Pulsars and Cataracts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pulsars from Citadels<br/>- Cataracts from Citadels",
+        "ruRU": "Технический объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Пульсары из Цитадели<br/>  - Субъекторы из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build7",
       "id": "Edifice",
       "Icon": "btn-building-keiron-edifice",
-      "Tooltip": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
-      "Name": "Shape Edifice"
+      "Name": {
+        "enUS": "Shape Edifice",
+        "ruRU": "Сформировать Дом Доктрин"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
+        "ruRU": "Базовое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Парии из Цитадели<br/>  - Вольты из Цитадели<br/>  - Око из Конвертеров"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build4",
       "id": "Nullifier",
       "Icon": "btn-building-keiron-nullifier",
-      "Tooltip": "Anti-ground defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-      "Name": "Shape Nullifier"
+      "Name": {
+        "enUS": "Shape Nullifier",
+        "ruRU": "Сформировать Обнулитель"
+      },
+      "Tooltip": {
+        "enUS": "Anti-ground defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Противоназемное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build6",
       "id": "Oculus",
       "Icon": "btn-building-keiron-oculus",
-      "Tooltip": "Able to grant vision of areas on the map at a long range.<br/><br/><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Shape Oculus"
+      "Name": {
+        "enUS": "Shape Oculus",
+        "ruRU": "Сформировать Око"
+      },
+      "Tooltip": {
+        "enUS": "Able to grant vision of areas on the map at a long range.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Может дать обзор области на огромном расстоянии от себя.<br/><br/><span style=\"color: FFE303\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build2",
       "id": "Formulator",
       "Icon": "btn-building-keiron-formulator",
-      "Tooltip": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
-      "Name": "Shape Formulator"
+      "Name": {
+        "enUS": "Shape Formulator",
+        "ruRU": "Сформировать Формулятор"
+      },
+      "Tooltip": {
+        "enUS": "Shaped over a Vespene Geyser to allow harvesting of vespene gas.",
+        "ruRU": "Формируется над Веспеновым Гейзером, позволяя собирать веспен."
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build5",
       "id": "Stratus",
       "Icon": "btn-building-keiron-stratus",
-      "Tooltip": "Anti-air defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/>",
-      "Name": "Shape Stratus"
+      "Name": {
+        "enUS": "Shape Stratus",
+        "ruRU": "Сформировать Стратус"
+      },
+      "Tooltip": {
+        "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+        "ruRU": "Противовоздушное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build3",
       "id": "Reliquary",
       "Icon": "btn-building-keiron-reliquary",
-      "Tooltip": "Contains weapon and armor upgrades for all Keiron units, and shield upgrades for all Keiron units and structures.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Nullifiers from Converters<br/>- Strati from Converters",
-      "Name": "Shape Reliquary"
+      "Name": {
+        "enUS": "Shape Reliquary",
+        "ruRU": "Сформировать Реликварий"
+      },
+      "Tooltip": {
+        "enUS": "Contains weapon and armor upgrades for all Keiron units, and shield upgrades for all Keiron units and structures.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Nullifiers from Converters<br/>- Strati from Converters",
+        "ruRU": "Модернизированный технический объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Обнулители из Конвертеров<br/>  - Стратусы из Конвертеров"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build13",
       "id": "Conduit",
       "Icon": "btn-building-keiron-conduit",
-      "Tooltip": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
-      "Name": "Shape Conduit"
+      "Name": {
+        "enUS": "Shape Conduit",
+        "ruRU": "Сформировать Канал"
+      },
+      "Tooltip": {
+        "enUS": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
+        "ruRU": "Базовое строение воздушной техники.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Эхо из Цитадели<br/>  - Предохранители из Цитадели<br/>"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build9",
       "id": "Elysium",
       "Icon": "btn-building-keiron-elysium",
-      "Tooltip": "Contains an upgrade for Cruxes.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Cruxes from Citadels",
-      "Name": "Shape Elysium"
+      "Name": {
+        "enUS": "Shape Elysium",
+        "ruRU": "Сформировать Элизиум"
+      },
+      "Tooltip": {
+        "enUS": "Contains an upgrade for Cruxes.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Cruxes from Citadels",
+        "ruRU": "Продвинутое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Меридианы из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build10",
       "id": "Foundry",
       "Icon": "btn-building-keiron-foundry",
-      "Tooltip": "Contains an upgrade for Umbrae.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Umbrae from Citadels<br/>- Wards from Citadels",
-      "Name": "Shape Foundry"
+      "Name": {
+        "enUS": "Shape Foundry",
+        "ruRU": "Сформировать Литейный Завод"
+      },
+      "Tooltip": {
+        "enUS": "Contains an upgrade for Umbrae.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Umbrae from Citadels<br/>- Wards from Citadels",
+        "ruRU": "Продвинутое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Умбры из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build11",
       "id": "Atrium",
       "Icon": "btn-building-keiron-atrium",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
-      "Name": "Shape Atrium"
+      "Name": {
+        "enUS": "Shape Atrium",
+        "ruRU": "Сформировать Атриум"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Inducers from Citadels<br/>- Myriads from Citadels",
+        "ruRU": "Технологичное здание.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Индукторы из Цитадели<br/>  - Мириады из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build14",
       "id": "Outlet",
       "Icon": "btn-building-keiron-outlet",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Apertures from Citadels<br/>- Auroras from Citadels",
-      "Name": "Shape Outlet"
+      "Name": {
+        "enUS": "Shape Outlet",
+        "ruRU": "Сформировать Точку Выпуска"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Apertures from Citadels<br/>- Auroras from Citadels",
+        "ruRU": "Комплекс передовых авиационных технологий.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Апертуры из Цитадели<br/>  - Авроры из цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build12",
       "id": "Pantheon",
       "Icon": "btn-building-keiron-pantheon",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Titans from Citadels<br/>- Aegis from a Citadel",
-      "Name": "Shape Pantheon"
+      "Name": {
+        "enUS": "Shape Pantheon",
+        "ruRU": "Сформировать Пантеон"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Titans from Citadels<br/>- Aegis from a Citadel",
+        "ruRU": "Высокотехнологичный объект.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Титаны из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build15",
       "id": "Empyrean",
       "Icon": "btn-building-keiron-empyrean",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Harbingers from Citadels<br/>- Gyres from Citadels",
-      "Name": "Shape Empyrean"
+      "Name": {
+        "enUS": "Shape Empyrean",
+        "ruRU": "Сформировать Эмпирей"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Harbingers from Citadels<br/>- Gyres from Citadels",
+        "ruRU": "Продвинутое воздушное технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Предвестники из Цитадели<br/>  - Вихри из Цитадели"
+      }
     },
     {
       "AbilCmd": "KeironBuild,Build16",
       "id": "Zenith",
       "Icon": "btn-building-keiron-zenith",
-      "Tooltip": "<span style=\"color: #FFFF80\">Enables:</span><br/>- Paragons from Citadels<br/>- Aegis from a Citadel",
-      "Name": "Shape Zenith"
+      "Name": {
+        "enUS": "Shape Zenith",
+        "ruRU": "Сформировать Зенит"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Enables:</span><br/>- Paragons from Citadels<br/>- Aegis from a Citadel",
+        "ruRU": "Высшая технология.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Парагоны из Цитадели"
+      }
     }
   ]
 }

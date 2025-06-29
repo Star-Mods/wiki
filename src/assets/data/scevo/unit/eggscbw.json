@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Zerg Cocoon",
-    "zhCN": "异虫茧",
-    "koKR": "저그 에그 /// Zerg Cocoon"
+    "zhCN": "Zerg Cocoon",
+    "koKR": "Zerg Cocoon"
   },
   "Description": {
     "enUS": "Zerg units morph in the safety of these cocoons.",
-    "zhCN": "这些虫茧为包裹在其中进行变异的异虫提供保护。",
-    "koKR": "변태 중인 저그 유닛을 안전하게 보호하는 고치입니다. /// Zerg units morph in the safety of these cocoons."
+    "zhCN": "Zerg units morph in the safety of these cocoons.",
+    "koKR": "Zerg units morph in the safety of these cocoons."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": {
-    "enUS": "Zerg Ground Carapace",
-    "ruRU": "Zerg Ground Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -55,7 +53,7 @@
   ],
   "PushPriority": 10,
   "LeaderAlias": "",
-  "HotkeyAlias": "Larva",
+  "HotkeyAlias": "LarvaSCBW",
   "SelectAlias": "EggSCBW",
   "SubgroupAlias": "EggSCBW",
   "OccludeHeight": 0.75,
@@ -74,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EggSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EggSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EggSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EggSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -105,12 +105,12 @@
     "Biological"
   ],
   "LifeArmor": 10,
-  "LifeRegenRate": 0.25,
-  "Sight": 4,
+  "Sight": 5,
   "AttackTargetPriority": 10,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 10,
+  "AbilArray": [
+    "que1",
+    "Rally"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -131,82 +131,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
-      },
-      {
-        "Info": {
-          "class": "CAbilQueue",
-          "Name": "Abil/Name/que1",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "que1",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "QueueCount": 1,
-          "Flags": {
-            "BestUnit": 1,
-            "NotifyAddOn": 1
-          },
-          "CmdButtonArray": {
-            "CancelLast": {
-              "DefaultButtonFace": "Cancel"
-            },
-            "CancelSlot": {
-              "DefaultButtonFace": "CancelSlot"
-            }
-          },
-          "QueueSize": 1,
-          "id": "que1"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "que1,CancelLast",
-        "id": "CancelCocoon",
-        "Icon": "btn-command-cancel",
-        "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Cancel"
-        },
-        "Tooltip": {
-          "enUS": "Cancels the build order, killing the larva in the process.",
-          "ruRU": "Cancels the build order, killing the larva in the process."
-        },
-        "Hotkey": "Esc"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -295,21 +221,20 @@
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
         "Name": {
-          "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "A"
       }
     ]
   },
   "SubgroupPriority": 54,
   "HotkeyCategory": "Unit/Category/ZergUnitsSCBW",
+  "LifeRegenRate": 0.2734,
   "id": "EggSCBW",
   "Icon": "btn-unit-zerg-egg",
+  "Model": "EggEX1",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
   "Weapons": [],
@@ -318,22 +243,18 @@
     {
       "id": "que1",
       "Name": {
-        "ruRU": "Queue (1)",
-        "enUS": "Queue (1)"
+        "ruRU": "Queue (1)"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
-    "LarvaSCBW@Train",
-    "EggSCBW",
     "NotEggSCBW",
+    "EggSCBW",
+    "LarvaSCBW@Train",
     "EggSCBW",
     "EggSCBW@DeathSound",
     "EggSCBW@Birth",
@@ -352,40 +273,18 @@
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
-    },
-    {
-      "AbilCmd": "que1,CancelLast",
-      "id": "CancelCocoon",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the build order, killing the larva in the process.",
-        "ruRU": "Cancels the build order, killing the larva in the process."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
       "Name": {
-        "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     }
   ]
 }

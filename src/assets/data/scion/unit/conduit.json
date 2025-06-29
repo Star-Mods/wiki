@@ -1,6 +1,13 @@
 {
-  "Name": "Conduit",
-  "Description": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Conduit",
+    "ruRU": "Канал"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Echoes and Fuses.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Echoes from Citadels<br/>- Fuses from Citadels",
+    "ruRU": "Базовое строение воздушной техники.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Эхо из Цитадели<br/>  - Предохранители из Цитадели<br/>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Conduit/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Conduit/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Conduit/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Conduit/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -97,13 +109,26 @@
   "LifeArmor": 1,
   "Sight": 10,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "KeironCitadelMaterialize",
+    "ConduitResearch"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironChargeDummyCreation"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
   "Food": 6,
   "Footprint": "Footprint4x4AirContour",
   "PlacementFootprint": "Footprint4x4Air",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -122,8 +147,14 @@
         "Type": "Passive",
         "id": "KeironCharges",
         "Icon": "btn-upgrade-karax-unitybarrier",
-        "Tooltip": "The number of unit charges the structure is presently storing.",
-        "Name": "Charges"
+        "Name": {
+          "enUS": "Charges",
+          "ruRU": "Заряды"
+        },
+        "Tooltip": {
+          "enUS": "The number of unit charges the structure is presently storing.",
+          "ruRU": "Количество зарядов, хранящихся в строении в настоящее время."
+        }
       },
       {
         "Cost": {
@@ -141,8 +172,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       },
       {
@@ -205,8 +242,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -266,8 +309,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -305,8 +354,14 @@
         "AbilCmd": "ConduitResearch,Research1",
         "id": "DevelopDissonanceProjector",
         "Icon": "btn-upgrade-keiron-dissonanceprojector",
-        "Tooltip": "<span style=\"color: #FFFF80\">Echoes</span> in Discord Mode become cloaked.",
-        "Name": "Develop Dissonance Projector",
+        "Name": {
+          "enUS": "Develop Dissonance Projector",
+          "ruRU": "Разработать Диссонансный Проектор"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Echoes</span> in Discord Mode become cloaked.",
+          "ruRU": "Эхо в Режиме Разлада становятся Невидимыми."
+        },
         "Hotkey": "D"
       },
       {
@@ -344,8 +399,14 @@
         "AbilCmd": "ConduitResearch,Research2",
         "id": "DevelopInterlacingBond",
         "Icon": "btn-upgrade-stetmann-zerglinghardenedshield",
-        "Tooltip": "The <span style=\"color: #FFFF80\">Fuses</span> Fusion buff gains a +0.5 shield armor bonus.",
-        "Name": "Develop Interlacing Bond",
+        "Name": {
+          "enUS": "Develop Interlacing Bond",
+          "ruRU": "Разработать Переплетение Связей"
+        },
+        "Tooltip": {
+          "enUS": "The <span style=\"color: FFFF80\">Fuse</span> gains 1 shield armor, and Fusion buff gains a +0.5 shield armor bonus.",
+          "ruRU": "Слияние <span style=\"color: FFFF80\">Предохранителей</span> также дает +0.5 к уровню щита."
+        },
         "Hotkey": "B"
       }
     ]
@@ -370,33 +431,57 @@
     "Fuse"
   ],
   "Icon": "btn-building-keiron-conduit",
+  "Model": "Conduit",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironChargeDummyCreation"
+      "id": "KeironChargeDummyCreation",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Keiron - Charge Dummy Creation",
+        "ruRU": "Keiron - Charge Dummy Creation"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "KeironCitadelMaterialize",
-      "Name": "Keiron - Citadel Materialize"
+      "Name": {
+        "enUS": "Keiron - Citadel Materialize",
+        "ruRU": "Keiron - Citadel Materialize"
+      }
     },
     {
       "id": "ConduitResearch",
-      "Name": "Conduit Research"
+      "Name": {
+        "enUS": "Conduit Research",
+        "ruRU": "Conduit Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -413,7 +498,9 @@
     "CountUnitConduitCompleteOnlyTechTreeCheat"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "KeironChargeDummy"
+  ],
   "$Research": [
     "DissonanceProjector",
     "InterlacingBond"
@@ -428,29 +515,53 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "ConduitResearch,Research1",
       "id": "DevelopDissonanceProjector",
       "Icon": "btn-upgrade-keiron-dissonanceprojector",
-      "Tooltip": "<span style=\"color: #FFFF80\">Echoes</span> in Discord Mode become cloaked.",
-      "Name": "Develop Dissonance Projector"
+      "Name": {
+        "enUS": "Develop Dissonance Projector",
+        "ruRU": "Разработать Диссонансный Проектор"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Echoes</span> in Discord Mode become cloaked.",
+        "ruRU": "Эхо в Режиме Разлада становятся Невидимыми."
+      }
     },
     {
       "AbilCmd": "ConduitResearch,Research2",
       "id": "DevelopInterlacingBond",
       "Icon": "btn-upgrade-stetmann-zerglinghardenedshield",
-      "Tooltip": "The <span style=\"color: #FFFF80\">Fuses</span> Fusion buff gains a +0.5 shield armor bonus.",
-      "Name": "Develop Interlacing Bond"
+      "Name": {
+        "enUS": "Develop Interlacing Bond",
+        "ruRU": "Разработать Переплетение Связей"
+      },
+      "Tooltip": {
+        "enUS": "The <span style=\"color: FFFF80\">Fuse</span> gains 1 shield armor, and Fusion buff gains a +0.5 shield armor bonus.",
+        "ruRU": "Слияние <span style=\"color: FFFF80\">Предохранителей</span> также дает +0.5 к уровню щита."
+      }
     }
   ]
 }

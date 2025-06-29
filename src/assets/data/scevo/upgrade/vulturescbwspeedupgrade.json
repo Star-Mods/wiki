@@ -1,11 +1,14 @@
 {
-  "id": "VultureSCBWSpeedUpgrade",
-  "Icon": "btn-ability-terran-emergencythrusters",
-  "Name": "Upgrade/Name/VultureSCBWSpeedUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Ion Thrusters",
+    "zhCN": "Ion Thrusters",
+    "koKR": "Ion Thrusters"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,15 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "VultureSCBWSpeedUpgrade",
+  "id": "VultureSCBWSpeedUpgrade",
   "EffectArrayTemplate": [
     {
       "Operation": "Multiply",
@@ -28,7 +39,8 @@
       "Value": "1.5"
     }
   ],
-  "Race": "Terr",
+  "Icon": "btn-ability-terran-emergencythrusters",
+  "Race": "BWTe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Robotics Facility",
-    "zhCN": "机械台",
-    "koKR": "로보틱스 퍼실리티 /// Robotics Facility"
+    "zhCN": "Robotics Facility",
+    "koKR": "Robotics Facility"
   },
   "Description": {
     "enUS": "Warps in Protoss robotic units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Shuttle</b>s",
-    "zhCN": "折跃星灵机械单位。",
-    "koKR": "프로토스 로봇 유닛을 소환합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Shuttle</b> /// Warps in Protoss robotic units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Shuttle</b>s"
+    "zhCN": "Warps in Protoss robotic units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Shuttle</b>s",
+    "koKR": "Warps in Protoss robotic units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Shuttle</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -75,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "RoboticsFacilitySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "RoboticsFacilitySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "RoboticsFacilitySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "RoboticsFacilitySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -115,18 +115,24 @@
   "LifeArmor": 1,
   "ShieldsStart": 500,
   "ShieldsMax": 500,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 200,
+    "Minerals": 150,
     "Vespene": 100
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "RoboticsFacilitySCBW@Train",
+    "Rally"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -188,20 +194,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -214,14 +216,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -235,7 +237,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -250,18 +253,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -281,15 +280,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -299,6 +291,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ShuttleSCBW",
             "Requirements": "ShuttleSCBW"
           },
@@ -311,7 +304,7 @@
           "ShuttleSCBW"
         ],
         "Cost": {
-          "Minerals": 200,
+          "Minerals": 150,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
@@ -321,22 +314,22 @@
           "Food": -2
         },
         "Row": 0,
-        "Column": 0,
+        "Column": 1,
         "Type": "AbilCmd",
         "AbilCmd": "RoboticsFacilitySCBW@Train,Train1",
         "id": "ShuttleSCBW",
-        "Icon": "btn-unit-protoss-ShuttleSCBW",
+        "Icon": "btn-unit-protoss-shuttlescbw",
         "Name": {
           "enUS": "Warp In Shuttle",
-          "zhCN": "折跃穿梭机",
-          "koKR": "셔틀 생산 /// Warp In Shuttle"
+          "zhCN": "Warp In Shuttle",
+          "koKR": "Warp In Shuttle"
         },
         "Tooltip": {
           "enUS": "Flying transport. Can load and unload units.",
-          "zhCN": "飞行运输单位。可以装载和卸载单位。",
-          "koKR": "비행 수송기입니다. 유닛을 들이거나 내보낼 수 있습니다. /// Flying transport. Can load and unload units."
+          "zhCN": "Flying transport. Can load and unload units.",
+          "koKR": "Flying transport. Can load and unload units."
         },
-        "Hotkey": "A"
+        "Hotkey": "S"
       },
       {
         "Info": {
@@ -346,6 +339,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ObserverSCBW",
             "Requirements": "ObserverSCBW"
           },
@@ -368,20 +362,20 @@
           "Food": -1
         },
         "Row": 0,
-        "Column": 2,
+        "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "RoboticsFacilitySCBW@Train,Train2",
         "id": "ObserverSCBW",
         "Icon": "btn-unit-protoss-observer",
         "Name": {
           "enUS": "Warp In Observer",
-          "zhCN": "折跃侦测器",
-          "koKR": "옵저버 소환 /// Warp In Observer"
+          "zhCN": "Warp In Observer",
+          "koKR": "Warp In Observer"
         },
         "Tooltip": {
           "enUS": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-          "zhCN": "间谍型空中单位，可以永久隐形。敌人没有侦测手段将无法看到隐形单位。<br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-          "koKR": "정찰용 비행 유닛입니다. 은폐 능력이 있으며, 탐지 능력이 없는 적에게는 보이지 않습니다.<br/><br/><span style=\"color: FFE303\">디텍터</span> /// Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+          "zhCN": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "koKR": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
         },
         "Hotkey": "B"
       },
@@ -393,6 +387,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ReaverSCBW",
             "Requirements": "ReaverSCBW"
           },
@@ -404,8 +399,8 @@
           "ReaverSCBW"
         ],
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 200,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -414,29 +409,29 @@
           "Food": -4
         },
         "Row": 0,
-        "Column": 1,
+        "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "RoboticsFacilitySCBW@Train,Train3",
         "id": "ReaverSCBW",
         "Icon": "btn-unit-protoss-reaver",
         "Name": {
           "enUS": "Warp in Reaver",
-          "zhCN": "折跃掠夺者",
-          "koKR": "리버 생산 /// Warp in Reaver"
+          "zhCN": "Warp in Reaver",
+          "koKR": "Warp in Reaver"
         },
         "Tooltip": {
           "enUS": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "范围伤害攻城单位。能够建造并发射<span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b></span>，造成高爆发伤害。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "범위 피해를 주는 공성 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b></span>을 발사하여 강력한 폭발 피해를 줍니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "koKR": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
         },
-        "Hotkey": "C"
+        "Hotkey": "V"
       }
     ]
   },
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ScoreMake": 300,
-  "ScoreKill": 300,
+  "ScoreMake": 250,
+  "ScoreKill": 250,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 13,
   "TechAliasArray": [
@@ -451,16 +446,16 @@
   ],
   "BuildTime": 65,
   "TacticalAIThink": "AIThinkRoboticsFacilitySCBW",
-  "ShieldRegenDelay": 10,
   "id": "RoboticsFacilitySCBW",
   "Icon": "btn-building-protoss-roboticsfacility",
+  "Model": "RoboticsFacilityEx1",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
@@ -470,40 +465,39 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "RoboticsFacilitySCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
     "RoboticsFacilitySCBW@AllowUnit",
     "RoboticsFacilitySCBW",
     "Button/Tooltip/ObservatorySCBW",
+    "Button/Tooltip/ObserverSCBW@Passive",
     "Button/Tooltip/RoboticsBaySCBW",
+    "Button/Tooltip/ReaverSCBW@Passive",
     "ProbeSCBW@BuildAdv",
     "RoboticsFacilitySCBW@Count",
     "ProtossBuildingSCBW@Birth",
@@ -514,7 +508,10 @@
     "CasterIsRoboticsFacilitySCBW",
     "RoboticsFacilitySCBW@QoB",
     "RoboticsFacilitySCBW@QoBAtUnit",
-    "RoboticsFacilitySCBW"
+    "RoboticsFacilitySCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -536,52 +533,40 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "RoboticsFacilitySCBW@Train,Train1",
       "id": "ShuttleSCBW",
-      "Icon": "btn-unit-protoss-ShuttleSCBW",
+      "Icon": "btn-unit-protoss-shuttlescbw",
       "Name": {
         "enUS": "Warp In Shuttle",
-        "zhCN": "折跃穿梭机",
-        "koKR": "셔틀 생산 /// Warp In Shuttle"
+        "zhCN": "Warp In Shuttle",
+        "koKR": "Warp In Shuttle"
       },
       "Tooltip": {
         "enUS": "Flying transport. Can load and unload units.",
-        "zhCN": "飞行运输单位。可以装载和卸载单位。",
-        "koKR": "비행 수송기입니다. 유닛을 들이거나 내보낼 수 있습니다. /// Flying transport. Can load and unload units."
+        "zhCN": "Flying transport. Can load and unload units.",
+        "koKR": "Flying transport. Can load and unload units."
       }
     },
     {
@@ -590,13 +575,13 @@
       "Icon": "btn-unit-protoss-observer",
       "Name": {
         "enUS": "Warp In Observer",
-        "zhCN": "折跃侦测器",
-        "koKR": "옵저버 소환 /// Warp In Observer"
+        "zhCN": "Warp In Observer",
+        "koKR": "Warp In Observer"
       },
       "Tooltip": {
         "enUS": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-        "zhCN": "间谍型空中单位，可以永久隐形。敌人没有侦测手段将无法看到隐形单位。<br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-        "koKR": "정찰용 비행 유닛입니다. 은폐 능력이 있으며, 탐지 능력이 없는 적에게는 보이지 않습니다.<br/><br/><span style=\"color: FFE303\">디텍터</span> /// Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        "zhCN": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "koKR": "Flying spy. Cloak renders the unit invisible to enemies without detection.<br/><br/><span style=\"color: FFE303\">Detector</span>"
       }
     },
     {
@@ -605,13 +590,13 @@
       "Icon": "btn-unit-protoss-reaver",
       "Name": {
         "enUS": "Warp in Reaver",
-        "zhCN": "折跃掠夺者",
-        "koKR": "리버 생산 /// Warp in Reaver"
+        "zhCN": "Warp in Reaver",
+        "koKR": "Warp in Reaver"
       },
       "Tooltip": {
         "enUS": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "范围伤害攻城单位。能够建造并发射<span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b></span>，造成高爆发伤害。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "범위 피해를 주는 공성 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b></span>을 발사하여 강력한 폭발 피해를 줍니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "koKR": "Area damage siege unit. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> for high burst damage.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
       }
     }
   ]

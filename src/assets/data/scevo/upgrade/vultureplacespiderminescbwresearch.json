@@ -1,11 +1,14 @@
 {
-  "id": "VulturePlaceSpiderMineSCBWResearch",
-  "Icon": "btn-upgrade-siegetank-spidermines",
-  "Name": "Upgrade/Name/VulturePlaceSpiderMineSCBWResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Spider Mine Research",
+    "zhCN": "Spider Mine Research",
+    "koKR": "Spider Mine Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,10 +23,20 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "VulturePlaceSpiderMineSCBWResearch",
+  "id": "VulturePlaceSpiderMineSCBWResearch",
+  "Icon": "btn-upgrade-siegetank-spidermines",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "VultureSCBW"
-  ]
+  ],
+  "Race": "BWTe"
 }

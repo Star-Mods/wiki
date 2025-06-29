@@ -1,6 +1,13 @@
 {
-  "Name": "Generator",
-  "Description": "Generates power. Increases power storage by <b>50</b>.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Generator",
+    "ruRU": "Генератор"
+  },
+  "Description": {
+    "enUS": "Generates power.",
+    "ruRU": "Генерирет Энергию. Содержит улучшения Обрабатывающего дрон."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +17,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 750,
-  "LifeMax": 750,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeStart": 575,
+  "LifeMax": 575,
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -65,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Generator/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Generator/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Generator/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Generator/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -118,6 +130,16 @@
   "Facing": 45,
   "FogVisibility": "Snapshot",
   "CostCategory": "Economy",
+  "AbilArray": [
+    "BuildInProgress"
+  ],
+  "BehaviorArray": [
+    "GenetronPowerSupplyTracker",
+    "LockdownMode",
+    "TrackGenetronPowerSupply",
+    "GeneratorPower",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -180,8 +202,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -241,8 +269,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -261,8 +295,14 @@
         "Type": "Passive",
         "id": "GeneratorPowerGrid",
         "Icon": "btn-tips-computerterminals",
-        "Tooltip": "<span style=\"color: #78f0ff\">Generates <b>2.86</b> power per second.</span>",
-        "Name": "Power Grid"
+        "Name": {
+          "enUS": "Power Grid",
+          "ruRU": "Энергосистема"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 78f0ff\">Generates <b>2.86</b> power per second.</span>",
+          "ruRU": "<span style=\"color: 78f0ff\">Генерирует <b>2.86</b> Энергии в секунду.</span>"
+        }
       }
     ]
   },
@@ -276,34 +316,64 @@
   "GlossaryPriority": 24,
   "SubgroupPriority": 1,
   "Icon": "btn-building-genetron-generator",
+  "Model": "Generator",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
-      "id": "TrackGenetronPowerSupply"
+      "id": "TrackGenetronPowerSupply",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Track Genetron Power Supply"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "GeneratorPower",
-      "Icon": "btn-tips-computerterminals"
+      "Icon": "btn-tips-computerterminals",
+      "Name": {
+        "enUS": "Generator Power"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -316,7 +386,9 @@
     null
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "GenetronPowerSupplyDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -328,15 +400,27 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     }
   ]
 }

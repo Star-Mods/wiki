@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Queen",
-    "zhCN": "后虫",
-    "koKR": "퀸 /// Queen"
+    "zhCN": "Queen",
+    "koKR": "Queen"
   },
   "Description": {
     "enUS": "Support flyer. Can use <span class=\"style-TooltipHighlightSCBW\">Parasite</span> and <span class=\"style-TooltipHighlightSCBW\">Infest Command Center</span>. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\">Spawn Broodlings</span> and <span class=\"style-TooltipHighlightSCBW\">Ensnare</span>.",
-    "zhCN": "支援型空中单位。可以使用<span class=\"style-TooltipHighlightSCBW\">寄生</span>和<span class=\"style-TooltipHighlightSCBW\">感染指挥中心</span>。升级后可以使用<span class=\"style-TooltipHighlightSCBW\">孵化巢虫</span>和<span class=\"style-TooltipHighlightSCBW\">诱捕</span>。",
-    "koKR": "지원 비행체입니다. <span class=\"style-TooltipHighlightSCBW\">패러사이트</span>와 <span class=\"style-TooltipHighlightSCBW\">인페스트 커맨드 센터</span>를 사용할 수 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\">브루들링 소환</span>과 <span class=\"style-TooltipHighlightSCBW\">인스네어</span>를 사용할 수 있습니다. /// Support flyer. Can use <span class=\"style-TooltipHighlightSCBW\">Parasite</span> and <span class=\"style-TooltipHighlightSCBW\">Infest Command Center</span>. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\">Spawn Broodlings</span> and <span class=\"style-TooltipHighlightSCBW\">Ensnare</span>."
+    "zhCN": "Support flyer. Can use <span class=\"style-TooltipHighlightSCBW\">Parasite</span> and <span class=\"style-TooltipHighlightSCBW\">Infest Command Center</span>. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\">Spawn Broodlings</span> and <span class=\"style-TooltipHighlightSCBW\">Ensnare</span>.",
+    "koKR": "Support flyer. Can use <span class=\"style-TooltipHighlightSCBW\">Parasite</span> and <span class=\"style-TooltipHighlightSCBW\">Infest Command Center</span>. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\">Spawn Broodlings</span> and <span class=\"style-TooltipHighlightSCBW\">Ensnare</span>."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 120,
   "LifeMax": 120,
-  "LifeArmorName": {
-    "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 799.9804,
   "TurningRate": 799.9804,
@@ -80,16 +78,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "QueenSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "QueenSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "QueenSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "QueenSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -127,9 +127,17 @@
     "Minerals": 100,
     "Vespene": 100
   },
-  "BuildTime": 50,
+  "BuildTime": 47,
   "AttackTargetPriority": 20,
-  "KillXP": 40,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "QueenSCBWParasite",
+    "QueenSCBWEnsnare",
+    "QueenSCBWSpawnBroodlings",
+    "QueenSCBWInfestCommandCenter"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -220,12 +228,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -300,12 +305,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -395,13 +397,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -475,14 +474,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -572,13 +565,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -727,13 +717,13 @@
         "Icon": "btn-ability-zerg-viper-ocularparasite",
         "Name": {
           "enUS": "Parasite",
-          "zhCN": "寄生",
-          "koKR": "패러사이트 /// Parasite"
+          "zhCN": "Parasite",
+          "koKR": "Parasite"
         },
         "Tooltip": {
-          "enUS": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts for <b>168</b> seconds.",
-          "zhCN": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts for <b>168</b> seconds.",
-          "koKR": "대상 유닛에 <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>을 흡착시켜 해당 유닛의 시야를 공유받습니다. 효과는 무기한으로 지속됩니다. /// Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indeffinitely."
+          "enUS": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely.",
+          "zhCN": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely.",
+          "koKR": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely."
         },
         "Hotkey": "R"
       },
@@ -851,10 +841,10 @@
             }
           ],
           "TargetFilters": [
-            "-;Air,Robotic,Massive,Structure,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"
+            "Ground;Robotic,Structure,Heroic,Missile,Stasis,Dead,Hidden,Invulnerable"
           ],
           "Range": [
-            9
+            10
           ],
           "CastIntroTime": [
             0.5
@@ -884,13 +874,13 @@
         "Icon": "btn-ability-zerg-swarmseeds-color",
         "Name": {
           "enUS": "Spawn Broodlings",
-          "zhCN": "孵化巢虫",
-          "koKR": "브루들링 소환 /// Spawn Broodlings"
+          "zhCN": "Spawn Broodlings",
+          "koKR": "Spawn Broodlings"
         },
         "Tooltip": {
-          "enUS": "Kills targeted unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can't be used on massive targets</span>",
-          "zhCN": "Kills targeted unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can't be used on massive targets</span>",
-          "koKR": "대상 유닛을 처치하며 그 자리에 <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span>마리의 <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b></span>을 생성합니다.<br/><span style=\"color: #ffff8a\">거대 속성 대상에 사용할 수 없습니다</span>"
+          "enUS": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>",
+          "zhCN": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>",
+          "koKR": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>"
         },
         "Hotkey": "B"
       },
@@ -1040,14 +1030,14 @@
         "id": "QueenSCBWEnsnare",
         "Icon": "btn-ability-zerg-fungalgrowth-color",
         "Name": {
-          "enUS": "Ensaring Creep",
-          "zhCN": "Ensaring Creep",
-          "koKR": "인스네어 /// Ensnare"
+          "enUS": "Ensnare",
+          "zhCN": "Ensnare",
+          "koKR": "Ensnare"
         },
         "Tooltip": {
-          "enUS": "Envelopes target area in creep, enemies movement reduced by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units.",
-          "zhCN": "Envelopes target area in creep, enemies movement reduced by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units.",
-          "koKR": "이동 속도가 <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span>만큼 감소하고 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>38</b></span>초 동안 <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span>만큼 감소합니다. 클로크하거나 버로우한 유닛은 모습이 드러납니다. /// Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units."
+          "enUS": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units.",
+          "zhCN": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units.",
+          "koKR": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units."
         },
         "Hotkey": "E"
       },
@@ -1076,26 +1066,29 @@
               "value": ""
             }
           },
-          "RangeSlop": 1,
+          "RangeSlop": 7,
           "ArcSlop": 11.25,
           "AutoCastAcquireLevel": "Offensive",
           "AutoCastFilters": "Visible;Player,Ally",
           "Flags": {
             "AbortOnAllianceChange": 1,
             "CancelResetAutoCast": 1,
-            "ChannelingMinimum": 1,
+            "ChannelingMinimum": 0,
             "RangeUseCasterRadius": 1,
             "ReApproachable": 1,
             "RequireTargetVision": 1,
             "WaitToSpend": 1,
             "UpdateChargesOnLevelChange": 1,
             "BestUnit": 1,
+            "AllowMovement": 0,
             "AutoCast": 1,
             "AutoCastOn": 1,
-            "Smart": 1
+            "DeferCooldown": 1,
+            "Smart": 1,
+            "HomogenousInterrupt": 1
           },
           "Effect": [
-            "QueenSCBWInfestCommandCenter@Set"
+            "QueenSCBWInfestCommandCenter@InfestingStart"
           ],
           "EffectRange": [
             "0,1000"
@@ -1155,6 +1148,9 @@
                 "CreateDefaultButton": 1
               },
               "DefaultButtonFace": "QueenSCBWInfestCommandCenter"
+            },
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
             }
           },
           "FollowRange": 5,
@@ -1165,19 +1161,29 @@
             0.5
           ],
           "SmartValidatorArray": [
-            "QueenSCBWInfestCommandCenter"
+            "QueenSCBWInfestCommandCenter",
+            "TargetIsEnemyOrNeutral"
           ],
           "AutoCastValidatorArray": [
             "QueenSCBWInfestCommandCenter"
-          ],
-          "CastIntroTime": [
-            0.25
           ],
           "UninterruptibleArray": {
             "Cast": 1,
             "Channel": 1,
             "Finish": 1
           },
+          "Cost": [
+            {
+              "Cooldown": {
+                "TimeUse": 10
+              }
+            }
+          ],
+          "TrackingArc": 0.9997,
+          "CancelableArray": {
+            "Channel": 1
+          },
+          "AutoCastRange": 1,
           "id": "QueenSCBWInfestCommandCenter"
         },
         "Cost": {
@@ -1198,15 +1204,209 @@
         "Icon": "btn-building-zerg-infestedcommandcenter@scbw",
         "Name": {
           "enUS": "Infest Command Center",
-          "zhCN": "感染指挥中心",
-          "koKR": "인페스트 커맨드 센터 /// Infest Command Center"
+          "zhCN": "Infest Command Center",
+          "koKR": "Infest Command Center"
         },
         "Tooltip": {
-          "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> plants a parasite inside a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> transforming it into an <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span> capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>向严重受损的<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>植入一只寄生虫，将其转变为<span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span>，可以生产自杀式单位<span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 심각하게 손상된 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에 기생충을 심어 그것을 <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span>로 변화시킵니다. 폭발하는 <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>을 생성할 수 있습니다. /// The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> plants a parasite inside a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> transforming it into an <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span> capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>."
+          "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
+          "zhCN": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
+          "koKR": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>."
         },
         "Hotkey": "C"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "QueenSCBWEnergyUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-pathogenglands",
+        "Name": {
+          "enUS": "Gamete Meiosis",
+          "zhCN": "Gamete Meiosis",
+          "koKR": "Gamete Meiosis"
+        },
+        "Tooltip": {
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/QueenSCBWInfestCommandCenter",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "QueenSCBWInfestCommandCenter",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 7,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 0,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1,
+            "AllowMovement": 0,
+            "AutoCast": 1,
+            "AutoCastOn": 1,
+            "DeferCooldown": 1,
+            "Smart": 1,
+            "HomogenousInterrupt": 1
+          },
+          "Effect": [
+            "QueenSCBWInfestCommandCenter@InfestingStart"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "QueenSCBWInfestCommandCenter",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "UseDefaultButton": 1,
+                "CreateDefaultButton": 1
+              },
+              "DefaultButtonFace": "QueenSCBWInfestCommandCenter"
+            },
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "FollowRange": 5,
+          "TargetFilters": [
+            "Structure,Visible;Self,Missile,Stasis,UnderConstruction,Dead,Invulnerable"
+          ],
+          "Range": [
+            0.5
+          ],
+          "SmartValidatorArray": [
+            "QueenSCBWInfestCommandCenter",
+            "TargetIsEnemyOrNeutral"
+          ],
+          "AutoCastValidatorArray": [
+            "QueenSCBWInfestCommandCenter"
+          ],
+          "UninterruptibleArray": {
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "Cost": [
+            {
+              "Cooldown": {
+                "TimeUse": 10
+              }
+            }
+          ],
+          "TrackingArc": 0.9997,
+          "CancelableArray": {
+            "Channel": 1
+          },
+          "AutoCastRange": 1,
+          "id": "QueenSCBWInfestCommandCenter"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "QueenSCBWInfestCommandCenter,Cancel",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
       }
     ]
   },
@@ -1227,6 +1427,7 @@
     "DarkArchonSCBW"
   ],
   "Icon": "btn-unit-zerg-queen@scbw",
+  "Model": "QueenClassic",
   "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -1235,21 +1436,20 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -1257,49 +1457,51 @@
       "id": "QueenSCBWParasite",
       "Name": {
         "enUS": "Parasite",
-        "zhCN": "寄生虫",
-        "koKR": "패러사이트 /// Parasite"
+        "zhCN": "Parasite",
+        "koKR": "Parasite"
       }
     },
     {
       "id": "QueenSCBWEnsnare",
       "Name": {
-        "enUS": "Ensaring Creep",
-        "zhCN": "诱捕",
-        "koKR": "인스네어 /// Ensnare"
+        "enUS": "Ensnare",
+        "zhCN": "Ensnare",
+        "koKR": "Ensnare"
       }
     },
     {
       "id": "QueenSCBWSpawnBroodlings",
       "Name": {
         "enUS": "Spawn Broodlings",
-        "zhCN": "孵化巢虫",
-        "koKR": "브루들링 소환 /// Spawn Broodlings"
+        "zhCN": "Spawn Broodlings",
+        "koKR": "Spawn Broodlings"
       }
     },
     {
       "id": "QueenSCBWInfestCommandCenter",
       "Name": {
         "enUS": "Infest Command Center",
-        "zhCN": "感染指挥中心",
-        "koKR": "인페스트 커맨드 센터 /// Infest Command Center"
+        "zhCN": "Infest Command Center",
+        "koKR": "Infest Command Center"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/QueensNestSCBW",
     "QueenSCBW",
-    "QueenSCBWSpawnBroodlingsResearch",
-    "Button/Tooltip/QueenSCBWInfestCommandCenter",
-    "Button/Tooltip/QueenSCBWEnergyUpgrade",
-    "QueenSCBWEnergyUpgrade",
-    "Button/Tooltip/QueenSCBWSpawnBroodlingsResearch",
-    "Button/Tooltip/QueenSCBWEnsnareResearch",
-    "QueenSCBWEnsnareResearch",
-    "QueensNestSCBW",
     "QueenSCBW@AllowUnit",
     "LarvaSCBW@Train",
     "LarvaSCBW",
+    "QueenSCBWEnsnareResearch",
+    "QueenSCBWSpawnBroodlingsResearch",
+    "Behavior/Tooltip/QueenSCBWInfestCommandCenter@InfestingTarget",
+    "Button/Tooltip/QueenSCBWInfestCommandCenter",
+    "Button/Tooltip/QueenSCBWEnergyUpgrade",
+    "QueenSCBWEnergyUpgrade",
+    "Button/Tooltip/QueenSCBWEnsnareResearch",
+    "Button/Tooltip/QueenSCBWSpawnBroodlingsResearch",
+    "Button/Tooltip/QueenSCBW@Passive",
+    "QueensNestSCBW",
     "Button/Tooltip/QueenSCBWParasiteResearch",
     "QueenSCBW",
     "IsQueenSCBW",
@@ -1309,7 +1511,10 @@
     "QueenSCBW@CountAtUnit",
     "QueenSCBW@QoB",
     "QueenSCBW@QoBAtUnit",
-    "QueenSCBW"
+    "QueenSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -1318,8 +1523,13 @@
   ],
   "$Research": [],
   "$Morph": [
+    "InfestedCommandCenterSCBW",
     "InfestedCommandCenterSCBW@Flying",
-    "InfestedCommandCenterSCBW"
+    "InfestedCommandCenterSC2",
+    "InfestedCommandCenterSC2@Flying",
+    "InfestedOrbitalCommandSCBW",
+    "InfestedOrbitalCommandSCBW@Flying",
+    "InfestedPlanetaryFortressSCBW"
   ],
   "$Phase": [],
   "$Producers": [
@@ -1333,12 +1543,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1346,51 +1553,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "QueenSCBWParasite,Execute",
@@ -1398,13 +1590,13 @@
       "Icon": "btn-ability-zerg-viper-ocularparasite",
       "Name": {
         "enUS": "Parasite",
-        "zhCN": "寄生",
-        "koKR": "패러사이트 /// Parasite"
+        "zhCN": "Parasite",
+        "koKR": "Parasite"
       },
       "Tooltip": {
-        "enUS": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts for <b>168</b> seconds.",
-        "zhCN": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts for <b>168</b> seconds.",
-        "koKR": "대상 유닛에 <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>을 흡착시켜 해당 유닛의 시야를 공유받습니다. 효과는 무기한으로 지속됩니다. /// Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indeffinitely."
+        "enUS": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely.",
+        "zhCN": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely.",
+        "koKR": "Infect the target unit with a <span class=\"style-TooltipHighlightSCBW\"><b>Parasite</b></span>, granting vision of everything the infected unit can see. Effect lasts indefinitely."
       }
     },
     {
@@ -1413,13 +1605,13 @@
       "Icon": "btn-ability-zerg-swarmseeds-color",
       "Name": {
         "enUS": "Spawn Broodlings",
-        "zhCN": "孵化巢虫",
-        "koKR": "브루들링 소환 /// Spawn Broodlings"
+        "zhCN": "Spawn Broodlings",
+        "koKR": "Spawn Broodlings"
       },
       "Tooltip": {
-        "enUS": "Kills targeted unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can't be used on massive targets</span>",
-        "zhCN": "Kills targeted unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can't be used on massive targets</span>",
-        "koKR": "대상 유닛을 처치하며 그 자리에 <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span>마리의 <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b></span>을 생성합니다.<br/><span style=\"color: #ffff8a\">거대 속성 대상에 사용할 수 없습니다</span>"
+        "enUS": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>",
+        "zhCN": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>",
+        "koKR": "Kills targeted ground unit spawning <span class=\"style-TooltipHighlightSCBW\"><b>2</b></span> <span class=\"style-TooltipHighlightSCBW\"><b>Broodling</b>s</span>.<br/><span style=\"color: #ffff8a\">Can only target biological or non-robotic mechanical units</span>"
       }
     },
     {
@@ -1427,14 +1619,14 @@
       "id": "QueenSCBWEnsnare",
       "Icon": "btn-ability-zerg-fungalgrowth-color",
       "Name": {
-        "enUS": "Ensaring Creep",
-        "zhCN": "Ensaring Creep",
-        "koKR": "인스네어 /// Ensnare"
+        "enUS": "Ensnare",
+        "zhCN": "Ensnare",
+        "koKR": "Ensnare"
       },
       "Tooltip": {
-        "enUS": "Envelopes target area in creep, enemies movement reduced by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units.",
-        "zhCN": "Envelopes target area in creep, enemies movement reduced by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units.",
-        "koKR": "이동 속도가 <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span>만큼 감소하고 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>38</b></span>초 동안 <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span>만큼 감소합니다. 클로크하거나 버로우한 유닛은 모습이 드러납니다. /// Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>100</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\"><b>25</b>%</span> for <span class=\"style-TooltipBuffSCBW\"><b>38</b></span> seconds. Reveals cloaked and burrowed units."
+        "enUS": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units.",
+        "zhCN": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units.",
+        "koKR": "Reduces movement by <span class=\"style-TooltipHighlightSCBW\"><b>50</b>%</span> and attack speed by <span class=\"style-TooltipHighlightSCBW\">25%</span> for <span class=\"style-TooltipBuffSCBW\"><b>30</b></span> seconds. Reveals cloaked and burrowed units."
       }
     },
     {
@@ -1443,14 +1635,24 @@
       "Icon": "btn-building-zerg-infestedcommandcenter@scbw",
       "Name": {
         "enUS": "Infest Command Center",
-        "zhCN": "感染指挥中心",
-        "koKR": "인페스트 커맨드 센터 /// Infest Command Center"
+        "zhCN": "Infest Command Center",
+        "koKR": "Infest Command Center"
       },
       "Tooltip": {
-        "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> plants a parasite inside a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> transforming it into an <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span> capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>向严重受损的<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>植入一只寄生虫，将其转变为<span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span>，可以生产自杀式单位<span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 심각하게 손상된 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에 기생충을 심어 그것을 <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span>로 변화시킵니다. 폭발하는 <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>을 생성할 수 있습니다. /// The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> plants a parasite inside a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> transforming it into an <span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b></span> capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>."
+        "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
+        "zhCN": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>.",
+        "koKR": "The <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span> sprays infesting parasites toward a heavily damaged <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span> structure. Infestation takes <b>8</b> seconds to finish.<br/><span class=\"style-TooltipHighlightSCBW\"><b>Infested Command Center</b>s</span> are capable of producing exploding <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span>."
       }
+    },
+    {
+      "AbilCmd": "QueenSCBWInfestCommandCenter,Cancel",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": "-"
     }
   ]
 }

@@ -1,6 +1,13 @@
 {
-  "Name": "Biomass Hatchery",
-  "Description": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Biomass Hatchery",
+    "ruRU": "Инкубатор биомассы"
+  },
+  "Description": {
+    "enUS": "Creates larva, which can mutate into various Xayid beasts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Revilers<br/>- Ferrions<br/>- Prowlers<br/>- Spitters",
+    "ruRU": "Создаёт личинки, каждая личинка может мутировать в различных чудовищ.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Ревилеры<br/>- Феррионы<br/> - Бродяги<br/>- Спиттеры"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "BiomassHatchery/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "BiomassHatchery/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "BiomassHatchery/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "BiomassHatchery/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -102,6 +114,10 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "Rally"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "BiomassHatchery",
@@ -110,6 +126,9 @@
     "Minerals": 150,
     "Vespene": 100
   },
+  "BehaviorArray": [
+    "BiomassHatcherySpawnGrub"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -172,8 +191,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -192,7 +217,11 @@
         "Type": "SelectLarva",
         "id": "SelectGrubs",
         "Icon": "btn-unit-xayidling-grub",
-        "Name": "Select Grubs",
+        "Name": {
+          "enUS": "Select Grubs",
+          "ruRU": "Выбрать личинки"
+        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -213,8 +242,14 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       }
     ]
@@ -229,22 +264,34 @@
   "SubgroupPriority": 38,
   "GlossaryPriority": 22,
   "Icon": "btn-building-xayid-biomasshatchery",
+  "Model": "BiomassHatchery",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "BiomassHatcherySpawnGrub"
+      "id": "BiomassHatcherySpawnGrub",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Spawn Grub"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "Rally",
-      "Name": "Rally"
+      "Name": {
+        "enUS": "Rally",
+        "ruRU": "Rally"
+      }
     }
   ],
   "$Upgrades": [
@@ -269,15 +316,27 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     }
   ]
 }

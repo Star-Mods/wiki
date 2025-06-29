@@ -1,11 +1,14 @@
 {
-  "id": "SiegeModeSCBWResearch",
-  "Icon": "btn-upgrade-terran-nova-siegetankrange",
-  "Name": "Upgrade/Name/SiegeModeSCBWResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Siege Mode Research",
+    "zhCN": "Siege Mode Research",
+    "koKR": "Siege Mode Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,9 +23,18 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "SiegeModeSCBWResearch",
-  "Race": "Terr",
-  "ScoreAmount": 300,
+  "id": "SiegeModeSCBWResearch",
+  "Icon": "btn-upgrade-terran-nova-siegetankrange",
+  "Race": "BWTe",
+  "ScoreAmount": 100,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "SiegeTankSCBW"

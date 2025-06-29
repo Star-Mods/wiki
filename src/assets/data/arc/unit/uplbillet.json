@@ -160,10 +160,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -209,6 +206,7 @@
         "Column": 3,
         "Type": "SelectBuilder",
         "id": "UPLSelectBuilder",
+        "Icon": "btn-upgrade-terran-weaponrefit",
         "Name": {
           "enUS": "Select Builder",
           "ruRU": "Выбрать строителя "
@@ -218,47 +216,6 @@
           "ruRU": "Выбрать рабочего, который сооружает это строение. "
         },
         "Hotkey": "U"
-      },
-      {
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0
-            },
-            "DefaultButtonFace": "UPLTrainGuardian"
-          },
-          "Unit": [
-            "UPLInfantryGuardian"
-          ],
-          "Time": 30.8
-        },
-        "Unit": [
-          "UPLInfantryGuardian"
-        ],
-        "Time": 30.8,
-        "Cost": {
-          "Minerals": 50,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": -1
-        },
-        "Row": 0,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletTrain,Train11",
-        "id": "UPLTrainGuardian",
-        "Icon": "btn-unit-upl-uplriotofficer",
-        "Name": {
-          "enUS": "Train Guardian"
-        },
-        "Tooltip": {
-          "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
-        },
-        "Hotkey": "A"
       },
       {
         "Info": {
@@ -326,6 +283,47 @@
           "ruRU": "Отменить текущий приказ и отдать следующий. "
         },
         "Hotkey": "Esc"
+      },
+      {
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLTrainGuardian"
+          },
+          "Unit": [
+            "UPLInfantryGuardian"
+          ],
+          "Time": 30.8
+        },
+        "Unit": [
+          "UPLInfantryGuardian"
+        ],
+        "Time": 30.8,
+        "Cost": {
+          "Minerals": 50,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": -1
+        },
+        "Row": 0,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLBilletTrain,Train11",
+        "id": "UPLTrainGuardian",
+        "Icon": "btn-unit-upl-uplriotofficer",
+        "Name": {
+          "enUS": "Train Guardian"
+        },
+        "Tooltip": {
+          "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
+        },
+        "Hotkey": "A"
       },
       {
         "Info": {
@@ -410,66 +408,23 @@
         "Hotkey": "R"
       },
       {
-        "Upgrade": "InfantryFlamethrower3xBurning",
+        "Upgrade": "InfantryRocketAOE",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "InfantryFlamethrowerBurningUpgraded",
-            "Requirements": "LearnInfantryFlamethrower3xBurning"
-          },
-          "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
-          },
-          "Time": 56,
-          "Upgrade": "InfantryFlamethrower3xBurning"
-        },
-        "Time": 56,
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletResearch,Research4",
-        "id": "InfantryFlamethrowerBurningUpgraded",
-        "Icon": "btn-ability-upl-naniteignition",
-        "Name": {
-          "enUS": "Infantry Flamethrower Burning"
-        },
-        "Tooltip": {
-          "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
-        },
-        "Hotkey": "X"
-      },
-      {
-        "Upgrade": "InfantryMortarRangeUpgrade",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1
-            },
-            "DefaultButtonFace": "ResearchInfantryMortarRangeUpgrade",
-            "Requirements": "LearnInfantryMortarRangeUpgrade"
+            "DefaultButtonFace": "ResearchInfantryRocketAOE",
+            "Requirements": "LearnInfantryRocketAOE"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 150,
-          "Upgrade": "InfantryMortarRangeUpgrade"
+          "Time": 45,
+          "Upgrade": "InfantryRocketAOE"
         },
-        "Time": 150,
+        "Time": 45,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -483,16 +438,16 @@
         "Row": 2,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletResearch,Research2",
-        "id": "ResearchInfantryMortarRangeUpgrade",
-        "Icon": "btn-ability-upl-longrangemortar",
+        "AbilCmd": "UPLBilletResearch,Research5",
+        "id": "ResearchInfantryRocketAOE",
+        "Icon": "btn_upl_infantryrocket_explosive_rocket",
         "Name": {
-          "enUS": "Research Increased Mortar Range"
+          "enUS": "Research Explosive Rockets"
         },
         "Tooltip": {
-          "enUS": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: 80FFFF\">3</span>"
+          "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
         },
-        "Hotkey": "V"
+        "Hotkey": "C"
       },
       {
         "Upgrade": "InfantryRifleRangeUpgrade",
@@ -538,26 +493,26 @@
         "Hotkey": "Z"
       },
       {
-        "Upgrade": "InfantryRocketAOE",
+        "Upgrade": "InfantryFlamethrower3xBurning",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0
             },
-            "DefaultButtonFace": "ResearchInfantryRocketAOE",
-            "Requirements": "LearnInfantryRocketAOE"
+            "DefaultButtonFace": "InfantryFlamethrowerBurningUpgraded",
+            "Requirements": "LearnInfantryFlamethrower3xBurning"
           },
           "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
+            "Minerals": 150,
+            "Vespene": 150
           },
-          "Time": 45,
-          "Upgrade": "InfantryRocketAOE"
+          "Time": 56,
+          "Upgrade": "InfantryFlamethrower3xBurning"
         },
-        "Time": 45,
+        "Time": 56,
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 150,
+          "Vespene": 150,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -568,16 +523,16 @@
         "Row": 2,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "UPLBilletResearch,Research5",
-        "id": "ResearchInfantryRocketAOE",
-        "Icon": "btn_upl_infantryrocket_explosive_rocket",
+        "AbilCmd": "UPLBilletResearch,Research4",
+        "id": "InfantryFlamethrowerBurningUpgraded",
+        "Icon": "btn-ability-upl-naniteignition",
         "Name": {
-          "enUS": "Research Explosive Rockets"
+          "enUS": "Infantry Flamethrower Burning"
         },
         "Tooltip": {
-          "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
+          "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
         },
-        "Hotkey": "C"
+        "Hotkey": "X"
       },
       {
         "Info": {
@@ -812,6 +767,7 @@
   "Behaviors": [
     {
       "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Under Construction",
         "ruRU": "Under Construction"
@@ -872,10 +828,9 @@
     "InfantryMortar"
   ],
   "$Research": [
-    "InfantryFlamethrower3xBurning",
-    "InfantryMortarRangeUpgrade",
-    "InfantryRifleRangeUpgrade",
     "InfantryRocketAOE",
+    "InfantryRifleRangeUpgrade",
+    "InfantryFlamethrower3xBurning",
     "RiotOfficerShield",
     "SpaceSandbag"
   ],
@@ -899,17 +854,6 @@
       }
     },
     {
-      "AbilCmd": "UPLBilletTrain,Train11",
-      "id": "UPLTrainGuardian",
-      "Icon": "btn-unit-upl-uplriotofficer",
-      "Name": {
-        "enUS": "Train Guardian"
-      },
-      "Tooltip": {
-        "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
-      }
-    },
-    {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
@@ -920,6 +864,17 @@
       "Tooltip": {
         "enUS": "Drops the current order without performing it, and allows you to select a different order.",
         "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
+    },
+    {
+      "AbilCmd": "UPLBilletTrain,Train11",
+      "id": "UPLTrainGuardian",
+      "Icon": "btn-unit-upl-uplriotofficer",
+      "Name": {
+        "enUS": "Train Guardian"
+      },
+      "Tooltip": {
+        "enUS": "Medium range troopers , equipped with Combat Shotgun and Riot Shield<br/><br/><span style=\"color: #ffff8a\">Can attack ground units</span>"
       }
     },
     {
@@ -945,25 +900,14 @@
       }
     },
     {
-      "AbilCmd": "UPLBilletResearch,Research4",
-      "id": "InfantryFlamethrowerBurningUpgraded",
-      "Icon": "btn-ability-upl-naniteignition",
+      "AbilCmd": "UPLBilletResearch,Research5",
+      "id": "ResearchInfantryRocketAOE",
+      "Icon": "btn_upl_infantryrocket_explosive_rocket",
       "Name": {
-        "enUS": "Infantry Flamethrower Burning"
+        "enUS": "Research Explosive Rockets"
       },
       "Tooltip": {
-        "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
-      }
-    },
-    {
-      "AbilCmd": "UPLBilletResearch,Research2",
-      "id": "ResearchInfantryMortarRangeUpgrade",
-      "Icon": "btn-ability-upl-longrangemortar",
-      "Name": {
-        "enUS": "Research Increased Mortar Range"
-      },
-      "Tooltip": {
-        "enUS": "Mortars are retrofitted with new explosive launch mechanisms.<br/><br/>Increases the range of <span style=\"color: FFFF80\"><b>Mortar Trooper</b>s</span> by <span style=\"color: 80FFFF\">3</span>"
+        "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
       }
     },
     {
@@ -978,14 +922,14 @@
       }
     },
     {
-      "AbilCmd": "UPLBilletResearch,Research5",
-      "id": "ResearchInfantryRocketAOE",
-      "Icon": "btn_upl_infantryrocket_explosive_rocket",
+      "AbilCmd": "UPLBilletResearch,Research4",
+      "id": "InfantryFlamethrowerBurningUpgraded",
+      "Icon": "btn-ability-upl-naniteignition",
       "Name": {
-        "enUS": "Research Explosive Rockets"
+        "enUS": "Infantry Flamethrower Burning"
       },
       "Tooltip": {
-        "enUS": "<span style=\"color: ffff8a\">Rocket Trooper</span>  attacks deal 2 splash damage around the attack target in a small radius. The splash damage counts as spell damage and ignore armor."
+        "enUS": "Increase <span style=\"color: ffff8a\">Incinerator</span>  weapon burning damage from 5 to 12.5."
       }
     },
     {

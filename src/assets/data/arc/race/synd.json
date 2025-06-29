@@ -13,7 +13,7 @@
           "TechTreeCheat": 1
         },
         "Name": {
-          "enUS": "Boron Alloy Gear"
+          "enUS": "Everyman Ordinance Ensamble"
         },
         "MaxLevel": 1,
         "Alert": "ResearchComplete",
@@ -30,7 +30,7 @@
         },
         "InfoTooltipPriority": 2,
         "id": "GruntHealth",
-        "Icon": "btn-ability-mengsk-trooper-willofthepeople",
+        "Icon": "btn-ability-mengsk-commandcenter-drafttroopers",
         "Race": "Synd",
         "ScoreAmount": 200,
         "ScoreResult": "BuildOrder",
@@ -84,7 +84,7 @@
           "UpgradeCheat": 1
         },
         "Name": {
-          "enUS": "Cremator Enable Defend"
+          "enUS": "Phalanx Barrier"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
@@ -100,9 +100,6 @@
           }
         },
         "Icon": "btn-ability-zeratul-sentry-reflectionshield",
-        "AffectedUnitArray": [
-          "Cremator"
-        ],
         "EffectArray": [
           {
             "Operation": "Set",
@@ -114,6 +111,9 @@
             "Reference": "Weapon,SynoidCrematorDeflectionBeam,Options[RequireEnabledAttackAbil]",
             "Value": "0"
           }
+        ],
+        "AffectedUnitArray": [
+          "Cremator"
         ],
         "id": "CrematorEnableDefend"
       },
@@ -560,6 +560,19 @@
           {
             "Reference": "Weapon,SynoidHailstormMissilePods2,Level",
             "Value": "1"
+          },
+          {
+            "Reference": "Effect,ALLRACE2GreaterWarDroneImpactDamage2,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Icon",
+            "Value": "Assets\\Textures\\Synoid_Mech_Wea_Upg_lv1.dds"
+          },
+          {
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Level",
+            "Value": "1"
           }
         ],
         "AffectedUnitArray": [
@@ -764,6 +777,19 @@
           {
             "Reference": "Weapon,SynoidHailstormMissilePods2,Level",
             "Value": "1"
+          },
+          {
+            "Reference": "Effect,ALLRACE2GreaterWarDroneImpactDamage2,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Icon",
+            "Value": "Assets\\Textures\\Synoid_Mech_Wea_Upg_lv2.dds"
+          },
+          {
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Level",
+            "Value": "1"
           }
         ],
         "AffectedUnitArray": [
@@ -962,6 +988,19 @@
           },
           {
             "Reference": "Effect,SynoidHailstormMissilePodsDamage2,Amount",
+            "Value": "1"
+          },
+          {
+            "Reference": "Effect,ALLRACE2GreaterWarDroneImpactDamage2,Amount",
+            "Value": "1"
+          },
+          {
+            "Operation": "Set",
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Icon",
+            "Value": "Assets\\Textures\\Synoid_Mech_Wea_Upg_lv3.dds"
+          },
+          {
+            "Reference": "Weapon,SynoidGreaterWarDrone2,Level",
             "Value": "1"
           }
         ],
@@ -1662,40 +1701,6 @@
         "id": "SynoidVehicleAndShipArmors3",
         "Icon": "synoid_mech_armor_upg_lv3",
         "$Phased": "SynoidVehicleAndShipArmors1"
-      },
-      "LearnAnathemaAshigara": {
-        "class": "CUpgrade",
-        "Flags": {
-          "UpgradeCheat": 0
-        },
-        "Name": {
-          "enUS": "Learn Anathema Ashigara"
-        },
-        "MaxLevel": 1,
-        "Alert": "UpgradeComplete",
-        "ScoreCount": "MiscTechnologyCount",
-        "ScoreValue": "MiscTechnologyValue",
-        "WebPriority": 1,
-        "LeaderAlias": "SynoidHailstormMissilePods",
-        "EditorCategories": "Race:Synoid,UpgradeType:Talents",
-        "$tokens": {
-          "ID": {
-            "type": "string",
-            "value": ""
-          }
-        },
-        "EffectArray": [
-          {
-            "Operation": "Set",
-            "Reference": "Weapon,SynoidCapitalShip,Options[Hidden]",
-            "Value": "0"
-          }
-        ],
-        "AffectedUnitArray": [
-          "SynoidCapitalShip"
-        ],
-        "Icon": "btn-progression-hornerhan-12-yamatocannons",
-        "id": "LearnAnathemaAshigara"
       },
       "RicoshotCharges": {
         "class": "CUpgrade",
@@ -2640,7 +2645,7 @@
       },
       "SynoidWarDrone2": {
         "id": "SynoidWarDrone2",
-        "Icon": "btnsynoidgreaterwardrone",
+        "Icon": "btn-synoid-greater-wardrone",
         "Name": {
           "enUS": "Greater War Drone"
         },
@@ -2661,11 +2666,13 @@
       },
       "SynoidMindControlTower": {
         "id": "SynoidMindControlTower",
-        "Icon": "btn-building-terran-sensordome",
+        "Icon": "btn_synoid_mind_control_tower",
         "Name": {
           "enUS": "Mind Control Tower"
         },
-        "Description": "-",
+        "Description": {
+          "enUS": "A high tower which can receive air-targeting attack. Able to use Mind Control Link ability."
+        },
         "LifeMax": 900,
         "LifeArmor": 1,
         "CostResource": {
@@ -2690,7 +2697,7 @@
           "enUS": "Buoy"
         },
         "Description": {
-          "enUS": "Mobile flying requisition source. <br/><span style=\"color: FFE303\">Detector</span>"
+          "enUS": "Slow flying surveillance detector with WarpJump ability, can use siege mode to increase area. <br/><span style=\"color: FFE303\">Detector</span>"
         },
         "LifeMax": 150,
         "LifeArmor": 1,
@@ -2702,6 +2709,63 @@
         "Production": [
           "Buoy"
         ],
+        "Research": [],
+        "Morph": [
+          "SynoidBuoyCharging",
+          "SynoidBuoyCharged"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 4
+      },
+      "SynoidBuoyCharging": {
+        "id": "SynoidBuoyCharging",
+        "Icon": "btn-unit-terran-sabotagedroneblackops",
+        "Name": {
+          "enUS": "Buoy (Charging)"
+        },
+        "Description": {
+          "enUS": "Mobile flying requisition source. <br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "LifeMax": 150,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 225,
+          "Vespene": 125
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 4
+      },
+      "SynoidBuoyCharged": {
+        "id": "SynoidBuoyCharged",
+        "Icon": "btn-unit-terran-sabotagedroneblackops",
+        "Name": {
+          "enUS": "Buoy (Charged)"
+        },
+        "Description": {
+          "enUS": "Mobile flying requisition source. <br/><span style=\"color: FFE303\">Detector</span>"
+        },
+        "LifeMax": 150,
+        "LifeArmor": 1,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 225,
+          "Vespene": 125
+        },
+        "Production": [],
         "Research": [],
         "Morph": [],
         "$Phase": [],
@@ -2845,7 +2909,9 @@
         "Name": {
           "enUS": "Servitor"
         },
-        "Description": "-",
+        "Description": {
+          "enUS": "Small size ranged troopers. The upgrade <span style=\"color: 80FFFF\">Everyman Ordinance Ensamble</span> at <span style=\"color: 80FFFF\">Bio-Synthetics Facility</span> can make them more durable and receive an anti-air splash weapon.<br/><span style=\"color: #ffff8a\">Can attack ground units, and if upgraded, can attack air units as well.</span> <br/><br/><span style=\"color: 80FFFF\">TIP: Servitors gain a lot more power after the receiving the upgrade."
+        },
         "LifeMax": 45,
         "Food": -1,
         "CostResource": {
@@ -2870,7 +2936,7 @@
           "enUS": "Bloodletter"
         },
         "Description": {
-          "enUS": "Support Specialist. Can use Psionic Pulse and cloak.<br/>Weapon causes residential <span style=\"color: FFFF80\">Bleeding</span> damage for an extra <b>0</b> damage.<br/>Regenerates energy with each attack.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units</span>."
+          "enUS": "High damage range unit with lower vital. Can use Psionic Pulse, Ultrasonic Pulse and Personal Cloaking abilities.<br/>Weapon causes residential <span style=\"color: FFFF80\">Bleeding</span> damage for an extra <b>0</b> damage.<br/>Regenerates energy with each attack on enemy units.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units</span>."
         },
         "LifeMax": 80,
         "Food": -2,
@@ -2928,7 +2994,7 @@
           "enUS": "Atrocity"
         },
         "Description": {
-          "enUS": "Heavy-fire support unit. Can be upgraded to have shields.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "enUS": "Heavy-fire support unit. <br/> The upgrade <span style=\"color: 80FFFF\">Psionic Shield Matrix</span> at <span style=\"color: 80FFFF\">Bio-Synthetics Facility</span> can give them additional shield.<br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
         },
         "LifeMax": 110,
         "LifeArmor": 1,
@@ -2962,13 +3028,13 @@
           "enUS": "Cremator"
         },
         "Description": {
-          "enUS": "General-purpose infantry.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "enUS": "Tanky anti-light flametrooper with splash damage.<br/>The upgrade <span style=\"color: 80FFFF\">Phalanx Barrier</span> at <span style=\"color: 80FFFF\">Bio-Synthetics Facility</span> can give them another weapon which shot between 3 and 3.6 range and fire simultaneously with other weapons.<br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
-        "LifeMax": 100,
+        "LifeMax": 115,
         "LifeArmor": 1,
         "Food": -1,
         "CostResource": {
-          "Minerals": 90,
+          "Minerals": 100,
           "Vespene": 25
         },
         "Production": [],
@@ -3063,12 +3129,65 @@
           "enUS": "Iron Fletcher"
         },
         "Description": {
+          "enUS": "Quick anti-light assault unit.<br/> Can quickly morph into anti-armored and tanky charged form. <br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
+        },
+        "LifeMax": 110,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [
+          "SynoidChargingIronFletcher",
+          "SynoidChargedIronFletcher"
+        ],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 5
+      },
+      "SynoidChargingIronFletcher": {
+        "id": "SynoidChargingIronFletcher",
+        "Icon": "synoidironfletcher",
+        "Name": {
+          "enUS": "Iron Fletcher (Charging)"
+        },
+        "Description": {
           "enUS": "Quick assault unit that applies damage stacks with each attack. Each stack adds +2 bonus damage per attack from any unit, with a maximum of 4 stacks per targeted unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
         },
         "LifeMax": 110,
         "Food": -2,
         "CostResource": {
           "Minerals": 100
+        },
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "LifeArmorIcon": "btn-upgrade-terran-vehicleplatinglevel0",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Synidian Biosteel Plating"
+        },
+        "priority": 5
+      },
+      "SynoidChargedIronFletcher": {
+        "id": "SynoidChargedIronFletcher",
+        "Icon": "synoidironfletcher",
+        "Name": {
+          "enUS": "Charged Iron Fletcher"
+        },
+        "Description": {
+          "enUS": "Quick assault unit that applies damage stacks with each attack. Each stack adds +2 bonus damage per attack from any unit, with a maximum of 4 stacks per targeted unit.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>"
+        },
+        "LifeMax": 200,
+        "Food": -2,
+        "CostResource": {
+          "Minerals": 200
         },
         "Production": [],
         "Research": [],
@@ -3114,12 +3233,12 @@
           "enUS": "Midas Igniter"
         },
         "Description": {
-          "enUS": "Suicide unit. Explodes on contact and douses both your and the enemy's units in an electromagnetic paste that decreases attack speed by 10%, movement speed by 20%, disables energy regeneration, and decreases max health by 30%.<br/><br/><span style=\"color: FFFF80\">Effect lasts 15 seconds.</span>"
+          "enUS": "Very tanky suicide unit. Explodes on contact and douses the enemy's ground units in an electromagnetic paste that decreases <span style=\"color: FFFF80\">50% damage</span>, <span style=\"color: FFFF80\">20% movement speed</span>, <span style=\"color: FFFF80\">1.4 per second energy regeneration</span> and <span style=\"color: FFFF80\">30% max health</span>.<br/><br/><span style=\"color: FFFF80\">Effect lasts 15 seconds.</span>"
         },
-        "LifeMax": 140,
+        "LifeMax": 130,
         "Food": -2,
         "CostResource": {
-          "Minerals": 100,
+          "Minerals": 50,
           "Vespene": 50
         },
         "Production": [],
@@ -3141,11 +3260,11 @@
           "enUS": "Rancor"
         },
         "Description": {
-          "enUS": "Slow firing long range anti-armor support unit. <br/>Can deploy Heal Emitters and throw Saws that deal damage over time.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "enUS": "Slow firing long range anti-armor support unit. <br/>Can throw Sawblade that deal damage over time.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
         "LifeMax": 180,
         "LifeArmor": 3,
-        "Food": -3,
+        "Food": -4,
         "CostResource": {
           "Minerals": 275,
           "Vespene": 175
@@ -3195,7 +3314,7 @@
           "enUS": "Enthralled"
         },
         "Description": {
-          "enUS": "Melee anti-shield specialist that deals damage in a semicircle around it.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "enUS": "Powerful melee unit that deal splash damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
         "LifeMax": 400,
         "LifeArmor": 2,
@@ -3222,7 +3341,7 @@
           "enUS": "Karolean Walker"
         },
         "Description": {
-          "enUS": "Large distance range heavy artillery mech.<br/>Reveals itself while attacking. Tiny Requisition Source.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "enUS": "Massive distance range artillery mech.<br/>Reveals itself while attacking. <br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
         "LifeMax": 600,
         "LifeArmor": 1,
@@ -3324,7 +3443,6 @@
           "SynoidVehicleAndShipArmors1",
           "SynoidVehicleAndShipArmors2",
           "SynoidVehicleAndShipArmors3",
-          "LearnAnathemaAshigara",
           "RicoshotCharges"
         ],
         "Morph": [],
@@ -3350,7 +3468,7 @@
         "LifeArmor": 1,
         "CostResource": {
           "Minerals": 150,
-          "Vespene": 150
+          "Vespene": 100
         },
         "Production": [
           "SynoidGriffon",
@@ -3415,7 +3533,7 @@
           "enUS": "Griffon"
         },
         "Description": {
-          "enUS": "Anti-air flyer with bonus vs light, can switch to interceptor mode to enable its energy armor and slow down nearby enemy unit at cost of its attack speed.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+          "enUS": "Anti-air flyer with bonus vs light, can switch to interceptor mode to enable its energy armor and slow down nearby enemy unit.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
         },
         "LifeMax": 200,
         "LifeArmor": 1,
@@ -3442,7 +3560,7 @@
           "enUS": "Warden Airship"
         },
         "Description": {
-          "enUS": "Flying Transport unit, can use defensive matrix and lockdown.<br/><br/><span style=\"color: 80FFFF\">TIP: The Warden Airship takes a bit of time to reach accelerate to its max speed.</span>"
+          "enUS": "Flying Transport and Support unit, can use defensive matrix and lockdown.<br/><br/><span style=\"color: 80FFFF\">TIP: The Warden Airship takes a bit of time to reach accelerate to its max speed.</span>"
         },
         "LifeMax": 240,
         "LifeArmor": 1,
@@ -3469,7 +3587,7 @@
           "enUS": "Cossack"
         },
         "Description": {
-          "enUS": "Tactical-strike aircraft, can deploy Mag Mines."
+          "enUS": "Anti-ground, anti armored fast aircraft, can deploy Mag Mines."
         },
         "LifeMax": 300,
         "Food": -6,
@@ -3495,7 +3613,7 @@
           "enUS": "Umpire Craft"
         },
         "Description": {
-          "enUS": "Aerial attack unit. Can deploy Tank Buster mines."
+          "enUS": "Powerful Aerial attack unit. Can deploy Tank Buster mines. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
         },
         "LifeMax": 300,
         "LifeArmor": 2,
@@ -3553,7 +3671,7 @@
           "enUS": "Anathema"
         },
         "Description": {
-          "enUS": "Powerful warship with long range weapon, an electric field ability that can disable enemy units and other area damage abilities..<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "enUS": "Powerful warship with long range weapon, an EMP-PSI Scrambler ability that can disable enemy units and an Ashigara Batteries ability which enable a weapon to attack all ground units nearby..<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
         },
         "LifeMax": 600,
         "LifeArmor": 3,
@@ -3650,12 +3768,16 @@
     "WarDrone",
     "SynoidWarDrone2",
     "Buoy",
+    "SynoidBuoyCharging",
+    "SynoidBuoyCharged",
     "Servitor",
     "Bloodletter",
     "ZerglingHolo",
     "Atrocity",
     "Cremator",
     "IronFletcher",
+    "SynoidChargingIronFletcher",
+    "SynoidChargedIronFletcher",
     "MediTruck",
     "MidasIgniter",
     "RancorSynoid",
@@ -3700,7 +3822,6 @@
     "SynoidVehicleAndShipArmors1",
     "SynoidVehicleAndShipArmors2",
     "SynoidVehicleAndShipArmors3",
-    "LearnAnathemaAshigara",
     "RicoshotCharges",
     "HellstormJavelinMissiles",
     "SynoidInfantryWeaponsLevel1",

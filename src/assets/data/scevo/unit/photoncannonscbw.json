@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Photon Cannon",
-    "zhCN": "光子炮台",
-    "koKR": "포톤 캐논 /// Photon Cannon"
+    "zhCN": "Photon Cannon",
+    "koKR": "Photon Cannon"
   },
   "Description": {
     "enUS": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-    "zhCN": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span><br/><span style=\"color: FFE303\">侦测单位</span>",
-    "koKR": "주 방어 구조물입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능.</span><br/><span style=\"color: FFE303\">디텍터</span> /// Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "zhCN": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
+    "koKR": "Primary defensive structure.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 150,
   "LifeMax": 150,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "PhotonCannonSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "PhotonCannonSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "PhotonCannonSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "PhotonCannonSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -117,25 +117,38 @@
   "LifeArmor": 1,
   "ShieldsStart": 150,
   "ShieldsMax": 150,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 11,
   "CostCategory": "Technology",
   "CostResource": {
     "Minerals": 150
   },
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "Detector11",
+    "PowerUserBaseDefenseSmall",
+    "UnderConstruction"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "PhotonCannonSCBWWeapon",
+      "Turret": "PhotonCannonSCBW@Turret"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -148,14 +161,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -169,7 +182,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -184,18 +198,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -269,12 +279,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -348,14 +355,8 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Attack"
-        },
-        "Tooltip": {
-          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -376,13 +377,13 @@
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "zhCN": "侦测单位",
-          "koKR": "디텍터 /// Detector"
+          "zhCN": "Detector",
+          "koKR": "Detector"
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked and burrowed units.",
-          "zhCN": "该单位能够侦测到隐形和潜地单位。",
-          "koKR": "이 유닛은 클로크하거나 버로우한 유닛을 탐지할 수 있습니다. /// This unit can detect cloaked and burrowed units."
+          "zhCN": "This unit can detect cloaked and burrowed units.",
+          "koKR": "This unit can detect cloaked and burrowed units."
         }
       }
     ]
@@ -408,26 +409,34 @@
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
   "Speed": 0,
   "BuildTime": 40,
-  "ShieldRegenDelay": 10,
   "id": "PhotonCannonSCBW",
-  "Icon": "btn-building-protoss-photoncannon",
+  "Icon": "btn-building-protoss-photoncannon@scbw",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "Turret": "PhotonCannonSCBW@Turret",
-      "id": "PhotonCannonSCBWWeapon",
-      "Icon": "btn-building-protoss-photoncannon",
-      "Name": {
-        "enUS": "Phase Disruptor",
-        "zhCN": "光子炮",
-        "koKR": "광자포 /// Photon Cannon"
-      },
-      "Amount": 20,
-      "Kind": "Ranged",
+      "EditorCategories": "Race:Protoss",
+      "Icon": "btn-building-protoss-photoncannon@scbw",
+      "DisplayEffect": "PhotonCannonSCBWWeapon@Damage",
       "TargetFilters": "",
       "Range": 7,
-      "Period": 1.25
+      "RangeSlop": 0,
+      "Period": 1.25,
+      "Effect": "PhotonCannonSCBWWeapon@LM",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "RandomDelayMax": 0.0625,
+      "id": "PhotonCannonSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Phase Disruptor",
+        "zhCN": "Phase Disruptor",
+        "koKR": "Phase Disruptor"
+      },
+      "Amount": 20,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
@@ -436,7 +445,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -445,6 +454,7 @@
     },
     {
       "id": "PowerUserBaseDefenseSmall",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue, Base defense)",
         "ruRU": "Power User (Queue, Base defense)"
@@ -453,6 +463,7 @@
     },
     {
       "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Under Construction",
         "ruRU": "Under Construction"
@@ -462,30 +473,31 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/ForgeSCBW",
     "PhotonCannonSCBW",
+    "Button/Tooltip/PhotonCannonSCBW@Passive",
     "PhotonCannonSCBW@AllowUnit",
     "ProbeSCBW@Build",
     "ProtossBuildingSCBW@BirthSmall",
@@ -497,7 +509,10 @@
     "PhotonCannonSCBW@Count",
     "PhotonCannonSCBW@QoB",
     "PhotonCannonSCBW@QoBAtUnit",
-    "PhotonCannonSCBW"
+    "PhotonCannonSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -510,17 +525,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -528,25 +540,16 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Attack"
-      },
-      "Tooltip": {
-        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Shuttle",
-    "zhCN": "穿梭机",
-    "koKR": "셔틀 /// Shuttle"
+    "zhCN": "Shuttle",
+    "koKR": "Shuttle"
   },
   "Description": {
     "enUS": "Flying transport. Can load and unload units.",
-    "zhCN": "飞行运输单位。可以装载和卸载单位。",
-    "koKR": "비행 수송기입니다. 유닛을 들이거나 내보낼 수 있습니다. /// Flying transport. Can load and unload units."
+    "zhCN": "Flying transport. Can load and unload units.",
+    "koKR": "Flying transport. Can load and unload units."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 80,
-  "LifeMax": 80,
-  "LifeArmorName": {
-    "enUS": "Protoss Plating",
-    "ruRU": "Protoss Plating"
-  },
+  "LifeStart": 100,
+  "LifeMax": 100,
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -75,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ShuttleSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ShuttleSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ShuttleSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ShuttleSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,13 +96,10 @@
   "Mob": "Multiplayer",
   "EnergyRegenRate": 0.5,
   "id": "ShuttleSCBW",
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldArmorName": "-",
   "GlossaryCategory": "Unit/Category/ProtossUnitsSCBW",
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
-  "ShieldRegenRate": 2,
+  "ShieldRegenRate": 0.711,
   "PlaneArray": [
     "Air"
   ],
@@ -114,25 +111,30 @@
     "Mechanical"
   ],
   "LifeArmor": 1,
-  "ShieldsStart": 100,
-  "ShieldsMax": 100,
-  "Speed": 2.5507,
-  "Acceleration": 1.0625,
+  "ShieldsStart": 70,
+  "ShieldsMax": 70,
+  "Speed": 2.5,
+  "Acceleration": 1.25,
   "LateralAcceleration": 57,
   "Sight": 10,
   "Height": 3.75,
-  "VisionHeight": 4,
+  "VisionHeight": 15,
   "Food": -2,
   "CostCategory": "Army",
   "CostResource": {
-    "Minerals": 200
+    "Minerals": 150
   },
-  "BuildTime": 50,
-  "RepairTime": 45,
+  "BuildTime": 46,
+  "RepairTime": 50,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 35,
+  "AbilArray": [
+    "stop",
+    "move",
+    "ShuttleSCBW@Transport",
+    "Warpable",
+    "ShuttleSCBW@RedirectScarab",
+    "ShuttleSCBW@RedirectScarabCancel"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -223,12 +225,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -303,12 +302,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -398,13 +394,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -494,13 +487,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -574,14 +564,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -671,13 +655,10 @@
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
         "Name": {
-          "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -738,7 +719,8 @@
           },
           "Alignment": "Positive",
           "Range": [
-            1
+            1,
+            2.5
           ],
           "MaxUnloadRange": 3,
           "TargetFilters": [
@@ -763,9 +745,10 @@
           "MaxCargoCount": 8,
           "MaxCargoSize": 8,
           "TotalCargoSpace": 8,
-          "UnloadPeriod": 1,
+          "UnloadPeriod": 0.9,
           "LoadValidatorArray": [
-            "NotWidowMineTarget"
+            "NotWidowMineTarget",
+            "SCBW_IsTransportable"
           ],
           "id": "ShuttleSCBW@Transport"
         },
@@ -798,9 +781,36 @@
         "Hotkey": "L"
       },
       {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ShuttleSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-protoss-graviticdrive",
+        "Name": {
+          "enUS": "Gravitic Drive",
+          "zhCN": "Gravitic Drive",
+          "koKR": "Gravitic Drive"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Shuttle</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Shuttle</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Shuttle</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        }
+      },
+      {
         "Info": {
-          "class": "CAbilTransport",
-          "Name": "Abil/Name/ShuttleSCBW@Transport",
+          "class": "CAbilRedirectInstant",
+          "Name": "Abil/Name/ShuttleSCBW@RedirectScarab",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -815,76 +825,26 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "ShuttleSCBW@Transport",
+          "DataCollection": "ShuttleSCBW@RedirectScarab",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
+          "Abil": "ReaverSCBWHangar",
+          "Flags": {
+            "IncludeSelf": 0
+          },
           "CmdButtonArray": {
-            "Load": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "ShuttleSCBW@Transport"
-            },
-            "LoadAll": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "Hidden": 1
-              }
-            },
-            "UnloadAll": {
+            "Execute": {
               "Flags": {
                 "ToSelection": 1
               },
-              "DefaultButtonFace": "BunkerUnloadAll"
-            },
-            "UnloadAt": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "MedivacUnloadAll"
-            },
-            "UnloadUnit": {
-              "Flags": {
-                "Hidden": 1
-              }
+              "DefaultButtonFace": "ShuttleSCBW@RedirectScarab"
             }
           },
-          "Alignment": "Positive",
-          "Range": [
-            1
-          ],
-          "MaxUnloadRange": 3,
-          "TargetFilters": [
-            "Visible;Ally,Neutral,Enemy,Buried,Dead,Hidden",
-            "Visible;Ally,Neutral,Enemy,Buried,UnderConstruction,Dead,Hidden"
-          ],
-          "Flags": {
-            "AllowPassengerSmartCmd": 1,
-            "AllowSmartCmd": 1,
-            "ShowCargoSize": 1,
-            "ShowStatus": 1,
-            "CargoDeath": 1
-          },
-          "TargetSorts": {
-            "SortArray": [
-              "TSInterruptible",
-              "TSDistance"
-            ]
-          },
-          "ErrorAlert": "Error",
-          "AbilSetId": "ULdM",
-          "MaxCargoCount": 8,
-          "MaxCargoSize": 8,
-          "TotalCargoSpace": 8,
-          "UnloadPeriod": 1,
-          "LoadValidatorArray": [
-            "NotWidowMineTarget"
-          ],
-          "id": "ShuttleSCBW@Transport"
+          "id": "ShuttleSCBW@RedirectScarab"
         },
         "Cost": {
           "Minerals": 0,
@@ -897,39 +857,98 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 3,
+        "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "ShuttleSCBW@Transport,UnloadAt",
-        "id": "WarpPrismUnloadAll",
-        "Icon": "btn-ability-terran-unloadall",
+        "AbilCmd": "ShuttleSCBW@RedirectScarab,Execute",
+        "id": "ScarabSCBW",
+        "Icon": "btn-ability-protoss-scarabshot",
         "Name": {
-          "enUS": "Unload All",
-          "ruRU": "Unload All"
+          "enUS": "Create Scarab",
+          "zhCN": "Create Scarab",
+          "koKR": "Create Scarab"
         },
         "Tooltip": {
-          "enUS": "Unloads all units.",
-          "ruRU": "Unloads all units."
+          "enUS": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "zhCN": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "koKR": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
-        "Hotkey": "D"
+        "Hotkey": "C"
+      },
+      {
+        "Info": {
+          "class": "CAbilRedirectInstant",
+          "Name": "Abil/Name/ShuttleSCBW@RedirectScarabCancel",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "ShuttleSCBW@RedirectScarabCancel",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "Abil": "HangarQueue5",
+          "Flags": {
+            "IncludeSelf": 0
+          },
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "ShuttleSCBW@RedirectScarabCancel"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "ShuttleSCBW@RedirectScarabCancel,Execute",
+        "id": "Cancel",
+        "Icon": "btn-command-cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": "-"
       }
     ]
   },
-  "ScoreMake": 200,
-  "ScoreKill": 200,
+  "ScoreMake": 150,
+  "ScoreKill": 150,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 69,
   "TacticalAIThink": "AIThinkShuttle",
-  "TechAliasArray": [
-    "Alias_WarpPrism"
-  ],
   "GlossaryPriority": 115,
   "GlossaryWeakArray": [
     "MissileTurretSCBW",
     "SporeColonySCBW",
     "PhotonCannonSCBW"
   ],
-  "ShieldRegenDelay": 10,
-  "Icon": "btn-unit-protoss-ShuttleSCBW",
+  "Icon": "btn-unit-protoss-shuttlescbw",
   "LifeArmorIcon": "btn-upgrade-protoss-airarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -938,14 +957,14 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -953,36 +972,47 @@
       "id": "ShuttleSCBW@Transport",
       "Name": {
         "enUS": "Transport",
-        "zhCN": "运输",
-        "koKR": "들이기/내보내기 /// Transport"
+        "zhCN": "Transport",
+        "koKR": "Transport"
       }
     },
     {
-      "id": "Warpable",
+      "id": "ShuttleSCBW@RedirectScarab",
       "Name": {
-        "enUS": "Warpable",
-        "ruRU": "Warpable"
+        "enUS": "Create Scarab",
+        "zhCN": "Create Scarab",
+        "koKR": "Create Scarab"
+      }
+    },
+    {
+      "id": "ShuttleSCBW@RedirectScarabCancel",
+      "Name": {
+        "enUS": "Cancel Scarab",
+        "zhCN": "Cancel Scarab",
+        "koKR": "Cancel Scarab"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/ShuttleSCBW@Transport",
     "ShuttleSCBW",
+    "Button/Tooltip/ShuttleSCBWSpeedUpgrade",
+    "ShuttleSCBWSpeedUpgrade",
     "Button/Tooltip/RoboticsFacilitySCBW",
     "ShuttleSCBW@AllowUnit",
     "RoboticsFacilitySCBW@Train",
-    "Button/Tooltip/ShuttleSCBWSpeedUpgrade",
-    "ShuttleSCBWSpeedUpgrade",
     "RoboticsFacilitySCBW",
     "ShuttleSCBW",
-    "Button/Tooltip/ShuttleSCBWSpeedUpgrade@Passive",
     "IsShuttleSCBW",
     "NotShuttleSCBW",
     "CasterIsShuttleSCBW",
     "ShuttleSCBW@Count",
     "ShuttleSCBW@QoB",
     "ShuttleSCBW@QoBAtUnit",
-    "ShuttleSCBW"
+    "ShuttleSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1000,12 +1030,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1013,64 +1040,46 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
       "Name": {
-        "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ShuttleSCBW@Transport,Load",
@@ -1088,17 +1097,29 @@
       }
     },
     {
-      "AbilCmd": "ShuttleSCBW@Transport,UnloadAt",
-      "id": "WarpPrismUnloadAll",
-      "Icon": "btn-ability-terran-unloadall",
+      "AbilCmd": "ShuttleSCBW@RedirectScarab,Execute",
+      "id": "ScarabSCBW",
+      "Icon": "btn-ability-protoss-scarabshot",
       "Name": {
-        "enUS": "Unload All",
-        "ruRU": "Unload All"
+        "enUS": "Create Scarab",
+        "zhCN": "Create Scarab",
+        "koKR": "Create Scarab"
       },
       "Tooltip": {
-        "enUS": "Unloads all units.",
-        "ruRU": "Unloads all units."
+        "enUS": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "zhCN": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "koKR": "Builds <span class=\"style-TooltipHighlightSCBW\"><b>Scarab</b>s</span> that automatically launch at the <span class=\"style-TooltipHighlightSCBW\"><b>Reaver</b>'s</span> target and explode for area damage.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
       }
+    },
+    {
+      "AbilCmd": "ShuttleSCBW@RedirectScarabCancel,Execute",
+      "id": "Cancel",
+      "Icon": "btn-command-cancel",
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": "-"
     }
   ]
 }

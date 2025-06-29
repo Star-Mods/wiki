@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Arbiter Tribunal",
-    "zhCN": "仲裁庭",
-    "koKR": "아비터 트라이뷰널 /// Arbiter Tribunal"
+    "zhCN": "Arbiter Tribunal",
+    "koKR": "Arbiter Tribunal"
   },
   "Description": {
-    "enUS": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span>.",
-    "zhCN": "为<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>提供升级方案。",
-    "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>의 능력을 업그레이드합니다. /// Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span>."
+    "enUS": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Arbiter</b>s at the <b>Stargate</b>",
+    "zhCN": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Arbiter</b>s at the <b>Stargate</b>",
+    "koKR": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Arbiter</b>s at the <b>Stargate</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ArbiterTribunalSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ArbiterTribunalSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ArbiterTribunalSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ArbiterTribunalSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -115,18 +115,25 @@
   "LifeArmor": 1,
   "ShieldsStart": 500,
   "ShieldsMax": 500,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 200,
-    "Vespene": 150
+    "Minerals": 250,
+    "Vespene": 200
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "ArbiterSCBWEnergyUpgrade",
+    "ArbiterSCBWRecallResearch",
+    "ArbiterSCBWStasisFieldResearch"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -188,20 +195,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -214,14 +217,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -235,7 +238,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -250,18 +254,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "ArbiterSCBWRecallResearch",
@@ -275,6 +275,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWRecallResearch",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWRecallResearch"
           },
           "Resource": {
@@ -302,14 +303,14 @@
         "id": "ArbiterSCBWRecallResearch",
         "Icon": "btn-ability-protoss-recall",
         "Name": {
-          "enUS": "Research Recall",
-          "zhCN": "研究召回",
-          "koKR": "리콜 연구 /// Research Recall"
+          "enUS": "Develop Recall",
+          "zhCN": "Develop Recall",
+          "koKR": "Develop Recall"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
         },
         "Hotkey": "C"
       },
@@ -325,16 +326,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWStasisFieldResearch",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWStasisFieldResearch"
           },
           "Resource": {
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 170,
+          "Time": 100,
           "Upgrade": "ArbiterSCBWStasisFieldResearch"
         },
-        "Time": 170,
+        "Time": 100,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -352,14 +354,14 @@
         "id": "ArbiterSCBWStasisFieldResearch",
         "Icon": "btn-ability-protoss-stasisfield",
         "Name": {
-          "enUS": "Research Stasis Field",
-          "zhCN": "研究静滞场",
-          "koKR": "스테이시스 필드 연구 /// Research Stasis Field"
+          "enUS": "Develop Stasis Field",
+          "zhCN": "Develop Stasis Field",
+          "koKR": "Develop Stasis Field"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
         },
         "Hotkey": "F"
       },
@@ -375,6 +377,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -402,16 +405,43 @@
         "id": "ArbiterSCBWEnergyUpgrade",
         "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
         "Name": {
-          "enUS": "Research Khaydarin Core",
-          "zhCN": "研究凯达琳核心",
-          "koKR": "케이다린 핵 연구 /// Research Khaydarin Core"
+          "enUS": "Develop Khaydarin Core",
+          "zhCN": "Develop Khaydarin Core",
+          "koKR": "Develop Khaydarin Core"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ArbiterSCBW@Passive",
+        "Icon": "btn-unit-protoss-arbiter",
+        "Name": {
+          "enUS": "Arbiter",
+          "zhCN": "Arbiter",
+          "koKR": "Arbiter"
+        },
+        "Tooltip": {
+          "enUS": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Arbiter</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>.",
+          "zhCN": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Arbiter</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>.",
+          "koKR": "Allows warp-in of <span style=\"color: #SCBW_ColorHighlight\"><b>Arbiter</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Stargate</b></span>."
+        }
       },
       {
         "Upgrade": "ArbiterSCBWEnergyUpgrade",
@@ -425,6 +455,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -452,14 +483,14 @@
         "id": "ArbiterSCBWEnergyUpgrade",
         "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
         "Name": {
-          "enUS": "Research Khaydarin Core",
-          "zhCN": "研究凯达琳核心",
-          "koKR": "케이다린 핵 연구 /// Research Khaydarin Core"
+          "enUS": "Develop Khaydarin Core",
+          "zhCN": "Develop Khaydarin Core",
+          "koKR": "Develop Khaydarin Core"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
       },
@@ -475,6 +506,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWRecallResearch",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWRecallResearch"
           },
           "Resource": {
@@ -502,14 +534,14 @@
         "id": "ArbiterSCBWRecallResearch",
         "Icon": "btn-ability-protoss-recall",
         "Name": {
-          "enUS": "Research Recall",
-          "zhCN": "研究召回",
-          "koKR": "리콜 연구 /// Research Recall"
+          "enUS": "Develop Recall",
+          "zhCN": "Develop Recall",
+          "koKR": "Develop Recall"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
         },
         "Hotkey": "C"
       },
@@ -525,16 +557,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ArbiterSCBWStasisFieldResearch",
+            "State": "Restricted",
             "Requirements": "ArbiterSCBWStasisFieldResearch"
           },
           "Resource": {
             "Minerals": 150,
             "Vespene": 150
           },
-          "Time": 170,
+          "Time": 100,
           "Upgrade": "ArbiterSCBWStasisFieldResearch"
         },
-        "Time": 170,
+        "Time": 100,
         "Cost": {
           "Minerals": 150,
           "Vespene": 150,
@@ -552,14 +585,14 @@
         "id": "ArbiterSCBWStasisFieldResearch",
         "Icon": "btn-ability-protoss-stasisfield",
         "Name": {
-          "enUS": "Research Stasis Field",
-          "zhCN": "研究静滞场",
-          "koKR": "스테이시스 필드 연구 /// Research Stasis Field"
+          "enUS": "Develop Stasis Field",
+          "zhCN": "Develop Stasis Field",
+          "koKR": "Develop Stasis Field"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
         },
         "Hotkey": "F"
       }
@@ -567,8 +600,8 @@
   },
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ScoreMake": 500,
-  "ScoreKill": 500,
+  "ScoreMake": 450,
+  "ScoreKill": 450,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 11,
   "GlossaryPriority": 217,
@@ -576,8 +609,7 @@
   "TechTreeUnlockedUnitArray": [
     "ArbiterSCBW"
   ],
-  "BuildTime": 40,
-  "ShieldRegenDelay": 10,
+  "BuildTime": 50,
   "id": "ArbiterTribunalSCBW",
   "Icon": "btn-building-protoss-arbitertribunal@scbw",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
@@ -586,7 +618,7 @@
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
@@ -596,49 +628,47 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "ArbiterSCBWEnergyUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ArbiterSCBWRecallResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ArbiterSCBWStasisFieldResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
   "$Upgrades": [
     "ArbiterTribunalSCBW@Count",
     "ArbiterTribunalSCBW",
-    "Button/Tooltip/TemplarArchiveSCBW",
-    "Button/Tooltip/FleetBeaconSCBW",
     "ArbiterTribunalSCBW@AllowUnit",
     "ProbeSCBW@BuildAdv",
     "ArbiterTribunalSCBW@Splat",
@@ -648,7 +678,10 @@
     "CasterIsArbiterTribunalSCBW",
     "ArbiterTribunalSCBW@QoB",
     "ArbiterTribunalSCBW@QoBAtUnit",
-    "ArbiterTribunalSCBW"
+    "ArbiterTribunalSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -670,39 +703,33 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ArbiterSCBWRecallResearch,Research1",
       "id": "ArbiterSCBWRecallResearch",
       "Icon": "btn-ability-protoss-recall",
       "Name": {
-        "enUS": "Research Recall",
-        "zhCN": "研究召回",
-        "koKR": "리콜 연구 /// Research Recall"
+        "enUS": "Develop Recall",
+        "zhCN": "Develop Recall",
+        "koKR": "Develop Recall"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
       }
     },
     {
@@ -710,14 +737,14 @@
       "id": "ArbiterSCBWStasisFieldResearch",
       "Icon": "btn-ability-protoss-stasisfield",
       "Name": {
-        "enUS": "Research Stasis Field",
-        "zhCN": "研究静滞场",
-        "koKR": "스테이시스 필드 연구 /// Research Stasis Field"
+        "enUS": "Develop Stasis Field",
+        "zhCN": "Develop Stasis Field",
+        "koKR": "Develop Stasis Field"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
       }
     },
     {
@@ -725,14 +752,14 @@
       "id": "ArbiterSCBWEnergyUpgrade",
       "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
       "Name": {
-        "enUS": "Research Khaydarin Core",
-        "zhCN": "研究凯达琳核心",
-        "koKR": "케이다린 핵 연구 /// Research Khaydarin Core"
+        "enUS": "Develop Khaydarin Core",
+        "zhCN": "Develop Khaydarin Core",
+        "koKR": "Develop Khaydarin Core"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -740,14 +767,14 @@
       "id": "ArbiterSCBWEnergyUpgrade",
       "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
       "Name": {
-        "enUS": "Research Khaydarin Core",
-        "zhCN": "研究凯达琳核心",
-        "koKR": "케이다린 핵 연구 /// Research Khaydarin Core"
+        "enUS": "Develop Khaydarin Core",
+        "zhCN": "Develop Khaydarin Core",
+        "koKR": "Develop Khaydarin Core"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,ArbiterSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -755,14 +782,14 @@
       "id": "ArbiterSCBWRecallResearch",
       "Icon": "btn-ability-protoss-recall",
       "Name": {
-        "enUS": "Research Recall",
-        "zhCN": "研究召回",
-        "koKR": "리콜 연구 /// Research Recall"
+        "enUS": "Develop Recall",
+        "zhCN": "Develop Recall",
+        "koKR": "Develop Recall"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span> ability."
       }
     },
     {
@@ -770,14 +797,14 @@
       "id": "ArbiterSCBWStasisFieldResearch",
       "Icon": "btn-ability-protoss-stasisfield",
       "Name": {
-        "enUS": "Research Stasis Field",
-        "zhCN": "研究静滞场",
-        "koKR": "스테이시스 필드 연구 /// Research Stasis Field"
+        "enUS": "Develop Stasis Field",
+        "zhCN": "Develop Stasis Field",
+        "koKR": "Develop Stasis Field"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 능력을 사용할 수 있게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Arbiter</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> ability."
       }
     }
   ]

@@ -1,6 +1,13 @@
 {
-  "Name": "Catalyst Pit",
-  "Description": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Catalyst Pit",
+    "ruRU": "Эволюционный Катализатор"
+  },
+  "Description": {
+    "enUS": "Contains weapon and armor upgrades for Xayid fliers. Contains researches for Raptors and Xayithoans.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Exterminators at the Avian Nest<br/>- Xayithoans at the Avian Nest",
+    "ruRU": "Содержит различные улучшения для воздушных юнитов зейдов.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>- Истребители из гнезда авианов<br/>- Зейтоны из гнезда авианов"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "CatalystPit/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "CatalystPit/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CatalystPit/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CatalystPit/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -102,6 +114,11 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "CatalystPitResearch"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/XayidUnits",
   "id": "CatalystPit",
@@ -169,8 +186,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -233,8 +256,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -272,8 +301,14 @@
         "AbilCmd": "CatalystPitResearch,Research1",
         "id": "MutateFlyerAttacks",
         "Icon": "btn-upgrade-xayid-airweaponslevel1",
-        "Tooltip": "Upgrades the attacks of all Xayid air units.",
-        "Name": "Mutate Flyer Attacks Level 1",
+        "Name": {
+          "enUS": "Mutate Flyer Attacks Level 1",
+          "ruRU": "Мутировать атаку воздушных единиц"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the attacks of all Xayid air units.",
+          "ruRU": "Улучшает атаку всех воздушных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -311,8 +346,14 @@
         "AbilCmd": "CatalystPitResearch,Research2",
         "id": "MutateFlyerAttacksLevel2",
         "Icon": "btn-upgrade-xayid-airweaponslevel2",
-        "Tooltip": "Further upgrades the attacks of all Xayid air units.",
-        "Name": "Mutate Flyer Attacks Level 2",
+        "Name": {
+          "enUS": "Mutate Flyer Attacks Level 2",
+          "ruRU": "Мутировать атаку воздушных единиц 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the attacks of all Xayid air units.",
+          "ruRU": "Значительно улучшает атаку всех воздушных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -350,8 +391,14 @@
         "AbilCmd": "CatalystPitResearch,Research3",
         "id": "MutateFlyerAttacksLevel3",
         "Icon": "btn-upgrade-xayid-airweaponslevel3",
-        "Tooltip": "Maximizes the attacks of all Xayid air units.",
-        "Name": "Mutate Flyer Attacks Level 3",
+        "Name": {
+          "enUS": "Mutate Flyer Attacks Level 3",
+          "ruRU": "Мутировать атаку воздушных единиц 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the attacks of all Xayid air units.",
+          "ruRU": "Максимально улучшает атаку всех воздушных Зейтов."
+        },
         "Hotkey": "E"
       },
       {
@@ -389,8 +436,14 @@
         "AbilCmd": "CatalystPitResearch,Research4",
         "id": "MutateFlyerCarapace",
         "Icon": "btn-upgrade-xayid-airarmorlevel1",
-        "Tooltip": "Upgrades the armor of all Xayid air units.",
-        "Name": "Mutate Flyer Carapace Level 1",
+        "Name": {
+          "enUS": "Mutate Flyer Carapace Level 1",
+          "ruRU": "Мутировать панцирь воздушных единиц"
+        },
+        "Tooltip": {
+          "enUS": "Upgrades the armor of all Xayid air units.",
+          "ruRU": "Улучшает броню всех воздушных Зейтов."
+        },
         "Hotkey": "C"
       },
       {
@@ -428,8 +481,14 @@
         "AbilCmd": "CatalystPitResearch,Research5",
         "id": "MutateFlyerCarapaceLevel2",
         "Icon": "btn-upgrade-xayid-airarmorlevel2",
-        "Tooltip": "Further upgrades the armor of all Xayid air units.",
-        "Name": "Mutate Flyer Carapace Level 2",
+        "Name": {
+          "enUS": "Mutate Flyer Carapace Level 2",
+          "ruRU": "Мутировать панцирь воздушных единиц 2 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Further upgrades the armor of all Xayid air units.",
+          "ruRU": "Значительно улучшает броню всех воздушных Зейтов."
+        },
         "Hotkey": "C"
       },
       {
@@ -467,8 +526,14 @@
         "AbilCmd": "CatalystPitResearch,Research6",
         "id": "MutateFlyerCarapaceLevel3",
         "Icon": "btn-upgrade-xayid-airarmorlevel3",
-        "Tooltip": "Maximizes the armor of all Xayid air units.",
-        "Name": "Mutate Flyer Carapace Level 3",
+        "Name": {
+          "enUS": "Mutate Flyer Carapace Level 3",
+          "ruRU": "Мутировать панцирь воздушных единиц 3 уровня"
+        },
+        "Tooltip": {
+          "enUS": "Maximizes the armor of all Xayid air units.",
+          "ruRU": "Максимально улучшает броню всех воздушных Зейтов."
+        },
         "Hotkey": "C"
       },
       {
@@ -506,8 +571,14 @@
         "AbilCmd": "CatalystPitResearch,Research7",
         "id": "MutateCleavingSpores",
         "Icon": "btn-upgrade-xayid-cleavingspores",
-        "Tooltip": "Causes <span style=\"color: #FFFF80\">Raptor</span> attacks to deal <b>10</b> spell damage to armored units over <b>3.5</b> seconds.",
-        "Name": "Mutate Cleaving Spores",
+        "Name": {
+          "enUS": "Mutate Cleaving Spores",
+          "ruRU": "Мутировать Расщепляющие Споры"
+        },
+        "Tooltip": {
+          "enUS": "Causes <span style=\"color: FFFF80\">Raptor</span> attacks to deal <b>10</b> spell damage to armored units over <b>3.5</b> seconds.",
+          "ruRU": "Позволяет <span style=\"color: FFFF80\">Рапторам</span> наносить дополнительные 3 (+5 против бронированных целей) единицы урона за <b>1.0</b> секунд."
+        },
         "Hotkey": "A"
       }
     ]
@@ -523,6 +594,7 @@
   "SubgroupPriority": 33,
   "GlossaryPriority": 25,
   "Icon": "btn-building-xayid-catalystpit",
+  "Model": "CatalystPit",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -530,15 +602,24 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "CatalystPitResearch",
-      "Name": "Catalyst Pit Research"
+      "Name": {
+        "enUS": "Catalyst Pit Research",
+        "ruRU": "Catalyst Pit Research"
+      }
     }
   ],
   "$Upgrades": [
@@ -569,64 +650,118 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research1",
       "id": "MutateFlyerAttacks",
       "Icon": "btn-upgrade-xayid-airweaponslevel1",
-      "Tooltip": "Upgrades the attacks of all Xayid air units.",
-      "Name": "Mutate Flyer Attacks Level 1"
+      "Name": {
+        "enUS": "Mutate Flyer Attacks Level 1",
+        "ruRU": "Мутировать атаку воздушных единиц"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the attacks of all Xayid air units.",
+        "ruRU": "Улучшает атаку всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research2",
       "id": "MutateFlyerAttacksLevel2",
       "Icon": "btn-upgrade-xayid-airweaponslevel2",
-      "Tooltip": "Further upgrades the attacks of all Xayid air units.",
-      "Name": "Mutate Flyer Attacks Level 2"
+      "Name": {
+        "enUS": "Mutate Flyer Attacks Level 2",
+        "ruRU": "Мутировать атаку воздушных единиц 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the attacks of all Xayid air units.",
+        "ruRU": "Значительно улучшает атаку всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research3",
       "id": "MutateFlyerAttacksLevel3",
       "Icon": "btn-upgrade-xayid-airweaponslevel3",
-      "Tooltip": "Maximizes the attacks of all Xayid air units.",
-      "Name": "Mutate Flyer Attacks Level 3"
+      "Name": {
+        "enUS": "Mutate Flyer Attacks Level 3",
+        "ruRU": "Мутировать атаку воздушных единиц 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the attacks of all Xayid air units.",
+        "ruRU": "Максимально улучшает атаку всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research4",
       "id": "MutateFlyerCarapace",
       "Icon": "btn-upgrade-xayid-airarmorlevel1",
-      "Tooltip": "Upgrades the armor of all Xayid air units.",
-      "Name": "Mutate Flyer Carapace Level 1"
+      "Name": {
+        "enUS": "Mutate Flyer Carapace Level 1",
+        "ruRU": "Мутировать панцирь воздушных единиц"
+      },
+      "Tooltip": {
+        "enUS": "Upgrades the armor of all Xayid air units.",
+        "ruRU": "Улучшает броню всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research5",
       "id": "MutateFlyerCarapaceLevel2",
       "Icon": "btn-upgrade-xayid-airarmorlevel2",
-      "Tooltip": "Further upgrades the armor of all Xayid air units.",
-      "Name": "Mutate Flyer Carapace Level 2"
+      "Name": {
+        "enUS": "Mutate Flyer Carapace Level 2",
+        "ruRU": "Мутировать панцирь воздушных единиц 2 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Further upgrades the armor of all Xayid air units.",
+        "ruRU": "Значительно улучшает броню всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research6",
       "id": "MutateFlyerCarapaceLevel3",
       "Icon": "btn-upgrade-xayid-airarmorlevel3",
-      "Tooltip": "Maximizes the armor of all Xayid air units.",
-      "Name": "Mutate Flyer Carapace Level 3"
+      "Name": {
+        "enUS": "Mutate Flyer Carapace Level 3",
+        "ruRU": "Мутировать панцирь воздушных единиц 3 уровня"
+      },
+      "Tooltip": {
+        "enUS": "Maximizes the armor of all Xayid air units.",
+        "ruRU": "Максимально улучшает броню всех воздушных Зейтов."
+      }
     },
     {
       "AbilCmd": "CatalystPitResearch,Research7",
       "id": "MutateCleavingSpores",
       "Icon": "btn-upgrade-xayid-cleavingspores",
-      "Tooltip": "Causes <span style=\"color: #FFFF80\">Raptor</span> attacks to deal <b>10</b> spell damage to armored units over <b>3.5</b> seconds.",
-      "Name": "Mutate Cleaving Spores"
+      "Name": {
+        "enUS": "Mutate Cleaving Spores",
+        "ruRU": "Мутировать Расщепляющие Споры"
+      },
+      "Tooltip": {
+        "enUS": "Causes <span style=\"color: FFFF80\">Raptor</span> attacks to deal <b>10</b> spell damage to armored units over <b>3.5</b> seconds.",
+        "ruRU": "Позволяет <span style=\"color: FFFF80\">Рапторам</span> наносить дополнительные 3 (+5 против бронированных целей) единицы урона за <b>1.0</b> секунд."
+      }
     }
   ]
 }

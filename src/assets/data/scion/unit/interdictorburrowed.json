@@ -1,6 +1,13 @@
 {
-  "Name": "Interdictor",
-  "Description": "Anti-air defensive structure. Can burrow, disabling it's attack, and rendering it invisible to enemies.<br/><br/><span style=\"color: #FFFF80\">Can attack air units.</span><br/><span style=\"color: #FFE303\">Detector</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Interdictor",
+    "ruRU": "Интердиктор"
+  },
+  "Description": {
+    "enUS": "Anti-air defensive structure. Can burrow, disabling it's attack, and rendering it invisible to enemies.<br/><br/><span style=\"color: FFFF80\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
+    "ruRU": "Противовоздушное оборонительное сооружение. Может опускаться под землю, отключая оружие и становясь невидимым для врагов.<br/><br/><span style=\"color: FFFF80\">Может атаковать воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 300,
   "LifeMax": 300,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -68,16 +78,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Interdictor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Interdictor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Interdictor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Interdictor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -121,6 +133,18 @@
   "Facing": 315,
   "FogVisibility": "Snapshot",
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "InterdictorUnburrow",
+    "InterdictorBurrow"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "Detector11",
+    "UnderConstruction",
+    "GenetronTurretFreeze"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,8 +217,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -268,8 +298,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -311,8 +347,14 @@
         "AbilCmd": "InterdictorUnburrow,Execute",
         "id": "StaticDUnburrow",
         "Icon": "btn-ability-genetron-ambush",
-        "Tooltip": "Unburies the structure, allowing it to resume a normal state.",
-        "Name": "Reveal",
+        "Name": {
+          "enUS": "Reveal",
+          "ruRU": "Показать"
+        },
+        "Tooltip": {
+          "enUS": "Unburies the structure, allowing it to resume a normal state.",
+          "ruRU": "Поднимается, включая оружие и становясь видимым для врагов."
+        },
         "Hotkey": "D"
       },
       {
@@ -354,8 +396,14 @@
         "AbilCmd": "InterdictorBurrow,Execute",
         "id": "StaticDBurrow",
         "Icon": "btn-ability-genetron-conceal",
-        "Tooltip": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
-        "Name": "Conceal",
+        "Name": {
+          "enUS": "Conceal",
+          "ruRU": "Скрыть"
+        },
+        "Tooltip": {
+          "enUS": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
+          "ruRU": "Опускается под землю, отключая оружие и становясь невидимым для врагов."
+        },
         "Hotkey": "E"
       },
       {
@@ -375,8 +423,14 @@
         "AbilCmd": "",
         "id": "Detector",
         "Icon": "btn-status-detector",
-        "Tooltip": "This unit can detect cloaked, burrowed, and hallucinated units.",
-        "Name": "Detector"
+        "Name": {
+          "enUS": "Detector",
+          "ruRU": "Детектор "
+        },
+        "Tooltip": {
+          "enUS": "This unit can detect cloaked, burrowed, and hallucinated units.",
+          "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска, а также распознавать иллюзии."
+        }
       }
     ]
   },
@@ -386,63 +440,120 @@
     "Minerals": 100
   },
   "RepairTime": 30,
+  "WeaponArray": [
+    {
+      "Link": "NeutralizerBeamDummy",
+      "Turret": "InterdictorMovement"
+    }
+  ],
   "SubgroupPriority": 4,
   "GlossaryPriority": 0,
   "TechAliasArray": [
     "Alias_Interdictor"
   ],
   "Icon": "btn-building-genetron-interdictor",
+  "Model": "Interdictor",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "Turret": "InterdictorMovement",
-      "id": "NeutralizerBeamDummy",
+      "EditorCategories": "Race:Genetron",
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-genetron-interdictor",
-      "Name": "Neutralizer Beam Dummy",
-      "Amount": 30,
-      "Kind": "Ranged",
+      "DisplayEffect": "NeutralizerBeamLMImpact",
       "TargetFilters": "Air",
+      "MinScanRange": 7.5,
       "Range": 7,
-      "Period": 1.25
+      "Period": 1.25,
+      "Effect": "NullifierMissilesDummy",
+      "id": "NeutralizerBeamDummy",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Neutralizer Beam Dummy",
+        "ruRU": "Neutralizer Beam Dummy"
+      },
+      "Amount": 30,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
       "id": "Detector11",
       "Icon": "btn-status-detector",
-      "Tooltip": "This unit can detect cloaked or burrowed units within its sight range.",
-      "Name": "Detector"
+      "Name": {
+        "enUS": "Detector",
+        "ruRU": "Детектор "
+      },
+      "Tooltip": {
+        "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
+        "ruRU": "Эта боевая единица может обнаруживать замаскированные или закопанные войска в поле обзора."
+      }
     },
     {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "GenetronTurretFreeze"
+      "id": "GenetronTurretFreeze",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Turret Freeze",
+        "ruRU": "Genetron Turret Freeze"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "InterdictorUnburrow",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      }
     },
     {
       "id": "InterdictorBurrow",
-      "Name": "Burrow"
+      "Name": {
+        "enUS": "Burrow",
+        "ruRU": "Burrow"
+      }
     }
   ],
   "$Upgrades": [
@@ -458,40 +569,61 @@
   "$Morph": [
     "Interdictor"
   ],
-  "$Phase": [
-    "InterdictorBurrowed",
-    "InterdictorBurrowed"
-  ],
-  "$Phased": "InterdictorBurrowed",
+  "$Phase": [],
+  "$Phased": "Interdictor",
   "$Producers": [],
   "$Commands": [
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "InterdictorUnburrow,Execute",
       "id": "StaticDUnburrow",
       "Icon": "btn-ability-genetron-ambush",
-      "Tooltip": "Unburies the structure, allowing it to resume a normal state.",
-      "Name": "Reveal"
+      "Name": {
+        "enUS": "Reveal",
+        "ruRU": "Показать"
+      },
+      "Tooltip": {
+        "enUS": "Unburies the structure, allowing it to resume a normal state.",
+        "ruRU": "Поднимается, включая оружие и становясь видимым для врагов."
+      }
     },
     {
       "AbilCmd": "InterdictorBurrow,Execute",
       "id": "StaticDBurrow",
       "Icon": "btn-ability-genetron-conceal",
-      "Tooltip": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
-      "Name": "Conceal"
+      "Name": {
+        "enUS": "Conceal",
+        "ruRU": "Скрыть"
+      },
+      "Tooltip": {
+        "enUS": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
+        "ruRU": "Опускается под землю, отключая оружие и становясь невидимым для врагов."
+      }
     }
   ]
 }

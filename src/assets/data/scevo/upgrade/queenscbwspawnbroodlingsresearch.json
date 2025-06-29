@@ -1,11 +1,14 @@
 {
-  "id": "QueenSCBWSpawnBroodlingsResearch",
-  "Icon": "btn-ability-zerg-swarmseeds-color",
-  "Name": "Upgrade/Name/QueenSCBWSpawnBroodlingsResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Spawn Broodlings Research",
+    "zhCN": "Spawn Broodlings Research",
+    "koKR": "Spawn Broodlings Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,12 +23,21 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "QueenSCBWSpawnBroodlingsResearch",
+  "id": "QueenSCBWSpawnBroodlingsResearch",
+  "Icon": "btn-ability-zerg-swarmseeds-color",
   "AffectedUnitArray": [
     "QueenSCBW"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder"
 }

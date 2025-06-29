@@ -1,11 +1,14 @@
 {
-  "id": "CarrierSCBWHangarIncreaseUpgrade",
-  "Icon": "btn-upgrade-protoss-gravitoncatapult",
-  "Name": "Upgrade/Name/CarrierSCBWHangarIncreaseUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Carrier Capacity",
+    "zhCN": "Carrier Capacity",
+    "koKR": "Carrier Capacity"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,20 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "CarrierSCBWHangarIncreaseUpgrade",
+  "id": "CarrierSCBWHangarIncreaseUpgrade",
+  "InfoTooltipPriority": 1,
+  "Icon": "btn-upgrade-protoss-gravitoncatapult",
+  "Race": "BWPr",
+  "ScoreAmount": 400,
+  "ScoreResult": "BuildOrder",
   "EffectArrayTemplate": [
     {
       "Operation": "Set",
@@ -33,10 +49,6 @@
       "Value": "CarrierSCBWHangar@ArmUpgrade"
     }
   ],
-  "InfoTooltipPriority": 1,
-  "Race": "Prot",
-  "ScoreAmount": 200,
-  "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "CarrierSCBW"
   ]

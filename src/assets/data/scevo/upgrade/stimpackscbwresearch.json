@@ -1,11 +1,14 @@
 {
-  "id": "StimpackSCBWResearch",
-  "Icon": "btn-ability-terran-stimpack-color",
-  "Name": "Upgrade/Name/StimpackSCBWResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Stimpack Research",
+    "zhCN": "Stimpack Research",
+    "koKR": "Stimpack Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,10 +23,19 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "StimpackSCBWResearch",
+  "id": "StimpackSCBWResearch",
+  "Icon": "btn-ability-terran-stimpack-color",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
-  "Race": "Terr",
+  "Race": "BWTe",
   "AffectedUnitArray": [
     "MarineSCBW",
     "FirebatSCBW"

@@ -132,7 +132,8 @@
     "CSVRepairPulse",
     "CSVDeploy",
     "APCSmokeGrenade",
-    "LotCUPLCSVSupplyLineManagement"
+    "LotCUPLCSVSupplyLineManagement",
+    "UPLSpaceTrashCoordination"
   ],
   "BehaviorArray": [
     "CSVTransportHealer",
@@ -1133,6 +1134,165 @@
           "enUS": "Allows CSV to move.  <br/><br/>CSV cannot use abilities while in vehicle mode."
         },
         "Hotkey": "F"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/UPLSpaceTrashCoordination",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:UPL,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UPLSpaceTrashCoordination",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "BestUnit": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "CalldownMULECreateUnit2"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "UPLSpaceTrashCoordination",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "SpaceTrashCoordination"
+            }
+          },
+          "FollowRange": 5,
+          "Cost": [
+            {
+              "Vital": {
+                "Energy": 20
+              },
+              "Charge": {
+                "CountMax": 1,
+                "CountStart": 1,
+                "CountUse": 1,
+                "TimeUse": 6
+              },
+              "Cooldown": {
+                "Operation": "Add",
+                "TimeUse": 6
+              }
+            }
+          ],
+          "Range": [
+            13
+          ],
+          "Arc": 360,
+          "PrepTime": [
+            3
+          ],
+          "ShowProgressArray": {
+            "Prep": 1
+          },
+          "CursorEffect": [
+            "UPLSpaceTrashCoordinationEnum"
+          ],
+          "id": "UPLSpaceTrashCoordination"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 20,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLSpaceTrashCoordination,Execute",
+        "id": "SpaceTrashCoordination",
+        "Icon": "talsonisex3_debris_splat_diff_03",
+        "Name": {
+          "enUS": "Space Trash Coordination"
+        },
+        "Tooltip": {
+          "enUS": "Drops a 4*4 debris at target location. The debris has 150 life and 0 armor, and is capable to blocking unit movement."
+        },
+        "Hotkey": "E"
       }
     ]
   },
@@ -1179,6 +1339,7 @@
   "Behaviors": [
     {
       "id": "CSVTransportHealer",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Medical Bay"
       },
@@ -1242,6 +1403,12 @@
       "Name": {
         "enUS": "LotC-UPL-CSV-SupplyLineManagement"
       }
+    },
+    {
+      "id": "UPLSpaceTrashCoordination",
+      "Name": {
+        "enUS": "Space Trash Calldown"
+      }
     }
   ],
   "$Upgrades": [
@@ -1272,7 +1439,9 @@
     null
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "UPLDestructibleDebris4x4"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [
@@ -1400,6 +1569,17 @@
       },
       "Tooltip": {
         "enUS": "Allows CSV to move.  <br/><br/>CSV cannot use abilities while in vehicle mode."
+      }
+    },
+    {
+      "AbilCmd": "UPLSpaceTrashCoordination,Execute",
+      "id": "SpaceTrashCoordination",
+      "Icon": "talsonisex3_debris_splat_diff_03",
+      "Name": {
+        "enUS": "Space Trash Coordination"
+      },
+      "Tooltip": {
+        "enUS": "Drops a 4*4 debris at target location. The debris has 150 life and 0 armor, and is capable to blocking unit movement."
       }
     }
   ]

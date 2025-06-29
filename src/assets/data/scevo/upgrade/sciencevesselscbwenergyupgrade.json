@@ -1,11 +1,14 @@
 {
-  "id": "ScienceVesselSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-terran-corvidreactor",
-  "Name": "Upgrade/Name/ScienceVesselSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Titan Reactor",
+    "zhCN": "Titan Reactor",
+    "koKR": "Titan Reactor"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,19 +23,28 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "ScienceVesselSCBWEnergyUpgrade",
+  "id": "ScienceVesselSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
-  "Race": "Terr",
-  "ScoreAmount": 300,
+  "Icon": "btn-upgrade-terran-corvidreactor",
+  "Race": "BWTe",
+  "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "ScienceVesselSCBW"

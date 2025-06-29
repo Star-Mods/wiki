@@ -1,6 +1,13 @@
 {
-  "Name": "Aegis",
-  "Description": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Aegis",
+    "ruRU": "Эгида"
+  },
+  "Description": {
+    "enUS": "Powerful defense structure. Can use Relocate and Activate Shield.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Мощное оборонительное сооружение. Может использовать способности Перемещение и Активировать Щит.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные еденицы.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -60,16 +70,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Aegis/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Aegis/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Aegis/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Aegis/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -83,10 +95,21 @@
   ],
   "Collide": [],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 0,
   "Sight": 11,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "AegisRelocate",
+    "AegisActivateShield",
+    "AegisDeactivateShield"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -159,8 +182,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -234,8 +263,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -386,8 +421,14 @@
         "AbilCmd": "AegisRelocate,Execute",
         "id": "Relocate",
         "Icon": "btn-ability-keiron-citadelcharge",
-        "Tooltip": "Teleports the caster to the target <span style=\"color: #FFFF80\">Citadel</span>.",
-        "Name": "Relocate",
+        "Name": {
+          "enUS": "Relocate",
+          "ruRU": "Перемещение"
+        },
+        "Tooltip": {
+          "enUS": "Teleports the caster to the target <span style=\"color: FFFF80\">Citadel</span>.",
+          "ruRU": "Телепортирует заклинателя на выбранную <span style=\"color: FFFF80\">Citadel</span>."
+        },
         "Hotkey": "R"
       },
       {
@@ -518,8 +559,14 @@
         "AbilCmd": "AegisActivateShield,Execute",
         "id": "ActivateShield",
         "Icon": "btn-ability-keiron-aegisshield",
-        "Tooltip": "Activates a shield, rendering all friendly units within it invulnerable to attack. Enemy units are unable to enter the shields area.",
-        "Name": "Activate Shield",
+        "Name": {
+          "enUS": "Activate Shield",
+          "ruRU": "Активировать Щит"
+        },
+        "Tooltip": {
+          "enUS": "Activates a shield, rendering all friendly units within it invulnerable to attack. Enemy units are unable to enter the shields area.",
+          "ruRU": "Активирует Щит, внутри которого дружественные юниты неуязвимы для атаки. Вражеские юниты не могут войти в область щита."
+        },
         "Hotkey": "C"
       },
       {
@@ -647,8 +694,14 @@
         "AbilCmd": "AegisDeactivateShield,Execute",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -665,7 +718,10 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Aegis",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Aegis",
   "Height": 3,
   "VisionHeight": 0,
@@ -685,51 +741,83 @@
     "Minerals": 400,
     "Vespene": 400
   },
+  "WeaponArray": [
+    {
+      "Link": "BulwarkBlast"
+    }
+  ],
   "SubgroupPriority": 35,
   "GlossaryPriority": 50,
   "TechAliasArray": [
     "Alias_Aegis"
   ],
   "Icon": "btn-unit-keiron-aegis",
+  "Model": "Aegis",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
-      "id": "BulwarkBlast",
+      "EditorCategories": "Race:Keiron",
       "Icon": "btn-unit-keiron-aegis",
-      "Name": "Bulwark Blast",
-      "Amount": 40,
-      "Kind": "Ranged",
+      "DisplayEffect": "BulwarkBlastImpact",
       "TargetFilters": "",
       "Range": 10,
-      "Period": 1
+      "Arc": 360,
+      "Period": 1,
+      "DamagePoint": 0.375,
+      "id": "BulwarkBlast",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Bulwark Blast",
+        "ruRU": "Удар оплота"
+      },
+      "Amount": 40,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "AegisRelocate",
-      "Name": "Aegis Relocate"
+      "Name": {
+        "enUS": "Aegis Relocate",
+        "ruRU": "Aegis Relocate"
+      }
     },
     {
       "id": "AegisActivateShield",
-      "Name": "Aegis - Activate Shield"
+      "Name": {
+        "enUS": "Aegis - Activate Shield"
+      }
     },
     {
       "id": "AegisDeactivateShield",
-      "Name": "Aegis - Deactivate Shield"
+      "Name": {
+        "enUS": "Aegis - Deactivate Shield"
+      }
     }
   ],
   "$Upgrades": [
@@ -759,36 +847,66 @@
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "AegisRelocate,Execute",
       "id": "Relocate",
       "Icon": "btn-ability-keiron-citadelcharge",
-      "Tooltip": "Teleports the caster to the target <span style=\"color: #FFFF80\">Citadel</span>.",
-      "Name": "Relocate"
+      "Name": {
+        "enUS": "Relocate",
+        "ruRU": "Перемещение"
+      },
+      "Tooltip": {
+        "enUS": "Teleports the caster to the target <span style=\"color: FFFF80\">Citadel</span>.",
+        "ruRU": "Телепортирует заклинателя на выбранную <span style=\"color: FFFF80\">Citadel</span>."
+      }
     },
     {
       "AbilCmd": "AegisActivateShield,Execute",
       "id": "ActivateShield",
       "Icon": "btn-ability-keiron-aegisshield",
-      "Tooltip": "Activates a shield, rendering all friendly units within it invulnerable to attack. Enemy units are unable to enter the shields area.",
-      "Name": "Activate Shield"
+      "Name": {
+        "enUS": "Activate Shield",
+        "ruRU": "Активировать Щит"
+      },
+      "Tooltip": {
+        "enUS": "Activates a shield, rendering all friendly units within it invulnerable to attack. Enemy units are unable to enter the shields area.",
+        "ruRU": "Активирует Щит, внутри которого дружественные юниты неуязвимы для атаки. Вражеские юниты не могут войти в область щита."
+      }
     },
     {
       "AbilCmd": "AegisDeactivateShield,Execute",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     }
   ]
 }

@@ -1,10 +1,11 @@
 {
-  "id": "GenetronAircraftPlatingLevel1",
-  "Icon": "btn-upgrade-genetron-aircraftplating-level1",
-  "Name": "Upgrade/Name/GenetronAircraftPlatingLevel1",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1
+  },
+  "Name": {
+    "enUS": "Genetron Aircraft Plating Level 1",
+    "ruRU": "Броня авиации Генетронов Уровень 1"
   },
   "MaxLevel": 1,
   "Alert": "UpgradeComplete",
@@ -20,8 +21,13 @@
     }
   },
   "Race": "Gen",
+  "Icon": "btn-upgrade-genetron-aircraftplating-level1",
   "ScoreResult": "BuildOrder",
   "EffectArray": [
+    {
+      "Reference": "Unit,LunaMine,LifeArmor",
+      "Value": "1"
+    },
     {
       "Reference": "Unit,Scion_Avenger,LifeArmor",
       "Value": "1"
@@ -55,6 +61,10 @@
       "Value": "1"
     },
     {
+      "Reference": "Unit,LunaMine,LifeArmorLevel",
+      "Value": "1"
+    },
+    {
       "Reference": "Unit,Scion_Avenger,LifeArmorLevel",
       "Value": "1"
     },
@@ -85,6 +95,11 @@
     {
       "Reference": "Unit,Scion_ProcessorStatic,LifeArmorLevel",
       "Value": "1"
+    },
+    {
+      "Operation": "Set",
+      "Reference": "Actor,LunaMine,LifeArmorIcon",
+      "Value": "Assets\\Textures\\btn-upgrade-genetron-aircraftplating-level1.dds"
     },
     {
       "Operation": "Set",
@@ -123,6 +138,7 @@
     }
   ],
   "AffectedUnitArray": [
+    "LunaMine",
     "Scion_Avenger",
     "Badger",
     "Boar",
@@ -132,6 +148,7 @@
     "Scion_Processor",
     "Scion_ProcessorStatic"
   ],
+  "id": "GenetronAircraftPlatingLevel1",
   "ScoreAmount": 200,
   "LeaderLevel": 1
 }

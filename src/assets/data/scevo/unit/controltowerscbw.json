@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Control Tower",
-    "zhCN": "控制塔",
-    "koKR": "컨트롤 타워 /// Control Tower"
+    "zhCN": "Control Tower",
+    "koKR": "Control Tower"
   },
   "Description": {
-    "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-    "zhCN": "空军单位研究设施。<span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- 可以在<b>Starport</b>中制造<b>Dropship</b><br/>- 可以在<b>Starport</b>中建造<b>Valkyrie</b><br/>- <b>Science Facility</b><br/>- 可以在<b>Starport</b>中建造<b>Battlecruiser</b>",
-    "koKR": "항공기 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Dropship</b> (<b>Starport</b>)<br/>- <b>Valkyrie</b> (<b>Starport</b>)<br/>- <b>Science Facility</b> (<b>Starport</b>)<br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+    "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+    "zhCN": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+    "koKR": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ControlTowerSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ControlTowerSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ControlTowerSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ControlTowerSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,10 @@
   "SubgroupPriority": 10,
   "AIKiteRange": 0,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "TerranBuildingSCBW@AddonDetached"
+  ],
   "TechAliasArray": [
     "Alias_ControlTowerSCBW"
   ],
@@ -126,11 +130,17 @@
     "Ground"
   ],
   "Facing": 315,
+  "AbilArray": [
+    "que5Addon",
+    "BuildInProgress",
+    "WraithSCBWCloakResearch",
+    "WraithSCBWEnergyUpgrade"
+  ],
   "Footprint": "Footprint2x2Contour",
   "AddedOnArray": [
     {
       "UnitLink": "StarportSCBW",
-      "BehaviorLink": "##id##@Attached",
+      "BehaviorLink": "ControlTowerSCBW@Attached",
       "ParentBehaviorLink": "AddonIsWorkingSCBW"
     }
   ],
@@ -141,7 +151,7 @@
   "LifeArmor": 1,
   "CostResource": {
     "Minerals": 50,
-    "Vespene": 50
+    "Vespene": 25
   },
   "RepairTime": 37.5,
   "CardLayouts": {
@@ -205,13 +215,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -271,14 +277,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "WraithSCBWCloakResearch",
@@ -292,16 +294,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "WraithSCBWCloakResearch",
+            "State": "Restricted",
             "Requirements": "WraithSCBWCloakResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 80,
           "Upgrade": "WraithSCBWCloakResearch"
         },
-        "Time": 110,
+        "Time": 80,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -320,13 +323,13 @@
         "Icon": "btn-upgrade-nova-tacticalstealthsuit",
         "Name": {
           "enUS": "Research Cloaking Field",
-          "zhCN": "研究隐形力场",
-          "koKR": "클로킹 필드 연구 /// Research Cloaking Field"
+          "zhCN": "Research Cloaking Field",
+          "koKR": "Research Cloaking Field"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>技能。激活<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>后，只会被侦测单位或侦测效果发现。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> 능력을 사용할 수 있게 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>는 디텍터나 탐지 효과에게 드러나지 않는 한 유닛을 적에게 보이지 않게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
         },
         "Hotkey": "C"
       },
@@ -342,19 +345,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "WraithSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "WraithSCBWEnergyUpgrade"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 80,
           "Upgrade": "WraithSCBWEnergyUpgrade"
         },
         "Time": 80,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -370,65 +374,15 @@
         "Icon": "btn-ability-terran-redlinereactor",
         "Name": {
           "enUS": "Research Apollo Reactor",
-          "zhCN": "研究阿波罗反应堆",
-          "koKR": "아폴로 반응로 연구 /// Research Apollo Reactor"
+          "zhCN": "Research Apollo Reactor",
+          "koKR": "Research Apollo Reactor"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
-      },
-      {
-        "Upgrade": "DropshipSCBWSpeedBoostResearch",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1,
-              "ToSelection": 1,
-              "UseDefaultButton": 1,
-              "CreateDefaultButton": 1
-            },
-            "DefaultButtonFace": "DropshipSCBWSpeedBoostResearch",
-            "Requirements": "DropshipSCBWSpeedBoostResearch"
-          },
-          "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
-          },
-          "Time": 93.75,
-          "Upgrade": "DropshipSCBWSpeedBoostResearch"
-        },
-        "Time": 93.75,
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropshipSCBWSpeedBoostResearch,Research1",
-        "id": "DropshipSCBWSpeedBoostResearch",
-        "Icon": "btn-upgrade-terran-medivacemergencythrusters",
-        "Name": {
-          "enUS": "Research Emergency Thrusters",
-          "zhCN": "Research Emergency Thrusters",
-          "koKR": "Research Emergency Thrusters"
-        },
-        "Tooltip": {
-          "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability."
-        },
-        "Hotkey": "E"
       },
       {
         "Upgrade": "WraithSCBWCloakResearch",
@@ -442,16 +396,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "WraithSCBWCloakResearch",
+            "State": "Restricted",
             "Requirements": "WraithSCBWCloakResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 80,
           "Upgrade": "WraithSCBWCloakResearch"
         },
-        "Time": 110,
+        "Time": 80,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -470,13 +425,13 @@
         "Icon": "btn-upgrade-nova-tacticalstealthsuit",
         "Name": {
           "enUS": "Research Cloaking Field",
-          "zhCN": "研究隐形力场",
-          "koKR": "클로킹 필드 연구 /// Research Cloaking Field"
+          "zhCN": "Research Cloaking Field",
+          "koKR": "Research Cloaking Field"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>技能。激活<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>后，只会被侦测单位或侦测效果发现。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> 능력을 사용할 수 있게 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>는 디텍터나 탐지 효과에게 드러나지 않는 한 유닛을 적에게 보이지 않게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
         },
         "Hotkey": "C"
       },
@@ -492,19 +447,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "WraithSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "WraithSCBWEnergyUpgrade"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 80,
           "Upgrade": "WraithSCBWEnergyUpgrade"
         },
         "Time": 80,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -520,71 +476,21 @@
         "Icon": "btn-ability-terran-redlinereactor",
         "Name": {
           "enUS": "Research Apollo Reactor",
-          "zhCN": "研究阿波罗反应堆",
-          "koKR": "아폴로 반응로 연구 /// Research Apollo Reactor"
+          "zhCN": "Research Apollo Reactor",
+          "koKR": "Research Apollo Reactor"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
-      },
-      {
-        "Upgrade": "DropshipSCBWSpeedBoostResearch",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1,
-              "ToSelection": 1,
-              "UseDefaultButton": 1,
-              "CreateDefaultButton": 1
-            },
-            "DefaultButtonFace": "DropshipSCBWSpeedBoostResearch",
-            "Requirements": "DropshipSCBWSpeedBoostResearch"
-          },
-          "Resource": {
-            "Minerals": 100,
-            "Vespene": 100
-          },
-          "Time": 93.75,
-          "Upgrade": "DropshipSCBWSpeedBoostResearch"
-        },
-        "Time": 93.75,
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "DropshipSCBWSpeedBoostResearch,Research1",
-        "id": "DropshipSCBWSpeedBoostResearch",
-        "Icon": "btn-upgrade-terran-medivacemergencythrusters",
-        "Name": {
-          "enUS": "Research Emergency Thrusters",
-          "zhCN": "Research Emergency Thrusters",
-          "koKR": "Research Emergency Thrusters"
-        },
-        "Tooltip": {
-          "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability."
-        },
-        "Hotkey": "E"
       }
     ]
   },
-  "ScoreMake": 100,
-  "ScoreKill": 100,
-  "BuildTime": 30,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
+  "BuildTime": 25,
   "AddedOnUnit": "StarportSCBW",
   "Icon": "btn-building-terran-controltower@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
@@ -593,6 +499,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -602,6 +509,7 @@
     },
     {
       "id": "TerranBuildingSCBW@AddonDetached",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Addon Detached",
         "zhCN": "Addon Detached",
@@ -614,35 +522,23 @@
     {
       "id": "que5Addon",
       "Name": {
-        "ruRU": "Queue",
-        "enUS": "Queue"
+        "ruRU": "Queue"
       }
     },
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "WraithSCBWCloakResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "WraithSCBWEnergyUpgrade",
-      "Name": {
-        "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
-      }
-    },
-    {
-      "id": "DropshipSCBWSpeedBoostResearch",
       "Name": {
         "enUS": "Research",
         "zhCN": "Research",
@@ -663,14 +559,16 @@
     "ControlTowerSCBW@Count",
     "ControlTowerSCBW@QoB",
     "ControlTowerSCBW@QoBAtUnit",
-    "ControlTowerSCBW"
+    "ControlTowerSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [
     "WraithSCBWCloakResearch",
-    "WraithSCBWEnergyUpgrade",
-    "DropshipSCBWSpeedBoostResearch"
+    "WraithSCBWEnergyUpgrade"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -686,25 +584,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "WraithSCBWCloakResearch,Research1",
@@ -712,13 +604,13 @@
       "Icon": "btn-upgrade-nova-tacticalstealthsuit",
       "Name": {
         "enUS": "Research Cloaking Field",
-        "zhCN": "研究隐形力场",
-        "koKR": "클로킹 필드 연구 /// Research Cloaking Field"
+        "zhCN": "Research Cloaking Field",
+        "koKR": "Research Cloaking Field"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>技能。激活<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>后，只会被侦测单位或侦测效果发现。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> 능력을 사용할 수 있게 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>는 디텍터나 탐지 효과에게 드러나지 않는 한 유닛을 적에게 보이지 않게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
       }
     },
     {
@@ -727,28 +619,13 @@
       "Icon": "btn-ability-terran-redlinereactor",
       "Name": {
         "enUS": "Research Apollo Reactor",
-        "zhCN": "研究阿波罗反应堆",
-        "koKR": "아폴로 반응로 연구 /// Research Apollo Reactor"
+        "zhCN": "Research Apollo Reactor",
+        "koKR": "Research Apollo Reactor"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
-      }
-    },
-    {
-      "AbilCmd": "DropshipSCBWSpeedBoostResearch,Research1",
-      "id": "DropshipSCBWSpeedBoostResearch",
-      "Icon": "btn-upgrade-terran-medivacemergencythrusters",
-      "Name": {
-        "enUS": "Research Emergency Thrusters",
-        "zhCN": "Research Emergency Thrusters",
-        "koKR": "Research Emergency Thrusters"
-      },
-      "Tooltip": {
-        "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability."
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -757,13 +634,13 @@
       "Icon": "btn-upgrade-nova-tacticalstealthsuit",
       "Name": {
         "enUS": "Research Cloaking Field",
-        "zhCN": "研究隐形力场",
-        "koKR": "클로킹 필드 연구 /// Research Cloaking Field"
+        "zhCN": "Research Cloaking Field",
+        "koKR": "Research Cloaking Field"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>技能。激活<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>后，只会被侦测单位或侦测效果发现。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> 능력을 사용할 수 있게 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>는 디텍터나 탐지 효과에게 드러나지 않는 한 유닛을 적에게 보이지 않게 합니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> ability. <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span> renders a unit invisible to enemies unless it's revealed by detectors or effects."
       }
     },
     {
@@ -772,28 +649,13 @@
       "Icon": "btn-ability-terran-redlinereactor",
       "Name": {
         "enUS": "Research Apollo Reactor",
-        "zhCN": "研究阿波罗反应堆",
-        "koKR": "아폴로 반응로 연구 /// Research Apollo Reactor"
+        "zhCN": "Research Apollo Reactor",
+        "koKR": "Research Apollo Reactor"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
-      }
-    },
-    {
-      "AbilCmd": "DropshipSCBWSpeedBoostResearch,Research1",
-      "id": "DropshipSCBWSpeedBoostResearch",
-      "Icon": "btn-upgrade-terran-medivacemergencythrusters",
-      "Name": {
-        "enUS": "Research Emergency Thrusters",
-        "zhCN": "Research Emergency Thrusters",
-        "koKR": "Research Emergency Thrusters"
-      },
-      "Tooltip": {
-        "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability.",
-        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Dropship</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Emergency Thrusters</b></span> ability."
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Wraith</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,WraithSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     }
   ]

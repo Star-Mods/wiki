@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Drone",
-    "zhCN": "工蜂",
-    "koKR": "드론 /// Drone"
+    "zhCN": "Drone",
+    "koKR": "Drone"
   },
   "Description": {
     "enUS": "Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "zhCN": "基础工作单位。用于采集晶体矿和高能瓦斯。可以变异为建筑。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-    "koKR": "기본 일꾼 유닛입니다. 미네랄과 베스핀 가스를 채취할 수 있습니다. 구조물로 변이할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "zhCN": "Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+    "koKR": "Basic worker unit. Can harvest minerals and vespene gas. Can mutate into structures.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 40,
   "LifeMax": 40,
-  "LifeArmorName": {
-    "enUS": "Zerg Ground Carapace",
-    "ruRU": "Zerg Ground Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Burrowed",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DroneSCBW@Burrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DroneSCBW@Burrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DroneSCBW@Burrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DroneSCBW@Burrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -118,9 +118,9 @@
   },
   "AttackTargetPriority": 20,
   "AIOverideTargetPriority": 10,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 10,
+  "AbilArray": [
+    "DroneSCBW@BurrowUp"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,14 +193,9 @@
         "Type": "AbilCmd",
         "AbilCmd": "attack,Execute",
         "id": "AttackWorker",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Icon": "btn-command-attack",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -235,16 +230,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -289,16 +277,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "DefilerSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -338,16 +319,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "DroneSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -392,16 +366,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "HydraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -428,8 +395,8 @@
         },
         "Unit": "UltraliskSCBW@Burrowed",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -441,16 +408,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -490,16 +450,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -526,8 +479,8 @@
         },
         "Unit": "UltraliskSCBW@Burrowed",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -539,16 +492,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       }
     ]
@@ -563,6 +509,7 @@
   ],
   "TacticalAIThink": "AIThinkDroneSCBW",
   "Icon": "btn-unit-collection-drone-remastered",
+  "Model": "Drone_Remastered",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
   "Weapons": [],
@@ -572,8 +519,8 @@
       "id": "DroneSCBW@BurrowUp",
       "Name": {
         "enUS": "Unburrow",
-        "zhCN": "出地",
-        "koKR": "언버로우 /// Unburrow"
+        "zhCN": "Unburrow",
+        "koKR": "Unburrow"
       }
     }
   ],
@@ -582,6 +529,7 @@
     "DroneSCBW@Burrowed",
     "DroneSCBW@BurrowedSplat",
     "DroneSCBW",
+    "IsDroneSCBW@Burrowed",
     "DroneSCBW@Burrowed"
   ],
   "$Requirements": [],
@@ -590,123 +538,58 @@
   "$Morph": [
     "DroneSCBW"
   ],
-  "$Phase": [
-    "ZerglingSCBW@Burrowed",
-    "UltraliskSCBW@Burrowed",
-    "HydraliskSCBW@Burrowed",
-    "DroneSCBW@Burrowed",
-    "DroneSCBW@Burrowed",
-    "DefilerSCBW@Burrowed",
-    "DefilerSCBW@Burrowed",
-    "ZerglingSCBW@Burrowed",
-    "UltraliskSCBW@Burrowed",
-    "HydraliskSCBW@Burrowed"
-  ],
-  "$Phased": "DroneSCBW@Burrowed",
+  "$Phase": [],
+  "$Phased": "DroneSCBW",
   "$Producers": [],
   "$Commands": [
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackWorker",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Icon": "btn-command-attack",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DefilerSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DroneSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "HydraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

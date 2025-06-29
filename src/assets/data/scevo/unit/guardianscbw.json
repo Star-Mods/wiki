@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Guardian",
-    "zhCN": "守护者",
-    "koKR": "가디언 /// Guardian"
+    "zhCN": "Guardian",
+    "koKR": "Guardian"
   },
   "Description": {
     "enUS": "Long-range anti-ground flyer. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "zhCN": "超远距离对地空军。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-    "koKR": "원거리 지상 공격 비행체입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Long-range anti-ground flyer. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "zhCN": "Long-range anti-ground flyer. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "koKR": "Long-range anti-ground flyer. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 150,
   "LifeMax": 150,
-  "LifeArmorName": {
-    "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GuardianSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GuardianSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GuardianSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GuardianSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -112,18 +112,28 @@
     "Massive"
   ],
   "LifeArmor": 2,
-  "Speed": 2.25,
+  "Speed": 1.625,
   "Acceleration": 1.6875,
   "Deceleration": 1,
   "Sight": 12,
   "Height": 3.75,
   "VisionHeight": 15,
-  "Food": -4,
+  "Food": -2,
   "CostCategory": "Army",
   "CostResource": {
     "Minerals": 150,
-    "Vespene": 175
+    "Vespene": 200
   },
+  "AbilArray": [
+    "attack",
+    "move",
+    "stop"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "GuardianSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -214,12 +224,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -294,12 +301,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -389,13 +393,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -485,13 +486,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -565,24 +563,18 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       }
     ]
   },
   "GlossaryPriority": 140,
-  "BuildTime": 38,
+  "BuildTime": 34,
   "TacticalAIThink": "AIThinkGuardianSCBW",
   "SubgroupPriority": 78,
-  "ScoreMake": 550,
-  "ScoreKill": 550,
+  "ScoreMake": 150,
+  "ScoreKill": 350,
   "ScoreResult": "BuildOrder",
   "GlossaryStrongArray": [
     "SiegeTankSCBW",
@@ -594,23 +586,31 @@
     "MutaliskSCBW",
     "CorsairSCBW"
   ],
-  "Icon": "btn-unit-zerg-primalguardian",
+  "Icon": "btn-unit-zerg-guardian@scbw",
   "LifeArmorIcon": "btn-upgrade-zerg-flyercarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "GuardianSCBWWeapon",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-airattacks-level0",
-      "Name": {
-        "enUS": "Acid Spores",
-        "zhCN": "酸性孢子",
-        "koKR": "산성 포자 /// Acid Spores"
-      },
-      "Amount": 20,
-      "Kind": "Ranged",
+      "DisplayEffect": "GuardianSCBWWeapon@Damage",
       "TargetFilters": "Ground",
       "Range": 10,
-      "Period": 1.5
+      "Period": 1.875,
+      "Effect": "GuardianSCBWWeapon@LM",
+      "AllowedMovement": "Slowing",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "id": "GuardianSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Acid Spores",
+        "zhCN": "Acid Spores",
+        "koKR": "Acid Spores"
+      },
+      "Amount": 25,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -618,30 +618,30 @@
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/GreaterSpireSCBW",
-    "GuardianSCBW",
     "GuardianSCBW@AllowUnit",
+    "GuardianSCBW",
     "GuardianSCBW@Morph",
+    "Button/Tooltip/GreaterSpireSCBW",
+    "Button/Tooltip/GuardianSCBW@Passive",
     "GreaterSpireSCBW",
     "GuardianSCBW",
     "IsGuardianSCBW",
@@ -650,7 +650,10 @@
     "GuardianSCBW@CountAtUnit",
     "GuardianSCBW@QoB",
     "GuardianSCBW@QoBAtUnit",
-    "GuardianSCBW"
+    "GuardianSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -665,12 +668,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -678,51 +678,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

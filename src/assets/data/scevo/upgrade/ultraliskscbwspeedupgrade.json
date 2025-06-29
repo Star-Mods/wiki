@@ -1,11 +1,14 @@
 {
-  "id": "UltraliskSCBWSpeedUpgrade",
-  "Icon": "btn-upgrade-zerg-anabolicsynthesis",
-  "Name": "Upgrade/Name/UltraliskSCBWSpeedUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Anabolic Synthesis",
+    "zhCN": "Anabolic Synthesis",
+    "koKR": "Anabolic Synthesis"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,15 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "UltraliskSCBWSpeedUpgrade",
+  "id": "UltraliskSCBWSpeedUpgrade",
   "EffectArrayTemplate": [
     {
       "Operation": "Multiply",
@@ -28,11 +39,13 @@
       "Value": "1.5"
     }
   ],
+  "Icon": "btn-upgrade-zerg-anabolicsynthesis",
   "AffectedUnitArray": [
-    "UltraliskSCBW"
+    "UltraliskSCBW",
+    "UltraliskSCBW@Burrowed"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
-  "ScoreAmount": 400,
+  "Race": "BWZe",
+  "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

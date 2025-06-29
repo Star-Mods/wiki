@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Battlecruiser",
-    "zhCN": "战列巡航舰",
-    "koKR": "배틀크루저 /// Battlecruiser"
+    "zhCN": "Battlecruiser",
+    "koKR": "Battlecruiser"
   },
   "Description": {
     "enUS": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "zhCN": "强大的战舰。升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。<br/><br/><span style=\"color: #ffff8a\">可以对地和对空。</span>",
-    "koKR": "강력한 군함입니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+    "zhCN": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+    "koKR": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 550,
-  "LifeMax": 550,
-  "LifeArmorName": {
-    "enUS": "Terran Ship Plating",
-    "ruRU": "Terran Ship Plating"
-  },
+  "LifeStart": 650,
+  "LifeMax": 650,
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -47,7 +45,6 @@
     "CameraFollow",
     "UseLineOfSight",
     "PreventDestroy",
-    "AlwaysThreatens",
     "AIThreatGround",
     "AIThreatAir",
     "AIHighPrioTarget",
@@ -77,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "BattlecruiserSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "BattlecruiserSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "BattlecruiserSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "BattlecruiserSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -122,15 +121,27 @@
   "VisionHeight": 15,
   "Food": -6,
   "CostResource": {
-    "Minerals": 400,
-    "Vespene": 300
+    "Minerals": 375,
+    "Vespene": 275
   },
   "BuildTime": 90,
-  "RepairTime": 90,
+  "RepairTime": 85,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 140,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "BattlecruiserSCBWYamato",
+    "que1"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "BattlecruiserSCBWWeaponGround"
+    },
+    {
+      "Link": "BattlecruiserSCBWWeaponAir"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -221,12 +232,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -301,12 +309,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -396,13 +401,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -492,13 +494,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -572,14 +571,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -607,7 +600,7 @@
               "value": ""
             }
           },
-          "RangeSlop": 10,
+          "RangeSlop": 12,
           "ArcSlop": 11.25,
           "AutoCastAcquireLevel": "Offensive",
           "AutoCastFilters": "Visible;Player,Ally",
@@ -668,9 +661,9 @@
           },
           "ValidatedArray": {
             "Approach": 1,
-            "Prep": 1,
-            "Cast": 1,
-            "Channel": 1
+            "Prep": 0,
+            "Cast": 0,
+            "Channel": 0
           },
           "DefaultError": "MustTargetUnit",
           "AcquirePriority": 3,
@@ -699,13 +692,12 @@
                 "Energy": 100
               },
               "Cooldown": {
-                "Link": "BattlecruiserSCBWYamato",
-                "TimeUse": 0.8332
+                "Link": "BattlecruiserSCBWYamato"
               }
             }
           ],
           "Range": [
-            10
+            12
           ],
           "PrepTime": [
             3
@@ -742,15 +734,42 @@
         "Icon": "btn-ability-terran-yamatogun-color",
         "Name": {
           "enUS": "Yamato Gun",
-          "zhCN": "大和炮",
-          "koKR": "야마토 건 /// Yamato Gun"
+          "zhCN": "Yamato Gun",
+          "koKR": "Yamato Gun"
         },
         "Tooltip": {
-          "enUS": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>260</b></span> damage.",
-          "zhCN": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>260</b></span> damage.",
-          "koKR": "강력한 플라스마 포로 대상을 공격하여 <span class=\"style-TooltipResourceLifeSCBW\"><b>195</b></span>의 피해를 줍니다. /// Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>195</b></span> explosive damage."
+          "enUS": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage.",
+          "zhCN": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage.",
+          "koKR": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage."
         },
         "Hotkey": "Y"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "BattlecruiserSCBWEnergyUpgrade@Passive",
+        "Icon": "btn-upgrade-terran-behemothreactor",
+        "Name": {
+          "enUS": "Colossus Reactor",
+          "zhCN": "Colossus Reactor",
+          "koKR": "Colossus Reactor"
+        },
+        "Tooltip": {
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
       }
     ]
   },
@@ -775,32 +794,55 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "BattlecruiserSCBWWeaponGround",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
+      "DisplayEffect": "BattlecruiserSCBWWeaponGround@Damage",
+      "TargetFilters": "Ground",
+      "Period": 1.175,
+      "Effect": "BattlecruiserSCBWWeaponGround@LM",
+      "AllowedMovement": "Slowing",
+      "Range": 7,
+      "Options": {
+        "NeverMiss": 0
+      },
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "RandomDelayMax": 0.0625,
+      "MinScanRange": 7.5,
+      "id": "BattlecruiserSCBWWeaponGround",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "ATS Laser Battery",
-        "zhCN": "空对地激光炮组",
-        "koKR": "공대지 레이저 포대 /// ATS Laser Battery"
+        "zhCN": "ATS Laser Battery",
+        "koKR": "ATS Laser Battery"
       },
-      "Amount": 25,
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 6,
-      "Period": 1.125
+      "Amount": 27,
+      "Kind": "Ranged"
     },
     {
-      "id": "BattlecruiserSCBWWeaponAir",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-shipweaponslevel0",
+      "DisplayEffect": "BattlecruiserSCBWWeaponAir@Damage",
+      "TargetFilters": "Air",
+      "Range": 7,
+      "Period": 1.175,
+      "Effect": "BattlecruiserSCBWWeaponAir@LM",
+      "AllowedMovement": "Slowing",
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "RandomDelayMax": 0.0625,
+      "MinScanRange": 7.5,
+      "id": "BattlecruiserSCBWWeaponAir",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "ATA Laser Battery",
-        "zhCN": "空对空激光炮组",
-        "koKR": "공대공 레이저 포대 /// ATA Laser Battery"
+        "zhCN": "ATA Laser Battery",
+        "koKR": "ATA Laser Battery"
       },
-      "Amount": 25,
-      "Kind": "Ranged",
-      "TargetFilters": "Air",
-      "Range": 6,
-      "Period": 1.125
+      "Amount": 27,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -808,21 +850,20 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -830,35 +871,38 @@
       "id": "BattlecruiserSCBWYamato",
       "Name": {
         "enUS": "Yamato Gun",
-        "zhCN": "大和炮",
-        "koKR": "야마토 건 /// Yamato Gun"
+        "zhCN": "Yamato Gun",
+        "koKR": "Yamato Gun"
       }
     },
     {
       "id": "que1",
       "Name": {
-        "ruRU": "Queue (1)",
-        "enUS": "Queue (1)"
+        "ruRU": "Queue (1)"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/PhysicsLabSCBW",
+    "Button/Tooltip/ControlTowerSCBW",
     "BattlecruiserSCBWYamatoResearch",
     "BattlecruiserSCBW",
     "Button/Tooltip/BattlecruiserSCBWEnergyUpgrade",
     "BattlecruiserSCBWEnergyUpgrade",
-    "Button/Tooltip/BattlecruiserSCBWYamatoResearch",
-    "PhysicsLabSCBW",
-    "Button/Tooltip/ControlTowerSCBW",
     "BattlecruiserSCBW@AllowUnit",
     "StarportSCBW@Train",
     "StarportSCBW",
+    "Button/Tooltip/PhysicsLabSCBW",
+    "Button/Tooltip/BattlecruiserSCBWYamatoResearch",
+    "Button/Tooltip/BattlecruiserSCBW@Passive",
+    "PhysicsLabSCBW",
     "BattlecruiserSCBW",
     "IsBattlecruiserSCBW",
     "NotBattlecruiserSCBW",
     "CasterIsBattlecruiserSCBW",
-    "BattlecruiserSCBW"
+    "BattlecruiserSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -876,12 +920,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -889,51 +930,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BattlecruiserSCBWYamato,Execute",
@@ -941,13 +967,13 @@
       "Icon": "btn-ability-terran-yamatogun-color",
       "Name": {
         "enUS": "Yamato Gun",
-        "zhCN": "大和炮",
-        "koKR": "야마토 건 /// Yamato Gun"
+        "zhCN": "Yamato Gun",
+        "koKR": "Yamato Gun"
       },
       "Tooltip": {
-        "enUS": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>260</b></span> damage.",
-        "zhCN": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>260</b></span> damage.",
-        "koKR": "강력한 플라스마 포로 대상을 공격하여 <span class=\"style-TooltipResourceLifeSCBW\"><b>195</b></span>의 피해를 줍니다. /// Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>195</b></span> explosive damage."
+        "enUS": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage.",
+        "zhCN": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage.",
+        "koKR": "Blasts a target with a devastating plasma cannon, causing <span class=\"style-TooltipResourceLifeSCBW\"><b>0</b></span> explosive damage."
       }
     }
   ]

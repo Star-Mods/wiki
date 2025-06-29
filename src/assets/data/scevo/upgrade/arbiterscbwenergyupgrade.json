@@ -1,11 +1,14 @@
 {
-  "id": "ArbiterSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
-  "Name": "Upgrade/Name/ArbiterSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Khaydarin Core",
+    "zhCN": "Khaydarin Core",
+    "koKR": "Khaydarin Core"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,19 +23,28 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "ArbiterSCBWEnergyUpgrade",
+  "id": "ArbiterSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
+  "Icon": "btn-upgrade-protoss-adeptshieldupgrade",
   "InfoTooltipPriority": 1,
-  "Race": "Prot",
+  "Race": "BWPr",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

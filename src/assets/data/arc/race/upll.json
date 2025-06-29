@@ -42,44 +42,6 @@
         ],
         "id": "HornetRacing"
       },
-      "RoutheTankArmorPlating": {
-        "class": "CUpgrade",
-        "Flags": {
-          "UpgradeCheat": 1
-        },
-        "Name": {
-          "enUS": "Routhe Tank Armor Plating"
-        },
-        "MaxLevel": 1,
-        "Alert": "UpgradeComplete",
-        "ScoreCount": "MiscTechnologyCount",
-        "ScoreValue": "MiscTechnologyValue",
-        "WebPriority": 1,
-        "LeaderAlias": "RoutheTankArmorPlating",
-        "EditorCategories": "UpgradeType:Talents,Race:UPL",
-        "$tokens": {
-          "ID": {
-            "type": "string",
-            "value": ""
-          }
-        },
-        "EffectArray": [
-          {
-            "Reference": "Unit,RoutheTank,LifeStart",
-            "Value": "75"
-          },
-          {
-            "Reference": "Unit,RoutheTank,LifeMax",
-            "Value": "75"
-          }
-        ],
-        "Race": "UPLL",
-        "Icon": "btn-ability-upl-unobtaniumarmorplating",
-        "AffectedUnitArray": [
-          "RoutheTank"
-        ],
-        "id": "RoutheTankArmorPlating"
-      },
       "A6ExplosiveRounds": {
         "class": "CUpgrade",
         "Flags": {
@@ -155,6 +117,86 @@
         ],
         "Icon": "btn-upgrade-nova-equipment-jetpack",
         "id": "Z1EnergyUpgrade"
+      },
+      "UPLResearchMaterialAbsorptionArmor": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Material Absorption Armor"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "UPLResearchMaterialAbsorptionArmor",
+        "EditorCategories": "Race:UPL,UpgradeType:ArmorBonus",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "Icon": "btn-routhe-tank-material-absorption-armor",
+        "ScoreAmount": 600,
+        "ScoreResult": "BuildOrder",
+        "EffectArray": [
+          {
+            "Reference": "Unit,RoutheTank,LifeArmor",
+            "Value": "2"
+          },
+          {
+            "Reference": "Unit,RoutheTank,LifeArmorLevel",
+            "Value": "2"
+          }
+        ],
+        "AffectedUnitArray": [
+          "RoutheTank",
+          "Condor",
+          "CondorLanded",
+          "UPLBehemoth"
+        ],
+        "id": "UPLResearchMaterialAbsorptionArmor"
+      },
+      "RoutheTankArmorPlating": {
+        "class": "CUpgrade",
+        "Flags": {
+          "UpgradeCheat": 1
+        },
+        "Name": {
+          "enUS": "Routhe Tank Armor Plating"
+        },
+        "MaxLevel": 1,
+        "Alert": "UpgradeComplete",
+        "ScoreCount": "MiscTechnologyCount",
+        "ScoreValue": "MiscTechnologyValue",
+        "WebPriority": 1,
+        "LeaderAlias": "RoutheTankArmorPlating",
+        "EditorCategories": "UpgradeType:Talents,Race:UPL",
+        "$tokens": {
+          "ID": {
+            "type": "string",
+            "value": ""
+          }
+        },
+        "EffectArray": [
+          {
+            "Reference": "Unit,RoutheTank,LifeStart",
+            "Value": "75"
+          },
+          {
+            "Reference": "Unit,RoutheTank,LifeMax",
+            "Value": "75"
+          }
+        ],
+        "Race": "UPLL",
+        "Icon": "btn-ability-upl-unobtaniumarmorplating",
+        "AffectedUnitArray": [
+          "RoutheTank"
+        ],
+        "id": "RoutheTankArmorPlating"
       },
       "UPLInfantryWeaponsLevel1": {
         "class": "CUpgrade",
@@ -2995,7 +3037,7 @@
           },
           {
             "Reference": "Effect,RaptorAirDamage,Amount",
-            "Value": "2"
+            "Value": "1"
           },
           {
             "Reference": "Effect,OspreyAirDamage,Amount",
@@ -3294,7 +3336,7 @@
           },
           {
             "Reference": "Effect,RaptorAirDamage,Amount",
-            "Value": "2"
+            "Value": "1"
           },
           {
             "Reference": "Effect,OspreyAirDamage,Amount",
@@ -3591,7 +3633,7 @@
           },
           {
             "Reference": "Effect,RaptorAirDamage,Amount",
-            "Value": "2"
+            "Value": "1"
           },
           {
             "Reference": "Effect,OspreyAirDamage,Amount",
@@ -4889,20 +4931,20 @@
         ],
         "id": "SeekerShell"
       },
-      "InfantryFlamethrower3xBurning": {
+      "InfantryRocketAOE": {
         "class": "CUpgrade",
         "Flags": {
           "UpgradeCheat": 1
         },
         "Name": {
-          "enUS": "Infantry Flamethrower 3x Burning"
+          "enUS": "Infantry Rocket AOE"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
         "ScoreCount": "MiscTechnologyCount",
         "ScoreValue": "MiscTechnologyValue",
         "WebPriority": 1,
-        "LeaderAlias": "InfantryFlamethrower3xBurning",
+        "LeaderAlias": "InfantryRocketAOE",
         "EditorCategories": "UpgradeType:Talents,Race:UPL",
         "$tokens": {
           "ID": {
@@ -4910,66 +4952,13 @@
             "value": ""
           }
         },
-        "Icon": "btn-ability-upl-naniteignition",
-        "EffectArray": [
-          {
-            "Operation": "Multiply",
-            "Reference": "Effect,InfantryFlamethrowerBurningDamage,Amount",
-            "Value": "3"
-          }
-        ],
         "Race": "UPLL",
-        "ScoreAmount": 500,
-        "id": "InfantryFlamethrower3xBurning"
-      },
-      "InfantryMortarRangeUpgrade": {
-        "class": "CUpgrade",
-        "Flags": {
-          "UpgradeCheat": 1
-        },
-        "Name": {
-          "enUS": "Increased Mortar Range"
-        },
-        "MaxLevel": 1,
-        "Alert": "UpgradeComplete",
-        "ScoreCount": "MiscTechnologyCount",
-        "ScoreValue": "MiscTechnologyValue",
-        "WebPriority": 1,
-        "LeaderAlias": "InfantryMortarRangeUpgrade",
-        "EditorCategories": "UpgradeType:Talents,Race:UPL",
-        "$tokens": {
-          "ID": {
-            "type": "string",
-            "value": ""
-          }
-        },
-        "EffectArray": [
-          {
-            "Reference": "Weapon,InfantryMortar,Range",
-            "Value": "3"
-          },
-          {
-            "Operation": "Set",
-            "Reference": "Unit,InfantryMortarMissile,Mover",
-            "Value": "InfantryMortarMissileMoverUpgraded"
-          },
-          {
-            "Operation": "Set",
-            "Reference": "Effect,InfantryMortarLaunch,Movers[1].Link",
-            "Value": "InfantryMortarMissileMoverUpgraded"
-          },
-          {
-            "Operation": "Set",
-            "Reference": "Effect,InfantryMortarLaunchDirected,Movers[1].Link",
-            "Value": "InfantryMortarMissileMoverUpgraded"
-          }
-        ],
-        "Race": "UPLL",
-        "Icon": "btn-ability-upl-longrangemortarshells",
+        "Icon": "btn_upl_infantryrocket_explosive_rocket",
+        "ScoreAmount": 200,
         "AffectedUnitArray": [
-          "InfantryMortar"
+          "UPLSpecOps"
         ],
-        "id": "InfantryMortarRangeUpgrade"
+        "id": "InfantryRocketAOE"
       },
       "InfantryRifleRangeUpgrade": {
         "class": "CUpgrade",
@@ -5021,20 +5010,20 @@
         ],
         "id": "InfantryRifleRangeUpgrade"
       },
-      "InfantryRocketAOE": {
+      "InfantryFlamethrower3xBurning": {
         "class": "CUpgrade",
         "Flags": {
           "UpgradeCheat": 1
         },
         "Name": {
-          "enUS": "Infantry Rocket AOE"
+          "enUS": "Infantry Flamethrower 3x Burning"
         },
         "MaxLevel": 1,
         "Alert": "UpgradeComplete",
         "ScoreCount": "MiscTechnologyCount",
         "ScoreValue": "MiscTechnologyValue",
         "WebPriority": 1,
-        "LeaderAlias": "InfantryRocketAOE",
+        "LeaderAlias": "InfantryFlamethrower3xBurning",
         "EditorCategories": "UpgradeType:Talents,Race:UPL",
         "$tokens": {
           "ID": {
@@ -5042,20 +5031,17 @@
             "value": ""
           }
         },
-        "Race": "UPLL",
-        "Icon": "btn_upl_infantryrocket_explosive_rocket",
+        "Icon": "btn-ability-upl-naniteignition",
         "EffectArray": [
           {
-            "Operation": "Set",
-            "Reference": "Effect,InfantryRocketDamage,Chance",
-            "Value": "1"
+            "Operation": "Multiply",
+            "Reference": "Effect,InfantryFlamethrowerBurningDamage,Amount",
+            "Value": "3"
           }
         ],
-        "ScoreAmount": 200,
-        "AffectedUnitArray": [
-          "UPLSpecOps"
-        ],
-        "id": "InfantryRocketAOE"
+        "Race": "UPLL",
+        "ScoreAmount": 500,
+        "id": "InfantryFlamethrower3xBurning"
       },
       "RiotOfficerShield": {
         "class": "CUpgrade",
@@ -5352,10 +5338,6 @@
         "ScoreResult": "BuildOrder",
         "EffectArray": [
           {
-            "Reference": "Unit,RoutheTank,LifeArmor",
-            "Value": "2"
-          },
-          {
             "Reference": "Unit,Condor,LifeArmor",
             "Value": "2"
           },
@@ -5365,10 +5347,6 @@
           },
           {
             "Reference": "Unit,UPLBehemoth,LifeArmor",
-            "Value": "2"
-          },
-          {
-            "Reference": "Unit,RoutheTank,LifeArmorLevel",
             "Value": "2"
           },
           {
@@ -5562,9 +5540,10 @@
         ],
         "Research": [
           "HornetRacing",
-          "RoutheTankArmorPlating",
           "A6ExplosiveRounds",
-          "Z1EnergyUpgrade"
+          "Z1EnergyUpgrade",
+          "UPLResearchMaterialAbsorptionArmor",
+          "RoutheTankArmorPlating"
         ],
         "Morph": [],
         "$Phase": [],
@@ -5836,7 +5815,7 @@
         "LifeMax": 160,
         "Food": -3,
         "CostResource": {
-          "Minerals": 225,
+          "Minerals": 300,
           "Vespene": 125
         },
         "Production": [],
@@ -5992,7 +5971,7 @@
       },
       "UPLBehemoth": {
         "id": "UPLBehemoth",
-        "Icon": "btn-starship",
+        "Icon": "btn-upl-behemoth",
         "Name": {
           "enUS": "Behemoth"
         },
@@ -6065,10 +6044,9 @@
           "InfantryMortar"
         ],
         "Research": [
-          "InfantryFlamethrower3xBurning",
-          "InfantryMortarRangeUpgrade",
-          "InfantryRifleRangeUpgrade",
           "InfantryRocketAOE",
+          "InfantryRifleRangeUpgrade",
+          "InfantryFlamethrower3xBurning",
           "RiotOfficerShield",
           "SpaceSandbag"
         ],
@@ -6322,7 +6300,9 @@
           "Minerals": 225,
           "Vespene": 100
         },
-        "Production": [],
+        "Production": [
+          "UPLDestructibleDebris4x4"
+        ],
         "Research": [],
         "Morph": [],
         "$Phase": [
@@ -6365,6 +6345,28 @@
         },
         "priority": 75
       },
+      "UPLDestructibleDebris4x4": {
+        "id": "UPLDestructibleDebris4x4",
+        "Icon": "talsonisex3_debris_splat_diff_03",
+        "Name": {
+          "enUS": "Debris"
+        },
+        "Description": {
+          "enUS": "Barrier that can be destroyed to allow access to new areas."
+        },
+        "LifeMax": 150,
+        "Production": [],
+        "Research": [],
+        "Morph": [],
+        "$Phase": [],
+        "$Phased": "UPLScout",
+        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
+        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
+        "LifeArmorName": {
+          "enUS": "Hardened Material",
+          "ruRU": "Препятствие "
+        }
+      },
       "InfantryOfficer": {
         "id": "InfantryOfficer",
         "Icon": "btn-unit-upl-infantryofficer",
@@ -6399,7 +6401,7 @@
           "enUS": "Scout"
         },
         "Description": {
-          "enUS": "Covert Operations capable of long range shelling and mobile harassment. Can use Spring ability. Energy User. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "enUS": "Covert Operations capable of long range shelling and mobile harassment. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
         },
         "LifeMax": 70,
         "Food": -1,
@@ -6407,9 +6409,7 @@
           "Minerals": 50,
           "Vespene": 25
         },
-        "Production": [
-          "UPLDestructibleDebris4x4"
-        ],
+        "Production": [],
         "Research": [],
         "Morph": [],
         "$Phase": [
@@ -6422,28 +6422,6 @@
         },
         "ShieldArmorName": "-",
         "priority": 80
-      },
-      "UPLDestructibleDebris4x4": {
-        "id": "UPLDestructibleDebris4x4",
-        "Icon": "btn-boss-mercspacestation",
-        "Name": {
-          "enUS": "Debris"
-        },
-        "Description": {
-          "enUS": "Barrier that can be destroyed to allow access to new areas."
-        },
-        "LifeMax": 150,
-        "Production": [],
-        "Research": [],
-        "Morph": [],
-        "$Phase": [],
-        "$Phased": "UPLScout",
-        "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
-        "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
-        "LifeArmorName": {
-          "enUS": "Hardened Material",
-          "ruRU": "Препятствие "
-        }
       },
       "UPLZ2": {
         "id": "UPLZ2",
@@ -6562,9 +6540,9 @@
     "InfantryMortar",
     "CSV",
     "CSVDeployed",
+    "UPLDestructibleDebris4x4",
     "InfantryOfficer",
     "UPLScout",
-    "UPLDestructibleDebris4x4",
     "UPLZ2",
     "CARR"
   ],
@@ -6584,9 +6562,10 @@
   ],
   "upgrades": [
     "HornetRacing",
-    "RoutheTankArmorPlating",
     "A6ExplosiveRounds",
     "Z1EnergyUpgrade",
+    "UPLResearchMaterialAbsorptionArmor",
+    "RoutheTankArmorPlating",
     "UPLInfantryWeaponsLevel1",
     "UPLInfantryWeaponsLevel2",
     "UPLInfantryWeaponsLevel3",
@@ -6603,10 +6582,9 @@
     "FrancineFuelInjection",
     "UPLRaptorIncendiary",
     "SeekerShell",
-    "InfantryFlamethrower3xBurning",
-    "InfantryMortarRangeUpgrade",
-    "InfantryRifleRangeUpgrade",
     "InfantryRocketAOE",
+    "InfantryRifleRangeUpgrade",
+    "InfantryFlamethrower3xBurning",
     "RiotOfficerShield",
     "SpaceSandbag",
     "InfantryMedkit",

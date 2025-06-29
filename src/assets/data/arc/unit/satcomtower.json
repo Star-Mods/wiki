@@ -124,7 +124,7 @@
     "BuildInProgress",
     "SatComRepairBots",
     "SynoidSalvageRefundSatCom",
-    "SatComSpybots",
+    "SynoidSatcomTowerSpybots",
     "SatComDeployWarDrones",
     "NukePackArmCharge",
     "SynoidSatComDeployWarDrones2"
@@ -177,10 +177,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -323,7 +320,7 @@
             }
           ],
           "TargetFilters": [
-            "Mechanical,Visible;Self,Neutral,Enemy,Missile,Destructible,Buried,UnderConstruction,Dead,Hidden,Invulnerable,Summoned"
+            "Visible;Self,Neutral,Enemy,Missile,Destructible,Buried,UnderConstruction,Dead,Hidden,Invulnerable,Summoned"
           ],
           "Range": [
             7
@@ -356,14 +353,14 @@
           "enUS": "Deploy Repair Bots"
         },
         "Tooltip": {
-          "enUS": "Heals 500 health and protects the target building or unit over 10 seconds.<br/>Target is stunned through the duration of the effect.<br/><br/><span style=\"color: 80FFFF\">TIP: The autocast is set to trigger when there is a unit in range with less than 1/3 HP.</span>"
+          "enUS": "Heals 300 health and protects the target building or unit over 10 seconds.<br/>Target is stunned through the duration of the effect.<br/><br/><span style=\"color: 80FFFF\">The autocast is set to trigger when there is a unit in range with less than 1/3 HP.</span>"
         },
         "Hotkey": "R"
       },
       {
         "Info": {
           "class": "CAbilEffectTarget",
-          "Name": "Abil/Name/SatComSpybots",
+          "Name": "Abil/Name/SynoidSatcomTowerSpybots",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Synoid,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -378,7 +375,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "SatComSpybots",
+          "DataCollection": "SynoidSatcomTowerSpybots",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -398,16 +395,15 @@
             "RequireTargetVision": 1,
             "WaitToSpend": 1,
             "UpdateChargesOnLevelChange": 1,
-            "BestUnit": 1,
-            "AllowMovement": 1
+            "BestUnit": 1
           },
           "Effect": [
-            "SpyBotsSearch"
+            "SynoidSatcomTowerSpybotSet"
           ],
           "EffectRange": [
             "0,1000"
           ],
-          "AINotifyEffect": "SatComSpybots",
+          "AINotifyEffect": "SynoidSatcomTowerSpybots",
           "RefundArray": {
             "Approach": 1,
             "Prep": 1,
@@ -463,31 +459,31 @@
             }
           },
           "FollowRange": 5,
+          "Range": [
+            1000
+          ],
+          "Arc": 360,
+          "CursorEffect": [
+            "SynoidSatcomTowerSpybotSearchArea"
+          ],
           "Cost": [
             {
+              "Vital": {
+                "Energy": 200
+              },
               "Cooldown": {
-                "TimeUse": 14
+                "TimeUse": 140
               }
             }
           ],
-          "Range": [
-            500
-          ],
-          "Arc": 360,
-          "CastOutroTime": [
-            0.5
-          ],
-          "CursorEffect": [
-            "SpyBotsSearch"
-          ],
-          "id": "SatComSpybots"
+          "id": "SynoidSatcomTowerSpybots"
         },
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 0,
+          "Energy": 200,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -495,14 +491,14 @@
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "SatComSpybots,Execute",
+        "AbilCmd": "SynoidSatcomTowerSpybots,Execute",
         "id": "SatComSpyBot",
         "Icon": "btn-ability-terran-shortsighted",
         "Name": {
           "enUS": "Deploy Spy Bots"
         },
         "Tooltip": {
-          "enUS": "Deploys spy drones to cause enemy units and structures within the target area to grant vision for <b>28</b> seconds. Reveals cloaked or burrowed units and structures."
+          "enUS": "Deploy spybot to target area. After <span style=\"color: 80FFFF\">2.5 seconds</span> delay, spybot will hack all enemy units in the <span style=\"color: 80FFFF\">2 radius circular area</span> , reveal them for <span style=\"color: 80FFFF\">250 seconds</span>.<br/>"
         },
         "Hotkey": "A"
       },
@@ -851,7 +847,8 @@
                 "Vespene": 1
               },
               "Vital": {
-                "Life": 480
+                "Life": 480,
+                "Energy": 160
               }
             }
           ]
@@ -861,7 +858,7 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 0,
+          "Energy": 160,
           "Life": 480,
           "Shields": 0,
           "Food": 0
@@ -1028,7 +1025,7 @@
         "Type": "AbilCmd",
         "AbilCmd": "SynoidSatComDeployWarDrones2,Execute",
         "id": "SynoidDeployGreaterWarDrones2",
-        "Icon": "btnsynoidgreaterwardrone",
+        "Icon": "btn-synoid-greater-wardrone",
         "Name": {
           "enUS": "Deploy Greater War Drone"
         },
@@ -1055,6 +1052,9 @@
   "HotkeyCategory": "Unit/Category/SynoidUnits",
   "KillDisplay": "Never",
   "RankDisplay": "Never",
+  "EnergyStart": 200,
+  "EnergyMax": 200,
+  "EnergyRegenRate": 0.6992,
   "id": "SatComTower",
   "Icon": "wireframe-terran-dominionhousing01",
   "Model": "InfestedDominionHousing_01",
@@ -1068,7 +1068,9 @@
       "Name": {
         "enUS": "RegenBioSteel"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "This unit has been upgraded to regenerate faster."
+      }
     },
     {
       "id": "SynoidUnPowered",
@@ -1112,9 +1114,9 @@
       }
     },
     {
-      "id": "SatComSpybots",
+      "id": "SynoidSatcomTowerSpybots",
       "Name": {
-        "enUS": "Spybots"
+        "enUS": "Satcom Tower - Spybots"
       }
     },
     {
@@ -1178,18 +1180,18 @@
         "enUS": "Deploy Repair Bots"
       },
       "Tooltip": {
-        "enUS": "Heals 500 health and protects the target building or unit over 10 seconds.<br/>Target is stunned through the duration of the effect.<br/><br/><span style=\"color: 80FFFF\">TIP: The autocast is set to trigger when there is a unit in range with less than 1/3 HP.</span>"
+        "enUS": "Heals 300 health and protects the target building or unit over 10 seconds.<br/>Target is stunned through the duration of the effect.<br/><br/><span style=\"color: 80FFFF\">The autocast is set to trigger when there is a unit in range with less than 1/3 HP.</span>"
       }
     },
     {
-      "AbilCmd": "SatComSpybots,Execute",
+      "AbilCmd": "SynoidSatcomTowerSpybots,Execute",
       "id": "SatComSpyBot",
       "Icon": "btn-ability-terran-shortsighted",
       "Name": {
         "enUS": "Deploy Spy Bots"
       },
       "Tooltip": {
-        "enUS": "Deploys spy drones to cause enemy units and structures within the target area to grant vision for <b>28</b> seconds. Reveals cloaked or burrowed units and structures."
+        "enUS": "Deploy spybot to target area. After <span style=\"color: 80FFFF\">2.5 seconds</span> delay, spybot will hack all enemy units in the <span style=\"color: 80FFFF\">2 radius circular area</span> , reveal them for <span style=\"color: 80FFFF\">250 seconds</span>.<br/>"
       }
     },
     {
@@ -1228,7 +1230,7 @@
     {
       "AbilCmd": "SynoidSatComDeployWarDrones2,Execute",
       "id": "SynoidDeployGreaterWarDrones2",
-      "Icon": "btnsynoidgreaterwardrone",
+      "Icon": "btn-synoid-greater-wardrone",
       "Name": {
         "enUS": "Deploy Greater War Drone"
       },

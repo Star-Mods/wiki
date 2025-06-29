@@ -1,6 +1,13 @@
 {
-  "Name": "Umbra",
-  "Description": "Stealthed anti-armor specialist. Can be upgraded to use Stealth Compulsion.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Umbra",
+    "ruRU": "Умбра"
+  },
+  "Description": {
+    "enUS": "Stealthed direct-fire combatant. Can be upgraded to use Stealth Compulsion.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Замаскированный юнит для тактических целей. Эффективен против бронированных целей. Может быть улучшен, чтобы использовать Вынужденную Маскировку.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +17,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 70,
-  "LifeMax": 70,
-  "LifeArmorName": "Keiron Mechanical Armor",
+  "LifeStart": 60,
+  "LifeMax": 60,
+  "LifeArmorName": {
+    "enUS": "Keiron Mechanical Armor",
+    "ruRU": "Броня Механических Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 630,
   "TurningRate": 630,
@@ -62,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Umbra/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Umbra/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Umbra/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Umbra/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -88,10 +100,30 @@
     "ForceField"
   ],
   "LifeRegenRate": 0.2734,
+  "LifeRegenDelay": 3.5,
   "Acceleration": 1000,
   "Sight": 9,
   "CostCategory": "Army",
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "ProgressRally",
+    "KeironWarpable",
+    "FuseUnfuse",
+    "UmbraStealthCompulsion",
+    "UmbraStealthCompulsionRemove",
+    "GhostHoldFire",
+    "GhostWeaponsFree"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "UmbraStealth",
+    "UmbraStealthSuppression",
+    "UmbraDamageReduction",
+    "UmbraShieldVisualControl"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -180,8 +212,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -254,8 +292,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -344,8 +388,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -434,8 +484,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -509,8 +565,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -635,8 +697,14 @@
         "AbilCmd": "GhostHoldFire,Execute",
         "id": "GhostHoldFire",
         "Icon": "btn-ability-terran-holdfire",
-        "Tooltip": "Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.",
-        "Name": "Hold Fire",
+        "Name": {
+          "enUS": "Hold Fire",
+          "ruRU": "Запретить атаку "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.",
+          "ruRU": "Приказывает выбранным войскам не открывать огонь и избегать контакта с противником до получения прямого приказа. Будучи атакованными, эти войска будут отступать."
+        },
         "Hotkey": "F"
       },
       {
@@ -760,8 +828,14 @@
         "AbilCmd": "GhostWeaponsFree,Execute",
         "id": "WeaponsFree",
         "Icon": "btn-ability-terran-weaponsfree",
-        "Tooltip": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
-        "Name": "Weapons Free",
+        "Name": {
+          "enUS": "Weapons Free",
+          "ruRU": "Разрешить атаку "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+          "ruRU": "Приказывает выбранным войскам атаковать по собственному усмотрению. Они будут самостоятельно вступать в бой с противником и преследовать его."
+        },
         "Hotkey": "G"
       },
       {
@@ -782,8 +856,14 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       },
       {
@@ -802,8 +882,14 @@
         "Type": "Passive",
         "id": "UmbraCloakingSystems",
         "Icon": "btn-ability-keiron-permanentlycloaked-umbra",
-        "Tooltip": "Maintains cloaking except after attacking. Weapon damage is increased while cloaked. Re-cloaks after <b>11</b> seconds of not attacking.",
-        "Name": "Cloaking Systems"
+        "Name": {
+          "enUS": "Cloaking Systems",
+          "ruRU": "Маскировочные Системы"
+        },
+        "Tooltip": {
+          "enUS": "Maintains cloaking except after attacking. Weapon damage is increased while cloaked. Re-cloaks after <b>11</b> seconds of not attacking.",
+          "ruRU": "Поддерживает маскировку, но теряет её после атаки. Урон от оружия увеличен, когда единица замаскирована. Повторная маскировка после <b>0</b> секунд без атак."
+        }
       },
       {
         "Cost": {
@@ -821,13 +907,19 @@
         "Type": "Passive",
         "id": "UmbraDamageReduction",
         "Icon": "btn-ability-keiron-umbramovement",
-        "Tooltip": "Damage taken by the Umbra from all sources is reduced by 25% while moving.",
-        "Name": "Deflection"
+        "Name": {
+          "enUS": "Deflection",
+          "ruRU": "Отклонение"
+        },
+        "Tooltip": {
+          "enUS": "During movement, all non-melee damage taken by shields is reduced by <b>-66</b>%.",
+          "ruRU": "Во время движения Умбра получает на 25% меньше урона от любых источников."
+        }
       },
       {
         "Info": {
           "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/UmbraShieldCompulsion",
+          "Name": "Abil/Name/UmbraStealthCompulsion",
           "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Keiron,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -842,7 +934,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "UmbraShieldCompulsion",
+          "DataCollection": "UmbraStealthCompulsion",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -922,21 +1014,10 @@
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "UmbraShieldCompulsion",
-              "Requirements": "UseShieldCompulsion"
+              "DefaultButtonFace": "UmbraShieldCompulsion"
             }
           },
-          "Cost": [
-            {
-              "Vital": {
-                "Life": 15
-              },
-              "Cooldown": {
-                "TimeUse": 1.4
-              }
-            }
-          ],
-          "id": "UmbraShieldCompulsion"
+          "id": "UmbraStealthCompulsion"
         },
         "Cost": {
           "Minerals": 0,
@@ -944,18 +1025,24 @@
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
-          "Life": 15,
+          "Life": 0,
           "Shields": 0,
           "Food": 0
         },
         "Row": 2,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "UmbraShieldCompulsion,Execute",
+        "AbilCmd": "UmbraStealthCompulsion,Execute",
         "id": "UmbraShieldCompulsion",
         "Icon": "btn-ability-keiron-shieldcompulsion",
-        "Tooltip": "Immediately re-cloaks the unit at the cost of <b>15</b> of its life.",
-        "Name": "Stealth Compulsion",
+        "Name": {
+          "enUS": "Stealth Compulsion",
+          "ruRU": "Вынужденная Маскировка"
+        },
+        "Tooltip": {
+          "enUS": "While active, instead of decloaking, attacks will cost <b>15</b> life. Is activated for <b>11</b> seconds before automatically deactivating. Can be refreshed.",
+          "ruRU": "Мгновенно маскирует Умбру. Боевая единица теряет при этом <b>15</b> ед. здоровья."
+        },
         "Hotkey": "C"
       },
       {
@@ -1082,9 +1169,143 @@
         "AbilCmd": "FuseUnfuse,Execute",
         "id": "Unfuse",
         "Icon": "btn-ability-zerg-dehaka-levelup",
-        "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-        "Name": "Unfuse",
+        "Name": {
+          "enUS": "Unfuse",
+          "ruRU": "Разделение"
+        },
+        "Tooltip": {
+          "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+          "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+        },
         "Hotkey": "U"
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/UmbraStealthCompulsionRemove",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Keiron,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "UmbraStealthCompulsionRemove",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "UmbraStealthCompulsionRemove"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "UmbraStealthCompulsionRemove",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "UmbraDisableStealthCompulsion",
+              "Requirements": "StealthCompulsionComplete"
+            }
+          },
+          "id": "UmbraStealthCompulsionRemove"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 3,
+        "Type": "AbilCmd",
+        "AbilCmd": "UmbraStealthCompulsionRemove,Execute",
+        "id": "UmbraDisableStealthCompulsion",
+        "Icon": "btn-ability-keiron-shieldcompulsion",
+        "Name": {
+          "enUS": "Disable Stealth Compulsion"
+        },
+        "Tooltip": {
+          "enUS": "Disables Stealth Compulsion."
+        },
+        "Hotkey": "D"
       }
     ]
   },
@@ -1100,17 +1321,24 @@
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "GlossaryAlias": "Umbra",
   "HotkeyCategory": "Unit/Category/KeironUnits",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "id": "Umbra",
-  "LifeArmor": 1,
-  "ShieldsStart": 135,
-  "ShieldsMax": 135,
-  "Speed": 3.125,
+  "ShieldsStart": 120,
+  "ShieldsMax": 120,
+  "Speed": 3.25,
   "Food": -3,
   "CostResource": {
     "Minerals": 150,
     "Vespene": 100
   },
+  "WeaponArray": [
+    {
+      "Link": "ShadowCannon"
+    }
+  ],
   "InnerRadius": 0.5,
   "CargoSize": 2,
   "Attributes": [
@@ -1123,73 +1351,143 @@
   "GlossaryPriority": 20,
   "SubgroupPriority": 20,
   "Icon": "btn-unit-keiron-umbra",
+  "Model": "Umbra",
   "LifeArmorIcon": "btn-upgrade-keiron-mechanicalarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
-      "id": "ShadowCannon",
-      "Icon": "btn-upgrade-keiron-mechanicalweaponslevel0",
-      "Name": "Shadow Cannon",
-      "Amount": 25,
-      "Kind": "Ranged",
+      "EditorCategories": "Race:Keiron",
+      "DisplayEffect": "ShadowCannonImpact",
       "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 1.89
+      "Arc": 360,
+      "Period": 2.24,
+      "Icon": "btn-upgrade-keiron-mechanicalweaponslevel0",
+      "DamagePoint": 0.0625,
+      "Effect": "UmbraShadowCannonSet",
+      "id": "ShadowCannon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Shadow Cannon",
+        "ruRU": "Теневая Пушка"
+      },
+      "Amount": 38,
+      "Kind": "Ranged",
+      "Range": 5
     }
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UmbraStealth"
+      "id": "UmbraStealth",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Umbra Stealth",
+        "ruRU": "Umbra Stealth"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UmbraStealthSuppression"
+      "id": "UmbraStealthSuppression",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Umbra Stealth Suppression"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UmbraDamageReduction"
+      "id": "UmbraDamageReduction",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Umbra Damage Reduction",
+        "ruRU": "Umbra Damage Reduction"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "UmbraShieldVisualControl"
+      "id": "UmbraShieldVisualControl",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Umbra Shield Visual Control",
+        "ruRU": "Umbra Shield Visual Control"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "ProgressRally",
-      "Name": "Progress Rally"
+      "Name": {
+        "enUS": "Progress Rally",
+        "ruRU": "Progress Rally"
+      }
     },
     {
       "id": "KeironWarpable",
-      "Name": "Keiron Warpable"
+      "Name": {
+        "enUS": "Keiron Warpable",
+        "ruRU": "Keiron Warpable"
+      }
     },
     {
       "id": "FuseUnfuse",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Unfuse"
+      }
     },
     {
-      "id": "UmbraShieldCompulsion",
-      "Name": "Umbra - Shield Compulsion"
+      "id": "UmbraStealthCompulsion",
+      "Name": {
+        "enUS": "Umbra - Stealth Compulsion"
+      }
+    },
+    {
+      "id": "UmbraStealthCompulsionRemove",
+      "Name": {
+        "enUS": "Umbra - Stealth Compulsion Remove"
+      }
     },
     {
       "id": "GhostHoldFire",
-      "Name": "Hold Fire"
+      "Name": {
+        "enUS": "Hold Fire",
+        "ruRU": "Hold Fire"
+      }
     },
     {
       "id": "GhostWeaponsFree",
-      "Name": "Weapons Free"
+      "Name": {
+        "enUS": "Weapons Free",
+        "ruRU": "Weapons Free"
+      }
     }
   ],
   "$Upgrades": [
@@ -1232,71 +1530,142 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "GhostHoldFire,Execute",
       "id": "GhostHoldFire",
       "Icon": "btn-ability-terran-holdfire",
-      "Tooltip": "Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.",
-      "Name": "Hold Fire"
+      "Name": {
+        "enUS": "Hold Fire",
+        "ruRU": "Запретить атаку "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to holster their weapons and avoid engaging enemies, unless given a direct command. Units holding fire will flee if attacked.",
+        "ruRU": "Приказывает выбранным войскам не открывать огонь и избегать контакта с противником до получения прямого приказа. Будучи атакованными, эти войска будут отступать."
+      }
     },
     {
       "AbilCmd": "GhostWeaponsFree,Execute",
       "id": "WeaponsFree",
       "Icon": "btn-ability-terran-weaponsfree",
-      "Tooltip": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
-      "Name": "Weapons Free"
+      "Name": {
+        "enUS": "Weapons Free",
+        "ruRU": "Разрешить атаку "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+        "ruRU": "Приказывает выбранным войскам атаковать по собственному усмотрению. Они будут самостоятельно вступать в бой с противником и преследовать его."
+      }
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     },
     {
-      "AbilCmd": "UmbraShieldCompulsion,Execute",
+      "AbilCmd": "UmbraStealthCompulsion,Execute",
       "id": "UmbraShieldCompulsion",
       "Icon": "btn-ability-keiron-shieldcompulsion",
-      "Tooltip": "Immediately re-cloaks the unit at the cost of <b>15</b> of its life.",
-      "Name": "Stealth Compulsion"
+      "Name": {
+        "enUS": "Stealth Compulsion",
+        "ruRU": "Вынужденная Маскировка"
+      },
+      "Tooltip": {
+        "enUS": "While active, instead of decloaking, attacks will cost <b>15</b> life. Is activated for <b>11</b> seconds before automatically deactivating. Can be refreshed.",
+        "ruRU": "Мгновенно маскирует Умбру. Боевая единица теряет при этом <b>15</b> ед. здоровья."
+      }
     },
     {
       "AbilCmd": "FuseUnfuse,Execute",
       "id": "Unfuse",
       "Icon": "btn-ability-zerg-dehaka-levelup",
-      "Tooltip": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
-      "Name": "Unfuse"
+      "Name": {
+        "enUS": "Unfuse",
+        "ruRU": "Разделение"
+      },
+      "Tooltip": {
+        "enUS": "Releases the Fuses inhabiting this unit, losing the associated bonus.",
+        "ruRU": "Высвобождает Предохранителя, находящегося в этой еденице, лишаясь соотвестствующего бонуса."
+      }
+    },
+    {
+      "AbilCmd": "UmbraStealthCompulsionRemove,Execute",
+      "id": "UmbraDisableStealthCompulsion",
+      "Icon": "btn-ability-keiron-shieldcompulsion",
+      "Name": {
+        "enUS": "Disable Stealth Compulsion"
+      },
+      "Tooltip": {
+        "enUS": "Disables Stealth Compulsion."
+      }
     }
   ]
 }

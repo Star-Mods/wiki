@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Queen's Nest",
-    "zhCN": "后虫巢",
-    "koKR": "퀸즈 네스트 /// Queen's Nest"
+    "zhCN": "Queen's Nest",
+    "koKR": "Queen's Nest"
   },
   "Description": {
     "enUS": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span><br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Queen</b>s from <b>Larva</b>e",
-    "zhCN": "为<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>提供升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Larva</b>可以变异为<b>Queen</b>",
-    "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>을 업그레이드 합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Queen</b> (<b>Larva</b>에서 변태) /// Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span><br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Queen</b>s from <b>Larva</b>e"
+    "zhCN": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span><br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Queen</b>s from <b>Larva</b>e",
+    "koKR": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span><br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Queen</b>s from <b>Larva</b>e"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "QueensNestSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "QueensNestSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "QueensNestSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "QueensNestSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -100,7 +100,6 @@
   "LifeRegenRate": 0.2734,
   "GlossaryCategory": "",
   "HotkeyCategory": "Unit/Category/ZergUnitsSCBW",
-  "Facing": 329.9963,
   "FogVisibility": "Snapshot",
   "PlaneArray": [
     "Ground"
@@ -123,11 +122,21 @@
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 200,
+    "Minerals": 150,
     "Vespene": 100
   },
   "BuildTime": 50,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "que5",
+    "QueenSCBWEnergyUpgrade",
+    "QueenSCBWEnsnareResearch",
+    "QueenSCBWSpawnBroodlingsResearch"
+  ],
+  "BehaviorArray": [
+    "OnCreep"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -189,20 +198,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -215,14 +220,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -236,7 +241,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -251,18 +257,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "QueenSCBWSpawnBroodlingsResearch",
@@ -276,16 +278,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "QueenSCBWSpawnBroodlingsResearch",
+            "State": "Restricted",
             "Requirements": "QueenSCBWSpawnBroodlingsResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 140,
+          "Time": 75,
           "Upgrade": "QueenSCBWSpawnBroodlingsResearch"
         },
-        "Time": 140,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -304,13 +307,13 @@
         "Icon": "btn-ability-zerg-swarmseeds-color",
         "Name": {
           "enUS": "Evolve Spawn Broodlings",
-          "zhCN": "进化孵化巢虫",
-          "koKR": "브루들링 소환 진화 /// Evolve Spawn Broodlings"
+          "zhCN": "Evolve Spawn Broodlings",
+          "koKR": "Evolve Spawn Broodlings"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
         },
         "Hotkey": "A"
       },
@@ -326,16 +329,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "QueenSCBWEnsnareResearch",
+            "State": "Restricted",
             "Requirements": "QueenSCBWEnsnareResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 90,
+          "Time": 49,
           "Upgrade": "QueenSCBWEnsnareResearch"
         },
-        "Time": 90,
+        "Time": 49,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -354,13 +358,13 @@
         "Icon": "btn-ability-zerg-fungalgrowth-color",
         "Name": {
           "enUS": "Evolve Ensnare",
-          "zhCN": "进化诱捕",
-          "koKR": "인스네어 진화 /// Evolve Ensnare"
+          "zhCN": "Evolve Ensnare",
+          "koKR": "Evolve Ensnare"
         },
         "Tooltip": {
-          "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> ability."
+          "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability."
         },
         "Hotkey": "E"
       },
@@ -376,6 +380,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "QueenSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "QueenSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -404,15 +409,42 @@
         "Icon": "btn-upgrade-zerg-pathogenglands",
         "Name": {
           "enUS": "Evolve Gamete Meiosis",
-          "zhCN": "进化配子分裂",
-          "koKR": "생식 분열 진화 /// Evolve Gamete Meiosis"
+          "zhCN": "Evolve Gamete Meiosis",
+          "koKR": "Evolve Gamete Meiosis"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "G"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "QueenSCBW@Passive",
+        "Icon": "btn-unit-zerg-queen@scbw",
+        "Name": {
+          "enUS": "Queen",
+          "zhCN": "Queen",
+          "koKR": "Queen"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Queen</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Queen</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Queen</b>s</span>."
+        }
       },
       {
         "Upgrade": "QueenSCBWEnergyUpgrade",
@@ -426,6 +458,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "QueenSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "QueenSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -454,15 +487,66 @@
         "Icon": "btn-upgrade-zerg-pathogenglands",
         "Name": {
           "enUS": "Evolve Gamete Meiosis",
-          "zhCN": "进化配子分裂",
-          "koKR": "생식 분열 진화 /// Evolve Gamete Meiosis"
+          "zhCN": "Evolve Gamete Meiosis",
+          "koKR": "Evolve Gamete Meiosis"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "G"
+      },
+      {
+        "Upgrade": "QueenSCBWEnsnareResearch",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1,
+              "ToSelection": 1,
+              "UseDefaultButton": 1,
+              "CreateDefaultButton": 1
+            },
+            "DefaultButtonFace": "QueenSCBWEnsnareResearch",
+            "State": "Restricted",
+            "Requirements": "QueenSCBWEnsnareResearch"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 49,
+          "Upgrade": "QueenSCBWEnsnareResearch"
+        },
+        "Time": 49,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "QueenSCBWEnsnareResearch,Research1",
+        "id": "QueenSCBWEnsnareResearch",
+        "Icon": "btn-ability-zerg-fungalgrowth-color",
+        "Name": {
+          "enUS": "Evolve Ensnare",
+          "zhCN": "Evolve Ensnare",
+          "koKR": "Evolve Ensnare"
+        },
+        "Tooltip": {
+          "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability."
+        },
+        "Hotkey": "E"
       },
       {
         "Upgrade": "QueenSCBWSpawnBroodlingsResearch",
@@ -476,16 +560,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "QueenSCBWSpawnBroodlingsResearch",
+            "State": "Restricted",
             "Requirements": "QueenSCBWSpawnBroodlingsResearch"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 140,
+          "Time": 75,
           "Upgrade": "QueenSCBWSpawnBroodlingsResearch"
         },
-        "Time": 140,
+        "Time": 75,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -504,13 +589,13 @@
         "Icon": "btn-ability-zerg-swarmseeds-color",
         "Name": {
           "enUS": "Evolve Spawn Broodlings",
-          "zhCN": "进化孵化巢虫",
-          "koKR": "브루들링 소환 진화 /// Evolve Spawn Broodlings"
+          "zhCN": "Evolve Spawn Broodlings",
+          "koKR": "Evolve Spawn Broodlings"
         },
         "Tooltip": {
           "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span>技能。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
+          "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
+          "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
         },
         "Hotkey": "A"
       }
@@ -526,41 +611,40 @@
   "TechTreeUnlockedUnitArray": [
     "QueenSCBW"
   ],
-  "Icon": "btn-building-zerg-infestationpit",
+  "Icon": "btn-building-zerg-queensnest@scbw",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
-  "Behaviors": [
-    {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
-    }
-  ],
+  "Behaviors": [],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "QueenSCBWEnergyUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
+      }
+    },
+    {
+      "id": "QueenSCBWEnsnareResearch",
+      "Name": {
+        "enUS": "",
+        "zhCN": "",
+        "koKR": ""
       }
     },
     {
@@ -574,9 +658,9 @@
   ],
   "$Upgrades": [
     "QueensNestSCBW@Count",
-    "QueensNestSCBW",
     "QueensNestSCBW@AllowUnit",
     "DroneSCBW@BuildAdv",
+    "QueensNestSCBW",
     "QueensNestSCBW",
     "IsQueensNestSCBW",
     "NotQueensNestSCBW",
@@ -606,25 +690,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "QueenSCBWSpawnBroodlingsResearch,Research1",
@@ -632,13 +710,13 @@
       "Icon": "btn-ability-zerg-swarmseeds-color",
       "Name": {
         "enUS": "Evolve Spawn Broodlings",
-        "zhCN": "进化孵化巢虫",
-        "koKR": "브루들링 소환 진화 /// Evolve Spawn Broodlings"
+        "zhCN": "Evolve Spawn Broodlings",
+        "koKR": "Evolve Spawn Broodlings"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
       }
     },
     {
@@ -647,13 +725,13 @@
       "Icon": "btn-ability-zerg-fungalgrowth-color",
       "Name": {
         "enUS": "Evolve Ensnare",
-        "zhCN": "进化诱捕",
-        "koKR": "인스네어 진화 /// Evolve Ensnare"
+        "zhCN": "Evolve Ensnare",
+        "koKR": "Evolve Ensnare"
       },
       "Tooltip": {
-        "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensaring Creep</b></span> ability."
+        "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability."
       }
     },
     {
@@ -662,13 +740,13 @@
       "Icon": "btn-upgrade-zerg-pathogenglands",
       "Name": {
         "enUS": "Evolve Gamete Meiosis",
-        "zhCN": "进化配子分裂",
-        "koKR": "생식 분열 진화 /// Evolve Gamete Meiosis"
+        "zhCN": "Evolve Gamete Meiosis",
+        "koKR": "Evolve Gamete Meiosis"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -677,13 +755,28 @@
       "Icon": "btn-upgrade-zerg-pathogenglands",
       "Name": {
         "enUS": "Evolve Gamete Meiosis",
-        "zhCN": "进化配子分裂",
-        "koKR": "생식 분열 진화 /// Evolve Gamete Meiosis"
+        "zhCN": "Evolve Gamete Meiosis",
+        "koKR": "Evolve Gamete Meiosis"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,QueenSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+      }
+    },
+    {
+      "AbilCmd": "QueenSCBWEnsnareResearch,Research1",
+      "id": "QueenSCBWEnsnareResearch",
+      "Icon": "btn-ability-zerg-fungalgrowth-color",
+      "Name": {
+        "enUS": "Evolve Ensnare",
+        "zhCN": "Evolve Ensnare",
+        "koKR": "Evolve Ensnare"
+      },
+      "Tooltip": {
+        "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Ensnare</b></span> ability."
       }
     },
     {
@@ -692,13 +785,13 @@
       "Icon": "btn-ability-zerg-swarmseeds-color",
       "Name": {
         "enUS": "Evolve Spawn Broodlings",
-        "zhCN": "进化孵化巢虫",
-        "koKR": "브루들링 소환 진화 /// Evolve Spawn Broodlings"
+        "zhCN": "Evolve Spawn Broodlings",
+        "koKR": "Evolve Spawn Broodlings"
       },
       "Tooltip": {
         "enUS": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span>技能。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Queen</b></span>이 <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> 능력을 사용할 수 있습니다. /// Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
+        "zhCN": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability.",
+        "koKR": "Enables <span class=\"style-TooltipHighlightSCBW\"><b>Queen</b>s</span> to use the <span class=\"style-TooltipHighlightSCBW\"><b>Spawn Broodlings</b></span> ability."
       }
     }
   ]

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Comsat Station",
-    "zhCN": "雷达站",
-    "koKR": "컴샛 스테이션 /// Comsat Station"
+    "zhCN": "Comsat Station",
+    "koKR": "Comsat Station"
   },
   "Description": {
     "enUS": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-    "zhCN": "扫描设施。可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span>技能。<span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-    "koKR": "탐색 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> 능력을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+    "zhCN": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+    "koKR": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ComsatStationSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ComsatStationSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ComsatStationSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ComsatStationSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,10 @@
   "SubgroupPriority": 31,
   "AIKiteRange": 0,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "TerranBuildingSCBW@AddonDetached"
+  ],
   "TechAliasArray": [
     "Alias_ComsatStationSCBW"
   ],
@@ -126,11 +130,16 @@
     "Ground"
   ],
   "Facing": 315,
+  "AbilArray": [
+    "que5Addon",
+    "BuildInProgress",
+    "ComsatStationSCBWScannerSweep"
+  ],
   "Footprint": "Footprint2x2Contour",
   "AddedOnArray": [
     {
       "UnitLink": "CommandCenterSCBW",
-      "BehaviorLink": "##id##@Attached",
+      "BehaviorLink": "ComsatStationSCBW@Attached",
       "ParentBehaviorLink": "AddonIsWorkingSCBW"
     }
   ],
@@ -141,12 +150,12 @@
   "LifeArmor": 1,
   "EnergyStart": 50,
   "EnergyMax": 200,
-  "EnergyRegenRate": 0.5,
+  "EnergyRegenRate": 0.5625,
   "CostResource": {
     "Minerals": 50,
-    "Vespene": 50
+    "Vespene": 25
   },
-  "BuildTime": 30,
+  "BuildTime": 25,
   "RepairTime": 37.5,
   "CardLayouts": {
     "Root": [
@@ -209,13 +218,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -275,19 +280,15 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
-  "ScoreMake": 100,
-  "ScoreKill": 100,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
   "TacticalAIThink": "AIThinkComsatStationSCBW",
   "Icon": "btn-building-terran-comsatstation@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
@@ -296,6 +297,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -305,6 +307,7 @@
     },
     {
       "id": "TerranBuildingSCBW@AddonDetached",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Addon Detached",
         "zhCN": "Addon Detached",
@@ -317,23 +320,19 @@
     {
       "id": "que5Addon",
       "Name": {
-        "ruRU": "Queue",
-        "enUS": "Queue"
+        "ruRU": "Queue"
       }
     },
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "ComsatStationSCBWScannerSweep",
       "Name": {
         "enUS": "Scanner Sweep",
-        "zhCN": "析像扫描",
-        "koKR": "스캐너 스윕 /// Scanner Sweep"
+        "zhCN": "Scanner Sweep",
+        "koKR": "Scanner Sweep"
       }
     }
   ],
@@ -342,16 +341,17 @@
     "Button/Tooltip/ComsatStationSCBW",
     "ComsatStationSCBW",
     "IsComsatStationSCBW",
-    "Button/Tooltip/InfestedCommandCenterSCBW@Flying",
     "CommandCenterSCBW@AddOns",
-    "Button/Tooltip/CommandCenterSCBW@Flying",
     "CommandCenterSCBW",
     "ComsatStationSCBW",
     "ComsatStationSCBW@Splat",
     "NotComsatStationSCBW",
     "CasterIsComsatStationSCBW",
     "ComsatStationSCBW@CountAtUnit",
-    "ComsatStationSCBW"
+    "ComsatStationSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -370,25 +370,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

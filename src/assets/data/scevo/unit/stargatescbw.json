@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Stargate",
-    "zhCN": "星门",
-    "koKR": "스타게이트 /// Stargate"
+    "zhCN": "Stargate",
+    "koKR": "Stargate"
   },
   "Description": {
-    "enUS": "Warps in Protoss air units.",
-    "zhCN": "折跃星灵空中单位。",
-    "koKR": "프로토스 공중 유닛을 소환합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Wraith</b> /// Warps in Protoss air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Scout</b>s<br/>- <b>Corsair</b>s"
+    "enUS": "Warps in Protoss air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Scout</b><br/>- <b>Corsair</b>",
+    "zhCN": "Warps in Protoss air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Scout</b><br/>- <b>Corsair</b>",
+    "koKR": "Warps in Protoss air units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Scout</b><br/>- <b>Corsair</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "StargateSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "StargateSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "StargateSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "StargateSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -116,18 +116,24 @@
   "LifeArmor": 1,
   "ShieldsStart": 600,
   "ShieldsMax": 600,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
     "Minerals": 150,
-    "Vespene": 150
+    "Vespene": 100
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5",
+    "Rally",
+    "StargateSCBW@Train"
+  ],
+  "BehaviorArray": [
+    "PowerUserQueue"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -189,20 +195,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -215,14 +217,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -236,7 +238,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -251,18 +254,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -282,15 +281,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -300,6 +292,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ScoutSCBW",
             "Requirements": "ScoutSCBW"
           },
@@ -312,7 +305,7 @@
           "ScoutSCBW"
         ],
         "Cost": {
-          "Minerals": 250,
+          "Minerals": 200,
           "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
@@ -329,13 +322,13 @@
         "Icon": "btn-unit-protoss-scout@scbw",
         "Name": {
           "enUS": "Warp in Scout",
-          "zhCN": "折跃侦察机",
-          "koKR": "스카웃 소환 /// Warp in Scout"
+          "zhCN": "Warp in Scout",
+          "koKR": "Warp in Scout"
         },
         "Tooltip": {
           "enUS": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "多功能对空对地战机。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "다목적 공중 전투기입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "zhCN": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+          "koKR": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "T"
       },
@@ -347,6 +340,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "CarrierSCBW",
             "Requirements": "CarrierSCBW"
           },
@@ -376,13 +370,13 @@
         "Icon": "btn-unit-protoss-carrier@scbw",
         "Name": {
           "enUS": "Warp In Carrier",
-          "zhCN": "折跃航母",
-          "koKR": "캐리어 소환 /// Warp In Carrier"
+          "zhCN": "Warp In Carrier",
+          "koKR": "Warp In Carrier"
         },
         "Tooltip": {
           "enUS": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "主力战舰。能够生产和发射<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>攻击敌人。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "주력함입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>를 생산하고 출격시켜 적을 공격합니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "zhCN": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+          "koKR": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "C"
       },
@@ -394,6 +388,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ArbiterSCBW",
             "Requirements": "ArbiterSCBW"
           },
@@ -423,13 +418,13 @@
         "Icon": "btn-unit-protoss-arbiter",
         "Name": {
           "enUS": "Warp in Arbiter",
-          "zhCN": "折跃仲裁者",
-          "koKR": "아비터 소환 /// Warp in Arbiter"
+          "zhCN": "Warp in Arbiter",
+          "koKR": "Warp in Arbiter"
         },
         "Tooltip": {
           "enUS": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "军队支援飞船。可以<span class=\"style-TooltipHighlightSCBW\">Cloak</span>周围友军单位。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-          "koKR": "병력 지원 함선. 주위 아군을 <span class=\"style-TooltipHighlightSCBW\">은폐</span>합니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 와 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능.</span> /// Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+          "zhCN": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+          "koKR": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "V"
       },
@@ -441,6 +436,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "CorsairSCBW",
             "Requirements": "CorsairSCBW"
           },
@@ -470,13 +466,13 @@
         "Icon": "btn-unit-protoss-corsair",
         "Name": {
           "enUS": "Warp in Corsair",
-          "zhCN": "折跃海盗船",
-          "koKR": "커세어 소환 /// Warp in Corsair"
+          "zhCN": "Warp in Corsair",
+          "koKR": "Warp in Corsair"
         },
         "Tooltip": {
           "enUS": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
-          "zhCN": "空优战机。升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对空。</span>",
-          "koKR": "공중 우위 전투함입니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">공중 유닛 공격 가능.</span> /// Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+          "zhCN": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+          "koKR": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
         },
         "Hotkey": "R"
       }
@@ -484,8 +480,8 @@
   },
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ScoreMake": 300,
-  "ScoreKill": 300,
+  "ScoreMake": 250,
+  "ScoreKill": 250,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 20,
   "TechAliasArray": [
@@ -501,16 +497,16 @@
   ],
   "BuildTime": 60,
   "TacticalAIThink": "AIThinkStargateSCBW",
-  "ShieldRegenDelay": 10,
   "id": "StargateSCBW",
   "Icon": "btn-building-protoss-stargate",
+  "Model": "StargateEx1",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerUserQueue",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power User (Queue)",
         "ruRU": "Power User (Queue)"
@@ -520,39 +516,38 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "StargateSCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/FleetBeaconSCBW",
     "StargateSCBW",
-    "Button/Tooltip/TemplarArchiveSCBW",
+    "Button/Tooltip/ArbiterTribunalSCBW",
+    "Button/Tooltip/ArbiterSCBW@Passive",
+    "Button/Tooltip/CarrierSCBW@Passive",
     "StargateSCBW@AllowUnit",
     "ProbeSCBW@BuildAdv",
     "StargateSCBW@Count",
@@ -564,7 +559,10 @@
     "CasterIsStargateSCBW",
     "StargateSCBW@QoB",
     "StargateSCBW@QoBAtUnit",
-    "StargateSCBW"
+    "StargateSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -587,38 +585,26 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "StargateSCBW@Train,Train1",
@@ -626,13 +612,13 @@
       "Icon": "btn-unit-protoss-scout@scbw",
       "Name": {
         "enUS": "Warp in Scout",
-        "zhCN": "折跃侦察机",
-        "koKR": "스카웃 소환 /// Warp in Scout"
+        "zhCN": "Warp in Scout",
+        "koKR": "Warp in Scout"
       },
       "Tooltip": {
         "enUS": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "多功能对空对地战机。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "다목적 공중 전투기입니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "zhCN": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+        "koKR": "Versatile air and ground attacker. <br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -641,13 +627,13 @@
       "Icon": "btn-unit-protoss-carrier@scbw",
       "Name": {
         "enUS": "Warp In Carrier",
-        "zhCN": "折跃航母",
-        "koKR": "캐리어 소환 /// Warp In Carrier"
+        "zhCN": "Warp In Carrier",
+        "koKR": "Warp In Carrier"
       },
       "Tooltip": {
         "enUS": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "主力战舰。能够生产和发射<span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>攻击敌人。<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "주력함입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b></span>를 생산하고 출격시켜 적을 공격합니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "zhCN": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+        "koKR": "Capital ship. Builds and launches <span class=\"style-TooltipHighlightSCBW\"><b>Interceptor</b>s</span> that attack enemy targets.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -656,13 +642,13 @@
       "Icon": "btn-unit-protoss-arbiter",
       "Name": {
         "enUS": "Warp in Arbiter",
-        "zhCN": "折跃仲裁者",
-        "koKR": "아비터 소환 /// Warp in Arbiter"
+        "zhCN": "Warp in Arbiter",
+        "koKR": "Warp in Arbiter"
       },
       "Tooltip": {
         "enUS": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "军队支援飞船。可以<span class=\"style-TooltipHighlightSCBW\">Cloak</span>周围友军单位。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">可以对地和对空。</span>",
-        "koKR": "병력 지원 함선. 주위 아군을 <span class=\"style-TooltipHighlightSCBW\">은폐</span>합니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> 와 <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 및 공중 유닛 공격 가능.</span> /// Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+        "zhCN": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>",
+        "koKR": "Army support craft. Can <span class=\"style-TooltipHighlightSCBW\">Cloak</span> nearby allies. Can also be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Stasis Field</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Recall</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -671,13 +657,13 @@
       "Icon": "btn-unit-protoss-corsair",
       "Name": {
         "enUS": "Warp in Corsair",
-        "zhCN": "折跃海盗船",
-        "koKR": "커세어 소환 /// Warp in Corsair"
+        "zhCN": "Warp in Corsair",
+        "koKR": "Warp in Corsair"
       },
       "Tooltip": {
         "enUS": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
-        "zhCN": "空优战机。升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对空。</span>",
-        "koKR": "공중 우위 전투함입니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">공중 유닛 공격 가능.</span> /// Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+        "zhCN": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+        "koKR": "Air superiority starfighter. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Disruption Web</b></span>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
       }
     }
   ]

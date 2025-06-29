@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Pylon",
-    "zhCN": "水晶塔",
-    "koKR": "파일론 /// Pylon"
+    "zhCN": "Pylon",
+    "koKR": "Pylon"
   },
   "Description": {
     "enUS": "Provides supply.<br/>Supply allows you to warp in more units.<br/>Creates power for nearby structures.",
-    "zhCN": "提供补给。<br/>拥有补给是生产更多单位的前提。<br/>为附近的建筑提供能量。",
-    "koKR": "보급품을 공급합니다.<br/>보급품을 늘리면 더 많은 유닛을 소환할 수 있습니다.<br/>주위 구조물에 동력을 공급합니다. /// Provides supply.<br/>Supply allows you to warp in more units.<br/>Creates power for nearby structures."
+    "zhCN": "Provides supply.<br/>Supply allows you to warp in more units.<br/>Creates power for nearby structures.",
+    "koKR": "Provides supply.<br/>Supply allows you to warp in more units.<br/>Creates power for nearby structures."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 250,
-  "LifeMax": 250,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeStart": 300,
+  "LifeMax": 300,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "PylonSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "PylonSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "PylonSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "PylonSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -112,13 +112,10 @@
     "Armored",
     "Structure"
   ],
-  "ShieldsStart": 250,
-  "ShieldsMax": 250,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldsStart": 300,
+  "ShieldsMax": 300,
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "Food": 8,
   "CostCategory": "Economy",
@@ -126,6 +123,12 @@
     "Minerals": 100
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW"
+  ],
+  "BehaviorArray": [
+    "PowerSource"
+  ],
   "TurretArray": [
     "PylonCrystalRotate",
     "PylonRingRotate"
@@ -135,9 +138,9 @@
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -150,14 +153,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -171,7 +174,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -186,18 +190,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
@@ -210,16 +210,15 @@
   "GlossaryPriority": 18,
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
   "BuildTime": 25,
-  "ShieldRegenDelay": 10,
   "id": "PylonSCBW",
-  "Icon": "btn-building-protoss-pylon",
+  "Icon": "btn-building-protoss-pylon@scbw",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "PowerSource",
-      "Icon": "btn-building-protoss-pylon",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Power Source",
         "ruRU": "Power Source"
@@ -229,10 +228,11 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     }
   ],
@@ -262,17 +262,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

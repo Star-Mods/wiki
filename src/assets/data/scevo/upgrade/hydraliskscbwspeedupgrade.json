@@ -1,11 +1,14 @@
 {
-  "id": "HydraliskSCBWSpeedUpgrade",
-  "Icon": "btn-upgrade-zerg-muscularaugments",
-  "Name": "Upgrade/Name/HydraliskSCBWSpeedUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Muscular Augments",
+    "zhCN": "Muscular Augments",
+    "koKR": "Muscular Augments"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,15 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "HydraliskSCBWSpeedUpgrade",
+  "id": "HydraliskSCBWSpeedUpgrade",
   "EffectArrayTemplate": [
     {
       "Operation": "Multiply",
@@ -28,11 +39,13 @@
       "Value": "1.5"
     }
   ],
+  "Icon": "btn-upgrade-zerg-muscularaugments",
   "AffectedUnitArray": [
-    "HydraliskSCBW"
+    "HydraliskSCBW",
+    "HydraliskSCBW@Burrowed"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder"
 }

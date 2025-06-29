@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Refinery",
-    "zhCN": "精炼厂",
-    "koKR": "리파이너리 /// Refinery"
+    "zhCN": "Refinery",
+    "koKR": "Refinery"
   },
   "Description": {
-    "enUS": "Built over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas.",
-    "zhCN": "建造在<span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span>上，用于采集高能瓦斯。",
-    "koKR": "베스핀 가스 채취를 위해 <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> 위에 건설하는 구조물입니다. /// Built over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas."
+    "enUS": "Built over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "zhCN": "Built over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "koKR": "Built over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Vespene",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "RefinerySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "RefinerySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "RefinerySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "RefinerySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,11 @@
   "SubgroupPriority": 1,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "HarvestableVespeneGeyserGas",
+    "WorkerPeriodicRefineryCheck"
+  ],
   "TechAliasArray": [
     "Alias_RefinerySCBW"
   ],
@@ -124,6 +129,9 @@
   ],
   "PlaneArray": [
     "Ground"
+  ],
+  "AbilArray": [
+    "BuildInProgress"
   ],
   "Facing": 315,
   "LifeArmor": 1,
@@ -195,13 +203,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -261,40 +265,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+        "Tooltip": "-"
       }
     ]
   },
@@ -306,13 +280,14 @@
     "RichVespeneGeyser",
     "ProtossVespeneGeyser",
     "PurifierVespeneGeyser",
-    "ShakurasVespeneGeyser"
+    "ShakurasVespeneGeyser",
+    "TempleVespeneGeyserSCBW"
   ],
   "BuildOnAs": [
     "RefinerySCBW@Rich"
   ],
-  "ScoreMake": 100,
-  "ScoreKill": 100,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
   "GlossaryPriority": 244,
   "BuildTime": 30,
   "Icon": "btn-building-terran-refinery",
@@ -322,6 +297,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -331,7 +307,7 @@
     },
     {
       "id": "HarvestableVespeneGeyserGas",
-      "Icon": "icon-gas",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Harvestable Vespene Geyser Gas",
         "ruRU": "Harvestable Vespene Geyser Gas"
@@ -342,10 +318,7 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
@@ -377,25 +350,19 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

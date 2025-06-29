@@ -1,6 +1,13 @@
 {
-  "Name": "Processing Core",
-  "Description": "Primary structure. Used to receive gathered resources. Generates power. Increases power storage by <b>400</b>. Can use Mining Priority and System Recharge<br/><br/><span style=\"color: #ffff8a\">Enables:</span><br/>- ACRs",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Processing Core",
+    "ruRU": "Ядро обработки"
+  },
+  "Description": {
+    "enUS": "Primary structure. Used to receive gathered resources. Generates power. Increases power storage by <b>400</b>. Can use Mining Priority and System Recharge<br/><br/><span style=\"color: ffff8a\">Enables:</span><br/>- ACRs",
+    "ruRU": "Основное строение Генетронов. Служит для хранения добытых ресурсов и строительства АСР. Может использовать приоритет на добычу и зарядку системы<br/><br/><span style=\"color: ffff8a\">Открывает:</span><br/>- АСР"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -66,16 +76,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ProcessingCore/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ProcessingCore/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ProcessingCore/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ProcessingCore/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -119,6 +131,25 @@
   "Facing": 315,
   "FogVisibility": "Snapshot",
   "CostCategory": "Economy",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "que5",
+    "Scion_DisplayCooldownDummy",
+    "RallyProcessingCore",
+    "ProcessingCoreTrain",
+    "MiningPriority",
+    "CoreSystemRecharge",
+    "ProcessingCoreChargingField"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "GenetronEnergyStateNotFull",
+    "GenetronPowerSupplyTracker",
+    "TrackAndMirrorGenetronPowerSupply",
+    "ProcessingCorePower",
+    "UnderConstruction"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -178,8 +209,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -242,8 +279,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -270,8 +313,14 @@
         "AbilCmd": "RallyProcessingCore,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Rally Point",
+        "Name": {
+          "enUS": "Set Rally Point",
+          "ruRU": "Задать точку сбора "
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+          "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+        },
         "Hotkey": "Y"
       },
       {
@@ -307,8 +356,15 @@
         "AbilCmd": "ProcessingCoreTrain,Train1",
         "id": "ACR",
         "Icon": "btn-unit-genetron-acr",
-        "Tooltip": "Basic worker unit. Can gather resources, build Genetron structures, and repair.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-        "Name": "Fabricate ACR"
+        "Name": {
+          "enUS": "Fabricate ACR",
+          "ruRU": "Изготовить АСР"
+        },
+        "Tooltip": {
+          "enUS": "Basic worker unit. Can gather resources, build Genetron structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "ruRU": "Базовая рабочая единица. Может собирать ресурсы, строить здания Генетронов и ремонтировать.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+        },
+        "Hotkey": "S"
       },
       {
         "Info": {
@@ -351,7 +407,7 @@
             "Transient": 1
           },
           "Effect": [
-            "ProcessingCoreMiningPriority"
+            "ProcessingCoreMiningPriorityInit"
           ],
           "EffectRange": [
             "0,1000"
@@ -409,7 +465,7 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "MiningPriority",
-              "Requirements": "ProcessingCoreMiningPriorityReq"
+              "Requirements": "GenetronPowerBalance0100"
             }
           },
           "Cost": [
@@ -419,10 +475,6 @@
               }
             }
           ],
-          "PreEffectBehavior": {
-            "Behavior": "Scion_OverclockTargetMarker",
-            "Count": 1
-          },
           "id": "MiningPriority"
         },
         "Cost": {
@@ -436,13 +488,19 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 1,
+        "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "MiningPriority,Execute",
         "id": "MiningPriority",
         "Icon": "btn-ability-genetron-miningtap",
-        "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT100\"><b>100</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases the yield of nearby mineral fields by <b>1</b> for <b>42</b> seconds. Repeated casts increase the duration up to <b>168</b> seconds.",
-        "Name": "Mining Priority",
+        "Name": {
+          "enUS": "Mining Priority",
+          "ruRU": "Приоритет на добычу"
+        },
+        "Tooltip": {
+          "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT100\"><b>100</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases the yield of nearby mineral fields by <b>1</b> for <b>42</b> seconds. Repeated casts increase the duration up to <b>168</b> seconds.",
+          "ruRU": "Увеличивает добычу ресурсов находящихся поблизости рабочих на  <b>1</b>. Эффект длится <b>1</b> секунд."
+        },
         "Hotkey": "V"
       },
       {
@@ -495,7 +553,7 @@
           "EffectRange": [
             "0,1000"
           ],
-          "AINotifyEffect": "SystemRechargeCoreCH",
+          "AINotifyEffect": "ProcessingCoreSystemRecharge",
           "RefundArray": {
             "Approach": 1,
             "Prep": 1,
@@ -567,8 +625,10 @@
           "AutoCastValidatorArray": [
             "NotWarpingIn",
             "IsNotTeslaCharge",
+            "IsNotLunaMine",
             "EnergyNotFull",
-            "GenetronPowerSupplyGE05"
+            "GenetronPowerSupplyGE05",
+            "IfHasEnergyDrainThenDeltaGTE10"
           ],
           "TargetSorts": {
             "SortArray": [
@@ -603,8 +663,14 @@
         "AbilCmd": "CoreSystemRecharge,Execute",
         "id": "CoreSystemRecharge",
         "Icon": "btn-upgrade-terran-nova-snipeenergyrefund",
-        "Tooltip": "Recharges the energy of a friendly Genetron unit.<br/><br/><span style=\"color: #78F0FF\">Restores <b>4</b> energy per 1 power.</span>",
-        "Name": "System Recharge",
+        "Name": {
+          "enUS": "System Recharge",
+          "ruRU": "Перезарядка системы"
+        },
+        "Tooltip": {
+          "enUS": "Recharges the energy of a friendly Genetron unit.<br/><br/><span style=\"color: 78F0FF\">Restores <b>4</b> energy per 1 power.</span>",
+          "ruRU": "Передаёт энергию выбранной единице."
+        },
         "Hotkey": "C"
       },
       {
@@ -641,8 +707,14 @@
         "AbilCmd": "ProcessingCoreTrain,Train2",
         "id": "Scion_Processor",
         "Icon": "btn-unit-genetron-processor",
-        "Tooltip": "Support unit. Can use System Recharge.<br/><br/><span style=\"color: #78F0FF\">Power user.</span></n><span style=\"color: #FFE303\">Detector</span>",
-        "Name": "Fabricate Processor",
+        "Name": {
+          "enUS": "Fabricate Processor",
+          "ruRU": "Сконструировать Процессор"
+        },
+        "Tooltip": {
+          "enUS": "Support unit. Can use System Recharge.<br/><br/><span style=\"color: 78F0FF\">Power user.</span><br/><span style=\"color: FFE303\">Detector</span>",
+          "ruRU": "Юнит поддержки. Может использовать Заряд системы.<br/><br/><span style=\"color: f078ff\">Использует Энергию Генетронов.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+        },
         "Hotkey": "R"
       },
       {
@@ -715,28 +787,15 @@
         "AbilCmd": "stop,Stop",
         "id": "StopPlanetaryFortress",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
-        "Hotkey": "P"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
         },
-        "Row": 2,
-        "Column": 2,
-        "Type": "Passive",
-        "id": "ProcessingCorePowerGrid",
-        "Icon": "btn-tips-computerterminals",
-        "Tooltip": "<span style=\"color: #78f0ff\">Generates <b>0.71</b> power per second.</span>",
-        "Name": "Power Grid"
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
+        "Hotkey": "P"
       },
       {
         "Info": {
@@ -762,9 +821,178 @@
         "AbilCmd": "RallyProcessingCore,Rally2",
         "id": "RallyWorkerGen",
         "Icon": "btn-ability-genetron-setworkerrallypoint",
-        "Tooltip": "Sends constructed worker units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "Name": "Set Worker Rally Point",
+        "Name": {
+          "enUS": "Set Worker Rally Point"
+        },
+        "Tooltip": {
+          "enUS": "Sends constructed worker units to the designated point. Workers rallied to resources will begin gathering automatically."
+        },
         "Hotkey": "G"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/ProcessingCoreChargingField",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Genetron,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "ProcessingCoreChargingField",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "ProcessingCoreChargingField"
+            },
+            "Off": {
+              "DefaultButtonFace": "ProcessingCoreChargingFieldOff"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "Toggle": 1
+          },
+          "BehaviorArray": [
+            "ProcessingCoreChargingFieldBase"
+          ],
+          "id": "ProcessingCoreChargingField"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "ProcessingCoreChargingField,On",
+        "id": "ProcessingCoreChargingField",
+        "Icon": "btn-ability-stetmann-garystetelliteovercharge-speed",
+        "Name": {
+          "enUS": "Charging Field"
+        },
+        "Tooltip": {
+          "enUS": "Restores the energy of Genetron temporary units in an area at the cost of power."
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/ProcessingCoreChargingField",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Genetron,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "ProcessingCoreChargingField",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1
+              },
+              "DefaultButtonFace": "ProcessingCoreChargingField"
+            },
+            "Off": {
+              "DefaultButtonFace": "ProcessingCoreChargingFieldOff"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "Flags": {
+            "Toggle": 1
+          },
+          "BehaviorArray": [
+            "ProcessingCoreChargingFieldBase"
+          ],
+          "id": "ProcessingCoreChargingField"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "ProcessingCoreChargingField,Off",
+        "id": "ProcessingCoreChargingFieldOff",
+        "Icon": "btn-ability-stetmann-garystetelliteovercharge-speed",
+        "Name": {
+          "enUS": "Charging Field Off"
+        },
+        "Tooltip": {
+          "enUS": "Disable the charging field."
+        },
+        "Hotkey": "D"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ProcessingCorePowerGrid",
+        "Icon": "btn-tips-computerterminals",
+        "Name": {
+          "enUS": "Power Grid",
+          "ruRU": "Энергосистема"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: 78f0ff\">Generates <b>0.71</b> power per second.</span>",
+          "ruRU": "<span style=\"color: 78f0ff\">Генерирует <b>0.71</b> в секунду.</span>"
+        }
       }
     ]
   },
@@ -789,6 +1017,7 @@
   ],
   "Mob": "Multiplayer",
   "Icon": "btn-building-genetron-processingcore",
+  "Model": "ProcessingCore",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -796,61 +1025,118 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
-      "id": "GenetronEnergyStateNotFull"
+      "id": "GenetronEnergyStateNotFull",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Energy State Not Full"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackAndMirrorGenetronPowerSupply"
+      "id": "TrackAndMirrorGenetronPowerSupply",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Track And Mirror Genetron Power Supply"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "ProcessingCorePower",
-      "Icon": "btn-tips-computerterminals"
+      "Icon": "btn-tips-computerterminals",
+      "Name": {
+        "enUS": "Processing Core Power"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "ProcessingCoreMiningPriorityReq"
-    },
-    {
-      "id": "UnderConstruction"
+      "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Under Construction",
+        "ruRU": "Under Construction"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "Scion_DisplayCooldownDummy",
-      "Name": "Display Cooldown Dummy"
+      "Name": {
+        "enUS": "Display Cooldown Dummy"
+      }
     },
     {
       "id": "RallyProcessingCore",
-      "Name": "Processing Core - Rally"
+      "Name": {
+        "enUS": "Processing Core - Rally",
+        "ruRU": "Processing Core - Rally"
+      }
     },
     {
       "id": "ProcessingCoreTrain",
-      "Name": "Train"
+      "Name": {
+        "enUS": "Train",
+        "ruRU": "Train"
+      }
     },
     {
       "id": "MiningPriority",
-      "Name": "Mining Priority"
+      "Name": {
+        "enUS": "Mining Priority",
+        "ruRU": "Mining Priority"
+      }
     },
     {
       "id": "CoreSystemRecharge",
-      "Name": "System Recharge"
+      "Name": {
+        "enUS": "System Recharge",
+        "ruRU": "System Recharge"
+      }
+    },
+    {
+      "id": "ProcessingCoreChargingField",
+      "Name": {
+        "enUS": "Processing Core - Charging Field"
+      }
     }
   ],
   "$Upgrades": [
@@ -872,7 +1158,8 @@
   "$Requirements": [],
   "$Production": [
     "ACR",
-    "Scion_Processor"
+    "Scion_Processor",
+    "GenetronPowerSupplyDummy"
   ],
   "$Research": [],
   "$Morph": [],
@@ -885,64 +1172,138 @@
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "RallyProcessingCore,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Tooltip": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Rally Point"
+      "Name": {
+        "enUS": "Set Rally Point",
+        "ruRU": "Задать точку сбора "
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
+        "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
     },
     {
       "AbilCmd": "ProcessingCoreTrain,Train1",
       "id": "ACR",
       "Icon": "btn-unit-genetron-acr",
-      "Tooltip": "Basic worker unit. Can gather resources, build Genetron structures, and repair.<br/><br/><c val=\"#ColorAttackInfo\">Can attack ground units.</span>",
-      "Name": "Fabricate ACR"
+      "Name": {
+        "enUS": "Fabricate ACR",
+        "ruRU": "Изготовить АСР"
+      },
+      "Tooltip": {
+        "enUS": "Basic worker unit. Can gather resources, build Genetron structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "ruRU": "Базовая рабочая единица. Может собирать ресурсы, строить здания Генетронов и ремонтировать.<br/><br/><span style=\"color: #ffff8a\">Может атаковать наземные цели.</span>"
+      }
     },
     {
       "AbilCmd": "MiningPriority,Execute",
       "id": "MiningPriority",
       "Icon": "btn-ability-genetron-miningtap",
-      "Tooltip": "<s val=\"VerySmallFont\">  </s><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT100\"><b>100</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases the yield of nearby mineral fields by <b>1</b> for <b>42</b> seconds. Repeated casts increase the duration up to <b>168</b> seconds.",
-      "Name": "Mining Priority"
+      "Name": {
+        "enUS": "Mining Priority",
+        "ruRU": "Приоритет на добычу"
+      },
+      "Tooltip": {
+        "enUS": "<span class=\"style-VerySmallFont\">  </span><img path=\"@@UI/ResourceIconPower\" width=\"24\" height=\"24\" alignment=\"absolutemiddle\"/><c val=\"FF0000\" validator=\"GenetronPowerSupplyLT100\"><b>100</b></span><img path=\"Assets\\Textures\\blank.dds\" width=\"1\" height=\"24\" alignment=\"top\"/><br/>Increases the yield of nearby mineral fields by <b>1</b> for <b>42</b> seconds. Repeated casts increase the duration up to <b>168</b> seconds.",
+        "ruRU": "Увеличивает добычу ресурсов находящихся поблизости рабочих на  <b>1</b>. Эффект длится <b>1</b> секунд."
+      }
     },
     {
       "AbilCmd": "CoreSystemRecharge,Execute",
       "id": "CoreSystemRecharge",
       "Icon": "btn-upgrade-terran-nova-snipeenergyrefund",
-      "Tooltip": "Recharges the energy of a friendly Genetron unit.<br/><br/><span style=\"color: #78F0FF\">Restores <b>4</b> energy per 1 power.</span>",
-      "Name": "System Recharge"
+      "Name": {
+        "enUS": "System Recharge",
+        "ruRU": "Перезарядка системы"
+      },
+      "Tooltip": {
+        "enUS": "Recharges the energy of a friendly Genetron unit.<br/><br/><span style=\"color: 78F0FF\">Restores <b>4</b> energy per 1 power.</span>",
+        "ruRU": "Передаёт энергию выбранной единице."
+      }
     },
     {
       "AbilCmd": "ProcessingCoreTrain,Train2",
       "id": "Scion_Processor",
       "Icon": "btn-unit-genetron-processor",
-      "Tooltip": "Support unit. Can use System Recharge.<br/><br/><span style=\"color: #78F0FF\">Power user.</span></n><span style=\"color: #FFE303\">Detector</span>",
-      "Name": "Fabricate Processor"
+      "Name": {
+        "enUS": "Fabricate Processor",
+        "ruRU": "Сконструировать Процессор"
+      },
+      "Tooltip": {
+        "enUS": "Support unit. Can use System Recharge.<br/><br/><span style=\"color: 78F0FF\">Power user.</span><br/><span style=\"color: FFE303\">Detector</span>",
+        "ruRU": "Юнит поддержки. Может использовать Заряд системы.<br/><br/><span style=\"color: f078ff\">Использует Энергию Генетронов.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "StopPlanetaryFortress",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "RallyProcessingCore,Rally2",
       "id": "RallyWorkerGen",
       "Icon": "btn-ability-genetron-setworkerrallypoint",
-      "Tooltip": "Sends constructed worker units to the designated point. Workers rallied to resources will begin gathering automatically.",
-      "Name": "Set Worker Rally Point"
+      "Name": {
+        "enUS": "Set Worker Rally Point"
+      },
+      "Tooltip": {
+        "enUS": "Sends constructed worker units to the designated point. Workers rallied to resources will begin gathering automatically."
+      }
+    },
+    {
+      "AbilCmd": "ProcessingCoreChargingField,On",
+      "id": "ProcessingCoreChargingField",
+      "Icon": "btn-ability-stetmann-garystetelliteovercharge-speed",
+      "Name": {
+        "enUS": "Charging Field"
+      },
+      "Tooltip": {
+        "enUS": "Restores the energy of Genetron temporary units in an area at the cost of power."
+      }
+    },
+    {
+      "AbilCmd": "ProcessingCoreChargingField,Off",
+      "id": "ProcessingCoreChargingFieldOff",
+      "Icon": "btn-ability-stetmann-garystetelliteovercharge-speed",
+      "Name": {
+        "enUS": "Charging Field Off"
+      },
+      "Tooltip": {
+        "enUS": "Disable the charging field."
+      }
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nexus",
-    "zhCN": "星灵枢纽",
-    "koKR": "넥서스 /// Nexus"
+    "zhCN": "Nexus",
+    "koKR": "Nexus"
   },
   "Description": {
     "enUS": "Primary structure. Can receive gathered resources.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Probe</b>s",
     "zhCN": "Primary structure. Can receive gathered resources.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Probe</b>s",
-    "koKR": "주 건물입니다. 채취한 자원을 수집합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Probe</b> /// Primary structure. Can receive gathered resources.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Probe</b>s"
+    "koKR": "Primary structure. Can receive gathered resources.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Probe</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 750,
-  "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeStart": 1000,
+  "LifeMax": 1000,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "NexusSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "NexusSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "NexusSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "NexusSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -99,13 +99,10 @@
   "Mob": "Multiplayer",
   "FogVisibility": "Snapshot",
   "LifeArmor": 1,
-  "ShieldsStart": 750,
-  "ShieldsMax": 750,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldsStart": 1000,
+  "ShieldsMax": 1000,
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Food": 15,
   "AttackTargetPriority": 11,
   "Footprint": "Footprint5x5Contour",
@@ -138,6 +135,13 @@
     "Small"
   ],
   "Sight": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "que5Passive",
+    "NexusSCBW@Train",
+    "NexusSCBW@Rally",
+    "stopProtossBuilding"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -200,20 +204,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -226,14 +226,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -247,7 +247,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -262,18 +263,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {},
@@ -293,15 +290,8 @@
         "AbilCmd": "NexusSCBW@Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -311,6 +301,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ProbeSCBW",
             "Requirements": "ProbeSCBW"
           },
@@ -339,13 +330,13 @@
         "Icon": "btn-unit-protoss-probe@scbw",
         "Name": {
           "enUS": "Warp In Probe",
-          "zhCN": "折跃探机",
-          "koKR": "프로브 소환 /// Warp In Probe"
+          "zhCN": "Warp In Probe",
+          "koKR": "Warp In Probe"
         },
         "Tooltip": {
           "enUS": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-          "zhCN": "基础工作单位。用于采集资源和折跃星灵建筑。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-          "koKR": "기본 일꾼 유닛입니다. 자원을 채취하고 프로토스 건물을 소환합니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+          "koKR": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "E"
       }
@@ -355,13 +346,16 @@
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
   "CostCategory": "Economy",
   "CostResource": {
-    "Minerals": 350
+    "Minerals": 400
   },
   "TechTreeProducedUnitArray": [
     "ProbeSCBW"
   ],
   "BuildTime": 100,
-  "ShieldRegenDelay": 10,
+  "EffectArray": {
+    "Create": "NexusCreateSet",
+    "Birth": "NexusBirthSet"
+  },
   "id": "NexusSCBW",
   "Icon": "btn-building-protoss-nexus@scbw",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
@@ -370,40 +364,33 @@
   "Behaviors": [],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     },
     {
       "id": "que5Passive",
       "Name": {
-        "ruRU": "Queue (5) Passive",
-        "enUS": "Queue (5) Passive"
+        "ruRU": "Queue (5) Passive"
       }
     },
     {
       "id": "NexusSCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "NexusSCBW@Rally",
       "Name": {
         "enUS": "Rally",
-        "zhCN": "集结",
-        "koKR": "집결 /// Rally"
-      }
-    },
-    {
-      "id": "stopProtossBuilding",
-      "Name": {
-        "enUS": "stop Protoss Building",
-        "ruRU": "stop Protoss Building"
+        "zhCN": "Rally",
+        "koKR": "Rally"
       }
     }
   ],
@@ -442,38 +429,26 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "NexusSCBW@Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "NexusSCBW@Train,Train1",
@@ -481,13 +456,13 @@
       "Icon": "btn-unit-protoss-probe@scbw",
       "Name": {
         "enUS": "Warp In Probe",
-        "zhCN": "折跃探机",
-        "koKR": "프로브 소환 /// Warp In Probe"
+        "zhCN": "Warp In Probe",
+        "koKR": "Warp In Probe"
       },
       "Tooltip": {
         "enUS": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-        "zhCN": "基础工作单位。用于采集资源和折跃星灵建筑。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-        "koKR": "기본 일꾼 유닛입니다. 자원을 채취하고 프로토스 건물을 소환합니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+        "koKR": "Basic worker unit. Can gather resources and warp in Protoss structures.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
       }
     }
   ]

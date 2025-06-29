@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Siege Tank",
-    "zhCN": "攻城坦克",
-    "koKR": "시즈 탱크 /// Siege Tank"
+    "zhCN": "Siege Tank",
+    "koKR": "Siege Tank"
   },
   "Description": {
     "enUS": "Heavy Tank. Provides long-range artillery support. Can revert into <span class=\"style-TooltipHighlightSCBW\">Tank  Mode</span> <br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground units.</span>",
-    "zhCN": "重型坦克。 可切换至<span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span>提供机动坦克火力支援。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地。</span>",
-    "koKR": "중전차입니다. 장거리 지원 포격을 할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\">탱크 모드</span>로 전환할 수 있습니다. <br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 유닛 공격 가능</span> /// Heavy Tank. Provides long-range artillery support. Can revert into <span class=\"style-TooltipHighlightSCBW\">Tank Mode</span> <br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground units.</span>"
+    "zhCN": "Heavy Tank. Provides long-range artillery support. Can revert into <span class=\"style-TooltipHighlightSCBW\">Tank  Mode</span> <br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground units.</span>",
+    "koKR": "Heavy Tank. Provides long-range artillery support. Can revert into <span class=\"style-TooltipHighlightSCBW\">Tank  Mode</span> <br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 175,
-  "LifeMax": 175,
-  "LifeArmorName": {
-    "enUS": "Terran Vehicle Plating",
-    "ruRU": "Terran Vehicle Plating"
-  },
+  "LifeStart": 150,
+  "LifeMax": 150,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -75,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SiegeTankSCBWSieged/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SiegeTankSCBWSieged/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SiegeTankSCBWSieged/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SiegeTankSCBWSieged/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -115,17 +115,25 @@
   ],
   "LifeArmor": 1,
   "Sight": 11,
-  "Food": -3,
+  "Food": -2,
   "CostResource": {
     "Minerals": 150,
-    "Vespene": 125
+    "Vespene": 100
   },
-  "BuildTime": 46.875,
+  "BuildTime": 38,
   "RepairTime": 45,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 50,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "SiegeTankSCBWSieged@Unsiege"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "SiegeTankSCBWSiegedWeapon",
+      "Turret": "SiegeTankSCBWSieged"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -216,12 +224,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -296,12 +301,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -391,13 +393,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -471,14 +470,8 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Attack"
-        },
-        "Tooltip": {
-          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -568,19 +561,16 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       }
     ]
   },
   "Footprint": "FootprintSieged",
-  "ScoreKill": 275,
+  "ScoreKill": 250,
   "SubgroupPriority": 74,
   "TechAliasArray": [
     "Alias_SiegeTankSCBW"
@@ -603,21 +593,28 @@
   "Weapons": [
     {
       "Turret": "SiegeTankSCBWSieged",
-      "id": "SiegeTankSCBWSiegedWeapon",
+      "EditorCategories": "Race:Terran",
+      "Tip": "Weapon/Tip/ExplosiveWeapon",
+      "Options": {
+        "DisplayCooldown": 1
+      },
       "Icon": "btn-upgrade-terran-vehicleweaponslevel0",
+      "DisplayEffect": "SiegeTankSCBWSiegedWeapon@DamageExpl",
+      "TargetFilters": "Ground",
+      "Range": 13.5,
+      "MinimumRange": 2,
+      "Period": 3.78,
+      "DamagePoint": 0.0834,
+      "Effect": "SiegeTankSCBWSiegedWeapon@InitialSet",
+      "id": "SiegeTankSCBWSiegedWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Mjolnir 120mm Shock Cannon",
-        "zhCN": "120mm雷神之锤火炮",
-        "koKR": "묠니르 120mm 충격포 /// Mjolnir 120mm Shock Cannon"
+        "zhCN": "Mjolnir 120mm Shock Cannon",
+        "koKR": "Mjolnir 120mm Shock Cannon"
       },
-      "Amount": 53,
-      "AttributeBonus": {
-        "Armored": 17
-      },
-      "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 13,
-      "Period": 4.2187
+      "Amount": 52.5,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -625,23 +622,22 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "SiegeTankSCBWSieged@Unsiege",
       "Name": {
         "enUS": "Unsiege",
-        "zhCN": "取消攻城模式",
-        "koKR": "시즈 해제 /// Unsiege"
+        "zhCN": "Unsiege",
+        "koKR": "Unsiege"
       }
     }
   ],
@@ -670,12 +666,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -683,51 +676,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Attack"
-      },
-      "Tooltip": {
-        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     }
   ]
 }

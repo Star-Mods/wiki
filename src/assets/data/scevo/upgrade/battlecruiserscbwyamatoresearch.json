@@ -1,11 +1,14 @@
 {
-  "id": "BattlecruiserSCBWYamatoResearch",
-  "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
-  "Name": "Upgrade/Name/BattlecruiserSCBWYamatoResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Yamato Gun Research",
+    "zhCN": "Yamato Gun Research",
+    "koKR": "Yamato Gun Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,8 +23,17 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "BattlecruiserSCBWYamatoResearch",
-  "Race": "Terr",
+  "id": "BattlecruiserSCBWYamatoResearch",
+  "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
+  "Race": "BWTe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

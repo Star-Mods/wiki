@@ -1,11 +1,14 @@
 {
-  "id": "GhostSCBWSightUpgrade",
-  "Icon": "btn-upgrade-terran-ocularimplants@scbw",
-  "Name": "Upgrade/Name/GhostSCBWSightUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Ocular Implants",
+    "zhCN": "Ocular Implants",
+    "koKR": "Ocular Implants"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,16 +23,25 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "GhostSCBWSightUpgrade",
+  "id": "GhostSCBWSightUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,Sight",
       "Value": "2"
     }
   ],
+  "Icon": "btn-upgrade-terran-ocularimplants@scbw",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
-  "Race": "Terr",
+  "Race": "BWTe",
   "AffectedUnitArray": [
     "GhostSCBW"
   ]

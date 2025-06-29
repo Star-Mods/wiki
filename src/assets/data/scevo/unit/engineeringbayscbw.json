@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Engineering Bay",
-    "zhCN": "工程站",
-    "koKR": "엔지니어링 베이 /// Engineering Bay"
+    "zhCN": "Engineering Bay",
+    "koKR": "Engineering Bay"
   },
   "Description": {
     "enUS": "Contains upgrades for Terran infantry. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Missile Turret</b>s from <b>SCV</b>s",
-    "zhCN": "为人类步兵提供升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>SCV</b>可以建造<b>Missile Turret</b>",
-    "koKR": "테란 보병을 업그레이드합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Missile Turret</b> (<b>SCV</b> 건설) /// Contains upgrades for Terran infantry. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Missile Turret</b>s from <b>SCV</b>s"
+    "zhCN": "Contains upgrades for Terran infantry. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Missile Turret</b>s from <b>SCV</b>s",
+    "koKR": "Contains upgrades for Terran infantry. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Missile Turret</b>s from <b>SCV</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EngineeringBaySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EngineeringBaySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EngineeringBaySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EngineeringBaySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,9 @@
   "SubgroupPriority": 18,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_EngineeringBaySCBW"
   ],
@@ -125,6 +128,13 @@
   "PlaneArray": [
     "Ground"
   ],
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "TerranInfantryArmorsSCBW",
+    "TerranInfantryWeaponsSCBW",
+    "EngineeringBaySCBW@LiftOff"
+  ],
   "Facing": 315,
   "LifeArmor": 1,
   "CostResource": {
@@ -135,28 +145,47 @@
     "Root": [
       {
         "Info": {
-          "SectionArray": {
-            "Actor": {
-              "DurationArray": {
-                "Duration": 1.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Duration": 1.6333
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
+          "class": "CAbilBuildable",
+          "Name": "Abil/Name/BuildInProgress",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "BuildInProgress",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
             }
           },
-          "Unit": "EngineeringBaySCBW@Flying"
+          "Activity": "UI/Building",
+          "VitalStartFactor": {
+            "Life": 0.1,
+            "Shields": 0.1,
+            "Energy": 1
+          },
+          "CmdButtonArray": {
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
+            },
+            "Halt": {
+              "DefaultButtonFace": "Cancel"
+            }
+          },
+          "id": "BuildInProgress"
         },
-        "Unit": "EngineeringBaySCBW@Flying",
         "Cost": {
-          "Minerals": 125,
+          "Minerals": 0,
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
@@ -168,18 +197,14 @@
         "Row": 2,
         "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "EngineeringBaySCBW@LiftOff,Execute",
-        "id": "Lift",
-        "Icon": "btn-ability-terran-liftoff",
+        "AbilCmd": "BuildInProgress,Halt",
+        "id": "Halt",
+        "Icon": "btn-command-stop",
         "Name": {
-          "enUS": "Lift Off",
-          "ruRU": "Lift Off"
+          "enUS": "Halt",
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-        },
-        "Hotkey": "L"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -240,13 +265,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -306,56 +327,12 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
-        "Info": {
-          "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "BuildInProgress",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "Activity": "UI/Building",
-          "VitalStartFactor": {
-            "Life": 0.1,
-            "Shields": 0.1,
-            "Energy": 1
-          },
-          "CmdButtonArray": {
-            "Cancel": {
-              "DefaultButtonFace": "Cancel"
-            },
-            "Halt": {
-              "DefaultButtonFace": "Cancel"
-            }
-          },
-          "id": "BuildInProgress"
-        },
         "Cost": {
           "Minerals": 0,
           "Vespene": 0,
@@ -367,46 +344,20 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Halt",
-        "id": "Halt",
-        "Icon": "btn-command-stop",
+        "Column": 0,
+        "Type": "Passive",
+        "id": "MissileTurretSCBW@Passive",
+        "Icon": "btn-building-terran-missileturret",
         "Name": {
-          "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "enUS": "Missile Turret",
+          "zhCN": "Missile Turret",
+          "koKR": "Missile Turret"
         },
         "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>."
+        }
       },
       {
         "Upgrade": "TerranInfantryArmorsSCBW@Lvl1",
@@ -420,6 +371,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "TerranInfantryArmorsSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "TerranInfantryArmorsSCBW@Lvl1"
           },
           "Resource": {
@@ -448,13 +400,13 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel1",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 1",
-          "zhCN": "升级步兵单位护甲等级1",
-          "koKR": "보병 방어력 업그레이드 레벨 1 /// Upgrade Infantry Armor Level 1"
+          "zhCN": "Upgrade Infantry Armor Level 1",
+          "koKR": "Upgrade Infantry Armor Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of infantry units.",
-          "zhCN": "提升步兵单位的护甲。",
-          "koKR": "보병 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of infantry units."
+          "zhCN": "Upgrades the armor of infantry units.",
+          "koKR": "Upgrades the armor of infantry units."
         },
         "Hotkey": "A"
       },
@@ -469,6 +421,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "TerranInfantryArmorsSCBW@Lvl2",
             "Requirements": "TerranInfantryArmorsSCBW@Lvl2"
           },
@@ -498,13 +451,13 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel2",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 2",
-          "zhCN": "升级步兵单位护甲等级2",
-          "koKR": "보병 방어력 업그레이드 레벨 2 /// Upgrade Infantry Armor Level 2"
+          "zhCN": "Upgrade Infantry Armor Level 2",
+          "koKR": "Upgrade Infantry Armor Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of infantry units.",
-          "zhCN": "进一步提升步兵单位的护甲。",
-          "koKR": "보병 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of infantry units."
+          "zhCN": "Further upgrades the armor of infantry units.",
+          "koKR": "Further upgrades the armor of infantry units."
         },
         "Hotkey": "A"
       },
@@ -519,6 +472,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "TerranInfantryArmorsSCBW@Lvl3",
             "Requirements": "TerranInfantryArmorsSCBW@Lvl3"
           },
@@ -548,13 +502,13 @@
         "Icon": "btn-upgrade-terran-infantryarmorlevel3",
         "Name": {
           "enUS": "Upgrade Infantry Armor Level 3",
-          "zhCN": "升级步兵单位护甲等级3",
-          "koKR": "보병 방어력 업그레이드 레벨 3 /// Upgrade Infantry Armor Level 3"
+          "zhCN": "Upgrade Infantry Armor Level 3",
+          "koKR": "Upgrade Infantry Armor Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of infantry units.",
-          "zhCN": "使步兵单位的护甲最大化。",
-          "koKR": "보병 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of infantry units."
+          "zhCN": "Maximizes the armor of infantry units.",
+          "koKR": "Maximizes the armor of infantry units."
         },
         "Hotkey": "A"
       },
@@ -570,6 +524,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "TerranInfantryWeaponsSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "TerranInfantryWeaponsSCBW@Lvl1"
           },
           "Resource": {
@@ -598,13 +553,13 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel1",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 1",
-          "zhCN": "升级步兵单位武器等级1",
-          "koKR": "보병 공격력 업그레이드 레벨 1 /// Upgrade Infantry Weapons Level 1"
+          "zhCN": "Upgrade Infantry Weapons Level 1",
+          "koKR": "Upgrade Infantry Weapons Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the damage dealt by infantry units.",
-          "zhCN": "提升步兵单位的火力。",
-          "koKR": "보병 유닛의 공격력을 업그레이드합니다. /// Upgrades the damage dealt by infantry units."
+          "zhCN": "Upgrades the damage dealt by infantry units.",
+          "koKR": "Upgrades the damage dealt by infantry units."
         },
         "Hotkey": "E"
       },
@@ -619,6 +574,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "TerranInfantryWeaponsSCBW@Lvl2",
             "Requirements": "TerranInfantryWeaponsSCBW@Lvl2"
           },
@@ -648,13 +604,13 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel2",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 2",
-          "zhCN": "升级步兵单位武器等级2",
-          "koKR": "보병 공격력 업그레이드 레벨 2 /// Upgrade Infantry Weapons Level 2"
+          "zhCN": "Upgrade Infantry Weapons Level 2",
+          "koKR": "Upgrade Infantry Weapons Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the damage dealt by infantry units.",
-          "zhCN": "进一步提升步兵单位的火力。",
-          "koKR": "보병 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the damage dealt by infantry units."
+          "zhCN": "Further upgrades the damage dealt by infantry units.",
+          "koKR": "Further upgrades the damage dealt by infantry units."
         },
         "Hotkey": "E"
       },
@@ -669,6 +625,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "TerranInfantryWeaponsSCBW@Lvl3",
             "Requirements": "TerranInfantryWeaponsSCBW@Lvl3"
           },
@@ -698,13 +655,13 @@
         "Icon": "btn-upgrade-terran-infantryweaponslevel3",
         "Name": {
           "enUS": "Upgrade Infantry Weapons Level 3",
-          "zhCN": "升级步兵单位武器等级3",
-          "koKR": "보병 공격력 업그레이드 레벨 3 /// Upgrade Infantry Weapons Level 3"
+          "zhCN": "Upgrade Infantry Weapons Level 3",
+          "koKR": "Upgrade Infantry Weapons Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the damage dealt by infantry units.",
-          "zhCN": "使步兵单位的火力最大化。",
-          "koKR": "보병 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the damage dealt by infantry units."
+          "zhCN": "Maximizes the damage dealt by infantry units.",
+          "koKR": "Maximizes the damage dealt by infantry units."
         },
         "Hotkey": "E"
       }
@@ -715,15 +672,17 @@
   "ScoreMake": 125,
   "ScoreKill": 125,
   "GlossaryPriority": 256,
-  "BuildTime": 35,
+  "BuildTime": 30,
   "TacticalAIThink": "AIThinkEngineeringBaySCBW",
   "Icon": "btn-building-terran-engineeringbay",
+  "Model": "EngineeringBayEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -735,40 +694,36 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "TerranInfantryArmorsSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "TerranInfantryWeaponsSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "EngineeringBaySCBW@LiftOff",
       "Name": {
         "enUS": "Lift Off",
-        "zhCN": "起飞",
-        "koKR": "이륙 /// Lift Off"
+        "zhCN": "Lift Off",
+        "koKR": "Lift Off"
       }
     }
   ],
@@ -807,17 +762,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "EngineeringBaySCBW@LiftOff,Execute",
-      "id": "Lift",
-      "Icon": "btn-ability-terran-liftoff",
+      "AbilCmd": "BuildInProgress,Halt",
+      "id": "Halt",
+      "Icon": "btn-command-stop",
       "Name": {
-        "enUS": "Lift Off",
-        "ruRU": "Lift Off"
+        "enUS": "Halt",
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "que5,CancelLast",
@@ -825,38 +777,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
-    },
-    {
-      "AbilCmd": "BuildInProgress,Halt",
-      "id": "Halt",
-      "Icon": "btn-command-stop",
-      "Name": {
-        "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
-      },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "TerranInfantryArmorsSCBW,Research1",
@@ -864,13 +797,13 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel1",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 1",
-        "zhCN": "升级步兵单位护甲等级1",
-        "koKR": "보병 방어력 업그레이드 레벨 1 /// Upgrade Infantry Armor Level 1"
+        "zhCN": "Upgrade Infantry Armor Level 1",
+        "koKR": "Upgrade Infantry Armor Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of infantry units.",
-        "zhCN": "提升步兵单位的护甲。",
-        "koKR": "보병 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of infantry units."
+        "zhCN": "Upgrades the armor of infantry units.",
+        "koKR": "Upgrades the armor of infantry units."
       }
     },
     {
@@ -879,13 +812,13 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel2",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 2",
-        "zhCN": "升级步兵单位护甲等级2",
-        "koKR": "보병 방어력 업그레이드 레벨 2 /// Upgrade Infantry Armor Level 2"
+        "zhCN": "Upgrade Infantry Armor Level 2",
+        "koKR": "Upgrade Infantry Armor Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of infantry units.",
-        "zhCN": "进一步提升步兵单位的护甲。",
-        "koKR": "보병 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of infantry units."
+        "zhCN": "Further upgrades the armor of infantry units.",
+        "koKR": "Further upgrades the armor of infantry units."
       }
     },
     {
@@ -894,13 +827,13 @@
       "Icon": "btn-upgrade-terran-infantryarmorlevel3",
       "Name": {
         "enUS": "Upgrade Infantry Armor Level 3",
-        "zhCN": "升级步兵单位护甲等级3",
-        "koKR": "보병 방어력 업그레이드 레벨 3 /// Upgrade Infantry Armor Level 3"
+        "zhCN": "Upgrade Infantry Armor Level 3",
+        "koKR": "Upgrade Infantry Armor Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of infantry units.",
-        "zhCN": "使步兵单位的护甲最大化。",
-        "koKR": "보병 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of infantry units."
+        "zhCN": "Maximizes the armor of infantry units.",
+        "koKR": "Maximizes the armor of infantry units."
       }
     },
     {
@@ -909,13 +842,13 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel1",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 1",
-        "zhCN": "升级步兵单位武器等级1",
-        "koKR": "보병 공격력 업그레이드 레벨 1 /// Upgrade Infantry Weapons Level 1"
+        "zhCN": "Upgrade Infantry Weapons Level 1",
+        "koKR": "Upgrade Infantry Weapons Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the damage dealt by infantry units.",
-        "zhCN": "提升步兵单位的火力。",
-        "koKR": "보병 유닛의 공격력을 업그레이드합니다. /// Upgrades the damage dealt by infantry units."
+        "zhCN": "Upgrades the damage dealt by infantry units.",
+        "koKR": "Upgrades the damage dealt by infantry units."
       }
     },
     {
@@ -924,13 +857,13 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel2",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 2",
-        "zhCN": "升级步兵单位武器等级2",
-        "koKR": "보병 공격력 업그레이드 레벨 2 /// Upgrade Infantry Weapons Level 2"
+        "zhCN": "Upgrade Infantry Weapons Level 2",
+        "koKR": "Upgrade Infantry Weapons Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the damage dealt by infantry units.",
-        "zhCN": "进一步提升步兵单位的火力。",
-        "koKR": "보병 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the damage dealt by infantry units."
+        "zhCN": "Further upgrades the damage dealt by infantry units.",
+        "koKR": "Further upgrades the damage dealt by infantry units."
       }
     },
     {
@@ -939,13 +872,13 @@
       "Icon": "btn-upgrade-terran-infantryweaponslevel3",
       "Name": {
         "enUS": "Upgrade Infantry Weapons Level 3",
-        "zhCN": "升级步兵单位武器等级3",
-        "koKR": "보병 공격력 업그레이드 레벨 3 /// Upgrade Infantry Weapons Level 3"
+        "zhCN": "Upgrade Infantry Weapons Level 3",
+        "koKR": "Upgrade Infantry Weapons Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the damage dealt by infantry units.",
-        "zhCN": "使步兵单位的火力最大化。",
-        "koKR": "보병 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the damage dealt by infantry units."
+        "zhCN": "Maximizes the damage dealt by infantry units.",
+        "koKR": "Maximizes the damage dealt by infantry units."
       }
     }
   ]

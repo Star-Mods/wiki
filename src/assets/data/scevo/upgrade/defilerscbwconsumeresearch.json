@@ -1,11 +1,14 @@
 {
-  "id": "DefilerSCBWConsumeResearch",
-  "Icon": "btn-ability-zerg-consume",
-  "Name": "Upgrade/Name/DefilerSCBWConsumeResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Consume Research",
+    "zhCN": "Consume Research",
+    "koKR": "Consume Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,12 +23,21 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "DefilerSCBWConsumeResearch",
+  "id": "DefilerSCBWConsumeResearch",
+  "Icon": "btn-ability-zerg-consume",
   "AffectedUnitArray": [
     "DefilerSCBW"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
+  "Race": "BWZe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder"
 }

@@ -1,6 +1,13 @@
 {
-  "Name": "Stratus",
-  "Description": "Anti-air defensive structure. <br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Stratus",
+    "ruRU": "Стратус"
+  },
+  "Description": {
+    "enUS": "Anti-air defensive structure. <br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+    "ruRU": "Противовоздушное оборонительное сооружение. <br/><br/><span style=\"color: ffff8a\">Может атаковать воздушные цели.</span><br/><span style=\"color: FFE303\">Детектор</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 225,
   "LifeMax": 225,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Stratus/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Stratus/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Stratus/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Stratus/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -97,13 +109,25 @@
   "LifeArmor": 2,
   "Sight": 11,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironConstructionFreeze"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
   "Food": 0,
   "Footprint": "Footprint2x2AirContour",
   "PlacementFootprint": "Footprint2x2Air",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -176,8 +200,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -240,8 +270,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -260,8 +296,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       }
     ]
@@ -274,60 +316,118 @@
   "CostResource": {
     "Minerals": 100
   },
+  "WeaponArray": [
+    {
+      "Link": "StratusWeapon",
+      "Turret": "Stratus"
+    },
+    {
+      "Link": "StratusWeaponDummy",
+      "Turret": "StratusMovement"
+    }
+  ],
   "GlossaryCategory": "Unit/Category/KeironUnits",
   "AttackTargetPriority": 20,
   "GlossaryPriority": 51,
   "ScoreMake": 150,
   "ScoreKill": 150,
   "Icon": "btn-building-keiron-stratus",
+  "Model": "Stratus",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [
     {
       "Turret": "Stratus",
-      "id": "StratusWeapon",
+      "EditorCategories": "Race:Keiron",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0
+      },
       "Icon": "btn-building-keiron-stratus",
-      "Name": "Stratus - Weapon",
-      "Amount": 12,
-      "Kind": "Ranged",
+      "DisplayEffect": "StratusWeaponDMG",
       "DisplayAttackCount": 2,
       "TargetFilters": "Air",
       "Range": 8,
-      "Period": 1.3
+      "Period": 1.3,
+      "Effect": "StratusWeaponCP",
+      "id": "StratusWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Stratus - Weapon",
+        "ruRU": "Стратус - Оружие"
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     },
     {
       "Turret": "StratusMovement",
-      "id": "StratusWeaponDummy",
-      "Icon": "btn-building-keiron-stratus",
-      "Name": "Stratus - Weapon Dummy",
-      "Amount": 12,
-      "Kind": "Ranged",
+      "DisplayEffect": "StratusWeaponDMG",
       "DisplayAttackCount": 2,
       "TargetFilters": "Air",
       "Range": 8,
-      "Period": 1.3
+      "Period": 1.3,
+      "Options": {
+        "Hidden": 1,
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0,
+        "LinkedCooldown": 0,
+        "RequireEnabledAttackAbil": 0
+      },
+      "AcquireFilters": "-;Player,Ally,Neutral,Enemy",
+      "AcquireScanFilters": "-;Player,Ally,Neutral,Enemy",
+      "Icon": "btn-building-keiron-stratus",
+      "EditorCategories": "Race:Keiron",
+      "id": "StratusWeaponDummy",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Stratus - Weapon Dummy",
+        "ruRU": "Stratus - Weapon Dummy"
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironConstructionFreeze"
+      "id": "KeironConstructionFreeze",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Keiron Construction Freeze",
+        "ruRU": "Keiron Construction Freeze"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -353,15 +453,27 @@
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     }
   ]
 }

@@ -4,7 +4,7 @@
     "enUS": "Cossack"
   },
   "Description": {
-    "enUS": "Tactical-strike aircraft, can deploy Mag Mines."
+    "enUS": "Anti-ground, anti armored fast aircraft, can deploy Mag Mines."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -708,7 +708,7 @@
             }
           ],
           "TargetFilters": [
-            "Visible;Self,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"
+            "Visible;Self,Ally,Neutral,Air,Missile,Stasis,Dead,Hidden,Invulnerable"
           ],
           "Range": [
             8
@@ -747,7 +747,7 @@
           "enUS": "Lapta Accelerators"
         },
         "Tooltip": {
-          "enUS": "Fires a shot that deals <b>41</b> damage and ricochets off the target, damaging 3 other nearby units. <br/><br/><span style=\"color: FFFF80\">Can target air and ground units.</span>"
+          "enUS": "Fires a shot that deals <span style=\"color: 80FFFF\"><b>41</b> damage</span> and ricochets off the target,  <span style=\"color: 80FFFF\">damaging 3 other nearby units</span>. <br/><br/><span style=\"color: FFFF80\">Can target ground units.</span>"
         },
         "Hotkey": "W"
       },
@@ -885,12 +885,12 @@
         "Type": "AbilCmd",
         "AbilCmd": "SynoidCossackMagMine,Execute",
         "id": "MagMine",
-        "Icon": "btn-doodad-magmine",
+        "Icon": "btn_ability_synoid_mag_mine",
         "Name": {
           "enUS": "Deploy Mag Mine"
         },
         "Tooltip": {
-          "enUS": "Launch an air mine which travels in a straight line and deals area damage to nearby air units on impact.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+          "enUS": "Launch an air mine which <span style=\"color: 80FFFF\"> travels in a straight line</span> and deals <span style=\"color: 80FFFF\"> 60 damage</span> to an air unit on impact.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
         },
         "Hotkey": "R"
       }
@@ -948,7 +948,9 @@
       "Name": {
         "enUS": "RegenBioSteel"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "This unit has been upgraded to regenerate faster."
+      }
     }
   ],
   "Abilities": [
@@ -1081,18 +1083,18 @@
         "enUS": "Lapta Accelerators"
       },
       "Tooltip": {
-        "enUS": "Fires a shot that deals <b>41</b> damage and ricochets off the target, damaging 3 other nearby units. <br/><br/><span style=\"color: FFFF80\">Can target air and ground units.</span>"
+        "enUS": "Fires a shot that deals <span style=\"color: 80FFFF\"><b>41</b> damage</span> and ricochets off the target,  <span style=\"color: 80FFFF\">damaging 3 other nearby units</span>. <br/><br/><span style=\"color: FFFF80\">Can target ground units.</span>"
       }
     },
     {
       "AbilCmd": "SynoidCossackMagMine,Execute",
       "id": "MagMine",
-      "Icon": "btn-doodad-magmine",
+      "Icon": "btn_ability_synoid_mag_mine",
       "Name": {
         "enUS": "Deploy Mag Mine"
       },
       "Tooltip": {
-        "enUS": "Launch an air mine which travels in a straight line and deals area damage to nearby air units on impact.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+        "enUS": "Launch an air mine which <span style=\"color: 80FFFF\"> travels in a straight line</span> and deals <span style=\"color: 80FFFF\"> 60 damage</span> to an air unit on impact.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
       }
     }
   ]

@@ -1,11 +1,14 @@
 {
-  "id": "DarkArchonSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-protoss-argustalisman@scbw",
-  "Name": "Upgrade/Name/DarkArchonSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Argus Talisman",
+    "zhCN": "Argus Talisman",
+    "koKR": "Argus Talisman"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,20 +23,29 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "DarkArchonSCBWEnergyUpgrade",
+  "id": "DarkArchonSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
+  "Icon": "btn-upgrade-protoss-argustalisman@scbw",
   "InfoTooltipPriority": 1,
-  "Race": "Prot",
-  "ScoreAmount": 300,
+  "Race": "BWPr",
+  "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "DarkArchonSCBW"

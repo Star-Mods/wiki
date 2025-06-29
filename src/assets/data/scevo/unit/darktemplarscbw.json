@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Dark Templar",
-    "zhCN": "黑暗圣堂武士",
-    "koKR": "다크 템플러 /// Dark Templar"
+    "zhCN": "Dark Templar",
+    "koKR": "Dark Templar"
   },
   "Description": {
     "enUS": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "zhCN": "致命的近战杀手。永久隐形。可融合为<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-    "koKR": "무시무시한 암살 전사입니다. 영구히 은폐합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>으로 합체할 수 있습니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "zhCN": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "koKR": "Deadly warrior-assassin. Permanently cloaked. Can merge into a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>. <br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 80,
   "LifeMax": 80,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -48,7 +46,6 @@
     "UseLineOfSight",
     "PreventDestroy",
     "Cloaked",
-    "AlwaysThreatens",
     "ArmySelect"
   ],
   "EditorFlags": [
@@ -75,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "DarkTemplarSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "DarkTemplarSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "DarkTemplarSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "DarkTemplarSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,13 +95,10 @@
   "Mob": "Multiplayer",
   "EnergyRegenRate": 0.5,
   "id": "DarkTemplarSCBW",
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldArmorName": "-",
   "GlossaryCategory": "Unit/Category/ProtossUnitsSCBW",
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
-  "ShieldRegenRate": 2,
+  "ShieldRegenRate": 0.711,
   "PlaneArray": [
     "Ground"
   ],
@@ -130,11 +126,22 @@
     "Minerals": 125,
     "Vespene": 100
   },
-  "BuildTime": 55,
+  "BuildTime": 42,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 45,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "Warpable",
+    "BuildInProgress",
+    "ProgressRally",
+    "DarkArchonSCBWMerge"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "DarkTemplarSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -225,12 +232,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -305,12 +309,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -400,13 +401,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -480,14 +478,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -577,67 +569,11 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
-      },
-      {
-        "Info": {},
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "ProgressRally,Rally1",
-        "id": "Rally",
-        "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 1,
-        "Type": "Passive",
-        "id": "PermanentlyCloaked",
-        "Icon": "btn-ability-protoss-permanentlycloaked-darktemplar-color",
-        "Name": {
-          "enUS": "Permanently Cloaked",
-          "ruRU": "Permanently Cloaked"
-        },
-        "Tooltip": {
-          "enUS": "The Dark Templar is permanently cloaked.",
-          "ruRU": "The Dark Templar is permanently cloaked."
-        }
       },
       {
         "Info": {
@@ -661,16 +597,16 @@
         "Type": "AbilCmd",
         "AbilCmd": "DarkArchonSCBWMerge,SelectedUnits",
         "id": "DarkArchonSCBWMerge@Selection",
-        "Icon": "btn-unit-protoss-darkarchon",
+        "Icon": "btn-unit-protoss-darkarchon@scbw",
         "Name": {
           "enUS": "Dark Archon Merge",
-          "zhCN": "融合为黑暗执政官",
-          "koKR": "다크 아콘 합체 /// Dark Archon Merge"
+          "zhCN": "Dark Archon Merge",
+          "koKR": "Dark Archon Merge"
         },
         "Tooltip": {
           "enUS": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\">2</span>名<span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span>牺牲自身，融合为一名<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> <span class=\"style-TooltipHighlightSCBW\">두</span> 명을 희생하여 <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>을 소환합니다. /// Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>."
+          "zhCN": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>.",
+          "koKR": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>."
         },
         "Hotkey": "C"
       }
@@ -678,8 +614,8 @@
   },
   "InnerRadius": 0.375,
   "CargoSize": 2,
-  "ScoreMake": 250,
-  "ScoreKill": 250,
+  "ScoreMake": 225,
+  "ScoreKill": 225,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 56,
   "GlossaryPriority": 70,
@@ -694,24 +630,33 @@
     "ObserverSCBW"
   ],
   "TacticalAIThink": "AIThinkDarkTemplarSCBW",
-  "ShieldRegenDelay": 10,
   "Icon": "btn-unit-protoss-darktemplar",
   "LifeArmorIcon": "btn-upgrade-protoss-groundarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "DarkTemplarSCBWWeapon",
+      "EditorCategories": "Race:Protoss",
+      "Options": {
+        "Melee": 1
+      },
       "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "DisplayEffect": "DarkTemplarSCBWWeapon@Damage",
+      "TargetFilters": "Ground",
+      "Range": 0.1,
+      "Period": 1.694,
+      "DamagePoint": 0.361,
+      "Backswing": 1.333,
+      "Effect": "DarkTemplarSCBWWeapon@Damage",
+      "RangeSlop": 1,
+      "id": "DarkTemplarSCBWWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Warp Blades",
-        "zhCN": "曲光战刃",
-        "koKR": "변형 차원검 /// Warp Blades"
+        "zhCN": "Warp Blades",
+        "koKR": "Warp Blades"
       },
       "Amount": 45,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.4687,
-      "Period": 1.694
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -719,51 +664,37 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
-      "id": "Warpable",
-      "Name": {
-        "enUS": "Warpable",
-        "ruRU": "Warpable"
-      }
-    },
-    {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "ProgressRally",
-      "Name": {
-        "enUS": "Progress Rally",
-        "ruRU": "Progress Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "DarkArchonSCBWMerge",
       "Name": {
         "enUS": "Dark Archon Merge",
-        "zhCN": "融合为黑暗执政官",
-        "koKR": "다크 아콘 합체 /// Dark Archon Merge"
+        "zhCN": "Dark Archon Merge",
+        "koKR": "Dark Archon Merge"
       }
     }
   ],
@@ -772,8 +703,9 @@
     "DarkTemplarSCBW",
     "Button/Tooltip/DarkArchonSCBWMerge@Selection",
     "Button/Tooltip/DarkArchonSCBWMerge@Target",
-    "TemplarArchiveSCBW",
+    "Button/Tooltip/DarkTemplarSCBW@Passive",
     "DarkTemplarSCBW@AllowUnit",
+    "TemplarArchiveSCBW",
     "GatewaySCBW@Train",
     "GatewaySCBW",
     "DarkTemplarSCBW",
@@ -783,7 +715,10 @@
     "DarkTemplarSCBW@Count",
     "DarkTemplarSCBW@QoB",
     "DarkTemplarSCBW@QoBAtUnit",
-    "DarkTemplarSCBW"
+    "DarkTemplarSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -803,12 +738,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -816,78 +748,50 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
-    },
-    {
-      "AbilCmd": "ProgressRally,Rally1",
-      "id": "Rally",
-      "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DarkArchonSCBWMerge,SelectedUnits",
       "id": "DarkArchonSCBWMerge@Selection",
-      "Icon": "btn-unit-protoss-darkarchon",
+      "Icon": "btn-unit-protoss-darkarchon@scbw",
       "Name": {
         "enUS": "Dark Archon Merge",
-        "zhCN": "融合为黑暗执政官",
-        "koKR": "다크 아콘 합체 /// Dark Archon Merge"
+        "zhCN": "Dark Archon Merge",
+        "koKR": "Dark Archon Merge"
       },
       "Tooltip": {
         "enUS": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\">2</span>名<span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span>牺牲自身，融合为一名<span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> <span class=\"style-TooltipHighlightSCBW\">두</span> 명을 희생하여 <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>을 소환합니다. /// Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>."
+        "zhCN": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>.",
+        "koKR": "Sacrifices <span class=\"style-TooltipHighlightSCBW\">2</span> <span class=\"style-TooltipHighlightSCBW\"><b>Dark Templar</b></span> to create a <span class=\"style-TooltipHighlightSCBW\"><b>Dark Archon</b></span>."
       }
     }
   ]

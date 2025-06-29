@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Missile Turret",
-    "zhCN": "导弹塔",
-    "koKR": "미사일 터렛"
+    "zhCN": "Missile Turret",
+    "koKR": "Missile Turret"
   },
   "Description": {
     "enUS": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
-    "zhCN": "防空建筑。<br/><br/><span style=\"color: #ffff8a\">可以对空。</span><br/><span style=\"color: FFE303\">侦测单位</span>",
-    "koKR": "대공 방어 구조물입니다. 공중 유닛 공격 가능</span><br/><span style=\"color: FFE303\">디텍터</span> /// Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
+    "zhCN": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>",
+    "koKR": "Anti-air defensive structure.<br/><br/><span style=\"color: #ffff8a\">Can attack air units.</span><br/><span style=\"color: FFE303\">Detector</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 200,
   "LifeMax": 200,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MissileTurretSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MissileTurretSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MissileTurretSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MissileTurretSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -110,6 +110,11 @@
   "SubgroupPriority": 1,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "Detector11",
+    "UnderConstruction"
+  ],
   "TechAliasArray": [
     "Alias_MissileTurretSCBW"
   ],
@@ -126,10 +131,22 @@
   "PlaneArray": [
     "Ground"
   ],
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "attack",
+    "que1"
+  ],
   "CostResource": {
     "Minerals": 75
   },
   "RepairTime": 25,
+  "WeaponArray": [
+    {
+      "Link": "MissileTurretSCBWWeapon",
+      "Turret": "MissileTurretSCBW"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -191,13 +208,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Cost": {
@@ -211,19 +224,19 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 3,
+        "Column": 2,
         "Type": "Passive",
         "id": "DetectorSCBW@Detector",
         "Icon": "btn-status-detector",
         "Name": {
           "enUS": "Detector",
-          "zhCN": "侦测单位",
-          "koKR": "디텍터 /// Detector"
+          "zhCN": "Detector",
+          "koKR": "Detector"
         },
         "Tooltip": {
           "enUS": "This unit can detect cloaked and burrowed units.",
-          "zhCN": "该单位能够侦测到隐形和潜地单位。",
-          "koKR": "이 유닛은 클로크하거나 버로우한 유닛을 탐지할 수 있습니다. /// This unit can detect cloaked and burrowed units."
+          "zhCN": "This unit can detect cloaked and burrowed units.",
+          "koKR": "This unit can detect cloaked and burrowed units."
         }
       },
       {
@@ -284,14 +297,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -365,12 +374,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -444,41 +450,9 @@
         "AbilCmd": "attack,Execute",
         "id": "AttackBuilding",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Attack"
-        },
-        "Tooltip": {
-          "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-          "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
       }
     ]
   },
@@ -500,31 +474,36 @@
   ],
   "BuildTime": 25,
   "Icon": "btn-building-terran-missileturret",
+  "Model": "MissileTurret",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
       "Turret": "MissileTurretSCBW",
-      "id": "MissileTurretSCBWWeapon",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-hisecautotracking",
-      "Name": {
-        "enUS": "Longbolt Turret",
-        "zhCN": "长箭飞弹",
-        "koKR": "장거리 미사일 /// Longbolt Turret"
-      },
-      "Amount": 15,
-      "AttributeBonus": {
-        "Armored": 5
-      },
-      "Kind": "Ranged",
+      "DisplayEffect": "MissileTurretSCBWWeapon@Damage",
       "TargetFilters": "Air",
       "Range": 7,
-      "Period": 0.8608
+      "RangeSlop": 0,
+      "Period": 0.8608,
+      "Effect": "MissileTurretSCBWWeapon@CP",
+      "RandomDelayMax": 0.0625,
+      "id": "MissileTurretSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Longbolt Turret",
+        "zhCN": "Longbolt Turret",
+        "koKR": "Longbolt Turret"
+      },
+      "Amount": 18.75,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -537,7 +516,7 @@
       "Icon": "btn-status-detector",
       "Name": {
         "enUS": "Detector",
-        "ruRU": "Детектор /// Detector"
+        "ruRU": "Детектор "
       },
       "Tooltip": {
         "enUS": "This unit can detect cloaked or burrowed units within its sight range.",
@@ -546,6 +525,7 @@
     },
     {
       "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Under Construction",
         "ruRU": "Under Construction"
@@ -556,45 +536,44 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "que1",
       "Name": {
-        "ruRU": "Queue (1)",
-        "enUS": "Queue (1)"
+        "ruRU": "Queue (1)"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/EngineeringBaySCBW",
     "MissileTurretSCBW",
+    "Button/Tooltip/MissileTurretSCBW@Passive",
     "MissileTurretSCBW@AllowUnit",
     "SCVSCBW@Build",
+    "IsMissileTurretSCBW",
     "MissileTurretSCBW",
     "MissileTurretSCBW@Splat",
-    "IsMissileTurretSCBW",
     "NotMissileTurretSCBW",
     "CasterIsMissileTurretSCBW",
     "MissileTurretSCBW@Count",
-    "MissileTurretSCBW"
+    "MissileTurretSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -612,25 +591,19 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -638,25 +611,16 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackBuilding",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Attack"
-      },
-      "Tooltip": {
-        "enUS": "Targets and attacks the target unit until it is destroyed or moves out of range.",
-        "ruRU": "Targets and attacks the target unit until it is destroyed or moves out of range."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

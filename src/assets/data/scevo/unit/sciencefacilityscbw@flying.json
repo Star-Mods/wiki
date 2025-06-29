@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Science Facility",
-    "zhCN": "科学站",
-    "koKR": "사이언스 퍼실리티 /// Science Facility"
+    "zhCN": "Science Facility",
+    "koKR": "Science Facility"
   },
   "Description": {
-    "enUS": "Science Facility must land to continue research.",
-    "zhCN": "科学站必须着陆才能开始研究。",
-    "koKR": "<b>Science Facility</b>에서 연구를 시작하려면 지상에 착륙해야 합니다. /// <b>Science Facility</b> must land to continue research."
+    "enUS": "<b>Science Facility</b> must land to continue research.",
+    "zhCN": "<b>Science Facility</b> must land to continue research.",
+    "koKR": "<b>Science Facility</b> must land to continue research."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ScienceFacilitySCBW@Flying/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ScienceFacilitySCBW@Flying/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ScienceFacilitySCBW@Flying/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ScienceFacilitySCBW@Flying/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -110,6 +110,9 @@
   "SubgroupPriority": 1,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_ScienceFacilitySCBW"
   ],
@@ -119,6 +122,12 @@
   ],
   "Collide": [
     "Flying"
+  ],
+  "AbilArray": [
+    "move",
+    "stop",
+    "ScienceFacilitySCBW@AddOns",
+    "ScienceFacilitySCBW@Land"
   ],
   "Speed": 0.9375,
   "Acceleration": 1.3125,
@@ -134,67 +143,6 @@
   "RepairTime": 50,
   "CardLayouts": {
     "Root": [
-      {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Delay": 0.5,
-                "Duration": 1.5
-              }
-            },
-            "Facing": {
-              "DurationArray": {
-                "Duration": 0.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Delay": 0.5,
-                "Duration": 0.733
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            }
-          },
-          "Unit": "ScienceFacilitySCBW",
-          "CollideRange": 0
-        },
-        "Unit": "ScienceFacilitySCBW",
-        "Cost": {
-          "Minerals": 100,
-          "Vespene": 150,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "ScienceFacilitySCBW@Land,0",
-        "id": "Land",
-        "Icon": "btn-ability-terran-land",
-        "Name": {
-          "enUS": "Land",
-          "ruRU": "Land"
-        },
-        "Tooltip": {
-          "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-          "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
-        },
-        "Hotkey": "L"
-      },
       {
         "Info": {
           "class": "CAbilStop",
@@ -267,12 +215,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -363,12 +308,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -458,13 +400,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -554,14 +493,206 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": "-",
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "Attack",
+        "Icon": "btn-command-attack",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,AcquireMove",
+        "id": "AcquireMove",
+        "Icon": "btn-command-attack",
+        "Name": {
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
+        },
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ScienceVesselSCBW@Passive",
+        "Icon": "btn-unit-terran-sciencevessel@scbw",
+        "Name": {
+          "enUS": "Science Vessel",
+          "zhCN": "Science Vessel",
+          "koKR": "Science Vessel"
         },
         "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
-        "Hotkey": "P"
+          "enUS": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Science Vessel</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>.",
+          "zhCN": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Science Vessel</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>.",
+          "koKR": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Science Vessel</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>."
+        }
       },
       {
         "Info": {
@@ -580,7 +711,7 @@
         "Unit": "PhysicsLabSCBW",
         "Cost": {
           "Minerals": 50,
-          "Vespene": 50,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -596,13 +727,13 @@
         "Icon": "btn-building-terran-techlab",
         "Name": {
           "enUS": "Build Physics Lab",
-          "zhCN": "建造物理实验室",
-          "koKR": "피직스 랩 건설 /// Build Physics Lab"
+          "zhCN": "Build Physics Lab",
+          "koKR": "Build Physics Lab"
         },
         "Tooltip": {
           "enUS": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-          "zhCN": "高级空军单位研究设施。为<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>提供升级方案。<span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Battlecruiser</b>",
-          "koKR": "고급 함선 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>를 업그레이드 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+          "zhCN": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+          "koKR": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
         },
         "Hotkey": "X"
       },
@@ -623,7 +754,7 @@
         "Unit": "CovertOpsSCBW",
         "Cost": {
           "Minerals": 50,
-          "Vespene": 50,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -639,19 +770,19 @@
         "Icon": "btn-building-terran-covertops@scbw",
         "Name": {
           "enUS": "Build Covert Ops",
-          "zhCN": "建造特战部",
-          "koKR": "코버트 옵스 건설 /// Build Covert Ops"
+          "zhCN": "Build Covert Ops",
+          "koKR": "Build Covert Ops"
         },
         "Tooltip": {
           "enUS": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>",
-          "zhCN": "专精单位研究设施。为<span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>提供升级方案。<span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Ghost</b>",
-          "koKR": "전문가 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>를 업그레이드 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Ghost</b> (<b>Barracks</b>) /// Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b> at the <b>Barracks</b>"
+          "zhCN": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>",
+          "koKR": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>"
         },
         "Hotkey": "C"
       }
     ]
   },
-  "ScoreKill": 300,
+  "ScoreKill": 250,
   "AliasUnit": "ScienceFacilitySCBW",
   "Icon": "btn-building-terran-sciencefacility@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
@@ -660,6 +791,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -672,14 +804,14 @@
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -687,28 +819,32 @@
       "id": "ScienceFacilitySCBW@AddOns",
       "Name": {
         "enUS": "AddOns",
-        "zhCN": "附属建筑",
-        "koKR": "애드온 /// AddOns"
+        "zhCN": "AddOns",
+        "koKR": "AddOns"
       }
     },
     {
       "id": "ScienceFacilitySCBW@Land",
       "Name": {
         "enUS": "Land",
-        "zhCN": "着陆",
-        "koKR": "착륙 /// Land"
+        "zhCN": "Land",
+        "koKR": "Land"
       }
     }
   ],
   "$Upgrades": [
     "ScienceFacilitySCBW@LiftOff",
+    "Button/Tooltip/ScienceFacilitySCBW@Flying",
     "ScienceFacilitySCBW@Flying",
     "ScienceFacilitySCBW",
     "ScienceFacilitySCBW@Land",
     "ScienceFacilitySCBW@LiftOff",
     "ScienceFacilitySCBW@Flying@Count",
     "ScienceFacilitySCBW@Flying@QoB",
-    "ScienceFacilitySCBW@Flying@QoBAtUnit"
+    "ScienceFacilitySCBW@Flying@QoBAtUnit",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -721,30 +857,14 @@
   "$Producers": [],
   "$Commands": [
     {
-      "AbilCmd": "ScienceFacilitySCBW@Land,0",
-      "id": "Land",
-      "Icon": "btn-ability-terran-land",
-      "Name": {
-        "enUS": "Land",
-        "ruRU": "Land"
-      },
-      "Tooltip": {
-        "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-        "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
-      }
-    },
-    {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Move",
@@ -752,38 +872,46 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "Attack",
+      "Icon": "btn-command-attack",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,AcquireMove",
+      "id": "AcquireMove",
+      "Icon": "btn-command-attack",
+      "Name": {
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
+      },
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ScienceFacilitySCBW@AddOns,Build1",
@@ -791,13 +919,13 @@
       "Icon": "btn-building-terran-techlab",
       "Name": {
         "enUS": "Build Physics Lab",
-        "zhCN": "建造物理实验室",
-        "koKR": "피직스 랩 건설 /// Build Physics Lab"
+        "zhCN": "Build Physics Lab",
+        "koKR": "Build Physics Lab"
       },
       "Tooltip": {
         "enUS": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-        "zhCN": "高级空军单位研究设施。为<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>提供升级方案。<span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Battlecruiser</b>",
-        "koKR": "고급 함선 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>를 업그레이드 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+        "zhCN": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+        "koKR": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
       }
     },
     {
@@ -806,13 +934,13 @@
       "Icon": "btn-building-terran-covertops@scbw",
       "Name": {
         "enUS": "Build Covert Ops",
-        "zhCN": "建造特战部",
-        "koKR": "코버트 옵스 건설 /// Build Covert Ops"
+        "zhCN": "Build Covert Ops",
+        "koKR": "Build Covert Ops"
       },
       "Tooltip": {
         "enUS": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>",
-        "zhCN": "专精单位研究设施。为<span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>提供升级方案。<span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Ghost</b>",
-        "koKR": "전문가 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>를 업그레이드 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Ghost</b> (<b>Barracks</b>) /// Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b> at the <b>Barracks</b>"
+        "zhCN": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>",
+        "koKR": "Specialist research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Covert Ops</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Ghost</b>"
       }
     }
   ]

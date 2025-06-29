@@ -78,7 +78,7 @@ export class SCDataService {
       this.locale = this.locales.find(l => l.locale ===storedLocale)
     }
 
-    this.http.get(`${this.dataRoot}mods.json`).subscribe(data => this.modsData = data)
+    this.http.get(`${this.dataRoot}melee.json`).subscribe(data => this.modsData = data)
 
 
     this.router.events.pipe(

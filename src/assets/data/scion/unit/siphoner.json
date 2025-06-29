@@ -1,6 +1,13 @@
 {
-  "Name": "Siphoner",
-  "Description": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Siphoner",
+    "ruRU": "Сифонер"
+  },
+  "Description": {
+    "enUS": "Formed over a Vespene Geyser to allow harvesting of vespene gas.",
+    "ruRU": "Строится на веспеновом гейзере. Позволяет собирать веспен."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Vespene",
   "LifeStart": 500,
   "LifeMax": 500,
-  "LifeArmorName": "Xayid Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Xayid Structure Armor",
+    "ruRU": "Броня строений Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -65,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Extractor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Extractor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Extractor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Extractor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -113,6 +125,13 @@
     "Small"
   ],
   "Sight": 9,
+  "AbilArray": [
+    "BuildInProgress"
+  ],
+  "BehaviorArray": [
+    "HarvestableVespeneGeyserGasZerg",
+    "WorkerPeriodicRefineryCheck"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -175,8 +194,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       }
     ]
@@ -201,19 +226,34 @@
   "id": "Siphoner",
   "LifeRegenDelay": 3,
   "Icon": "btn-building-xayid-siphoner",
+  "Model": "Siphoner",
   "LifeArmorIcon": "btn-upgrade-zerg-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGasZerg",
-      "Icon": "icon-gas"
+      "Icon": "icon-gas",
+      "Name": {
+        "enUS": "Harvestable Vespene Geyser Gas Zerg",
+        "ruRU": "Harvestable Vespene Geyser Gas Zerg"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "WorkerPeriodicRefineryCheck",
+      "Icon": "btn-missing-kaeo",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     }
   ],
   "$Upgrades": [
@@ -236,8 +276,14 @@
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     }
   ]
 }

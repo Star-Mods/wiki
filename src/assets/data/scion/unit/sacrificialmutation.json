@@ -1,6 +1,13 @@
 {
-  "Name": "Sacrificial Mutation",
-  "Description": "Heals <b>100</b> life in an area over the lifetime of the unit.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Sacrificial Mutation",
+    "ruRU": "Жертвенная мутация"
+  },
+  "Description": {
+    "enUS": "Heals <b>0</b> life in an area over the lifetime of the unit.",
+    "ruRU": "Исцеляет <b>100</b> едениц здоровья в небольшой области, пока существует еденица."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +17,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 70,
-  "LifeMax": 70,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeStart": 80,
+  "LifeMax": 80,
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -63,16 +73,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SacrificialMutation/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SacrificialMutation/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SacrificialMutation/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SacrificialMutation/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -86,6 +98,11 @@
     "Biological"
   ],
   "AttackTargetPriority": 10,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -105,8 +122,14 @@
         "AbilCmd": "",
         "id": "SacrificialMutation",
         "Icon": "btn-ability-xayid-mendlingheal",
-        "Tooltip": "Heals <b>100</b> life in an area over the lifetime of the unit.",
-        "Name": "Sacrificial Mutation"
+        "Name": {
+          "enUS": "Sacrificial Mutation",
+          "ruRU": "Жертвенная мутация"
+        },
+        "Tooltip": {
+          "enUS": "Heals <b>0</b> life in an area over the lifetime of the unit.",
+          "ruRU": "Исцеляет <b>100</b> едениц здоровья в небольшой области, пока существует еденица."
+        }
       },
       {
         "Info": {
@@ -194,8 +217,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -269,8 +298,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       }
     ]
@@ -297,16 +332,20 @@
   },
   "id": "SacrificialMutation",
   "LifeArmor": 1,
-  "Food": -2,
+  "Food": -1.5,
   "CostResource": {
     "Minerals": 25,
     "Vespene": 75
   },
+  "BehaviorArray": [
+    "SacrificialMutation"
+  ],
   "CargoSize": 4,
   "SubgroupPriority": 42,
   "GlossaryPriority": 21,
   "GlossaryAlias": "SacrificialMutation",
   "Icon": "btn-ability-zerg-ultralisk-revive",
+  "Model": "UltraliskEx1Egg",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -314,22 +353,37 @@
     {
       "id": "SacrificialMutation",
       "Icon": "btn-ability-zerg-ultralisk-revive",
-      "Tooltip": "Healing units around itself in an aura. Self destructs after timing out.",
-      "Name": "Sacrificial Mutation"
+      "Name": {
+        "enUS": "Sacrificial Mutation",
+        "ruRU": "Жертвенная мутация"
+      },
+      "Tooltip": {
+        "enUS": "Healing units around itself in an aura. Self destructs after timing out.",
+        "ruRU": "Восстанавливает здоровье в небольшой области от себя. Будет самоуничтожен."
+      }
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     }
   ],
   "$Upgrades": [
@@ -349,15 +403,27 @@
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     }
   ]
 }

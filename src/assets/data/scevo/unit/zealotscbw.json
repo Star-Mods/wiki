@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Zealot",
-    "zhCN": "狂热者",
-    "koKR": "질럿 /// Zealot"
+    "zhCN": "Zealot",
+    "koKR": "Zealot"
   },
   "Description": {
     "enUS": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
-    "zhCN": "强大的近战战士。<br/><br/><span style=\"color: ffff8a\">可以对地。</span>",
-    "koKR": "강력한 근접 전사입니다.<br/><br/><span style=\"color: ffff8a\">지상 유닛 공격 가능</span> /// Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
+    "zhCN": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>",
+    "koKR": "Powerful melee warrior.<br/><br/><span style=\"color: ffff8a\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 100,
   "LifeMax": 100,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -75,16 +73,18 @@
       "Turn": 10
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ZealotSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ZealotSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ZealotSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ZealotSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -96,13 +96,10 @@
   "Mob": "Multiplayer",
   "EnergyRegenRate": 0.5,
   "id": "ZealotSCBW",
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldArmorName": "-",
   "GlossaryCategory": "Unit/Category/ProtossUnitsSCBW",
   "HotkeyCategory": "Unit/Category/ProtossUnitsSCBW",
-  "ShieldRegenRate": 2,
+  "ShieldRegenRate": 0.711,
   "PlaneArray": [
     "Ground"
   ],
@@ -115,8 +112,8 @@
     "Biological"
   ],
   "LifeArmor": 1,
-  "ShieldsStart": 60,
-  "ShieldsMax": 60,
+  "ShieldsStart": 65,
+  "ShieldsMax": 65,
   "Speed": 2.25,
   "Acceleration": 1000,
   "LateralAcceleration": 46.0625,
@@ -126,11 +123,20 @@
   "CostResource": {
     "Minerals": 100
   },
-  "BuildTime": 37.5,
+  "BuildTime": 33,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 20,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "Warpable",
+    "ProgressRally"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "ZealotSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -221,12 +227,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -301,12 +304,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -396,13 +396,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -476,14 +473,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -573,13 +564,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -600,15 +588,35 @@
         "AbilCmd": "ProgressRally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
+        "Name": "-",
+        "Tooltip": "-"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ZealotSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-ability-protoss-charge-color",
         "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
+          "enUS": "Leg Enhancements",
+          "zhCN": "Leg Enhancements",
+          "koKR": "Leg Enhancements"
         },
         "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zealot</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>40</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zealot</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>40</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zealot</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>40</b>%</span>."
+        }
       }
     ]
   },
@@ -634,25 +642,38 @@
     "Dance": 5
   },
   "TacticalAIThink": "AIThinkZealotSCBW",
-  "ShieldRegenDelay": 10,
   "Icon": "btn-unit-protoss-zealot@scbw",
   "LifeArmorIcon": "btn-upgrade-protoss-groundarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "ZealotSCBWWeapon",
-      "Icon": "btn-upgrade-protoss-groundweaponslevel0",
-      "Name": {
-        "enUS": "Psi Blades",
-        "zhCN": "灵能利刃",
-        "koKR": "사이오닉 검 /// Psi Blades"
+      "EditorCategories": "Race:Protoss",
+      "Options": {
+        "Melee": 1
       },
-      "Amount": 8,
-      "Kind": "Melee",
+      "Icon": "btn-upgrade-protoss-groundweaponslevel0",
+      "DisplayEffect": "ZealotSCBWWeapon@Damage",
       "DisplayAttackCount": 2,
       "TargetFilters": "Ground",
-      "Range": 0.4687,
-      "Period": 1.23
+      "Range": 0.1,
+      "Period": 1.25,
+      "DamagePoint": 0.25,
+      "Effect": "ZealotSCBWWeapon@Set",
+      "LegacyOptions": {
+        "Uninterruptible": 1
+      },
+      "UninterruptibleDelay": 0.1875,
+      "UninterruptibleDuration": 0.28,
+      "RangeSlop": 1,
+      "id": "ZealotSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Psi Blades",
+        "zhCN": "Psi Blades",
+        "koKR": "Psi Blades"
+      },
+      "Amount": 8,
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -660,58 +681,49 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
-      "id": "Warpable",
-      "Name": {
-        "enUS": "Warpable",
-        "ruRU": "Warpable"
-      }
-    },
-    {
       "id": "ProgressRally",
-      "Name": {
-        "enUS": "Progress Rally",
-        "ruRU": "Progress Rally"
-      }
+      "Name": "-"
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/GatewaySCBW",
     "ZealotSCBW",
+    "Button/Tooltip/ZealotSCBWSpeedUpgrade",
+    "ZealotSCBWSpeedUpgrade",
     "ZealotSCBW@AllowUnit",
     "GatewaySCBW@Train",
     "GatewaySCBW",
     "Button/Tooltip/CitadelOfAdunSCBW",
-    "Button/Tooltip/ZealotSCBWSpeedUpgrade",
-    "ZealotSCBWSpeedUpgrade",
     "ChangelingZealotSCBW",
     "ZealotSCBW",
-    "Button/Tooltip/ZealotSCBWSpeedUpgrade@Passive",
     "IsZealotSCBW",
     "NotZealotSCBW",
     "CasterIsZealotSCBW",
     "ZealotSCBW@Count",
     "ZealotSCBW@QoB",
     "ZealotSCBW@QoBAtUnit",
-    "ZealotSCBW"
+    "ZealotSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -729,12 +741,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -742,64 +751,43 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ProgressRally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

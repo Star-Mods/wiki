@@ -1,11 +1,14 @@
 {
-  "id": "GhostSCBWCloakResearch",
-  "Icon": "btn-upgrade-nova-tacticalstealthsuit",
-  "Name": "Upgrade/Name/GhostSCBWCloakResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Personal Cloaking Research",
+    "zhCN": "Personal Cloaking Research",
+    "koKR": "Personal Cloaking Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,8 +23,17 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "GhostSCBWCloakResearch",
-  "Race": "Terr",
+  "id": "GhostSCBWCloakResearch",
+  "Icon": "btn-upgrade-nova-tacticalstealthsuit",
+  "Race": "BWTe",
   "ScoreResult": "BuildOrder",
   "ScoreAmount": 200,
   "AffectedUnitArray": [

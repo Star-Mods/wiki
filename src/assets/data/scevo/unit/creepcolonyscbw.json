@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Creep Colony",
-    "zhCN": "菌毯集群",
-    "koKR": "크립 콜로니 /// Creep Colony"
+    "zhCN": "Creep Colony",
+    "koKR": "Creep Colony"
   },
   "Description": {
     "enUS": "Creep generator structure. Can mutate into <span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>. Creep feeds nearby Zerg structures.",
-    "zhCN": "菌毯生成设施。可以变异为<span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span>或<span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>。菌毯能够为附近的异虫建筑提供给养。",
-    "koKR": "크립 생성 구조물입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span>나 <span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>로 변이 가능합니다. 크립은 주변 저그 구조물에 양분을 공급합니다. /// Creep generator structure. Can mutate into <span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>. Creep feeds nearby Zerg structures."
+    "zhCN": "Creep generator structure. Can mutate into <span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>. Creep feeds nearby Zerg structures.",
+    "koKR": "Creep generator structure. Can mutate into <span class=\"style-TooltipHighlightSCBW\"><b>Sunken Colony</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Spore Colony</b></span>. Creep feeds nearby Zerg structures."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 400,
   "LifeMax": 400,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -79,16 +77,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "CreepColonySCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "CreepColonySCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CreepColonySCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CreepColonySCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -125,18 +125,27 @@
   "Sight": 10,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 125
+    "Minerals": 100
   },
   "BuildTime": 15,
   "AttackTargetPriority": 19,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "SunkenColonySCBW@Morph",
+    "SporeColonySCBW@Morph"
+  ],
+  "BehaviorArray": [
+    "OnCreep",
+    "ZergBuildingSCBW@CreepGrowthMedium"
+  ],
   "CardLayouts": {
     "Root": [
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -149,14 +158,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -170,7 +179,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -185,146 +195,23 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 19
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Duration": 19
-              }
-            },
-            "Facing": {
-              "DurationArray": {
-                "Delay": 10
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 19
-              },
-              "EffectArray": {
-                "Start": "SC1_ArmorTracker_Update",
-                "Finish": "SC1_ArmorTracker_Update",
-                "Cancel": "SC1_ArmorTracker_Update"
-              }
-            }
-          },
-          "Score": 1,
-          "Unit": "SunkenColonySCBW"
-        },
-        "Unit": "SunkenColonySCBW",
-        "Cost": {
-          "Minerals": 175,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "SunkenColonySCBW@Morph,Cancel",
-        "id": "CancelMutateMorph",
-        "Icon": "btn-command-cancel",
-        "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Cancel"
-        },
-        "Tooltip": {
-          "enUS": "Cancels the mutation order, returning the structure to its original state.",
-          "ruRU": "Cancels the mutation order, returning the structure to its original state."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 19
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Duration": 19
-              }
-            },
-            "Facing": {
-              "DurationArray": {
-                "Delay": 10
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 19
-              },
-              "EffectArray": {
-                "Start": "SC1_ArmorTracker_Update",
-                "Finish": "SC1_ArmorTracker_Update",
-                "Cancel": "SC1_ArmorTracker_Update"
-              }
-            }
-          },
-          "Score": 1,
-          "Unit": "SporeColonySCBW"
-        },
-        "Unit": "SporeColonySCBW",
-        "Cost": {
-          "Minerals": 175,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "SporeColonySCBW@Morph,Cancel",
-        "id": "CancelMutateMorph",
-        "Icon": "btn-command-cancel",
-        "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Cancel"
-        },
-        "Tooltip": {
-          "enUS": "Cancels the mutation order, returning the structure to its original state.",
-          "ruRU": "Cancels the mutation order, returning the structure to its original state."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
   "Footprint": "SCBW_Footprint2x2Contour",
   "PlacementFootprint": "Footprint2x2CreepNoFog",
-  "ScoreMake": 75,
-  "ScoreKill": 75,
+  "ScoreMake": 50,
+  "ScoreKill": 100,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 4,
-  "KillDisplay": "Always",
   "RankDisplay": "Always",
   "TechTreeProducedUnitArray": [
     "SunkenColonySCBW",
@@ -340,53 +227,39 @@
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
-    },
-    {
       "id": "ZergBuildingSCBW@CreepGrowthMedium",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Creep Growth Medium",
         "zhCN": "Creep Growth Medium",
         "koKR": "Creep Growth Medium"
       },
       "Tooltip": "-"
-    },
-    {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "SunkenColonySCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     },
     {
       "id": "SporeColonySCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     }
   ],
@@ -396,6 +269,9 @@
     "Button/Tooltip/SpawningPoolSCBW",
     "Button/Tooltip/EvolutionChamberSCBW",
     "DroneSCBW@Build",
+    "SunkenColonySCBW@BuildProgress",
+    "SporeColonySCBW@BuildProgress",
+    "CreepColonySCBW@MorphProgress",
     "CreepColonySCBW",
     "IsCreepColonySCBW",
     "NotCreepColonySCBW",
@@ -404,7 +280,10 @@
     "CreepColonySCBW@CountAtUnit",
     "CreepColonySCBW@QoB",
     "CreepColonySCBW@QoBAtUnit",
-    "CreepColonySCBW"
+    "CreepColonySCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -417,43 +296,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
-    },
-    {
-      "AbilCmd": "SunkenColonySCBW@Morph,Cancel",
-      "id": "CancelMutateMorph",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the mutation order, returning the structure to its original state.",
-        "ruRU": "Cancels the mutation order, returning the structure to its original state."
-      }
-    },
-    {
-      "AbilCmd": "SporeColonySCBW@Morph,Cancel",
-      "id": "CancelMutateMorph",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the mutation order, returning the structure to its original state.",
-        "ruRU": "Cancels the mutation order, returning the structure to its original state."
-      }
+      "Tooltip": "-"
     }
   ]
 }

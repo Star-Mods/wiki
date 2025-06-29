@@ -1,6 +1,13 @@
 {
-  "Name": "Edifice",
-  "Description": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: #FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Edifice",
+    "ruRU": "Дом Доктрин"
+  },
+  "Description": {
+    "enUS": "Contains upgrades for Pariahs and Volts.<br/><br/><span style=\"color: FFFF80\">Enables:</span><br/>- Pariahs from Citadels<br/>- Volts from Citadels<br/>- Oculi from Converters",
+    "ruRU": "Базовое технологичное строение.<br/><br/><span style=\"color: FFFF80\">Открывает:</span><br/>  - Парии из Цитадели<br/>  - Вольты из Цитадели<br/>  - Око из Конвертеров"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 2,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 700,
   "LifeMax": 700,
-  "LifeArmorName": "Keiron Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Keiron Structure Armor",
+    "ruRU": "Броня Строений Кейронов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Edifice/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Edifice/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Edifice/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Edifice/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -100,13 +112,26 @@
   "LifeArmor": 1,
   "Sight": 9,
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "que5",
+    "EdificeResearch",
+    "KeironCitadelMaterialize"
+  ],
+  "BehaviorArray": [
+    "KeironShellRestoration",
+    "KeironChargeDummyCreation"
+  ],
   "ScoreResult": "BuildOrder",
   "HotkeyCategory": "Unit/Category/KeironUnits",
   "LifeRegenRate": 0.2734,
   "Food": 6,
   "Footprint": "Footprint3x3Contour",
   "PlacementFootprint": "Footprint3x3",
-  "ShieldArmorName": "Keiron Dispersion Shields",
+  "ShieldArmorName": {
+    "enUS": "Keiron Dispersion Shields",
+    "ruRU": "Щиты Кейронов"
+  },
   "CardLayouts": {
     "Root": [
       {
@@ -125,8 +150,14 @@
         "Type": "Passive",
         "id": "KeironCharges",
         "Icon": "btn-upgrade-karax-unitybarrier",
-        "Tooltip": "The number of unit charges the structure is presently storing.",
-        "Name": "Charges"
+        "Name": {
+          "enUS": "Charges",
+          "ruRU": "Заряды"
+        },
+        "Tooltip": {
+          "enUS": "The number of unit charges the structure is presently storing.",
+          "ruRU": "Количество зарядов, хранящихся в строении в настоящее время."
+        }
       },
       {
         "Upgrade": "ExaltedShield",
@@ -163,8 +194,14 @@
         "AbilCmd": "EdificeResearch,Research1",
         "id": "DevelopExaltedShields",
         "Icon": "btn-ability-stetmann-banelingmanashield",
-        "Tooltip": "<span style=\"color: #FFFF80\">Pariahs</span> gain +10 shields.",
-        "Name": "Develop Exalted Shields",
+        "Name": {
+          "enUS": "Develop Exalted Shields",
+          "ruRU": "Разработать Возвышенные Щиты"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Pariahs</span> gain +10 shields.",
+          "ruRU": "<span style=\"color: FFFF80\">Пария</span> получает +10 щитов."
+        },
         "Hotkey": "E"
       },
       {
@@ -202,8 +239,14 @@
         "AbilCmd": "EdificeResearch,Research3",
         "id": "DevelopModifiedGait",
         "Icon": "btn-upgrade-keiron-modifiedgait",
-        "Tooltip": "Increases the movement speed of <span style=\"color: #FFFF80\">Volts</span> and <span style=\"color: #FFFF80\">Pariahs</span>.",
-        "Name": "Develop Modified Gait",
+        "Name": {
+          "enUS": "Develop Modified Gait",
+          "ruRU": "Разработать Модифицированное Движение"
+        },
+        "Tooltip": {
+          "enUS": "Increases the movement speed of <span style=\"color: FFFF80\">Volts</span> and <span style=\"color: FFFF80\">Pariahs</span>.",
+          "ruRU": "Повышает скорость передвижения <span style=\"color: FFFF80\">Вольта</span> и <span style=\"color: FFFF80\">Парии</span>."
+        },
         "Hotkey": "G"
       },
       {
@@ -222,8 +265,14 @@
         "Type": "SelectBuilder",
         "id": "SelectBuilderKeiron",
         "Icon": "btn-upgrade-terran-weaponrefit",
-        "Tooltip": "Selects the unit constructing this structure.",
-        "Name": "Select Builder",
+        "Name": {
+          "enUS": "Select Builder",
+          "ruRU": "Выбрать Строителя"
+        },
+        "Tooltip": {
+          "enUS": "Selects the unit constructing this structure.",
+          "ruRU": "Выбирает единицу, строящую это здание."
+        },
         "Hotkey": "Q"
       },
       {
@@ -286,8 +335,14 @@
         "AbilCmd": "BuildInProgress,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -347,8 +402,14 @@
         "AbilCmd": "que5,CancelLast",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
-        "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-        "Name": "Cancel",
+        "Name": {
+          "enUS": "Cancel",
+          "ruRU": "Отменить "
+        },
+        "Tooltip": {
+          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+          "ruRU": "Отменить текущий приказ и отдать следующий. "
+        },
         "Hotkey": "Esc"
       },
       {
@@ -386,8 +447,14 @@
         "AbilCmd": "EdificeResearch,Research2",
         "id": "DevelopLatentCharge",
         "Icon": "btn-upgrade-keiron-latentcharge",
-        "Tooltip": "<span style=\"color: #FFFF80\">Volt</span> attacks bounce to deal <b>2</b> spell damage.",
-        "Name": "Develop Latent Charge",
+        "Name": {
+          "enUS": "Develop Latent Charge",
+          "ruRU": "Разработать Скрытый Заряд"
+        },
+        "Tooltip": {
+          "enUS": "<span style=\"color: FFFF80\">Volt</span> attacks bounce to deal <b>2</b> spell damage.",
+          "ruRU": "Позволяет оружию <span style=\"color: FFFF80\">Вольта</span> атаковать дополнительную цель и наносить ей <b>2</b> урона."
+        },
         "Hotkey": "A"
       }
     ]
@@ -410,33 +477,57 @@
     "Volt"
   ],
   "Icon": "btn-building-keiron-edifice",
+  "Model": "Edifice",
   "LifeArmorIcon": "btn-upgrade-keiron-structurearmor",
   "ShieldArmorIcon": "btn-upgrade-keiron-shields-level0",
   "Weapons": [],
   "Behaviors": [
     {
-      "id": "KeironShellRestoration"
+      "id": "KeironShellRestoration",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Shell Restoration"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "KeironChargeDummyCreation"
+      "id": "KeironChargeDummyCreation",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Keiron - Charge Dummy Creation",
+        "ruRU": "Keiron - Charge Dummy Creation"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "que5",
-      "Name": "Queue (5)"
+      "Name": {
+        "ruRU": "Queue (5)",
+        "enUS": "Queue (5)"
+      }
     },
     {
       "id": "EdificeResearch",
-      "Name": "Edifice Research"
+      "Name": {
+        "enUS": "Edifice Research",
+        "ruRU": "Edifice Research"
+      }
     },
     {
       "id": "KeironCitadelMaterialize",
-      "Name": "Keiron - Citadel Materialize"
+      "Name": {
+        "enUS": "Keiron - Citadel Materialize",
+        "ruRU": "Keiron - Citadel Materialize"
+      }
     }
   ],
   "$Upgrades": [
@@ -453,7 +544,9 @@
     "KeironShieldsRevert"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "KeironChargeDummy"
+  ],
   "$Research": [
     "ExaltedShield",
     "ModifiedGait",
@@ -469,36 +562,66 @@
       "AbilCmd": "EdificeResearch,Research1",
       "id": "DevelopExaltedShields",
       "Icon": "btn-ability-stetmann-banelingmanashield",
-      "Tooltip": "<span style=\"color: #FFFF80\">Pariahs</span> gain +10 shields.",
-      "Name": "Develop Exalted Shields"
+      "Name": {
+        "enUS": "Develop Exalted Shields",
+        "ruRU": "Разработать Возвышенные Щиты"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Pariahs</span> gain +10 shields.",
+        "ruRU": "<span style=\"color: FFFF80\">Пария</span> получает +10 щитов."
+      }
     },
     {
       "AbilCmd": "EdificeResearch,Research3",
       "id": "DevelopModifiedGait",
       "Icon": "btn-upgrade-keiron-modifiedgait",
-      "Tooltip": "Increases the movement speed of <span style=\"color: #FFFF80\">Volts</span> and <span style=\"color: #FFFF80\">Pariahs</span>.",
-      "Name": "Develop Modified Gait"
+      "Name": {
+        "enUS": "Develop Modified Gait",
+        "ruRU": "Разработать Модифицированное Движение"
+      },
+      "Tooltip": {
+        "enUS": "Increases the movement speed of <span style=\"color: FFFF80\">Volts</span> and <span style=\"color: FFFF80\">Pariahs</span>.",
+        "ruRU": "Повышает скорость передвижения <span style=\"color: FFFF80\">Вольта</span> и <span style=\"color: FFFF80\">Парии</span>."
+      }
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
+        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. "
+      }
     },
     {
       "AbilCmd": "que5,CancelLast",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
-      "Tooltip": "Drops the current order without performing it, and allows you to select a different order.",
-      "Name": "Cancel"
+      "Name": {
+        "enUS": "Cancel",
+        "ruRU": "Отменить "
+      },
+      "Tooltip": {
+        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
+        "ruRU": "Отменить текущий приказ и отдать следующий. "
+      }
     },
     {
       "AbilCmd": "EdificeResearch,Research2",
       "id": "DevelopLatentCharge",
       "Icon": "btn-upgrade-keiron-latentcharge",
-      "Tooltip": "<span style=\"color: #FFFF80\">Volt</span> attacks bounce to deal <b>2</b> spell damage.",
-      "Name": "Develop Latent Charge"
+      "Name": {
+        "enUS": "Develop Latent Charge",
+        "ruRU": "Разработать Скрытый Заряд"
+      },
+      "Tooltip": {
+        "enUS": "<span style=\"color: FFFF80\">Volt</span> attacks bounce to deal <b>2</b> spell damage.",
+        "ruRU": "Позволяет оружию <span style=\"color: FFFF80\">Вольта</span> атаковать дополнительную цель и наносить ей <b>2</b> урона."
+      }
     }
   ]
 }

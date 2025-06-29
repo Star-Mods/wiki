@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Barracks",
-    "zhCN": "兵营",
-    "koKR": "배럭 /// Barracks"
+    "zhCN": "Barracks",
+    "koKR": "Barracks"
   },
   "Description": {
     "enUS": "Trains Terran Infantry units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Marine</b><br/>- <b>Bunker</b>s from <b>SCV</b>s",
-    "zhCN": "步兵训练设施。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Marine</b><br/>- <b>Firebat</b><br/>- <b>SCV</b>可以建造<b>Bunker</b>",
-    "koKR": "보병 생산 시설입니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Marine</b><br/>- <b>Bunker</b> (<b>SCV</b> 건설) /// Trains Terran Infantry units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Marine</b><br/>- <b>Firebat</b><br/>- <b>Bunker</b>s from <b>SCV</b>s"
+    "zhCN": "Trains Terran Infantry units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Marine</b><br/>- <b>Bunker</b>s from <b>SCV</b>s",
+    "koKR": "Trains Terran Infantry units.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Marine</b><br/>- <b>Bunker</b>s from <b>SCV</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 1000,
   "LifeMax": 1000,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "BarracksSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "BarracksSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "BarracksSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "BarracksSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,9 @@
   "SubgroupPriority": 24,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_BarracksSCBW"
   ],
@@ -124,6 +127,13 @@
   ],
   "PlaneArray": [
     "Ground"
+  ],
+  "AbilArray": [
+    "BuildInProgress",
+    "Rally",
+    "que5",
+    "BarracksSCBW@Train",
+    "BarracksSCBW@LiftOff"
   ],
   "Facing": 315,
   "LifeArmor": 1,
@@ -151,63 +161,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Actor": {
-              "DurationArray": {
-                "Duration": 1.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Duration": 1.6333
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            }
-          },
-          "Unit": "BarracksSCBW@Flying"
-        },
-        "Unit": "BarracksSCBW@Flying",
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "BarracksSCBW@LiftOff,Execute",
-        "id": "Lift",
-        "Icon": "btn-ability-terran-liftoff",
-        "Name": {
-          "enUS": "Lift Off",
-          "ruRU": "Lift Off"
-        },
-        "Tooltip": {
-          "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-        },
-        "Hotkey": "L"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -268,13 +223,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -335,13 +286,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -401,40 +348,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -444,6 +361,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "MarineSCBW",
             "Requirements": "MarineSCBW"
           },
@@ -472,13 +390,13 @@
         "Icon": "btn-unit-terran-marine@scbw",
         "Name": {
           "enUS": "Train Marine",
-          "zhCN": "训练陆战队员",
-          "koKR": "마린 훈련 /// Train Marine"
+          "zhCN": "Train Marine",
+          "koKR": "Train Marine"
         },
         "Tooltip": {
           "enUS": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
-          "zhCN": "通用型步兵。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地和对空。</span>",
-          "koKR": "다목적 보병입니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 및 공중 유닛 공격 가능</span> /// General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
+          "zhCN": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
+          "koKR": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
         },
         "Hotkey": "A"
       },
@@ -490,6 +408,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "FirebatSCBW",
             "Requirements": "FirebatSCBW"
           },
@@ -518,13 +437,13 @@
         "Icon": "btn-unit-terran-firebat@scbw",
         "Name": {
           "enUS": "Train Firebat",
-          "zhCN": "训练火蝠",
-          "koKR": "파이어뱃 훈련 /// Train Firebat"
+          "zhCN": "Train Firebat",
+          "koKR": "Train Firebat"
         },
         "Tooltip": {
           "enUS": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "zhCN": "专业反步兵作战单位。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-          "koKR": "대보병 전문 공격 유닛입니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "koKR": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "F"
       },
@@ -536,6 +455,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "GhostSCBW",
             "Requirements": "GhostSCBW"
           },
@@ -547,8 +467,8 @@
           "GhostSCBW"
         ],
         "Cost": {
-          "Minerals": 100,
-          "Vespene": 100,
+          "Minerals": 25,
+          "Vespene": 75,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -557,20 +477,20 @@
           "Food": -1
         },
         "Row": 0,
-        "Column": 2,
+        "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "BarracksSCBW@Train,Train3",
         "id": "GhostSCBW",
-        "Icon": "btn-unit-terran-ghost",
+        "Icon": "btn-unit-terran-ghost@scbw",
         "Name": {
           "enUS": "Train Ghost",
-          "zhCN": "训练幽灵",
-          "koKR": "고스트 훈련 /// Train Ghost"
+          "zhCN": "Train Ghost",
+          "koKR": "Train Ghost"
         },
         "Tooltip": {
           "enUS": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
           "zhCN": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "koKR": "침투 전문가입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>에서 무장된 <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span>을 유도할 수 있습니다. 업그레이드 하여 <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span>"
+          "koKR": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "G"
       },
@@ -582,6 +502,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "MedicSCBW",
             "Requirements": "MedicSCBW"
           },
@@ -593,7 +514,7 @@
           "MedicSCBW"
         ],
         "Cost": {
-          "Minerals": 75,
+          "Minerals": 50,
           "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
@@ -603,20 +524,20 @@
           "Food": -1
         },
         "Row": 0,
-        "Column": 3,
+        "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "BarracksSCBW@Train,Train4",
         "id": "MedicSCBW",
         "Icon": "btn-unit-terran-medic",
         "Name": {
           "enUS": "Train Medic",
-          "zhCN": "训练医疗兵",
-          "koKR": "메딕 훈련 /// Train Medic"
+          "zhCN": "Train Medic",
+          "koKR": "Train Medic"
         },
         "Tooltip": {
           "enUS": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
-          "zhCN": "支援型步兵。可以<span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span>周围的单位。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>。",
-          "koKR": "지원병입니다. 주변 생체 유닛을 <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> 할 수 있고, 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>와 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>을 사용할 수 있습니다. /// Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
+          "zhCN": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
+          "koKR": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
         },
         "Hotkey": "E"
       }
@@ -633,15 +554,17 @@
     "MedicSCBW",
     "GhostSCBW"
   ],
-  "BuildTime": 60,
+  "BuildTime": 67,
   "TacticalAIThink": "AIThinkBarracksSCBW",
   "Icon": "btn-building-terran-barracks",
+  "Model": "Barracks",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -653,50 +576,45 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "BarracksSCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "BarracksSCBW@LiftOff",
       "Name": {
         "enUS": "Lift Off",
-        "zhCN": "起飞",
-        "koKR": "이륙 /// Lift Off"
+        "zhCN": "Lift Off",
+        "koKR": "Lift Off"
       }
     }
   ],
   "$Upgrades": [
-    "BarracksSCBW@AllowUnit",
-    "BarracksSCBW",
     "Button/Tooltip/AcademySCBW",
+    "BarracksSCBW@AllowUnit",
+    "SCVSCBW@Build",
+    "Button/Tooltip/GhostSCBW@Passive",
+    "BarracksSCBW",
     "BarracksSCBW@Flying",
     "BarracksSCBW@Land",
-    "SCVSCBW@Build",
-    "Button/Tooltip/CovertOpsSCBW",
+    "Button/Tooltip/FirebatSCBW@Passive",
+    "Button/Tooltip/MedicSCBW@Passive",
     "BarracksSCBW",
     "BarracksSCBW@Land",
     "BarracksSCBW@LiftOff",
@@ -704,7 +622,10 @@
     "IsBarracksSCBW",
     "NotBarracksSCBW",
     "CasterIsBarracksSCBW",
-    "BarracksSCBW"
+    "BarracksSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -727,27 +648,8 @@
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
-    },
-    {
-      "AbilCmd": "BarracksSCBW@LiftOff,Execute",
-      "id": "Lift",
-      "Icon": "btn-ability-terran-liftoff",
-      "Name": {
-        "enUS": "Lift Off",
-        "ruRU": "Lift Off"
-      },
-      "Tooltip": {
-        "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -755,12 +657,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "que5,CancelLast",
@@ -768,25 +667,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BarracksSCBW@Train,Train1",
@@ -794,13 +687,13 @@
       "Icon": "btn-unit-terran-marine@scbw",
       "Name": {
         "enUS": "Train Marine",
-        "zhCN": "训练陆战队员",
-        "koKR": "마린 훈련 /// Train Marine"
+        "zhCN": "Train Marine",
+        "koKR": "Train Marine"
       },
       "Tooltip": {
         "enUS": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
-        "zhCN": "通用型步兵。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地和对空。</span>",
-        "koKR": "다목적 보병입니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 및 공중 유닛 공격 가능</span> /// General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
+        "zhCN": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
+        "koKR": "General-purpose infantry.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -809,28 +702,28 @@
       "Icon": "btn-unit-terran-firebat@scbw",
       "Name": {
         "enUS": "Train Firebat",
-        "zhCN": "训练火蝠",
-        "koKR": "파이어뱃 훈련 /// Train Firebat"
+        "zhCN": "Train Firebat",
+        "koKR": "Train Firebat"
       },
       "Tooltip": {
         "enUS": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "zhCN": "专业反步兵作战单位。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-        "koKR": "대보병 전문 공격 유닛입니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "koKR": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
       }
     },
     {
       "AbilCmd": "BarracksSCBW@Train,Train3",
       "id": "GhostSCBW",
-      "Icon": "btn-unit-terran-ghost",
+      "Icon": "btn-unit-terran-ghost@scbw",
       "Name": {
         "enUS": "Train Ghost",
-        "zhCN": "训练幽灵",
-        "koKR": "고스트 훈련 /// Train Ghost"
+        "zhCN": "Train Ghost",
+        "koKR": "Train Ghost"
       },
       "Tooltip": {
         "enUS": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
         "zhCN": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "koKR": "침투 전문가입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>에서 무장된 <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span>을 유도할 수 있습니다. 업그레이드 하여 <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span>"
+        "koKR": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -839,13 +732,13 @@
       "Icon": "btn-unit-terran-medic",
       "Name": {
         "enUS": "Train Medic",
-        "zhCN": "训练医疗兵",
-        "koKR": "메딕 훈련 /// Train Medic"
+        "zhCN": "Train Medic",
+        "koKR": "Train Medic"
       },
       "Tooltip": {
         "enUS": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
-        "zhCN": "支援型步兵。可以<span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span>周围的单位。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>。",
-        "koKR": "지원병입니다. 주변 생체 유닛을 <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> 할 수 있고, 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>와 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>을 사용할 수 있습니다. /// Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
+        "zhCN": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
+        "koKR": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
       }
     }
   ]

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Zergling",
-    "zhCN": "跳虫",
-    "koKR": "저글링 /// Zergling"
+    "zhCN": "Zergling",
+    "koKR": "Zergling"
   },
   "Description": {
     "enUS": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
-    "zhCN": "迅捷的肉搏型生物。一只<span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span>可变异为两只<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>。<br/><br/><span style=\"color: FFFF8A\">可以对地。</span>",
-    "koKR": "빠른 근접 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b> 한 마리에서 <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> 두 마리가 부화합니다.<br/><br/><span style=\"color: FFFF8A\">지상 유닛 공격 가능</span> /// Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>"
+    "zhCN": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+    "koKR": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 35,
   "LifeMax": 35,
-  "LifeArmorName": {
-    "enUS": "Zerg Ground Carapace",
-    "ruRU": "Zerg Ground Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -75,16 +73,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ZerglingSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ZerglingSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ZerglingSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ZerglingSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -123,9 +123,18 @@
     "Minerals": 25
   },
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 5,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "que1",
+    "ZerglingSCBW@BurrowDown"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "ZerglingSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -216,12 +225,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -296,12 +302,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -391,13 +394,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -471,14 +471,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -568,13 +562,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -614,16 +605,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -663,16 +647,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "DefilerSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -707,16 +684,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -751,16 +721,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "HydraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -770,36 +733,39 @@
               "DurationArray": {
                 "Duration": 2
               }
+            },
+            "Mover": {
+              "DurationArray": {
+                "Delay": 2
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Delay": 0.1
+              }
             }
           },
-          "Unit": "UltraliskSCBW",
-          "RandomDelayMax": 0.5
+          "Unit": "InfestedTerranSCBW",
+          "RandomDelayMax": 0.37
         },
-        "Unit": "UltraliskSCBW",
+        "Unit": "InfestedTerranSCBW",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 100,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -1
         },
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "AbilCmd": "InfestedTerranSCBW@BurrowUp,Execute",
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -834,16 +800,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -860,8 +819,8 @@
         },
         "Unit": "UltraliskSCBW",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -873,17 +832,64 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "R"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ZerglingSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
         "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
+          "enUS": "Metabolic Boost",
+          "zhCN": "Metabolic Boost",
+          "koKR": "Metabolic Boost"
         },
         "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
         },
-        "Hotkey": "R"
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "ZerglingSCBWAttackSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-adrenalglands",
+        "Name": {
+          "enUS": "Adrenal Glands",
+          "zhCN": "Adrenal Glands",
+          "koKR": "Adrenal Glands"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
+        }
       }
     ]
   },
@@ -905,31 +911,35 @@
   ],
   "KillDisplay": "Always",
   "RankDisplay": "Always",
-  "TauntDuration": {
-    "Cheer": 5,
-    "Dance": 5
-  },
   "BuildTime": 12,
   "TacticalAIThink": "AIThinkZerglingSCBW",
   "InnerRadius": 0.375,
-  "SpeedMultiplierCreep": 1.3,
-  "Icon": "btn-unit-zerg-zerglingscbw",
+  "SpeedMultiplierCreep": 1.2,
+  "Icon": "btn-unit-zerg-zergling@scbw",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
   "Weapons": [
     {
-      "id": "ZerglingSCBWWeapon",
+      "EditorCategories": "Race:Zerg",
+      "Options": {
+        "Melee": 1
+      },
       "Icon": "btn-upgrade-zerg-meleeattacks-level0",
+      "DisplayEffect": "ZerglingSCBWWeapon@Damage",
+      "TargetFilters": "Ground",
+      "Range": 0.1,
+      "Period": 0.6,
+      "Effect": "ZerglingSCBWWeapon@Damage",
+      "RangeSlop": 1,
+      "id": "ZerglingSCBWWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Claws",
-        "zhCN": "利爪",
-        "koKR": "발톱 /// Claws"
+        "zhCN": "Claws",
+        "koKR": "Claws"
       },
       "Amount": 5,
-      "Kind": "Melee",
-      "TargetFilters": "Ground",
-      "Range": 0.4687,
-      "Period": 0.66
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -937,90 +947,80 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "que1",
       "Name": {
-        "ruRU": "Queue (1)",
-        "enUS": "Queue (1)"
+        "ruRU": "Queue (1)"
       }
     },
     {
       "id": "ZerglingSCBW@BurrowDown",
       "Name": {
         "enUS": "Burrow",
-        "zhCN": "潜地",
-        "koKR": "버로우 /// Burrow"
+        "zhCN": "Burrow",
+        "koKR": "Burrow"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/SpawningPoolSCBW",
+    "IsZerglingSCBW",
     "Button/Tooltip/ZerglingSCBW",
-    "ZerglingSCBW@AllowUnit",
-    "LarvaSCBW@Train",
-    "ZerglingSCBW@Burrowed",
-    "ZerglingSCBW@BurrowUp",
-    "LarvaSCBW",
-    "ZerglingSCBW",
+    "Button/Tooltip/SpawningPoolSCBW",
     "Button/Tooltip/ZerglingSCBWSpeedUpgrade",
     "ZerglingSCBWSpeedUpgrade",
+    "ZerglingSCBW@Burrowed",
+    "ZerglingSCBW@BurrowUp",
+    "ZergSCBWBurrowResearch",
     "Button/Tooltip/ZerglingSCBWAttackSpeedUpgrade",
     "ZerglingSCBWAttackSpeedUpgrade",
+    "Button/Tooltip/ZerglingSCBW@Passive",
+    "ZerglingSCBW@AllowUnit",
     "SpawningPoolSCBW",
-    "ZergSCBWBurrowResearch",
-    "ChangelingZerglingSCBW",
+    "LarvaSCBW@Train",
+    "LarvaSCBW",
+    "ZerglingSCBW",
     "DisguiseAsZerglingSCBW",
+    "ChangelingZerglingSCBW",
     "ZerglingSCBW@BurrowedSplat",
     "ZerglingSCBW@Death",
     "ZerglingSCBW",
-    "Button/Tooltip/UltraliskSCBWArmorUpgrade@Passive",
-    "Button/Tooltip/ZerglingSCBWAttackSpeedUpgrade@Passive",
-    "Button/Tooltip/ZerglingSCBWSpeedUpgrade@Passive",
-    "ZerglingSCBW@TacticalBurrowZerglingBullyTest",
-    "ZerglingSCBW@ThreatensZergling",
-    "IsZerglingSCBW",
     "NotZerglingSCBW",
     "CasterIsZerglingSCBW",
+    "ZerglingSCBW@TacticalBurrowZerglingBullyTest",
+    "ZerglingSCBW@ThreatensZergling",
     "ZerglingSCBW@Count",
     "ZerglingSCBW@CountAtUnit",
     "ZerglingSCBW@QoB",
     "ZerglingSCBW@QoBAtUnit",
-    "ZerglingSCBW"
+    "ZerglingSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
-  "$Morph": [
-    "DefilerSCBW",
-    "DroneSCBW",
-    "HydraliskSCBW",
-    "UltraliskSCBW"
-  ],
+  "$Morph": [],
   "$Phase": [
-    "ZerglingSCBW",
-    "ZerglingSCBW",
-    "ZerglingSCBW@Burrowed",
     "ZerglingSCBW@Burrowed"
   ],
-  "$Phased": "ZerglingSCBW",
   "$Producers": [
     "AbilTrainHolderSCBW",
     "LarvaSCBW"
@@ -1032,12 +1032,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1045,142 +1042,78 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DefilerSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "HydraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "AbilCmd": "InfestedTerranSCBW@BurrowUp,Execute",
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

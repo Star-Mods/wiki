@@ -162,10 +162,7 @@
               "DefaultButtonFace": "Cancel"
             },
             "Halt": {
-              "DefaultButtonFace": "Halt",
-              "Flags": {
-                "ToSelection": 1
-              }
+              "DefaultButtonFace": "Cancel"
             }
           },
           "id": "BuildInProgress"
@@ -470,27 +467,27 @@
         "Hotkey": "R"
       },
       {
-        "Upgrade": "RoutheTankArmorPlating",
+        "Upgrade": "A6ExplosiveRounds",
         "Info": {
           "Button": {
             "Flags": {
               "AllowMinimap": 0,
               "ShowInGlossary": 1
             },
-            "DefaultButtonFace": "ResearchRoutheTankArmorPlating",
-            "Requirements": "LearnRoutheTankArmorPlating"
+            "DefaultButtonFace": "ResearchA6ExplosiveRounds",
+            "Requirements": "LearnA6ExplosiveRounds"
           },
           "Resource": {
-            "Minerals": 200,
-            "Vespene": 200
+            "Minerals": 175,
+            "Vespene": 175
           },
           "Time": 150,
-          "Upgrade": "RoutheTankArmorPlating"
+          "Upgrade": "A6ExplosiveRounds"
         },
         "Time": 150,
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -501,16 +498,16 @@
         "Row": 2,
         "Column": 1,
         "Type": "AbilCmd",
-        "AbilCmd": "UPLManufacturingFacilityResearch,Research3",
-        "id": "ResearchRoutheTankArmorPlating",
-        "Icon": "btn-ability-upl-unobtaniumarmorplating",
+        "AbilCmd": "UPLManufacturingFacilityResearch,Research4",
+        "id": "ResearchA6ExplosiveRounds",
+        "Icon": "btn-ability-upl-flak",
         "Name": {
-          "enUS": "Research Unobtanium Armor Plating"
+          "enUS": "Research Nano-Flak"
         },
         "Tooltip": {
-          "enUS": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/> increases maximum life by <span style=\"color: 80FFFF\">+75</span>"
+          "enUS": "Makes the A-6 deal <span style=\"color: 80FFFF\"><b>8</b>%</span> damage as splash to air units near the attack target."
         },
-        "Hotkey": "Z"
+        "Hotkey": "X"
       },
       {
         "Info": {
@@ -554,49 +551,6 @@
         "Hotkey": "W"
       },
       {
-        "Upgrade": "A6ExplosiveRounds",
-        "Info": {
-          "Button": {
-            "Flags": {
-              "AllowMinimap": 0,
-              "ShowInGlossary": 1
-            },
-            "DefaultButtonFace": "ResearchA6ExplosiveRounds",
-            "Requirements": "LearnA6ExplosiveRounds"
-          },
-          "Resource": {
-            "Minerals": 175,
-            "Vespene": 175
-          },
-          "Time": 150,
-          "Upgrade": "A6ExplosiveRounds"
-        },
-        "Time": 150,
-        "Cost": {
-          "Minerals": 175,
-          "Vespene": 175,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 2,
-        "Type": "AbilCmd",
-        "AbilCmd": "UPLManufacturingFacilityResearch,Research4",
-        "id": "ResearchA6ExplosiveRounds",
-        "Icon": "btn-ability-upl-flak",
-        "Name": {
-          "enUS": "Research Nano-Flak"
-        },
-        "Tooltip": {
-          "enUS": "Makes the A-6 deal <span style=\"color: 80FFFF\"><b>8</b>%</span> damage as splash to air units near the attack target."
-        },
-        "Hotkey": "X"
-      },
-      {
         "Upgrade": "Z1EnergyUpgrade",
         "Info": {
           "Button": {
@@ -625,7 +579,7 @@
           "Food": 0
         },
         "Row": 2,
-        "Column": 3,
+        "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "UPLManufacturingFacilityResearch,Research5",
         "id": "Z1EnergyUpgrade",
@@ -665,6 +619,89 @@
           "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
         },
         "Hotkey": "Y"
+      },
+      {
+        "Upgrade": "UPLResearchMaterialAbsorptionArmor",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0
+            },
+            "DefaultButtonFace": "UPLResearchMaterialAbsorbptionArmor"
+          },
+          "Resource": {
+            "Minerals": 100,
+            "Vespene": 100
+          },
+          "Time": 182,
+          "Upgrade": "UPLResearchMaterialAbsorptionArmor"
+        },
+        "Time": 182,
+        "Cost": {
+          "Minerals": 100,
+          "Vespene": 100,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLManufacturingFacilityResearch,Research7",
+        "id": "UPLResearchMaterialAbsorbptionArmor",
+        "Icon": "btn-routhe-tank-material-absorption-armor",
+        "Name": {
+          "enUS": "Research Material Absorbption Armor"
+        },
+        "Tooltip": {
+          "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span> by 2."
+        }
+      },
+      {
+        "Upgrade": "RoutheTankArmorPlating",
+        "Info": {
+          "Button": {
+            "Flags": {
+              "AllowMinimap": 0,
+              "ShowInGlossary": 1
+            },
+            "DefaultButtonFace": "ResearchRoutheTankArmorPlating",
+            "Requirements": "LearnRoutheTankArmorPlating"
+          },
+          "Resource": {
+            "Minerals": 200,
+            "Vespene": 200
+          },
+          "Time": 182,
+          "Upgrade": "RoutheTankArmorPlating"
+        },
+        "Time": 182,
+        "Cost": {
+          "Minerals": 200,
+          "Vespene": 200,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 1,
+        "Type": "AbilCmd",
+        "AbilCmd": "UPLManufacturingFacilityResearch,Research3",
+        "id": "ResearchRoutheTankArmorPlating",
+        "Icon": "btn-ability-upl-unobtaniumarmorplating",
+        "Name": {
+          "enUS": "Research Unobtanium Armor Plating"
+        },
+        "Tooltip": {
+          "enUS": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/> increases maximum life by <span style=\"color: 80FFFF\">+75</span>"
+        },
+        "Hotkey": "Z"
       }
     ]
   },
@@ -706,6 +743,7 @@
   "Behaviors": [
     {
       "id": "UnderConstruction",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Under Construction",
         "ruRU": "Under Construction"
@@ -774,9 +812,10 @@
   ],
   "$Research": [
     "HornetRacing",
-    "RoutheTankArmorPlating",
     "A6ExplosiveRounds",
-    "Z1EnergyUpgrade"
+    "Z1EnergyUpgrade",
+    "UPLResearchMaterialAbsorptionArmor",
+    "RoutheTankArmorPlating"
   ],
   "$Morph": [],
   "$Phase": [],
@@ -866,14 +905,14 @@
       }
     },
     {
-      "AbilCmd": "UPLManufacturingFacilityResearch,Research3",
-      "id": "ResearchRoutheTankArmorPlating",
-      "Icon": "btn-ability-upl-unobtaniumarmorplating",
+      "AbilCmd": "UPLManufacturingFacilityResearch,Research4",
+      "id": "ResearchA6ExplosiveRounds",
+      "Icon": "btn-ability-upl-flak",
       "Name": {
-        "enUS": "Research Unobtanium Armor Plating"
+        "enUS": "Research Nano-Flak"
       },
       "Tooltip": {
-        "enUS": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/> increases maximum life by <span style=\"color: 80FFFF\">+75</span>"
+        "enUS": "Makes the A-6 deal <span style=\"color: 80FFFF\"><b>8</b>%</span> damage as splash to air units near the attack target."
       }
     },
     {
@@ -885,17 +924,6 @@
       },
       "Tooltip": {
         "enUS": "Armored mechanical Infantry with strong attack, can use Badger Bomb, Liquid Nitrogen Thrower, and Activate Full Size Smart Metal Shield abilities. Energy User. <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units</span>"
-      }
-    },
-    {
-      "AbilCmd": "UPLManufacturingFacilityResearch,Research4",
-      "id": "ResearchA6ExplosiveRounds",
-      "Icon": "btn-ability-upl-flak",
-      "Name": {
-        "enUS": "Research Nano-Flak"
-      },
-      "Tooltip": {
-        "enUS": "Makes the A-6 deal <span style=\"color: 80FFFF\"><b>8</b>%</span> damage as splash to air units near the attack target."
       }
     },
     {
@@ -920,6 +948,28 @@
       "Tooltip": {
         "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
         "ruRU": "Отправляет созданные войска в указанную точку. Рабочие, отправленные на месторождение минералов или веспена, автоматически начнут добычу ресурсов."
+      }
+    },
+    {
+      "AbilCmd": "UPLManufacturingFacilityResearch,Research7",
+      "id": "UPLResearchMaterialAbsorbptionArmor",
+      "Icon": "btn-routhe-tank-material-absorption-armor",
+      "Name": {
+        "enUS": "Research Material Absorbption Armor"
+      },
+      "Tooltip": {
+        "enUS": "Increase the armor of <span style=\"color: ffff8a\">Routhe Tank</span> by 2."
+      }
+    },
+    {
+      "AbilCmd": "UPLManufacturingFacilityResearch,Research3",
+      "id": "ResearchRoutheTankArmorPlating",
+      "Icon": "btn-ability-upl-unobtaniumarmorplating",
+      "Name": {
+        "enUS": "Research Unobtanium Armor Plating"
+      },
+      "Tooltip": {
+        "enUS": "Adaptive plating which absorbs kinetic and energy attacks better than standard vehicle plating.<br/><br/> increases maximum life by <span style=\"color: 80FFFF\">+75</span>"
       }
     }
   ]

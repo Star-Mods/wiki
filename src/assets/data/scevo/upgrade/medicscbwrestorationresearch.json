@@ -1,11 +1,14 @@
 {
-  "id": "MedicSCBWRestorationResearch",
-  "Icon": "btn-ability-terran-restoration@scbw",
-  "Name": "Upgrade/Name/MedicSCBWRestorationResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Restoration Research",
+    "zhCN": "Restoration Research",
+    "koKR": "Restoration Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,9 +23,18 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "MedicSCBWRestorationResearch",
-  "Race": "Terr",
-  "ScoreAmount": 200,
+  "id": "MedicSCBWRestorationResearch",
+  "Icon": "btn-ability-terran-restoration@scbw",
+  "Race": "BWTe",
+  "ScoreAmount": 100,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "MedicSCBW"

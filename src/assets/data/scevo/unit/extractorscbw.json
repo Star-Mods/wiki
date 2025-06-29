@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Extractor",
-    "zhCN": "萃取房",
-    "koKR": "익스트랙터 /// Extractor"
+    "zhCN": "Extractor",
+    "koKR": "Extractor"
   },
   "Description": {
-    "enUS": "Mutated over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas.",
-    "zhCN": "变异于<span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span>上，用于采集高能瓦斯。",
-    "koKR": "베스핀 가스 채취를 위해 <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> 위에 건설하는 구조물입니다. /// Mutated over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas."
+    "enUS": "Mutated over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "zhCN": "Mutated over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "koKR": "Mutated over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Vespene",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ExtractorSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ExtractorSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ExtractorSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ExtractorSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -127,14 +127,22 @@
   },
   "BuildTime": 30,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "ExtractorToAutomatedExtractor"
+  ],
+  "BehaviorArray": [
+    "HarvestableVespeneGeyserGasZerg",
+    "WorkerPeriodicRefineryCheck"
+  ],
   "CardLayouts": {
     "Root": [
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -147,14 +155,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -168,7 +176,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -183,18 +192,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
@@ -206,7 +211,8 @@
     "RichVespeneGeyser",
     "ProtossVespeneGeyser",
     "PurifierVespeneGeyser",
-    "ShakurasVespeneGeyser"
+    "ShakurasVespeneGeyser",
+    "TempleVespeneGeyserSCBW"
   ],
   "BuildOnAs": [
     "ExtractorSCBW@Rich"
@@ -220,13 +226,14 @@
     "Create": "GeyserExhaustedCheck"
   },
   "Icon": "btn-building-zerg-extractor",
+  "Model": "ExtractorEx1",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGasZerg",
-      "Icon": "icon-gas",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Harvestable Vespene Geyser Gas Zerg",
         "ruRU": "Harvestable Vespene Geyser Gas Zerg"
@@ -236,10 +243,11 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     }
   ],
@@ -269,17 +277,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

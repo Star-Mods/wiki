@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Medic",
-    "zhCN": "医疗兵",
-    "koKR": "메딕 /// Medic"
+    "zhCN": "Medic",
+    "koKR": "Medic"
   },
   "Description": {
     "enUS": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
-    "zhCN": "支援型步兵。可以<span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span>周围的单位。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>。",
-    "koKR": "지원병입니다. 주변 생체 유닛을 <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> 할 수 있고, 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span>와 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>을 사용할 수 있습니다. /// Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
+    "zhCN": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>",
+    "koKR": "Support trooper. Can <span class=\"style-TooltipHighlightSCBW\"><b>Heal</b></span> nearby biological units, and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Optic Flare</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b>.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 60,
-  "LifeMax": 60,
-  "LifeArmorName": {
-    "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
-  },
+  "LifeStart": 65,
+  "LifeMax": 65,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -47,7 +45,7 @@
     "CameraFollow",
     "UseLineOfSight",
     "ArmySelect",
-    "AlwaysThreatens",
+    "PreventDestroy",
     "AIHighPrioTarget",
     "AICaster",
     "AISupport",
@@ -79,16 +77,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "MedicSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "MedicSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "MedicSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "MedicSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -120,21 +120,26 @@
   "LifeArmor": 1,
   "EnergyStart": 50,
   "EnergyMax": 200,
-  "Speed": 2.25,
+  "Speed": 2.8125,
   "Acceleration": 1000,
   "LateralAcceleration": 46.0625,
   "Sight": 9,
   "Food": -1,
   "CostResource": {
-    "Minerals": 75,
+    "Minerals": 50,
     "Vespene": 25
   },
   "BuildTime": 25,
   "RepairTime": 20,
-  "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 15,
+  "AttackTargetPriority": 18,
+  "AbilArray": [
+    "stop",
+    "move",
+    "MedicSCBWHeal",
+    "MedicSCBWOpticFlare",
+    "MedicSCBWRestoration",
+    "MarineSCBWStimpack"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -225,12 +230,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -305,12 +307,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -400,13 +399,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -480,14 +476,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -577,13 +567,10 @@
         "id": "AcquireMove",
         "Icon": "btn-command-attack",
         "Name": {
-          "enUS": "Scan Move",
-          "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -673,13 +660,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -807,7 +791,7 @@
             "RequestCount": 1
           },
           "Range": [
-            2
+            3
           ],
           "SmartValidatorArray": [
             "MedicSCBWHeal@SmartTargetFilters",
@@ -844,13 +828,13 @@
         "Icon": "btn-ability-terran-heal-color",
         "Name": {
           "enUS": "Heal",
-          "zhCN": "治疗",
-          "koKR": "힐 /// Heal"
+          "zhCN": "Heal",
+          "koKR": "Heal"
         },
         "Tooltip": {
-          "enUS": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>6</b> energy.</span>",
-          "zhCN": "治疗一个友方生物单位。<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">每<b>6</b>点能量治疗<b>12</b>点生命值</span>。",
-          "koKR": "아군 생체 유닛을 치료합니다.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">에너지 <b>6</b>당 <b>12</b>의 체력 회복</span> /// Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>6</b> energy.</span>"
+          "enUS": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>",
+          "zhCN": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>",
+          "koKR": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>"
         },
         "Hotkey": "E"
       },
@@ -973,10 +957,13 @@
             "Visible;Self,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable"
           ],
           "Range": [
-            2
+            6
           ],
-          "PrepTime": [
-            0.5
+          "CastIntroTime": [
+            0.375
+          ],
+          "FinishTime": [
+            0.125
           ],
           "id": "MedicSCBWRestoration"
         },
@@ -998,13 +985,13 @@
         "Icon": "btn-ability-terran-restoration@scbw",
         "Name": {
           "enUS": "Restoration",
-          "zhCN": "恢复",
-          "koKR": "리스토레이션 /// Restoration"
+          "zhCN": "Restoration",
+          "koKR": "Restoration"
         },
         "Tooltip": {
           "enUS": "Removes any negative effects from the target allied unit.",
-          "zhCN": "移除目标友方单位上的所有负面效果。",
-          "koKR": "대상 아군에 가해진 부정적 효과를 제거합니다. /// Removes any negative effects from the target allied unit."
+          "zhCN": "Removes any negative effects from the target allied unit.",
+          "koKR": "Removes any negative effects from the target allied unit."
         },
         "Hotkey": "C"
       },
@@ -1127,11 +1114,8 @@
           "Range": [
             9
           ],
-          "PrepTime": [
-            0.125
-          ],
           "CastIntroTime": [
-            0.4
+            0.375
           ],
           "FinishTime": [
             0.125
@@ -1161,15 +1145,42 @@
         "Icon": "btn-upgrade-protoss-fenix-dragoonsolariteflare",
         "Name": {
           "enUS": "Optic Flare",
-          "zhCN": "眩光弹",
-          "koKR": "옵티컬 플레어 /// Optic Flare"
+          "zhCN": "Optic Flare",
+          "koKR": "Optic Flare"
         },
         "Tooltip": {
-          "enUS": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts for <b>84</b> seconds or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
-          "zhCN": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts for <b>84</b> seconds or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
-          "koKR": "대상 적 유닛의 시야가 감소합니다. <span class=\"style-TooltipHighlightSCBW\">탐지 능력</span>이 비활성화됩니다. <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> 능력으로 제거되기 전까지 영구히 지속합니다. /// Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability."
+          "enUS": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
+          "zhCN": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
+          "koKR": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability."
         },
         "Hotkey": "B"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "MedicSCBWEnergyUpgrade@Passive",
+        "Icon": "btn-upgrade-terran-caduceusreactor",
+        "Name": {
+          "enUS": "Caduceus Reactor",
+          "zhCN": "Caduceus Reactor",
+          "koKR": "Caduceus Reactor"
+        },
+        "Tooltip": {
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,MedicSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
       }
     ]
   },
@@ -1195,14 +1206,14 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -1210,58 +1221,62 @@
       "id": "MedicSCBWHeal",
       "Name": {
         "enUS": "Heal",
-        "zhCN": "治疗",
-        "koKR": "힐 /// Heal"
+        "zhCN": "Heal",
+        "koKR": "Heal"
       }
     },
     {
       "id": "MedicSCBWOpticFlare",
       "Name": {
         "enUS": "Optic Flare",
-        "zhCN": "照明弹",
-        "koKR": "옵티컬 플레어 /// Optic Flare"
+        "zhCN": "Optic Flare",
+        "koKR": "Optic Flare"
       }
     },
     {
       "id": "MedicSCBWRestoration",
       "Name": {
         "enUS": "Restoration",
-        "zhCN": "恢复",
-        "koKR": "리스토레이션 /// Restoration"
+        "zhCN": "Restoration",
+        "koKR": "Restoration"
       }
     },
     {
       "id": "MarineSCBWStimpack",
       "Name": {
         "enUS": "Stimpack (Marine)",
-        "zhCN": "强化剂（陆战队员）",
-        "koKR": "스팀팩 (마린) /// Stimpack (Marine)"
+        "zhCN": "Stimpack (Marine)",
+        "koKR": "Stimpack (Marine)"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/GhostSCBWLockdown",
+    "GhostSCBW@AllowUnit",
     "Button/Tooltip/MedicSCBWOpticFlare",
     "MedicSCBWRestorationResearch",
     "MedicSCBWOpticFlareResearch",
     "MedicSCBW",
-    "Button/Tooltip/AcademySCBW",
     "Button/Tooltip/MedicSCBWEnergyUpgrade",
     "MedicSCBWEnergyUpgrade",
-    "Button/Tooltip/MedicSCBWRestorationResearch",
-    "Button/Tooltip/MedicSCBWOpticFlareResearch",
-    "AcademySCBW",
-    "GhostSCBW@AllowUnit",
     "MedicSCBW@AllowUnit",
     "BarracksSCBW@Train",
     "BarracksSCBW",
+    "Button/Tooltip/AcademySCBW",
+    "Button/Tooltip/MedicSCBWRestorationResearch",
+    "Button/Tooltip/MedicSCBWOpticFlareResearch",
+    "Button/Tooltip/MedicSCBW@Passive",
+    "AcademySCBW",
+    "Button/Tooltip/GhostSCBWLockdown",
     "MedicSCBW",
-    "MedicSCBW@IsMedic",
     "IsMedicSCBW",
     "NotMedicSCBW",
     "CasterIsMedicSCBW",
+    "MedicSCBW@IsMedic",
     "KerriganSCBW@AllowUnit",
-    "MedicSCBW"
+    "MedicSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1279,12 +1294,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1292,64 +1304,46 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,AcquireMove",
       "id": "AcquireMove",
       "Icon": "btn-command-attack",
       "Name": {
-        "enUS": "Scan Move",
-        "ruRU": "Двигаться в режиме наблюдения /// Scan Move"
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Scan-moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "MedicSCBWHeal,Execute",
@@ -1357,13 +1351,13 @@
       "Icon": "btn-ability-terran-heal-color",
       "Name": {
         "enUS": "Heal",
-        "zhCN": "治疗",
-        "koKR": "힐 /// Heal"
+        "zhCN": "Heal",
+        "koKR": "Heal"
       },
       "Tooltip": {
-        "enUS": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>6</b> energy.</span>",
-        "zhCN": "治疗一个友方生物单位。<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">每<b>6</b>点能量治疗<b>12</b>点生命值</span>。",
-        "koKR": "아군 생체 유닛을 치료합니다.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">에너지 <b>6</b>당 <b>12</b>의 체력 회복</span> /// Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>6</b> energy.</span>"
+        "enUS": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>",
+        "zhCN": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>",
+        "koKR": "Heals a friendly biological target.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Heals <b>12</b> life per <b>5</b> energy.</span>"
       }
     },
     {
@@ -1372,13 +1366,13 @@
       "Icon": "btn-ability-terran-restoration@scbw",
       "Name": {
         "enUS": "Restoration",
-        "zhCN": "恢复",
-        "koKR": "리스토레이션 /// Restoration"
+        "zhCN": "Restoration",
+        "koKR": "Restoration"
       },
       "Tooltip": {
         "enUS": "Removes any negative effects from the target allied unit.",
-        "zhCN": "移除目标友方单位上的所有负面效果。",
-        "koKR": "대상 아군에 가해진 부정적 효과를 제거합니다. /// Removes any negative effects from the target allied unit."
+        "zhCN": "Removes any negative effects from the target allied unit.",
+        "koKR": "Removes any negative effects from the target allied unit."
       }
     },
     {
@@ -1387,13 +1381,13 @@
       "Icon": "btn-upgrade-protoss-fenix-dragoonsolariteflare",
       "Name": {
         "enUS": "Optic Flare",
-        "zhCN": "眩光弹",
-        "koKR": "옵티컬 플레어 /// Optic Flare"
+        "zhCN": "Optic Flare",
+        "koKR": "Optic Flare"
       },
       "Tooltip": {
-        "enUS": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts for <b>84</b> seconds or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
-        "zhCN": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts for <b>84</b> seconds or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
-        "koKR": "대상 적 유닛의 시야가 감소합니다. <span class=\"style-TooltipHighlightSCBW\">탐지 능력</span>이 비활성화됩니다. <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> 능력으로 제거되기 전까지 영구히 지속합니다. /// Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability."
+        "enUS": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
+        "zhCN": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability.",
+        "koKR": "Reduces vision range of the target enemy unit. Passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> is disabled. Effect lasts indefinitely or when removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span> ability."
       }
     }
   ]

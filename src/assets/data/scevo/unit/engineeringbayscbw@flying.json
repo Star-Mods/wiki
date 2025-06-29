@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Engineering Bay",
-    "zhCN": "工程站",
-    "koKR": "엔지니어링 베이 /// Engineering Bay"
+    "zhCN": "Engineering Bay",
+    "koKR": "Engineering Bay"
   },
   "Description": {
-    "enUS": "Engineering Bay must land to start research.",
-    "zhCN": "工程站必须着陆才能开始研究。",
-    "koKR": "엔지니어링 베이에서 연구를 시작하려면 지상에 착륙해야 합니다. /// Engineering Bay must land to start research."
+    "enUS": "<b>Engineering Bay</b> must land to start research.",
+    "zhCN": "<b>Engineering Bay</b> must land to start research.",
+    "koKR": "<b>Engineering Bay</b> must land to start research."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 850,
   "LifeMax": 850,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -77,16 +75,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "EngineeringBaySCBW@Flying/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "EngineeringBaySCBW@Flying/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "EngineeringBaySCBW@Flying/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "EngineeringBaySCBW@Flying/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -110,6 +110,9 @@
   "SubgroupPriority": 5,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_EngineeringBaySCBW"
   ],
@@ -119,6 +122,11 @@
   ],
   "Collide": [
     "Flying"
+  ],
+  "AbilArray": [
+    "move",
+    "stop",
+    "EngineeringBaySCBW@Land"
   ],
   "Speed": 0.9375,
   "Acceleration": 1.3125,
@@ -133,67 +141,6 @@
   "RepairTime": 30,
   "CardLayouts": {
     "Root": [
-      {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Delay": 0.5,
-                "Duration": 1.5
-              }
-            },
-            "Facing": {
-              "DurationArray": {
-                "Duration": 0.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Delay": 0.5,
-                "Duration": 0.733
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            }
-          },
-          "Unit": "EngineeringBaySCBW",
-          "CollideRange": 0
-        },
-        "Unit": "EngineeringBaySCBW",
-        "Cost": {
-          "Minerals": 125,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "EngineeringBaySCBW@Land,Execute",
-        "id": "Land",
-        "Icon": "btn-ability-terran-land",
-        "Name": {
-          "enUS": "Land",
-          "ruRU": "Land"
-        },
-        "Tooltip": {
-          "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-          "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
-        },
-        "Hotkey": "L"
-      },
       {
         "Info": {
           "class": "CAbilStop",
@@ -266,12 +213,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -362,12 +306,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -457,13 +398,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -553,26 +491,220 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": "-",
+        "Hotkey": "P"
+      },
+      {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Abil/Name/attack",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/attack",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "attack",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "-;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Attack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 128,
+          "MinAttackSpeedMultiplier": 0.25,
+          "AcquirePriority": 2,
+          "id": "attack"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "attack,Execute",
+        "id": "Attack",
+        "Icon": "btn-command-attack",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Abil/Name/move",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "move",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Move"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MovePatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "MoveHoldPosition"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 1,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "id": "move"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 0,
+        "Column": 4,
+        "Type": "AbilCmd",
+        "AbilCmd": "move,AcquireMove",
+        "id": "AcquireMove",
+        "Icon": "btn-command-attack",
+        "Name": {
+          "enUS": "Acquire Move",
+          "ruRU": "Двигаться в поиске цели "
+        },
+        "Tooltip": "-",
+        "Hotkey": "A"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "MissileTurretSCBW@Passive",
+        "Icon": "btn-building-terran-missileturret",
+        "Name": {
+          "enUS": "Missile Turret",
+          "zhCN": "Missile Turret",
+          "koKR": "Missile Turret"
         },
         "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
-        "Hotkey": "P"
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><b>SCV</b>s</span> to construct <span style=\"color: #SCBW_ColorHighlight\"><b>Missile Turret</b>s</span>."
+        }
       }
     ]
   },
   "ScoreKill": 125,
   "AliasUnit": "EngineeringBaySCBW",
   "Icon": "btn-building-terran-engineeringbay",
+  "Model": "EngineeringBayEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -585,14 +717,14 @@
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
@@ -600,20 +732,24 @@
       "id": "EngineeringBaySCBW@Land",
       "Name": {
         "enUS": "Land",
-        "zhCN": "着陆",
-        "koKR": "착륙 /// Land"
+        "zhCN": "Land",
+        "koKR": "Land"
       }
     }
   ],
   "$Upgrades": [
     "EngineeringBaySCBW@LiftOff",
+    "Button/Tooltip/EngineeringBaySCBW@Flying",
     "EngineeringBaySCBW@Flying",
     "EngineeringBaySCBW@Land",
     "EngineeringBaySCBW@LiftOff",
     "EngineeringBaySCBW",
     "EngineeringBaySCBW@Flying@Count",
     "EngineeringBaySCBW@Flying@QoB",
-    "EngineeringBaySCBW@Flying@QoBAtUnit"
+    "EngineeringBaySCBW@Flying@QoBAtUnit",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -626,30 +762,14 @@
   "$Producers": [],
   "$Commands": [
     {
-      "AbilCmd": "EngineeringBaySCBW@Land,Execute",
-      "id": "Land",
-      "Icon": "btn-ability-terran-land",
-      "Name": {
-        "enUS": "Land",
-        "ruRU": "Land"
-      },
-      "Tooltip": {
-        "enUS": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities.",
-        "ruRU": "Lands the structure at a target location, allowing it to once again produce units, research upgrades, and use abilities."
-      }
-    },
-    {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Move",
@@ -657,38 +777,46 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "attack,Execute",
+      "id": "Attack",
+      "Icon": "btn-command-attack",
+      "Name": "-",
+      "Tooltip": "-"
+    },
+    {
+      "AbilCmd": "move,AcquireMove",
+      "id": "AcquireMove",
+      "Icon": "btn-command-attack",
+      "Name": {
+        "enUS": "Acquire Move",
+        "ruRU": "Двигаться в поиске цели "
+      },
+      "Tooltip": "-"
     }
   ]
 }

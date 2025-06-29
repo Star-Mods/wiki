@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Starport",
-    "zhCN": "星港",
-    "koKR": "스타포트 /// Starport"
+    "zhCN": "Starport",
+    "koKR": "Starport"
   },
   "Description": {
     "enUS": "Air-unit production facility. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Wraith</b>s",
-    "zhCN": "空中单位生产设施。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Wraith</b>s",
-    "koKR": "공중 유닛 생산 시설입니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Scout</b><br/>- <b>Corsair</b> /// Air-unit production facility. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Wraith</b>s"
+    "zhCN": "Air-unit production facility. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Wraith</b>s",
+    "koKR": "Air-unit production facility. <br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Wraith</b>s"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 1300,
   "LifeMax": 1300,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "StarportSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "StarportSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "StarportSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "StarportSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,9 @@
   "SubgroupPriority": 20,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_StarportSCBW"
   ],
@@ -124,6 +127,14 @@
   ],
   "PlaneArray": [
     "Ground"
+  ],
+  "AbilArray": [
+    "BuildInProgress",
+    "Rally",
+    "que5",
+    "StarportSCBW@Train",
+    "StarportSCBW@AddOns",
+    "StarportSCBW@LiftOff"
   ],
   "Facing": 315,
   "LifeArmor": 1,
@@ -152,63 +163,8 @@
         "AbilCmd": "Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Actor": {
-              "DurationArray": {
-                "Duration": 1.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Duration": 1.6333
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            }
-          },
-          "Unit": "StarportSCBW@Flying"
-        },
-        "Unit": "StarportSCBW@Flying",
-        "Cost": {
-          "Minerals": 150,
-          "Vespene": 100,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "StarportSCBW@LiftOff,Execute",
-        "id": "Lift",
-        "Icon": "btn-ability-terran-liftoff",
-        "Name": {
-          "enUS": "Lift Off",
-          "ruRU": "Lift Off"
-        },
-        "Tooltip": {
-          "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-        },
-        "Hotkey": "L"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -269,13 +225,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -336,13 +288,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -642,13 +590,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -708,40 +652,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -751,6 +665,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "WraithSCBW",
             "Requirements": "WraithSCBW"
           },
@@ -776,16 +691,16 @@
         "Type": "AbilCmd",
         "AbilCmd": "StarportSCBW@Train,Train1",
         "id": "WraithSCBW",
-        "Icon": "btn-unit-terran-wraith",
+        "Icon": "btn-unit-terran-wraith@scbw",
         "Name": {
           "enUS": "Build Wraith",
-          "zhCN": "建造怨灵战机",
-          "koKR": "레이스 생산 /// Build Wraith"
+          "zhCN": "Build Wraith",
+          "koKR": "Build Wraith"
         },
         "Tooltip": {
           "enUS": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
-          "zhCN": "高度机动性空中单位。擅长突袭打击。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地和对空。</span>",
-          "koKR": "기동력이 우수한 비행 유닛입니다. 정밀 공격 능력이 뛰어납니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>를 사용할 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 및 공중 유닛 공격 가능</span> /// Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
+          "zhCN": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
+          "koKR": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
         },
         "Hotkey": "E"
       },
@@ -797,6 +712,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ValkyrieSCBW",
             "Requirements": "ValkyrieSCBW"
           },
@@ -825,13 +741,13 @@
         "Icon": "btn-unit-terran-valkyrie@scbw",
         "Name": {
           "enUS": "Build Valkyrie",
-          "zhCN": "建造瓦格雷战机",
-          "koKR": "발키리 생산 /// Build Valkyrie"
+          "zhCN": "Build Valkyrie",
+          "koKR": "Build Valkyrie"
         },
         "Tooltip": {
           "enUS": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>",
-          "zhCN": "先进的空对空战斗机。装载有能对敌方空中单位造成范围伤害的飞弹。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对空。</span>",
-          "koKR": "고급 대공 전투함입니다. 공격이 공중 유닛을 대상으로 범위 피해를 입힙니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">공중 유닛 공격 가능</span> /// Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>"
+          "zhCN": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>",
+          "koKR": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>"
         },
         "Hotkey": "V"
       },
@@ -843,6 +759,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "DropshipSCBW",
             "Requirements": "DropshipSCBW"
           },
@@ -855,7 +772,7 @@
         ],
         "Cost": {
           "Minerals": 100,
-          "Vespene": 100,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -871,13 +788,13 @@
         "Icon": "btn-unit-terran-dropship@scbw",
         "Name": {
           "enUS": "Build Dropship",
-          "zhCN": "建造运输船",
-          "koKR": "드랍십 생산 /// Build Dropship"
+          "zhCN": "Build Dropship",
+          "koKR": "Build Dropship"
         },
         "Tooltip": {
           "enUS": "Aerial Transport.",
-          "zhCN": "空中运输单位。",
-          "koKR": "공중 수송선입니다. /// Aerial Transport."
+          "zhCN": "Aerial Transport.",
+          "koKR": "Aerial Transport."
         },
         "Hotkey": "D"
       },
@@ -889,6 +806,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ScienceVesselSCBW",
             "Requirements": "ScienceVesselSCBW"
           },
@@ -901,7 +819,7 @@
         ],
         "Cost": {
           "Minerals": 100,
-          "Vespene": 225,
+          "Vespene": 200,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -914,16 +832,16 @@
         "Type": "AbilCmd",
         "AbilCmd": "StarportSCBW@Train,Train4",
         "id": "ScienceVesselSCBW",
-        "Icon": "btn-unit-terran-sciencevessel",
+        "Icon": "btn-unit-terran-sciencevessel@scbw",
         "Name": {
           "enUS": "Build Science Vessel",
-          "zhCN": "训练科学船",
-          "koKR": "사이언스 베슬 생산 /// Build Science Vessel"
+          "zhCN": "Build Science Vessel",
+          "koKR": "Build Science Vessel"
         },
         "Tooltip": {
           "enUS": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-          "zhCN": "空中支援单位。可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span>，升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span>技能。<br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-          "koKR": "공중 지원 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span>를 사용할 수 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span>와 <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> 능력을 사용할 수 있습니다.<br/><br/><span style=\"color: FFE303\">디텍터</span> /// Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+          "zhCN": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+          "koKR": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
         },
         "Hotkey": "S"
       },
@@ -935,6 +853,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "BattlecruiserSCBW",
             "Requirements": "BattlecruiserSCBW"
           },
@@ -946,8 +865,8 @@
           "BattlecruiserSCBW"
         ],
         "Cost": {
-          "Minerals": 400,
-          "Vespene": 300,
+          "Minerals": 375,
+          "Vespene": 275,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -955,21 +874,21 @@
           "Shields": 0,
           "Food": -6
         },
-        "Row": 0,
-        "Column": 4,
+        "Row": 1,
+        "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "StarportSCBW@Train,Train5",
         "id": "BattlecruiserSCBW",
         "Icon": "btn-unit-terran-battlecruiser@scbw",
         "Name": {
           "enUS": "Build Battlecruiser",
-          "zhCN": "建造战列巡航舰",
-          "koKR": "배틀크루저 생산 /// Build Battlecruiser"
+          "zhCN": "Build Battlecruiser",
+          "koKR": "Build Battlecruiser"
         },
         "Tooltip": {
           "enUS": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-          "zhCN": "强大的战舰。升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。<br/><br/><span style=\"color: #ffff8a\">可以对地和对空。</span>",
-          "koKR": "강력한 군함입니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+          "zhCN": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+          "koKR": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
         },
         "Hotkey": "B"
       },
@@ -990,7 +909,7 @@
         "Unit": "ControlTowerSCBW",
         "Cost": {
           "Minerals": 50,
-          "Vespene": 50,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -1006,13 +925,13 @@
         "Icon": "btn-building-terran-controltower@scbw",
         "Name": {
           "enUS": "Build Control Tower",
-          "zhCN": "建造控制塔",
-          "koKR": "컨트롤 타워 건설 /// Build Control Tower"
+          "zhCN": "Build Control Tower",
+          "koKR": "Build Control Tower"
         },
         "Tooltip": {
-          "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-          "zhCN": "空军单位研究设施。<span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- 可以在<b>Starport</b>中制造<b>Dropship</b><br/>- 可以在<b>Starport</b>中建造<b>Valkyrie</b><br/>- <b>Science Facility</b><br/>- 可以在<b>Starport</b>中建造<b>Battlecruiser</b>",
-          "koKR": "항공기 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Dropship</b> (<b>Starport</b>)<br/>- <b>Valkyrie</b> (<b>Starport</b>)<br/>- <b>Science Facility</b> (<b>Starport</b>)<br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+          "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+          "zhCN": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+          "koKR": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
         },
         "Hotkey": "C"
       }
@@ -1033,12 +952,14 @@
   "BuildTime": 50,
   "TacticalAIThink": "AIThinkStarportSCBW",
   "Icon": "btn-building-terran-starport",
+  "Model": "StarportEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -1050,47 +971,40 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "Rally",
-      "Name": {
-        "enUS": "Rally",
-        "ruRU": "Rally"
-      }
+      "Name": "-"
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "StarportSCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "StarportSCBW@AddOns",
       "Name": {
         "enUS": "AddOns",
-        "zhCN": "附属建筑",
-        "koKR": "애드온 /// AddOns"
+        "zhCN": "AddOns",
+        "koKR": "AddOns"
       }
     },
     {
       "id": "StarportSCBW@LiftOff",
       "Name": {
         "enUS": "Lift Off",
-        "zhCN": "起飞",
-        "koKR": "이륙 /// Lift Off"
+        "zhCN": "Lift Off",
+        "koKR": "Lift Off"
       }
     }
   ],
@@ -1098,13 +1012,16 @@
     "Button/Tooltip/ArmorySCBW",
     "StarportSCBW",
     "Button/Tooltip/ControlTowerSCBW",
-    "Button/Tooltip/ScienceFacilitySCBW",
-    "Button/Tooltip/PhysicsLabSCBW",
     "ControlTowerSCBW",
     "StarportSCBW@Flying",
     "StarportSCBW@Land",
+    "Button/Tooltip/ValkyrieSCBW@Passive",
     "StarportSCBW@AllowUnit",
     "SCVSCBW@BuildAdv",
+    "Button/Tooltip/ScienceFacilitySCBW",
+    "Button/Tooltip/BattlecruiserSCBW@Passive",
+    "Button/Tooltip/PhysicsLabSCBW",
+    "Button/Tooltip/ScienceVesselSCBW@Passive",
     "StarportSCBW@Splat",
     "StarportSCBW",
     "StarportSCBW@Land",
@@ -1112,7 +1029,10 @@
     "IsStarportSCBW",
     "NotStarportSCBW",
     "CasterIsStarportSCBW",
-    "StarportSCBW"
+    "StarportSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -1138,27 +1058,8 @@
       "AbilCmd": "Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
-    },
-    {
-      "AbilCmd": "StarportSCBW@LiftOff,Execute",
-      "id": "Lift",
-      "Icon": "btn-ability-terran-liftoff",
-      "Name": {
-        "enUS": "Lift Off",
-        "ruRU": "Lift Off"
-      },
-      "Tooltip": {
-        "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1166,12 +1067,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "que5,CancelLast",
@@ -1179,12 +1077,9 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "StarportSCBW@AddOns,255",
@@ -1192,39 +1087,33 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "StarportSCBW@Train,Train1",
       "id": "WraithSCBW",
-      "Icon": "btn-unit-terran-wraith",
+      "Icon": "btn-unit-terran-wraith@scbw",
       "Name": {
         "enUS": "Build Wraith",
-        "zhCN": "建造怨灵战机",
-        "koKR": "레이스 생산 /// Build Wraith"
+        "zhCN": "Build Wraith",
+        "koKR": "Build Wraith"
       },
       "Tooltip": {
         "enUS": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
-        "zhCN": "高度机动性空中单位。擅长突袭打击。升级后可使用<span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对地和对空。</span>",
-        "koKR": "기동력이 우수한 비행 유닛입니다. 정밀 공격 능력이 뛰어납니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>를 사용할 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">지상 및 공중 유닛 공격 가능</span> /// Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
+        "zhCN": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>",
+        "koKR": "Highly mobile flying fighter. Excellent at surgical strikes. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Cloaking Field</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -1233,13 +1122,13 @@
       "Icon": "btn-unit-terran-valkyrie@scbw",
       "Name": {
         "enUS": "Build Valkyrie",
-        "zhCN": "建造瓦格雷战机",
-        "koKR": "발키리 생산 /// Build Valkyrie"
+        "zhCN": "Build Valkyrie",
+        "koKR": "Build Valkyrie"
       },
       "Tooltip": {
         "enUS": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>",
-        "zhCN": "先进的空对空战斗机。装载有能对敌方空中单位造成范围伤害的飞弹。<br/><br/><span class=\"style-TooltipHighlightSCBW\">可以对空。</span>",
-        "koKR": "고급 대공 전투함입니다. 공격이 공중 유닛을 대상으로 범위 피해를 입힙니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">공중 유닛 공격 가능</span> /// Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>"
+        "zhCN": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>",
+        "koKR": "Advanced anti-aircraft fighter. Able to use cluster missiles that deal area damage to air targets.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Can attack air units.</span>"
       }
     },
     {
@@ -1248,28 +1137,28 @@
       "Icon": "btn-unit-terran-dropship@scbw",
       "Name": {
         "enUS": "Build Dropship",
-        "zhCN": "建造运输船",
-        "koKR": "드랍십 생산 /// Build Dropship"
+        "zhCN": "Build Dropship",
+        "koKR": "Build Dropship"
       },
       "Tooltip": {
         "enUS": "Aerial Transport.",
-        "zhCN": "空中运输单位。",
-        "koKR": "공중 수송선입니다. /// Aerial Transport."
+        "zhCN": "Aerial Transport.",
+        "koKR": "Aerial Transport."
       }
     },
     {
       "AbilCmd": "StarportSCBW@Train,Train4",
       "id": "ScienceVesselSCBW",
-      "Icon": "btn-unit-terran-sciencevessel",
+      "Icon": "btn-unit-terran-sciencevessel@scbw",
       "Name": {
         "enUS": "Build Science Vessel",
-        "zhCN": "训练科学船",
-        "koKR": "사이언스 베슬 생산 /// Build Science Vessel"
+        "zhCN": "Build Science Vessel",
+        "koKR": "Build Science Vessel"
       },
       "Tooltip": {
         "enUS": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
-        "zhCN": "空中支援单位。可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span>，升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span>和<span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span>技能。<br/><br/><span style=\"color: FFE303\">侦测单位</span>",
-        "koKR": "공중 지원 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span>를 사용할 수 있습니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span>와 <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> 능력을 사용할 수 있습니다.<br/><br/><span style=\"color: FFE303\">디텍터</span> /// Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
+        "zhCN": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>",
+        "koKR": "Aerial support unit. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Defensive Matrix</b></span> and be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>EMP Shockwave</b></span> and <span class=\"style-TooltipHighlightSCBW\"><b>Irradiate</b></span> abilities.<br/><br/><span style=\"color: FFE303\">Detector</span>"
       }
     },
     {
@@ -1278,13 +1167,13 @@
       "Icon": "btn-unit-terran-battlecruiser@scbw",
       "Name": {
         "enUS": "Build Battlecruiser",
-        "zhCN": "建造战列巡航舰",
-        "koKR": "배틀크루저 생산 /// Build Battlecruiser"
+        "zhCN": "Build Battlecruiser",
+        "koKR": "Build Battlecruiser"
       },
       "Tooltip": {
         "enUS": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-        "zhCN": "强大的战舰。升级后可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。<br/><br/><span style=\"color: #ffff8a\">可以对地和对空。</span>",
-        "koKR": "강력한 군함입니다. 업그레이드 하면 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span> /// Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
+        "zhCN": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
+        "koKR": "Powerful warship. Can be upgraded to use <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>.<br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
       }
     },
     {
@@ -1293,13 +1182,13 @@
       "Icon": "btn-building-terran-controltower@scbw",
       "Name": {
         "enUS": "Build Control Tower",
-        "zhCN": "建造控制塔",
-        "koKR": "컨트롤 타워 건설 /// Build Control Tower"
+        "zhCN": "Build Control Tower",
+        "koKR": "Build Control Tower"
       },
       "Tooltip": {
-        "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-        "zhCN": "空军单位研究设施。<span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- 可以在<b>Starport</b>中制造<b>Dropship</b><br/>- 可以在<b>Starport</b>中建造<b>Valkyrie</b><br/>- <b>Science Facility</b><br/>- 可以在<b>Starport</b>中建造<b>Battlecruiser</b>",
-        "koKR": "항공기 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Dropship</b> (<b>Starport</b>)<br/>- <b>Valkyrie</b> (<b>Starport</b>)<br/>- <b>Science Facility</b> (<b>Starport</b>)<br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Facility</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+        "enUS": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+        "zhCN": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+        "koKR": "Aircraft research facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Control Tower</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Starport</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Dropship</b> at the <b>Starport</b><br/>- <b>Valkyrie</b> at the <b>Starport</b><br/>- <b>Science Vessel</b> at the <b>Starport</b><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
       }
     }
   ]

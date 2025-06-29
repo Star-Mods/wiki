@@ -4,7 +4,7 @@
     "enUS": "Bloodletter"
   },
   "Description": {
-    "enUS": "Support Specialist. Can use Psionic Pulse and cloak.<br/>Weapon causes residential <span style=\"color: FFFF80\">Bleeding</span> damage for an extra <b>0</b> damage.<br/>Regenerates energy with each attack.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units</span>."
+    "enUS": "High damage range unit with lower vital. Can use Psionic Pulse, Ultrasonic Pulse and Personal Cloaking abilities.<br/>Weapon causes residential <span style=\"color: FFFF80\">Bleeding</span> damage for an extra <b>0</b> damage.<br/>Regenerates energy with each attack on enemy units.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units</span>."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -514,7 +514,7 @@
           "class": "CAbilEffectTarget",
           "Name": "Abil/Name/ALLRACE2SynoidUltrasonicPulse",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Human,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Synoid,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -657,7 +657,7 @@
           "enUS": "Ultrasonic Pulse"
         },
         "Tooltip": {
-          "enUS": "Immediately stun all non-ally units in target area for 2 seconds."
+          "enUS": "Immediately stun all non-ally units in target <span style=\"color: FFFF80\">circular area of 1.5 radius</span>  for <span style=\"color: FFFF80\">2 seconds</span>."
         },
         "Hotkey": "F"
       },
@@ -731,6 +731,7 @@
         "Type": "AbilCmd",
         "AbilCmd": "attack,Execute",
         "id": "AttackGhost",
+        "Icon": "btn-command-attack",
         "Name": {
           "enUS": "Attack",
           "ruRU": "Атаковать "
@@ -761,7 +762,7 @@
           "enUS": "Shredder Rounds"
         },
         "Tooltip": {
-          "enUS": "Each attack makes the target bleed for <b>0</b> seconds, the unit will take a total of extra <b>0</b> points of damage."
+          "enUS": "Each attack makes the target bleed for <b>0</b> seconds, the unit will take a total of extra <b>0</b> points of damage. <br/><br/> If the target is enemy unit, Bloodletter will increase 10 energy from the attack."
         },
         "Hotkey": "X"
       },
@@ -908,7 +909,7 @@
           "enUS": "Zergling Projection"
         },
         "Tooltip": {
-          "enUS": "Creates one psionic projections of zerglings.<br/>They deal the same damage and has the same health as a normal zergling.<br/>Lasts 40 seconds."
+          "enUS": "Creates one psionic projections of zerglings which has similar attack to Zergling, but more shield.<br/><br/>Lasts 40 seconds."
         },
         "Hotkey": "R"
       },
@@ -1049,7 +1050,7 @@
           "enUS": "Psionic Pulse"
         },
         "Tooltip": {
-          "enUS": "Stun the Bloodletter for 0.71 seconds and mark the target point. After 1.43 seconds delay, deal 140 damage to enemy units or 50 damage to enemy structures within 0.4 distance to the target point."
+          "enUS": "Stun the Bloodletter for <span style=\"color: FFFF80\">0.71 seconds</span> and mark the target point. After <span style=\"color: FFFF80\">1.43 seconds</span> seconds delay, deal <span style=\"color: FFFF80\">140 damage to enemy non-structure ground units</span>  or <span style=\"color: FFFF80\">50 damage to enemy structures</span> within <span style=\"color: FFFF80\">0.4 distance</span> to the target point."
         },
         "Hotkey": "T"
       },
@@ -1108,7 +1109,7 @@
             }
           ],
           "BehaviorArray": [
-            "GhostCloak"
+            "SynoidBloodletterCloak"
           ],
           "id": "SynoidBloodletterCloaking"
         },
@@ -1126,15 +1127,13 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "SynoidBloodletterCloaking,On",
-        "id": "CloakOnGhost",
+        "id": "SynoidBloodLetterCloak",
         "Icon": "btn-ability-terran-cloak-color",
         "Name": {
-          "enUS": "Cloak",
-          "ruRU": "Маскировка "
+          "enUS": "Cloak"
         },
         "Tooltip": {
-          "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
-          "ruRU": "Скрывает боевую единицу, делая ее невидимой для врагов. Замаскированная боевая единица может быть выявлена только с помощью детекторов или обнаруживающих эффектов.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.9</b> ед. энергии в секунду.</span> "
+          "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <span style=\"color: FFFF80\">4.2</span> energy per second.</span>"
         },
         "Hotkey": "C"
       },
@@ -1193,7 +1192,7 @@
             }
           ],
           "BehaviorArray": [
-            "GhostCloak"
+            "SynoidBloodletterCloak"
           ],
           "id": "SynoidBloodletterCloaking"
         },
@@ -1408,12 +1407,13 @@
         "enUS": "Ultrasonic Pulse"
       },
       "Tooltip": {
-        "enUS": "Immediately stun all non-ally units in target area for 2 seconds."
+        "enUS": "Immediately stun all non-ally units in target <span style=\"color: FFFF80\">circular area of 1.5 radius</span>  for <span style=\"color: FFFF80\">2 seconds</span>."
       }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackGhost",
+      "Icon": "btn-command-attack",
       "Name": {
         "enUS": "Attack",
         "ruRU": "Атаковать "
@@ -1444,7 +1444,7 @@
         "enUS": "Zergling Projection"
       },
       "Tooltip": {
-        "enUS": "Creates one psionic projections of zerglings.<br/>They deal the same damage and has the same health as a normal zergling.<br/>Lasts 40 seconds."
+        "enUS": "Creates one psionic projections of zerglings which has similar attack to Zergling, but more shield.<br/><br/>Lasts 40 seconds."
       }
     },
     {
@@ -1455,20 +1455,18 @@
         "enUS": "Psionic Pulse"
       },
       "Tooltip": {
-        "enUS": "Stun the Bloodletter for 0.71 seconds and mark the target point. After 1.43 seconds delay, deal 140 damage to enemy units or 50 damage to enemy structures within 0.4 distance to the target point."
+        "enUS": "Stun the Bloodletter for <span style=\"color: FFFF80\">0.71 seconds</span> and mark the target point. After <span style=\"color: FFFF80\">1.43 seconds</span> seconds delay, deal <span style=\"color: FFFF80\">140 damage to enemy non-structure ground units</span>  or <span style=\"color: FFFF80\">50 damage to enemy structures</span> within <span style=\"color: FFFF80\">0.4 distance</span> to the target point."
       }
     },
     {
       "AbilCmd": "SynoidBloodletterCloaking,On",
-      "id": "CloakOnGhost",
+      "id": "SynoidBloodLetterCloak",
       "Icon": "btn-ability-terran-cloak-color",
       "Name": {
-        "enUS": "Cloak",
-        "ruRU": "Маскировка "
+        "enUS": "Cloak"
       },
       "Tooltip": {
-        "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <b>0.9</b> energy per second.</span>",
-        "ruRU": "Скрывает боевую единицу, делая ее невидимой для врагов. Замаскированная боевая единица может быть выявлена только с помощью детекторов или обнаруживающих эффектов.<br/><br/><span style=\"color: f078ff\">Расходует <b>0.9</b> ед. энергии в секунду.</span> "
+        "enUS": "Cloaks the unit, preventing enemy units from seeing or attacking it. A cloaked unit will only be revealed by detectors or effects.<br/><br/><span style=\"color: f078ff\">Drains <span style=\"color: FFFF80\">4.2</span> energy per second.</span>"
       }
     },
     {

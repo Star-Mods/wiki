@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Zergling",
-    "zhCN": "跳虫",
-    "koKR": "저글링 /// Zergling"
+    "zhCN": "Zergling",
+    "koKR": "Zergling"
   },
   "Description": {
     "enUS": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
-    "zhCN": "迅捷的肉搏型生物。一只<span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span>可变异为两只<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>。<br/><br/><span style=\"color: FFFF8A\">可以对地。</span>",
-    "koKR": "빠른 근접 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b> 한 마리에서 <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> 두 마리가 부화합니다.<br/><br/><span style=\"color: FFFF8A\">지상 유닛 공격 가능</span> /// Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>"
+    "zhCN": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>",
+    "koKR": "Fast melee creature. <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span><br/><br/><span style=\"color: FFFF8A\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 35,
   "LifeMax": 35,
-  "LifeArmorName": {
-    "enUS": "Zerg Ground Carapace",
-    "ruRU": "Zerg Ground Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Burrowed",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ZerglingSCBW@Burrowed/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ZerglingSCBW@Burrowed/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ZerglingSCBW@Burrowed/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ZerglingSCBW@Burrowed/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -117,9 +117,9 @@
     "Minerals": 25
   },
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 5,
+  "AbilArray": [
+    "ZerglingSCBW@BurrowUp"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,14 +193,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -235,16 +229,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -289,16 +276,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "DefilerSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -338,16 +318,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "DroneSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -392,16 +365,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "HydraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -428,8 +394,8 @@
         },
         "Unit": "UltraliskSCBW@Burrowed",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -441,16 +407,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -490,16 +449,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -526,8 +478,8 @@
         },
         "Unit": "UltraliskSCBW@Burrowed",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -539,17 +491,64 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
+        "Hotkey": "D"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ZerglingSCBWSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
         "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
+          "enUS": "Metabolic Boost",
+          "zhCN": "Metabolic Boost",
+          "koKR": "Metabolic Boost"
         },
         "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
         },
-        "Hotkey": "D"
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "ZerglingSCBWAttackSpeedUpgrade@Passive",
+        "Icon": "btn-upgrade-zerg-adrenalglands",
+        "Name": {
+          "enUS": "Adrenal Glands",
+          "zhCN": "Adrenal Glands",
+          "koKR": "Adrenal Glands"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
+        }
       }
     ]
   },
@@ -561,7 +560,8 @@
   ],
   "TacticalAIThink": "AIThinkZerglingSCBW",
   "InnerRadius": 0.25,
-  "Icon": "btn-unit-zerg-zerglingscbw",
+  "KillDisplay": "Always",
+  "Icon": "btn-unit-zerg-zergling@scbw",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-zerg-swarmfrenzy",
   "Weapons": [],
@@ -571,17 +571,20 @@
       "id": "ZerglingSCBW@BurrowUp",
       "Name": {
         "enUS": "Unburrow",
-        "zhCN": "出地",
-        "koKR": "언버로우 /// Unburrow"
+        "zhCN": "Unburrow",
+        "koKR": "Unburrow"
       }
     }
   ],
   "$Upgrades": [
-    "ZerglingSCBW@BurrowDown",
+    "ZerglingSCBWSpeedUpgrade",
     "ZerglingSCBW@Burrowed",
+    "ZerglingSCBW@BurrowDown",
+    "ZerglingSCBWAttackSpeedUpgrade",
     "ZerglingSCBW@BurrowedSplat",
     "ZerglingSCBW@Death",
     "ZerglingSCBW",
+    "IsZerglingSCBW@Burrowed",
     "ZerglingSCBW@TacticalBurrowBurrowedBullyTest",
     "ZerglingSCBW@Burrowed"
   ],
@@ -589,122 +592,60 @@
   "$Production": [],
   "$Research": [],
   "$Morph": [
-    "ZerglingSCBW",
-    "DefilerSCBW@Burrowed",
-    "DroneSCBW@Burrowed",
-    "HydraliskSCBW@Burrowed",
-    "UltraliskSCBW@Burrowed"
+    "ZerglingSCBW"
   ],
-  "$Phase": [
-    "ZerglingSCBW@Burrowed",
-    "ZerglingSCBW@Burrowed"
-  ],
-  "$Phased": "ZerglingSCBW@Burrowed",
+  "$Phase": [],
+  "$Phased": "ZerglingSCBW",
   "$Producers": [],
   "$Commands": [
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DefilerSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DroneSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "HydraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     }
   ]
 }

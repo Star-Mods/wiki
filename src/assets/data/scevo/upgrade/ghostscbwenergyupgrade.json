@@ -1,11 +1,14 @@
 {
-  "id": "GhostSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-terran-moebiusreactor",
-  "Name": "Upgrade/Name/GhostSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Moebius Reactor",
+    "zhCN": "Moebius Reactor",
+    "koKR": "Moebius Reactor"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,18 +23,27 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "GhostSCBWEnergyUpgrade",
+  "id": "GhostSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
-  "Race": "Terr",
+  "Icon": "btn-upgrade-terran-moebiusreactor",
+  "Race": "BWTe",
   "ScoreAmount": 300,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

@@ -1,6 +1,13 @@
 {
-  "Name": "Spitfire",
-  "Description": "Skirmish unit.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Spitfire",
+    "ruRU": "Спитфаер"
+  },
+  "Description": {
+    "enUS": "Skirmish unit. Can use Deadeye Module.<br/><br/><span style=\"color: 78F0FF\">Power user.</span><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Бытрый Боевой отряд.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +17,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 85,
-  "LifeMax": 85,
-  "LifeArmorName": "Ground Mechanical Plating",
+  "LifeStart": 90,
+  "LifeMax": 90,
+  "LifeArmorName": {
+    "enUS": "Ground Mechanical Plating",
+    "ruRU": "Броня наземной механики"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -62,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Spitfire/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Spitfire/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Spitfire/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Spitfire/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -107,9 +119,15 @@
     "Vespene": 1
   },
   "id": "Spitfire",
-  "Speed": 2.5,
+  "Speed": 2.25,
   "Acceleration": 30,
   "CostCategory": "Army",
+  "AbilArray": [
+    "attack",
+    "move",
+    "stop",
+    "SpitfireDeadeyeModule"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -198,8 +216,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -288,8 +312,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -363,8 +393,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -437,8 +473,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -527,9 +569,177 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "SpitfireCounterStabilization",
+        "Icon": "btn-upgrade-terran-recalibratedexplosives",
+        "Name": {
+          "enUS": "Counter Stabilization"
+        },
+        "Tooltip": {
+          "enUS": "Attack count is decreased to 2 at <b>60</b> life, and to 1 at <b>30</b> life."
+        }
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/SpitfireDeadeyeModule",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Genetron,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "SpitfireDeadeyeModule",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "SpitfireDeadeyeModulePowerEnum"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "SpitfireDeadeyeModule",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "SpitfireDeadeyeModule",
+              "Requirements": "GenetronPowerBalance0025"
+            }
+          },
+          "Cost": [
+            {
+              "Vital": {
+                "Energy": 25
+              },
+              "Cooldown": {
+                "TimeUse": 9.5
+              }
+            }
+          ],
+          "id": "SpitfireDeadeyeModule"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 25,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "SpitfireDeadeyeModule,Execute",
+        "id": "SpitfireDeadeyeModule",
+        "Icon": "btn-ability-terran-detectionconedebuff",
+        "Name": {
+          "enUS": "Deadeye Module"
+        },
+        "Tooltip": {
+          "enUS": "Increases attack range by 1 for <b>11</b> seconds.<br/><br/><span style=\"color: 78F0FF\">Uses power.</span>"
+        },
+        "Hotkey": "D"
       }
     ]
   },
@@ -541,8 +751,14 @@
     "Minerals": 100
   },
   "RepairTime": 39.2,
+  "WeaponArray": [
+    {
+      "Link": "RiotGun",
+      "Turret": "Spitfire"
+    }
+  ],
   "InnerRadius": 0.375,
-  "SubgroupPriority": 30,
+  "SubgroupPriority": 45,
   "GlossaryPriority": 2,
   "GlossaryStrongArray": [
     "Blitzer",
@@ -556,35 +772,88 @@
     "Hellion",
     "Baneling"
   ],
+  "EnergyStart": 25,
+  "EnergyMax": 25,
+  "EnergyRegenRate": 0.8437,
+  "BehaviorArray": [
+    "GenetronPowerSupplyTracker",
+    "TrackGenetronPowerSupplyUnit"
+  ],
   "Icon": "btn-unit-genetron-spitfire",
+  "Model": "Spitfire",
   "LifeArmorIcon": "btn-upgrade-genetron-groundmechplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "Turret": "Hellion",
-      "id": "RiotGun",
+      "Turret": "Spitfire",
+      "EditorCategories": "Race:Genetron",
+      "TargetFilters": "Ground",
+      "Period": 0.9375,
       "Icon": "btn-upgrade-genetron-lightmechweapons-level0",
-      "Name": "Riot Gun",
+      "Options": {
+        "OnlyFireWhileInAttackOrder": 0,
+        "OnlyFireAtAttackOrderTarget": 0
+      },
+      "DisplayAttackCount": 3,
+      "MinScanRange": 5.5,
+      "DamagePoint": 0.0625,
+      "Effect": "SpitfireRiotGunCreatePersistent",
+      "id": "RiotGun",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Riot Gun",
+        "ruRU": "Беспорядочное оружие"
+      },
       "Amount": 5,
       "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 4,
-      "Period": 0.392
+      "Range": 5
     }
   ],
-  "Behaviors": [],
+  "Behaviors": [
+    {
+      "id": "GenetronPowerSupplyTracker",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
+    },
+    {
+      "id": "TrackGenetronPowerSupplyUnit",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Track Genetron Power Supply Unit"
+      },
+      "Tooltip": "-"
+    }
+  ],
   "Abilities": [
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
+    },
+    {
+      "id": "SpitfireDeadeyeModule",
+      "Name": {
+        "enUS": "Spitfire - Deadeye Module"
+      }
     }
   ],
   "$Upgrades": [
@@ -605,12 +874,14 @@
     "Manufacturer",
     "ChangelingSpitfire",
     "Manufacturer",
-    "CountUnitSpitfireInProgressOnlyAtUnit",
     "GenetronGroundPlatingRevert",
-    "GenetronLightWeaponsRevert"
+    "GenetronLightWeaponsRevert",
+    "CountUnitSpitfireInProgressOnlyAtUnit"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "GenetronPowerSupplyDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -622,36 +893,77 @@
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
+    },
+    {
+      "AbilCmd": "SpitfireDeadeyeModule,Execute",
+      "id": "SpitfireDeadeyeModule",
+      "Icon": "btn-ability-terran-detectionconedebuff",
+      "Name": {
+        "enUS": "Deadeye Module"
+      },
+      "Tooltip": {
+        "enUS": "Increases attack range by 1 for <b>11</b> seconds.<br/><br/><span style=\"color: 78F0FF\">Uses power.</span>"
+      }
     }
   ]
 }

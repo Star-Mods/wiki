@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Spawning Pool",
-    "zhCN": "分裂池",
-    "koKR": "스포닝 풀 /// Spawning Pool"
+    "zhCN": "Spawning Pool",
+    "koKR": "Spawning Pool"
   },
   "Description": {
     "enUS": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zergling</b>s from <b>Larva</b>e<br/>- <b>Sunken Colony</b> from <b>Creep Colony</b>",
-    "zhCN": "为<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>提供升级方案。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Larva</b>可以变异为<b>Zergling</b> <br/>- <b>Creep Colony</b>可以变异为<b>Sunken Colony</b>",
-    "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>을 업그레이드합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Zergling</b> (<b>Larva</b>에서 변태)<br/>- <b>Sunken Colony</b> (<b>Creep Colony</b>에서 변이) /// Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zergling</b>s from <b>Larva</b>e<br/>- <b>Sunken Colony</b> from <b>Creep Colony</b>"
+    "zhCN": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zergling</b>s from <b>Larva</b>e<br/>- <b>Sunken Colony</b> from <b>Creep Colony</b>",
+    "koKR": "Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b>s</span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Zergling</b>s from <b>Larva</b>e<br/>- <b>Sunken Colony</b> from <b>Creep Colony</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SpawningPoolSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SpawningPoolSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SpawningPoolSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SpawningPoolSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -124,8 +124,17 @@
   "CostResource": {
     "Minerals": 250
   },
-  "BuildTime": 65,
+  "BuildTime": 75,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "que5",
+    "ZerglingSCBWSpeedUpgrade",
+    "ZerglingSCBWAttackSpeedUpgrade"
+  ],
+  "BehaviorArray": [
+    "OnCreep"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -187,20 +196,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -213,14 +218,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -234,7 +239,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -249,18 +255,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "ZerglingSCBWSpeedUpgrade",
@@ -274,16 +276,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZerglingSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ZerglingSCBWSpeedUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 99,
           "Upgrade": "ZerglingSCBWSpeedUpgrade"
         },
-        "Time": 110,
+        "Time": 99,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -302,13 +305,13 @@
         "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
         "Name": {
           "enUS": "Evolve Metabolic Boost",
-          "zhCN": "进化代谢加速",
-          "koKR": "대사 촉진 진화 /// Evolve Metabolic Boost"
+          "zhCN": "Evolve Metabolic Boost",
+          "koKR": "Evolve Metabolic Boost"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
         },
         "Hotkey": "E"
       },
@@ -324,6 +327,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZerglingSCBWAttackSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ZerglingSCBWAttackSpeedUpgrade"
           },
           "Resource": {
@@ -352,17 +356,44 @@
         "Icon": "btn-upgrade-zerg-adrenalglands",
         "Name": {
           "enUS": "Evolve Adrenal Glands",
-          "zhCN": "进化肾上腺体",
-          "koKR": "아드레날린 분비선 진화 /// Evolve Adrenal Glands"
+          "zhCN": "Evolve Adrenal Glands",
+          "koKR": "Evolve Adrenal Glands"
         },
         "Tooltip": {
-          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的攻击速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
         },
         "Hotkey": "R"
       },
       {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "ZerglingSCBW@Passive",
+        "Icon": "btn-unit-zerg-zergling@scbw",
+        "Name": {
+          "enUS": "Zergling",
+          "zhCN": "Zergling",
+          "koKR": "Zergling"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Zergling</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Zergling</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Zergling</b>s</span>."
+        }
+      },
+      {
         "Upgrade": "ZerglingSCBWSpeedUpgrade",
         "Info": {
           "Button": {
@@ -374,16 +405,17 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZerglingSCBWSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ZerglingSCBWSpeedUpgrade"
           },
           "Resource": {
             "Minerals": 100,
             "Vespene": 100
           },
-          "Time": 110,
+          "Time": 99,
           "Upgrade": "ZerglingSCBWSpeedUpgrade"
         },
-        "Time": 110,
+        "Time": 99,
         "Cost": {
           "Minerals": 100,
           "Vespene": 100,
@@ -402,13 +434,13 @@
         "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
         "Name": {
           "enUS": "Evolve Metabolic Boost",
-          "zhCN": "进化代谢加速",
-          "koKR": "대사 촉진 진화 /// Evolve Metabolic Boost"
+          "zhCN": "Evolve Metabolic Boost",
+          "koKR": "Evolve Metabolic Boost"
         },
         "Tooltip": {
           "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
         },
         "Hotkey": "E"
       },
@@ -424,6 +456,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZerglingSCBWAttackSpeedUpgrade",
+            "State": "Restricted",
             "Requirements": "ZerglingSCBWAttackSpeedUpgrade"
           },
           "Resource": {
@@ -452,13 +485,13 @@
         "Icon": "btn-upgrade-zerg-adrenalglands",
         "Name": {
           "enUS": "Evolve Adrenal Glands",
-          "zhCN": "进化肾上腺体",
-          "koKR": "아드레날린 분비선 진화 /// Evolve Adrenal Glands"
+          "zhCN": "Evolve Adrenal Glands",
+          "koKR": "Evolve Adrenal Glands"
         },
         "Tooltip": {
-          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的攻击速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
         },
         "Hotkey": "R"
       }
@@ -474,49 +507,40 @@
   "TechTreeUnlockedUnitArray": [
     "ZerglingSCBW"
   ],
-  "Icon": "btn-building-zerg-spawningpool",
+  "Icon": "btn-building-zerg-spawningpool@scbw",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
-  "Behaviors": [
-    {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
-    }
-  ],
+  "Behaviors": [],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "que5",
       "Name": {
-        "ruRU": "Queue (5)",
-        "enUS": "Queue (5)"
+        "ruRU": "Queue (5)"
       }
     },
     {
       "id": "ZerglingSCBWSpeedUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ZerglingSCBWAttackSpeedUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
@@ -553,25 +577,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBWSpeedUpgrade,Research1",
@@ -579,13 +597,13 @@
       "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
       "Name": {
         "enUS": "Evolve Metabolic Boost",
-        "zhCN": "进化代谢加速",
-        "koKR": "대사 촉진 진화 /// Evolve Metabolic Boost"
+        "zhCN": "Evolve Metabolic Boost",
+        "koKR": "Evolve Metabolic Boost"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
       }
     },
     {
@@ -594,13 +612,13 @@
       "Icon": "btn-upgrade-zerg-adrenalglands",
       "Name": {
         "enUS": "Evolve Adrenal Glands",
-        "zhCN": "进化肾上腺体",
-        "koKR": "아드레날린 분비선 진화 /// Evolve Adrenal Glands"
+        "zhCN": "Evolve Adrenal Glands",
+        "koKR": "Evolve Adrenal Glands"
       },
       "Tooltip": {
-        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的攻击速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
       }
     },
     {
@@ -609,13 +627,13 @@
       "Icon": "btn-upgrade-zerg-hotsmetabolicboost",
       "Name": {
         "enUS": "Evolve Metabolic Boost",
-        "zhCN": "进化代谢加速",
-        "koKR": "대사 촉진 진화 /// Evolve Metabolic Boost"
+        "zhCN": "Evolve Metabolic Boost",
+        "koKR": "Evolve Metabolic Boost"
       },
       "Tooltip": {
         "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的移动速度提高<span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 이동 속도가 <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> movement speed by <span class=\"style-TooltipBuffSCBW\"><b>50</b>%</span>."
       }
     },
     {
@@ -624,13 +642,13 @@
       "Icon": "btn-upgrade-zerg-adrenalglands",
       "Name": {
         "enUS": "Evolve Adrenal Glands",
-        "zhCN": "进化肾上腺体",
-        "koKR": "아드레날린 분비선 진화 /// Evolve Adrenal Glands"
+        "zhCN": "Evolve Adrenal Glands",
+        "koKR": "Evolve Adrenal Glands"
       },
       "Tooltip": {
-        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>.",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>的攻击速度提高<span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span>의 공격 속도가 <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>만큼 증가합니다. /// Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>33</b>%</span>."
+        "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+        "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>.",
+        "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Zergling</b></span> attack speed by <span class=\"style-TooltipBuffSCBW\"><b>45</b>%</span>."
       }
     }
   ]

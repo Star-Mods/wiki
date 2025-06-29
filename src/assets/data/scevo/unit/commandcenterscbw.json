@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Command Center",
-    "zhCN": "指挥中心",
-    "koKR": "커맨드 센터 /// Command Center"
+    "zhCN": "Command Center",
+    "koKR": "Command Center"
   },
   "Description": {
     "enUS": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can build a <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> add-ons.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>SCV</b>",
-    "zhCN": "基础建筑，用于接收采集到的资源。自体可以升空。可以建造一座<span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>或<span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>作为附属建筑。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>SCV</b>",
-    "koKR": "주 건물입니다. 채취한 자원을 수집합니다. 이륙을 사용할 수 있고, <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>이나 <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> 애드온을 부착할 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>SCV</b> /// Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can build a <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> add-ons.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>SCV</b>"
+    "zhCN": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can build a <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> add-ons.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>SCV</b>",
+    "koKR": "Primary structure. Used to receive gathered resources. Can use the Lift Off ability and can build a <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> or <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> add-ons.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>SCV</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 1500,
   "LifeMax": 1500,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -78,16 +76,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "CommandCenterSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "CommandCenterSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "CommandCenterSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "CommandCenterSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -111,6 +111,9 @@
   "SubgroupPriority": 32,
   "AIKiteRange": 1,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout"
+  ],
   "TechAliasArray": [
     "Alias_CommandCenterSCBW"
   ],
@@ -127,6 +130,15 @@
   "PlaneArray": [
     "Ground"
   ],
+  "AbilArray": [
+    "BuildInProgress",
+    "que5CancelToSelection",
+    "CommandCenterSCBW@Train",
+    "CommandCenterSCBW@Rally",
+    "CommandCenterSCBW@AddOns",
+    "CommandCenterSCBW@LiftOff",
+    "InfestedCommandCenterSCBW@Morph"
+  ],
   "Facing": 315,
   "ResourceDropOff": {
     "Minerals": 1,
@@ -137,7 +149,7 @@
   "LifeArmor": 1,
   "Food": 15,
   "CostResource": {
-    "Minerals": 350
+    "Minerals": 400
   },
   "BuildTime": 100,
   "RepairTime": 100,
@@ -165,301 +177,8 @@
         "AbilCmd": "CommandCenterSCBW@Rally,Rally1",
         "id": "Rally",
         "Icon": "btn-ability-terran-setrallypoint",
-        "Name": {
-          "enUS": "Set Rally Point",
-          "ruRU": "Задать точку сбора /// Set Rally Point"
-        },
-        "Tooltip": {
-          "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-          "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-        },
-        "Hotkey": "Y"
-      },
-      {
-        "Info": {
-          "class": "CAbilTransport",
-          "Name": "Abil/Name/CommandCenterSCBW@Transport",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Terran,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "CommandCenterSCBW@Transport",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Load": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "Hidden": 1
-              }
-            },
-            "LoadAll": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "CommandCenterSCBW@Load"
-            },
-            "UnloadAll": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "CommandCenterSCBW@UnloadAll"
-            },
-            "UnloadAt": {
-              "Flags": {
-                "Hidden": 1
-              }
-            },
-            "UnloadUnit": {
-              "Flags": {
-                "Hidden": 1
-              }
-            }
-          },
-          "Alignment": "Positive",
-          "Range": [
-            1
-          ],
-          "MaxUnloadRange": 3,
-          "TargetFilters": [
-            "Visible;Ally,Neutral,Enemy,Buried,Dead,Hidden"
-          ],
-          "Flags": {
-            "AllowPassengerSmartCmd": 0,
-            "AllowSmartCmd": 0,
-            "ShowCargoSize": 1,
-            "ShowStatus": 1
-          },
-          "TargetSorts": {
-            "SortArray": [
-              "TSInterruptible",
-              "TSDistance"
-            ]
-          },
-          "ErrorAlert": "Error",
-          "AbilSetId": "ULdS",
-          "MaxCargoCount": 5,
-          "MaxCargoSize": 1,
-          "TotalCargoSpace": 5,
-          "LoadCargoBehavior": "CommandCenterSCBW@TransportDummy",
-          "LoadCargoEffect": "CCLoadDummy",
-          "UnloadCargoEffect": "CCUnloadDummy",
-          "SearchRadius": 8,
-          "LoadValidatorArray": [
-            "CommandCenterTransportCombine",
-            "NotWidowMineTarget"
-          ],
-          "DeathUnloadEffect": "RemoveCommandCenterCargo",
-          "id": "CommandCenterSCBW@Transport"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "CommandCenterSCBW@Transport,LoadAll",
-        "id": "CommandCenterSCBW@Load",
-        "Icon": "btn-ability-terran-load",
-        "Name": {
-          "enUS": "Load",
-          "zhCN": "装载",
-          "koKR": "들이기 /// Load"
-        },
-        "Tooltip": {
-          "enUS": "Loads nearby SCVs into Command Center.",
-          "zhCN": "将附近的SCV装载进指挥中心。",
-          "koKR": "주위에 있는 SCV를 사령부에 들입니다. /// Loads nearby SCVs into Command Center."
-        },
-        "Hotkey": "O"
-      },
-      {
-        "Info": {
-          "class": "CAbilTransport",
-          "Name": "Abil/Name/CommandCenterSCBW@Transport",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Terran,AbilityorEffectType:Structures",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "CommandCenterSCBW@Transport",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "Load": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "Hidden": 1
-              }
-            },
-            "LoadAll": {
-              "Flags": {
-                "ShowInGlossary": 1
-              },
-              "DefaultButtonFace": "CommandCenterSCBW@Load"
-            },
-            "UnloadAll": {
-              "Flags": {
-                "ToSelection": 1
-              },
-              "DefaultButtonFace": "CommandCenterSCBW@UnloadAll"
-            },
-            "UnloadAt": {
-              "Flags": {
-                "Hidden": 1
-              }
-            },
-            "UnloadUnit": {
-              "Flags": {
-                "Hidden": 1
-              }
-            }
-          },
-          "Alignment": "Positive",
-          "Range": [
-            1
-          ],
-          "MaxUnloadRange": 3,
-          "TargetFilters": [
-            "Visible;Ally,Neutral,Enemy,Buried,Dead,Hidden"
-          ],
-          "Flags": {
-            "AllowPassengerSmartCmd": 0,
-            "AllowSmartCmd": 0,
-            "ShowCargoSize": 1,
-            "ShowStatus": 1
-          },
-          "TargetSorts": {
-            "SortArray": [
-              "TSInterruptible",
-              "TSDistance"
-            ]
-          },
-          "ErrorAlert": "Error",
-          "AbilSetId": "ULdS",
-          "MaxCargoCount": 5,
-          "MaxCargoSize": 1,
-          "TotalCargoSpace": 5,
-          "LoadCargoBehavior": "CommandCenterSCBW@TransportDummy",
-          "LoadCargoEffect": "CCLoadDummy",
-          "UnloadCargoEffect": "CCUnloadDummy",
-          "SearchRadius": 8,
-          "LoadValidatorArray": [
-            "CommandCenterTransportCombine",
-            "NotWidowMineTarget"
-          ],
-          "DeathUnloadEffect": "RemoveCommandCenterCargo",
-          "id": "CommandCenterSCBW@Transport"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 1,
-        "Type": "AbilCmd",
-        "AbilCmd": "CommandCenterSCBW@Transport,UnloadAll",
-        "id": "CommandCenterSCBW@UnloadAll",
-        "Icon": "btn-ability-terran-unloadall",
-        "Name": {
-          "enUS": "Unload All",
-          "zhCN": "卸载全部",
-          "koKR": "모두 내보내기 /// Unload All"
-        },
-        "Tooltip": {
-          "enUS": "Unloads all units.",
-          "zhCN": "卸载所有单位。",
-          "koKR": "모든 유닛을 내보냅니다. /// Unloads all units."
-        },
-        "Hotkey": "D"
-      },
-      {
-        "Info": {
-          "SectionArray": {
-            "Actor": {
-              "DurationArray": {
-                "Duration": 1.5
-              }
-            },
-            "Mover": {
-              "DurationArray": {
-                "Duration": 1.6333
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 2
-              }
-            }
-          },
-          "Unit": "CommandCenterSCBW@Flying"
-        },
-        "Unit": "CommandCenterSCBW@Flying",
-        "Cost": {
-          "Minerals": 350,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 15
-        },
-        "Row": 2,
-        "Column": 3,
-        "Type": "AbilCmd",
-        "AbilCmd": "CommandCenterSCBW@LiftOff,Execute",
-        "id": "Lift",
-        "Icon": "btn-ability-terran-liftoff",
-        "Name": {
-          "enUS": "Lift Off",
-          "ruRU": "Lift Off"
-        },
-        "Tooltip": {
-          "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-          "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-        },
-        "Hotkey": "L"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -520,13 +239,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Halt",
-          "ruRU": "Приостановить /// Halt"
+          "ruRU": "Приостановить "
         },
-        "Tooltip": {
-          "enUS": "Halts construction of this structure. The partial construction will remain.",
-          "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-        },
-        "Hotkey": "T"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -591,13 +306,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -657,41 +368,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
-      },
-      {
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 0,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 1,
-        "Column": 3,
-        "Type": "SelectBuilder",
-        "AbilCmd": "CommandCenterSCBW@Train,Train1",
-        "id": "SelectBuilder",
-        "Icon": "btn-upgrade-terran-weaponrefit",
-        "Name": {
-          "enUS": "Select Builder",
-          "ruRU": "Select Builder"
-        },
-        "Tooltip": {
-          "enUS": "Selects the unit constructing this structure.",
-          "ruRU": "Selects the unit constructing this structure."
-        },
-        "Hotkey": "Q"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -701,6 +381,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "SCVSCBW",
             "Requirements": "SCVSCBW"
           },
@@ -729,13 +410,13 @@
         "Icon": "btn-unit-terran-scv@scbw",
         "Name": {
           "enUS": "Train SCV",
-          "zhCN": "训练SCV",
-          "koKR": "SCV 훈련 /// Train SCV"
+          "zhCN": "Train SCV",
+          "koKR": "Train SCV"
         },
         "Tooltip": {
           "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-          "zhCN": "基础工作单位。用于采集资源、建造人类建筑和修理。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-          "koKR": "기본 일꾼 유닛입니다. 자원을 채취하고, 테란 구조물을 건설하며, 구조물과 유닛을 수리할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+          "zhCN": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+          "koKR": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
         },
         "Hotkey": "S"
       },
@@ -757,7 +438,7 @@
         "Unit": "ComsatStationSCBW",
         "Cost": {
           "Minerals": 50,
-          "Vespene": 50,
+          "Vespene": 25,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -773,13 +454,13 @@
         "Icon": "btn-building-terran-comsatstation@scbw",
         "Name": {
           "enUS": "Build Comsat Station",
-          "zhCN": "建造雷达站",
-          "koKR": "컴샛 스테이션 건설 /// Build Comsat Station"
+          "zhCN": "Build Comsat Station",
+          "koKR": "Build Comsat Station"
         },
         "Tooltip": {
           "enUS": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-          "zhCN": "扫描设施。可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span>技能。<span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-          "koKR": "탐색 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> 능력을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+          "zhCN": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+          "koKR": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
         },
         "Hotkey": "C"
       },
@@ -817,13 +498,13 @@
         "Icon": "btn-building-terran-nuclearsilo@scbw",
         "Name": {
           "enUS": "Build Nuclear Silo",
-          "zhCN": "建造聚变打击发射井",
-          "koKR": "뉴클리어 사일로 건설 /// Build Nuclear Silo"
+          "zhCN": "Build Nuclear Silo",
+          "koKR": "Build Nuclear Silo"
         },
         "Tooltip": {
           "enUS": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-          "zhCN": "导弹生产设施。<span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-          "koKR": "미사일 생산 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+          "zhCN": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+          "koKR": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
         },
         "Hotkey": "X"
       }
@@ -847,6 +528,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -858,56 +540,52 @@
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "que5CancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) (Cancel To Selection)",
-        "enUS": "Queue (5) (Cancel To Selection)"
+        "ruRU": "Queue (5) (Cancel To Selection)"
       }
     },
     {
       "id": "CommandCenterSCBW@Train",
       "Name": {
         "enUS": "Train",
-        "zhCN": "训练",
-        "koKR": "훈련 /// Train"
+        "zhCN": "Train",
+        "koKR": "Train"
       }
     },
     {
       "id": "CommandCenterSCBW@Rally",
       "Name": {
         "enUS": "Rally",
-        "zhCN": "集结",
-        "koKR": "집결 /// Rally"
+        "zhCN": "Rally",
+        "koKR": "Rally"
       }
     },
     {
       "id": "CommandCenterSCBW@AddOns",
       "Name": {
         "enUS": "AddOns",
-        "zhCN": "附属建筑",
-        "koKR": "애드온 /// AddOns"
+        "zhCN": "AddOns",
+        "koKR": "AddOns"
       }
     },
     {
       "id": "CommandCenterSCBW@LiftOff",
       "Name": {
         "enUS": "Lift Off",
-        "zhCN": "起飞",
-        "koKR": "이륙 /// Lift Off"
+        "zhCN": "Lift Off",
+        "koKR": "Lift Off"
       }
     },
     {
       "id": "InfestedCommandCenterSCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     }
   ],
@@ -916,25 +594,29 @@
     "Button/Tooltip/ComsatStationSCBW",
     "IsCommandCenterSCBW",
     "Button/Tooltip/NuclearSiloSCBW",
+    "CommandCenterSCBW",
+    "CommandCenterSCBW@Flying",
+    "CommandCenterSCBW@AllowUnit",
+    "SCVSCBW@Build",
+    "CommandCenterSCBW@Land",
+    "Button/Tooltip/QueenSCBWInfestCommandCenter",
     "NuclearSiloSCBW",
     "TerranBuildingSCBW@AddOnCC",
     "ComsatStationSCBW",
-    "CommandCenterSCBW@AllowUnit",
-    "SCVSCBW@Build",
-    "Button/Tooltip/QueenSCBWInfestCommandCenter",
     "CommandCenterSCBW",
-    "CommandCenterSCBW@Flying",
-    "CommandCenterSCBW@Land",
     "CommandCenterSCBW@TerranPlayerDecalMacro",
-    "InfestedCommandCenterSCBW",
     "CommandCenterSCBW@Land",
     "CommandCenterSCBW@LiftOff",
     "CommandCenterSCBW",
     "CommandCenterSCBW@Splat",
+    "InfestedCommandCenterSCBW",
     "NotCommandCenterSCBW",
     "CasterIsCommandCenterSCBW",
     "CommandCenterSCBW@Caster",
-    "CommandCenterSCBW"
+    "CommandCenterSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -956,57 +638,8 @@
       "AbilCmd": "CommandCenterSCBW@Rally,Rally1",
       "id": "Rally",
       "Icon": "btn-ability-terran-setrallypoint",
-      "Name": {
-        "enUS": "Set Rally Point",
-        "ruRU": "Задать точку сбора /// Set Rally Point"
-      },
-      "Tooltip": {
-        "enUS": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically.",
-        "ruRU": "Sends constructed units to the designated point. Workers rallied to resources will begin gathering automatically."
-      }
-    },
-    {
-      "AbilCmd": "CommandCenterSCBW@Transport,LoadAll",
-      "id": "CommandCenterSCBW@Load",
-      "Icon": "btn-ability-terran-load",
-      "Name": {
-        "enUS": "Load",
-        "zhCN": "装载",
-        "koKR": "들이기 /// Load"
-      },
-      "Tooltip": {
-        "enUS": "Loads nearby SCVs into Command Center.",
-        "zhCN": "将附近的SCV装载进指挥中心。",
-        "koKR": "주위에 있는 SCV를 사령부에 들입니다. /// Loads nearby SCVs into Command Center."
-      }
-    },
-    {
-      "AbilCmd": "CommandCenterSCBW@Transport,UnloadAll",
-      "id": "CommandCenterSCBW@UnloadAll",
-      "Icon": "btn-ability-terran-unloadall",
-      "Name": {
-        "enUS": "Unload All",
-        "zhCN": "卸载全部",
-        "koKR": "모두 내보내기 /// Unload All"
-      },
-      "Tooltip": {
-        "enUS": "Unloads all units.",
-        "zhCN": "卸载所有单位。",
-        "koKR": "모든 유닛을 내보냅니다. /// Unloads all units."
-      }
-    },
-    {
-      "AbilCmd": "CommandCenterSCBW@LiftOff,Execute",
-      "id": "Lift",
-      "Icon": "btn-ability-terran-liftoff",
-      "Name": {
-        "enUS": "Lift Off",
-        "ruRU": "Lift Off"
-      },
-      "Tooltip": {
-        "enUS": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed.",
-        "ruRU": "Transforms structure into a slow air unit for redeployment. May not produce units, research upgrades, or use abilities until it has landed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Halt",
@@ -1014,12 +647,9 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Halt",
-        "ruRU": "Приостановить /// Halt"
+        "ruRU": "Приостановить "
       },
-      "Tooltip": {
-        "enUS": "Halts construction of this structure. The partial construction will remain.",
-        "ruRU": "Приостановить сооружение этого строения. Впоследствии его можно будет продолжить. /// Halts construction of this structure. The partial construction will remain."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "que5CancelToSelection,CancelLast",
@@ -1027,38 +657,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
-    },
-    {
-      "AbilCmd": "CommandCenterSCBW@Train,Train1",
-      "id": "SelectBuilder",
-      "Icon": "btn-upgrade-terran-weaponrefit",
-      "Name": {
-        "enUS": "Select Builder",
-        "ruRU": "Select Builder"
-      },
-      "Tooltip": {
-        "enUS": "Selects the unit constructing this structure.",
-        "ruRU": "Selects the unit constructing this structure."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "CommandCenterSCBW@Train,Train1",
@@ -1066,13 +677,13 @@
       "Icon": "btn-unit-terran-scv@scbw",
       "Name": {
         "enUS": "Train SCV",
-        "zhCN": "训练SCV",
-        "koKR": "SCV 훈련 /// Train SCV"
+        "zhCN": "Train SCV",
+        "koKR": "Train SCV"
       },
       "Tooltip": {
         "enUS": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-        "zhCN": "基础工作单位。用于采集资源、建造人类建筑和修理。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-        "koKR": "기본 일꾼 유닛입니다. 자원을 채취하고, 테란 구조물을 건설하며, 구조물과 유닛을 수리할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+        "zhCN": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+        "koKR": "Basic worker unit. Can gather resources, build Terran structures, and repair.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
       }
     },
     {
@@ -1081,13 +692,13 @@
       "Icon": "btn-building-terran-comsatstation@scbw",
       "Name": {
         "enUS": "Build Comsat Station",
-        "zhCN": "建造雷达站",
-        "koKR": "컴샛 스테이션 건설 /// Build Comsat Station"
+        "zhCN": "Build Comsat Station",
+        "koKR": "Build Comsat Station"
       },
       "Tooltip": {
         "enUS": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-        "zhCN": "扫描设施。可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span>技能。<span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-        "koKR": "탐색 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> 능력을 사용할 수 있습니다. <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+        "zhCN": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+        "koKR": "Scanner facility. Can use the <span class=\"style-TooltipHighlightSCBW\"><b>Scanner Sweep</b></span> ability. A <span class=\"style-TooltipHighlightSCBW\"><b>Comsat Station</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
       }
     },
     {
@@ -1096,13 +707,13 @@
       "Icon": "btn-building-terran-nuclearsilo@scbw",
       "Name": {
         "enUS": "Build Nuclear Silo",
-        "zhCN": "建造聚变打击发射井",
-        "koKR": "뉴클리어 사일로 건설 /// Build Nuclear Silo"
+        "zhCN": "Build Nuclear Silo",
+        "koKR": "Build Nuclear Silo"
       },
       "Tooltip": {
         "enUS": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-        "zhCN": "导弹生产设施。<span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-        "koKR": "미사일 생산 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+        "zhCN": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+        "koKR": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
       }
     }
   ]

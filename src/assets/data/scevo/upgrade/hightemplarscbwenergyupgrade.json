@@ -1,11 +1,14 @@
 {
-  "id": "HighTemplarSCBWEnergyUpgrade",
-  "Icon": "btn-upgrade-protoss-khaydarinamulet",
-  "Name": "Upgrade/Name/HighTemplarSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Khaydarin Amulet",
+    "zhCN": "Khaydarin Amulet",
+    "koKR": "Khaydarin Amulet"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,20 +23,29 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "HighTemplarSCBWEnergyUpgrade",
+  "id": "HighTemplarSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
+  "Icon": "btn-upgrade-protoss-khaydarinamulet",
   "InfoTooltipPriority": 1,
-  "Race": "Prot",
-  "ScoreAmount": 300,
+  "Race": "BWPr",
+  "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "HighTemplarSCBW"

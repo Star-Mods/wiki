@@ -1,10 +1,11 @@
 {
-  "id": "GenetronLightWeaponsLevel2",
-  "Icon": "btn-upgrade-genetron-lightmechweapons-level2",
-  "Name": "Upgrade/Name/GenetronLightWeaponsLevel2",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1
+  },
+  "Name": {
+    "enUS": "Genetron Light Weapons Level 2",
+    "ruRU": "Вооружение лёгкой техники Генетронов Уровень 2"
   },
   "MaxLevel": 1,
   "Alert": "UpgradeComplete",
@@ -19,11 +20,12 @@
       "value": ""
     }
   },
+  "Icon": "btn-upgrade-genetron-lightmechweapons-level2",
   "Race": "Gen",
   "ScoreResult": "BuildOrder",
   "EffectArray": [
     {
-      "Reference": "Effect,ChargeCannon,Amount",
+      "Reference": "Effect,BlitzerChargeCannonDamage,Amount",
       "Value": "1"
     },
     {
@@ -51,16 +53,16 @@
       "Value": "1"
     },
     {
-      "Reference": "Effect,ChargeCannonSC,Amount",
-      "Value": "2"
+      "Reference": "Effect,BlitzerChargeCannonSuperChargeDamage,Amount",
+      "Value": "1.5"
     },
     {
       "Reference": "Effect,StratumMissilePodDMG,Amount",
       "Value": "2"
     },
     {
-      "Reference": "Accumulator,EqualizerTargetDamageBonus,MaxAccumulation",
-      "Value": "3"
+      "Reference": "Effect,StratumMissilePodDMG,AttributeBonus[Armored]",
+      "Value": "2"
     },
     {
       "Reference": "Weapon,ChargeCannon,Level",
@@ -84,10 +86,6 @@
     },
     {
       "Reference": "Weapon,StratumMissilePod,Level",
-      "Value": "1"
-    },
-    {
-      "Reference": "Weapon,TheGreatEqualizer,Level",
       "Value": "1"
     },
     {
@@ -128,6 +126,7 @@
     "Equalizer",
     "Spitfire"
   ],
+  "id": "GenetronLightWeaponsLevel2",
   "ScoreAmount": 300,
   "LeaderLevel": 2
 }

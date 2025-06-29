@@ -4,7 +4,7 @@
     "enUS": "Anathema"
   },
   "Description": {
-    "enUS": "Powerful warship with long range weapon, an electric field ability that can disable enemy units and other area damage abilities..<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
+    "enUS": "Powerful warship with long range weapon, an EMP-PSI Scrambler ability that can disable enemy units and an Ashigara Batteries ability which enable a weapon to attack all ground units nearby..<br/><br/><span style=\"color: ffff8a\">Can attack ground and air units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -767,7 +767,7 @@
           "enUS": "Myoko Cannons"
         },
         "Tooltip": {
-          "enUS": "Deals <b>90</b> damage on impact to ground units which then proceeds to deal damage over a small area for <b>29</b> seconds.<br/><span style=\"color: FF0000\"><br/>Warning: It damages your own units as well.</span>"
+          "enUS": "Deals <span style=\"color: 80FFFF\"><b>90</b> damage</span> on impact to ground units which then proceeds to deal damage over a small area for  <span style=\"color: 80FFFF\"><b>29</b> seconds</span>.<br/><span style=\"color: FF0000\"><br/>This ability will cause friendly fire as well.</span>"
         },
         "Hotkey": "W"
       },
@@ -801,8 +801,7 @@
               "Flags": {
                 "ShowInGlossary": 1
               },
-              "DefaultButtonFace": "EnableAshigaraBatteries",
-              "Requirements": "AnathemaAshigaraBatteryLearnt"
+              "DefaultButtonFace": "EnableAshigaraBatteries"
             },
             "Off": {
               "Flags": {
@@ -852,7 +851,7 @@
           "enUS": "Enable Ashigara Batteries"
         },
         "Tooltip": {
-          "enUS": "Enter a continuously energy consuming state which cannot be canceled and switch to a new weapon to attack all enemy ground units nearby. Spend 7 energy per second during this state. The new weapon target every enemy ground unit in a large radius, each attack depletes 2 energy per shot, until the Anathema's energy is fully depleted.<br/>This new weapon has a cooldown of <b>5</b> seconds.<br/><br/><span style=\"color: FF0000\">Stuns the Anathema once the weapons are deactivated for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">TIP: This is your \"crash every cardinal direction\" button, use at your own discretion.</span>"
+          "enUS": "<span style=\"color: FF0000\">Enter a continuously energy consuming state</span> which cannot be canceled and <span style=\"color: 80FFFF\">switch to a new weapon to attack all enemy ground units nearby</span>. <span style=\"color: FF0000\">Spend 7 energy per second</span> during this state. The new weapon target every enemy ground unit in a large radius, each attack depletes 2 energy per shot, until the Anathema's energy is fully depleted.<br/>This new weapon has a cooldown of <b>5</b> seconds.<br/><br/><span style=\"color: FF0000\">Stuns the Anathema and decrease 6 armor, increase 100% received damage once the weapons are deactivated for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">TIP: This is your \"crash every cardinal direction\" button, use at your own discretion.</span>"
         },
         "Hotkey": "Q"
       },
@@ -996,7 +995,7 @@
           "enUS": "EMP-PSI Scrambler"
         },
         "Tooltip": {
-          "enUS": "Disables all enemy mechanical units within <b>1</b> range for a short time.<br/>"
+          "enUS": "<span style=\"color: 80FFFF\">Disables all enemy units</span> within <span style=\"color: 80FFFF\">6 range</span> for <span style=\"color: 80FFFF\">3.6 seconds</span>. <br/><span style=\"color: FF0000\">Stuns the Anathema and decrease 6 armor, increase 100% received damage for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">"
         },
         "Hotkey": "R"
       }
@@ -1088,6 +1087,7 @@
   "Behaviors": [
     {
       "id": "MassiveVoidRayVulnerability",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Massive Void Ray Vulnerability",
         "ruRU": "Уязвимость крупных единиц к излучателю Пустоты "
@@ -1100,7 +1100,9 @@
       "Name": {
         "enUS": "RegenBioSteel"
       },
-      "Tooltip": "-"
+      "Tooltip": {
+        "enUS": "This unit has been upgraded to regenerate faster."
+      }
     }
   ],
   "Abilities": [
@@ -1242,7 +1244,7 @@
         "enUS": "Myoko Cannons"
       },
       "Tooltip": {
-        "enUS": "Deals <b>90</b> damage on impact to ground units which then proceeds to deal damage over a small area for <b>29</b> seconds.<br/><span style=\"color: FF0000\"><br/>Warning: It damages your own units as well.</span>"
+        "enUS": "Deals <span style=\"color: 80FFFF\"><b>90</b> damage</span> on impact to ground units which then proceeds to deal damage over a small area for  <span style=\"color: 80FFFF\"><b>29</b> seconds</span>.<br/><span style=\"color: FF0000\"><br/>This ability will cause friendly fire as well.</span>"
       }
     },
     {
@@ -1253,7 +1255,7 @@
         "enUS": "Enable Ashigara Batteries"
       },
       "Tooltip": {
-        "enUS": "Enter a continuously energy consuming state which cannot be canceled and switch to a new weapon to attack all enemy ground units nearby. Spend 7 energy per second during this state. The new weapon target every enemy ground unit in a large radius, each attack depletes 2 energy per shot, until the Anathema's energy is fully depleted.<br/>This new weapon has a cooldown of <b>5</b> seconds.<br/><br/><span style=\"color: FF0000\">Stuns the Anathema once the weapons are deactivated for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">TIP: This is your \"crash every cardinal direction\" button, use at your own discretion.</span>"
+        "enUS": "<span style=\"color: FF0000\">Enter a continuously energy consuming state</span> which cannot be canceled and <span style=\"color: 80FFFF\">switch to a new weapon to attack all enemy ground units nearby</span>. <span style=\"color: FF0000\">Spend 7 energy per second</span> during this state. The new weapon target every enemy ground unit in a large radius, each attack depletes 2 energy per shot, until the Anathema's energy is fully depleted.<br/>This new weapon has a cooldown of <b>5</b> seconds.<br/><br/><span style=\"color: FF0000\">Stuns the Anathema and decrease 6 armor, increase 100% received damage once the weapons are deactivated for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">TIP: This is your \"crash every cardinal direction\" button, use at your own discretion.</span>"
       }
     },
     {
@@ -1264,7 +1266,7 @@
         "enUS": "EMP-PSI Scrambler"
       },
       "Tooltip": {
-        "enUS": "Disables all enemy mechanical units within <b>1</b> range for a short time.<br/>"
+        "enUS": "<span style=\"color: 80FFFF\">Disables all enemy units</span> within <span style=\"color: 80FFFF\">6 range</span> for <span style=\"color: 80FFFF\">3.6 seconds</span>. <br/><span style=\"color: FF0000\">Stuns the Anathema and decrease 6 armor, increase 100% received damage for <b>10</b> seconds.</span><br/><br/><span style=\"color: 80FFFF\">"
       }
     }
   ]

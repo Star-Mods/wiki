@@ -1,11 +1,14 @@
 {
-  "id": "GoliathSCBWRangeUpgrade",
-  "Icon": "btn-upgrade-terran-magfieldaccelerator",
-  "Name": "Upgrade/Name/GoliathSCBWRangeUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Charon Boosters",
+    "zhCN": "Charon Boosters",
+    "koKR": "Charon Boosters"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,26 +23,35 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "GoliathSCBWRangeUpgrade",
+  "id": "GoliathSCBWRangeUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Weapon,^ParamId^WeaponAir,Range",
-      "Value": "3"
+      "Value": "2"
     },
     {
       "Reference": "Weapon,^ParamId^WeaponAir,MinScanRange",
-      "Value": "3"
+      "Value": "2"
     },
     {
       "Reference": "Weapon,^ParamId^WeaponAir@Fake,Range",
-      "Value": "3"
+      "Value": "2"
     },
     {
       "Reference": "Weapon,^ParamId^WeaponAir@Fake,MinScanRange",
-      "Value": "3"
+      "Value": "2"
     }
   ],
-  "Race": "Terr",
+  "Icon": "btn-upgrade-terran-magfieldaccelerator",
+  "Race": "BWTe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

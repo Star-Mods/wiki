@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Ghost",
-    "zhCN": "幽灵",
-    "koKR": "고스트 /// Ghost"
+    "zhCN": "Ghost",
+    "koKR": "Ghost"
   },
   "Description": {
     "enUS": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
     "zhCN": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>",
-    "koKR": "침투 전문가입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>에서 무장된 <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span>을 유도할 수 있습니다. 업그레이드 하여 <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span>과 <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span>을 사용할 수 있습니다.<br/><br/><span style=\"color: #ffff8a\">지상 및 공중 유닛 공격 가능</span>"
+    "koKR": "Infiltrator. Can use <span class=\"style-TooltipHighlightSCBW\"><b>Personal Cloaking</b></span> and call down <span class=\"style-TooltipHighlightSCBW\">Tactical Nukes</span> built at the <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>.  <br/><br/><span style=\"color: #ffff8a\">Can attack ground and air units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 75,
-  "LifeMax": 75,
-  "LifeArmorName": {
-    "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
-  },
+  "LifeStart": 60,
+  "LifeMax": 60,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 999.8437,
   "TurningRate": 999.8437,
@@ -48,7 +46,6 @@
     "UseLineOfSight",
     "ArmySelect",
     "PreventDestroy",
-    "AlwaysThreatens",
     "AIHighPrioTarget",
     "AICaster",
     "AIPressForwardDisabled"
@@ -79,16 +76,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "GhostSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "GhostSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "GhostSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "GhostSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -113,26 +112,39 @@
   ],
   "Attributes": [
     "Biological",
+    "Light",
     "Psionic"
   ],
   "CostCategory": "Army",
   "EnergyStart": 50,
   "EnergyMax": 200,
-  "Speed": 2.5,
+  "Speed": 2.8125,
   "Acceleration": 1000,
   "LateralAcceleration": 46.0625,
   "Sight": 10,
   "Food": -1,
   "CostResource": {
-    "Minerals": 100,
-    "Vespene": 100
+    "Minerals": 25,
+    "Vespene": 75
   },
   "BuildTime": 40,
   "RepairTime": 35,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 30,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "GhostSCBWCloak",
+    "GhostSCBWLockdown",
+    "GhostSCBWNuclearStrike",
+    "GhostSCBWHoldFire",
+    "GhostSCBWWeaponsFree"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "GhostSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -223,12 +235,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -303,12 +312,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -398,13 +404,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -494,19 +497,16 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
         "Info": {
           "class": "CAbilEffectTarget",
-          "Name": "Abil/Name/TacNukeStrike",
+          "Name": "Abil/Name/GhostSCBWNuclearStrike",
           "TechPlayer": "Owner",
           "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
@@ -521,7 +521,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "TacNukeStrike",
+          "DataCollection": "GhostSCBWNuclearStrike",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -544,7 +544,7 @@
             "BestUnit": 1
           },
           "Effect": [
-            "Nuke"
+            "GhostSCBWNuclearStrike@CalldownDummy"
           ],
           "EffectRange": [
             "0,1000"
@@ -599,27 +599,24 @@
           "CmdButtonArray": {
             "Execute": {
               "Flags": {
-                "ShowInGlossary": 1
+                "ShowInGlossary": 1,
+                "UseDefaultButton": 1,
+                "CreateDefaultButton": 1
               },
-              "DefaultButtonFace": "NukeCalldown",
-              "Requirements": "HaveNuke"
+              "DefaultButtonFace": "GhostSCBWNuclearStrike",
+              "Requirements": "GhostSCBWNuclearStrike"
             },
             "Cancel": {
               "DefaultButtonFace": "Cancel"
             }
           },
           "FollowRange": 5,
+          "Alignment": "Negative",
           "Range": [
             12
           ],
           "FinishTime": [
             2.5
-          ],
-          "AlertArray": {
-            "Cast": "CalldownLaunch"
-          },
-          "CursorEffect": [
-            "NukeDamage"
           ],
           "CancelableArray": {
             "Channel": 1
@@ -627,9 +624,14 @@
           "UninterruptibleArray": {
             "Channel": 1
           },
-          "CalldownEffect": "Nuke",
-          "Alignment": "Negative",
-          "id": "TacNukeStrike"
+          "AlertArray": {
+            "Cast": "CalldownLaunch"
+          },
+          "CursorEffect": [
+            "GhostSCBWNuclearStrike@Damage"
+          ],
+          "CalldownEffect": "GhostSCBWNuclearStrike@CalldownDummy",
+          "id": "GhostSCBWNuclearStrike"
         },
         "Cost": {
           "Minerals": 0,
@@ -644,18 +646,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "TacNukeStrike,Cancel",
+        "AbilCmd": "GhostSCBWNuclearStrike,Cancel",
         "id": "Cancel",
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -727,21 +725,14 @@
         "Type": "AbilCmd",
         "AbilCmd": "attack,Execute",
         "id": "AttackGhost",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
-        "Hotkey": "A"
+        "Name": "-",
+        "Tooltip": "-"
       },
       {
         "Info": {
-          "class": "CAbilEffectInstant",
-          "Name": "Abil/Name/GhostSCBWHoldFire",
-          "TechPlayer": "Upkeep",
+          "class": "CAbilEffectTarget",
+          "Name": "Abil/Name/GhostSCBWNuclearStrike",
+          "TechPlayer": "Owner",
           "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
@@ -755,7 +746,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "GhostSCBWHoldFire",
+          "DataCollection": "GhostSCBWNuclearStrike",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -775,15 +766,15 @@
             "RequireTargetVision": 1,
             "WaitToSpend": 1,
             "UpdateChargesOnLevelChange": 1,
-            "Transient": 1
+            "BestUnit": 1
           },
           "Effect": [
-            "GhostSCBWHoldFire@ABSetup"
+            "GhostSCBWNuclearStrike@CalldownDummy"
           ],
           "EffectRange": [
             "0,1000"
           ],
-          "AINotifyEffect": "GhostSCBWHoldFire@ABSetup",
+          "AINotifyEffect": "Nuke",
           "RefundArray": {
             "Approach": 1,
             "Prep": 1,
@@ -823,7 +814,7 @@
             "Approach": 1,
             "Prep": 1,
             "Cast": 1,
-            "Channel": 1
+            "Channel": 0
           },
           "DefaultError": "MustTargetUnit",
           "AcquirePriority": 3,
@@ -833,16 +824,39 @@
           "CmdButtonArray": {
             "Execute": {
               "Flags": {
-                "ShowInGlossary": 0,
-                "ToSelection": 1,
+                "ShowInGlossary": 1,
                 "UseDefaultButton": 1,
                 "CreateDefaultButton": 1
               },
-              "DefaultButtonFace": "GhostSCBWHoldFire",
-              "Requirements": "GhostSCBWHoldFire@NotActive"
+              "DefaultButtonFace": "GhostSCBWNuclearStrike",
+              "Requirements": "GhostSCBWNuclearStrike"
+            },
+            "Cancel": {
+              "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "GhostSCBWHoldFire"
+          "FollowRange": 5,
+          "Alignment": "Negative",
+          "Range": [
+            12
+          ],
+          "FinishTime": [
+            2.5
+          ],
+          "CancelableArray": {
+            "Channel": 1
+          },
+          "UninterruptibleArray": {
+            "Channel": 1
+          },
+          "AlertArray": {
+            "Cast": "CalldownLaunch"
+          },
+          "CursorEffect": [
+            "GhostSCBWNuclearStrike@Damage"
+          ],
+          "CalldownEffect": "GhostSCBWNuclearStrike@CalldownDummy",
+          "id": "GhostSCBWNuclearStrike"
         },
         "Cost": {
           "Minerals": 0,
@@ -857,112 +871,20 @@
         "Row": 1,
         "Column": 0,
         "Type": "AbilCmd",
-        "AbilCmd": "GhostSCBWHoldFire,Execute",
-        "id": "GhostSCBWHoldFire",
-        "Icon": "btn-ability-terran-holdfire",
+        "AbilCmd": "GhostSCBWNuclearStrike,Execute",
+        "id": "GhostSCBWNuclearStrike",
+        "Icon": "btn-progression-hornerhan-14-nukefortelefrag",
         "Name": {
-          "enUS": "Hold Fire",
-          "zhCN": "停火",
-          "koKR": "공격 중지 /// Hold Fire"
+          "enUS": "Tac Nuke Strike",
+          "zhCN": "Tac Nuke Strike",
+          "koKR": "Tac Nuke Strike"
         },
         "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "zhCN": "命令选中的单位待在原地，并忽略指定范围内的敌方目标。接受命令的单位不会对敌方目标进行追击或与其交战。",
-          "koKR": "선택한 유닛이 위치를 사수하고 범위 내의 적을 무시합니다. 교전을 벌이기 위하여 적을 추적하거나 이동하지 않습니다. /// Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage."
+          "enUS": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.",
+          "zhCN": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.",
+          "koKR": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater."
         },
-        "Hotkey": "F"
-      },
-      {
-        "Info": {
-          "class": "CAbilBehavior",
-          "Name": "Abil/Name/GhostSCBWCloak",
-          "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
-          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
-          "OrderArray": [
-            {
-              "DisplayType": "Confirm",
-              "Color": "255,0,255,0",
-              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
-              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
-            }
-          ],
-          "SharedFlags": {
-            "DisableWhileDead": 1
-          },
-          "DataCollection": "GhostSCBWCloak",
-          "$tokens": {
-            "ID": {
-              "type": "string",
-              "value": ""
-            }
-          },
-          "CmdButtonArray": {
-            "On": {
-              "Flags": {
-                "ShowInGlossary": 1,
-                "ToSelection": 1,
-                "UseDefaultButton": 1,
-                "CreateDefaultButton": 1
-              },
-              "DefaultButtonFace": "GhostSCBWCloak",
-              "Requirements": "GhostSCBWCloak"
-            },
-            "Off": {
-              "Flags": {
-                "ToSelection": 1,
-                "UseDefaultButton": 1,
-                "CreateDefaultButton": 1
-              },
-              "DefaultButtonFace": "GhostSCBWCloak@Decloak"
-            }
-          },
-          "VeterancyLevelMin": 0,
-          "VeterancyLevelSkip": 0,
-          "AbilSetId": "Clok",
-          "Flags": {
-            "Toggle": 1,
-            "Transient": 1
-          },
-          "Cost": [
-            {
-              "Vital": {
-                "Energy": 25
-              }
-            }
-          ],
-          "BehaviorArray": [
-            "GhostSCBWCloak"
-          ],
-          "id": "GhostSCBWCloak"
-        },
-        "Cost": {
-          "Minerals": 0,
-          "Vespene": 0,
-          "Terazine": 0,
-          "Custom": 0,
-          "Energy": 25,
-          "Life": 0,
-          "Shields": 0,
-          "Food": 0
-        },
-        "Row": 2,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "GhostSCBWCloak,On",
-        "id": "GhostSCBWCloak",
-        "Icon": "btn-ability-terran-cloak-color",
-        "Name": {
-          "enUS": "Cloak",
-          "zhCN": "隐形",
-          "koKR": "클로크 /// Cloak"
-        },
-        "Tooltip": {
-          "enUS": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
-          "zhCN": "使单位<span class=\"style-TooltipHighlightSCBW\">隐形</span> , 防止敌方发现或攻击该单位。<span class=\"style-TooltipHighlightSCBW\">隐形</span>单位只会被侦测单位或侦测效果发现<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">每秒消耗<b>0.6</b>点能量。</span>",
-          "koKR": "적 유닛이 보거나 공격하지 못하게 유닛을 <span class=\"style-TooltipHighlightSCBW\">클로크</span>합니다. <span class=\"style-TooltipHighlightSCBW\">클로크</span> 상태인 유닛은 디텍터나 탐지 효과로만 적에게 드러납니다.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">초당 <b>0.6</b>의 에너지 소모</span> /// <span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>"
-        },
-        "Hotkey": "C"
+        "Hotkey": "N"
       },
       {
         "Info": {
@@ -1072,7 +994,7 @@
           "Cost": [
             {
               "Vital": {
-                "Energy": 100
+                "Energy": 75
               }
             }
           ],
@@ -1097,7 +1019,99 @@
           "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
-          "Energy": 100,
+          "Energy": 75,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "AbilCmd",
+        "AbilCmd": "GhostSCBWLockdown,Execute",
+        "id": "GhostSCBWLockdown",
+        "Icon": "btn-abilty-terran-lockdown@scbw",
+        "Name": {
+          "enUS": "Lockdown",
+          "zhCN": "Lockdown",
+          "koKR": "Lockdown"
+        },
+        "Tooltip": {
+          "enUS": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>",
+          "zhCN": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>",
+          "koKR": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>"
+        },
+        "Hotkey": "E"
+      },
+      {
+        "Info": {
+          "class": "CAbilBehavior",
+          "Name": "Abil/Name/GhostSCBWCloak",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "GhostSCBWCloak",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "On": {
+              "Flags": {
+                "ShowInGlossary": 1,
+                "ToSelection": 1,
+                "UseDefaultButton": 1,
+                "CreateDefaultButton": 1
+              },
+              "DefaultButtonFace": "GhostSCBWCloak",
+              "Requirements": "GhostSCBWCloak"
+            },
+            "Off": {
+              "Flags": {
+                "ToSelection": 1,
+                "UseDefaultButton": 1,
+                "CreateDefaultButton": 1
+              },
+              "DefaultButtonFace": "GhostSCBWCloak@Decloak"
+            }
+          },
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "AbilSetId": "Clok",
+          "Flags": {
+            "Toggle": 1,
+            "Transient": 1
+          },
+          "Cost": [
+            {
+              "Vital": {
+                "Energy": 25
+              }
+            }
+          ],
+          "BehaviorArray": [
+            "GhostSCBWCloak"
+          ],
+          "id": "GhostSCBWCloak"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 25,
           "Life": 0,
           "Shields": 0,
           "Food": 0
@@ -1105,26 +1119,26 @@
         "Row": 2,
         "Column": 2,
         "Type": "AbilCmd",
-        "AbilCmd": "GhostSCBWLockdown,Execute",
-        "id": "GhostSCBWLockdown",
-        "Icon": "btn-abilty-terran-lockdown@scbw",
+        "AbilCmd": "GhostSCBWCloak,On",
+        "id": "GhostSCBWCloak",
+        "Icon": "btn-ability-terran-cloak-color",
         "Name": {
-          "enUS": "Lockdown",
-          "zhCN": "锁定",
-          "koKR": "락다운 /// Lockdown"
+          "enUS": "Cloak",
+          "zhCN": "Cloak",
+          "koKR": "Cloak"
         },
         "Tooltip": {
-          "enUS": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>",
-          "zhCN": "发射一枚<span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span>弹药，瘫痪一个机械单位。受影响的单位无法攻击、移动或使用技能，且被动<span class=\"style-TooltipHighlightSCBW\">侦测效果</span>和<span class=\"style-TooltipHighlightSCBW\">隐形效果</span>被禁用。可被<span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>解除。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> 탄환을 발사하여 기계 유닛을 무력화합니다. 무력화된 유닛은 공격, 이동 및 능력 사용이 불가능하며, <span class=\"style-TooltipHighlightSCBW\">탐지 능력</span>과 <span class=\"style-TooltipHighlightSCBW\">클로킹</span>이 해제됩니다. <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>으로 제거 가능합니다. /// Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit. Affected units cannot attack, move or use abilities, disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>"
+          "enUS": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
+          "zhCN": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
+          "koKR": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>"
         },
-        "Hotkey": "W"
+        "Hotkey": "C"
       },
       {
         "Info": {
-          "class": "CAbilEffectTarget",
-          "Name": "Abil/Name/GhostSCBWNuclearStrike",
-          "TechPlayer": "Owner",
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/GhostSCBWWeaponsFree",
+          "TechPlayer": "Upkeep",
           "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
@@ -1138,7 +1152,7 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "GhostSCBWNuclearStrike",
+          "DataCollection": "GhostSCBWWeaponsFree",
           "$tokens": {
             "ID": {
               "type": "string",
@@ -1158,15 +1172,15 @@
             "RequireTargetVision": 1,
             "WaitToSpend": 1,
             "UpdateChargesOnLevelChange": 1,
-            "BestUnit": 1
+            "Transient": 1
           },
           "Effect": [
-            "GhostSCBWNuclearStrike@Calldown"
+            "GhostSCBWWeaponsFree"
           ],
           "EffectRange": [
             "0,1000"
           ],
-          "AINotifyEffect": "Nuke",
+          "AINotifyEffect": "GhostSCBWWeaponsFree",
           "RefundArray": {
             "Approach": 1,
             "Prep": 1,
@@ -1206,7 +1220,7 @@
             "Approach": 1,
             "Prep": 1,
             "Cast": 1,
-            "Channel": 0
+            "Channel": 1
           },
           "DefaultError": "MustTargetUnit",
           "AcquirePriority": 3,
@@ -1216,39 +1230,17 @@
           "CmdButtonArray": {
             "Execute": {
               "Flags": {
-                "ShowInGlossary": 1,
+                "ShowInGlossary": 0,
+                "ToSelection": 1,
                 "UseDefaultButton": 1,
                 "CreateDefaultButton": 1
               },
-              "DefaultButtonFace": "GhostSCBWNuclearStrike",
-              "Requirements": "GhostSCBWNuclearStrike"
-            },
-            "Cancel": {
-              "DefaultButtonFace": "Cancel"
+              "DefaultButtonFace": "GhostSCBWWeaponsFree",
+              "Requirements": "GhostSCBWWeaponsFree@HoldingFire"
             }
           },
-          "FollowRange": 5,
-          "Alignment": "Negative",
-          "Range": [
-            12
-          ],
-          "FinishTime": [
-            2.5
-          ],
-          "CancelableArray": {
-            "Channel": 1
-          },
-          "UninterruptibleArray": {
-            "Channel": 1
-          },
-          "AlertArray": {
-            "Cast": "CalldownLaunch"
-          },
-          "CursorEffect": [
-            "GhostSCBWNuclearStrike@Damage"
-          ],
-          "CalldownEffect": "GhostSCBWNuclearStrike@Calldown",
-          "id": "GhostSCBWNuclearStrike"
+          "AbilSetId": "WeaponsFree",
+          "id": "GhostSCBWWeaponsFree"
         },
         "Cost": {
           "Minerals": 0,
@@ -1260,30 +1252,220 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 2,
+        "Row": 1,
         "Column": 3,
         "Type": "AbilCmd",
-        "AbilCmd": "GhostSCBWNuclearStrike,Execute",
-        "id": "GhostSCBWNuclearStrike",
-        "Icon": "btn-progression-hornerhan-14-nukefortelefrag",
+        "AbilCmd": "GhostSCBWWeaponsFree,Execute",
+        "id": "GhostSCBWWeaponsFree",
+        "Icon": "btn-ability-terran-weaponsfree",
         "Name": {
-          "enUS": "Tac Nuke Strike",
-          "zhCN": "战术聚变打击",
-          "koKR": "뉴클리어 스트라이크 /// Tac Nuke Strike"
+          "enUS": "Weapons Free",
+          "zhCN": "Weapons Free",
+          "koKR": "Weapons Free"
         },
         "Tooltip": {
-          "enUS": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage to enemies in a large radius.",
-          "zhCN": "向目标位置呼叫一次<span class=\"style-TooltipHighlightSCBW\">战术核弹打击</span>。战术核弹需要<span class=\"style-TooltipHighlightSCBW\"><b>20</b></span>才能生效，但可对大范围内的敌方目标造成最多<span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">对重甲+<b>150</b></span>)点伤害。",
-          "koKR": "선택한 지점에 <span class=\"style-TooltipHighlightSCBW\">뉴클리어 미사일</span>을 떨어트립니다. 뉴클리어 미사일은 <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> 후 투하되어 넓은 범위에 <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (중장갑 대상 <span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span>)의 피해를 줍니다. /// Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage to enemies in a large radius."
+          "enUS": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+          "zhCN": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+          "koKR": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal."
         },
-        "Hotkey": "N"
+        "Hotkey": "G"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 3,
+        "Type": "Passive",
+        "id": "GhostSCBWSightUpgrade@Passive",
+        "Icon": "btn-upgrade-terran-ocularimplants@scbw",
+        "Name": {
+          "enUS": "Ocular Implants",
+          "zhCN": "Ocular Implants",
+          "koKR": "Ocular Implants"
+        },
+        "Tooltip": {
+          "enUS": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> sight range by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWSightUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 4,
+        "Type": "Passive",
+        "id": "GhostSCBWEnergyUpgrade@Passive",
+        "Icon": "btn-upgrade-terran-moebiusreactor",
+        "Name": {
+          "enUS": "Moebius Reactor",
+          "zhCN": "Moebius Reactor",
+          "koKR": "Moebius Reactor"
+        },
+        "Tooltip": {
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,GhostSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
+        }
+      },
+      {
+        "Info": {
+          "class": "CAbilEffectInstant",
+          "Name": "Abil/Name/GhostSCBWHoldFire",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Terran,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "GhostSCBWHoldFire",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "RangeSlop": 1,
+          "ArcSlop": 11.25,
+          "AutoCastAcquireLevel": "Offensive",
+          "AutoCastFilters": "Visible;Player,Ally",
+          "Flags": {
+            "AbortOnAllianceChange": 1,
+            "CancelResetAutoCast": 1,
+            "ChannelingMinimum": 1,
+            "RangeUseCasterRadius": 1,
+            "ReApproachable": 1,
+            "RequireTargetVision": 1,
+            "WaitToSpend": 1,
+            "UpdateChargesOnLevelChange": 1,
+            "Transient": 1
+          },
+          "Effect": [
+            "GhostSCBWHoldFire@ABSetup"
+          ],
+          "EffectRange": [
+            "0,1000"
+          ],
+          "AINotifyEffect": "GhostSCBWHoldFire@ABSetup",
+          "RefundArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1
+          },
+          "RefundFraction": {
+            "Resource": {
+              "Minerals": -1,
+              "Vespene": -1,
+              "Terrazine": -1,
+              "Custom": -1
+            },
+            "Charge": -1,
+            "Cooldown": -1
+          },
+          "UseMarkerArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "PauseableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "PreemptableArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1,
+            "Finish": 1
+          },
+          "ValidatedArray": {
+            "Approach": 1,
+            "Prep": 1,
+            "Cast": 1,
+            "Channel": 1
+          },
+          "DefaultError": "MustTargetUnit",
+          "AcquirePriority": 3,
+          "SetLastTarget": "Unknown",
+          "VeterancyLevelMin": 0,
+          "VeterancyLevelSkip": 0,
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ShowInGlossary": 0,
+                "ToSelection": 1,
+                "UseDefaultButton": 1,
+                "CreateDefaultButton": 1
+              },
+              "DefaultButtonFace": "GhostSCBWHoldFire",
+              "Requirements": "GhostSCBWHoldFire@NotActive"
+            }
+          },
+          "AbilSetId": "HoldFire",
+          "id": "GhostSCBWHoldFire"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 1,
+        "Column": 2,
+        "Type": "AbilCmd",
+        "AbilCmd": "GhostSCBWHoldFire,Execute",
+        "id": "GhostSCBWHoldFire",
+        "Icon": "btn-ability-terran-holdfire",
+        "Name": {
+          "enUS": "Hold Fire",
+          "zhCN": "Hold Fire",
+          "koKR": "Hold Fire"
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "zhCN": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "koKR": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage."
+        },
+        "Hotkey": "F"
       }
     ]
   },
   "InnerRadius": 0.375,
   "CargoSize": 1,
-  "ScoreMake": 200,
-  "ScoreKill": 200,
+  "ScoreMake": 100,
+  "ScoreKill": 100,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 82,
   "GlossaryPriority": 70,
@@ -1298,26 +1480,36 @@
     "DragoonSCBW"
   ],
   "TacticalAIThink": "AIThinkGhostSCBW",
-  "Icon": "btn-unit-terran-ghost",
+  "TauntDuration": {
+    "Dance": 5
+  },
+  "Icon": "btn-unit-terran-ghost@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-infantryarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "GhostSCBWWeapon",
+      "EditorCategories": "Race:Terran",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
-      "Name": {
-        "enUS": "Canister Rifle",
-        "zhCN": "霰弹步枪",
-        "koKR": "산탄 소총 /// Canister Rifle"
-      },
-      "Amount": 8,
-      "AttributeBonus": {
-        "Light": 8
-      },
-      "Kind": "Ranged",
+      "DisplayEffect": "GhostSCBWWeapon@DamageConc",
       "TargetFilters": "",
       "Range": 7,
-      "Period": 1.375
+      "Period": 1.375,
+      "DamagePoint": 0.083,
+      "Backswing": 1.167,
+      "Effect": "GhostSCBWWeapon@Impact",
+      "Options": {
+        "NeverMiss": 0
+      },
+      "Tip": "Weapon/Tip/ConcussiveWeapon",
+      "id": "GhostSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Canister Rifle",
+        "zhCN": "Canister Rifle",
+        "koKR": "Canister Rifle"
+      },
+      "Amount": 5,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
@@ -1325,21 +1517,20 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -1347,67 +1538,71 @@
       "id": "GhostSCBWCloak",
       "Name": {
         "enUS": "Personal Cloaking",
-        "zhCN": "隐形",
-        "koKR": "퍼스널 클로킹 /// Personal Cloaking"
+        "zhCN": "Personal Cloaking",
+        "koKR": "Personal Cloaking"
       }
     },
     {
       "id": "GhostSCBWLockdown",
       "Name": {
         "enUS": "Lockdown",
-        "zhCN": "锁定",
-        "koKR": "락다운 /// Lockdown"
+        "zhCN": "Lockdown",
+        "koKR": "Lockdown"
       }
     },
     {
       "id": "GhostSCBWNuclearStrike",
       "Name": {
         "enUS": "Nuclear Strike (Ghost)",
-        "zhCN": "聚变打击（幽灵）",
-        "koKR": " 뉴클리어 스트라이크 /// Nuclear Strike (Ghost)"
+        "zhCN": "Nuclear Strike (Ghost)",
+        "koKR": "Nuclear Strike (Ghost)"
       }
     },
     {
       "id": "GhostSCBWHoldFire",
       "Name": {
         "enUS": "Hold Fire",
-        "zhCN": "停火",
-        "koKR": "공격 중지 /// Hold Fire"
+        "zhCN": "Hold Fire",
+        "koKR": "Hold Fire"
       }
     },
     {
       "id": "GhostSCBWWeaponsFree",
       "Name": {
         "enUS": "Weapons Free",
-        "zhCN": "自由射击",
-        "koKR": "무기 사용 /// Weapons Free"
+        "zhCN": "Weapons Free",
+        "koKR": "Weapons Free"
       }
     }
   ],
   "$Upgrades": [
     "Button/Tooltip/NukeSCBWArm",
     "Button/Tooltip/GhostSCBWCloak",
-    "GhostSCBWLockdownResearch",
+    "GhostSCBWCloakResearch",
     "GhostSCBW",
-    "BarracksSCBW@Train",
-    "BarracksSCBW",
     "Button/Tooltip/CovertOpsSCBW",
     "Button/Tooltip/GhostSCBWEnergyUpgrade",
     "GhostSCBWEnergyUpgrade",
+    "Button/Tooltip/GhostSCBWCloakResearch",
     "Button/Tooltip/GhostSCBWLockdownResearch",
+    "GhostSCBWLockdownResearch",
     "Button/Tooltip/GhostSCBWSightUpgrade",
     "GhostSCBWSightUpgrade",
-    "Button/Tooltip/GhostSCBWCloakResearch",
-    "GhostSCBWCloakResearch",
+    "Button/Tooltip/GhostSCBW@Passive",
     "CovertOpsSCBW",
+    "BarracksSCBW@Train",
+    "BarracksSCBW",
+    "CasterIsGhostSCBW",
     "GhostSCBW",
     "GhostSCBWLockdown@Upgrade",
     "GhostSCBWCloak@Upgrade",
-    "GhostSCBW@UnitThreatensGhost",
     "IsGhostSCBW",
     "NotGhostSCBW",
-    "CasterIsGhostSCBW",
-    "GhostSCBW"
+    "GhostSCBW@UnitThreatensGhost",
+    "GhostSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -1425,12 +1620,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1438,92 +1630,59 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "TacNukeStrike,Cancel",
+      "AbilCmd": "GhostSCBWNuclearStrike,Cancel",
       "id": "Cancel",
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "AttackGhost",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "GhostSCBWHoldFire,Execute",
-      "id": "GhostSCBWHoldFire",
-      "Icon": "btn-ability-terran-holdfire",
+      "AbilCmd": "GhostSCBWNuclearStrike,Execute",
+      "id": "GhostSCBWNuclearStrike",
+      "Icon": "btn-progression-hornerhan-14-nukefortelefrag",
       "Name": {
-        "enUS": "Hold Fire",
-        "zhCN": "停火",
-        "koKR": "공격 중지 /// Hold Fire"
+        "enUS": "Tac Nuke Strike",
+        "zhCN": "Tac Nuke Strike",
+        "koKR": "Tac Nuke Strike"
       },
       "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "zhCN": "命令选中的单位待在原地，并忽略指定范围内的敌方目标。接受命令的单位不会对敌方目标进行追击或与其交战。",
-        "koKR": "선택한 유닛이 위치를 사수하고 범위 내의 적을 무시합니다. 교전을 벌이기 위하여 적을 추적하거나 이동하지 않습니다. /// Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
-    },
-    {
-      "AbilCmd": "GhostSCBWCloak,On",
-      "id": "GhostSCBWCloak",
-      "Icon": "btn-ability-terran-cloak-color",
-      "Name": {
-        "enUS": "Cloak",
-        "zhCN": "隐形",
-        "koKR": "클로크 /// Cloak"
-      },
-      "Tooltip": {
-        "enUS": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
-        "zhCN": "使单位<span class=\"style-TooltipHighlightSCBW\">隐形</span> , 防止敌方发现或攻击该单位。<span class=\"style-TooltipHighlightSCBW\">隐形</span>单位只会被侦测单位或侦测效果发现<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">每秒消耗<b>0.6</b>点能量。</span>",
-        "koKR": "적 유닛이 보거나 공격하지 못하게 유닛을 <span class=\"style-TooltipHighlightSCBW\">클로크</span>합니다. <span class=\"style-TooltipHighlightSCBW\">클로크</span> 상태인 유닛은 디텍터나 탐지 효과로만 적에게 드러납니다.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">초당 <b>0.6</b>의 에너지 소모</span> /// <span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>"
+        "enUS": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.",
+        "zhCN": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.",
+        "koKR": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater."
       }
     },
     {
@@ -1532,28 +1691,58 @@
       "Icon": "btn-abilty-terran-lockdown@scbw",
       "Name": {
         "enUS": "Lockdown",
-        "zhCN": "锁定",
-        "koKR": "락다운 /// Lockdown"
+        "zhCN": "Lockdown",
+        "koKR": "Lockdown"
       },
       "Tooltip": {
-        "enUS": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>",
-        "zhCN": "发射一枚<span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span>弹药，瘫痪一个机械单位。受影响的单位无法攻击、移动或使用技能，且被动<span class=\"style-TooltipHighlightSCBW\">侦测效果</span>和<span class=\"style-TooltipHighlightSCBW\">隐形效果</span>被禁用。可被<span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>的<span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>解除。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> 탄환을 발사하여 기계 유닛을 무력화합니다. 무력화된 유닛은 공격, 이동 및 능력 사용이 불가능하며, <span class=\"style-TooltipHighlightSCBW\">탐지 능력</span>과 <span class=\"style-TooltipHighlightSCBW\">클로킹</span>이 해제됩니다. <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b></span>의 <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>으로 제거 가능합니다. /// Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit. Affected units cannot attack, move or use abilities, disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span>"
+        "enUS": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>",
+        "zhCN": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>",
+        "koKR": "Fires a <span class=\"style-TooltipHighlightSCBW\"><b>Lockdown</b></span> round disabling a mechanical unit for <span class=\"style-TooltipHighlightSCBW\"><b>38</b> seconds</span>. Affected units cannot attack, move or use abilities disabling passive <span class=\"style-TooltipHighlightSCBW\">Detection</span> and <span class=\"style-TooltipHighlightSCBW\">Cloaking</span>. May be removed by a <span class=\"style-TooltipHighlightSCBW\"><b>Medic</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Restoration</b></span><br/><br/><span style=\"color: #ffff8a\">Cannot target Heroic targets</span>"
       }
     },
     {
-      "AbilCmd": "GhostSCBWNuclearStrike,Execute",
-      "id": "GhostSCBWNuclearStrike",
-      "Icon": "btn-progression-hornerhan-14-nukefortelefrag",
+      "AbilCmd": "GhostSCBWCloak,On",
+      "id": "GhostSCBWCloak",
+      "Icon": "btn-ability-terran-cloak-color",
       "Name": {
-        "enUS": "Tac Nuke Strike",
-        "zhCN": "战术聚变打击",
-        "koKR": "뉴클리어 스트라이크 /// Tac Nuke Strike"
+        "enUS": "Cloak",
+        "zhCN": "Cloak",
+        "koKR": "Cloak"
       },
       "Tooltip": {
-        "enUS": "Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage to enemies in a large radius.",
-        "zhCN": "向目标位置呼叫一次<span class=\"style-TooltipHighlightSCBW\">战术核弹打击</span>。战术核弹需要<span class=\"style-TooltipHighlightSCBW\"><b>20</b></span>才能生效，但可对大范围内的敌方目标造成最多<span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">对重甲+<b>150</b></span>)点伤害。",
-        "koKR": "선택한 지점에 <span class=\"style-TooltipHighlightSCBW\">뉴클리어 미사일</span>을 떨어트립니다. 뉴클리어 미사일은 <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> 후 투하되어 넓은 범위에 <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (중장갑 대상 <span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span>)의 피해를 줍니다. /// Calls down a <span class=\"style-TooltipHighlightSCBW\">Nuclear Strike</span> at a target location. Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage to enemies in a large radius."
+        "enUS": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
+        "zhCN": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>",
+        "koKR": "<span class=\"style-TooltipHighlightSCBW\">Cloaks</span> the unit, preventing enemy units from seeing or attacking it. A <span class=\"style-TooltipHighlightSCBW\">Cloaked</span> unit will only be revealed by detectors or effects.<br/><br/><span class=\"style-TooltipResourceEnergySCBW\">Drains <b>0.6</b> energy per second.</span>"
+      }
+    },
+    {
+      "AbilCmd": "GhostSCBWWeaponsFree,Execute",
+      "id": "GhostSCBWWeaponsFree",
+      "Icon": "btn-ability-terran-weaponsfree",
+      "Name": {
+        "enUS": "Weapons Free",
+        "zhCN": "Weapons Free",
+        "koKR": "Weapons Free"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+        "zhCN": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal.",
+        "koKR": "Orders selected units to fire at will. They will engage enemy units within range and chase them as normal."
+      }
+    },
+    {
+      "AbilCmd": "GhostSCBWHoldFire,Execute",
+      "id": "GhostSCBWHoldFire",
+      "Icon": "btn-ability-terran-holdfire",
+      "Name": {
+        "enUS": "Hold Fire",
+        "zhCN": "Hold Fire",
+        "koKR": "Hold Fire"
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "zhCN": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "koKR": "Orders selected units to stay where they are and ignore enemies that are within range. Units will neither chase down enemies nor move to engage."
       }
     }
   ]

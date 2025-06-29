@@ -1,11 +1,14 @@
 {
-  "id": "MedicSCBWOpticFlareResearch",
-  "Icon": "btn-upgrade-protoss-fenix-dragoonsolariteflare",
-  "Name": "Upgrade/Name/MedicSCBWOpticFlareResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Optic Flare Research",
+    "zhCN": "Optic Flare Research",
+    "koKR": "Optic Flare Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,8 +23,17 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "MedicSCBWOpticFlareResearch",
-  "Race": "Terr",
+  "id": "MedicSCBWOpticFlareResearch",
+  "Icon": "btn-upgrade-protoss-fenix-dragoonsolariteflare",
+  "Race": "BWTe",
   "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [

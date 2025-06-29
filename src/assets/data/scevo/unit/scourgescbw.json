@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Scourge",
-    "zhCN": "爆蚊",
-    "koKR": "스컬지 /// Scourge"
+    "zhCN": "Scourge",
+    "koKR": "Scourge"
   },
   "Description": {
     "enUS": "Flying suicide unit. <span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
-    "zhCN": "自毁式飞行单位。一只<span class=\"style-TooltipHighlightSCBW\"><b>Larva</b></span>可以变异为两只<span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span>。<br/><br/><span style=\"color: ffff8a\">可以对空。</span>",
-    "koKR": "자폭 비행체입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b> 한 마리에서 <span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span> 두 마리가 부화합니다.<br/><br/><span style=\"color: ffff8a\">공중 유닛 공격 가능</span> /// Flying suicide unit. <span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
+    "zhCN": "Flying suicide unit. <span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>",
+    "koKR": "Flying suicide unit. <span class=\"style-TooltipHighlightSCBW\"><b>Scourge</b></span> hatch in pairs from a single <span class=\"style-TooltipHighlightSCBW\"><b>Larva</b>.<br/><br/><span style=\"color: ffff8a\">Can attack air units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 25,
-  "LifeMax": 25,
-  "LifeArmorName": {
-    "enUS": "Zerg Flyer Carapace",
-    "ruRU": "Zerg Flyer Carapace"
-  },
+  "LifeStart": 30,
+  "LifeMax": 30,
+  "LifeArmorName": "-",
   "Mover": "Fly",
   "StationaryTurningRate": 1499.9414,
   "TurningRate": 1499.9414,
@@ -47,7 +45,6 @@
     "CameraFollow",
     "UseLineOfSight",
     "PreventDestroy",
-    "AlwaysThreatens",
     "AIThreatGround",
     "AIThreatAir",
     "AISplash",
@@ -59,7 +56,7 @@
     "BlockStructures"
   ],
   "PushPriority": 10,
-  "LeaderAlias": "",
+  "LeaderAlias": "ScourgeSCBW",
   "HotkeyAlias": "ScourgeSCBW",
   "SelectAlias": "ScourgeSCBW",
   "SubgroupAlias": "ScourgeSCBW",
@@ -79,16 +76,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "ScourgeSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "ScourgeSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "ScourgeSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "ScourgeSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -124,8 +123,16 @@
     "Vespene": 0
   },
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
+  "AbilArray": [
+    "move",
+    "attack",
+    "stop"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "ScourgeSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -216,12 +223,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -296,12 +300,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -391,13 +392,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -471,14 +469,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -568,13 +560,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       }
     ]
@@ -593,7 +582,7 @@
   ],
   "KillDisplay": "Never",
   "RankDisplay": "Never",
-  "BuildTime": 15,
+  "BuildTime": 14,
   "CostCategory": "Army",
   "ScoreMake": 50,
   "ScoreKill": 50,
@@ -603,17 +592,28 @@
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "ScourgeSCBWWeapon",
+      "EditorCategories": "Race:Zerg",
       "Icon": "btn-upgrade-zerg-airattacks-level0",
+      "DisplayEffect": "ScourgeSCBWWeapon@Damage",
+      "TargetFilters": "Air",
+      "Range": 0.1,
+      "DamagePoint": 0.0625,
+      "Effect": "ScourgeSCBWWeapon@Set",
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "AcquireFilters": "Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable",
+      "Period": 0.0625,
+      "id": "ScourgeSCBWWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Suicide",
-        "zhCN": "自杀冲撞",
-        "koKR": "자폭 /// Suicide"
+        "zhCN": "Suicide",
+        "koKR": "Suicide"
       },
       "Amount": 110,
-      "TargetFilters": "Air",
-      "Range": 0.0937,
-      "Period": 0.0625
+      "Kind": "Melee"
     }
   ],
   "Behaviors": [],
@@ -621,40 +621,45 @@
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     }
   ],
   "$Upgrades": [
+    "Button/Tooltip/ScourgeSCBW@Passive",
     "Button/Tooltip/ScourgeSCBW",
     "ScourgeSCBW",
+    "ScourgeSCBW@AllowUnit",
+    "SpireSCBW",
+    "Button/Tooltip/SpireSCBW",
     "LarvaSCBW@Train",
     "LarvaSCBW",
     "ScourgeSCBW",
     "IsScourgeSCBW",
     "NotScourgeSCBW",
     "CasterIsScourgeSCBW",
-    "ScourgeSCBW@AllowUnit",
     "ScourgeSCBW@Count",
     "ScourgeSCBW@CountAtUnit",
     "ScourgeSCBW@QoB",
     "ScourgeSCBW@QoBAtUnit",
-    "ScourgeSCBW"
+    "ScourgeSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -672,12 +677,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -685,51 +687,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     }
   ]
 }

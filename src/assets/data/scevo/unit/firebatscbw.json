@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Firebat",
-    "zhCN": "火蝠",
-    "koKR": "파이어뱃 /// Firebat"
+    "zhCN": "Firebat",
+    "koKR": "Firebat"
   },
   "Description": {
     "enUS": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
-    "zhCN": "专业反步兵作战单位。<br/><br/><span style=\"color: #ffff8a\">可以对地。</span>",
-    "koKR": "대보병 전문 공격 유닛입니다.<br/><br/><span style=\"color: #ffff8a\">지상 유닛 공격 가능</span> /// Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
+    "zhCN": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>",
+    "koKR": "Specialized anti-infantry attacker.<br/><br/><span style=\"color: #ffff8a\">Can attack ground units.</span>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -18,12 +19,9 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 80,
-  "LifeMax": 80,
-  "LifeArmorName": {
-    "enUS": "Terran Infantry Armor",
-    "ruRU": "Terran Infantry Armor"
-  },
+  "LifeStart": 65,
+  "LifeMax": 65,
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Turn": 33
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "FirebatSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "FirebatSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "FirebatSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "FirebatSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -123,12 +123,23 @@
     "Minerals": 50,
     "Vespene": 25
   },
-  "BuildTime": 27,
+  "BuildTime": 25,
   "RepairTime": 22,
   "AttackTargetPriority": 20,
-  "DamageDealtXP": 1,
-  "DamageTakenXP": 1,
-  "KillXP": 15,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "FirebatSCBWStimpack"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "FirebatSCBWWeapon"
+    },
+    {
+      "Link": "FirebatSCBWWeapon@Bunker"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -219,12 +230,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -299,12 +307,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -394,13 +399,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -474,14 +476,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -571,13 +567,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -690,7 +683,7 @@
           "Cost": [
             {
               "Vital": {
-                "Life": 5
+                "Life": 10
               }
             }
           ],
@@ -702,7 +695,7 @@
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
-          "Life": 5,
+          "Life": 10,
           "Shields": 0,
           "Food": 0
         },
@@ -714,13 +707,13 @@
         "Icon": "btn-ability-terran-stimpack-color",
         "Name": {
           "enUS": "Stimpack",
-          "zhCN": "强化剂",
-          "koKR": "스팀팩 /// Stimpack"
+          "zhCN": "Stimpack",
+          "koKR": "Stimpack"
         },
         "Tooltip": {
-          "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> of the unit's life.",
-          "zhCN": "给单位注入强效的刺激物，大幅提高其移动和攻击速度，持续数秒。该单位会受到<span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>点伤害。",
-          "koKR": "몇 초 동안 이동 및 공격 속도를 크게 향상시키는 강력한 스팀팩을 유닛에게 투여합니다. 유닛은 체력 <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>만큼의 상처를 입습니다. /// Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\">10</span> of the unit's life."
+          "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+          "zhCN": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+          "koKR": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life."
         },
         "Hotkey": "T"
       }
@@ -728,8 +721,8 @@
   },
   "InnerRadius": 0.375,
   "CargoSize": 1,
-  "ScoreMake": 100,
-  "ScoreKill": 100,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
   "SubgroupPriority": 76,
   "GlossaryPriority": 40,
   "GlossaryStrongArray": [
@@ -744,53 +737,83 @@
   ],
   "TacticalAIThink": "AIThinkFirebatSCBW",
   "ScoreResult": "BuildOrder",
+  "BehaviorArray": [
+    "FirebatSCBWWeapon@Bunker"
+  ],
   "Icon": "btn-unit-terran-firebat@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-infantryarmorlevel0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "EditorCategories": "Race:Terran",
+      "Tip": "Weapon/Tip/ConcussiveWeapon",
+      "Options": {
+        "Melee": 1
+      },
+      "Icon": "btn-upgrade-terran-infantryweaponslevel0",
+      "DisplayEffect": "FirebatSCBWWeapon@DamageConc",
+      "DisplayAttackCount": 3,
+      "TargetFilters": "Ground",
+      "MinScanRange": 5,
+      "Range": 1,
+      "Marker": {
+        "MatchFlags": {
+          "Id": 1
+        }
+      },
+      "Period": 1.375,
+      "DamagePoint": 0.01,
+      "Backswing": 1,
+      "Effect": "FirebatSCBWWeapon@CP",
+      "LegacyOptions": {
+        "Uninterruptible": 1
+      },
+      "UninterruptibleDuration": 0.125,
       "id": "FirebatSCBWWeapon",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Perdition Flamethrower",
+        "zhCN": "Perdition Flamethrower",
+        "koKR": "Perdition Flamethrower"
+      },
+      "Amount": 4,
+      "Kind": "Melee"
+    },
+    {
+      "Options": {
+        "Disabled": 1,
+        "Hidden": 1,
+        "Melee": 0
+      },
+      "AcquireCliffLevelRange": "-0.5,0.5",
+      "MinScanRange": 5,
+      "AttackType": "Chaos",
+      "Effect": "FirebatSCBWWeapon@BunkerCliffCheck",
+      "Period": 1.375,
+      "id": "FirebatSCBWWeapon@Bunker",
+      "parent": "FirebatSCBWWeapon",
+      "class": "CWeaponLegacy",
       "Icon": "btn-upgrade-terran-infantryweaponslevel0",
       "Name": {
         "enUS": "Perdition Flamethrower",
-        "zhCN": "末日火焰喷射器",
-        "koKR": "화염 방사기 /// Perdition Flamethrower"
+        "zhCN": "Perdition Flamethrower",
+        "koKR": "Perdition Flamethrower"
       },
       "Amount": 4,
-      "AttributeBonus": {
-        "Light": 4
-      },
       "Kind": "Melee",
       "DisplayAttackCount": 3,
       "TargetFilters": "Ground",
-      "Range": 1,
-      "Period": 1.25
-    },
-    {
-      "id": "FirebatSCBWWeapon@Bunker",
-      "Name": {
-        "enUS": "Perdition Flamethrower",
-        "zhCN": "末日火焰喷射器",
-        "koKR": "화염 방사기 /// Perdition Flamethrower"
-      },
-      "Amount": 4,
-      "AttributeBonus": {
-        "Light": 4
-      },
-      "Kind": "Melee",
-      "DisplayAttackCount": 3,
-      "TargetFilters": "Ground",
-      "Range": 1,
-      "Period": 1.25
+      "Range": 1
     }
   ],
   "Behaviors": [
     {
       "id": "FirebatSCBWWeapon@Bunker",
+      "Icon": "btn-missing-kaeo",
       "Name": {
-        "enUS": "FirebatSCBWWeapon@Bunker",
-        "zhCN": "FirebatSCBWWeapon@Bunker",
-        "koKR": "FirebatSCBWWeapon@Bunker"
+        "enUS": "Bunker",
+        "zhCN": "Bunker",
+        "koKR": "Bunker"
       },
       "Tooltip": "-"
     }
@@ -799,21 +822,20 @@
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -821,28 +843,31 @@
       "id": "FirebatSCBWStimpack",
       "Name": {
         "enUS": "Stimpack (Firebat)",
-        "zhCN": "强化剂（火蝠）",
-        "koKR": "스팀팩 (파이어뱃) /// Stimpack (Firebat)"
+        "zhCN": "Stimpack (Firebat)",
+        "koKR": "Stimpack (Firebat)"
       }
     }
   ],
   "$Upgrades": [
-    "StimpackSCBWResearch",
-    "FirebatSCBW",
-    "Button/Tooltip/MarineSCBWStimpack@Redirect",
-    "Button/Tooltip/FirebatSCBWStimpack@Redirect",
-    "Button/Tooltip/BarracksSCBW",
     "Button/Tooltip/AcademySCBW",
-    "AcademySCBW",
+    "FirebatSCBW",
     "FirebatSCBW@AllowUnit",
     "BarracksSCBW@Train",
     "BarracksSCBW",
+    "Button/Tooltip/FirebatSCBW@Passive",
+    "AcademySCBW",
+    "StimpackSCBWResearch",
+    "Button/Tooltip/MarineSCBWStimpack@Redirect",
+    "Button/Tooltip/FirebatSCBWStimpack@Redirect",
     "FirebatSCBW",
     "FirebatSCBWStimpack",
     "IsFirebatSCBW",
     "NotFirebatSCBW",
     "CasterIsFirebatSCBW",
-    "FirebatSCBW"
+    "FirebatSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -860,12 +885,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -873,51 +895,36 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "FirebatSCBWStimpack,Execute",
@@ -925,13 +932,13 @@
       "Icon": "btn-ability-terran-stimpack-color",
       "Name": {
         "enUS": "Stimpack",
-        "zhCN": "强化剂",
-        "koKR": "스팀팩 /// Stimpack"
+        "zhCN": "Stimpack",
+        "koKR": "Stimpack"
       },
       "Tooltip": {
-        "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span> of the unit's life.",
-        "zhCN": "给单位注入强效的刺激物，大幅提高其移动和攻击速度，持续数秒。该单位会受到<span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>点伤害。",
-        "koKR": "몇 초 동안 이동 및 공격 속도를 크게 향상시키는 강력한 스팀팩을 유닛에게 투여합니다. 유닛은 체력 <span class=\"style-TooltipResourceLifeSCBW\"><b>5</b></span>만큼의 상처를 입습니다. /// Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\">10</span> of the unit's life."
+        "enUS": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+        "zhCN": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life.",
+        "koKR": "Injects the unit with powerful stimulants that greatly increase attack and movement speeds for a few seconds. Injures the unit for <span class=\"style-TooltipResourceLifeSCBW\"><b>10</b></span> of the unit's life."
       }
     }
   ]

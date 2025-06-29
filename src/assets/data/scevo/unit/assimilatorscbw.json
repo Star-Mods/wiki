@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Assimilator",
-    "zhCN": "吸纳舱",
-    "koKR": "어시밀레이터 /// Assimilator"
+    "zhCN": "Assimilator",
+    "koKR": "Assimilator"
   },
   "Description": {
-    "enUS": "Warped in over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas.",
-    "zhCN": "折跃于<span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span>上，用于采集高能瓦斯。 ",
-    "koKR": "베스핀 가스 채취를 위해 <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> 위에 건설하는 구조물입니다. /// Warped in over a <span class=\"style-TooltipHighlightSCBW\"><b>Vespene Geyser</b></span> to allow harvesting of vespene gas."
+    "enUS": "Warped in over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "zhCN": "Warped in over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas.",
+    "koKR": "Warped in over a <span class=\"style-TooltipHighlightSCBW\"><b>undefined</b></span> to allow harvesting of vespene gas."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Vespene",
   "LifeStart": 450,
   "LifeMax": 450,
-  "LifeArmorName": {
-    "enUS": "Protoss Armor",
-    "ruRU": "Protoss Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "AssimilatorSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "AssimilatorSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "AssimilatorSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "AssimilatorSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -116,25 +116,30 @@
   "LifeArmor": 1,
   "ShieldsStart": 450,
   "ShieldsMax": 450,
-  "ShieldRegenRate": 2,
-  "ShieldArmorName": {
-    "enUS": "Protoss Plasma Shields",
-    "ruRU": "Плазменные щиты протоссов /// Protoss Plasma Shields"
-  },
+  "ShieldRegenRate": 0.711,
+  "ShieldArmorName": "-",
   "Sight": 9,
   "CostCategory": "Economy",
   "CostResource": {
     "Minerals": 75
   },
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "WarpInProgressSCBW",
+    "AssimilatorToAutomatedAssimilator"
+  ],
+  "BehaviorArray": [
+    "HarvestableVespeneGeyserGasProtoss",
+    "WorkerPeriodicRefineryCheck"
+  ],
   "CardLayouts": {
     "Root": [
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/WarpInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Protoss,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -147,14 +152,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "WarpInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Warping",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -168,7 +173,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "WarpInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -183,18 +189,14 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "WarpInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       }
     ]
   },
@@ -206,7 +208,8 @@
     "RichVespeneGeyser",
     "ProtossVespeneGeyser",
     "PurifierVespeneGeyser",
-    "ShakurasVespeneGeyser"
+    "ShakurasVespeneGeyser",
+    "TempleVespeneGeyserSCBW"
   ],
   "BuildOnAs": [
     "AssimilatorSCBW@Rich"
@@ -221,16 +224,15 @@
   "EffectArray": {
     "Create": "GeyserExhaustedCheck"
   },
-  "ShieldRegenDelay": 10,
   "id": "AssimilatorSCBW",
-  "Icon": "btn-building-protoss-assimilator",
+  "Icon": "btn-building-protoss-assimilator@scbw",
   "LifeArmorIcon": "btn-armor-protoss-buildingplating",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "HarvestableVespeneGeyserGasProtoss",
-      "Icon": "icon-gas",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Harvestable Vespene Geyser Gas Protoss",
         "ruRU": "Harvestable Vespene Geyser Gas Protoss"
@@ -240,10 +242,11 @@
   ],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "WarpInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Warp in Progress",
+        "zhCN": "Warp in Progress",
+        "koKR": "Warp in Progress"
       }
     }
   ],
@@ -274,17 +277,14 @@
   ],
   "$Commands": [
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "WarpInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     }
   ]
 }

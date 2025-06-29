@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Nuclear Silo",
-    "zhCN": "核弹发射井",
-    "koKR": "뉴클리어 사일로 /// Nuclear Silo"
+    "zhCN": "Nuclear Silo",
+    "koKR": "Nuclear Silo"
   },
   "Description": {
     "enUS": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
-    "zhCN": "导弹生产设施。<span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>。",
-    "koKR": "미사일 생산 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span>는 <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>에만 부착될 수 있습니다. /// Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
+    "zhCN": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>.",
+    "koKR": "Missile production facility. A <span class=\"style-TooltipHighlightSCBW\"><b>Nuclear Silo</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Command Center</b></span>."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "NuclearSiloSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "NuclearSiloSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "NuclearSiloSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "NuclearSiloSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,10 @@
   "SubgroupPriority": 30,
   "AIKiteRange": 0,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "TerranBuildingSCBW@AddonDetached"
+  ],
   "TechAliasArray": [
     "Alias_NuclearSiloSCBW"
   ],
@@ -126,11 +130,16 @@
     "Ground"
   ],
   "Facing": 315,
+  "AbilArray": [
+    "que5Addon",
+    "BuildInProgress",
+    "NukeSCBWArm"
+  ],
   "Footprint": "Footprint2x2Contour",
   "AddedOnArray": [
     {
       "UnitLink": "CommandCenterSCBW",
-      "BehaviorLink": "##id##@Attached",
+      "BehaviorLink": "NuclearSiloSCBW@Attached",
       "ParentBehaviorLink": "AddonIsWorkingSCBW"
     }
   ],
@@ -205,13 +214,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -271,14 +276,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -322,13 +323,13 @@
         "Icon": "btn-ability-terran-armnuke",
         "Name": {
           "enUS": "Arm Silo with Nuke",
-          "zhCN": "装填核弹发射井",
-          "koKR": "뉴클리어 사일로 무장 /// Arm Silo with Nuke"
+          "zhCN": "Arm Silo with Nuke",
+          "koKR": "Arm Silo with Nuke"
         },
         "Tooltip": {
-          "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage in a large radius.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
-          "zhCN": "命令核弹发射井装填核弹头。<br/><br/>战术核弹需要<span class=\"style-TooltipHighlightSCBW\"><b>20</b></span>才能生效, 但可对大范围内的目标造成<span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">对重甲+<b>150</b></span>)点伤害。<br/><br/>使用<span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>来指定目标。",
-          "koKR": "사일로에 <span class=\"style-TooltipHighlightSCBW\"><b>Nuke</b>를 무장합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\"><b>Nuke</b>은 <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> 후 투하되어 넓은 범위에 최대 <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (중장갑 대상 <span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span>)의 피해를 줍니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>이 타격 지점을 지정합니다. /// Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage in a large radius.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target."
+          "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
+          "zhCN": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
+          "koKR": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target."
         },
         "Hotkey": "N"
       }
@@ -336,7 +337,7 @@
   },
   "ScoreMake": 200,
   "ScoreKill": 200,
-  "BuildTime": 40,
+  "BuildTime": 50,
   "TacticalAIThink": "AIThinkNuclearSiloSCBW",
   "Icon": "btn-building-terran-nuclearsilo@scbw",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
@@ -345,6 +346,7 @@
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -354,6 +356,7 @@
     },
     {
       "id": "TerranBuildingSCBW@AddonDetached",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Addon Detached",
         "zhCN": "Addon Detached",
@@ -366,23 +369,19 @@
     {
       "id": "que5Addon",
       "Name": {
-        "ruRU": "Queue",
-        "enUS": "Queue"
+        "ruRU": "Queue"
       }
     },
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "NukeSCBWArm",
       "Name": {
         "enUS": "Arm Nuke",
-        "zhCN": "装填核弹头",
-        "koKR": "뉴클리어 무장 /// Arm Nuke"
+        "zhCN": "Arm Nuke",
+        "koKR": "Arm Nuke"
       }
     }
   ],
@@ -391,16 +390,17 @@
     "Button/Tooltip/NuclearSiloSCBW",
     "NuclearSiloSCBW",
     "Button/Tooltip/GhostSCBW",
-    "Button/Tooltip/CommandCenterSCBW",
-    "Button/Tooltip/InfestedCommandCenterSCBW@Flying",
     "CommandCenterSCBW@AddOns",
-    "Button/Tooltip/CommandCenterSCBW@Flying",
+    "Button/Tooltip/CommandCenterSCBW",
     "CommandCenterSCBW",
     "NuclearSiloSCBW",
     "NuclearSiloSCBW@Splat",
     "NotNuclearSiloSCBW",
     "NuclearSiloSCBW@CountAtUnit",
-    "NuclearSiloSCBW"
+    "NuclearSiloSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [
@@ -421,25 +421,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "NukeSCBWArm,Ammo1",
@@ -447,13 +441,13 @@
       "Icon": "btn-ability-terran-armnuke",
       "Name": {
         "enUS": "Arm Silo with Nuke",
-        "zhCN": "装填核弹发射井",
-        "koKR": "뉴클리어 사일로 무장 /// Arm Silo with Nuke"
+        "zhCN": "Arm Silo with Nuke",
+        "koKR": "Arm Silo with Nuke"
       },
       "Tooltip": {
-        "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage in a large radius.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
-        "zhCN": "命令核弹发射井装填核弹头。<br/><br/>战术核弹需要<span class=\"style-TooltipHighlightSCBW\"><b>20</b></span>才能生效, 但可对大范围内的目标造成<span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">对重甲+<b>150</b></span>)点伤害。<br/><br/>使用<span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>来指定目标。",
-        "koKR": "사일로에 <span class=\"style-TooltipHighlightSCBW\"><b>Nuke</b>를 무장합니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\"><b>Nuke</b>은 <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> 후 투하되어 넓은 범위에 최대 <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (중장갑 대상 <span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span>)의 피해를 줍니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span>이 타격 지점을 지정합니다. /// Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal up to <span class=\"style-TooltipResourceLifeSCBW\"><b>450</b></span> (<span class=\"style-TooltipResourceLifeSCBW\">+<b>150</b></span> vs. Armored) damage in a large radius.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target."
+        "enUS": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
+        "zhCN": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target.",
+        "koKR": "Arms the Silo with a Tactical Nuke.<br/><br/>Nukes take <span class=\"style-TooltipHighlightSCBW\"><b>20</b></span> to land, but they deal massive damage in a large radius.<br/>Deals <span class=\"style-TooltipResourceLifeSCBW\">2/3rds</span> of the targets combined base vitals or <span class=\"style-TooltipResourceLifeSCBW\"><b>500</b></span> damage, whichever is greater.<br/><br/>Use a <span class=\"style-TooltipHighlightSCBW\"><b>Ghost</b></span> to designate the target."
       }
     }
   ]

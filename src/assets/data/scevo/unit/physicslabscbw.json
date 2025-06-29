@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Physics Lab",
-    "zhCN": "物理实验室",
-    "koKR": "피직스 랩 /// Physics Lab"
+    "zhCN": "Physics Lab",
+    "koKR": "Physics Lab"
   },
   "Description": {
     "enUS": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
-    "zhCN": "高级空军单位研究设施。为<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>提供升级方案。<span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>只能连接到<span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Battlecruiser</b>",
-    "koKR": "고급 함선 연구 시설입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>를 업그레이드 합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span>은 <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>에만 부착될 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Battlecruiser</b> (<b>Starport</b>) /// Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
+    "zhCN": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>",
+    "koKR": "Advanced aircraft research facility. Contains upgrades for <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>s</span>. A <span class=\"style-TooltipHighlightSCBW\"><b>Physics Lab</b></span> can only be attached to a <span class=\"style-TooltipHighlightSCBW\"><b>Science Facility</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Battlecruiser</b> at the <b>Starport</b>"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": {
-    "enUS": "Terran Building Plating",
-    "ruRU": "Terran Building Plating"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "PhysicsLabSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "PhysicsLabSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "PhysicsLabSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "PhysicsLabSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +109,10 @@
   "SubgroupPriority": 13,
   "AIKiteRange": 0,
   "HotkeyCategory": "Unit/Category/TerranUnitsSCBW",
+  "BehaviorArray": [
+    "TerranBuildingSCBW@Burnout",
+    "TerranBuildingSCBW@AddonDetached"
+  ],
   "TechAliasArray": [
     "Alias_PhysicsLabSCBW"
   ],
@@ -126,11 +130,17 @@
     "Ground"
   ],
   "Facing": 315,
+  "AbilArray": [
+    "que5Addon",
+    "BuildInProgress",
+    "BattlecruiserSCBWEnergyUpgrade",
+    "BattlecruiserSCBWYamatoResearch"
+  ],
   "Footprint": "Footprint2x2Contour",
   "AddedOnArray": [
     {
       "UnitLink": "ScienceFacilitySCBW",
-      "BehaviorLink": "##id##@Attached",
+      "BehaviorLink": "PhysicsLabSCBW@Attached",
       "ParentBehaviorLink": "AddonIsWorkingSCBW"
     }
   ],
@@ -141,7 +151,7 @@
   "LifeArmor": 1,
   "CostResource": {
     "Minerals": 50,
-    "Vespene": 50
+    "Vespene": 25
   },
   "RepairTime": 37.5,
   "CardLayouts": {
@@ -205,13 +215,9 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
@@ -271,14 +277,10 @@
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Upgrade": "BattlecruiserSCBWYamatoResearch",
@@ -292,19 +294,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "BattlecruiserSCBWYamatoResearch",
+            "State": "Restricted",
             "Requirements": "BattlecruiserSCBWYamatoResearch"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
-          "Time": 140,
+          "Time": 112.5,
           "Upgrade": "BattlecruiserSCBWYamatoResearch"
         },
-        "Time": 140,
+        "Time": 112.5,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -320,13 +323,13 @@
         "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
         "Name": {
           "enUS": "Research Yamato Gun",
-          "zhCN": "研究大和炮",
-          "koKR": "야마토 건 연구 /// Research Yamato Gun"
+          "zhCN": "Research Yamato Gun",
+          "koKR": "Research Yamato Gun"
         },
         "Tooltip": {
           "enUS": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>를 사용할 수 있습니다. /// Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
+          "zhCN": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
+          "koKR": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
         },
         "Hotkey": "C"
       },
@@ -342,6 +345,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "BattlecruiserSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "BattlecruiserSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -370,15 +374,42 @@
         "Icon": "btn-upgrade-terran-behemothreactor",
         "Name": {
           "enUS": "Research Colossus Reactor",
-          "zhCN": "研究巨像反应堆",
-          "koKR": "콜로서스 반응로 연구 /// Research Colossus Reactor"
+          "zhCN": "Research Colossus Reactor",
+          "koKR": "Research Colossus Reactor"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
+        "Row": 2,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "BattlecruiserSCBW@Passive",
+        "Icon": "btn-unit-terran-battlecruiser@scbw",
+        "Name": {
+          "enUS": "Battlecruiser",
+          "zhCN": "Battlecruiser",
+          "koKR": "Battlecruiser"
+        },
+        "Tooltip": {
+          "enUS": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Battlecruiser</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>.",
+          "zhCN": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Battlecruiser</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>.",
+          "koKR": "Allows production of <span style=\"color: #SCBW_ColorHighlight\"><b>Battlecruiser</b>s</span> at the <span style=\"color: #SCBW_ColorHighlight\"><b>Starport</b></span>."
+        }
       },
       {
         "Upgrade": "BattlecruiserSCBWEnergyUpgrade",
@@ -392,6 +423,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "BattlecruiserSCBWEnergyUpgrade",
+            "State": "Restricted",
             "Requirements": "BattlecruiserSCBWEnergyUpgrade"
           },
           "Resource": {
@@ -420,13 +452,13 @@
         "Icon": "btn-upgrade-terran-behemothreactor",
         "Name": {
           "enUS": "Research Colossus Reactor",
-          "zhCN": "研究巨像反应堆",
-          "koKR": "콜로서스 반응로 연구 /// Research Colossus Reactor"
+          "zhCN": "Research Colossus Reactor",
+          "koKR": "Research Colossus Reactor"
         },
         "Tooltip": {
-          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-          "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+          "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+          "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
         },
         "Hotkey": "R"
       },
@@ -442,19 +474,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "BattlecruiserSCBWYamatoResearch",
+            "State": "Restricted",
             "Requirements": "BattlecruiserSCBWYamatoResearch"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
-          "Time": 140,
+          "Time": 112.5,
           "Upgrade": "BattlecruiserSCBWYamatoResearch"
         },
-        "Time": 140,
+        "Time": 112.5,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -470,32 +503,34 @@
         "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
         "Name": {
           "enUS": "Research Yamato Gun",
-          "zhCN": "研究大和炮",
-          "koKR": "야마토 건 연구 /// Research Yamato Gun"
+          "zhCN": "Research Yamato Gun",
+          "koKR": "Research Yamato Gun"
         },
         "Tooltip": {
           "enUS": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
-          "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>를 사용할 수 있습니다. /// Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
+          "zhCN": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
+          "koKR": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
         },
         "Hotkey": "C"
       }
     ]
   },
-  "ScoreMake": 100,
-  "ScoreKill": 100,
+  "ScoreMake": 75,
+  "ScoreKill": 75,
   "TechTreeUnlockedUnitArray": [
     "BattlecruiserSCBW"
   ],
-  "BuildTime": 30,
+  "BuildTime": 25,
   "AddedOnUnit": "ScienceFacilitySCBW",
   "Icon": "btn-building-terran-techlab",
+  "Model": "TechLabEx1",
   "LifeArmorIcon": "btn-upgrade-terran-buildingarmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
   "Behaviors": [
     {
       "id": "TerranBuildingSCBW@Burnout",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Burnout",
         "zhCN": "Burnout",
@@ -505,6 +540,7 @@
     },
     {
       "id": "TerranBuildingSCBW@AddonDetached",
+      "Icon": "btn-missing-kaeo",
       "Name": {
         "enUS": "Addon Detached",
         "zhCN": "Addon Detached",
@@ -517,31 +553,27 @@
     {
       "id": "que5Addon",
       "Name": {
-        "ruRU": "Queue",
-        "enUS": "Queue"
+        "ruRU": "Queue"
       }
     },
     {
       "id": "BuildInProgress",
-      "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
-      }
+      "Name": "-"
     },
     {
       "id": "BattlecruiserSCBWEnergyUpgrade",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "BattlecruiserSCBWYamatoResearch",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 ///Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     }
   ],
@@ -558,7 +590,10 @@
     "PhysicsLabSCBW@QoB",
     "PhysicsLabSCBW@QoBAtUnit",
     "PhysicsLabSCBW@CountAtUnit",
-    "PhysicsLabSCBW"
+    "PhysicsLabSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -580,25 +615,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BuildInProgress,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "BattlecruiserSCBWYamatoResearch,Research1",
@@ -606,13 +635,13 @@
       "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
       "Name": {
         "enUS": "Research Yamato Gun",
-        "zhCN": "研究大和炮",
-        "koKR": "야마토 건 연구 /// Research Yamato Gun"
+        "zhCN": "Research Yamato Gun",
+        "koKR": "Research Yamato Gun"
       },
       "Tooltip": {
         "enUS": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>를 사용할 수 있습니다. /// Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
+        "zhCN": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
+        "koKR": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
       }
     },
     {
@@ -621,13 +650,13 @@
       "Icon": "btn-upgrade-terran-behemothreactor",
       "Name": {
         "enUS": "Research Colossus Reactor",
-        "zhCN": "研究巨像反应堆",
-        "koKR": "콜로서스 반응로 연구 /// Research Colossus Reactor"
+        "zhCN": "Research Colossus Reactor",
+        "koKR": "Research Colossus Reactor"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -636,13 +665,13 @@
       "Icon": "btn-upgrade-terran-behemothreactor",
       "Name": {
         "enUS": "Research Colossus Reactor",
-        "zhCN": "研究巨像反应堆",
-        "koKR": "콜로서스 반응로 연구 /// Research Colossus Reactor"
+        "zhCN": "Research Colossus Reactor",
+        "koKR": "Research Colossus Reactor"
       },
       "Tooltip": {
-        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>",
-        "zhCN": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>的能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>点，起始能量提高<span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>点。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>의 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span>만큼 증가하고 초기 에너지가 <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>만큼 증가합니다. /// Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>"
+        "enUS": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "zhCN": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>.",
+        "koKR": "Increases the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[1].Value\"/></span> and starting energy by <span class=\"style-TooltipBuffSCBW\"><d stringref=\"Upgrade,BattlecruiserSCBWEnergyUpgrade,EffectArrayTemplate[0].Value\"/></span>."
       }
     },
     {
@@ -651,13 +680,13 @@
       "Icon": "btn-ability-mengsk-battlecruiser-yamatocannon",
       "Name": {
         "enUS": "Research Yamato Gun",
-        "zhCN": "研究大和炮",
-        "koKR": "야마토 건 연구 /// Research Yamato Gun"
+        "zhCN": "Research Yamato Gun",
+        "koKR": "Research Yamato Gun"
       },
       "Tooltip": {
         "enUS": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
-        "zhCN": "让<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>可以使用<span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>。",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b></span>가 <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>를 사용할 수 있습니다. /// Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
+        "zhCN": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>",
+        "koKR": "Enables use of the <span class=\"style-TooltipHighlightSCBW\"><b>Battlecruiser</b>'s</span> <span class=\"style-TooltipHighlightSCBW\"><b>Yamato Gun</b></span>"
       }
     }
   ]

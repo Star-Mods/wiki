@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Infested Terran",
-    "zhCN": "被感染的人类",
-    "koKR": "인페스티드 테란 /// Infested Terran"
+    "zhCN": "Infested Terran",
+    "koKR": "Infested Terran"
   },
   "Description": {
     "enUS": "Suicide Exploder. <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span> attack by self detonating near enemy units.",
-    "zhCN": "自毁型单位。<span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>爆炸时对周围敌人造成伤害。",
-    "koKR": "자폭 유닛입니다. <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>은 적 유닛 근처에서 자폭하여 공격합니다. /// Suicide Exploder. <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span> attack by self detonating near enemy units."
+    "zhCN": "Suicide Exploder. <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span> attack by self detonating near enemy units.",
+    "koKR": "Suicide Exploder. <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b>s</span> attack by self detonating near enemy units."
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 60,
   "LifeMax": 60,
-  "LifeArmorName": {
-    "enUS": "Zerg Ground Carapace",
-    "ruRU": "Zerg Ground Carapace"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -47,7 +45,6 @@
     "CameraFollow",
     "UseLineOfSight",
     "PreventDestroy",
-    "AlwaysThreatens",
     "AISplash",
     "AIHighPrioTarget",
     "AIFleeDamageDisabled",
@@ -77,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "InfestedTerranSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "InfestedTerranSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "InfestedTerranSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "InfestedTerranSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -123,7 +122,19 @@
     "Vespene": 50
   },
   "AttackTargetPriority": 20,
-  "KillXP": 30,
+  "AbilArray": [
+    "stop",
+    "attack",
+    "move",
+    "InfestedTerranSCBW@BurrowDown",
+    "InfestedTerranSCBW@SapStructure",
+    "InfestedTerranSCBW@Explode"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "InfestedTerranSCBWWeapon"
+    }
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -214,12 +225,9 @@
         "Icon": "btn-command-move",
         "Name": {
           "enUS": "Move",
-          "ruRU": "Двигаться /// Move"
+          "ruRU": "Двигаться "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-          "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "M"
       },
       {
@@ -294,12 +302,9 @@
         "Icon": "btn-command-stop",
         "Name": {
           "enUS": "Stop",
-          "ruRU": "Отставить /// Stop"
+          "ruRU": "Отставить "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to cancel all orders and stop moving.",
-          "ruRU": "Orders selected units to cancel all orders and stop moving."
-        },
+        "Tooltip": "-",
         "Hotkey": "S"
       },
       {
@@ -389,13 +394,10 @@
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
         "Name": {
-          "enUS": "Hold Position",
-          "ruRU": "Удерживать позицию /// Hold Position"
+          "enUS": "Move Hold Position",
+          "ruRU": "Двигаться, удерживая позицию "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-          "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-        },
+        "Tooltip": "-",
         "Hotkey": "H"
       },
       {
@@ -469,14 +471,8 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Name": {
-          "enUS": "Attack",
-          "ruRU": "Атаковать /// Attack"
-        },
-        "Tooltip": {
-          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-          "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-        },
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "A"
       },
       {
@@ -566,13 +562,10 @@
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
         "Name": {
-          "enUS": "Patrol",
-          "ruRU": "Патрулировать /// Patrol"
+          "enUS": "Move Patrol",
+          "ruRU": "Патрулировать "
         },
-        "Tooltip": {
-          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-          "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-        },
+        "Tooltip": "-",
         "Hotkey": "P"
       },
       {
@@ -617,16 +610,9 @@
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "InfestedTerranSCBW@BurrowDown,Execute",
-        "id": "BurrowDown",
-        "Icon": "btn-ability-zerg-burrow-color",
-        "Name": {
-          "enUS": "Burrow",
-          "ruRU": "Burrow"
-        },
-        "Tooltip": {
-          "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-          "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-        },
+        "id": "BurrowDownSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "D"
       },
       {
@@ -666,16 +652,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "DefilerSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -710,16 +689,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -754,16 +726,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "HydraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -773,36 +738,39 @@
               "DurationArray": {
                 "Duration": 2
               }
+            },
+            "Mover": {
+              "DurationArray": {
+                "Delay": 2
+              }
+            },
+            "Stats": {
+              "DurationArray": {
+                "Delay": 0.1
+              }
             }
           },
-          "Unit": "UltraliskSCBW",
-          "RandomDelayMax": 0.5
+          "Unit": "InfestedTerranSCBW",
+          "RandomDelayMax": 0.37
         },
-        "Unit": "UltraliskSCBW",
+        "Unit": "InfestedTerranSCBW",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 100,
+          "Vespene": 50,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -4
+          "Food": -1
         },
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "AbilCmd": "InfestedTerranSCBW@BurrowUp,Execute",
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -837,16 +805,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -863,8 +824,8 @@
         },
         "Unit": "UltraliskSCBW",
         "Cost": {
-          "Minerals": 200,
-          "Vespene": 200,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -876,16 +837,9 @@
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-        "id": "BurrowUp",
-        "Icon": "btn-ability-zerg-upburrow-color",
-        "Name": {
-          "enUS": "Unburrow",
-          "ruRU": "Unburrow"
-        },
-        "Tooltip": {
-          "enUS": "Returns the unit to the surface.",
-          "ruRU": "Returns the unit to the surface."
-        },
+        "id": "BurrowUpSCBW",
+        "Name": "-",
+        "Tooltip": "-",
         "Hotkey": "R"
       },
       {
@@ -928,7 +882,7 @@
             "UpdateChargesOnLevelChange": 1
           },
           "Effect": [
-            "InfestedTerranSCBWWeapon@Set"
+            "InfestedTerranSCBWWeapon@Impact"
           ],
           "EffectRange": [
             "0,1000"
@@ -1009,12 +963,12 @@
         "Name": {
           "enUS": "Explode",
           "zhCN": "Explode",
-          "koKR": "폭발 /// Explode"
+          "koKR": "Explode"
         },
         "Tooltip": {
           "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures.",
           "zhCN": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures.",
-          "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>이 서있는 지점에서 폭발하여 근처 적 유닛과 구조물에 피해를 줍니다. /// The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures."
+          "koKR": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures."
         },
         "Hotkey": "X"
       }
@@ -1034,56 +988,82 @@
     "WraithSCBW"
   ],
   "Food": -1,
-  "BuildTime": 38,
+  "BuildTime": 33,
   "TacticalAIThink": "AIThinkInfestedTerranSCBW",
   "InnerRadius": 0.375,
-  "ScoreMake": 75,
-  "ScoreKill": 75,
+  "ScoreMake": 150,
+  "ScoreKill": 150,
   "ScoreResult": "BuildOrder",
   "KillDisplay": "Never",
-  "SpeedMultiplierCreep": 1.3,
+  "BehaviorArray": [
+    "InfestedTerranSCBW@Notify"
+  ],
+  "SpeedMultiplierCreep": 1.2,
   "Icon": "btn-unit-zerg-infestedmarine",
+  "Model": "InfestedMarine_Ex3",
   "LifeArmorIcon": "btn-upgrade-zerg-groundcarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "InfestedTerranSCBWWeapon",
+      "EditorCategories": "Race:Zerg",
+      "Options": {
+        "Melee": 1,
+        "OnlyFireWhileInAttackOrder": 0
+      },
       "Icon": "btn-ability-zerg-banelingspooge",
+      "DisplayEffect": "InfestedTerranSCBWWeapon@DamageExpl",
+      "TargetFilters": "Ground",
+      "AcquireFilters": "Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable",
+      "Range": 0.0937,
+      "Period": 0.0625,
+      "DamagePoint": 0,
+      "Effect": "InfestedTerranSCBWWeapon@Impact",
+      "LegacyOptions": {
+        "NoDeceleration": 1
+      },
+      "AllowedMovement": "Moving",
+      "Tip": "Weapon/Tip/ExplosiveWeapon",
+      "id": "InfestedTerranSCBWWeapon",
+      "class": "CWeaponLegacy",
       "Name": {
         "enUS": "Explode",
-        "zhCN": "自爆",
-        "koKR": "자폭 /// Explode"
+        "zhCN": "Explode",
+        "koKR": "Explode"
       },
       "Amount": 375,
-      "AttributeBonus": {
-        "Armored": 125
-      },
-      "Kind": "Splash",
-      "TargetFilters": "Ground",
-      "Range": 0.0937,
-      "Period": 0.0625
+      "Kind": "Splash"
     }
   ],
-  "Behaviors": [],
+  "Behaviors": [
+    {
+      "id": "InfestedTerranSCBW@Notify",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Notify",
+        "zhCN": "Notify",
+        "koKR": "Notify"
+      },
+      "Tooltip": "-"
+    }
+  ],
   "Abilities": [
     {
       "id": "stop",
       "Name": {
-        "enUS": "Stop",
+        "enUS": "stop",
         "ruRU": "Stop"
       }
     },
     {
       "id": "attack",
       "Name": {
-        "ruRU": "Attack",
-        "enUS": "Attack"
+        "ruRU": "Attack"
       }
     },
     {
       "id": "move",
       "Name": {
-        "enUS": "Move",
+        "enUS": "move",
         "ruRU": "Move"
       }
     },
@@ -1091,8 +1071,8 @@
       "id": "InfestedTerranSCBW@BurrowDown",
       "Name": {
         "enUS": "Burrow",
-        "zhCN": "潜地",
-        "koKR": "버로우 /// Burrow"
+        "zhCN": "Burrow",
+        "koKR": "Burrow"
       }
     },
     {
@@ -1100,7 +1080,7 @@
       "Name": {
         "enUS": "Sap Structure",
         "zhCN": "Sap Structure",
-        "koKR": "구조물 폭발 /// Sap Structure"
+        "koKR": "Sap Structure"
       }
     },
     {
@@ -1108,45 +1088,51 @@
       "Name": {
         "enUS": "Explode",
         "zhCN": "Explode",
-        "koKR": "폭발 /// Explode"
+        "koKR": "Explode"
       }
     }
   ],
   "$Upgrades": [
-    "Button/Tooltip/InfestedCommandCenterSCBW",
+    "InfestedTerranSCBW@BurrowUp",
     "Button/Tooltip/InfestedTerranSCBW",
     "InfestedTerranSCBW",
     "InfestedTerranSCBW@Burrowed",
-    "InfestedTerranSCBW@BurrowUp",
     "Button/Tooltip/InfestedTerranSCBW@Explode",
-    "InfestedCommandCenterSCBW@Train",
-    "InfestedCommandCenterSCBW",
-    "Button/Tooltip/QueenSCBWInfestCommandCenter",
     "ZergSCBWBurrowResearch",
+    "Button/Tooltip/InfestedCommandCenterSC2",
+    "InfestedCommandCenterSCBW@Train",
+    "Button/Tooltip/InfestedCommandCenterSC2@Flying",
+    "InfestedCommandCenterSC2",
+    "Button/Tooltip/InfestedCommandCenterSCBW",
+    "Button/Tooltip/InfestedCommandCenterSCBW@Flying",
+    "InfestedOrbitalCommandSCBW",
+    "InfestedCommandCenterSCBW",
+    "InfestedPlanetaryFortressSCBW",
+    "Button/Tooltip/QueenSCBWInfestCommandCenter",
     "InfestedTerranSCBW@BurrowedSplat",
     "InfestedTerranSCBW",
     "IsInfestedTerranSCBW",
     "NotInfestedTerranSCBW",
     "CasterIsInfestedTerranSCBW",
     "InfestedTerranSCBW@AllowUnit",
-    "InfestedTerranSCBW"
+    "InfestedTerranSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
   "$Research": [],
-  "$Morph": [
-    "DefilerSCBW",
-    "DroneSCBW",
-    "HydraliskSCBW",
-    "UltraliskSCBW",
-    "ZerglingSCBW"
-  ],
+  "$Morph": [],
   "$Phase": [
     "InfestedTerranSCBW@Burrowed"
   ],
   "$Producers": [
     "AbilTrainHolderSCBW",
-    "InfestedCommandCenterSCBW"
+    "InfestedCommandCenterSCBW",
+    "InfestedPlanetaryFortressSCBW",
+    "InfestedOrbitalCommandSCBW",
+    "InfestedCommandCenterSC2"
   ],
   "$Commands": [
     {
@@ -1155,12 +1141,9 @@
       "Icon": "btn-command-move",
       "Name": {
         "enUS": "Move",
-        "ruRU": "Двигаться /// Move"
+        "ruRU": "Двигаться "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "ruRU": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "stop,Stop",
@@ -1168,142 +1151,78 @@
       "Icon": "btn-command-stop",
       "Name": {
         "enUS": "Stop",
-        "ruRU": "Отставить /// Stop"
+        "ruRU": "Отставить "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to cancel all orders and stop moving.",
-        "ruRU": "Orders selected units to cancel all orders and stop moving."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
       "Name": {
-        "enUS": "Hold Position",
-        "ruRU": "Удерживать позицию /// Hold Position"
+        "enUS": "Move Hold Position",
+        "ruRU": "Двигаться, удерживая позицию "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "ruRU": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Name": {
-        "enUS": "Attack",
-        "ruRU": "Атаковать /// Attack"
-      },
-      "Tooltip": {
-        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "ruRU": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed."
-      }
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
       "Name": {
-        "enUS": "Patrol",
-        "ruRU": "Патрулировать /// Patrol"
+        "enUS": "Move Patrol",
+        "ruRU": "Патрулировать "
       },
-      "Tooltip": {
-        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "ruRU": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "InfestedTerranSCBW@BurrowDown,Execute",
-      "id": "BurrowDown",
-      "Icon": "btn-ability-zerg-burrow-color",
-      "Name": {
-        "enUS": "Burrow",
-        "ruRU": "Burrow"
-      },
-      "Tooltip": {
-        "enUS": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection.",
-        "ruRU": "Buries the unit underground. Burrowed units are unable to move or attack, but they cannot be seen without detection."
-      }
+      "id": "BurrowDownSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DefilerSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "DroneSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "HydraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "AbilCmd": "InfestedTerranSCBW@BurrowUp,Execute",
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZerglingSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "UltraliskSCBW@BurrowUp,Execute",
-      "id": "BurrowUp",
-      "Icon": "btn-ability-zerg-upburrow-color",
-      "Name": {
-        "enUS": "Unburrow",
-        "ruRU": "Unburrow"
-      },
-      "Tooltip": {
-        "enUS": "Returns the unit to the surface.",
-        "ruRU": "Returns the unit to the surface."
-      }
+      "id": "BurrowUpSCBW",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "InfestedTerranSCBW@Explode,Execute",
@@ -1312,12 +1231,12 @@
       "Name": {
         "enUS": "Explode",
         "zhCN": "Explode",
-        "koKR": "폭발 /// Explode"
+        "koKR": "Explode"
       },
       "Tooltip": {
         "enUS": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures.",
         "zhCN": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures.",
-        "koKR": "<span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span>이 서있는 지점에서 폭발하여 근처 적 유닛과 구조물에 피해를 줍니다. /// The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures."
+        "koKR": "The <span class=\"style-TooltipHighlightSCBW\"><b>Infested Terran</b></span> detonates where it is standing, damaging nearby enemy units and structures."
       }
     }
   ]

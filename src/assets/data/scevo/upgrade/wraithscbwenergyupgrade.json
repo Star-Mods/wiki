@@ -1,11 +1,14 @@
 {
-  "id": "WraithSCBWEnergyUpgrade",
-  "Icon": "btn-ability-terran-redlinereactor",
-  "Name": "Upgrade/Name/WraithSCBWEnergyUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Apollo Reactor",
+    "zhCN": "Apollo Reactor",
+    "koKR": "Apollo Reactor"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,19 +23,28 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "WraithSCBWEnergyUpgrade",
+  "id": "WraithSCBWEnergyUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,EnergyStart",
-      "Value": "12"
+      "Value": "25"
     },
     {
       "Reference": "Unit,^ParamId^,EnergyMax",
       "Value": "50"
     }
   ],
-  "Race": "Terr",
-  "ScoreAmount": 400,
+  "Icon": "btn-ability-terran-redlinereactor",
+  "Race": "BWTe",
+  "ScoreAmount": 200,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "WraithSCBW"

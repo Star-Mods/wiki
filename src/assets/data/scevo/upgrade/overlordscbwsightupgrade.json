@@ -1,11 +1,14 @@
 {
-  "id": "OverlordSCBWSightUpgrade",
-  "Icon": "btn-ability-zerg-overlord-oversight-off",
-  "Name": "Upgrade/Name/OverlordSCBWSightUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Antennae",
+    "zhCN": "Antennae",
+    "koKR": "Antennae"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,22 +23,31 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "OverlordSCBWSightUpgrade",
+  "id": "OverlordSCBWSightUpgrade",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,Sight",
-      "Value": "2"
+      "Value": "3"
     },
     {
       "Reference": "Behavior,^ParamId^@Detector,Modification.Detect",
-      "Value": "2"
+      "Value": "3"
     }
   ],
+  "Icon": "btn-ability-zerg-overlord-oversight-off",
   "AffectedUnitArray": [
     "OverlordSCBW"
   ],
   "InfoTooltipPriority": 1,
-  "Race": "Zerg",
-  "ScoreAmount": 300,
+  "Race": "BWZe",
+  "ScoreAmount": 100,
   "ScoreResult": "BuildOrder"
 }

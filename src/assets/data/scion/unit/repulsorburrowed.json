@@ -1,6 +1,13 @@
 {
-  "Name": "Repulsor",
-  "Description": "Anti-ground defensive structure. Can burrow, disabling its weapon, and rendering itself invisible to enemies.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Repulsor",
+    "ruRU": "Репульсор"
+  },
+  "Description": {
+    "enUS": "Anti-ground defensive structure. Can burrow, disabling its weapon, and rendering itself invisible to enemies.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Противоназемное оборонительное сооружение. Может закапываться, отключая оружие и становясь невидимым для врагов.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 300,
   "LifeMax": 300,
-  "LifeArmorName": "Mechanical Structure Armor",
+  "LifeArmorName": {
+    "enUS": "Mechanical Structure Armor",
+    "ruRU": "Броня механических строений"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 720,
   "TurningRate": 720,
@@ -68,16 +78,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Repulsor/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Repulsor/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Repulsor/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Repulsor/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -121,6 +133,16 @@
   "Facing": 45,
   "FogVisibility": "Snapshot",
   "CostCategory": "Technology",
+  "AbilArray": [
+    "BuildInProgress",
+    "stop",
+    "RepulsorUnburrow",
+    "RepulsorBurrow"
+  ],
+  "BehaviorArray": [
+    "LockdownMode",
+    "GenetronTurretFreeze"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,8 +215,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -268,8 +296,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -311,8 +345,14 @@
         "AbilCmd": "RepulsorUnburrow,Execute",
         "id": "StaticDUnburrow",
         "Icon": "btn-ability-genetron-ambush",
-        "Tooltip": "Unburies the structure, allowing it to resume a normal state.",
-        "Name": "Reveal",
+        "Name": {
+          "enUS": "Reveal",
+          "ruRU": "Показать"
+        },
+        "Tooltip": {
+          "enUS": "Unburies the structure, allowing it to resume a normal state.",
+          "ruRU": "Поднимается, включая оружие и становясь видимым для врагов."
+        },
         "Hotkey": "D"
       },
       {
@@ -354,8 +394,14 @@
         "AbilCmd": "RepulsorBurrow,Execute",
         "id": "StaticDBurrow",
         "Icon": "btn-ability-genetron-conceal",
-        "Tooltip": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
-        "Name": "Conceal",
+        "Name": {
+          "enUS": "Conceal",
+          "ruRU": "Скрыть"
+        },
+        "Tooltip": {
+          "enUS": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
+          "ruRU": "Опускается под землю, отключая оружие и становясь невидимым для врагов."
+        },
         "Hotkey": "E"
       }
     ]
@@ -366,12 +412,14 @@
     "Minerals": 150
   },
   "RepairTime": 50,
+  "WeaponArray": [],
   "SubgroupPriority": 4,
   "GlossaryPriority": 17,
   "TechAliasArray": [
     "Alias_Repulsor"
   ],
   "Icon": "btn-building-genetron-repulsor",
+  "Model": "Repulsor",
   "LifeArmorIcon": "btn-upgrade-genetron-mechstructurearmor",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
@@ -379,29 +427,53 @@
     {
       "id": "LockdownMode",
       "Icon": "btn-ability-genetron-structurelockdownmode",
-      "Tooltip": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
-      "Name": "Lockdown Mode"
+      "Name": {
+        "enUS": "Lockdown Mode",
+        "ruRU": "Режим блокировки"
+      },
+      "Tooltip": {
+        "enUS": "Under lockdown due to severe damage. Takes reduced damage, and cannot fully function. Must be repaired in order to resume a regular state.",
+        "ruRU": "Заблокирован из-за серьезных повреждений. Получает меньше урона, но не может полноценно функционировать. Необходимо отремонтировать, чтобы вернуть в обычное состояние."
+      }
     },
     {
-      "id": "GenetronTurretFreeze"
+      "id": "GenetronTurretFreeze",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Turret Freeze",
+        "ruRU": "Genetron Turret Freeze"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "BuildInProgress",
-      "Name": "Build in Progress"
+      "Name": {
+        "enUS": "Build in Progress",
+        "ruRU": "Build in Progress"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "RepulsorUnburrow",
-      "Name": "Unburrow"
+      "Name": {
+        "enUS": "Unburrow",
+        "ruRU": "Unburrow"
+      }
     },
     {
       "id": "RepulsorBurrow",
-      "Name": "Burrow"
+      "Name": {
+        "enUS": "Burrow",
+        "ruRU": "Burrow"
+      }
     }
   ],
   "$Upgrades": [
@@ -417,40 +489,61 @@
   "$Morph": [
     "Repulsor"
   ],
-  "$Phase": [
-    "RepulsorBurrowed",
-    "RepulsorBurrowed"
-  ],
-  "$Phased": "RepulsorBurrowed",
+  "$Phase": [],
+  "$Phased": "Repulsor",
   "$Producers": [],
   "$Commands": [
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "RepulsorUnburrow,Execute",
       "id": "StaticDUnburrow",
       "Icon": "btn-ability-genetron-ambush",
-      "Tooltip": "Unburies the structure, allowing it to resume a normal state.",
-      "Name": "Reveal"
+      "Name": {
+        "enUS": "Reveal",
+        "ruRU": "Показать"
+      },
+      "Tooltip": {
+        "enUS": "Unburies the structure, allowing it to resume a normal state.",
+        "ruRU": "Поднимается, включая оружие и становясь видимым для врагов."
+      }
     },
     {
       "AbilCmd": "RepulsorBurrow,Execute",
       "id": "StaticDBurrow",
       "Icon": "btn-ability-genetron-conceal",
-      "Tooltip": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
-      "Name": "Conceal"
+      "Name": {
+        "enUS": "Conceal",
+        "ruRU": "Скрыть"
+      },
+      "Tooltip": {
+        "enUS": "Buries the structure underground. While burrowed, the structure is unable to attack, and cannot be seen without detection.",
+        "ruRU": "Опускается под землю, отключая оружие и становясь невидимым для врагов."
+      }
     }
   ]
 }

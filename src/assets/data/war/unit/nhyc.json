@@ -1,6 +1,11 @@
 {
-  "Name": "Dragon Turtle",
-  "Description": "A powerful Turtle that can devour enemy units. Good at destroying enemy buildings. Has Hardened Skin, which reduces damage taken, and Spiked Shell which deals damage to enemy melee attackers. <br/><br/><span style=\"color: #ffcc00\">Attacks land units.",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Dragon Turtle"
+  },
+  "Description": {
+    "enUS": "A powerful Turtle that can devour enemy units. Good at destroying enemy buildings. Has Hardened Skin, which reduces damage taken, and Spiked Shell which deals damage to enemy melee attackers. <br/><br/><span style=\"color: ffcc00\">Attacks land units."
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 4,
   "DeathRevealDuration": 4,
@@ -12,13 +17,14 @@
   "ResourceType": "Unknown",
   "LifeStart": 750,
   "LifeMax": 750,
+  "LifeArmorName": "-",
   "Mover": "amph",
   "StationaryTurningRate": 720,
   "TurningRate": 599.9414,
   "Radius": 0.6875,
   "SeparationRadius": 0.6875,
   "MinimapRadius": 0.6875,
-  "EditorCategories": "ObjectType:Unit,ObjectFamily:Campaign",
+  "EditorCategories": "ObjectType:Unit,ObjectFamily:Melee",
   "TacticalAIFilters": "-;Player,Ally,Neutral",
   "AIEvalFactor": 1,
   "Mass": 0.4,
@@ -60,16 +66,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "nhyc/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "nhyc/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "nhyc/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "nhyc/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -78,8 +86,6 @@
       "value": ""
     }
   },
-  "LifeArmorTip": "ARMORTIP_LARGE",
-  "Acceleration": 1000,
   "Mob": "Classic",
   "LifeArmorFormula": {
     "NegativeArmorMultiplier": 0,
@@ -87,16 +93,42 @@
     "PositiveArmorMultiplier": 0,
     "PositiveDamageRatio": 0.06
   },
+  "LifeArmorTip": "ARMORTIP_LARGE",
   "SpeedDisplayFlags": {
     "CollapseBuffed": 1
   },
+  "Acceleration": 1000,
+  "BehaviorArray": [
+    "nhyc",
+    "War3_Unit",
+    "War3_ArmyBlastRemove",
+    "CreepUnitTriggerNotice",
+    "ANth",
+    "Ansk"
+  ],
+  "WeaponArray": [
+    {
+      "Link": "nhyc1"
+    },
+    {
+      "Link": "nhyc2"
+    }
+  ],
+  "InnerRadius": 0.6875,
   "KillDisplay": "Never",
   "RankDisplay": "Never",
-  "InnerRadius": 0.6875,
   "id": "nhyc",
   "Collide": [
     "Ground",
     "ForceField"
+  ],
+  "AbilArray": [
+    "Amov",
+    "stop",
+    "HigherCliffMiss",
+    "AatkTree",
+    "Advc",
+    "ACdv"
   ],
   "CostCategory": "Army",
   "ResourceDamageLeechFilters": "-;Player,Ally,Air,Ground,Hover,HarvestableResource,Destructible,Item,Buried,Dead,Invulnerable",
@@ -104,80 +136,511 @@
   "CardLayouts": {
     "Root": [
       {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Amov/Name",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "Amov",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdMove"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdPatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdHoldPos"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 2,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "FollowFilters": "-;Hover,HarvestableResource,Item",
+          "MoveFilters": "-;Hover,HarvestableResource,Item",
+          "Flags": {
+            "UpdateTarget": 1
+          },
+          "PowerupSmartPriority": 7,
+          "id": "Amov"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 0,
         "Column": 0,
         "Type": "AbilCmd",
         "AbilCmd": "Amov,Move",
         "id": "CmdMove",
-        "Tooltip": "Orders your units to move to the target area while ignoring enemy units and attacks. Issuing a move order onto a target unit will cause your unit to follow the target using move orders.",
-        "Name": "Move",
+        "Icon": "renee_war3_btnmove",
+        "Name": {
+          "enUS": "Move"
+        },
+        "Tooltip": {
+          "enUS": "Orders your units to move to the target area while ignoring enemy units and attacks. Issuing a move order onto a target unit will cause your unit to follow the target using move orders."
+        },
         "Hotkey": "M"
       },
       {
+        "Info": {
+          "class": "CAbilStop",
+          "Name": "Abil/Name/stop",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Confirm",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "stop",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Stop",
+          "CmdButtonArray": {
+            "Stop": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Stop"
+            },
+            "HoldFire": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Ashm",
+              "Requirements": "Hide"
+            },
+            "Cheer": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Cheer"
+            },
+            "Dance": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Dance"
+            }
+          },
+          "id": "stop",
+          "Flags": {
+            "HoldFire": 1
+          }
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 0,
         "Column": 1,
         "Type": "AbilCmd",
         "AbilCmd": "stop,Stop",
         "id": "CmdStop",
-        "Tooltip": "Orders your units to stop whatever order they were previously given. Units that have been told to stop will attack enemy units and move to engage nearby enemies.",
-        "Name": "Stop",
+        "Icon": "renee_war3_btnstop",
+        "Name": {
+          "enUS": "Stop"
+        },
+        "Tooltip": {
+          "enUS": "Orders your units to stop whatever order they were previously given. Units that have been told to stop will attack enemy units and move to engage nearby enemies."
+        },
         "Hotkey": "S"
       },
       {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Amov/Name",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "Amov",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdMove"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdPatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdHoldPos"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 2,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "FollowFilters": "-;Hover,HarvestableResource,Item",
+          "MoveFilters": "-;Hover,HarvestableResource,Item",
+          "Flags": {
+            "UpdateTarget": 1
+          },
+          "PowerupSmartPriority": 7,
+          "id": "Amov"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 0,
         "Column": 2,
         "Type": "AbilCmd",
         "AbilCmd": "Amov,HoldPos",
         "id": "CmdHoldPos",
-        "Tooltip": "Orders your units to stand where they are and attack units that are within range. When on Hold Position your units will not chase down enemy units that run away, nor move to engage ranged attackers.",
-        "Name": "Hold Position",
+        "Icon": "renee_war3_btnholdposition",
+        "Name": {
+          "enUS": "Hold Position"
+        },
+        "Tooltip": {
+          "enUS": "Orders your units to stand where they are and attack units that are within range. When on Hold Position your units will not chase down enemy units that run away, nor move to engage ranged attackers."
+        },
         "Hotkey": "H"
       },
       {
+        "Info": {
+          "class": "CAbilMove",
+          "Name": "Amov/Name",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Move",
+              "Color": "255,0,255,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointMove_Void\\WayPointMove_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            },
+            {
+              "DisplayType": "Move",
+              "Color": "255,35,125,255",
+              "Model": "Assets\\UI\\Cursors\\WayPointConfirm_Void\\WayPointConfirm_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "Amov",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "CmdButtonArray": {
+            "Move": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdMove"
+            },
+            "Patrol": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdPatrol"
+            },
+            "HoldPos": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdHoldPos"
+            },
+            "AcquireMove": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AcquireMove"
+            },
+            "Turn": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "Turn"
+            }
+          },
+          "FleeRange": 5,
+          "FleeTime": 5,
+          "FollowRangeSlop": 2,
+          "FollowAcquireRange": 6,
+          "MinPatrolDistance": 1,
+          "FollowFilters": "-;Hover,HarvestableResource,Item",
+          "MoveFilters": "-;Hover,HarvestableResource,Item",
+          "Flags": {
+            "UpdateTarget": 1
+          },
+          "PowerupSmartPriority": 7,
+          "id": "Amov"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 0,
         "Column": 3,
         "Type": "AbilCmd",
         "AbilCmd": "Amov,Patrol",
         "id": "CmdPatrol",
-        "Tooltip": "Orders your units to continually move from their current position to the targeted area until given another command. Units on patrol will move to engage enemy units that come within range. Issuing a patrol order onto a target unit will cause your unit to imitate the targeted unit's behavior.",
-        "Name": "Patrol",
+        "Icon": "renee_war3_btnpatrol",
+        "Name": {
+          "enUS": "Patrol"
+        },
+        "Tooltip": {
+          "enUS": "Orders your units to continually move from their current position to the targeted area until given another command. Units on patrol will move to engage enemy units that come within range. Issuing a patrol order onto a target unit will cause your unit to imitate the targeted unit's behavior."
+        },
         "Hotkey": "P"
       },
       {
+        "Info": {
+          "class": "CAbilAttack",
+          "Name": "Aatk/Name",
+          "TechPlayer": "Upkeep",
+          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
+          "OrderArray": [
+            {
+              "DisplayType": "Attack",
+              "Color": "255,255,0,0",
+              "Model": "Assets\\UI\\Cursors\\WayPointAttack_Void\\WayPointAttack_Void.m3",
+              "LineTexture": "Assets\\Textures\\WayPointLine.dds"
+            }
+          ],
+          "SharedFlags": {
+            "DisableWhileDead": 1
+          },
+          "DataCollection": "AatkTree",
+          "$tokens": {
+            "ID": {
+              "type": "string",
+              "value": ""
+            }
+          },
+          "AbilSetId": "Attack",
+          "Alignment": "Negative",
+          "AcquireFilters": "Visible;Player,Ally,Neutral,Dead,Hidden,Invulnerable,Benign",
+          "SmartFilters": "-;Player,Ally,Hover,HarvestableResource",
+          "SupportedFilters": "-;Self,Outer",
+          "CmdButtonArray": {
+            "Execute": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "CmdAttack"
+            },
+            "Towards": {
+              "Flags": {
+                "ToSelection": 1
+              },
+              "DefaultButtonFace": "AttackTowards"
+            },
+            "Barrage": {
+              "Flags": {
+                "ToSelection": 0
+              },
+              "DefaultButtonFace": "AttackBarrage"
+            }
+          },
+          "MaxAttackSpeedMultiplier": 5,
+          "MinAttackSpeedMultiplier": 0.2,
+          "AcquirePriority": 2,
+          "id": "AatkTree"
+        },
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 0,
         "Column": 4,
         "Type": "AbilCmd",
         "AbilCmd": "AatkTree,Execute",
         "id": "CmdAttack",
-        "Tooltip": "Orders your units to move to the target area and attack any enemy units they see on the way. If you order them to attack a specific unit, your units will ignore other enemy units and will attack the targeted unit until it is destroyed.",
-        "Name": "Attack",
+        "Icon": "renee_war3_btnattack",
+        "Name": {
+          "enUS": "Attack"
+        },
+        "Tooltip": {
+          "enUS": "Orders your units to move to the target area and attack any enemy units they see on the way. If you order them to attack a specific unit, your units will ignore other enemy units and will attack the targeted unit until it is destroyed."
+        },
         "Hotkey": "A"
       },
       {
-        "Row": 2,
-        "Column": 0,
-        "Type": "AbilCmd",
-        "AbilCmd": "ACdv,0",
-        "id": "ACdv",
-        "Tooltip": "Consumes an enemy unit, slowly digesting it and dealing 5 damage per second to it. If the creep is killed while the consumed unit is still digesting, the unit that was devoured will be released.",
-        "Name": "Devour",
-        "Hotkey": "D"
-      },
-      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 2,
         "Column": 1,
         "Type": "Passive",
         "id": "ANth",
-        "Tooltip": "Razor-sharp spikes on the Turtle's shell deal 30% of an enemy unit's melee attack damage back to it.",
-        "Name": "Spiked Shell"
+        "Icon": "renee_war3_btnthornshield",
+        "Name": {
+          "enUS": "Spiked Shell"
+        },
+        "Tooltip": {
+          "enUS": "Razor-sharp spikes on the Turtle's shell deal 30% of an enemy unit's melee attack damage back to it."
+        }
       },
       {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
+        },
         "Row": 2,
         "Column": 2,
         "Type": "Passive",
         "id": "Ansk",
-        "Tooltip": "Reduces all attacks on the unit by 12 damage. Attacks cannot be reduced below 3 damage.",
-        "Name": "Hardened Skin",
+        "Icon": "renee_war3_btnhardenedskin",
+        "Name": {
+          "enUS": "Hardened Skin"
+        },
+        "Tooltip": {
+          "enUS": "Reduces all attacks on the unit by 12 damage. Attacks cannot be reduced below 3 damage."
+        },
         "Hotkey": "K"
       }
     ]
@@ -212,67 +675,117 @@
   "ScoreKill": 100,
   "defType": "LARGE",
   "Icon": "renee_war3_btnseaturtlered",
+  "Model": "War3_DragonSeaTurtleRange",
   "LifeArmorIcon": "infocard-armor-large.tga",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "nhyc1",
-      "Name": "Type: <span style=\"color: #ffcc00\">Piercing</span>",
-      "Amount": 23,
-      "Kind": "Ranged",
+      "Effect": "nhyc1LM",
+      "MinScanRange": 7.0312,
       "TargetFilters": "",
       "Range": 3.75,
-      "Period": 1.75
+      "RangeSlop": 1.9531,
+      "Period": 1.75,
+      "DamagePoint": 0.7,
+      "Backswing": 0.3,
+      "id": "nhyc1",
+      "parent": "missile",
+      "atkType": "PIERCE",
+      "class": "CWeaponLegacy",
+      "Icon": "infocard-attack-pierce.tga",
+      "Name": {
+        "enUS": "Type: <span style=\"color: ffcc00\">Piercing</span>"
+      },
+      "Amount": 23,
+      "Kind": "Ranged"
     },
     {
-      "id": "nhyc2",
-      "Name": "Type: <span style=\"color: #ffcc00\">Siege</span>",
-      "Amount": 63,
-      "Kind": "Ranged",
+      "Effect": "nhyc2LM",
+      "MinScanRange": 7.0312,
       "TargetFilters": "",
       "Range": 3.5156,
-      "Period": 1.8
+      "RangeSlop": 1.9531,
+      "Period": 1.8,
+      "DamagePoint": 0.7,
+      "Backswing": 0.3,
+      "id": "nhyc2",
+      "parent": "missile",
+      "atkType": "SIEGE",
+      "class": "CWeaponLegacy",
+      "Icon": "infocard-attack-siege.tga",
+      "Name": {
+        "enUS": "Type: <span style=\"color: ffcc00\">Siege</span>"
+      },
+      "Amount": 63,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [
-    {},
     {
-      "id": "War3_Unit"
+      "id": "War3_Unit",
+      "Icon": "renee_war3_btntemp",
+      "Name": {
+        "enUS": "War3_Unit"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "War3_ArmyBlastRemove"
+      "id": "War3_ArmyBlastRemove",
+      "Icon": "renee_war3_btntemp",
+      "Name": "-",
+      "Tooltip": "-"
     },
     {
-      "id": "CreepUnitTriggerNotice"
+      "id": "CreepUnitTriggerNotice",
+      "Icon": "renee_war3_btntemp",
+      "Name": {
+        "enUS": "CreepUnitTriggerNotice"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "ANth",
-      "Name": "Spiked Shell"
+      "Icon": "renee_war3_btntemp",
+      "Name": {
+        "enUS": "Spiked Shell"
+      },
+      "Tooltip": "-"
     },
     {
       "id": "Ansk",
-      "Name": "Hardened Skin"
+      "Icon": "renee_war3_btntemp",
+      "Name": {
+        "enUS": "Hardened Skin"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "Amov",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "HigherCliffMiss",
-      "Name": "Higher Cliff Miss"
+      "Name": {
+        "enUS": "Higher Cliff Miss"
+      }
     },
     {
       "id": "AatkTree",
-      "Name": "Attack"
-    },
-    {},
-    {}
+      "Name": {
+        "enUS": "Attack"
+      }
+    }
   ],
   "$Upgrades": [
     "Rnat",
@@ -287,6 +800,7 @@
   "$Production": [],
   "$Research": [],
   "$Morph": [],
+  "$Phase": [],
   "$Producers": [
     "nnsg"
   ],
@@ -294,38 +808,68 @@
     {
       "AbilCmd": "Amov,Move",
       "id": "CmdMove",
-      "Tooltip": "Orders your units to move to the target area while ignoring enemy units and attacks. Issuing a move order onto a target unit will cause your unit to follow the target using move orders.",
-      "Name": "Move"
+      "Icon": "renee_war3_btnmove",
+      "Name": {
+        "enUS": "Move"
+      },
+      "Tooltip": {
+        "enUS": "Orders your units to move to the target area while ignoring enemy units and attacks. Issuing a move order onto a target unit will cause your unit to follow the target using move orders."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "CmdStop",
-      "Tooltip": "Orders your units to stop whatever order they were previously given. Units that have been told to stop will attack enemy units and move to engage nearby enemies.",
-      "Name": "Stop"
+      "Icon": "renee_war3_btnstop",
+      "Name": {
+        "enUS": "Stop"
+      },
+      "Tooltip": {
+        "enUS": "Orders your units to stop whatever order they were previously given. Units that have been told to stop will attack enemy units and move to engage nearby enemies."
+      }
     },
     {
       "AbilCmd": "Amov,HoldPos",
       "id": "CmdHoldPos",
-      "Tooltip": "Orders your units to stand where they are and attack units that are within range. When on Hold Position your units will not chase down enemy units that run away, nor move to engage ranged attackers.",
-      "Name": "Hold Position"
+      "Icon": "renee_war3_btnholdposition",
+      "Name": {
+        "enUS": "Hold Position"
+      },
+      "Tooltip": {
+        "enUS": "Orders your units to stand where they are and attack units that are within range. When on Hold Position your units will not chase down enemy units that run away, nor move to engage ranged attackers."
+      }
     },
     {
       "AbilCmd": "Amov,Patrol",
       "id": "CmdPatrol",
-      "Tooltip": "Orders your units to continually move from their current position to the targeted area until given another command. Units on patrol will move to engage enemy units that come within range. Issuing a patrol order onto a target unit will cause your unit to imitate the targeted unit's behavior.",
-      "Name": "Patrol"
+      "Icon": "renee_war3_btnpatrol",
+      "Name": {
+        "enUS": "Patrol"
+      },
+      "Tooltip": {
+        "enUS": "Orders your units to continually move from their current position to the targeted area until given another command. Units on patrol will move to engage enemy units that come within range. Issuing a patrol order onto a target unit will cause your unit to imitate the targeted unit's behavior."
+      }
     },
     {
       "AbilCmd": "AatkTree,Execute",
       "id": "CmdAttack",
-      "Tooltip": "Orders your units to move to the target area and attack any enemy units they see on the way. If you order them to attack a specific unit, your units will ignore other enemy units and will attack the targeted unit until it is destroyed.",
-      "Name": "Attack"
+      "Icon": "renee_war3_btnattack",
+      "Name": {
+        "enUS": "Attack"
+      },
+      "Tooltip": {
+        "enUS": "Orders your units to move to the target area and attack any enemy units they see on the way. If you order them to attack a specific unit, your units will ignore other enemy units and will attack the targeted unit until it is destroyed."
+      }
     },
     {
       "AbilCmd": "ACdv,0",
       "id": "ACdv",
-      "Tooltip": "Consumes an enemy unit, slowly digesting it and dealing 5 damage per second to it. If the creep is killed while the consumed unit is still digesting, the unit that was devoured will be released.",
-      "Name": "Devour"
+      "Icon": "renee_war3_btnreddragondevour",
+      "Name": {
+        "enUS": "Devour"
+      },
+      "Tooltip": {
+        "enUS": "Consumes an enemy unit, slowly digesting it and dealing 5 damage per second to it. If the creep is killed while the consumed unit is still digesting, the unit that was devoured will be released."
+      }
     }
   ]
 }

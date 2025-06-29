@@ -1,6 +1,13 @@
 {
-  "Name": "Boar",
-  "Description": "Armored craft with a bladed hull, and light machine guns. Can use Ignition Blast.<br/><br/><span style=\"color: #78F0FF\">Power user.</span><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Boar",
+    "ruRU": "Кабан"
+  },
+  "Description": {
+    "enUS": "Armored craft with a bladed hull, and light machine guns. Can use Ignition Blast.<br/><br/><span style=\"color: 78F0FF\">Power user.</span><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Бронированная авиация с лёгкими пулемётами. Может использовать натиск.<br/><br/><span style=\"color: f078ff\">Потребляет энергию.</span><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 225,
   "LifeMax": 225,
-  "LifeArmorName": "Mechanical Aircraft Plating",
+  "LifeArmorName": {
+    "enUS": "Mechanical Aircraft Plating",
+    "ruRU": "Броня механической авиации"
+  },
   "Mover": "Fly",
   "StationaryTurningRate": 1440,
   "TurningRate": 1440,
@@ -62,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Boar/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Boar/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Boar/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Boar/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -109,6 +121,12 @@
   "Speed": 3.25,
   "Acceleration": 3.5,
   "CostCategory": "Army",
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "IgnitionBlast"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -197,8 +215,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -287,8 +311,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -362,8 +392,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -436,8 +472,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -526,8 +568,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -629,7 +677,7 @@
                 "ShowInGlossary": 1
               },
               "DefaultButtonFace": "IgnitionBlast",
-              "Requirements": "BoarIgnitionBlastReq"
+              "Requirements": "GenetronPowerBalance0050"
             }
           },
           "Cost": [
@@ -660,8 +708,14 @@
         "AbilCmd": "IgnitionBlast,Execute",
         "id": "IgnitionBlast",
         "Icon": "btn-ability-genetron-ignitionblast",
-        "Tooltip": "After a charge up time of <b>1</b> second, the caster gains increased movement speed and deals up to <b>100</b> damage to units it comes into contact with over <b>3</b> seconds.<br/><br/><span style=\"color: #78F0FF\">Uses <b>50</b> power.</span>",
-        "Name": "Ignition Blast",
+        "Name": {
+          "enUS": "Ignition Blast",
+          "ruRU": "Поджигающий взрыв"
+        },
+        "Tooltip": {
+          "enUS": "After a charge up time of <b>1</b> second, the caster gains increased movement speed and deals up to <b>100</b> damage to units it comes into contact with over <b>3</b> seconds.<br/><br/><span style=\"color: 78F0FF\">Uses <b>50</b> power.</span>",
+          "ruRU": "Повышает скорость перемещения <span style=\"color: FFFF80\">Кабана</span>. Наносит 15 единиц урона вражеским воздушным единицам при касании. Длится <b>3</b> секунд."
+        },
         "Hotkey": "R"
       }
     ]
@@ -675,6 +729,11 @@
     "Vespene": 125
   },
   "RepairTime": 35,
+  "WeaponArray": [
+    {
+      "Link": "TuskMachineGuns"
+    }
+  ],
   "SubgroupPriority": 48,
   "GlossaryPriority": 15,
   "GlossaryStrongArray": [
@@ -691,50 +750,82 @@
   ],
   "LateralAcceleration": 9,
   "EnergyStart": 50,
+  "BehaviorArray": [
+    "GenetronPowerSupplyTracker",
+    "TrackGenetronPowerSupplyUnit"
+  ],
   "EnergyMax": 50,
   "EnergyRegenRate": 1.6875,
   "Icon": "btn-unit-genetron-boar",
+  "Model": "Boar",
   "LifeArmorIcon": "btn-upgrade-genetron-aircraftplating-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "TuskMachineGuns",
+      "EditorCategories": "Race:Genetron",
       "Icon": "btn-upgrade-genetron-rocketweapons-level0",
-      "Name": "Tusk Machine Guns",
+      "MinScanRange": 5.5,
+      "Period": 1.05,
+      "DamagePoint": 0,
+      "AllowedMovement": "Slowing",
+      "TargetFilters": "",
+      "id": "TuskMachineGuns",
+      "class": "CWeaponLegacy",
+      "Name": {
+        "enUS": "Tusk Machine Guns",
+        "ruRU": "Пулемёты \"Бивень\""
+      },
       "Amount": 12,
       "Kind": "Ranged",
-      "TargetFilters": "",
-      "Range": 5,
-      "Period": 1.12
+      "Range": 5
     }
   ],
   "Behaviors": [
     {
-      "id": "GenetronPowerSupplyTracker"
+      "id": "GenetronPowerSupplyTracker",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Genetron Power Supply Tracker"
+      },
+      "Tooltip": "-"
     },
     {
-      "id": "TrackGenetronPowerSupplyUnit"
-    },
-    {
-      "id": "BoarIgnitionBlastReq"
+      "id": "TrackGenetronPowerSupplyUnit",
+      "Icon": "btn-missing-kaeo",
+      "Name": {
+        "enUS": "Track Genetron Power Supply Unit"
+      },
+      "Tooltip": "-"
     }
   ],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "IgnitionBlast",
-      "Name": "Ignition Blast"
+      "Name": {
+        "enUS": "Ignition Blast",
+        "ruRU": "Ignition Blast"
+      }
     }
   ],
   "$Upgrades": [
@@ -753,12 +844,14 @@
     "AssemblyArray",
     "ShapedHull",
     "AssemblyArray",
-    "CountUnitBoarInProgressOnlyAtUnit",
     "GenetronAircraftPlatingRevert",
-    "GenetronAircraftWeaponsRevert"
+    "GenetronAircraftWeaponsRevert",
+    "CountUnitBoarInProgressOnlyAtUnit"
   ],
   "$Requirements": [],
-  "$Production": [],
+  "$Production": [
+    "GenetronPowerSupplyDummy"
+  ],
   "$Research": [],
   "$Morph": [],
   "$Phase": [],
@@ -770,43 +863,79 @@
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "IgnitionBlast,Execute",
       "id": "IgnitionBlast",
       "Icon": "btn-ability-genetron-ignitionblast",
-      "Tooltip": "After a charge up time of <b>1</b> second, the caster gains increased movement speed and deals up to <b>100</b> damage to units it comes into contact with over <b>3</b> seconds.<br/><br/><span style=\"color: #78F0FF\">Uses <b>50</b> power.</span>",
-      "Name": "Ignition Blast"
+      "Name": {
+        "enUS": "Ignition Blast",
+        "ruRU": "Поджигающий взрыв"
+      },
+      "Tooltip": {
+        "enUS": "After a charge up time of <b>1</b> second, the caster gains increased movement speed and deals up to <b>100</b> damage to units it comes into contact with over <b>3</b> seconds.<br/><br/><span style=\"color: 78F0FF\">Uses <b>50</b> power.</span>",
+        "ruRU": "Повышает скорость перемещения <span style=\"color: FFFF80\">Кабана</span>. Наносит 15 единиц урона вражеским воздушным единицам при касании. Длится <b>3</b> секунд."
+      }
     }
   ]
 }

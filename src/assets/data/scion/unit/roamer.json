@@ -1,6 +1,13 @@
 {
-  "Name": "Roamer",
-  "Description": "Fast anti-light skirmisher. Can use Scour.<br/><br/><span style=\"color: #FFFF80\">Can attack ground units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Roamer",
+    "ruRU": "Роамер"
+  },
+  "Description": {
+    "enUS": "Fast anti-light skirmisher. Can use Scour.<br/><br/><span style=\"color: FFFF80\">Can attack ground units.</span>",
+    "ruRU": "Быстрый дальнобойный боец. Эффективен против лёгких целей. Может использовать наблюдение.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -12,7 +19,10 @@
   "ResourceType": "Unknown",
   "LifeStart": 75,
   "LifeMax": 75,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -62,16 +72,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Roamer/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Roamer/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Roamer/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Roamer/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -86,6 +98,12 @@
     "Light"
   ],
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "Scour"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -174,8 +192,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -248,8 +272,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -338,8 +368,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -428,8 +464,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -503,8 +545,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -646,8 +694,14 @@
         "AbilCmd": "Scour,Execute",
         "id": "Scour",
         "Icon": "btn-ability-zerg-viper-ocularparasite",
-        "Tooltip": "Reveals a small area. Lasts for a duration of <b>14.0</b> seconds.<br/><br/><span style=\"color: #FFFF80\">Does not detect.</span>",
-        "Name": "Scour",
+        "Name": {
+          "enUS": "Scour",
+          "ruRU": "Наблюдение"
+        },
+        "Tooltip": {
+          "enUS": "Reveals a small area. Lasts for a duration of <b>14.0</b> seconds.<br/><br/><span style=\"color: FFFF80\">Does not detect.</span>",
+          "ruRU": "Подсвечивает небольшую область. Длится <b>14.0</b> секунд.<br/><br/><span style=\"color: FFFF80\">Не способен обнаруживать невидимые цели.</span>"
+        },
         "Hotkey": "C"
       }
     ]
@@ -674,50 +728,78 @@
   },
   "id": "Roamer",
   "Speed": 3.75,
-  "Food": -2,
+  "Food": -1.5,
   "CostResource": {
     "Minerals": 75,
     "Vespene": 25
   },
+  "WeaponArray": [
+    {
+      "Link": "VirulentSpit"
+    }
+  ],
   "InnerRadius": 0.375,
   "CargoSize": 2,
   "GlossaryPriority": 4,
   "SubgroupPriority": 76,
   "GlossaryAlias": "Roamer",
   "Icon": "btn-unit-xayid-roamer",
+  "Model": "Roamer",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
+      "AcquireFilters": "Ground;-",
+      "Period": 0.77,
+      "RandomDelayMax": 0.0625,
+      "Range": 3,
+      "DamagePoint": 0.125,
+      "DisplayEffect": "VirulentSpitImpact",
       "id": "VirulentSpit",
-      "Name": "Virulent Spit",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Icon": "btn-upgrade-xayid-missileweaponslevel0",
+      "Name": {
+        "enUS": "Virulent Spit",
+        "ruRU": "Злобный плевок"
+      },
       "Amount": 8,
       "AttributeBonus": {
         "Light": 4
       },
       "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 3,
-      "Period": 0.77
+      "TargetFilters": "Ground"
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "Scour",
-      "Name": "Scour"
+      "Name": {
+        "enUS": "Scour",
+        "ruRU": "Scour"
+      }
     }
   ],
   "$Upgrades": [
@@ -734,10 +816,12 @@
     "XayidGroundAttacksLevel2",
     "XayidGroundAttacksLevel3",
     "MutagenChamber",
+    "Button/Tooltip/RoamerCost",
     "MutateXayidUnits",
     "Worm",
     "XayidGroundAttacksRevert",
-    "XayidGroundCarapaceRevert"
+    "XayidGroundCarapaceRevert",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -752,43 +836,79 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "Scour,Execute",
       "id": "Scour",
       "Icon": "btn-ability-zerg-viper-ocularparasite",
-      "Tooltip": "Reveals a small area. Lasts for a duration of <b>14.0</b> seconds.<br/><br/><span style=\"color: #FFFF80\">Does not detect.</span>",
-      "Name": "Scour"
+      "Name": {
+        "enUS": "Scour",
+        "ruRU": "Наблюдение"
+      },
+      "Tooltip": {
+        "enUS": "Reveals a small area. Lasts for a duration of <b>14.0</b> seconds.<br/><br/><span style=\"color: FFFF80\">Does not detect.</span>",
+        "ruRU": "Подсвечивает небольшую область. Длится <b>14.0</b> секунд.<br/><br/><span style=\"color: FFFF80\">Не способен обнаруживать невидимые цели.</span>"
+      }
     }
   ]
 }

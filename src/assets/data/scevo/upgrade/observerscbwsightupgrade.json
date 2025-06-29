@@ -1,11 +1,14 @@
 {
-  "id": "ObserverSCBWSightUpgrade",
-  "Icon": "btn-ability-zeratul-observer-sensorarray",
-  "Name": "Upgrade/Name/ObserverSCBWSightUpgrade",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Sensor Array",
+    "zhCN": "Sensor Array",
+    "koKR": "Sensor Array"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,7 +23,16 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "ObserverSCBWSightUpgrade",
+  "id": "ObserverSCBWSightUpgrade",
+  "Icon": "btn-ability-zeratul-observer-sensorarray",
   "EffectArrayTemplate": [
     {
       "Reference": "Unit,^ParamId^,Sight",
@@ -37,6 +49,6 @@
   ],
   "InfoTooltipPriority": 1,
   "Race": "BWPr",
-  "ScoreAmount": 300,
+  "ScoreAmount": 100,
   "ScoreResult": "BuildOrder"
 }

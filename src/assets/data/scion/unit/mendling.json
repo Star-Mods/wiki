@@ -1,6 +1,13 @@
 {
-  "Name": "Mendling",
-  "Description": "Healer unit. Can use Mend, Covering Spray and Sacrificial Mutation.<br/><br/><span style=\"color: #FFFF80\">Can attack ground and air units.</span>",
+  "class": "CUnit",
+  "Name": {
+    "enUS": "Mendling",
+    "ruRU": "Исцелитель"
+  },
+  "Description": {
+    "enUS": "Healer unit. Can use Mend, Covering Spray and Sacrificial Mutation.<br/><br/><span style=\"color: FFFF80\">Can attack ground and air units.</span>",
+    "ruRU": "Целитель со слабыми атаками. Может использовать исцеление, скрывающий спрей и жертвенную мутацию.<br/><br/><span style=\"color: FFFF80\">Может атаковать наземные и воздушные цели.</span>"
+  },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
   "DeathRevealDuration": 4,
@@ -10,9 +17,12 @@
   "Response": "Acquire",
   "ResourceState": "Unknown",
   "ResourceType": "Unknown",
-  "LifeStart": 70,
-  "LifeMax": 70,
-  "LifeArmorName": "Xayid Ground Carapace",
+  "LifeStart": 60,
+  "LifeMax": 60,
+  "LifeArmorName": {
+    "enUS": "Xayid Ground Carapace",
+    "ruRU": "Панцирь наземных Зейтов"
+  },
   "Mover": "Ground",
   "StationaryTurningRate": 990,
   "TurningRate": 990,
@@ -64,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "Mendling/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "Mendling/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "Mendling/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "Mendling/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -85,10 +97,17 @@
   "Acceleration": 1000,
   "Attributes": [
     "Biological",
-    "Light",
     "Psionic"
   ],
   "AttackTargetPriority": 20,
+  "AbilArray": [
+    "move",
+    "stop",
+    "attack",
+    "Mend",
+    "MendlingSacrificialMutation",
+    "CoveringSpray"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -177,8 +196,14 @@
         "AbilCmd": "move,Move",
         "id": "Move",
         "Icon": "btn-command-move",
-        "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-        "Name": "Move",
+        "Name": {
+          "enUS": "Move",
+          "ruRU": "Двигаться "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+        },
         "Hotkey": "M"
       },
       {
@@ -251,8 +276,14 @@
         "AbilCmd": "stop,Stop",
         "id": "Stop",
         "Icon": "btn-command-stop",
-        "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-        "Name": "Stop",
+        "Name": {
+          "enUS": "Stop",
+          "ruRU": "Отставить "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to cancel all orders and stop moving.",
+          "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+        },
         "Hotkey": "S"
       },
       {
@@ -341,8 +372,14 @@
         "AbilCmd": "move,HoldPos",
         "id": "MoveHoldPosition",
         "Icon": "btn-command-holdposition",
-        "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-        "Name": "Hold Position",
+        "Name": {
+          "enUS": "Hold Position",
+          "ruRU": "Удерживать позицию "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+          "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+        },
         "Hotkey": "H"
       },
       {
@@ -431,8 +468,14 @@
         "AbilCmd": "move,Patrol",
         "id": "MovePatrol",
         "Icon": "btn-command-patrol",
-        "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-        "Name": "Patrol",
+        "Name": {
+          "enUS": "Patrol",
+          "ruRU": "Патрулировать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+          "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+        },
         "Hotkey": "P"
       },
       {
@@ -506,8 +549,14 @@
         "AbilCmd": "attack,Execute",
         "id": "Attack",
         "Icon": "btn-command-attack",
-        "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-        "Name": "Attack",
+        "Name": {
+          "enUS": "Attack",
+          "ruRU": "Атаковать "
+        },
+        "Tooltip": {
+          "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+          "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+        },
         "Hotkey": "A"
       },
       {
@@ -663,8 +712,14 @@
         "AbilCmd": "Mend,Execute",
         "id": "Mend",
         "Icon": "btn-ability-xayid-mendlingheal",
-        "Tooltip": "Instantly restores <b>25</b> life to target biological unit or structure.",
-        "Name": "Mend",
+        "Name": {
+          "enUS": "Mend",
+          "ruRU": "Исцеление"
+        },
+        "Tooltip": {
+          "enUS": "Instantly restores <b>25</b> life to target biological unit or structure.",
+          "ruRU": "Восстанавливает <b>25</b> едениц здоровья выбранной биологической еденице."
+        },
         "Hotkey": "E"
       },
       {
@@ -688,6 +743,9 @@
             "Stats": {
               "DurationArray": {
                 "Delay": 1
+              },
+              "EffectArray": {
+                "Finish": "PostMorphHeal"
               }
             }
           },
@@ -702,7 +760,7 @@
           "Energy": 0,
           "Life": 0,
           "Shields": 0,
-          "Food": -2
+          "Food": -1.5
         },
         "Row": 2,
         "Column": 2,
@@ -710,8 +768,14 @@
         "AbilCmd": "MendlingSacrificialMutation,Execute",
         "id": "MutateintoSacrificialMutation",
         "Icon": "btn-ability-zerg-ultralisk-revive",
-        "Tooltip": "Creates a healing aura in an area. The<span style=\"color: #FFFF80\"> Sacrificial Mutation</span> is destroyed after <b>11</b> seconds.",
-        "Name": "Mutate into Sacrificial Mutation",
+        "Name": {
+          "enUS": "Mutate into Sacrificial Mutation",
+          "ruRU": "Жертвенная мутация"
+        },
+        "Tooltip": {
+          "enUS": "Heals <b>0</b> life in an area over the <b>11</b> seconds, after which the caster is killed.",
+          "ruRU": "<span style=\"color: FFFF80\">Исцелитель</span> превращается в <span style=\"color: FFFF80\">Жертвенную мутацию</span>, которая создаёт ауру лечения. <span style=\"color: FFFF80\"> Жертвенная мутация</span> умирает после <b>0</b> секунд."
+        },
         "Hotkey": "C"
       },
       {
@@ -824,7 +888,7 @@
             }
           ],
           "TargetFilters": [
-            "Visible;Neutral,Enemy,Structure,Missile,Cloaked,Stasis,Dead,Hidden"
+            "Visible;Neutral,Enemy,Missile,Cloaked,Stasis,Dead,Hidden"
           ],
           "Range": [
             5
@@ -847,8 +911,14 @@
         "AbilCmd": "CoveringSpray,Execute",
         "id": "CoveringSpray",
         "Icon": "btn-ability-xayid-coveringspray",
-        "Tooltip": "Cloaks a targeted friendly unit. Lasts for a duration of <b>14</b> seconds.",
-        "Name": "Covering Spray",
+        "Name": {
+          "enUS": "Covering Spray",
+          "ruRU": "Скрывающий спрей"
+        },
+        "Tooltip": {
+          "enUS": "Cloaks a targeted friendly unit. Lasts for a duration of <b>14</b> seconds.",
+          "ruRU": "Маскирует выбранного дружественного юнита. Длится <b>14</b> секунд."
+        },
         "Hotkey": "V"
       }
     ]
@@ -878,73 +948,150 @@
   "EnergyMax": 200,
   "EnergyRegenRate": 0.5625,
   "Speed": 3,
-  "Food": -2,
+  "Food": -1.5,
   "CostResource": {
     "Minerals": 25,
     "Vespene": 75
   },
   "InnerRadius": 0.375,
   "CargoSize": 1,
+  "WeaponArray": [
+    {
+      "Link": "NeedleSpinesAntiAir"
+    },
+    {
+      "Link": "NeedleSpinesAntiGround"
+    },
+    {
+      "Link": "NeedleSpinesEquipment"
+    }
+  ],
   "GlossaryPriority": 6,
   "SubgroupPriority": 73,
   "GlossaryAlias": "Mendling",
   "Icon": "btn-unit-xayid-mendling",
+  "Model": "Mendling",
   "LifeArmorIcon": "btn-upgrade-xayid-organiccarapace-level0",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [
     {
-      "id": "NeedleSpinesAntiAir",
-      "Name": "Needle Spines",
-      "Amount": 12,
-      "Kind": "Ranged",
+      "Options": {
+        "Hidden": 1
+      },
+      "DisplayEffect": "NeedleSpinesImpact",
       "TargetFilters": "Air",
+      "MinScanRange": 8,
       "Range": 7,
-      "Period": 1.26
+      "Cost": {
+        "Cooldown": {
+          "Link": "Weapon/NeedleSpinesAntiGround"
+        }
+      },
+      "Period": 1.26,
+      "Effect": "NeedleSpines",
+      "DamagePoint": 0,
+      "id": "NeedleSpinesAntiAir",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Icon": "btn-upgrade-xayid-missileweaponslevel0",
+      "Name": {
+        "enUS": "Needle Spines",
+        "ruRU": "Иглы"
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     },
     {
+      "Options": {
+        "Hidden": 1
+      },
+      "DisplayEffect": "NeedleSpinesImpact",
+      "Period": 1.26,
+      "Effect": "NeedleSpines",
+      "MinScanRange": 6.5,
+      "DamagePoint": 0,
+      "Range": 6,
       "id": "NeedleSpinesAntiGround",
-      "Name": "Needle Spines",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Icon": "btn-upgrade-xayid-missileweaponslevel0",
+      "Name": {
+        "enUS": "Needle Spines",
+        "ruRU": "Иглы"
+      },
       "Amount": 12,
       "Kind": "Ranged",
-      "TargetFilters": "Ground",
-      "Range": 5,
-      "Period": 1.26
+      "TargetFilters": "Ground"
     },
     {
-      "id": "NeedleSpinesEquipment",
-      "Name": "Needle Spines",
-      "Amount": 12,
-      "Kind": "Ranged",
+      "Options": {
+        "CanInitiateAttackOrder": 0
+      },
+      "DisplayEffect": "NeedleSpinesImpact",
       "TargetFilters": "",
-      "Range": 5,
-      "Period": 1.26
+      "Cost": {
+        "Cooldown": {
+          "Link": "Weapon/NeedleSpinesAntiGround"
+        }
+      },
+      "Period": 1.26,
+      "Effect": "",
+      "Range": 6,
+      "id": "NeedleSpinesEquipment",
+      "parent": "RangedWeaponXayid",
+      "class": "CWeaponLegacy",
+      "Icon": "btn-upgrade-xayid-missileweaponslevel0",
+      "Name": {
+        "enUS": "Needle Spines",
+        "ruRU": "Иглы"
+      },
+      "Amount": 12,
+      "Kind": "Ranged"
     }
   ],
   "Behaviors": [],
   "Abilities": [
     {
       "id": "move",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Move"
+      }
     },
     {
       "id": "stop",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Stop"
+      }
     },
     {
       "id": "attack",
-      "Name": "Attack"
+      "Name": {
+        "ruRU": "Attack",
+        "enUS": "Attack"
+      }
     },
     {
       "id": "Mend",
-      "Name": "Mend"
+      "Name": {
+        "enUS": "Mend",
+        "ruRU": "Mend"
+      }
     },
     {
       "id": "MendlingSacrificialMutation",
-      "Name": "Mendling >> Sacrificial Mutation"
+      "Name": {
+        "enUS": "Mendling >> Sacrificial Mutation",
+        "ruRU": "Mendling >> Sacrificial Mutation"
+      }
     },
     {
       "id": "CoveringSpray",
-      "Name": "Covering Spray"
+      "Name": {
+        "enUS": "Covering Spray",
+        "ruRU": "Covering Spray"
+      }
     }
   ],
   "$Upgrades": [
@@ -960,10 +1107,12 @@
     "XayidGroundAttacksLevel2",
     "XayidGroundAttacksLevel3",
     "MutagenChamber",
+    "Button/Tooltip/MendlingCost",
     "MutateXayidUnits",
     "Worm",
     "XayidGroundAttacksRevert",
-    "XayidGroundCarapaceRevert"
+    "XayidGroundCarapaceRevert",
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -980,57 +1129,105 @@
       "AbilCmd": "move,Move",
       "id": "Move",
       "Icon": "btn-command-move",
-      "Tooltip": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
-      "Name": "Move"
+      "Name": {
+        "enUS": "Move",
+        "ruRU": "Двигаться "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target area or follow the target unit. Moving units will not engage enemies.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в указанную точку или следовать за указанной целью. При этом они не будут вступать в бой с возможным противником."
+      }
     },
     {
       "AbilCmd": "stop,Stop",
       "id": "Stop",
       "Icon": "btn-command-stop",
-      "Tooltip": "Orders selected units to cancel all orders and stop moving.",
-      "Name": "Stop"
+      "Name": {
+        "enUS": "Stop",
+        "ruRU": "Отставить "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to cancel all orders and stop moving.",
+        "ruRU": "Приказать выбранным боевым единицам прекратить выполнение всех задач и остановиться."
+      }
     },
     {
       "AbilCmd": "move,HoldPos",
       "id": "MoveHoldPosition",
       "Icon": "btn-command-holdposition",
-      "Tooltip": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
-      "Name": "Hold Position"
+      "Name": {
+        "enUS": "Hold Position",
+        "ruRU": "Удерживать позицию "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to stay where they are and attack enemies that are within range. Units will neither chase down enemies nor move to engage.",
+        "ruRU": "Приказать выбранным боевым единицам оставаться на месте и атаковать противника в зоне досягаемости, при этом не преследуя его и не приближаясь к нему, чтобы вступить в бой."
+      }
     },
     {
       "AbilCmd": "move,Patrol",
       "id": "MovePatrol",
       "Icon": "btn-command-patrol",
-      "Tooltip": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
-      "Name": "Patrol"
+      "Name": {
+        "enUS": "Patrol",
+        "ruRU": "Патрулировать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to patrol between their current position and the target area. Units will attack enemies and move to engage nearby enemies.",
+        "ruRU": "Приказать выбранным боевым единицам курсировать между текущей позицией и выбранной точкой. Обнаружив противника, они будут приближаться на расстояние атаки и вступать в бой."
+      }
     },
     {
       "AbilCmd": "attack,Execute",
       "id": "Attack",
       "Icon": "btn-command-attack",
-      "Tooltip": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
-      "Name": "Attack"
+      "Name": {
+        "enUS": "Attack",
+        "ruRU": "Атаковать "
+      },
+      "Tooltip": {
+        "enUS": "Orders selected units to move to the target point, fighting nearby enemies along the way. Targeting a unit with the Attack command orders that it be attacked until it is destroyed.",
+        "ruRU": "Приказать выбранным боевым единицам двигаться в выбранную точку, вступая в бой с противниками, которые встретятся по пути. Указав в качестве цели конкретную боевую единицу, вы прикажете атаковать ее до уничтожения."
+      }
     },
     {
       "AbilCmd": "Mend,Execute",
       "id": "Mend",
       "Icon": "btn-ability-xayid-mendlingheal",
-      "Tooltip": "Instantly restores <b>25</b> life to target biological unit or structure.",
-      "Name": "Mend"
+      "Name": {
+        "enUS": "Mend",
+        "ruRU": "Исцеление"
+      },
+      "Tooltip": {
+        "enUS": "Instantly restores <b>25</b> life to target biological unit or structure.",
+        "ruRU": "Восстанавливает <b>25</b> едениц здоровья выбранной биологической еденице."
+      }
     },
     {
       "AbilCmd": "MendlingSacrificialMutation,Execute",
       "id": "MutateintoSacrificialMutation",
       "Icon": "btn-ability-zerg-ultralisk-revive",
-      "Tooltip": "Creates a healing aura in an area. The<span style=\"color: #FFFF80\"> Sacrificial Mutation</span> is destroyed after <b>11</b> seconds.",
-      "Name": "Mutate into Sacrificial Mutation"
+      "Name": {
+        "enUS": "Mutate into Sacrificial Mutation",
+        "ruRU": "Жертвенная мутация"
+      },
+      "Tooltip": {
+        "enUS": "Heals <b>0</b> life in an area over the <b>11</b> seconds, after which the caster is killed.",
+        "ruRU": "<span style=\"color: FFFF80\">Исцелитель</span> превращается в <span style=\"color: FFFF80\">Жертвенную мутацию</span>, которая создаёт ауру лечения. <span style=\"color: FFFF80\"> Жертвенная мутация</span> умирает после <b>0</b> секунд."
+      }
     },
     {
       "AbilCmd": "CoveringSpray,Execute",
       "id": "CoveringSpray",
       "Icon": "btn-ability-xayid-coveringspray",
-      "Tooltip": "Cloaks a targeted friendly unit. Lasts for a duration of <b>14</b> seconds.",
-      "Name": "Covering Spray"
+      "Name": {
+        "enUS": "Covering Spray",
+        "ruRU": "Скрывающий спрей"
+      },
+      "Tooltip": {
+        "enUS": "Cloaks a targeted friendly unit. Lasts for a duration of <b>14</b> seconds.",
+        "ruRU": "Маскирует выбранного дружественного юнита. Длится <b>14</b> секунд."
+      }
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
+  "class": "CUnit",
   "Name": {
     "enUS": "Spire",
-    "zhCN": "尖塔",
-    "koKR": "스파이어 /// Spire"
+    "zhCN": "Spire",
+    "koKR": "Spire"
   },
   "Description": {
-    "enUS": "Contains upgrades for Zerg air units. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Mutalisk</b>s from <b>Larva</b>e",
-    "zhCN": "为异虫飞行生物提供进化方案。可以变异为<span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>。<br/><br/><span class=\"style-TooltipHighlightSCBW\">开启：</span><br/>- <b>Larva</b>可以变异为<b>Mutalisk</b>",
-    "koKR": "저그 공중 유닛을 업그레이드합니다. <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>으로 변이할 수 있습니다.<br/><br/><span class=\"style-TooltipHighlightSCBW\">사용 가능:</span><br/>- <b>Mutalisk</b> (<b>Larva</b>에서 변태) /// Contains upgrades for Zerg air units. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Mutalisk</b>s from <b>Larva</b>e"
+    "enUS": "Contains upgrades for Zerg air units. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Mutalisk</b>s from <b>Larva</b>e<br/>- <b>Scourge</b>s from <b>Larva</b>e",
+    "zhCN": "Contains upgrades for Zerg air units. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Mutalisk</b>s from <b>Larva</b>e<br/>- <b>Scourge</b>s from <b>Larva</b>e",
+    "koKR": "Contains upgrades for Zerg air units. Can mutate into a <span class=\"style-TooltipHighlightSCBW\"><b>Greater Spire</b></span>.<br/><br/><span class=\"style-TooltipHighlightSCBW\">Enables:</span><br/>- <b>Mutalisk</b>s from <b>Larva</b>e<br/>- <b>Scourge</b>s from <b>Larva</b>e"
   },
   "DeathRevealFilters": "Visible;Player,Ally,Neutral,Missile,Dead,Hidden",
   "DeathRevealRadius": 3,
@@ -20,10 +21,7 @@
   "ResourceType": "Unknown",
   "LifeStart": 600,
   "LifeMax": 600,
-  "LifeArmorName": {
-    "enUS": "Zerg Building Armor",
-    "ruRU": "Zerg Building Armor"
-  },
+  "LifeArmorName": "-",
   "Mover": "Ground",
   "StationaryTurningRate": 719.4726,
   "TurningRate": 719.4726,
@@ -76,16 +74,18 @@
       "Idle": 100
     }
   },
-  "ReviveInfoBase": {
-    "Charge": {
-      "Link": "SpireSCBW/Revive",
-      "Location": "Unit"
-    },
-    "Cooldown": {
-      "Link": "SpireSCBW/Revive",
-      "Location": "Unit"
+  "ReviveInfoBase": [
+    {
+      "Charge": {
+        "Link": "SpireSCBW/Revive",
+        "Location": "Unit"
+      },
+      "Cooldown": {
+        "Link": "SpireSCBW/Revive",
+        "Location": "Unit"
+      }
     }
-  },
+  ],
   "InnerRadiusSafetyMultiplier": 1,
   "ArmorType": "Unknown",
   "$tokens": {
@@ -123,11 +123,21 @@
   "Sight": 9,
   "CostCategory": "Technology",
   "CostResource": {
-    "Minerals": 250,
-    "Vespene": 150
+    "Minerals": 200,
+    "Vespene": 100
   },
   "BuildTime": 100,
   "AttackTargetPriority": 11,
+  "AbilArray": [
+    "MutateInProgressSCBW",
+    "que5CancelToSelection",
+    "ZergFlyerAttacksSCBW",
+    "ZergFlyerCarapaceSCBW",
+    "GreaterSpireSCBW@Morph"
+  ],
+  "BehaviorArray": [
+    "OnCreep"
+  ],
   "CardLayouts": {
     "Root": [
       {
@@ -193,20 +203,16 @@
         "Icon": "btn-command-cancel",
         "Name": {
           "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "ruRU": "Отменить "
         },
-        "Tooltip": {
-          "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-          "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
         "Info": {
           "class": "CAbilBuildable",
-          "Name": "Abil/Name/BuildInProgress",
+          "Name": "Abil/Name/MutateInProgressSCBW",
           "TechPlayer": "Upkeep",
-          "EditorCategories": "Race:Neutral,AbilityorEffectType:Units",
+          "EditorCategories": "Race:Zerg,AbilityorEffectType:Units",
           "TargetMessage": "Abil/TargetMessage/DefaultTargetMessage",
           "OrderArray": [
             {
@@ -219,14 +225,14 @@
           "SharedFlags": {
             "DisableWhileDead": 1
           },
-          "DataCollection": "BuildInProgress",
+          "DataCollection": "MutateInProgressSCBW",
           "$tokens": {
             "ID": {
               "type": "string",
               "value": ""
             }
           },
-          "Activity": "UI/Building",
+          "Activity": "UI/Mutating",
           "VitalStartFactor": {
             "Life": 0.1,
             "Shields": 0.1,
@@ -240,7 +246,8 @@
               "DefaultButtonFace": "Cancel"
             }
           },
-          "id": "BuildInProgress"
+          "TechAliasArray": "_BuildInProgress",
+          "id": "MutateInProgressSCBW"
         },
         "Cost": {
           "Minerals": 0,
@@ -255,50 +262,19 @@
         "Row": 2,
         "Column": 4,
         "Type": "AbilCmd",
-        "AbilCmd": "BuildInProgress,Cancel",
+        "AbilCmd": "MutateInProgressSCBW,Cancel",
         "id": "CancelBuilding",
         "Icon": "btn-command-cancel",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Отменить /// Cancel"
+          "enUS": "Cancel Building",
+          "ruRU": "Прервать постройку "
         },
-        "Tooltip": {
-          "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-          "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-        },
-        "Hotkey": "Esc"
+        "Tooltip": "-"
       },
       {
-        "Info": {
-          "SectionArray": {
-            "Abils": {
-              "DurationArray": {
-                "Delay": 112.5
-              }
-            },
-            "Actor": {
-              "DurationArray": {
-                "Duration": 112.5
-              }
-            },
-            "Facing": {
-              "DurationArray": {
-                "Delay": 5
-              }
-            },
-            "Stats": {
-              "DurationArray": {
-                "Delay": 112.5
-              }
-            }
-          },
-          "Score": 1,
-          "Unit": "GreaterSpireSCBW"
-        },
-        "Unit": "GreaterSpireSCBW",
         "Cost": {
-          "Minerals": 350,
-          "Vespene": 300,
+          "Minerals": 0,
+          "Vespene": 0,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -306,21 +282,48 @@
           "Shields": 0,
           "Food": 0
         },
-        "Row": 2,
-        "Column": 4,
-        "Type": "AbilCmd",
-        "AbilCmd": "GreaterSpireSCBW@Morph,Cancel",
-        "id": "CancelMutateMorph",
-        "Icon": "btn-command-cancel",
+        "Row": 1,
+        "Column": 0,
+        "Type": "Passive",
+        "id": "MutaliskSCBW@Passive",
+        "Icon": "btn-unit-zerg-mutalisk@scbw",
         "Name": {
-          "enUS": "Cancel",
-          "ruRU": "Cancel"
+          "enUS": "Mutalisk",
+          "zhCN": "Mutalisk",
+          "koKR": "Mutalisk"
         },
         "Tooltip": {
-          "enUS": "Cancels the mutation order, returning the structure to its original state.",
-          "ruRU": "Cancels the mutation order, returning the structure to its original state."
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Mutalisk</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Mutalisk</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Mutalisk</b>s</span>."
+        }
+      },
+      {
+        "Cost": {
+          "Minerals": 0,
+          "Vespene": 0,
+          "Terazine": 0,
+          "Custom": 0,
+          "Energy": 0,
+          "Life": 0,
+          "Shields": 0,
+          "Food": 0
         },
-        "Hotkey": "Esc"
+        "Row": 1,
+        "Column": 1,
+        "Type": "Passive",
+        "id": "ScourgeSCBW@Passive",
+        "Icon": "btn-unit-zerg-scourge",
+        "Name": {
+          "enUS": "Scourge",
+          "zhCN": "Scourge",
+          "koKR": "Scourge"
+        },
+        "Tooltip": {
+          "enUS": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Scourge</b>s</span>.",
+          "zhCN": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Scourge</b>s</span>.",
+          "koKR": "Allows <span style=\"color: #SCBW_ColorHighlight\"><d stringRef=\"Unit,LarvaSCBW,Name\"/>e</span> to morph into <span style=\"color: #SCBW_ColorHighlight\"><b>Scourge</b>s</span>."
+        }
       },
       {
         "Upgrade": "ZergFlyerAttacksSCBW@Lvl1",
@@ -334,6 +337,7 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZergFlyerAttacksSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ZergFlyerAttacksSCBW@Lvl1"
           },
           "Resource": {
@@ -362,13 +366,13 @@
         "Icon": "btn-upgrade-zerg-airattacks-level1",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 1",
-          "zhCN": "进化飞行单位攻击等级1",
-          "koKR": "비행체 공격 업그레이드 레벨 1 /// Evolve Flyer Attacks Level 1"
+          "zhCN": "Evolve Flyer Attacks Level 1",
+          "koKR": "Evolve Flyer Attacks Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the attacks of all Zerg air units.",
-          "zhCN": "提升所有异虫飞行生物的攻击力。",
-          "koKR": "모든 저그 공중 유닛의 공격력을 업그레이드합니다. /// Upgrades the attacks of all Zerg air units."
+          "zhCN": "Upgrades the attacks of all Zerg air units.",
+          "koKR": "Upgrades the attacks of all Zerg air units."
         },
         "Hotkey": "E"
       },
@@ -383,6 +387,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergFlyerAttacksSCBW@Lvl2",
             "Requirements": "ZergFlyerAttacksSCBW@Lvl2"
           },
@@ -412,13 +417,13 @@
         "Icon": "btn-upgrade-zerg-airattacks-level2",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 2",
-          "zhCN": "进化飞行单位攻击等级2",
-          "koKR": "비행체 공격 업그레이드 레벨 2 /// Evolve Flyer Attacks Level 2"
+          "zhCN": "Evolve Flyer Attacks Level 2",
+          "koKR": "Evolve Flyer Attacks Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the attacks of all Zerg air units.",
-          "zhCN": "进一步提升所有异虫飞行生物的攻击力。",
-          "koKR": "모든 저그 공중 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the attacks of all Zerg air units."
+          "zhCN": "Further upgrades the attacks of all Zerg air units.",
+          "koKR": "Further upgrades the attacks of all Zerg air units."
         },
         "Hotkey": "E"
       },
@@ -433,6 +438,7 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergFlyerAttacksSCBW@Lvl3",
             "Requirements": "ZergFlyerAttacksSCBW@Lvl3"
           },
@@ -462,13 +468,13 @@
         "Icon": "btn-upgrade-zerg-airattacks-level3",
         "Name": {
           "enUS": "Evolve Flyer Attacks Level 3",
-          "zhCN": "进化飞行单位攻击等级3",
-          "koKR": "비행체 공격 업그레이드 레벨 3 /// Evolve Flyer Attacks Level 3"
+          "zhCN": "Evolve Flyer Attacks Level 3",
+          "koKR": "Evolve Flyer Attacks Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the attacks of all Zerg air units.",
-          "zhCN": "使所有异虫飞行生物的攻击力最大化。",
-          "koKR": "모든 저그 공중 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the attacks of all Zerg air units."
+          "zhCN": "Maximizes the attacks of all Zerg air units.",
+          "koKR": "Maximizes the attacks of all Zerg air units."
         },
         "Hotkey": "E"
       },
@@ -484,19 +490,20 @@
               "CreateDefaultButton": 1
             },
             "DefaultButtonFace": "ZergFlyerCarapaceSCBW@Lvl1",
+            "State": "Restricted",
             "Requirements": "ZergFlyerCarapaceSCBW@Lvl1"
           },
           "Resource": {
-            "Minerals": 150,
-            "Vespene": 150
+            "Minerals": 100,
+            "Vespene": 100
           },
           "Time": 160,
           "Upgrade": "ZergFlyerCarapaceSCBW@Lvl1"
         },
         "Time": 160,
         "Cost": {
-          "Minerals": 150,
-          "Vespene": 150,
+          "Minerals": 100,
+          "Vespene": 100,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -512,13 +519,13 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level1",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 1",
-          "zhCN": "进化飞行单位甲壳等级1",
-          "koKR": "비행체 갑피 진화 레벨 1 /// Evolve Flyer Carapace Level 1"
+          "zhCN": "Evolve Flyer Carapace Level 1",
+          "koKR": "Evolve Flyer Carapace Level 1"
         },
         "Tooltip": {
           "enUS": "Upgrades the armor of all Zerg air units.",
-          "zhCN": "提升所有异虫飞行生物的护甲。",
-          "koKR": "모든 저그 공중 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of all Zerg air units."
+          "zhCN": "Upgrades the armor of all Zerg air units.",
+          "koKR": "Upgrades the armor of all Zerg air units."
         },
         "Hotkey": "A"
       },
@@ -533,20 +540,21 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergFlyerCarapaceSCBW@Lvl2",
             "Requirements": "ZergFlyerCarapaceSCBW@Lvl2"
           },
           "Resource": {
-            "Minerals": 225,
-            "Vespene": 225
+            "Minerals": 175,
+            "Vespene": 175
           },
           "Time": 190,
           "Upgrade": "ZergFlyerCarapaceSCBW@Lvl2"
         },
         "Time": 190,
         "Cost": {
-          "Minerals": 225,
-          "Vespene": 225,
+          "Minerals": 175,
+          "Vespene": 175,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -562,13 +570,13 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level2",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 2",
-          "zhCN": "进化飞行单位甲壳等级2",
-          "koKR": "비행체 갑피 진화 레벨 2 /// Evolve Flyer Carapace Level 2"
+          "zhCN": "Evolve Flyer Carapace Level 2",
+          "koKR": "Evolve Flyer Carapace Level 2"
         },
         "Tooltip": {
           "enUS": "Further upgrades the armor of all Zerg air units.",
-          "zhCN": "进一步提升所有异虫飞行生物的护甲。",
-          "koKR": "모든 저그 공중 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Zerg air units."
+          "zhCN": "Further upgrades the armor of all Zerg air units.",
+          "koKR": "Further upgrades the armor of all Zerg air units."
         },
         "Hotkey": "A"
       },
@@ -583,20 +591,21 @@
               "UseDefaultButton": 1,
               "CreateDefaultButton": 1
             },
+            "State": "Restricted",
             "DefaultButtonFace": "ZergFlyerCarapaceSCBW@Lvl3",
             "Requirements": "ZergFlyerCarapaceSCBW@Lvl3"
           },
           "Resource": {
-            "Minerals": 300,
-            "Vespene": 300
+            "Minerals": 250,
+            "Vespene": 250
           },
           "Time": 220,
           "Upgrade": "ZergFlyerCarapaceSCBW@Lvl3"
         },
         "Time": 220,
         "Cost": {
-          "Minerals": 300,
-          "Vespene": 300,
+          "Minerals": 250,
+          "Vespene": 250,
           "Terazine": 0,
           "Custom": 0,
           "Energy": 0,
@@ -612,13 +621,13 @@
         "Icon": "btn-upgrade-zerg-flyercarapace-level3",
         "Name": {
           "enUS": "Evolve Flyer Carapace Level 3",
-          "zhCN": "进化飞行单位甲壳等级3",
-          "koKR": "비행체 갑피 진화 레벨 3 /// Evolve Flyer Carapace Level 3"
+          "zhCN": "Evolve Flyer Carapace Level 3",
+          "koKR": "Evolve Flyer Carapace Level 3"
         },
         "Tooltip": {
           "enUS": "Maximizes the armor of all Zerg air units.",
-          "zhCN": "使所有异虫飞行生物的护甲最大化。",
-          "koKR": "모든 저그 공중 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of all Zerg air units."
+          "zhCN": "Maximizes the armor of all Zerg air units.",
+          "koKR": "Maximizes the armor of all Zerg air units."
         },
         "Hotkey": "A"
       }
@@ -626,8 +635,8 @@
   },
   "Footprint": "Footprint2x2CreepContour",
   "PlacementFootprint": "Footprint2x2Creep",
-  "ScoreMake": 400,
-  "ScoreKill": 450,
+  "ScoreMake": 250,
+  "ScoreKill": 300,
   "ScoreResult": "BuildOrder",
   "SubgroupPriority": 22,
   "TechAliasArray": [
@@ -635,67 +644,60 @@
   ],
   "GlossaryPriority": 241,
   "TechTreeUnlockedUnitArray": [
-    "Mutalisk"
+    "ScourgeSCBW",
+    "MutaliskSCBW"
   ],
   "TacticalAIThink": "AIThinkSpireSCBW",
   "Icon": "btn-building-zerg-spire",
+  "Model": "SpireEx1",
   "LifeArmorIcon": "btn-armor-zerg-building",
   "ShieldArmorIcon": "btn-upgrade-protoss-shieldslevel0",
   "Weapons": [],
-  "Behaviors": [
-    {
-      "id": "OnCreep",
-      "Name": {
-        "enUS": "On Creep",
-        "ruRU": "On Creep"
-      },
-      "Tooltip": "-"
-    }
-  ],
+  "Behaviors": [],
   "Abilities": [
     {
-      "id": "BuildInProgress",
+      "id": "MutateInProgressSCBW",
       "Name": {
-        "enUS": "Build in Progress",
-        "ruRU": "Build in Progress"
+        "enUS": "Mutate in Progress",
+        "zhCN": "Mutate in Progress",
+        "koKR": "Mutate in Progress"
       }
     },
     {
       "id": "que5CancelToSelection",
       "Name": {
-        "ruRU": "Queue (5) (Cancel To Selection)",
-        "enUS": "Queue (5) (Cancel To Selection)"
+        "ruRU": "Queue (5) (Cancel To Selection)"
       }
     },
     {
       "id": "ZergFlyerAttacksSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "ZergFlyerCarapaceSCBW",
       "Name": {
         "enUS": "Research",
-        "zhCN": "研究",
-        "koKR": "연구 /// Research"
+        "zhCN": "Research",
+        "koKR": "Research"
       }
     },
     {
       "id": "GreaterSpireSCBW@Morph",
       "Name": {
         "enUS": "Morph",
-        "zhCN": "孵化",
-        "koKR": "변태 /// Morph"
+        "zhCN": "Morph",
+        "koKR": "Morph"
       }
     }
   ],
   "$Upgrades": [
-    "SpireSCBW@Count",
     "Button/Tooltip/GreaterSpireSCBW",
     "SpireSCBW",
+    "SpireSCBW@Count",
     "SpireSCBW@AllowUnit",
     "DroneSCBW@BuildAdv",
     "SpireSCBW",
@@ -705,7 +707,10 @@
     "SpireSCBW@CountAtUnit",
     "SpireSCBW@QoB",
     "SpireSCBW@QoBAtUnit",
-    "SpireSCBW"
+    "SpireSCBW",
+    null,
+    null,
+    null
   ],
   "$Requirements": [],
   "$Production": [],
@@ -730,38 +735,19 @@
       "Icon": "btn-command-cancel",
       "Name": {
         "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "ruRU": "Отменить "
       },
-      "Tooltip": {
-        "enUS": "Drops the current order without performing it, and allows you to select a different order.",
-        "ruRU": "Отменить текущий приказ и отдать следующий. /// Drops the current order without performing it, and allows you to select a different order."
-      }
+      "Tooltip": "-"
     },
     {
-      "AbilCmd": "BuildInProgress,Cancel",
+      "AbilCmd": "MutateInProgressSCBW,Cancel",
       "id": "CancelBuilding",
       "Icon": "btn-command-cancel",
       "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Отменить /// Cancel"
+        "enUS": "Cancel Building",
+        "ruRU": "Прервать постройку "
       },
-      "Tooltip": {
-        "enUS": "Cancels construction of this structure, destroying the structure and giving a partial refund.",
-        "ruRU": "Отменить сооружение этого строения, уничтожив его и получив частичную компенсацию. /// Cancels construction of this structure, destroying the structure and giving a partial refund."
-      }
-    },
-    {
-      "AbilCmd": "GreaterSpireSCBW@Morph,Cancel",
-      "id": "CancelMutateMorph",
-      "Icon": "btn-command-cancel",
-      "Name": {
-        "enUS": "Cancel",
-        "ruRU": "Cancel"
-      },
-      "Tooltip": {
-        "enUS": "Cancels the mutation order, returning the structure to its original state.",
-        "ruRU": "Cancels the mutation order, returning the structure to its original state."
-      }
+      "Tooltip": "-"
     },
     {
       "AbilCmd": "ZergFlyerAttacksSCBW,Research1",
@@ -769,13 +755,13 @@
       "Icon": "btn-upgrade-zerg-airattacks-level1",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 1",
-        "zhCN": "进化飞行单位攻击等级1",
-        "koKR": "비행체 공격 업그레이드 레벨 1 /// Evolve Flyer Attacks Level 1"
+        "zhCN": "Evolve Flyer Attacks Level 1",
+        "koKR": "Evolve Flyer Attacks Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the attacks of all Zerg air units.",
-        "zhCN": "提升所有异虫飞行生物的攻击力。",
-        "koKR": "모든 저그 공중 유닛의 공격력을 업그레이드합니다. /// Upgrades the attacks of all Zerg air units."
+        "zhCN": "Upgrades the attacks of all Zerg air units.",
+        "koKR": "Upgrades the attacks of all Zerg air units."
       }
     },
     {
@@ -784,13 +770,13 @@
       "Icon": "btn-upgrade-zerg-airattacks-level2",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 2",
-        "zhCN": "进化飞行单位攻击等级2",
-        "koKR": "비행체 공격 업그레이드 레벨 2 /// Evolve Flyer Attacks Level 2"
+        "zhCN": "Evolve Flyer Attacks Level 2",
+        "koKR": "Evolve Flyer Attacks Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the attacks of all Zerg air units.",
-        "zhCN": "进一步提升所有异虫飞行生物的攻击力。",
-        "koKR": "모든 저그 공중 유닛의 공격력을 한 단계 더 업그레이드합니다. /// Further upgrades the attacks of all Zerg air units."
+        "zhCN": "Further upgrades the attacks of all Zerg air units.",
+        "koKR": "Further upgrades the attacks of all Zerg air units."
       }
     },
     {
@@ -799,13 +785,13 @@
       "Icon": "btn-upgrade-zerg-airattacks-level3",
       "Name": {
         "enUS": "Evolve Flyer Attacks Level 3",
-        "zhCN": "进化飞行单位攻击等级3",
-        "koKR": "비행체 공격 업그레이드 레벨 3 /// Evolve Flyer Attacks Level 3"
+        "zhCN": "Evolve Flyer Attacks Level 3",
+        "koKR": "Evolve Flyer Attacks Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the attacks of all Zerg air units.",
-        "zhCN": "使所有异虫飞行生物的攻击力最大化。",
-        "koKR": "모든 저그 공중 유닛의 공격력을 최대로 업그레이드합니다. /// Maximizes the attacks of all Zerg air units."
+        "zhCN": "Maximizes the attacks of all Zerg air units.",
+        "koKR": "Maximizes the attacks of all Zerg air units."
       }
     },
     {
@@ -814,13 +800,13 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level1",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 1",
-        "zhCN": "进化飞行单位甲壳等级1",
-        "koKR": "비행체 갑피 진화 레벨 1 /// Evolve Flyer Carapace Level 1"
+        "zhCN": "Evolve Flyer Carapace Level 1",
+        "koKR": "Evolve Flyer Carapace Level 1"
       },
       "Tooltip": {
         "enUS": "Upgrades the armor of all Zerg air units.",
-        "zhCN": "提升所有异虫飞行生物的护甲。",
-        "koKR": "모든 저그 공중 유닛의 방어력을 업그레이드합니다. /// Upgrades the armor of all Zerg air units."
+        "zhCN": "Upgrades the armor of all Zerg air units.",
+        "koKR": "Upgrades the armor of all Zerg air units."
       }
     },
     {
@@ -829,13 +815,13 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level2",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 2",
-        "zhCN": "进化飞行单位甲壳等级2",
-        "koKR": "비행체 갑피 진화 레벨 2 /// Evolve Flyer Carapace Level 2"
+        "zhCN": "Evolve Flyer Carapace Level 2",
+        "koKR": "Evolve Flyer Carapace Level 2"
       },
       "Tooltip": {
         "enUS": "Further upgrades the armor of all Zerg air units.",
-        "zhCN": "进一步提升所有异虫飞行生物的护甲。",
-        "koKR": "모든 저그 공중 유닛의 방어력을 한 단계 더 업그레이드합니다. /// Further upgrades the armor of all Zerg air units."
+        "zhCN": "Further upgrades the armor of all Zerg air units.",
+        "koKR": "Further upgrades the armor of all Zerg air units."
       }
     },
     {
@@ -844,13 +830,13 @@
       "Icon": "btn-upgrade-zerg-flyercarapace-level3",
       "Name": {
         "enUS": "Evolve Flyer Carapace Level 3",
-        "zhCN": "进化飞行单位甲壳等级3",
-        "koKR": "비행체 갑피 진화 레벨 3 /// Evolve Flyer Carapace Level 3"
+        "zhCN": "Evolve Flyer Carapace Level 3",
+        "koKR": "Evolve Flyer Carapace Level 3"
       },
       "Tooltip": {
         "enUS": "Maximizes the armor of all Zerg air units.",
-        "zhCN": "使所有异虫飞行生物的护甲最大化。",
-        "koKR": "모든 저그 공중 유닛의 방어력을 최대로 업그레이드합니다. /// Maximizes the armor of all Zerg air units."
+        "zhCN": "Maximizes the armor of all Zerg air units.",
+        "koKR": "Maximizes the armor of all Zerg air units."
       }
     }
   ]

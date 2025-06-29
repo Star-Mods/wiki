@@ -1,11 +1,14 @@
 {
-  "id": "HighTemplarSCBWPsiStormResearch",
-  "Icon": "btn-ability-protoss-psistorm-color",
-  "Name": "Upgrade/Name/HighTemplarSCBWPsiStormResearch",
   "class": "CUpgrade",
   "Flags": {
     "UpgradeCheat": 1,
+    "TechTreeCheat": 1,
     "IgnoreInvalidReferenceInTemplate": 1
+  },
+  "Name": {
+    "enUS": "Psi Storm Research",
+    "zhCN": "Psi Storm Research",
+    "koKR": "Psi Storm Research"
   },
   "MaxLevel": 1,
   "Alert": "ResearchComplete",
@@ -20,10 +23,19 @@
       "value": ""
     }
   },
+  "EffectArray": [
+    {
+      "Operation": "Set",
+      "Reference": "Unit,SCBW_DummyUpgradeTarget,SubgroupPriorityDelta",
+      "Value": "0"
+    }
+  ],
   "DataCollection": "HighTemplarSCBWPsiStormResearch",
+  "id": "HighTemplarSCBWPsiStormResearch",
+  "Icon": "btn-ability-protoss-psistorm-color",
   "InfoTooltipPriority": 1,
-  "Race": "Prot",
-  "ScoreAmount": 400,
+  "Race": "BWPr",
+  "ScoreAmount": 300,
   "ScoreResult": "BuildOrder",
   "AffectedUnitArray": [
     "HighTemplarSCBW"
